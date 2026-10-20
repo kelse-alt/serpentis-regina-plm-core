@@ -1,4 +1,4 @@
-/** Private local SQLite storage. Approved JSON remains the controlled source. */
+/** Local SQLite storage. Approved JSON remains the controlled source. */
 import { DatabaseSync } from 'node:sqlite';
 import { createHash } from 'node:crypto';
 import { mkdirSync, openSync, closeSync } from 'node:fs';
@@ -132,7 +132,7 @@ async function main(command) {
     try {
       const result = importHouseForm(database, form, sourceMethods);
       console.log(`${form.formId} ${REVISION}: ${result.total} POMs ${result.status}.`);
-      console.log(`Private database: ${DATABASE_PATH}`);
+      console.log(`Local database: ${DATABASE_PATH}`);
     } finally { database.close(); }
   } else if (command === 'sheet') {
     const database = new DatabaseSync(DATABASE_PATH, { readOnly: true });

@@ -1,6 +1,6 @@
-# Rendered reports include confidential house measurement standards.
+# Reproducible reports are generated locally from the versioned register.
 reports/*.html
 .DS_Store
 node_modules/
-# Local databases and SQLite journal/WAL files contain private house data.
+# SQLite files and journal/WAL files are generated local outputs.
 /storage/*.sqlite*

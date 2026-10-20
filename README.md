@@ -1,64 +1,75 @@
-# Serpentis Regina — PLM Core (PRIVATE)
+# Serpentis Regina — PLM Core
 
-Confidential, early-stage code and data foundation for Serpentis Regina's house technical-design systems.
+A fashion technology prototype that turns a house mannequin measurement sheet into a controlled, searchable fit-form register. It connects technical-design practice with beginner JavaScript learning: one approved measurement object becomes one displayed row and one SQLite record.
 
-## 🎀 House Measurement Sheet — working program
+This public portfolio includes the actual founder-approved **SR-FORM-001 v1** dataset: **20 points of measure (POMs)** in inches, original measuring instructions, and manufacturer references where supplied. The founder authorized publication of these records and the repository's existing history on **2026-10-20**.
 
-The first private measurement-sheet program is implemented and can display **all 20 approved SR-FORM-001 POMs**, the manufacturer's recorded reference values (where available), **signed differences**, and the **original “how to measure” instructions**. It produces both a terminal table and a beautifully styled, read-only local browser sheet.
+## What works today
 
-Run locally with Node.js 24+ (the database uses Node's built-in SQLite):
+- Generate a local HTML measurement sheet with search, reference filters, and print / Save PDF controls.
+- Display all 20 approved house standards alongside their original source labels and measuring methods.
+- Calculate signed differences as **house standard − manufacturer reference**.
+- Preserve absent references as JavaScript `null` and SQL `NULL`, displaying a dash instead of an invented comparison.
+- Import the approved register into a local SQLite database, then generate the same sheet from stored records.
+- Reject changes to an already imported revision, detect inconsistent stored records, and roll back failed imports.
+- Run **16 automated tests** covering the measurement rules and database behavior.
+
+## Run it locally
+
+Use **Node.js 24+**. SQLite comes from Node's built-in `node:sqlite` module; there are **no third-party packages to install** and no database service to start.
+
+From the repository root:
 
 ```bash
-npm run sheet
+node --version
 npm test
-```
-
-Open the generated `reports/SR-FORM-001-measurement-sheet.html` in your browser. The report is confidential, offline, and excluded from commits via `.gitignore`.
-
-- [Program source](src/house-measurement-sheet.mjs)
-- [Measurement-sheet tests](tests/house-measurement-sheet.test.mjs)
-- [Guided JavaScript lesson walkthrough](docs/lesson-in-action-measurement-sheet.md)
-- [Original measurement methods transcript](data/house-fit-forms/SR-FORM-001-methods.v1.json)
-
-**Calculation:** Delta = approved house standard − manufacturer reference. `null` means the manufacturer reference is absent, so delta stays `null`. These are comparisons, not garment tolerances.
-
-## Private local database
-
-The approved JSON files remain the controlled source. SQLite stores a local copy of
-the approved v1 register, including all 20 POMs, exact source labels and methods,
-approval metadata, and provenance. No extra packages or database service are needed.
-
-```bash
+npm run sheet
 npm run db:import
 npm run sheet:db
-npm test
 ```
 
-`db:import` creates `storage/serpentis-regina.sqlite`. Repeating the import with the
-same content leaves the 20 records unchanged. Different content under the same
-approved revision is rejected instead of overwriting it. All rows are saved in one
-transaction, so an interrupted/failed import cannot leave a partial register.
+Open `reports/SR-FORM-001-measurement-sheet.html` locally in a browser. Both sheet commands write this same report: `sheet` reads the approved JSON; `sheet:db` reads SQLite. The HTML uses no external libraries or services. This repository does not deploy a live website.
 
-`sheet:db` opens the database read-only and generates the same private HTML report
-from its stored rows. Missing manufacturer references remain SQL `NULL`; signed
-differences are calculated when reading rather than stored as separate standards.
-The database, SQLite sidecar files, and HTML report are Git-ignored and must remain private.
+| Command | Purpose |
+|---|---|
+| `npm test` | Run the 7 measurement-sheet tests and 9 database tests |
+| `npm run sheet` | Read approved JSON, print the measurement table, and generate HTML |
+| `npm run db:import` | Create `storage/serpentis-regina.sqlite` and import the 20-record v1 register |
+| `npm run sheet:db` | Open the database read-only and generate the measurement sheet |
 
-- [Database implementation](src/house-measurement-database.mjs)
-- [Database persistence tests](tests/house-measurement-database.test.mjs)
+Running `db:import` again with the same content reports **20 POMs unchanged**. It does not add duplicates. The generated database, SQLite sidecars, and HTML report are Git-ignored because they can be rebuilt from the tracked source records.
 
-## Current controlled baseline
-- [Approved House Fit Form SR-FORM-001 v1](data/house-fit-forms/SR-FORM-001.v1.json)
+## Measurement rules and provenance
+
+The physically measured mannequin values are the **approved house standards**. Manufacturer dimensions are comparison references. A positive difference means the house form is larger; a negative difference means it is smaller. These differences do not define garment ease, manufacturing tolerances, grading rules, or fit pass/fail judgments.
+
+The controlled inputs are:
+
+- [Approved fit-form record](data/house-fit-forms/SR-FORM-001.v1.json)
+- [Original source labels and measuring instructions](data/house-fit-forms/SR-FORM-001-methods.v1.json)
+
+Their provenance is `MEASUREMENT SHEET_SERPENTIS REGINA`, tab `BODY REF-MANNEQUIN-SIZE 8-V1`, with founder approval recorded on 2026-10-20. The source Sheet retains an older pending-verification label; the approved designation comes from the versioned record. This application does not edit or synchronize the Sheet. Manufacturing use still requires checking fit-form identity, measurement methods, and the approval trace.
+
+## Milestones
+
+| Application milestone | Working capability | Test coverage | Reference |
+|---|---|---|---|
+| **v0.1.0** | JSON-backed terminal and HTML measurement sheet | 7 tests | Baseline at `d0f02b8` |
+| **v0.2.0** | SQLite import, persistence checks, and database-backed HTML | 16 tests | Database implementation at `9bee461`; current application milestone |
+
+Application versions, measurement revisions, and JSON schema versions describe different things. **v0.2.0** is the application milestone; **SR-FORM-001 v1** is the approved measurement dataset; **`schemaVersion: "1.0"`** describes the JSON format. Adding SQLite did not revise the approved measurements.
+
+See the [changelog](CHANGELOG.md) for the development and publication record.
+
+## Explore the code and lesson
+
+- [Measurement-sheet program](src/house-measurement-sheet.mjs)
+- [SQLite importer and reader](src/house-measurement-database.mjs)
+- [Measurement-sheet tests](tests/house-measurement-sheet.test.mjs)
+- [Database tests](tests/house-measurement-database.test.mjs)
+- [Beginner JavaScript walkthrough](docs/lesson-in-action-measurement-sheet.md)
 - [Architecture and source-of-truth policy](docs/architecture.md)
 
-The house's actual mannequin measurements are **approved**. These values take precedence over manufacturer references for the fit form. Manufacturer differences are not product manufacturing tolerances.
+## Prototype scope
 
-**Provenance:** Recorded from `MEASUREMENT SHEET_SERPENTIS REGINA`, tab `BODY REF-MANNEQUIN-SIZE 8-V1`, following founder approval on 2026-10-20. The original Google Sheet has not been edited by this repository setup.
-
-## Planned modules
-1. House form measurement registry and revision history
-2. Digital style records and master tech-pack structure
-3. Graded specifications and fit-sample revisions
-4. Secure internal PLM-style dashboard and integrations
-
-Do not make this repository public or share any files without an explicit IP review.
+This is a local, read-only measurement register with an import workflow, rather than a complete production PLM system. The current importer supports the approved SR-FORM-001 v1 baseline. Multiuser editing, accounts and permissions, live spreadsheet integration, tech-pack generation, grading, and general revision management are future work. The existing approved revision is never silently overwritten.

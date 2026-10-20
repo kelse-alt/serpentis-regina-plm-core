@@ -46,13 +46,13 @@ test('invalid numbers and mismatched fit-form identifiers are rejected', () => {
   assert.throws(() => buildMeasurementRows({ ...form, formId: 'OTHER' }, sourceMethods), /identity/);
 });
 
-test('the offline HTML report includes confidential standards, measurement methods, and source caveat', () => {
+test('the offline HTML report includes published standards, measurement methods, and source caveat', () => {
   const html = buildHtml(form, rows);
   assert.match(html, /<table aria-label="House mannequin measurement register">/);
   assert.match(html, /BF-20/);
   assert.match(html, /32\.875/);
   assert.match(html, /Measure from shoulder point down arm to wrist reference/);
   assert.match(html, /earlier pending-verification status/);
-  assert.match(html, /PRIVATE HOUSE DATA/);
+  assert.match(html, /PUBLIC HOUSE REGISTER/);
   assert.doesNotMatch(html, /https:\/\/cdn\./);
 });

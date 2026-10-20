@@ -1,5 +1,5 @@
 /**
- * SERPENTIS REGINA — PRIVATE HOUSE MEASUREMENT SHEET
+ * SERPENTIS REGINA — HOUSE MEASUREMENT SHEET
  * Lessons in action: variables, objects, arrays, loops, functions, subtraction.
  * Reads the approved v1 form without modifying it or the source Google Sheet.
  */
@@ -99,7 +99,7 @@ footer{font-size:12px;color:#726773;margin-top:20px}#count{font-size:12px;color:
 @media print{body{background:white}main{padding:0}.controls{display:none}.wrap{overflow:visible}table{min-width:0;font-size:10px}th,td{padding:5px}tr{break-inside:avoid}}
 </style></head><body><main><header><div class="brand">SERPENTIS REGINA · TECHNICAL DESIGN</div>
 <h1>House Fit-Form Measurement Sheet</h1><p>${escapeHtml(form.formId)} · Manufacturer size ${escapeHtml(form.manufacturerDesignatedSize)} · Measurements in inches</p>
-<span class="label">PRIVATE HOUSE DATA · APPROVED STANDARD</span></header>
+<span class="label">PUBLIC HOUSE REGISTER · APPROVED STANDARD</span></header>
 <section class="cards"><div class="card"><b>${stats.total}</b><small>House POMs</small></div>
 <div class="card"><b>${stats.compared}</b><small>Manufacturer comparisons</small></div><div class="card"><b>${stats.missingReferences}</b><small>Missing manufacturer references</small></div><div class="card"><b>${stats.different}</b><small>Non-zero differences</small></div></section>
 <div class="note"><b>Comparison rule:</b> Delta = approved house standard − manufacturer reference. “—” means no manufacturer reference, not zero. These differences are not garment tolerances or fit pass/fail results.</div>
@@ -109,8 +109,8 @@ footer{font-size:12px;color:#726773;margin-top:20px}#count{font-size:12px;color:
 <div id="count">Showing ${stats.total} of ${stats.total} measurements</div>
 <div class="wrap"><table aria-label="House mannequin measurement register"><thead><tr><th>POM</th><th>Body measurement</th><th>How to measure (source)</th><th class="num">Manufacturer (in)</th><th class="num">House standard (in)</th><th class="num">Δ House − Mfr (in)</th><th>Reference</th></tr></thead>
 <tbody id="measurements">${body}</tbody></table></div>
-<footer><p><b>Source:</b> ${escapeHtml(form.source.document)} · ${escapeHtml(form.source.tab)}. Original Google Sheet currently shows an earlier pending-verification status; it has not been edited. This approved designation comes from the private versioned record.</p>
-<p><b>Confidentiality:</b> This offline report contains proprietary house measurements. Do not publish or deploy it publicly. Verify methods and approval trace before manufacturing.</p></footer>
+<footer><p><b>Source:</b> ${escapeHtml(form.source.document)} · ${escapeHtml(form.source.tab)}. Original Google Sheet currently shows an earlier pending-verification status; it has not been edited. This approved designation comes from the versioned approved record.</p>
+<p><b>Project:</b> This register is part of the publicly shared Serpentis Regina learning project. Verify methods and approval trace before manufacturing.</p></footer>
 </main><script>
 (() => { const search = document.getElementById('search'); const rows = [...document.querySelectorAll('#measurements tr')];
 const buttons = [...document.querySelectorAll('[data-filter]')]; let filter = 'all';
@@ -127,11 +127,11 @@ export async function writeMeasurementSheet(form, rows, outputArgument) {
   const outputPath = outputArgument ? resolve(outputArgument) : resolve(ROOT, 'reports/SR-FORM-001-measurement-sheet.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, buildHtml(form, rows), 'utf8');
-  console.log(`\nSERPENTIS REGINA — PRIVATE HOUSE MEASUREMENT SHEET — ${form.formId}`);
+  console.log(`\nSERPENTIS REGINA — HOUSE MEASUREMENT SHEET — ${form.formId}`);
   console.table(rows.map(row => ({ POM: row.pomCode, Measurement: row.description,
     'Mfr (in)': row.hasReference ? row.manufacturerReference : '—', 'HOUSE (in)': row.houseStandard, 'Δ (in)': formatDifference(row.difference) })));
   console.log(`House POMs: ${stats.total}; compared: ${stats.compared}; no reference: ${stats.missingReferences}`);
-  console.log(`Offline sheet: ${outputPath}\nPrivate house data — do not publish.\n`);
+  console.log(`Offline sheet: ${outputPath}\nPublic learning project — source data remains versioned.\n`);
   return { rows, stats, outputPath };
 }
 export async function main(outputArgument) {

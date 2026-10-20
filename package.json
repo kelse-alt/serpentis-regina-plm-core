@@ -1,7 +1,12 @@
 {
-  "name": "serpentis-regina-private-measurement-sheet",
+  "name": "serpentis-regina-plm-core",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "description": "A versioned fashion measurement register built with JavaScript, SQLite, and an offline browser report",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kelse-alt/serpentis-regina-plm-core.git"
+  },
   "type": "module",
   "engines": {
     "node": ">=24"
