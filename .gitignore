@@ -1,0 +1,4 @@
+# Rendered reports include confidential house measurement standards.
+reports/*.html
+.DS_Store
+node_modules/
