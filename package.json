@@ -1,0 +1,13 @@
+{
+  "name": "serpentis-regina-private-measurement-sheet",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "sheet": "node src/house-measurement-sheet.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
