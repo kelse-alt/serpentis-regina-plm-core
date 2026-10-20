@@ -2,3 +2,5 @@
 reports/*.html
 .DS_Store
 node_modules/
+# Local databases and SQLite journal/WAL files contain private house data.
+/storage/*.sqlite*

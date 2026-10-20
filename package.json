@@ -4,10 +4,12 @@
   "version": "0.1.0",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "sheet": "node src/house-measurement-sheet.mjs",
+    "db:import": "node src/house-measurement-database.mjs import",
+    "sheet:db": "node src/house-measurement-database.mjs sheet",
     "test": "node --test tests/*.test.mjs"
   }
 }

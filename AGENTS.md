@@ -36,7 +36,7 @@ Teaching style: **Notion-friendly, ADHD-friendly, visually organized, warm, femi
 - `src/house-measurement-sheet.mjs`: private Node.js script that reads the 20 POMs, computes signed deltas, outputs `console.table`, and generates an offline HTML measurement-sheet report.
 - `tests/house-measurement-sheet.test.mjs`: test suite for references, comparisons, and report.
 - `docs/lesson-in-action-measurement-sheet.md`: teaching companion mapping variables, objects, arrays, loops and functions to program features.
-- `package.json` scripts: `npm run sheet` and `npm test` (Node.js 20+).
+- `package.json` scripts: `npm run sheet` and `npm test` (Node.js 24+, including built-in SQLite).
 - `reports/*.html` is ignored in Git: reports contain confidential house data. Keep them offline/private.
 - `docs/architecture.md`: staged PLM architecture and source-of-truth policy.
 
@@ -53,3 +53,11 @@ Teaching style: **Notion-friendly, ADHD-friendly, visually organized, warm, femi
 Keep approved private data in private GitHub only. Do not publish source JSON, screenshots of actual house dimensions, or generated reports publicly. No credentials in code; no unrequested cloud deployment, network analytics, or external CDNs in sensitive reports. Favor accessible, elegant, print-friendly table design with a pink/ivory house aesthetic and clear POM columns.
 
 Explain *why* code changes are needed. Do not jump ahead of the learner, and distinguish source facts from assumptions. Use `AGENTS.md` as transferable context rather than treating this as the entire original chat transcript.
+
+## Current local database and teaching step
+
+- `src/house-measurement-database.mjs` imports the existing approved SR-FORM-001 v1 JSON into a private local SQLite database, retaining approval/provenance and all 20 POMs with exact source labels/methods.
+- Run `npm run db:import`, then `npm run sheet:db`. The database is `storage/serpentis-regina.sqlite`, with database/sidecar files ignored by Git. No extra packages or service are required; Node.js 24+ is required.
+- JSON remains the controlled approved source. Re-importing identical content is a no-op; conflicting content in the same revision is refused. Do not use direct SQL updates to revise an approved measurement.
+- The founder requested teaching alongside actual execution. Demonstrate what each line does with observed output before asking prediction questions. Keep each explanation small, starting with one object per loop turn.
+- Stay in this private repository until the founder explicitly requests work in the public repository.

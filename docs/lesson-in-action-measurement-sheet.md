@@ -4,7 +4,7 @@
 
 ## How to execute
 
-From the private repository root, using Node.js 20+:
+From the private repository root, using Node.js 24+:
 
 ```bash
 npm run sheet
@@ -42,6 +42,47 @@ You have already learned the core ideas behind this program. Professional featur
 - These deltas are **not** grading, garment POM tolerances, ease, fit adjustments, or pass/fail judgments.
 
 **Source reconciliation note:** The live Google Sheet still shows the older “House Reference-Pending Verification” status. The approved status displayed in the program comes from the versioned private record. The code does not edit the original Sheet. Verify methods and approval trace before production use.
+
+## 🎀 First database lesson: the same loop saves our records
+
+The original program reads JSON files. We now also have a **local SQLite database**:
+a private file that stores our approved register in rows.
+
+Run these commands from the private repository root:
+
+```bash
+npm run db:import
+npm run sheet:db
+```
+
+The first command saves the 20 approved POMs. The second reads those database rows
+and generates the measurement sheet. The approved source JSON stays unchanged.
+
+In `src/house-measurement-database.mjs`, find:
+
+```js
+for (const record of rows) {
+```
+
+Read it as **“take one object from our collection and work on that object.”**
+
+| Turn | What `record` refers to |
+|---|---|
+| First | The BF-01 measurement object |
+| Second | The BF-02 measurement object |
+| Third | The BF-03 measurement object |
+| Continuing | Each remaining POM, through BF-20 |
+
+Inside this loop, `saveMeasurement.run(...)` saves that object's fields as one
+database row. Then the loop moves to the next object. The procedure stays the
+same; the object being handled changes. You do not need to memorize the SQL yet.
+
+Repeating `npm run db:import` reports **20 POMs unchanged** rather than adding 20
+duplicates. A missing manufacturer reference is saved as `NULL`, never invented
+as zero. Importing different content over this approved v1 is refused.
+
+For now, read the loop with the teacher and watch its actual output before trying
+to predict it independently. The exercises below are available when you feel ready.
 
 ## Four exercises before the public synthetic sample
 

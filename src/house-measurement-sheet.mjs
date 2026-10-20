@@ -122,9 +122,7 @@ filter = button.dataset.filter; for (const item of buttons) item.setAttribute('a
 </script></body></html>`;
 }
 
-export async function main(outputArgument) {
-  const { form, sourceMethods } = await loadHouseData();
-  const rows = buildMeasurementRows(form, sourceMethods);
+export async function writeMeasurementSheet(form, rows, outputArgument) {
   const stats = summarizeRows(rows);
   const outputPath = outputArgument ? resolve(outputArgument) : resolve(ROOT, 'reports/SR-FORM-001-measurement-sheet.html');
   await mkdir(dirname(outputPath), { recursive: true });
@@ -135,6 +133,10 @@ export async function main(outputArgument) {
   console.log(`House POMs: ${stats.total}; compared: ${stats.compared}; no reference: ${stats.missingReferences}`);
   console.log(`Offline sheet: ${outputPath}\nPrivate house data — do not publish.\n`);
   return { rows, stats, outputPath };
+}
+export async function main(outputArgument) {
+  const { form, sourceMethods } = await loadHouseData();
+  return writeMeasurementSheet(form, buildMeasurementRows(form, sourceMethods), outputArgument);
 }
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
   main(process.argv[2]).catch(error => { console.error(error.message); process.exitCode = 1; });
