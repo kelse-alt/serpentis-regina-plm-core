@@ -13,7 +13,7 @@ npm test
 npm run sheet
 ```
 
-The first command runs **16 tests**: 7 for the measurement sheet and 9 for the database. The second reads the approved form and source methods, displays all 20 POMs in the terminal, and creates:
+The first command runs the complete test suite for the baseline, database, new-session calculations, and local API. The second reads the approved form and source methods, displays all 20 POMs in the terminal, and creates:
 
 ```text
 reports/SR-FORM-001-measurement-sheet.html
@@ -33,6 +33,24 @@ The first command saves the approved register in `storage/serpentis-regina.sqlit
 These outputs are Git-ignored because they can be regenerated. The tracked JSON files remain the approved source.
 
 ## 🐍 One idea: a loop handles one object at a time
+
+To take a new set of measurements, run `npm run generator`, then open the local
+address printed in the terminal. Or build the standalone HTML with
+`npm run generator:build` and open `reports/measurement-sheet-generator.html`.
+
+In the generator, the new calculation is **new measurement − selected reference**.
+The default reference is the approved house standard. For a small demonstration:
+
+```js
+const newMeasurement = 10.5;
+const reference = 10;
+const delta = newMeasurement - reference; // 0.5, displayed as +0.5
+```
+
+The app repeats that calculation for whichever POMs you enter. A blank measurement
+stays blank rather than becoming zero. Save a session to keep the new observations
+separate from the approved baseline. Browser-file sessions and local-server
+SQLite sessions have separate storage; CSV/JSON downloads let you retain copies.
 
 In `src/house-measurement-sheet.mjs`, find:
 

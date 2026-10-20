@@ -2,6 +2,22 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## v0.3.0 — 2026-10-20
+
+### Added
+
+- An interactive general-use generator for new measurements using the same 20 POMs and source methods.
+- Live new-measurement-minus-reference deltas, defaulting to the approved house standard, with manufacturer and custom reference choices.
+- Separate named, dated measurement sessions with notes, blank-value handling, save/reopen, and CSV/JSON export and print controls.
+- SQLite-backed local session storage, separate from immutable approved baseline records.
+- A downloadable self-contained HTML generator with browser storage and no external dependencies.
+- Shared browser/server validation and calculation tests, plus API persistence and invalid-input tests.
+
+### Changed
+
+- New session entry does not approve, overwrite, or revise existing house standards.
+- The original JSON and database report commands retain their original house-minus-manufacturer comparison rule.
+
 ## v0.2.0 — 2026-10-20
 
 ### Added

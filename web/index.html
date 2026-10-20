@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Measurement Sheet Generator · Serpentis Regina</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#measurement-table">Skip to measurements</a>
+  <main>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">SERPENTIS REGINA · TECHNICAL DESIGN</p>
+        <h1>Measurement Sheet Generator</h1>
+        <p class="intro">Take a new set of measurements. Compare each one with a chosen reference. Keep a record of the result.</p>
+        <p class="hero-label"><span id="template-label">20 points of measure</span> <span aria-hidden="true">·</span> All measurements in inches</p>
+      </div>
+      <div class="formula">
+        <span>The comparison rule</span>
+        <strong>Δ = New − Reference</strong>
+        <p>Positive: larger. Negative: smaller.<br>A dash means a value is missing.</p>
+      </div>
+    </header>
+
+    <section class="panel session-panel" aria-labelledby="session-heading">
+      <div class="section-heading">
+        <div><p class="step">01 · SET UP YOUR SHEET</p><h2 id="session-heading">What are you measuring?</h2></div>
+        <span id="storage-mode" class="storage-mode">Loading storage…</span>
+      </div>
+      <form id="session-details">
+        <div class="form-grid">
+          <label class="field name-field" for="session-name">Form / session name
+            <input id="session-name" name="sessionName" maxlength="120" required autocomplete="off" placeholder="e.g. Studio form · first measurement">
+          </label>
+          <label class="field" for="measurement-date">Measurement date
+            <input id="measurement-date" name="measurementDate" type="date" required>
+          </label>
+          <label class="field" for="reference-mode">Compare new measurements with
+            <select id="reference-mode" name="referenceMode">
+              <option value="house">Approved house standard</option>
+              <option value="manufacturer">Manufacturer reference</option>
+              <option value="custom">Custom references I enter</option>
+            </select>
+          </label>
+        </div>
+        <p id="reference-help" class="help"></p>
+        <label class="field notes-field" for="notes">Session notes <span class="optional">(optional)</span>
+          <textarea id="notes" name="notes" rows="2" maxlength="4000" placeholder="Form identity, measurement conditions, or anything to remember"></textarea>
+        </label>
+      </form>
+      <p class="baseline-note">New entries are a measurement session, not a revision of the approved baseline. Comparison deltas are not garment tolerances or fit pass/fail judgments.</p>
+    </section>
+
+    <section class="stats" aria-label="Measurement progress">
+      <div class="stat"><strong id="stat-total">20</strong><span>POMs on this sheet</span></div>
+      <div class="stat"><strong id="stat-measured">0</strong><span>Measurements entered</span></div>
+      <div class="stat"><strong id="stat-compared">0</strong><span>Deltas calculated</span></div>
+      <div class="stat"><strong id="stat-missing">0</strong><span>References missing</span></div>
+    </section>
+
+    <section class="measurement-section" aria-labelledby="measurements-heading">
+      <div class="section-heading table-heading">
+        <div><p class="step">02 · MEASURE & COMPARE</p><h2 id="measurements-heading">Your measurement register</h2></div>
+        <p class="help">Enter decimal inches, such as 32.875.<br>Leave an unknown value blank.</p>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable measurement table">
+        <table id="measurement-table">
+          <caption class="sr-only">New measurements and comparison deltas for the 20 original points of measure. All values are in inches.</caption>
+          <thead><tr><th scope="col">POM</th><th scope="col">Measurement & method</th><th scope="col" class="number-heading">Reference (in)</th><th scope="col" class="number-heading">New measurement (in)</th><th scope="col" class="number-heading">Δ New − Reference (in)</th><th scope="col">Progress</th></tr></thead>
+          <tbody id="measurement-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel records-panel" aria-labelledby="records-heading">
+      <div class="section-heading"><div><p class="step">03 · KEEP YOUR WORK</p><h2 id="records-heading">Save, reopen, or export</h2></div></div>
+      <div class="actions">
+        <button id="save-session" class="primary" type="button" disabled>Save as new session</button>
+        <button id="download-csv" type="button" disabled>Download CSV</button>
+        <button id="download-json" type="button" disabled>Download JSON</button>
+        <button id="print-sheet" type="button" disabled>Print / Save PDF</button>
+        <button id="new-sheet" class="quiet" type="button" disabled>New blank sheet</button>
+      </div>
+      <p id="status" class="status-message" role="status" aria-live="polite">Loading your measurement template…</p>
+      <div class="saved-records">
+        <label class="field" for="saved-sessions">Previously saved sessions
+          <select id="saved-sessions"><option value="">No saved sessions yet</option></select>
+        </label>
+        <button id="open-session" type="button" disabled>Open session</button>
+      </div>
+      <p id="save-help" class="help">Saving creates a separate record. Opening and changing a saved session does not overwrite the earlier one.</p>
+    </section>
+    <footer><p>Built from the original 20-POM register and measuring instructions. Approved reference values stay unchanged.</p><p>Keep measurements in the selected unit: inches. New sessions are not automatically published.</p></footer>
+    <noscript><p class="status-message error">JavaScript is needed to enter measurements and calculate deltas.</p></noscript>
+  </main>
+  <script type="module" src="/app.mjs"></script>
+</body>
+</html>

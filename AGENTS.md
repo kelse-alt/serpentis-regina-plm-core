@@ -61,3 +61,12 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 - JSON remains the controlled approved source. Re-importing identical content is a no-op; conflicting content in the same revision is refused. Do not use direct SQL updates to revise an approved measurement.
 - The founder requested teaching alongside actual execution. Demonstrate what each line does with observed output before asking prediction questions. Keep each explanation small, starting with one object per loop turn.
 - Public work and publication are now authorized as described above; keep the actual register distinct from the separate technical-design lab's synthetic examples.
+
+## New measurement generator (v0.3.0)
+
+- `npm run generator` starts the local entry application; `npm run generator:build` creates `reports/measurement-sheet-generator.html` for standalone use.
+- The same 20 POMs and methods are reused. New entries are unapproved measurement sessions, never approved baseline replacements.
+- The founder selected **new measurement minus approved house standard** as the default delta. Manufacturer/custom reference modes are also available. Label the formula and selected reference clearly; the original baseline report still uses house minus manufacturer.
+- `src/measurement-session.mjs` is shared by the browser/server, with no Node-only imports. Empty measurements/references remain null, and deltas are calculated only when both exist.
+- Server-mode sessions persist separately in `measurement_sessions` within the local SQLite file. Standalone HTML uses browser storage; these stores are distinct, and downloads provide backups.
+- New user-entered sessions are local data; the earlier publication authorization covers the existing approved dataset, not automatic publication of future session data.

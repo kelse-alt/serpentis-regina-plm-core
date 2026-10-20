@@ -73,3 +73,22 @@ The next stages are plans, not implemented capabilities:
 4. A web application with authenticated editing, roles, validated APIs, backups, and operational monitoring.
 
 The current prototype has no multiuser editing, login system, live Sheet synchronization, hosted application, or production PLM deployment.
+
+## New measurement sessions
+
+The v0.3.0 generator uses the approved 20-POM register as a reusable template, then
+stores new observations separately. Its default delta is new measurement minus
+approved house standard; manufacturer and custom reference modes are explicit
+choices. This does not change the original report's house-minus-manufacturer rule.
+
+`npm run generator` starts a loopback-only Node HTTP application. Browser and server
+share the validation/calculation module. Valid sessions are inserted into the
+`measurement_sessions` SQLite table as separate immutable snapshots. Opening and
+editing a session creates another snapshot when saved; approved tables and source
+JSON are not updated. Browser input is validated before storage.
+
+`npm run generator:build` produces a standalone HTML application with the template,
+styles, and scripts inline. It does not contact the local server and saves into
+browser storage. Its session list is separate from the SQLite application's list.
+CSV and JSON exports provide portable copies. Neither mode uploads new measurements
+to GitHub or treats them as approved baseline revisions.
