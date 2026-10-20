@@ -17,6 +17,10 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 
 ## Enter new measurements
 
+**Without installing anything:** [download the v0.3.1 ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/tags/v0.3.1.zip), extract the folder, and open `measurement-sheet-generator.html` in your browser. It starts blank and saves sessions in that browser on that device. Download JSON for a portable copy.
+
+**With local SQLite storage**, use Node.js 24+:
+
 ```bash
 npm run generator
 ```
@@ -43,7 +47,7 @@ For a standalone HTML application without Node.js running:
 npm run generator:build
 ```
 
-Open `reports/measurement-sheet-generator.html` in your own browser. This file
+Open `measurement-sheet-generator.html` or the identical `reports/measurement-sheet-generator.html` in your own browser. This file
 includes every script, style, and POM template it needs. Its sessions save in that
 browser on that device, separately from the SQLite app; use the JSON download as
 a portable backup. If browser storage is unavailable, the app reports that it
@@ -96,9 +100,10 @@ Their provenance is `MEASUREMENT SHEET_SERPENTIS REGINA`, tab `BODY REF-MANNEQUI
 |---|---|---|---|
 | **v0.1.0** | JSON-backed terminal and HTML measurement sheet | 7 tests | Baseline at `d0f02b8` |
 | **v0.2.0** | SQLite import, persistence checks, and database-backed HTML | 16 tests | Database implementation at `9bee461` |
-| **v0.3.0** | New measurement entry, live deltas, saved sessions, exports, and standalone HTML | Baseline, session, and API suites | Current application milestone |
+| **v0.3.0** | New measurement entry, live deltas, saved sessions, exports, and standalone HTML | Baseline, session, and API suites | Generator milestone |
+| **v0.3.1** | Ready-to-open HTML included in the downloadable project ZIP | 31 tests + browser acceptance | Current packaged application |
 
-Application versions, measurement revisions, and JSON schema versions describe different things. **v0.3.0** is the application milestone; **SR-FORM-001 v1** is the approved measurement dataset; **`schemaVersion: "1.0"`** describes the baseline JSON format. Adding measurement sessions did not revise the approved measurements.
+Application versions, measurement revisions, and JSON schema versions describe different things. **v0.3.1** is the packaged application version; **SR-FORM-001 v1** is the approved measurement dataset; **`schemaVersion: "1.0"`** describes the baseline JSON format. Adding measurement sessions did not revise the approved measurements.
 
 See the [changelog](CHANGELOG.md) for the development and publication record.
 

@@ -70,3 +70,4 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 - `src/measurement-session.mjs` is shared by the browser/server, with no Node-only imports. Empty measurements/references remain null, and deltas are calculated only when both exist.
 - Server-mode sessions persist separately in `measurement_sessions` within the local SQLite file. Standalone HTML uses browser storage; these stores are distinct, and downloads provide backups.
 - New user-entered sessions are local data; the earlier publication authorization covers the existing approved dataset, not automatic publication of future session data.
+- v0.3.1 includes a prebuilt `measurement-sheet-generator.html` at the repository root for users downloading a source ZIP. Rebuild it with `npm run generator:build` when web/shared source changes; CI checks that generated file is current. It includes only the baseline template, never saved user sessions.

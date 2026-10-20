@@ -35,4 +35,6 @@ html = html.replace('<head>', `<head>\n<meta http-equiv="Content-Security-Policy
 await mkdir(new URL('reports/', root), { recursive: true });
 const output = new URL('reports/measurement-sheet-generator.html', root);
 await writeFile(output, html, 'utf8');
+// Include a ready-to-open copy in GitHub source ZIPs, with no user session data.
+await writeFile(new URL('measurement-sheet-generator.html', root), html, 'utf8');
 console.log(`Standalone generator built with all ${template.measurements.length} POMs: ${fileURLToPath(output)}`);

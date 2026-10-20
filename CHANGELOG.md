@@ -2,6 +2,12 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## v0.3.1 — 2026-10-20
+
+- Include a ready-to-open `measurement-sheet-generator.html` in the project ZIP, so the standalone app can be used without installing Node.js or building the source.
+- Build both standalone copies from the same source and check the tracked copy stays reproducible.
+- Keep the tested v0.3.0 entry, calculation, storage, and export behavior unchanged.
+
 ## v0.3.0 — 2026-10-20
 
 ### Added

@@ -20,3 +20,4 @@ jobs:
       - run: npm run db:import
       - run: npm run sheet:db > /dev/null
       - run: npm run generator:build
+      - run: git diff --exit-code -- measurement-sheet-generator.html
