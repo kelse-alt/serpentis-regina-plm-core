@@ -1,0 +1,29 @@
+{
+  "formId": "SR-FORM-001",
+  "sourceDocument": "MEASUREMENT SHEET_SERPENTIS REGINA",
+  "sourceTab": "BODY REF-MANNEQUIN-SIZE 8-V1",
+  "sourceColumns": ["BODY MEASUREMENT", "HOW TO MEASURE"],
+  "note": "Source sheet labels and measurement methods reproduced as recorded. The source sheet's pending-verification label has not been edited; approvals are held in the private versioned record.",
+  "methods": [
+    { "pomCode": "BF-01", "sourceLabel": "BUST CIRCUMFRENCE", "howToMeasure": "Measure horizontally around fullest point of bust, tape level front-to-back." },
+    { "pomCode": "BF-02", "sourceLabel": "WAIST CIRCUMFRENCE", "howToMeasure": "Measure around established natural waistline, tape level and without compression." },
+    { "pomCode": "BF-03", "sourceLabel": "FULL HIP CIRCUMFRENCE (7” BELOW WAIST)", "howToMeasure": "Measure horizontally around fullest projection of seat/hip." },
+    { "pomCode": "BF-04", "sourceLabel": "HIGH HIP CIRCUMFRENCE (3” BELOW WAIST)", "howToMeasure": "Measure horizontally at the established high-hip level; record the vertical distance below waist used." },
+    { "pomCode": "BF-05", "sourceLabel": "ACROSS FRONT (3” BELOW MSP)", "howToMeasure": "Measure horizontally across front torso between armhole crease/reference points at the established chest level." },
+    { "pomCode": "BF-06", "sourceLabel": "ACROSS BACK (4” BELOW MSP)", "howToMeasure": "Measure horizontally across back between armhole crease/reference points at the established back level." },
+    { "pomCode": "BF-07", "sourceLabel": "SHOULDER WIDTH", "howToMeasure": "Measure shoulder point to shoulder point across back." },
+    { "pomCode": "BF-08", "sourceLabel": "SHOULDER LENGTH", "howToMeasure": "Measure from neck/shoulder junction to shoulder point." },
+    { "pomCode": "BF-09", "sourceLabel": "FRONT NK - WAIST", "howToMeasure": "Measure from front neck reference point vertically to established waistline." },
+    { "pomCode": "BF-10", "sourceLabel": "BACK NK - WAIST", "howToMeasure": "Measure from center-back neck reference point vertically to waistline." },
+    { "pomCode": "BF-11", "sourceLabel": "BUST POINT - BUST POINT", "howToMeasure": "Measure horizontally from bust apex to bust apex." },
+    { "pomCode": "BF-12", "sourceLabel": "MPS - BUST POINT", "howToMeasure": "Measure from high-point shoulder to bust apex following body contour." },
+    { "pomCode": "BF-13", "sourceLabel": "NECK CIRCUMFRENCE", "howToMeasure": "Measure around established neck-base seam/reference line." },
+    { "pomCode": "BF-14", "sourceLabel": "ARMHOLE CIRCUMFRENCE", "howToMeasure": "Measure around armhole/body-arm junction following the intended armscye reference." },
+    { "pomCode": "BF-15", "sourceLabel": "BICEP (6” FROM SHOULDER JOINT)", "howToMeasure": "Measure circumference at fullest upper-arm level." },
+    { "pomCode": "BF-16", "sourceLabel": "ELBOW CIRCUMFRENCE (12” BELOW SHOULDER JOINT)", "howToMeasure": "Measure around elbow level at the form’s established elbow reference." },
+    { "pomCode": "BF-17", "sourceLabel": "WRIST CIRCUMFRENCE", "howToMeasure": "Measure around wrist at established wrist reference." },
+    { "pomCode": "BF-18", "sourceLabel": "SHOULDER - ELBOW", "howToMeasure": "Measure from shoulder point down arm to elbow reference." },
+    { "pomCode": "BF-19", "sourceLabel": "SHOULDER - WRIST", "howToMeasure": "Measure from shoulder point down arm to wrist reference." },
+    { "pomCode": "BF-20", "sourceLabel": "WAIST - FULL HIP", "howToMeasure": "Measure vertically from waistline to the level used for full-hip circumference." }
+  ]
+}
