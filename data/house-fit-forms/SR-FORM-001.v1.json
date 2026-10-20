@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1.0",
+  "formId": "SR-FORM-001",
+  "description": "Serpentis Regina House Fit Form",
+  "referenceType": "Dress form / mannequin",
+  "manufacturerDesignatedSize": "8",
+  "unit": "in",
+  "approval": {
+    "status": "APPROVED",
+    "authority": "House founder",
+    "basis": "Owner confirmation on 2026-10-20",
+    "sourceRevision": "BODY REF-MANNEQUIN-SIZE 8-V1",
+    "approvalDate": "2026-10-20",
+    "note": "Measured form values designated as approved house standard; not identical to manufacturer reference."
+  },
+  "source": {
+    "document": "MEASUREMENT SHEET_SERPENTIS REGINA",
+    "tab": "BODY REF-MANNEQUIN-SIZE 8-V1",
+    "url": "https://docs.google.com/spreadsheets/d/1FOpiVvy2RlpEwVJiJjAw27lZxDtCzXPBhuhWv1ibTEc/edit"
+  },
+  "measurements": [
+    {
+      "pomCode": "BF-01",
+      "description": "Bust circumference",
+      "manufacturerReference": 35.5,
+      "houseStandard": 35.75
+    },
+    {
+      "pomCode": "BF-02",
+      "description": "Waist circumference",
+      "manufacturerReference": 26.5,
+      "houseStandard": 27.25
+    },
+    {
+      "pomCode": "BF-03",
+      "description": "Full hip circumference",
+      "manufacturerReference": 36.5,
+      "houseStandard": 36.5
+    },
+    {
+      "pomCode": "BF-04",
+      "description": "High hip circumference",
+      "manufacturerReference": null,
+      "houseStandard": 32.875
+    },
+    {
+      "pomCode": "BF-05",
+      "description": "Across front",
+      "manufacturerReference": null,
+      "houseStandard": 13.5
+    },
+    {
+      "pomCode": "BF-06",
+      "description": "Across back",
+      "manufacturerReference": null,
+      "houseStandard": 14
+    },
+    {
+      "pomCode": "BF-07",
+      "description": "Shoulder width",
+      "manufacturerReference": null,
+      "houseStandard": 15
+    },
+    {
+      "pomCode": "BF-08",
+      "description": "Shoulder length",
+      "manufacturerReference": null,
+      "houseStandard": 5
+    },
+    {
+      "pomCode": "BF-09",
+      "description": "Front neck to waist",
+      "manufacturerReference": 14.5,
+      "houseStandard": 14.25
+    },
+    {
+      "pomCode": "BF-10",
+      "description": "Back neck to waist",
+      "manufacturerReference": 16.5,
+      "houseStandard": 16.5
+    },
+    {
+      "pomCode": "BF-11",
+      "description": "Bust point to bust point",
+      "manufacturerReference": 7,
+      "houseStandard": 7
+    },
+    {
+      "pomCode": "BF-12",
+      "description": "High shoulder point to bust point",
+      "manufacturerReference": null,
+      "houseStandard": 9.25
+    },
+    {
+      "pomCode": "BF-13",
+      "description": "Neck circumference",
+      "manufacturerReference": 13.5,
+      "houseStandard": 15
+    },
+    {
+      "pomCode": "BF-14",
+      "description": "Armhole circumference",
+      "manufacturerReference": null,
+      "houseStandard": 15
+    },
+    {
+      "pomCode": "BF-15",
+      "description": "Bicep circumference",
+      "manufacturerReference": null,
+      "houseStandard": 9.75
+    },
+    {
+      "pomCode": "BF-16",
+      "description": "Elbow circumference",
+      "manufacturerReference": null,
+      "houseStandard": 9
+    },
+    {
+      "pomCode": "BF-17",
+      "description": "Wrist circumference",
+      "manufacturerReference": null,
+      "houseStandard": 6.25
+    },
+    {
+      "pomCode": "BF-18",
+      "description": "Shoulder to elbow",
+      "manufacturerReference": null,
+      "houseStandard": 12
+    },
+    {
+      "pomCode": "BF-19",
+      "description": "Shoulder to wrist",
+      "manufacturerReference": null,
+      "houseStandard": 22.5
+    },
+    {
+      "pomCode": "BF-20",
+      "description": "Waist to full hip",
+      "manufacturerReference": null,
+      "houseStandard": 7.75
+    }
+  ]
+}
