@@ -1,0 +1,35 @@
+# Changelog
+
+## v0.1.0 — Three-world portal entrance — 2026-10-21
+
+The first working entrance presents the founder's three original sculpted heads in a warm blush setting with marble plinths and reflective colored materials inspired by the existing website logo and supplied artwork.
+
+GitHub milestone tag: `portal-v0.1.0`, scoped separately from the PLM application's releases. Portal source lives under `portal/`.
+
+### Implemented
+
+- Mother enters **Amaya Kelsea**, Maiden enters **Serpentis Regina**, and Crown enters **KLS**, using the founder-confirmed assignments.
+- Dragging rotates a head without opening its world. Clicking a head or using its text button opens the matching introduction panel.
+- Entry uses a brief enlargement, swirl and fade; reduced-motion preferences bypass that transition.
+- Keyboard entry, modal focus containment, Escape/close, and focus return work alongside touch controls.
+- Mobile layout stacks the sculptures. Pearl and iridescent finishes are available, and text entry remains usable without WebGL.
+- The Serpentis Regina panel links to the current live atelier. Amaya and KLS have introduction panels; their full mini-sites are not implemented in this milestone.
+- A standalone HTML build embeds the code, styles and three models for delivery as one downloadable file.
+
+### Validation recorded
+
+- Frozen-lockfile installation and production build succeeded.
+- All seven functional browser check groups passed against the production preview, including actual GLB loading, rotation, entry, keyboard behavior, finish switching, 390px mobile overflow and unavailable-WebGL fallback.
+- The standalone HTML loaded all three embedded models without additional network requests or page errors. Rotation, entry/close, finish changes and same-document navigation passed with networking disabled after document load.
+- The managed cloud browser blocks `file://` navigation. Standalone verification therefore served the single document over loopback HTTP; direct double-click behavior was not independently verified in that browser.
+- Model copies retain the downloaded source hashes. Desktop and mobile captures were visually reviewed.
+
+### Scope and limits
+
+The existing Squarespace site has not been changed. New display copy and materials are review-stage interpretations. Detailed KLS content and some linked brand-system sources remain incomplete. Full accessibility certification and performance checks on physical mobile devices remain outstanding; original assets total about 11 MB and 455,000 triangles.
+
+The application includes no client records, technical portfolio documents, original workbooks or credentials. Rotation and presentation materials are applied at runtime; the original neutral-material GLBs are preserved.
+
+### GitHub delivery
+
+Source, audits, screenshots and validation records are versioned on the portal branch and reviewed in PR #1. A private draft release was created. Its asset-upload host rejected authentication, so the standalone preview is versioned under `downloads/` with viewing instructions. No hosted deployment or live-site change has occurred.

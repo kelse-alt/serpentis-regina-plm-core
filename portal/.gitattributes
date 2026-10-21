@@ -1,0 +1,2 @@
+# Preserve the tested one-file delivery artifact byte for byte; review its sources instead.
+downloads/*.html -diff -text linguist-generated=true
