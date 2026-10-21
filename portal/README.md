@@ -8,7 +8,7 @@ The connection build preserves that appearance and prepares it for the existing 
 
 The portal is live at [www.serpentisregina.com](https://www.serpentisregina.com/), backed by [GitHub Pages](https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1). The owner enabled Pages, installed the embed and made it the Squarespace homepage. Live desktop/mobile checks confirmed all three heads, full-screen framing and top-window navigation into the real `/home` atelier. See [live Squarespace verification](docs/validation/squarespace-live.json) and [live file hashes](docs/validation/pages-live.json).
 
-The current visitor view works. A markup cleanup remains: move the fragment from page-header injection into the page Code Block and remove the hidden template content, following the [installation guide](integrations/SQUARESPACE.md).
+The current visitor view works and the owner has removed the placeholder content. The remaining placement cleanup is to move the fragment from page-header injection into the page Code Block, following the [installation guide](integrations/SQUARESPACE.md).
 
 Run `npm run pages:prepare` to assemble only the built portal under `artifacts/pages-site/`. The source integration branch is `codex/portal-squarespace-connection`. The embedded browser checks use `npm run check:squarespace` and record their limits in `docs/validation/squarespace-integration.json`.
 

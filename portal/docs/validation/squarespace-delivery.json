@@ -45,5 +45,7 @@
     "mobile"
   ],
   "liveVerificationRecord": "squarespace-live.json",
-  "remainingCleanup": "Move portal fragment from page-header code injection into the page Code Block and remove remaining placeholder content."
+  "remainingCleanup": "Move the prepared fragment into a page Code Block and remove its header-injection copy.",
+  "placeholderRemoved": true,
+  "embeddingPlacement": "page-header-code-injection"
 }

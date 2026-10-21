@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-21T19:50:27.780875+00:00",
+  "checkedAt": "2026-10-21T20:34:53.078923+00:00",
   "method": "Chromium with existing certificate trust store; HTTPS validation enabled",
   "checks": [
     {
@@ -72,6 +72,9 @@
   "liveTopLevelAtelierNavigation": true,
   "homepageCollection": "collection-6a8bb66559785a1838e75235",
   "atelierCollection": "collection-69fbac625cc80853dbc548a5",
-  "installationNote": "Owner pasted the portal fragment into page-header code injection. Browsers render the iframe at the beginning of the body and the full-screen portal works. The old template heading and paragraph remain below it. For clean markup, move the fragment into the page Code Block and remove the header-injection copy and template content.",
-  "limits": "Desktop Chromium and emulated touch viewport, with HTTPS validation enabled using the environment existing certificate trust store. No authenticated Squarespace editor changes, forms, cart or checkout submissions were performed."
+  "placeholderContentPresent": false,
+  "iframeCountInHomepageSource": 1,
+  "embeddingPlacementInSource": "page-header-code-injection",
+  "installationNote": "The owner removed the original placeholder content. The single portal iframe is still in raw page-header injection; browsers repair its placement and the visitor view works. The remaining cleanup is moving the prepared fragment into a page Code Block and removing the header-injection copy.",
+  "limits": "Desktop Chromium and emulated touch viewport, with HTTPS validation enabled using the existing certificate trust store. No authenticated Squarespace account edits or form submissions were performed."
 }

@@ -8,7 +8,7 @@ The deploy-only branch is `portal-site`, assembled by `npm run pages:prepare` fr
 
 The hosting branch is published and all nine files were verified. The repository is public. The owner enabled **Deploy from a branch → portal-site → /(root)** after the integration's activation request returned HTTP 403. Pages reports a successful build, HTTPS enabled and no custom domain. The owner installed the portal and made it the Squarespace homepage. Live desktop/mobile Chromium checks passed for real models, full-screen framing and real top-window navigation into `/home`; HTTPS validation remained enabled using the environment's existing trust store. The embed uses `index.html?v=2.1` to avoid the remembered custom-domain redirect. See [live verification](docs/validation/squarespace-live.json), [delivery status](docs/validation/squarespace-delivery.json) and [draft PR #4](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4).
 
-The visitor view works, but the fragment is currently in page-header code injection and placeholder content remains below it. The installation guide documents the owner's cleanup: put the fragment in a page Code Block, remove its header-injection duplicate and remove the placeholder content. No Squarespace account edits were performed by the assistant.
+The visitor view works and the owner has removed the placeholder content. The fragment is still in page-header code injection. The installation guide documents the remaining owner cleanup: put the fragment in a page Code Block and remove its header-injection duplicate. No Squarespace account edits were performed by the assistant.
 
 ## Current direction
 

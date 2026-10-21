@@ -12,9 +12,9 @@ GitHub Pages is enabled, the build succeeded, HTTPS is enforced and the custom d
 
 The owner installed the portal and made it the Squarespace homepage. Live Chromium checks passed on desktop and emulated mobile: all three actual models loaded, the iframe filled the viewport, outer navigation was hidden and the atelier link navigated the real top window to `/home`. See [the live verification](../docs/validation/squarespace-live.json).
 
-One installation cleanup remains. The fragment is currently in the page's **Page Header Code Injection**, and the original placeholder heading and paragraph remain beneath the full-screen frame. Browsers repair the iframe's placement and the visitor view works, but the intended installation is a page Code Block:
+The owner removed the placeholder heading and paragraph, and the fresh live checks still pass. One placement cleanup remains: the fragment is still in the page's **Page Header Code Injection**. Browsers repair the iframe's placement and the visitor view works, but the intended installation is a page Code Block:
 
-1. Edit **LANDING PORTAL** and replace its placeholder content with one blank section containing one HTML Code Block. Paste the prepared fragment into that block and save.
+1. Open **Pages → LANDING PORTAL → Edit** to enter the page canvas. Add a **Blank Section** if the page has no section, then choose **Add Block → Code**. Paste [the entire prepared fragment](squarespace.html) into that block in **HTML mode**, with **Display Source off**, and save the page.
 2. In that page's settings, remove the duplicate portal fragment from **Advanced → Page Header Code Injection**, then save. Leave unrelated page code intact.
 3. Open the homepage outside the editor and retest the three heads and **Enter the atelier**.
 
