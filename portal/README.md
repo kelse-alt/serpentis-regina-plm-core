@@ -1,63 +1,59 @@
-# Serpentis Regina — The Threshold
+# Serpentis Regina — Portal Version 2: The Abyss
 
-First entrance implementation for the founder's three-world website, built from the Notion master blueprint, confirmed GLB assignments, live Squarespace identity and source audit. This project is separate from the existing PLM and educational repositories.
+Version 2 opens on a full-screen black background with only the founder's three large heads visible. Touch, hover or keyboard-focus a head to reveal its information beneath it. There are no plinths, page headings, footer or finish controls.
 
-## Run
+- [Download Version 2](downloads/Portal-Entrance-Version-2.html): open the file on GitHub, click **Download raw file** (the downward-arrow icon), then open the saved HTML in Chrome or Edge.
+- [Viewing instructions](downloads/README.md)
+- [Version 2 source on GitHub](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/codex/portal-entrance-v0.2.0/portal)
+- [Preserved Version 1](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal)
 
-For viewing without installing tools, open [the ready-to-download preview](downloads/Portal-Entrance-Preview.html), click **Download raw file** (the downward-arrow icon), and open the saved HTML in a current Chrome or Edge browser. See [step-by-step viewing instructions](downloads/README.md). The single file embeds the code, styles and all three models, so no server or internet connection is needed to view the entrance. Following the atelier link still requires internet access.
+The one-file preview embeds the code, styles and three models. The entrance can run without separate asset requests; following the live atelier link requires internet access. This is a downloadable preview. The Squarespace site has not been changed.
 
-To regenerate that file from source, run `npm run standalone` after installing the locked dependencies.
+## Version 2 behavior
 
-Use Node.js 24+ and npm. Inside the project directory (`portal/` in this repository):
+- Mother → **Amaya Kelsea**; Maiden → **Serpentis Regina**; Crown → **KLS**.
+- The surface uses a pearl-gray and magenta contour shader sampled from the head logo in the live site's top-left corner. The palette is `#b8b8b8`, `#b68294` and `#b00046`; chrome, iridescence and rainbow reflections are removed.
+- Heads occupy the desktop viewport side by side. Mobile keeps all three in one viewport as three rows.
+- Hover or focus reveals information; click/tap pins or toggles it. Escape dismisses it. Dragging rotates a head without selecting it.
+- The Serpentis Regina information includes the actual atelier link. Amaya and KLS retain source-based introductions; their full mini-sites are separate work.
+- Reduced-motion preferences and unavailable-WebGL access are supported. Original GLB bytes are preserved.
+
+The supplied GLBs contain no original texture maps or material capture. The shader matches the sampled logo palette and finish; it is not a claim of pixel-identical reproduction of every rotating head.
+
+## Run and rebuild
+
+Use Node.js 24+ and npm inside `portal/`:
 
 ```sh
 npm ci --cache .npm-cache
 npm run dev
 ```
 
-For a production build and local production review:
+For a production review and single-file build:
 
 ```sh
 npm run build
 npm run preview
+npm run standalone
 ```
 
-The development server uses loopback port 8034; production preview uses port 8035. This project has not been deployed or connected to the live Squarespace configuration.
-
-## What is implemented
-
-- Three actual GLBs: Mother → Amaya Kelsea, Maiden → Serpentis Regina, Crown → KLS.
-- Warm blush setting, procedural marble plinths and colored studio reflections. Reflective styling is inspired by the founder's top-left website head and reference artwork. It is a material interpretation for review, not an exact reproduction of a baked texture.
-- Drag a head horizontally to rotate it; a click/tap or accessible text button selects its world. Dragging is separate from activation. Touch scrolling remains available.
-- Brief expansion, swirl and fade during entry, bypassed for reduced-motion preferences.
-- Keyboard-accessible world buttons, native modal focus containment, Escape/close behavior, and focus return.
-- Responsive stacked mobile composition, a pearl finish alternative, and functional text controls when WebGL/model loading fails.
-- World introduction panels. Serpentis Regina links to the existing live atelier. Amaya and KLS panels identify their future worlds without inventing live destinations, booking flows or service offers.
-
-The full Amaya and KLS mini-sites are outside this entrance milestone. Detailed KLS content and some linked Notion brand-system documents remain unavailable. All new display copy and material styling are review-stage interpretations.
-
-## Source map
-
-`src/worlds.js` holds one object per world: identity, source model, introductory content and optional real destination. `src/main.js` reads those objects and creates each sculpture and entry interaction. `src/style.css` controls the page composition.
-
-Original model assignments and source hashes are recorded in [the asset manifest](docs/portal-assets.json). The copies in `public/models` retain the downloaded bytes. The app changes runtime presentation materials, not original source files. Models export no textures, rigging or animation; rotation and transitions are implemented by the application.
-
-The source brief and audit live in [the portal brief](docs/audits/portal-source-brief.md) and [the Drive audit](docs/audits/drive-audit.md). The visual logo reference is retained only under ignored `artifacts/`; no technical portfolio documents or client data are included in this app.
+Development uses loopback port 8034; production preview uses 8035 unless overridden. The generated standalone file is local output; the identified Version 2 delivery copy is `downloads/Portal-Entrance-Version-2.html`.
 
 ## Verification
 
-With the production preview running, use the environment's Python Playwright and Chromium:
+The production build, all six Version 2 browser check groups and the embedded HTML checks passed. Run the browser checks against the production preview:
 
 ```sh
-python3 scripts/check_portal.py
+python3 scripts/check_portal_v2.py
+python3 scripts/check_standalone_v2.py
 ```
 
-The check exercises actual model loading, rotation without navigation, entry/close for all three worlds, the live destination, finish switching, mobile overflow, reduced-motion behavior and a simulated unavailable-WebGL fallback. Screenshots and the result record are written under ignored `artifacts/`.
+The checks cover actual model loading, black heads-only framing, desktop/mobile fit, reveal and dismissal, rotation, touch/keyboard behavior, the real atelier link, fallback access and the embedded preview. See the [desktop screenshot](docs/previews/portal-v2-desktop.png), [revealed information](docs/previews/portal-v2-info.png), [mobile screenshot](docs/previews/portal-v2-mobile.png), [browser results](docs/validation/portal-v2-checks.json) and [embedded HTML results](docs/validation/portal-v2-standalone.json). No page errors or external asset requests were observed.
 
-This is a functional entrance review, not a complete accessibility or physical mobile GPU performance certification. Original assets total about 11 MB and 455,000 triangles. Optimization of model derivatives and validation on real devices remain relevant before public launch. Browser render loops skip offscreen/hidden scenes; no external fonts, analytics, image services or model hosts are required at runtime.
+The managed cloud browser blocks direct `file://` navigation. Standalone checks use one locally served HTML document and block additional resource requests; they do not independently certify double-click behavior in that browser. Physical-device GPU performance and a complete accessibility audit remain outstanding. The originals total about 11 MB and 455,000 triangles.
 
-Current validation: frozen-lockfile installation and the production build succeeded. All seven browser check groups passed against the production preview. The desktop and 390px mobile captures were visually reviewed. GPU work is capped at 30 frames per second, skipped offscreen/when hidden, and rendered on demand with reduced motion. The production JavaScript bundle is about 159 KB gzipped; Vite flags the larger uncompressed 3D-engine bundle for future loading optimization. This milestone is not deployed.
+## Source and version record
 
-## GitHub review
+See [SOURCES.md](SOURCES.md), [CHANGELOG.md](CHANGELOG.md), [the development handoff](GITHUB_HANDOFF.md), [model provenance](docs/portal-assets.json) and [the audit record](docs/README.md). `src/worlds.js` holds the three identities and source models; `src/main.js` loads them and implements the shader and interaction.
 
-The complete source, audit summaries, screenshots and validation evidence are committed on `codex/portal-entrance-v0.1.0` and reviewed in [PR #1](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/1). The repository remains private. A single identified HTML snapshot under `downloads/` is committed to provide delivery after the release-asset upload service rejected authentication.
+Version 1 is preserved by `portal-v0.1.0` at commit `6fedc025eb6cfcc60a6fab1c94a7d4e75666f6a2`. Version 2 uses branch `codex/portal-entrance-v0.2.0` and milestone tag `portal-v0.2.0`, separate from the PLM application's version tags. No client records or raw technical portfolio documents are included in the portal.

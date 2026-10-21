@@ -1,282 +1,273 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { worlds } from './worlds.js';
 import './style.css';
 
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const dialog = document.querySelector('#world-dialog');
-const galleries = [];
-let finish = 'reflective';
-let entering = false;
-let lastTrigger;
+const cards = new Map();
+let activeWorld = null;
+let pinnedWorld = null;
+let hideTimer;
+let suppressNextFocus = false;
 
-// Small, explicit runtime state also makes model failures visible to smoke checks.
-window.portal = { loaded: [], errors: [], selectedWorld: null, finish };
-document.querySelector('#year').textContent = new Date().getFullYear();
+window.portal = { version: 2, loaded: [], errors: [], selectedWorld: null, rotations: {}, sceneMeshes: {} };
 
-function closeWorld() {
-  dialog.close();
-  lastTrigger?.focus({ preventScroll: true });
+function revealWorld(id) {
+  clearTimeout(hideTimer);
+  activeWorld = id;
+  window.portal.selectedWorld = id;
+  for (const [worldId, card] of cards) {
+    const active = worldId === id;
+    card.info.hidden = !active;
+    card.control.setAttribute('aria-expanded', String(active));
+    card.article.classList.toggle('revealed', active);
+    card.setReveal?.(active);
+  }
 }
-document.querySelector('.dialog-close').addEventListener('click', closeWorld);
-document.querySelector('.return-link').addEventListener('click', closeWorld);
-dialog.addEventListener('click', event => { if (event.target === dialog) {
-  const rect = dialog.getBoundingClientRect();
-  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeWorld();
-}});
-dialog.addEventListener('close', () => {
-  window.portal.selectedWorld = null;
-  document.body.style.overflow = '';
-  lastTrigger?.focus({ preventScroll: true });
+
+function toggleWorld(id) {
+  pinnedWorld = activeWorld === id && pinnedWorld === id ? null : id;
+  revealWorld(pinnedWorld);
+}
+
+function scheduleHide(id) {
+  if (activeWorld !== id || pinnedWorld) return;
+  clearTimeout(hideTimer);
+  hideTimer = setTimeout(() => {
+    const card = cards.get(id);
+    if (!pinnedWorld && activeWorld === id && !card.info.matches(':hover') && !card.article.contains(document.activeElement)) revealWorld(null);
+  }, 180);
+}
+
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape' || !activeWorld) return;
+  const card = cards.get(activeWorld);
+  const focusWasInInfo = card.info.contains(document.activeElement);
+  pinnedWorld = null;
+  revealWorld(null);
+  if (focusWasInInfo) {
+    suppressNextFocus = true;
+    card.control.focus({ preventScroll: true });
+  }
 });
 
-async function enterWorld(world, trigger, gallery) {
-  if (entering || dialog.open) return;
-  entering = true;
-  lastTrigger = trigger;
-  const card = document.getElementById(world.id);
-  card.classList.add('entering');
-  if (!reducedMotion.matches) {
-    gallery?.animateEntry();
-    // A brief swirl, expansion and fade follows the blueprint's transition note.
-    const animation = card.animate([
-      { opacity: 1, transform: 'translateY(0) scale(1)' },
-      { opacity: 0.5, transform: 'translateY(-8px) scale(1.045)', offset: 0.7 },
-      { opacity: 0, transform: 'translateY(-12px) scale(1.07)' },
-    ], { duration: 650, easing: 'cubic-bezier(.22,.7,.3,1)' });
-    await animation.finished.catch(() => {});
+document.addEventListener('pointerdown', event => {
+  if (!event.target.closest('canvas, .head-control, .world-info')) {
+    pinnedWorld = null;
+    revealWorld(null);
   }
-  document.querySelector('#dialog-role').textContent = world.role;
-  document.querySelector('#dialog-title').textContent = world.name;
-  document.querySelector('#dialog-description').textContent = world.description;
-  document.querySelector('#dialog-note').textContent = world.note;
-  const topics = document.querySelector('#dialog-topics');
-  topics.replaceChildren(...world.topics.map(topic => {
-    const item = document.createElement('li'); item.textContent = topic; return item;
-  }));
-  topics.hidden = !world.topics.length;
-  const destination = document.querySelector('#dialog-destination');
-  destination.hidden = !world.destination;
-  if (world.destination) destination.href = world.destination;
-  else destination.removeAttribute('href');
-  window.portal.selectedWorld = world.id;
-  document.body.style.overflow = 'hidden';
-  dialog.showModal();
-  card.classList.remove('entering');
-  entering = false;
-}
+});
 
-function marbleTexture() {
-  const canvas = document.createElement('canvas'); canvas.width = canvas.height = 512;
-  const context = canvas.getContext('2d');
-  const image = context.createImageData(512, 512);
-  for (let y = 0; y < 512; y++) for (let x = 0; x < 512; x++) {
-    const wave = Math.sin(x * 0.014 + y * 0.025 + Math.sin(y * 0.02) * 3 + Math.sin(x * 0.018 + y * 0.012) * 2);
-    const vein = Math.pow(Math.abs(wave), 30);
-    const cloud = Math.sin(x * 0.009 + y * 0.007) * 3;
-    const index = (y * 512 + x) * 4;
-    image.data[index] = 239 - vein * 37 + cloud;
-    image.data[index + 1] = 229 - vein * 44 + cloud;
-    image.data[index + 2] = 218 - vein * 39 + cloud;
-    image.data[index + 3] = 255;
-  }
-  context.putImageData(image, 0, 0);
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-  return texture;
-}
-const marble = marbleTexture();
-
-function sculptureMaterial() {
-  return new THREE.MeshPhysicalMaterial({
-    color: 0xebdce5, metalness: 0.94, roughness: 0.19,
-    clearcoat: 1, clearcoatRoughness: 0.16, iridescence: 0.7,
-    iridescenceIOR: 1.35, iridescenceThicknessRange: [160, 430],
-    envMapIntensity: 1.35, side: THREE.DoubleSide,
+// The website logo supplies the pearl-gray and pink contour palette.
+// View-normal shading replaces chrome, rainbow reflections and environment lights.
+function logoMaterial() {
+  return new THREE.ShaderMaterial({
+    uniforms: {
+      pearl: { value: new THREE.Color('#b8b8b8') },
+      rose: { value: new THREE.Color('#b68294') },
+      contour: { value: new THREE.Color('#b00046') },
+    },
+    vertexShader: `
+      varying vec3 viewNormal;
+      varying vec3 viewPosition;
+      void main() {
+        vec4 positionInView = modelViewMatrix * vec4(position, 1.0);
+        viewNormal = normalize(normalMatrix * normal);
+        viewPosition = -positionInView.xyz;
+        gl_Position = projectionMatrix * positionInView;
+      }
+    `,
+    fragmentShader: `
+      uniform vec3 pearl;
+      uniform vec3 rose;
+      uniform vec3 contour;
+      varying vec3 viewNormal;
+      varying vec3 viewPosition;
+      void main() {
+        vec3 n = normalize(viewNormal);
+        if (!gl_FrontFacing) n = -n;
+        vec3 v = normalize(viewPosition);
+        float facing = max(dot(n, v), 0.0);
+        float rim = pow(1.0 - facing, 1.6);
+        vec3 color = mix(pearl, rose, smoothstep(0.05, 0.35, rim) * 0.83);
+        color = mix(color, contour, smoothstep(0.18, 0.70, rim));
+        vec3 light = normalize(vec3(-0.35, 0.65, 1.0));
+        float diffuse = max(dot(n, light), 0.0);
+        color *= 0.88 + 0.12 * diffuse;
+        float specular = pow(max(dot(reflect(-light, n), v), 0.0), 24.0);
+        color = mix(color, vec3(0.82), specular * 0.15);
+        gl_FragColor = vec4(color, 1.0);
+        #include <colorspace_fragment>
+      }
+    `,
+    side: THREE.DoubleSide,
+    toneMapped: false,
   });
 }
 
-function applyFinish(material) {
-  const reflective = finish === 'reflective';
-  material.color.set(reflective ? 0xebdce5 : 0xffeae2);
-  material.metalness = reflective ? 0.94 : 0.15;
-  material.roughness = reflective ? 0.19 : 0.3;
-  material.iridescence = reflective ? 0.7 : 0.12;
-  material.envMapIntensity = reflective ? 1.35 : 0.8;
-  material.needsUpdate = true;
-}
-
-function environment(renderer) {
-  const room = new RoomEnvironment();
-  // Colored reflection panels echo the existing website head's pink contours.
-  for (const [color, x, y, z, rotation] of [
-    [0xff2e94, -3, 2, 2, Math.PI / 2],
-    [0x2ae7df, 3, 1.5, 1, -Math.PI / 2],
-    [0x9671e9, 0, 3, -3, 0],
-  ]) {
-    const panel = new THREE.Mesh(new THREE.PlaneGeometry(3, 5), new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide }));
-    panel.position.set(x, y, z); panel.rotation.y = rotation; room.add(panel);
-  }
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  const target = pmrem.fromScene(room, 0.045);
-  room.dispose(); pmrem.dispose();
-  return target.texture;
-}
-
-async function createSculpture(world, stage, status, enterButton) {
+async function createHead(world, card) {
   let renderer;
   try {
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'low-power' });
     renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.05;
-    renderer.setClearColor(0x000000, 0);
+    renderer.setClearColor(0x000000, 1);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
     const canvas = renderer.domElement;
-    canvas.setAttribute('aria-label', `${world.head} sculpture for ${world.name}. Drag to rotate; use the Enter button to choose this world.`);
-    stage.append(canvas);
+    canvas.setAttribute('aria-hidden', 'true');
+    card.stage.append(canvas);
     const scene = new THREE.Scene();
-    scene.environment = environment(renderer);
-    scene.add(new THREE.HemisphereLight(0xfff7ed, 0xb77d8f, 2.1));
-    const key = new THREE.DirectionalLight(0xffe9d5, 4); key.position.set(3, 5, 4); scene.add(key);
-    const pink = new THREE.DirectionalLight(0xff56a2, 3.4); pink.position.set(-4, 1, 3); scene.add(pink);
-    const teal = new THREE.DirectionalLight(0x72ece5, 1.6); teal.position.set(3, 2, -1); scene.add(teal);
-
-    const base = new THREE.Mesh(new THREE.CylinderGeometry(0.84, 0.9, 0.13, 64), new THREE.MeshStandardMaterial({ map: marble, color: 0xf5e6d6, roughness: 0.42 }));
-    base.position.y = -0.81; scene.add(base);
-    const column = new THREE.Mesh(new THREE.CylinderGeometry(0.69, 0.73, 0.9, 64), new THREE.MeshStandardMaterial({ map: marble, color: 0xf5e6df, roughness: 0.4 }));
-    column.position.y = -0.3; scene.add(column);
-    const top = new THREE.Mesh(new THREE.CylinderGeometry(0.79, 0.79, 0.11, 64), column.material);
-    top.position.y = 0.2; scene.add(top);
-    const trim = new THREE.Mesh(new THREE.TorusGeometry(0.72, 0.008, 6, 64), new THREE.MeshStandardMaterial({ color: 0xb77f67, metalness: 0.65, roughness: 0.4 }));
-    trim.rotation.x = Math.PI / 2; trim.position.y = 0.125; scene.add(trim);
-
-    const camera = new THREE.PerspectiveCamera(36, 1, 0.05, 50);
-    camera.position.set(0, 1.65, 7.6); camera.lookAt(0, 0.95, 0);
-    let model;
-    const pivot = new THREE.Group(); scene.add(pivot);
-    const material = sculptureMaterial(); applyFinish(material);
-    let visible = true, pointer = null, lastRotation = 0, hover = false, entryUntil = 0;
-    let needsRender = true, lastRender = 0;
-    let frame;
-    const resize = () => {
-      renderer.setSize(stage.clientWidth, stage.clientHeight, false);
-      camera.aspect = stage.clientWidth / Math.max(stage.clientHeight, 1); camera.updateProjectionMatrix();
-      needsRender = true;
-    };
-    new ResizeObserver(resize).observe(stage); resize();
-    const clock = new THREE.Clock();
-    reducedMotion.addEventListener('change', () => { needsRender = true; });
-    function draw(timestamp = 0) {
-      frame = requestAnimationFrame(draw);
-      if (!visible || document.hidden) return;
-      if (timestamp - lastRender < 1000 / 30 && !needsRender) return;
-      if (reducedMotion.matches && !needsRender && !pointer && performance.now() >= entryUntil) return;
-      lastRender = timestamp;
-      const t = clock.getElapsedTime();
-      if (model) {
-        const scale = hover && !pointer && !reducedMotion.matches ? 1.025 : 1;
-        pivot.scale.lerp(new THREE.Vector3(scale, scale, scale), reducedMotion.matches ? 1 : 0.12);
-        if (performance.now() < entryUntil) pivot.rotation.y += 0.025;
-        else if (!pointer && !reducedMotion.matches) pivot.position.y = Math.sin(t * 0.7) * 0.025;
-        else pivot.position.y = 0;
+    const pivot = new THREE.Group();
+    scene.add(pivot);
+    const camera = new THREE.PerspectiveCamera(36, 1, 0.05, 100);
+    let size, depth = 0, dirty = true, visible = true;
+    let pointer = null, rotationStart = 0;
+    let reveal = 0, targetReveal = 0;
+    function resize() {
+      const width = card.stage.clientWidth;
+      const height = Math.max(card.stage.clientHeight, 1);
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      if (size) {
+        const tangent = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+        const fitHeight = size.y / (2 * tangent * 0.91);
+        const fitWidth = size.x / (2 * tangent * camera.aspect * 0.96);
+        camera.position.set(0, 0, Math.max(fitHeight, fitWidth) + depth * 0.18);
+        camera.lookAt(0, 0, 0);
       }
-      renderer.render(scene, camera);
-      needsRender = false;
+      camera.updateProjectionMatrix();
+      dirty = true;
     }
-    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }, { rootMargin: '100px' }).observe(stage);
-    draw();
-    const modelUrl = window.__PORTAL_MODEL_URLS__?.[world.model]
-      ?? `${import.meta.env.BASE_URL}models/${world.model}`;
-    const gltf = await new GLTFLoader().loadAsync(modelUrl);
-    model = gltf.scene; model.updateMatrixWorld(true);
-    const bounds = new THREE.Box3().setFromObject(model);
-    const size = bounds.getSize(new THREE.Vector3());
+    new ResizeObserver(resize).observe(card.stage);
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; dirty = true; }).observe(card.stage);
+    reducedMotion.addEventListener('change', () => { dirty = true; });
+    card.setReveal = active => { targetReveal = active ? 1 : 0; dirty = true; };
+    let lastFrame = 0;
+    function draw(timestamp = 0) {
+      requestAnimationFrame(draw);
+      if (!visible || document.hidden) return;
+      const moving = Math.abs(reveal - targetReveal) > 0.001;
+      if (!dirty && !moving) return;
+      if (!dirty && timestamp - lastFrame < 1000 / 30) return;
+      lastFrame = timestamp;
+      reveal = reducedMotion.matches ? targetReveal : THREE.MathUtils.lerp(reveal, targetReveal, 0.17);
+      if (Math.abs(reveal - targetReveal) < 0.001) reveal = targetReveal;
+      const mobile = card.stage.clientWidth > card.stage.clientHeight;
+      pivot.scale.setScalar(1 - reveal * (mobile ? 0.27 : 0.13));
+      pivot.position.y = reveal * (mobile ? 0.46 : 0.20);
+      renderer.render(scene, camera);
+      dirty = false;
+    }
+    resize(); draw();
+    const url = window.__PORTAL_MODEL_URLS__?.[world.model] ?? `${import.meta.env.BASE_URL}models/${world.model}`;
+    const gltf = await new GLTFLoader().loadAsync(url);
+    const model = gltf.scene;
+    model.updateMatrixWorld(true);
+    const bounds = new THREE.Box3().setFromObject(model, true);
+    const originalSize = bounds.getSize(new THREE.Vector3());
     const center = bounds.getCenter(new THREE.Vector3());
     model.position.sub(center);
-    const normalized = new THREE.Group(); normalized.add(model);
-    const factor = 2.25 / Math.max(size.x, size.y, size.z);
-    normalized.scale.setScalar(factor);
-    normalized.position.y = 0.36 + size.y * factor / 2;
+    const normalized = new THREE.Group();
+    const scale = 3 / originalSize.y;
+    normalized.scale.setScalar(scale);
+    normalized.add(model);
     pivot.add(normalized);
-    model.traverse(object => { if (object.isMesh) object.material = material; });
-    const gallery = { world, material, pivot,
-      animateEntry: () => { entryUntil = performance.now() + 650; needsRender = true; },
-      updateFinish: () => { applyFinish(material); needsRender = true; },
-    };
-    galleries.push(gallery);
-    needsRender = true;
-    status.textContent = `${world.head} sculpture loaded.`; status.classList.add('loaded');
+    size = originalSize.clone().multiplyScalar(scale);
+    depth = size.z;
+    const material = logoMaterial();
+    let meshCount = 0;
+    model.traverse(object => { if (object.isMesh) { object.material = material; meshCount++; } });
+    window.portal.sceneMeshes[world.id] = { head: meshCount, extra: 0 };
+    window.portal.rotations[world.id] = 0;
     window.portal.loaded.push(world.id);
-
+    card.status.textContent = `${world.head} loaded. Touch or focus it to reveal ${world.name}.`;
+    resize();
     const raycaster = new THREE.Raycaster();
-    function intersects(event) {
+    function hitsHead(event) {
       const rect = canvas.getBoundingClientRect();
-      const position = new THREE.Vector2((event.clientX - rect.left) / rect.width * 2 - 1, -(event.clientY - rect.top) / rect.height * 2 + 1);
-      raycaster.setFromCamera(position, camera);
+      const point = new THREE.Vector2((event.clientX - rect.left) / rect.width * 2 - 1, -(event.clientY - rect.top) / rect.height * 2 + 1);
+      raycaster.setFromCamera(point, camera);
       return raycaster.intersectObject(pivot, true).length > 0;
     }
-    canvas.addEventListener('pointerdown', event => {
-      if (event.button !== 0 || !intersects(event)) return;
-      pointer = { x: event.clientX, y: event.clientY, moved: false, id: event.pointerId };
-      lastRotation = pivot.rotation.y; canvas.setPointerCapture(event.pointerId); stage.classList.add('dragging');
-    });
     canvas.addEventListener('pointermove', event => {
-      hover = intersects(event);
-      stage.style.cursor = pointer ? 'grabbing' : hover ? 'grab' : 'default';
-      if (!pointer) return;
-      if (Math.hypot(event.clientX - pointer.x, event.clientY - pointer.y) > 7) pointer.moved = true;
-      if (pointer.moved) { pivot.rotation.y = lastRotation + (event.clientX - pointer.x) * 0.012; needsRender = true; }
+      const hit = hitsHead(event);
+      card.stage.style.cursor = pointer ? 'grabbing' : hit ? 'pointer' : 'default';
+      if (pointer) {
+        if (Math.hypot(event.clientX - pointer.x, event.clientY - pointer.y) > 7) {
+          pointer.dragged = true;
+          pinnedWorld = null;
+          if (activeWorld) revealWorld(null);
+          pivot.rotation.y = rotationStart + (event.clientX - pointer.x) * 0.008;
+          window.portal.rotations[world.id] = pivot.rotation.y;
+          dirty = true;
+        }
+        return;
+      }
+      if (event.pointerType !== 'mouse') return;
+      if (hit && !pinnedWorld) revealWorld(world.id);
+      else if (!hit) scheduleHide(world.id);
+    });
+    canvas.addEventListener('pointerdown', event => {
+      if (event.button !== 0 || !hitsHead(event)) return;
+      pointer = { x: event.clientX, y: event.clientY, dragged: false };
+      rotationStart = pivot.rotation.y;
+      canvas.setPointerCapture(event.pointerId);
+      card.stage.classList.add('dragging');
     });
     canvas.addEventListener('pointerup', event => {
       if (!pointer) return;
-      const activate = !pointer.moved;
-      pointer = null; stage.classList.remove('dragging');
+      const activate = !pointer.dragged;
+      pointer = null;
+      card.stage.classList.remove('dragging');
       if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
-      if (activate) enterWorld(world, enterButton, gallery);
+      if (activate) toggleWorld(world.id);
     });
-    const cancelPointer = () => { pointer = null; hover = false; stage.classList.remove('dragging'); };
-    canvas.addEventListener('pointercancel', cancelPointer);
-    canvas.addEventListener('lostpointercapture', cancelPointer);
-    canvas.addEventListener('pointerleave', () => { hover = false; });
+    const cancel = () => { pointer = null; card.stage.classList.remove('dragging'); };
+    canvas.addEventListener('pointercancel', cancel);
+    canvas.addEventListener('lostpointercapture', cancel);
+    canvas.addEventListener('pointerleave', () => { if (!pointer) scheduleHide(world.id); });
     canvas.addEventListener('webglcontextlost', event => {
-      event.preventDefault(); cancelAnimationFrame(frame);
-      status.textContent = 'The sculpture is temporarily unavailable. You can still enter below.';
-      status.classList.remove('loaded');
+      event.preventDefault(); fallback('The head is temporarily unavailable. Select its name to continue.');
     });
-    enterButton.addEventListener('pointerenter', () => { hover = true; });
-    enterButton.addEventListener('pointerleave', () => { hover = false; });
-    return gallery;
   } catch (error) {
-    status.textContent = 'The sculpture could not load. You can still enter this world below.';
     window.portal.errors.push({ world: world.id, message: error.message });
-    return null;
+    fallback('The head could not load. Select its name to continue.');
+  }
+  function fallback(message) {
+    card.article.classList.add('has-fallback');
+    card.status.textContent = message;
+    renderer?.domElement.remove();
   }
 }
 
 await Promise.all(worlds.map(async world => {
-  const card = document.createElement('article'); card.className = 'world'; card.id = world.id;
+  const article = document.createElement('article');
+  article.className = 'world'; article.id = world.id;
   const stage = document.createElement('div'); stage.className = 'sculpture-stage';
-  const status = document.createElement('p'); status.className = 'model-status'; status.setAttribute('role', 'status'); status.textContent = `Preparing ${world.head}…`;
-  stage.append(status);
-  const number = document.createElement('p'); number.className = 'world-number'; number.textContent = world.number;
+  const status = document.createElement('p'); status.className = 'model-status'; status.setAttribute('role', 'status'); status.textContent = `Loading ${world.head}.`;
+  const control = document.createElement('button'); control.className = 'head-control'; control.type = 'button'; control.textContent = world.name;
+  control.setAttribute('aria-label', `Reveal ${world.name}`); control.setAttribute('aria-expanded', 'false'); control.setAttribute('aria-controls', `${world.id}-info`);
+  const info = document.createElement('section'); info.className = 'world-info'; info.id = `${world.id}-info`; info.hidden = true;
   const role = document.createElement('p'); role.className = 'world-role'; role.textContent = world.role;
-  const title = document.createElement('h2'); title.textContent = world.name;
+  const name = document.createElement('h2'); name.textContent = world.name;
   const summary = document.createElement('p'); summary.className = 'world-summary'; summary.textContent = world.summary;
-  const button = document.createElement('button'); button.type = 'button'; button.className = 'enter-world'; button.setAttribute('aria-label', `Enter ${world.name}`); button.append('ENTER THE WORLD ');
-  const arrow = document.createElement('span'); arrow.setAttribute('aria-hidden', 'true');
-  arrow.innerHTML = '<svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1"/></svg>';
-  button.append(arrow);
-  card.append(stage, number, role, title, summary, button); document.querySelector('#worlds').append(card);
-  let gallery;
-  button.addEventListener('click', () => enterWorld(world, button, gallery));
-  gallery = await createSculpture(world, stage, status, button);
+  info.append(role, name, summary);
+  if (world.destination) {
+    const link = document.createElement('a'); link.href = world.destination; link.textContent = 'Enter the atelier'; info.append(link);
+  }
+  article.append(stage, status, control, info);
+  document.querySelector('#worlds').append(article);
+  const card = { article, stage, status, control, info };
+  cards.set(world.id, card);
+  control.addEventListener('focus', () => {
+    if (suppressNextFocus) { suppressNextFocus = false; return; }
+    revealWorld(world.id);
+  });
+  control.addEventListener('click', () => toggleWorld(world.id));
+  article.addEventListener('focusout', event => {
+    if (!article.contains(event.relatedTarget) && !pinnedWorld) revealWorld(null);
+  });
+  info.addEventListener('pointerenter', () => clearTimeout(hideTimer));
+  info.addEventListener('pointerleave', () => scheduleHide(world.id));
+  await createHead(world, card);
 }));
-
-for (const button of document.querySelectorAll('[data-finish]')) button.addEventListener('click', () => {
-  finish = button.dataset.finish; window.portal.finish = finish;
-  for (const control of document.querySelectorAll('[data-finish]')) control.setAttribute('aria-pressed', String(control === button));
-  for (const gallery of galleries) gallery.updateFinish();
-});
 document.documentElement.dataset.ready = 'true';

@@ -1,17 +1,28 @@
 # Project record
 
-- [Desktop preview](previews/portal-desktop.png)
-- [Mobile preview](previews/portal-mobile.png)
+## Version 2 — The Abyss
+
+- [Desktop preview](previews/portal-v2-desktop.png)
+- [Information revealed beneath a head](previews/portal-v2-info.png)
+- [Mobile preview](previews/portal-v2-mobile.png)
+- [Six browser check groups](validation/portal-v2-checks.json)
+- [Embedded HTML verification and limits](validation/portal-v2-standalone.json)
+- [Open the interactive Version 2 preview](../downloads/README.md)
+
+## Version 1 and source audit history
+
+- [Version 1 desktop preview](previews/portal-desktop.png)
+- [Version 1 mobile preview](previews/portal-mobile.png)
 - [Portal requirements and implementation brief](audits/portal-source-brief.md)
 - [Project audit](audits/project-audit.md)
 - [Website audit](audits/website-audit.md)
 - [Drive audit](audits/drive-audit.md)
 - [Technical source inventory](audits/drive-source-inventory.md)
 - [Confirmed model assignments and hashes](portal-assets.json)
-- [Production browser results](validation/checks.json)
-- [Embedded-preview verification and limits](validation/standalone-check.json)
-- [Verified GitHub download and SHA-256](validation/github-delivery.json)
-- [Open the interactive preview](../downloads/README.md)
+- [Version 1 production browser results](validation/checks.json)
+- [Version 1 embedded-preview verification and limits](validation/standalone-check.json)
+- [Version 1 verified GitHub download and SHA-256](validation/github-delivery.json)
+- [Preserved Version 1 source](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal)
 
 Audit notes are dated source snapshots. Their historical cloud-workspace paths refer to locally inspected evidence; raw technical documents, original conversation uploads, workbooks and client records are not included in this repository change. Later follow-ups supersede initial access findings.
 
