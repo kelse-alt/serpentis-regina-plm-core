@@ -1,22 +1,27 @@
-# Open Portal Version 2
+# Open Portal Version 2.1
 
 1. Sign in to GitHub with access to this private repository.
-2. Open [Portal-Entrance-Version-2.html](Portal-Entrance-Version-2.html).
+2. Open [Portal-Entrance-Version-2.1.html](Portal-Entrance-Version-2.1.html).
 3. Click **Download raw file** (the downward-arrow icon near the file view's top-right).
 4. Open the saved HTML in Chrome or Edge. Allow the three embedded heads a moment to load.
 
-The initial screen is black with only three heads. Hover, focus or tap one to reveal its information below; drag to rotate it. Escape dismisses the information. The Serpentis Regina information links to the live atelier.
+Version 2.1 adds smoother shading and a glossy clear-coated finish to the approved black entrance. Only the three heads appear initially. Hover, focus or tap one to reveal its information below; drag to rotate it. Escape dismisses the information. Serpentis Regina links to the live atelier.
 
-No coding-tool installation or separate model download is required. The HTML embeds its styles, code and models. The atelier link still requires internet access. This is a downloadable preview; the live Squarespace site is unchanged.
+No coding-tool installation or separate model download is required. The HTML embeds styles, code, models and locally generated reflection lighting. The atelier link requires internet access. This is a downloadable preview; the live Squarespace site is unchanged.
 
-## Preserved Version 1
+## Preserved versions
 
-[Portal-Entrance-Preview.html](Portal-Entrance-Preview.html) is the unchanged Version 1 delivery copy. Its [tagged source archive](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal) preserves the first design at commit `6fedc025eb6cfcc60a6fab1c94a7d4e75666f6a2`.
+- [Version 2 HTML](Portal-Entrance-Version-2.html) and its [tagged source archive](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.2.0/portal) preserve the approved black layout before surface polish.
+- [Version 1 HTML](Portal-Entrance-Preview.html) and its [tagged source archive](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal) preserve the first gallery design.
+
+Both earlier delivery files remain unchanged.
 
 ## Delivery record
 
-Versioned downloads are used because GitHub's separate release-asset upload service previously rejected authentication, while the repository/Git route works. Rebuild with `npm run standalone` from `portal/`, verify the generated file, then deliberately update the identified Version 2 snapshot. Keep Version 1 intact.
+The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. The uploaded GitHub HTML was downloaded and verified byte-for-byte against the tested artifact.
 
-Version 2's production build, desktop/mobile interaction checks and embedded HTML verification passed. See the [validation and screenshot record](../docs/README.md). The managed cloud browser checks the embedded document over loopback with extra requests blocked; direct `file://` opening is restricted in that browser.
+Versioned downloads are used because GitHub's separate release-asset upload service previously rejected authentication, while the repository/Git route works. Rebuild with `npm run standalone` from `portal/`, verify the generated HTML, then deliberately update the Version 2.1 snapshot. Keep older downloads intact.
 
-The [GitHub delivery verification](../docs/validation/portal-v2-github-delivery.json) records a matching downloaded copy: 15,356,781 bytes, SHA-256 `18dfd85b0d913c2fa2fba25a7962db2838f69e9610d68d23c64ae6905b6effd4`.
+See the [validation and screenshot record](../docs/README.md). The managed cloud browser checks the embedded document over loopback with extra requests blocked; direct `file://` opening is restricted in that browser. Older Version 1/2 verification records describe those earlier files.
+
+The [Version 2.1 delivery verification](../docs/validation/portal-v2.1-github-delivery.json) records 15,359,078 bytes with SHA-256 `9bc773e83f1e4604af65691d5b83e7c2be8c4b6c6327beb7c4423a2fb1b6dfb8`.

@@ -1,0 +1,82 @@
+{
+  "version": 2,
+  "revision": "2.1",
+  "passed": 6,
+  "outcomes": [
+    "Desktop opens on a black, viewport-sized scene with three real GLBs and no visible text or page chrome.",
+    "Hover reveals the matching information beneath the head and leaving dismisses the unpinned information.",
+    "Dragging rotates the actual sculpture without selecting a world or leaving its information open.",
+    "All three heads support keyboard focus, reveal, Escape dismissal and focus return; the atelier link remains correct.",
+    "All three heads fit the 390px mobile viewport; tapping each head reveals and dismisses its information without overflow.",
+    "When WebGL is unavailable, keyboard reveal controls still expose all three world identities and destinations."
+  ],
+  "desktopViewport": {
+    "width": 1500,
+    "height": 900,
+    "scrollWidth": 1500,
+    "scrollHeight": 900,
+    "background": "rgb(0, 0, 0)",
+    "canvases": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 500,
+        "height": 900,
+        "right": 500,
+        "bottom": 900
+      },
+      {
+        "x": 500,
+        "y": 0,
+        "width": 500,
+        "height": 900,
+        "right": 1000,
+        "bottom": 900
+      },
+      {
+        "x": 1000,
+        "y": 0,
+        "width": 500,
+        "height": 900,
+        "right": 1500,
+        "bottom": 900
+      }
+    ]
+  },
+  "mobileViewport": {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 390,
+    "scrollHeight": 844,
+    "background": "rgb(0, 0, 0)",
+    "canvases": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 281.328125,
+        "right": 390,
+        "bottom": 281.328125
+      },
+      {
+        "x": 0,
+        "y": 281.328125,
+        "width": 390,
+        "height": 281.328125,
+        "right": 390,
+        "bottom": 562.65625
+      },
+      {
+        "x": 0,
+        "y": 562.65625,
+        "width": 390,
+        "height": 281.34375,
+        "right": 390,
+        "bottom": 844
+      }
+    ]
+  },
+  "pageErrors": [],
+  "externalRequests": [],
+  "limits": "Software Chromium and emulated touch; not a physical mobile GPU or full accessibility certification."
+}

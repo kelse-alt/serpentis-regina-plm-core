@@ -1,5 +1,17 @@
 # Project record
 
+## Version 2.1 — Smooth glossy finish
+
+- [Desktop preview](previews/portal-v2.1-desktop.png)
+- [Information revealed beneath a head](previews/portal-v2.1-info.png)
+- [Mobile preview](previews/portal-v2.1-mobile.png)
+- [Actual-model surface preservation checks](validation/portal-v2.1-surfaces.json)
+- [Browser interaction results](validation/portal-v2.1-checks.json)
+- [Embedded HTML verification and limits](validation/portal-v2.1-standalone.json)
+- [Verified GitHub download and SHA-256](validation/portal-v2.1-github-delivery.json)
+- [Version 2.1 review](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/3)
+- [Open the interactive preview](../downloads/README.md)
+
 ## Version 2 — The Abyss
 
 - [Desktop preview](previews/portal-v2-desktop.png)

@@ -16,6 +16,7 @@ VALIDATION = ROOT / 'docs' / 'validation'
 PREVIEWS.mkdir(parents=True, exist_ok=True)
 VALIDATION.mkdir(parents=True, exist_ok=True)
 BASE = os.environ.get('PORTAL_CHECK_URL', 'http://127.0.0.1:8035/')
+PREFIX = os.environ.get('PORTAL_CHECK_PREFIX', 'portal-v2.1')
 WORLDS = [('amaya-kelsea', 'Amaya Kelsea'), ('serpentis-regina', 'Serpentis Regina'), ('kls', 'KLS')]
 OUTCOMES = []
 
@@ -117,7 +118,7 @@ with sync_playwright() as p:
     assert panels_hidden(page)
     assert not visible_text(page), visible_text(page)
     desktop_metrics = check_framing(page)
-    page.screenshot(path=str(PREVIEWS / 'portal-v2-desktop.png'), full_page=True)
+    page.screenshot(path=str(PREVIEWS / f'{PREFIX}-desktop.png'), full_page=True)
     passed('Desktop opens on a black, viewport-sized scene with three real GLBs and no visible text or page chrome.')
 
     # A transient mouse hover should reveal only that head's information.
@@ -128,7 +129,7 @@ with sync_playwright() as p:
     for world_id, _ in WORLDS:
         if world_id != 'serpentis-regina':
             expect(page.locator(f'#{world_id} .world-info')).to_be_hidden()
-    page.screenshot(path=str(PREVIEWS / 'portal-v2-info.png'), full_page=True)
+    page.screenshot(path=str(PREVIEWS / f'{PREFIX}-info.png'), full_page=True)
     page.mouse.move(0, 0)
     page.wait_for_function('''() => [...document.querySelectorAll('.world-info')].every(e => e.hidden || getComputedStyle(e).display === 'none' || getComputedStyle(e).visibility === 'hidden' || Number(getComputedStyle(e).opacity) === 0)''')
     passed('Hover reveals the matching information beneath the head and leaving dismisses the unpinned information.')
@@ -175,7 +176,7 @@ with sync_playwright() as p:
     assert len(mp.evaluate('window.portal.loaded')) == 3
     assert not visible_text(mp), visible_text(mp)
     mobile_metrics = check_framing(mp)
-    mp.screenshot(path=str(PREVIEWS / 'portal-v2-mobile.png'), full_page=True)
+    mp.screenshot(path=str(PREVIEWS / f'{PREFIX}-mobile.png'), full_page=True)
     for world_id, _ in WORLDS:
         c = mp.locator(f'#{world_id} canvas')
         bounds = c.bounding_box()
@@ -211,6 +212,7 @@ with sync_playwright() as p:
 
 record = {
     'version': 2,
+    'revision': state.get('revision'),
     'passed': len(OUTCOMES),
     'outcomes': OUTCOMES,
     'desktopViewport': desktop_metrics,
@@ -219,5 +221,5 @@ record = {
     'externalRequests': remote,
     'limits': 'Software Chromium and emulated touch; not a physical mobile GPU or full accessibility certification.',
 }
-(VALIDATION / 'portal-v2-checks.json').write_text(json.dumps(record, indent=2) + '\n')
+(VALIDATION / f'{PREFIX}-checks.json').write_text(json.dumps(record, indent=2) + '\n')
 print(f'{len(OUTCOMES)} version-2 functional check groups passed.', flush=True)

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "revision": "2.1",
+  "file": "Serpentis-Regina-Portal.html",
+  "modelsLoaded": [
+    "amaya-kelsea",
+    "serpentis-regina",
+    "kls"
+  ],
+  "networkDisabledAfterDocumentLoad": true,
+  "fileProtocolVerification": "Cloud policy blocks file://; one-document loopback transport used",
+  "initialHeadsOnly": "passed",
+  "focusEnterEscapeForAllWorlds": "passed",
+  "additionalNetworkRequests": 0,
+  "pageErrors": []
+}

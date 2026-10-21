@@ -1,6 +1,6 @@
 {
   "name": "serpentis-regina-portal",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1 --port 8035",
     "standalone": "npm run build && node scripts/build-standalone.mjs",
+    "check:surface": "node scripts/check_surface.mjs",
     "check:browser": "python3 scripts/check_portal_v2.py",
     "check:standalone": "python3 scripts/check_standalone_v2.py"
   },

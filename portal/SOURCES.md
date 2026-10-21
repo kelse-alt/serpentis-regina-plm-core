@@ -1,19 +1,22 @@
-# Source and review notes — Version 2
+# Source and review notes — Version 2.1
 
 ## Controlling direction
 
-The founder's latest instruction is the Version 2 source of truth: black abyss background; only three very large heads on screen; no plinths or page chrome; information appears beneath a head on touch/selection. The founder specifically rejected the Version 1 bright layout and rainbow/chrome finish.
+The founder approved Version 2's clean black composition and requested a smoother, glossier finish. Version 2.1 changes surface shading and material response while preserving the three-head layout, logo palette and information-on-interaction behavior.
 
 - Master blueprint: https://app.notion.com/p/SERPENTIS-REGINA-COM-255bab06d9b4802fb8dcfc4d396f6446
 - Existing atelier and top-left head-logo reference: https://www.serpentisregina.com/
 - Founder-supplied 3D folder: https://drive.google.com/drive/folders/1HLX5S5KM13apPqvJSkcgrytp5rNggKm1
-- [Version 1 archive](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal) preserves the earlier interpretation and its evidence.
+- [Version 2 archive](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.2.0/portal) preserves the approved layout and its original surface treatment.
+- [Version 1 archive](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal) preserves the earlier gallery design and evidence.
 
-## Palette and material
+## Palette, material and surface diagnosis
 
-The logo image provides pearl-gray fields and saturated magenta contours. Version 2 uses a view-normal-driven shader with sampled colors `#b8b8b8` (pearl), `#b68294` (rose transition) and `#b00046` (contour). It removes the RoomEnvironment, metallic chrome, iridescence and teal/violet reflections.
+The logo supplies pearl-gray `#b8b8b8`, rose `#b68294` and magenta `#b00046`. Version 2.1 retains that palette with a nonmetallic physical material, clearcoat and soft neutral studio reflections generated locally. Lighting remains invisible against the black background.
 
-The GLBs contain no original texture maps or material capture. The reference image establishes the intended palette and finish; exact pixel reproduction of every rotating head cannot be established from that PNG alone.
+Inspection found all three heads to be closed manifold meshes, with no duplicate or degenerate triangles. Small variations in their lighting normals were amplified by Version 2's steep contour shading; its simple specular highlight also provided little gloss. Version 2.1 uses four mild, angle-aware smoothing passes on a copied normal buffer shared across the material sections. Original-normal gating and a 20-degree rotation cap preserve strongly carved folds. Vertex positions, triangles, original normal buffers and source files remain unchanged; sculpted forms and jewelry remain present.
+
+The GLBs contain no original logo texture maps or material capture. The PNG establishes the intended palette, while the founder's latest feedback establishes the desired glossy finish. Pixel-identical reproduction across rotating views cannot be established from the PNG alone. Model inspection does not rule out every possible nonlocal self-intersection.
 
 ## Confirmed model originals
 
@@ -23,10 +26,14 @@ The GLBs contain no original texture maps or material capture. The reference ima
 | Serpentis Regina | (SERPENTIS REGINA) Maiden head.glb | 74e7f062d930ed9ba3bd1786dca7550c23dd191d387fba11cb2c6171546aafaa |
 | KLS | Crown Head.glb | 60a6313b5276baf5ca7d7e57268dd419fd81d9510b0bf663f094e1ab86af636d |
 
-The founder confirmed all three assignments. Original files in `public/models` remain intact; scale, rotation and shader appearance are applied at runtime.
+The founder confirmed all three assignments. Original files in `public/models` remain intact; normal polish, material appearance, display scale and rotation are applied at runtime.
 
-## Content and privacy
+## Verification and scope
 
-The revealed introductions retain the source-defined identities: Amaya's design/technical practice, Serpentis Regina's bespoke atelier and KLS procurement/consulting. The only implemented live destination is the existing Serpentis Regina website. Full Amaya/KLS mini-sites remain separate work.
+The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. The uploaded GitHub HTML was downloaded and verified byte-for-byte against the tested artifact.
+
+Actual-model checks assess source-buffer preservation, shared normals, reduced local normal variation and retained carved ridges. Version 2.1 screenshot/validation files use the `portal-v2.1` prefix. Existing Version 1 and Version 2 evidence remains historical.
+
+Introductions retain Amaya's design/technical practice, Serpentis Regina's bespoke atelier and KLS procurement/consulting. The only live destination is the existing Serpentis Regina website. Full Amaya/KLS mini-sites remain separate work.
 
 The portal includes no filled client records, raw technical portfolio documents, original workbooks, credentials or analytics. No live Squarespace edits or hosted deployment are part of this version.

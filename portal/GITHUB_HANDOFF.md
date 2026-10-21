@@ -1,41 +1,50 @@
-# GitHub development handoff — Portal Version 2
+# GitHub development handoff — Portal Version 2.1
 
 ## Current direction
 
-The founder's Version 2 instruction supersedes the original gallery presentation: a full-screen black abyss, only three large heads at rest, no plinths or visible page chrome, and information beneath a head only when it is touched, hovered or focused. Keep this interaction model when continuing the entrance.
+The founder approved Version 2's black, heads-only entrance and requested a smoother, glossier surface. Preserve the three large heads, black background, logo palette and information beneath a head only on touch, hover or focus. No visible props, plinths, headings, controls or other page furniture are part of the composition.
 
 | World | Head | Current content |
 |---|---|---|
 | Amaya Kelsea — The Designer | Mother | Inline introduction |
-| Serpentis Regina — The Bespoke | Maiden | Inline introduction and the real atelier link |
+| Serpentis Regina — The Bespoke | Maiden | Inline introduction and actual atelier link |
 | KLS — Procurement & Consulting | Crown | Inline introduction |
 
-The surface shader uses the sampled website-logo palette `#b8b8b8`, `#b68294`, `#b00046`. There is no chrome environment, iridescence or teal/violet reflection lighting. GLBs have no original texture maps; describe the result as a sampled palette/finish match, not proven pixel identity across all views.
+## Surface implementation
+
+`src/surface.js` polishes a copied normal buffer with four angle-aware passes. Each model's material primitives share their complete position/normal buffers; smoothing their indices together prevents section seams. Original-normal gating and a 20-degree normal-rotation cap protect strongly carved ridges. Positions, triangle indices, source normal buffers and original GLB bytes must remain intact.
+
+`src/finish.js` uses a nonmetallic `MeshPhysicalMaterial`: roughness `0.25`, clearcoat `0.85`, clearcoat roughness `0.19`. Pearl-gray `#b8b8b8`, rose `#b68294` and magenta `#b00046` remain the logo palette. A local procedural HDR texture provides broad neutral studio reflections without extra visible scene objects or a visible environment backdrop. Keep the renderer background black.
+
+The GLBs contain no original logo texture/material capture. Describe the result as a logo-inspired palette and polished finish; do not claim pixel identity or removal of every sculpted surface feature.
 
 ## GitHub locations
 
-- Repository: private `kelse-alt/serpentis-regina-plm-core`; application source under `portal/`.
-- Current branch: `codex/portal-entrance-v0.2.0`; milestone tag `portal-v0.2.0`.
-- [Preserved Version 1](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal): tag `portal-v0.1.0`, commit `6fedc025eb6cfcc60a6fab1c94a7d4e75666f6a2`.
-- [Version 2 source](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/codex/portal-entrance-v0.2.0/portal) and [Version 2 download](https://github.com/kelse-alt/serpentis-regina-plm-core/blob/codex/portal-entrance-v0.2.0/portal/downloads/Portal-Entrance-Version-2.html).
-- [Version 2 draft PR #2](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/2) compares this design with Version 1. The [delivery record](docs/validation/portal-v2-github-delivery.json) confirms that the authenticated GitHub download matched the tested HTML byte-for-byte.
+- Private repository: `kelse-alt/serpentis-regina-plm-core`; source under `portal/`.
+- Branch: `codex/portal-entrance-v0.2.1`; milestone tag `portal-v0.2.1`.
+- [Version 2.1 source](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/codex/portal-entrance-v0.2.1/portal) and [Version 2.1 download](https://github.com/kelse-alt/serpentis-regina-plm-core/blob/codex/portal-entrance-v0.2.1/portal/downloads/Portal-Entrance-Version-2.1.html).
+- [Draft PR #3](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/3) compares the surface polish with Version 2. The [delivery record](docs/validation/portal-v2.1-github-delivery.json) records the verified download and unchanged earlier artifacts.
+- [Preserved Version 2](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.2.0/portal); [Version 2 review PR #2](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/2).
+- [Preserved Version 1](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal), commit `6fedc025eb6cfcc60a6fab1c94a7d4e75666f6a2`.
 
-Do not replace the preserved Version 1 preview when delivering Version 2. Existing PLM application files are outside this entrance change.
+Keep both older HTML downloads byte-for-byte unchanged. Existing PLM application files are outside this entrance change.
 
-## Source and verification workflow
+## Verification workflow
 
-1. Work inside `portal/`; keep model assignments in `src/worlds.js`, rendering/interactions in `src/main.js` and composition in `src/style.css`.
-2. Use `npm ci --cache .npm-cache`, then `npm run build` and `npm run preview`.
-3. Run `python3 scripts/check_portal_v2.py`. It must exercise actual GLBs, initial heads-only black framing, reveal/dismissal, rotation, desktop/mobile viewport fit, touch/keyboard behavior and unavailable-WebGL access.
-4. Run `npm run standalone`, then `python3 scripts/check_standalone_v2.py`. Verify the identified delivery copy after packaging.
-5. Review `docs/previews/portal-v2-desktop.png`, `portal-v2-mobile.png` and `portal-v2-info.png`; record outcomes under `docs/validation/`.
-6. Commit source, screenshots, validation records and the identified Version 2 HTML snapshot together. Use a scoped `portal-` tag for each verified milestone and a reviewable PR.
+1. Work inside `portal/`. Keep identity data in `src/worlds.js`, interaction in `src/main.js`, surface polish in `src/surface.js`, material/lighting in `src/finish.js` and composition in `src/style.css`.
+2. Use `npm ci --cache .npm-cache`, then `npm run check:surface` and `npm run build`.
+3. Start `npm run preview` and run `npm run check:browser`. Set `PORTAL_CHECK_URL` for a port override, such as `http://127.0.0.1:8036/`.
+4. Run `npm run standalone` and `npm run check:standalone`; verify the identified Version 2.1 delivery copy after packaging.
+5. Review `docs/previews/portal-v2.1-desktop.png`, `portal-v2.1-mobile.png` and `portal-v2.1-info.png`. Record outcomes with the `portal-v2.1` prefix under `docs/validation/`.
+6. Commit source, screenshots, validation and the identified HTML snapshot together. Use a scoped `portal-` milestone tag and reviewable PR.
 7. Fetch the uploaded HTML through authenticated GitHub content retrieval and compare its SHA-256 before claiming delivery succeeded.
 
-The production build, all six Version 2 browser check groups and embedded-preview checks passed. Version 2 evidence is in `docs/validation/portal-v2-checks.json` and `portal-v2-standalone.json`, with reviewed desktop/mobile screenshots under `docs/previews/`. The preserved Version 1 preview and all three original GLBs were checked byte-for-byte against their recorded originals. The managed cloud browser forbids `file://`; embedded-preview verification uses an allowed one-document loopback transport with subsequent resource requests blocked. Physical mobile GPU performance and full accessibility certification remain unverified.
+The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. The uploaded GitHub HTML was downloaded and verified byte-for-byte against the tested artifact.
+
+The managed cloud browser forbids direct `file://` navigation; embedded-preview checks use one allowed locally served document with additional resource requests blocked. Physical mobile GPU performance and full accessibility certification remain unverified. Older Version 1/2 passing records are historical evidence, not Version 2.1 results.
 
 ## Delivery boundary
 
-GitHub repository creation and release-asset upload are restricted for this connection; the release-upload host previously returned HTTP 401. The successful route is the existing private repository's versioned `downloads/` folder. Users sign in, open the HTML file view, click **Download raw file**, and open the saved HTML in Chrome or Edge. No new credentials are needed for that working route.
+The working delivery route is the existing private repository's versioned `downloads/` folder. Users sign in, open the HTML file view, click **Download raw file**, and open the saved HTML in Chrome or Edge. GitHub's separate release-upload host previously rejected authentication; this working repository route needs no new credentials.
 
-Repository upload and downloadable HTML do not deploy a live website. Preserve the existing Squarespace site. Keep dependency caches, generated `dist`, raw technical documents, client records and credentials out of source commits. The original model files in `public/models` retain their source bytes; runtime materials and presentation may change.
+Repository delivery does not deploy a live website. Preserve the Squarespace site and keep dependency caches, generated `dist`, raw technical documents, client records and credentials out of source commits.

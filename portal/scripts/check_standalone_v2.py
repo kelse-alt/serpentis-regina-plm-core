@@ -4,12 +4,14 @@ The cloud browser blocks file://. Only the HTML is served locally, then networki
 is disabled. Models, styles and script must all come from that embedded document.
 """
 import json
+import os
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from threading import Thread
 from playwright.sync_api import sync_playwright, expect
 
 root = Path(__file__).resolve().parents[1]
+prefix = os.environ.get('PORTAL_CHECK_PREFIX', 'portal-v2.1')
 document = root / 'Serpentis-Regina-Portal.html'
 class DocumentOnly(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -58,14 +60,14 @@ with sync_playwright() as p:
     expect(page.locator('#serpentis-regina-info a')).to_have_attribute('href', 'https://www.serpentisregina.com/')
     assert not errors and not network, (errors, network)
     record = {
-        'version': 2, 'file': document.name,
+        'version': 2, 'revision': state.get('revision'), 'file': document.name,
         'modelsLoaded': state['loaded'],
         'networkDisabledAfterDocumentLoad': True,
         'fileProtocolVerification': 'Cloud policy blocks file://; one-document loopback transport used',
         'initialHeadsOnly': 'passed', 'focusEnterEscapeForAllWorlds': 'passed',
         'additionalNetworkRequests': len(network), 'pageErrors': errors,
     }
-    (root / 'docs/validation/portal-v2-standalone.json').write_text(json.dumps(record, indent=2) + '\n')
+    (root / f'docs/validation/{prefix}-standalone.json').write_text(json.dumps(record, indent=2) + '\n')
     print('Version 2 offline reveal, keyboard dismissal and atelier destination passed.', flush=True)
     browser.close()
 server.shutdown()

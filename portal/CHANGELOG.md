@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.2.1 — Version 2.1: Surface polish — 2026-10-21
+
+The founder approved Version 2's clean black composition and requested a smoother, glossier finish. This edit retains the layout, three-head framing, logo palette and interaction model.
+
+- Added four mild, angle-aware normal-smoothing passes across each model's shared material sections. Original-normal gating and a 20-degree rotation bound retain carved folds. Positions, triangle indices and original GLBs remain unchanged.
+- Replaced the simple contour shader with a nonmetallic physical material, clearcoat and locally generated neutral studio reflections. Softer contour transitions reduce the emphasis on small normal variations.
+- Kept lighting invisible: the initial screen still contains only three heads against black.
+- Added checks using the actual source GLBs to assess smoothness, preserved ridges, shared normals and unchanged geometry/source buffers.
+- Identified delivery: `downloads/Portal-Entrance-Version-2.1.html`; branch `codex/portal-entrance-v0.2.1`; milestone tag `portal-v0.2.1`.
+
+The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. The uploaded GitHub HTML was downloaded and verified byte-for-byte against the tested artifact.
+
+The sculpted forms and jewelry remain; this is a shading/material refinement. Version 1 and Version 2 downloads and tagged archives remain preserved. The live Squarespace site is unchanged.
+
 ## v0.2.0 — Version 2: The Abyss — 2026-10-21
 
 The founder requested a direct replacement for the bright gallery layout: a black abyss containing only three enormous heads, with each world's information appearing beneath its head on interaction.
