@@ -24,7 +24,7 @@
   },
   "intendedSiteUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/",
   "siteVerifiedLive": true,
-  "squarespaceChanged": false,
+  "squarespaceChanged": true,
   "pullRequest": "https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4",
   "verification": "Live index, JS, CSS and all three GLBs match their published SHA-256 fingerprints over verified HTTPS; the founder confirmed the portal renders. Cross-origin embed fixture checks cover desktop/mobile. Actual Squarespace installation and authenticated editor checks remain pending.",
   "lastCheckedAt": "2026-10-21T19:41:00.163877+00:00",
@@ -36,5 +36,14 @@
     "customDomain": null,
     "httpsEnforced": true,
     "ownerActivated": true
-  }
+  },
+  "squarespaceChangedBy": "owner",
+  "homepageVerified": true,
+  "homepageUrl": "https://www.serpentisregina.com/",
+  "atelierNavigationVerifiedOn": [
+    "desktop",
+    "mobile"
+  ],
+  "liveVerificationRecord": "squarespace-live.json",
+  "remainingCleanup": "Move portal fragment from page-header code injection into the page Code Block and remove remaining placeholder content."
 }

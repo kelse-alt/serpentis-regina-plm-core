@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-10-21T19:50:27.780875+00:00",
+  "method": "Chromium with existing certificate trust store; HTTPS validation enabled",
+  "checks": [
+    {
+      "mode": "desktop",
+      "status": 200,
+      "metrics": {
+        "view": {
+          "width": 1500,
+          "height": 900
+        },
+        "iframe": {
+          "x": 0,
+          "y": 0,
+          "width": 1500,
+          "height": 900
+        },
+        "headerDisplay": "none",
+        "footerDisplay": "none",
+        "visibleHeadings": [],
+        "overflow": "hidden",
+        "bodyId": "collection-6a8bb66559785a1838e75235"
+      },
+      "fillsViewport": true,
+      "loaded": [
+        "amaya-kelsea",
+        "serpentis-regina",
+        "kls"
+      ],
+      "modelErrors": [],
+      "pageErrors": [],
+      "destination": "https://www.serpentisregina.com/home",
+      "atelierNavigationWorked": true,
+      "atelierBodyId": "collection-69fbac625cc80853dbc548a5"
+    },
+    {
+      "mode": "mobile",
+      "status": 200,
+      "metrics": {
+        "view": {
+          "width": 390,
+          "height": 844
+        },
+        "iframe": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "headerDisplay": "none",
+        "footerDisplay": "none",
+        "visibleHeadings": [],
+        "overflow": "hidden",
+        "bodyId": "collection-6a8bb66559785a1838e75235"
+      },
+      "fillsViewport": true,
+      "loaded": [
+        "amaya-kelsea",
+        "kls",
+        "serpentis-regina"
+      ],
+      "modelErrors": [],
+      "pageErrors": [],
+      "destination": "https://www.serpentisregina.com/home",
+      "atelierNavigationWorked": true,
+      "atelierBodyId": "collection-69fbac625cc80853dbc548a5"
+    }
+  ],
+  "passed": true,
+  "site": "https://www.serpentisregina.com/",
+  "liveTopLevelAtelierNavigation": true,
+  "homepageCollection": "collection-6a8bb66559785a1838e75235",
+  "atelierCollection": "collection-69fbac625cc80853dbc548a5",
+  "installationNote": "Owner pasted the portal fragment into page-header code injection. Browsers render the iframe at the beginning of the body and the full-screen portal works. The old template heading and paragraph remain below it. For clean markup, move the fragment into the page Code Block and remove the header-injection copy and template content.",
+  "limits": "Desktop Chromium and emulated touch viewport, with HTTPS validation enabled using the environment existing certificate trust store. No authenticated Squarespace editor changes, forms, cart or checkout submissions were performed."
+}

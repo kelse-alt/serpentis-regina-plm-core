@@ -2,6 +2,9 @@
 
 ## Squarespace connection preparation
 
+- [Live Squarespace desktop/mobile checks](validation/squarespace-live.json)
+- [Live desktop preview](previews/squarespace-live-desktop.png)
+- [Live mobile preview](previews/squarespace-live-mobile.png)
 - [Connection and installation guide](../integrations/SQUARESPACE.md)
 - [Squarespace HTML fragment](../integrations/squarespace.html)
 - [Cross-origin embed checks and limits](validation/squarespace-integration.json)

@@ -6,7 +6,19 @@ The working address used by the embed is:
 
 https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1
 
-GitHub Pages is enabled, the build succeeded, HTTPS is enforced and the custom domain is cleared. The founder confirmed this address loads successfully. The explicit `index.html` path avoids a browser's remembered redirect from the earlier custom-domain attempt. The Squarespace embed has not yet been installed.
+GitHub Pages is enabled, the build succeeded, HTTPS is enforced and the custom domain is cleared. The founder confirmed this address loads successfully. The explicit `index.html` path avoids a browser's remembered redirect from the earlier custom-domain attempt.
+
+## Live status
+
+The owner installed the portal and made it the Squarespace homepage. Live Chromium checks passed on desktop and emulated mobile: all three actual models loaded, the iframe filled the viewport, outer navigation was hidden and the atelier link navigated the real top window to `/home`. See [the live verification](../docs/validation/squarespace-live.json).
+
+One installation cleanup remains. The fragment is currently in the page's **Page Header Code Injection**, and the original placeholder heading and paragraph remain beneath the full-screen frame. Browsers repair the iframe's placement and the visitor view works, but the intended installation is a page Code Block:
+
+1. Edit **LANDING PORTAL** and replace its placeholder content with one blank section containing one HTML Code Block. Paste the prepared fragment into that block and save.
+2. In that page's settings, remove the duplicate portal fragment from **Advanced → Page Header Code Injection**, then save. Leave unrelated page code intact.
+3. Open the homepage outside the editor and retest the three heads and **Enter the atelier**.
+
+The following sections retain the complete hosting and installation instructions for future updates.
 
 The repository is public and the tested `portal-site` branch is published. All nine hosting files were checked against their local staged bytes. The owner enabled Pages after this connection's activation attempt returned HTTP 403. See [the delivery record](../docs/validation/squarespace-delivery.json) and [PR #4](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4).
 
