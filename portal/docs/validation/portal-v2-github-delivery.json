@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "verifiedAt": "2026-10-21T18:46:18.927892+00:00",
+  "repository": "kelse-alt/serpentis-regina-plm-core",
+  "branch": "codex/portal-entrance-v0.2.0",
+  "verifiedArtifactCommit": "6ca0eb02aef1b2021a2009b05d5a04ccfb37955c",
+  "path": "portal/downloads/Portal-Entrance-Version-2.html",
+  "githubUrl": "https://github.com/kelse-alt/serpentis-regina-plm-core/blob/codex/portal-entrance-v0.2.0/portal/downloads/Portal-Entrance-Version-2.html",
+  "pullRequest": "https://github.com/kelse-alt/serpentis-regina-plm-core/pull/2",
+  "bytes": 15356781,
+  "sha256": "18dfd85b0d913c2fa2fba25a7962db2838f69e9610d68d23c64ae6905b6effd4",
+  "authenticatedGitHubDownloadMatches": true,
+  "preservedVersion1": {
+    "tag": "portal-v0.1.0",
+    "commit": "6fedc025eb6cfcc60a6fab1c94a7d4e75666f6a2",
+    "downloadUnchanged": true,
+    "sha256": "48507f0e99389e19d41a74178c3ef4fd578a8437ae42aa33d830d555e6263cad"
+  },
+  "originalModelHashesUnchanged": true,
+  "delivery": "Versioned standalone HTML in the private GitHub repository; download raw file and open it in Chrome or Edge. No hosted deployment."
+}
