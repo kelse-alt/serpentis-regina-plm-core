@@ -21,8 +21,9 @@ The GLBs contain no original logo texture/material capture. Describe the result 
 ## GitHub locations
 
 - Private repository: `kelse-alt/serpentis-regina-plm-core`; source under `portal/`.
-- Branch: `codex/portal-entrance-v0.2.1`; planned milestone tag `portal-v0.2.1`.
+- Branch: `codex/portal-entrance-v0.2.1`; milestone tag `portal-v0.2.1`.
 - [Version 2.1 source](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/codex/portal-entrance-v0.2.1/portal) and [Version 2.1 download](https://github.com/kelse-alt/serpentis-regina-plm-core/blob/codex/portal-entrance-v0.2.1/portal/downloads/Portal-Entrance-Version-2.1.html).
+- [Draft PR #3](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/3) compares the surface polish with Version 2. The [delivery record](docs/validation/portal-v2.1-github-delivery.json) records the verified download and unchanged earlier artifacts.
 - [Preserved Version 2](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.2.0/portal); [Version 2 review PR #2](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/2).
 - [Preserved Version 1](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal), commit `6fedc025eb6cfcc60a6fab1c94a7d4e75666f6a2`.
 
@@ -38,7 +39,7 @@ Keep both older HTML downloads byte-for-byte unchanged. Existing PLM application
 6. Commit source, screenshots, validation and the identified HTML snapshot together. Use a scoped `portal-` milestone tag and reviewable PR.
 7. Fetch the uploaded HTML through authenticated GitHub content retrieval and compare its SHA-256 before claiming delivery succeeded.
 
-The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. GitHub upload is pending.
+The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. The uploaded GitHub HTML was downloaded and verified byte-for-byte against the tested artifact.
 
 The managed cloud browser forbids direct `file://` navigation; embedded-preview checks use one allowed locally served document with additional resource requests blocked. Physical mobile GPU performance and full accessibility certification remain unverified. Older Version 1/2 passing records are historical evidence, not Version 2.1 results.
 

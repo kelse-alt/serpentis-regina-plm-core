@@ -44,7 +44,7 @@ Development uses loopback port 8034; production preview uses 8035 unless overrid
 
 ## Verification
 
-The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. GitHub upload is pending.
+The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. The uploaded GitHub HTML was downloaded and verified byte-for-byte against the tested artifact.
 
 Run the actual-model surface checks, then the browser checks against the production preview:
 
@@ -64,4 +64,4 @@ The managed cloud browser blocks direct `file://` navigation. Standalone verific
 
 See [SOURCES.md](SOURCES.md), [CHANGELOG.md](CHANGELOG.md), [the development handoff](GITHUB_HANDOFF.md), [model provenance](docs/portal-assets.json) and [the audit record](docs/README.md). `src/worlds.js` holds identities and source models; `src/main.js` handles interaction, `src/surface.js` handles normal polish and `src/finish.js` defines the glossy material and lighting.
 
-Version 2.1 uses branch `codex/portal-entrance-v0.2.1` and planned milestone tag `portal-v0.2.1`. Earlier designs remain preserved by `portal-v0.1.0` and `portal-v0.2.0`, separate from PLM application versions. No client records or raw technical portfolio documents are included.
+Version 2.1 uses branch `codex/portal-entrance-v0.2.1` and milestone tag `portal-v0.2.1`. Earlier designs remain preserved by `portal-v0.1.0` and `portal-v0.2.0`, separate from PLM application versions. No client records or raw technical portfolio documents are included.

@@ -30,7 +30,7 @@ The founder confirmed all three assignments. Original files in `public/models` r
 
 ## Verification and scope
 
-The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. GitHub upload is pending.
+The Version 2.1 production build, all six browser check groups and actual-model surface checks passed. Desktop, information-reveal and mobile screenshots were visually reviewed. Embedded HTML verification passed: all three models loaded and offline interactions worked without additional resource requests or page errors. The uploaded GitHub HTML was downloaded and verified byte-for-byte against the tested artifact.
 
 Actual-model checks assess source-buffer preservation, shared normals, reduced local normal variation and retained carved ridges. Version 2.1 screenshot/validation files use the `portal-v2.1` prefix. Existing Version 1 and Version 2 evidence remains historical.
 
