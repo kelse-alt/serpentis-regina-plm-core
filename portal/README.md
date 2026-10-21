@@ -4,7 +4,7 @@ First entrance implementation for the founder's three-world website, built from 
 
 ## Run
 
-For viewing without installing tools, download **Serpentis-Regina-Portal.html** and open it in a current Chrome or Edge browser. The single file embeds the code, styles and all three models, so no server or internet connection is needed to view the entrance. Following the atelier link still requires internet access.
+For viewing without installing tools, open [the ready-to-download preview](downloads/Portal-Entrance-Preview.html), click **Download raw file** (the downward-arrow icon), and open the saved HTML in a current Chrome or Edge browser. See [step-by-step viewing instructions](downloads/README.md). The single file embeds the code, styles and all three models, so no server or internet connection is needed to view the entrance. Following the atelier link still requires internet access.
 
 To regenerate that file from source, run `npm run standalone` after installing the locked dependencies.
 
@@ -57,3 +57,7 @@ The check exercises actual model loading, rotation without navigation, entry/clo
 This is a functional entrance review, not a complete accessibility or physical mobile GPU performance certification. Original assets total about 11 MB and 455,000 triangles. Optimization of model derivatives and validation on real devices remain relevant before public launch. Browser render loops skip offscreen/hidden scenes; no external fonts, analytics, image services or model hosts are required at runtime.
 
 Current validation: frozen-lockfile installation and the production build succeeded. All seven browser check groups passed against the production preview. The desktop and 390px mobile captures were visually reviewed. GPU work is capped at 30 frames per second, skipped offscreen/when hidden, and rendered on demand with reduced motion. The production JavaScript bundle is about 159 KB gzipped; Vite flags the larger uncompressed 3D-engine bundle for future loading optimization. This milestone is not deployed.
+
+## GitHub review
+
+The complete source, audit summaries, screenshots and validation evidence are committed on `codex/portal-entrance-v0.1.0` and reviewed in [PR #1](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/1). The repository remains private. A single identified HTML snapshot under `downloads/` is committed to provide delivery after the release-asset upload service rejected authentication.

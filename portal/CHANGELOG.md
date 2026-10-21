@@ -29,3 +29,7 @@ GitHub milestone tag: `portal-v0.1.0`, scoped separately from the PLM applicatio
 The existing Squarespace site has not been changed. New display copy and materials are review-stage interpretations. Detailed KLS content and some linked brand-system sources remain incomplete. Full accessibility certification and performance checks on physical mobile devices remain outstanding; original assets total about 11 MB and 455,000 triangles.
 
 The application includes no client records, technical portfolio documents, original workbooks or credentials. Rotation and presentation materials are applied at runtime; the original neutral-material GLBs are preserved.
+
+### GitHub delivery
+
+Source, audits, screenshots and validation records are versioned on the portal branch and reviewed in PR #1. A private draft release was created. Its asset-upload host rejected authentication, so the standalone preview is versioned under `downloads/` with viewing instructions. No hosted deployment or live-site change has occurred.

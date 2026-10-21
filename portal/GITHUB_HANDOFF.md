@@ -24,7 +24,7 @@ The original GLB files are in `public/models`. Their source identities and hashe
 - `scripts`: standalone packaging and meaningful browser checks.
 - `README.md`, `SOURCES.md`, `CHANGELOG.md` and this handoff: scope, provenance and development record.
 
-Do not commit dependency caches, generated `dist`, local artifacts, client information or the audited technical-document collection. The generated standalone HTML is a release asset, rather than an additional source model or workbook.
+Do not commit dependency caches, generated `dist`, local artifacts, client information or the audited technical-document collection. The generated standalone HTML is normally a release asset. The separate release-upload service rejected authentication during delivery, so one explicit snapshot is versioned under `downloads/Portal-Entrance-Preview.html` as a fallback; the normal generated output remains ignored. The downloadable file is not a new source model or workbook.
 
 ## Repeatable workflow
 
@@ -52,3 +52,7 @@ The large original models remain uncompressed. The production JavaScript bundle 
 - Evaluate optimized model derivatives while retaining originals and visual fidelity.
 - Select and verify a hosting/integration route separately from file delivery; preserve the functioning Squarespace customer journey.
 - Keep future client-account, intake and PLM data workflows behind their own explicit access design. Existing local apps do not yet provide hosted multiuser authorization.
+
+## Delivery follow-up
+
+Source commit and PR #1 succeeded. GitHub repository creation is unavailable to this integration, so the existing private repository is used. Draft release `portal-v0.1.0` was created, but `uploads.github.com` rejected the asset upload with HTTP 401 despite successful API/Git authentication. No new credentials were requested. The reviewed HTML snapshot is instead delivered through the versioned `downloads/` folder. Verify that file through authenticated GitHub content retrieval and its SHA-256 hash. The owner downloads it through the normal signed-in GitHub file view.
