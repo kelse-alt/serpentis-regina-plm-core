@@ -1,0 +1,15 @@
+{
+  "repository": "kelse-alt/serpentis-regina-plm-core",
+  "visibility": "private",
+  "branch": "codex/portal-entrance-v0.1.0",
+  "reviewPullRequest": "https://github.com/kelse-alt/serpentis-regina-plm-core/pull/1",
+  "previewFile": "portal/downloads/Portal-Entrance-Preview.html",
+  "previewPage": "https://github.com/kelse-alt/serpentis-regina-plm-core/blob/codex/portal-entrance-v0.1.0/portal/downloads/Portal-Entrance-Preview.html",
+  "downloadVerification": "Authenticated GitHub Contents API raw retrieval matches tested local HTML byte for byte",
+  "bytes": 15371448,
+  "sha256": "48507f0e99389e19d41a74178c3ef4fd578a8437ae42aa33d830d555e6263cad",
+  "draftReleaseTag": "portal-v0.1.0",
+  "releaseAssetUpload": "Rejected by uploads.github.com with HTTP 401; versioned repository download used successfully",
+  "requiresGitHubSignIn": true,
+  "liveDeployment": false
+}

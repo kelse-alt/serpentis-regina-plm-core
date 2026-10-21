@@ -10,6 +10,8 @@
 - [Confirmed model assignments and hashes](portal-assets.json)
 - [Production browser results](validation/checks.json)
 - [Embedded-preview verification and limits](validation/standalone-check.json)
+- [Verified GitHub download and SHA-256](validation/github-delivery.json)
+- [Open the interactive preview](../downloads/README.md)
 
 Audit notes are dated source snapshots. Their historical cloud-workspace paths refer to locally inspected evidence; raw technical documents, original conversation uploads, workbooks and client records are not included in this repository change. Later follow-ups supersede initial access findings.
 
