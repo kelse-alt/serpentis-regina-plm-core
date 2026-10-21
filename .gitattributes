@@ -1,0 +1,3 @@
+* -text
+assets/* -diff linguist-generated=true
+models/* -diff linguist-generated=true

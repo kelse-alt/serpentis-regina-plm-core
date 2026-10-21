@@ -1,0 +1,50 @@
+{
+  "designVersion": "2.1",
+  "integration": "Squarespace",
+  "sourceRepository": "kelse-alt/serpentis-regina-plm-core",
+  "sourceBranch": "codex/portal-squarespace-connection",
+  "sourceCommit": "138f62c1639c9afb9d5c666d8b2abd0bdf6246c6",
+  "builtAt": "2026-10-21T19:22:49.494Z",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 86,
+      "sha256": "ed41dd0dbd2929172be8807d1db7c6d7e5e8499df817ab07aa2c9b89115b1cf1"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "assets/index-CAg9nivA.js",
+      "bytes": 621540,
+      "sha256": "517e242c1538abc9070a4602e8030a50307d69f432101e6a2737a34df61615c4"
+    },
+    {
+      "path": "assets/index-D_iSA1tc.css",
+      "bytes": 3108,
+      "sha256": "9f9d910921d0a6b30045eca7582802a0e9f4a76e00ab8547fd3d14676e6e432c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 873,
+      "sha256": "8ee1ae7824831fc31cc8f08305a1722d156cb835b36d2e25999dfa9b883a15e7"
+    },
+    {
+      "path": "models/crown.glb",
+      "bytes": 3557760,
+      "sha256": "60a6313b5276baf5ca7d7e57268dd419fd81d9510b0bf663f094e1ab86af636d"
+    },
+    {
+      "path": "models/kelsea-mother.glb",
+      "bytes": 3519276,
+      "sha256": "96767a86c1632e6d3019e88cc78e1a8a3f31a78a74bbbdacee30f6af9a3f4804"
+    },
+    {
+      "path": "models/serpentis-maiden.glb",
+      "bytes": 3973076,
+      "sha256": "74e7f062d930ed9ba3bd1786dca7550c23dd191d387fba11cb2c6171546aafaa"
+    }
+  ]
+}
