@@ -6,7 +6,7 @@ The current connection work is on `codex/portal-squarespace-connection`. It keep
 
 The deploy-only branch is `portal-site`, assembled by `npm run pages:prepare` from `portal/`. It contains only the built portal, original models, `.nojekyll` and a deployment fingerprint. The source repository's other applications are outside that website branch. See [the Squarespace handoff](integrations/SQUARESPACE.md) for activation and embed installation. Connection verification is recorded separately in `docs/validation/squarespace-integration.json`.
 
-The hosting branch has been uploaded and all nine files verified. The repository is public. Enabling Pages via the current integration returned HTTP 403; the owner must select **Deploy from a branch → portal-site → /(root)** in GitHub Pages settings. Live hosting and Squarespace publication remain pending. See [delivery status](docs/validation/squarespace-delivery.json) and [draft PR #4](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4).
+The hosting branch is published and all nine files were verified. The repository is public. The owner enabled **Deploy from a branch → portal-site → /(root)** after the integration's activation request returned HTTP 403. Pages now reports a successful build, HTTPS enabled and no custom domain. The founder confirmed the live portal works. The embed uses the explicit `index.html?v=2.1` address to avoid the earlier directory URL's remembered custom-domain redirect. Squarespace installation remains pending. See [delivery status](docs/validation/squarespace-delivery.json) and [draft PR #4](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4).
 
 ## Current direction
 

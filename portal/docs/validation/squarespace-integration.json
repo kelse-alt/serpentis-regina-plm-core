@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-10-21T19:20:28.887473+00:00",
+  "checkedAt": "2026-10-21T19:40:35.570623+00:00",
   "passed": true,
   "portalRevision": "2.1",
   "pagesLikePath": "/serpentis-regina-plm-core/",
   "distinctParentAndIframeOrigins": true,
-  "snippetSha256": "f2a7b6162723f743892dd4d7e6252146e7f24aa0de30bd28931955598a5da7b3",
+  "snippetSha256": "6a33f0586c2422bad4c5afe0cac4b09921104fe0625fdfed41ba2e625ac74f95",
   "buildIndexSha256": "8ee1ae7824831fc31cc8f08305a1722d156cb835b36d2e25999dfa9b883a15e7",
   "outcomes": [
     "desktop: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier navigation passed.",
@@ -56,7 +56,7 @@
   },
   "assetResponses": [
     {
-      "path": "/serpentis-regina-plm-core/",
+      "path": "/serpentis-regina-plm-core/index.html",
       "status": 200
     },
     {
@@ -80,7 +80,7 @@
       "status": 200
     },
     {
-      "path": "/serpentis-regina-plm-core/",
+      "path": "/serpentis-regina-plm-core/index.html",
       "status": 200
     },
     {

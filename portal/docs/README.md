@@ -6,6 +6,7 @@
 - [Squarespace HTML fragment](../integrations/squarespace.html)
 - [Cross-origin embed checks and limits](validation/squarespace-integration.json)
 - [Uploaded hosting branch and activation status](validation/squarespace-delivery.json)
+- [Live Pages file verification](validation/pages-live.json)
 - [Connection review](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4)
 - [Embedded desktop preview](previews/squarespace-embedded-desktop.png)
 - [Embedded mobile preview](previews/squarespace-embedded-mobile.png)

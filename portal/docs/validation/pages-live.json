@@ -1,0 +1,116 @@
+{
+  "checkedAt": "2026-10-21T19:40:13.053218+00:00",
+  "passed": true,
+  "method": "Live public HTTPS requests with Python urllib default TLS verification; redirects rejected and file hashes checked against deployed manifest.",
+  "hosting": {
+    "siteUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/",
+    "status": "built",
+    "customDomain": null,
+    "httpsEnforced": true,
+    "source": {
+      "branch": "portal-site",
+      "path": "/"
+    },
+    "deploymentCommit": "ebaebb176047597242d510526e44118edbe5ee78",
+    "deploymentUpdatedAt": "2026-10-21T19:33:58Z"
+  },
+  "rootAndFreshIndexIdentical": true,
+  "pageResponses": [
+    {
+      "path": "/",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/",
+      "status": 200,
+      "redirect": null,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 873,
+      "sha256": "8ee1ae7824831fc31cc8f08305a1722d156cb835b36d2e25999dfa9b883a15e7"
+    },
+    {
+      "path": "index.html?v=2.1",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1",
+      "status": 200,
+      "redirect": null,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 873,
+      "sha256": "8ee1ae7824831fc31cc8f08305a1722d156cb835b36d2e25999dfa9b883a15e7"
+    },
+    {
+      "path": "portal-deployment.json",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/portal-deployment.json",
+      "status": 200,
+      "redirect": null,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 1533,
+      "sha256": "52511bd08648b554415ae43212c41e6ec95f9d1ed5e1f4b08b5ca5273a22aaa7"
+    }
+  ],
+  "deployedSourceCommit": "138f62c1639c9afb9d5c666d8b2abd0bdf6246c6",
+  "fileChecks": [
+    {
+      "path": "assets/index-CAg9nivA.js",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/assets/index-CAg9nivA.js",
+      "status": 200,
+      "redirect": null,
+      "contentType": "application/javascript; charset=utf-8",
+      "bytes": 621540,
+      "sha256": "517e242c1538abc9070a4602e8030a50307d69f432101e6a2737a34df61615c4",
+      "matchesDeploymentFingerprint": true
+    },
+    {
+      "path": "assets/index-D_iSA1tc.css",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/assets/index-D_iSA1tc.css",
+      "status": 200,
+      "redirect": null,
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 3108,
+      "sha256": "9f9d910921d0a6b30045eca7582802a0e9f4a76e00ab8547fd3d14676e6e432c",
+      "matchesDeploymentFingerprint": true
+    },
+    {
+      "path": "index.html",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/index.html",
+      "status": 200,
+      "redirect": null,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 873,
+      "sha256": "8ee1ae7824831fc31cc8f08305a1722d156cb835b36d2e25999dfa9b883a15e7",
+      "matchesDeploymentFingerprint": true
+    },
+    {
+      "path": "models/crown.glb",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/models/crown.glb",
+      "status": 200,
+      "redirect": null,
+      "contentType": "model/gltf-binary",
+      "bytes": 3557760,
+      "sha256": "60a6313b5276baf5ca7d7e57268dd419fd81d9510b0bf663f094e1ab86af636d",
+      "matchesDeploymentFingerprint": true
+    },
+    {
+      "path": "models/kelsea-mother.glb",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/models/kelsea-mother.glb",
+      "status": 200,
+      "redirect": null,
+      "contentType": "model/gltf-binary",
+      "bytes": 3519276,
+      "sha256": "96767a86c1632e6d3019e88cc78e1a8a3f31a78a74bbbdacee30f6af9a3f4804",
+      "matchesDeploymentFingerprint": true
+    },
+    {
+      "path": "models/serpentis-maiden.glb",
+      "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/models/serpentis-maiden.glb",
+      "status": 200,
+      "redirect": null,
+      "contentType": "model/gltf-binary",
+      "bytes": 3973076,
+      "sha256": "74e7f062d930ed9ba3bd1786dca7550c23dd191d387fba11cb2c6171546aafaa",
+      "matchesDeploymentFingerprint": true
+    }
+  ],
+  "userConfirmedWorking": {
+    "url": "https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1",
+    "reportedResult": "WORKS"
+  },
+  "automatedLiveChromiumRender": false,
+  "limits": "The live HTML, JS, CSS and all three GLBs passed HTTP and deployment-fingerprint checks. The user confirmed the fresh index URL works. Cloud Chromium has a trust-store issue, so no automated live-browser rendering is claimed. Separate local cross-origin embed checks remain recorded in squarespace-integration.json."
+}

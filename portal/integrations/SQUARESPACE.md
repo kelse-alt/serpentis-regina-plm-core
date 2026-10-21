@@ -2,17 +2,17 @@
 
 The prepared entrance uses the approved Version 2.1 appearance. GitHub Pages serves the interactive portal; Squarespace displays it on the existing `/landing-portal` page. The Serpentis Regina atelier remains at `/home`.
 
-The intended hosted address is:
+The working address used by the embed is:
 
-https://kelse-alt.github.io/serpentis-regina-plm-core/
+https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1
 
-This address is the deployment target. It must load successfully before the embed is installed. These files do not establish that Pages is enabled or that the Squarespace page has been changed.
+GitHub Pages is enabled, the build succeeded, HTTPS is enforced and the custom domain is cleared. The founder confirmed this address loads successfully. The explicit `index.html` path avoids a browser's remembered redirect from the earlier custom-domain attempt. The Squarespace embed has not yet been installed.
 
-The repository is now public and the tested `portal-site` branch has been uploaded. All nine hosting files were checked against their local staged bytes. This connection's attempt to enable Pages returned HTTP 403, so the remaining activation is the owner setting below. See [the delivery record](../docs/validation/squarespace-delivery.json) and [PR #4](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4).
+The repository is public and the tested `portal-site` branch is published. All nine hosting files were checked against their local staged bytes. The owner enabled Pages after this connection's activation attempt returned HTTP 403. See [the delivery record](../docs/validation/squarespace-delivery.json) and [PR #4](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4).
 
-## 1. Enable the prepared GitHub Pages branch
+## 1. Confirm the hosting settings
 
-Activate the uploaded `portal-site` branch:
+These settings are already active; use them when reviewing or restoring the hosting configuration:
 
 1. Open the repository's [Pages settings](https://github.com/kelse-alt/serpentis-regina-plm-core/settings/pages).
 2. Under **Build and deployment**, choose **Deploy from a branch**.

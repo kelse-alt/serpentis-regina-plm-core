@@ -6,9 +6,11 @@ Version 2.1 refines the approved black, heads-only entrance with smoother shadin
 
 The connection build preserves that appearance and prepares it for the existing Squarespace `/landing-portal` page. Relative assets work at the GitHub project URL; the atelier link opens `/home` in the complete browser window. See the [installation guide](integrations/SQUARESPACE.md) and [copyable Squarespace embed](integrations/squarespace.html).
 
-Run `npm run pages:prepare` to assemble only the built portal under `artifacts/pages-site/`. The prepared hosting branch is `portal-site`; enabling it in GitHub Pages is a separate owner setting. The source integration branch is `codex/portal-squarespace-connection`. The embedded browser checks use `npm run check:squarespace` and record their limits in `docs/validation/squarespace-integration.json`.
+The portal is live at [the working entrance address](https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1). The owner enabled Pages on `portal-site` with HTTPS and no custom domain. See the [live file verification](docs/validation/pages-live.json). The Squarespace installation is the remaining owner step.
 
-The cross-origin embed checks passed on desktop and emulated mobile: real nested-path assets, all three heads, viewport fit, reveal/rotation and full-window atelier navigation. Unrelated-page and editor controls remained visible in the fixtures. Actual Squarespace installation and live hosting require separate verification.
+Run `npm run pages:prepare` to assemble only the built portal under `artifacts/pages-site/`. The source integration branch is `codex/portal-squarespace-connection`. The embedded browser checks use `npm run check:squarespace` and record their limits in `docs/validation/squarespace-integration.json`.
+
+The cross-origin embed checks passed on desktop and emulated mobile: real nested-path assets, all three heads, viewport fit, reveal/rotation and full-window atelier navigation. Unrelated-page and editor controls remained visible in the fixtures. Live files were verified separately. Actual Squarespace installation and its authenticated editor require account-side checks.
 
 The downloads below preserve the approved versions before this navigation change. The Squarespace site is changed only when its owner installs the embed and changes its homepage setting.
 

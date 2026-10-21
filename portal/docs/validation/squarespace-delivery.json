@@ -13,7 +13,8 @@
     "attempted": true,
     "httpStatus": 403,
     "reason": "Resource not accessible by integration",
-    "requiresOwnerSetting": true
+    "requiresOwnerSetting": false,
+    "resolvedBy": "Owner enabled GitHub Pages and removed the invalid custom domain."
   },
   "pagesSettings": "https://github.com/kelse-alt/serpentis-regina-plm-core/settings/pages",
   "ownerSelection": {
@@ -22,8 +23,18 @@
     "folder": "/(root)"
   },
   "intendedSiteUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/",
-  "siteVerifiedLive": false,
+  "siteVerifiedLive": true,
   "squarespaceChanged": false,
   "pullRequest": "https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4",
-  "verification": "Real built assets checked in representative cross-origin desktop/mobile wrappers. Published Pages and authenticated Squarespace checks remain pending."
+  "verification": "Live index, JS, CSS and all three GLBs match their published SHA-256 fingerprints over verified HTTPS; the founder confirmed the portal renders. Cross-origin embed fixture checks cover desktop/mobile. Actual Squarespace installation and authenticated editor checks remain pending.",
+  "lastCheckedAt": "2026-10-21T19:41:00.163877+00:00",
+  "currentDeploymentCommit": "ebaebb176047597242d510526e44118edbe5ee78",
+  "userConfirmedWorking": true,
+  "embedUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1",
+  "currentPagesStatus": {
+    "status": "built",
+    "customDomain": null,
+    "httpsEnforced": true,
+    "ownerActivated": true
+  }
 }
