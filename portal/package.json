@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 8034",
     "build": "vite build",
+    "pages:prepare": "npm run build && node scripts/prepare-pages.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 8035",
     "standalone": "npm run build && node scripts/build-standalone.mjs",
     "check:surface": "node scripts/check_surface.mjs",
+    "check:squarespace": "python3 scripts/check_squarespace.py",
     "check:browser": "python3 scripts/check_portal_v2.py",
     "check:standalone": "python3 scripts/check_standalone_v2.py"
   },

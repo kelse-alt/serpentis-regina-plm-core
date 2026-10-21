@@ -1,5 +1,19 @@
 # Project record
 
+## Squarespace connection preparation
+
+- [Live Squarespace desktop/mobile checks](validation/squarespace-live.json)
+- [Live desktop preview](previews/squarespace-live-desktop.png)
+- [Live mobile preview](previews/squarespace-live-mobile.png)
+- [Connection and installation guide](../integrations/SQUARESPACE.md)
+- [Squarespace HTML fragment](../integrations/squarespace.html)
+- [Cross-origin embed checks and limits](validation/squarespace-integration.json)
+- [Uploaded hosting branch and activation status](validation/squarespace-delivery.json)
+- [Live Pages file verification](validation/pages-live.json)
+- [Connection review](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4)
+- [Embedded desktop preview](previews/squarespace-embedded-desktop.png)
+- [Embedded mobile preview](previews/squarespace-embedded-mobile.png)
+
 ## Version 2.1 — Smooth glossy finish
 
 - [Desktop preview](previews/portal-v2.1-desktop.png)

@@ -1,0 +1,116 @@
+{
+  "checkedAt": "2026-10-21T19:40:35.570623+00:00",
+  "passed": true,
+  "portalRevision": "2.1",
+  "pagesLikePath": "/serpentis-regina-plm-core/",
+  "distinctParentAndIframeOrigins": true,
+  "snippetSha256": "6a33f0586c2422bad4c5afe0cac4b09921104fe0625fdfed41ba2e625ac74f95",
+  "buildIndexSha256": "8ee1ae7824831fc31cc8f08305a1722d156cb835b36d2e25999dfa9b883a15e7",
+  "outcomes": [
+    "desktop: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier navigation passed.",
+    "mobile: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier navigation passed.",
+    "Unrelated collection: site header and footer remain visible.",
+    "Editor fixture: toolbar, header and footer remain visible; iframe stays in document flow with editing interactions disabled."
+  ],
+  "viewports": {
+    "desktop": {
+      "parent": {
+        "width": 1500,
+        "height": 900,
+        "scrollWidth": 1500,
+        "scrollHeight": 900,
+        "iframe": {
+          "x": 0,
+          "y": 0,
+          "width": 1500,
+          "height": 900
+        }
+      },
+      "portal": {
+        "width": 1500,
+        "height": 900,
+        "scrollWidth": 1500,
+        "scrollHeight": 900
+      }
+    },
+    "mobile": {
+      "parent": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "iframe": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "portal": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 390,
+        "scrollHeight": 844
+      }
+    }
+  },
+  "assetResponses": [
+    {
+      "path": "/serpentis-regina-plm-core/index.html",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/assets/index-D_iSA1tc.css",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/assets/index-CAg9nivA.js",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/kelsea-mother.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/serpentis-maiden.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/crown.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/index.html",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/assets/index-D_iSA1tc.css",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/assets/index-CAg9nivA.js",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/kelsea-mother.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/serpentis-maiden.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/crown.glb",
+      "status": 200
+    }
+  ],
+  "atelierNavigation": {
+    "destination": "https://www.serpentisregina.com/home",
+    "topWindow": true,
+    "responseStubbed": true,
+    "liveSquarespaceVisited": false
+  },
+  "pageErrors": [],
+  "unexpectedExternalRequests": [],
+  "limits": "Local representative Squarespace wrappers and emulated mobile Chromium. This does not validate an authenticated Squarespace editor, plan-level custom-code support, the live page or physical-device GPU performance. The GitHub Pages URL was not deployed or contacted by this check."
+}

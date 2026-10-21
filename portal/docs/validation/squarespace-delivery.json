@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-21T19:24:59.754629+00:00",
+  "repository": "kelse-alt/serpentis-regina-plm-core",
+  "visibility": "PUBLIC",
+  "sourceBranch": "codex/portal-squarespace-connection",
+  "testedSourceCommit": "138f62c1639c9afb9d5c666d8b2abd0bdf6246c6",
+  "deploymentBranch": "portal-site",
+  "deploymentCommit": "96340858374a1ec1fc398a8713ea1628486784ae",
+  "remoteFilesMatchStagedBytes": true,
+  "deploymentFileCount": 9,
+  "previousThreeDownloadsUnchanged": true,
+  "pagesActivation": {
+    "attempted": true,
+    "httpStatus": 403,
+    "reason": "Resource not accessible by integration",
+    "requiresOwnerSetting": false,
+    "resolvedBy": "Owner enabled GitHub Pages and removed the invalid custom domain."
+  },
+  "pagesSettings": "https://github.com/kelse-alt/serpentis-regina-plm-core/settings/pages",
+  "ownerSelection": {
+    "source": "Deploy from a branch",
+    "branch": "portal-site",
+    "folder": "/(root)"
+  },
+  "intendedSiteUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/",
+  "siteVerifiedLive": true,
+  "squarespaceChanged": true,
+  "pullRequest": "https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4",
+  "verification": "Live index, JS, CSS and all three GLBs match their published SHA-256 fingerprints over verified HTTPS; the founder confirmed the portal renders. Cross-origin embed fixture checks cover desktop/mobile. Actual Squarespace installation and authenticated editor checks remain pending.",
+  "lastCheckedAt": "2026-10-21T19:41:00.163877+00:00",
+  "currentDeploymentCommit": "ebaebb176047597242d510526e44118edbe5ee78",
+  "userConfirmedWorking": true,
+  "embedUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1",
+  "currentPagesStatus": {
+    "status": "built",
+    "customDomain": null,
+    "httpsEnforced": true,
+    "ownerActivated": true
+  },
+  "squarespaceChangedBy": "owner",
+  "homepageVerified": true,
+  "homepageUrl": "https://www.serpentisregina.com/",
+  "atelierNavigationVerifiedOn": [
+    "desktop",
+    "mobile"
+  ],
+  "liveVerificationRecord": "squarespace-live.json",
+  "remainingCleanup": "Move the prepared fragment into a page Code Block and remove its header-injection copy.",
+  "placeholderRemoved": true,
+  "embeddingPlacement": "page-header-code-injection"
+}

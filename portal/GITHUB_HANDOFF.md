@@ -1,5 +1,15 @@
 # GitHub development handoff — Portal Version 2.1
 
+## Squarespace connection preparation
+
+The current connection work is on `codex/portal-squarespace-connection`. It keeps the approved Version 2.1 appearance, uses relative asset/model URLs and changes the atelier destination to `https://www.serpentisregina.com/home` with `target="_top"`. The archived `portal-v0.2.1` tag and download remain unchanged.
+
+The deploy-only branch is `portal-site`, assembled by `npm run pages:prepare` from `portal/`. It contains only the built portal, original models, `.nojekyll` and a deployment fingerprint. The source repository's other applications are outside that website branch. See [the Squarespace handoff](integrations/SQUARESPACE.md) for activation and embed installation. Connection verification is recorded separately in `docs/validation/squarespace-integration.json`.
+
+The hosting branch is published and all nine files were verified. The repository is public. The owner enabled **Deploy from a branch → portal-site → /(root)** after the integration's activation request returned HTTP 403. Pages reports a successful build, HTTPS enabled and no custom domain. The owner installed the portal and made it the Squarespace homepage. Live desktop/mobile Chromium checks passed for real models, full-screen framing and real top-window navigation into `/home`; HTTPS validation remained enabled using the environment's existing trust store. The embed uses `index.html?v=2.1` to avoid the remembered custom-domain redirect. See [live verification](docs/validation/squarespace-live.json), [delivery status](docs/validation/squarespace-delivery.json) and [draft PR #4](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4).
+
+The visitor view works and the owner has removed the placeholder content. The fragment is still in page-header code injection. The installation guide documents the remaining owner cleanup: put the fragment in a page Code Block and remove its header-injection duplicate. No Squarespace account edits were performed by the assistant.
+
 ## Current direction
 
 The founder approved Version 2's black, heads-only entrance and requested a smoother, glossier surface. Preserve the three large heads, black background, logo palette and information beneath a head only on touch, hover or focus. No visible props, plinths, headings, controls or other page furniture are part of the composition.

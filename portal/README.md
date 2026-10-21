@@ -2,6 +2,22 @@
 
 Version 2.1 refines the approved black, heads-only entrance with smoother shading and a glossy clear-coated finish. The three large heads, logo palette and reveal-on-interaction layout remain the same.
 
+## Squarespace connection build
+
+The connection build preserves that appearance and prepares it for the existing Squarespace `/landing-portal` page. Relative assets work at the GitHub project URL; the atelier link opens `/home` in the complete browser window. See the [installation guide](integrations/SQUARESPACE.md) and [copyable Squarespace embed](integrations/squarespace.html).
+
+The portal is live at [www.serpentisregina.com](https://www.serpentisregina.com/), backed by [GitHub Pages](https://kelse-alt.github.io/serpentis-regina-plm-core/index.html?v=2.1). The owner enabled Pages, installed the embed and made it the Squarespace homepage. Live desktop/mobile checks confirmed all three heads, full-screen framing and top-window navigation into the real `/home` atelier. See [live Squarespace verification](docs/validation/squarespace-live.json) and [live file hashes](docs/validation/pages-live.json).
+
+The current visitor view works and the owner has removed the placeholder content. The remaining placement cleanup is to move the fragment from page-header injection into the page Code Block, following the [installation guide](integrations/SQUARESPACE.md).
+
+Run `npm run pages:prepare` to assemble only the built portal under `artifacts/pages-site/`. The source integration branch is `codex/portal-squarespace-connection`. The embedded browser checks use `npm run check:squarespace` and record their limits in `docs/validation/squarespace-integration.json`.
+
+The cross-origin embed checks passed on desktop and emulated mobile: real nested-path assets, all three heads, viewport fit, reveal/rotation and full-window atelier navigation. Unrelated-page and editor controls remained visible in the fixtures. Live files were verified separately. Actual Squarespace installation and its authenticated editor require account-side checks.
+
+The downloads below preserve the approved versions before this navigation change. The Squarespace site is changed only when its owner installs the embed and changes its homepage setting.
+
+## Saved previews
+
 - [Download Version 2.1](downloads/Portal-Entrance-Version-2.1.html): open the file on GitHub, click **Download raw file** (the downward-arrow icon), then open the saved HTML in Chrome or Edge.
 - [Viewing instructions](downloads/README.md)
 - [Version 2.1 source](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/codex/portal-entrance-v0.2.1/portal)
@@ -54,7 +70,7 @@ npm run check:browser
 npm run check:standalone
 ```
 
-Browser checks require Python Playwright and Chromium in the cloud environment. Set `PORTAL_CHECK_URL` when using a preview port other than 8035. Version 2.1 screenshots and records use the `portal-v2.1` prefix under `docs/previews/` and `docs/validation/`; the older evidence remains historical.
+Browser checks require Python Playwright and Chromium in the cloud environment. Set `PORTAL_CHECK_URL` when using a preview port other than 8035. The original Version 2.1 screenshots and records use the `portal-v2.1` prefix under `docs/previews/` and `docs/validation/`; the connection build's checks default to `portal-squarespace` so older evidence remains intact.
 
 Surface checks assess normal smoothness, retained carved ridges, shared section normals and unchanged source geometry. Browser checks cover actual model loading, black heads-only framing, desktop/mobile fit, reveal/dismissal, rotation, touch/keyboard access, the atelier link, fallback access and embedded HTML.
 

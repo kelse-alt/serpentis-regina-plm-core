@@ -12,7 +12,7 @@ export const worlds = [
     summary: 'Beauty is a discipline. Transformation is a ritual.',
     description: 'Enter the bespoke atelier: collections, editorial worlds and a one-to-one creation ritual through clothing.',
     topics: ['The Collections & The Archive', 'The Ritual — bespoke commissions', 'The Initiate — private consultations'],
-    destination: 'https://www.serpentisregina.com/',
+    destination: 'https://www.serpentisregina.com/home',
     note: 'Continue to the current Serpentis Regina atelier.',
   },
   {

@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-10-21T20:34:53.078923+00:00",
+  "method": "Chromium with existing certificate trust store; HTTPS validation enabled",
+  "checks": [
+    {
+      "mode": "desktop",
+      "status": 200,
+      "metrics": {
+        "view": {
+          "width": 1500,
+          "height": 900
+        },
+        "iframe": {
+          "x": 0,
+          "y": 0,
+          "width": 1500,
+          "height": 900
+        },
+        "headerDisplay": "none",
+        "footerDisplay": "none",
+        "visibleHeadings": [],
+        "overflow": "hidden",
+        "bodyId": "collection-6a8bb66559785a1838e75235"
+      },
+      "fillsViewport": true,
+      "loaded": [
+        "amaya-kelsea",
+        "serpentis-regina",
+        "kls"
+      ],
+      "modelErrors": [],
+      "pageErrors": [],
+      "destination": "https://www.serpentisregina.com/home",
+      "atelierNavigationWorked": true,
+      "atelierBodyId": "collection-69fbac625cc80853dbc548a5"
+    },
+    {
+      "mode": "mobile",
+      "status": 200,
+      "metrics": {
+        "view": {
+          "width": 390,
+          "height": 844
+        },
+        "iframe": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "headerDisplay": "none",
+        "footerDisplay": "none",
+        "visibleHeadings": [],
+        "overflow": "hidden",
+        "bodyId": "collection-6a8bb66559785a1838e75235"
+      },
+      "fillsViewport": true,
+      "loaded": [
+        "amaya-kelsea",
+        "kls",
+        "serpentis-regina"
+      ],
+      "modelErrors": [],
+      "pageErrors": [],
+      "destination": "https://www.serpentisregina.com/home",
+      "atelierNavigationWorked": true,
+      "atelierBodyId": "collection-69fbac625cc80853dbc548a5"
+    }
+  ],
+  "passed": true,
+  "site": "https://www.serpentisregina.com/",
+  "liveTopLevelAtelierNavigation": true,
+  "homepageCollection": "collection-6a8bb66559785a1838e75235",
+  "atelierCollection": "collection-69fbac625cc80853dbc548a5",
+  "placeholderContentPresent": false,
+  "iframeCountInHomepageSource": 1,
+  "embeddingPlacementInSource": "page-header-code-injection",
+  "installationNote": "The owner removed the original placeholder content. The single portal iframe is still in raw page-header injection; browsers repair its placement and the visitor view works. The remaining cleanup is moving the prepared fragment into a page Code Block and removing the header-injection copy.",
+  "limits": "Desktop Chromium and emulated touch viewport, with HTTPS validation enabled using the existing certificate trust store. No authenticated Squarespace account edits or form submissions were performed."
+}
