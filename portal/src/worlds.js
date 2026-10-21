@@ -5,7 +5,9 @@ export const worlds = [
     summary: 'Where aesthetics, innovation & visual storytelling meet.',
     description: 'Designer. System Architect. Founder. A world of material exploration, technical precision and visual storytelling.',
     topics: ['Portfolio & material exploration', 'Technical design & construction', 'Creative direction & professional practice'],
-    note: 'The designer world is taking shape. This is its entrance.',
+    destination: 'https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s',
+    destinationLabel: 'Open Google Drive',
+    note: 'Explore Amaya Kelsea’s work in the founder-provided Google Drive folder.',
   },
   {
     id: 'serpentis-regina', number: '02', name: 'Serpentis Regina', role: 'The Bespoke', head: 'Maiden', model: 'serpentis-maiden.glb',

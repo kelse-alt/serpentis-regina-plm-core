@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-10-21T20:49:43.503064+00:00",
+  "passed": true,
+  "site": "https://www.serpentisregina.com/",
+  "checks": [
+    {
+      "mode": "desktop",
+      "modelsLoaded": [
+        "amaya-kelsea",
+        "serpentis-regina",
+        "kls"
+      ],
+      "label": "Open Google Drive",
+      "requestedDestination": "https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s",
+      "topWindowNavigation": true,
+      "destinationHost": "drive.google.com",
+      "destinationPath": "/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s",
+      "serpentisAtelierUnchanged": true,
+      "klsIntroductionOnly": true,
+      "portalPageErrors": [],
+      "drivePermissionsChanged": false
+    },
+    {
+      "mode": "mobile",
+      "modelsLoaded": [
+        "amaya-kelsea",
+        "kls",
+        "serpentis-regina"
+      ],
+      "label": "Open Google Drive",
+      "requestedDestination": "https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s",
+      "topWindowNavigation": true,
+      "destinationHost": "drive.google.com",
+      "destinationPath": "/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s",
+      "serpentisAtelierUnchanged": true,
+      "klsIntroductionOnly": true,
+      "portalPageErrors": [],
+      "drivePermissionsChanged": false
+    }
+  ],
+  "method": "Live Chromium using the existing certificate trust store; HTTPS validation enabled.",
+  "limits": "Emulated mobile. Google Drive access is controlled by the owner; no sign-in, folder listing, download, sharing change or form submission was performed.",
+  "deploymentCommit": "673a2195179bebebca88c3f095153ca7d1728416",
+  "sourceCommit": "1c2ecf06b1d4865aa3bf78f0aebd46bec54e31a5",
+  "pagesRun": "https://github.com/kelse-alt/serpentis-regina-plm-core/actions/runs/39673258437",
+  "liveAssetFingerprintsMatch": true,
+  "publicFolderContentsVerified": false,
+  "signedOutHttpAccessCheck": "The folder URL redirected to Google Sign-In; folder contents and public sharing were not verified."
+}

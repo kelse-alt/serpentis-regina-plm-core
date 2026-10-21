@@ -2,6 +2,14 @@
 
 Version 2.1 refines the approved black, heads-only entrance with smoother shading and a glossy clear-coated finish. The three large heads, logo palette and reveal-on-interaction layout remain the same.
 
+## Amaya Google Drive route
+
+The current build connects Mother / **Amaya Kelsea** to the founder's [Google Drive folder](https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s). Reveal the head's information, then choose **Open Google Drive**. The link opens in the complete browser window, including when the portal is embedded in Squarespace.
+
+Google Drive controls folder access. A signed-out check redirected to Google Sign-In, so public folder access has not been verified. For public viewing, the owner can choose **Share → General access → Anyone with the link → Viewer** in Google Drive.
+
+The route is published on `portal-site`. Live desktop and emulated-mobile checks confirmed the revealed button opens the exact Drive folder in the full window; the atelier route and KLS introduction remain intact. See [live verification](docs/validation/amaya-drive-live.json).
+
 ## Squarespace connection build
 
 The connection build preserves that appearance and prepares it for the existing Squarespace `/landing-portal` page. Relative assets work at the GitHub project URL; the atelier link opens `/home` in the complete browser window. See the [installation guide](integrations/SQUARESPACE.md) and [copyable Squarespace embed](integrations/squarespace.html).
@@ -10,7 +18,7 @@ The portal is live at [www.serpentisregina.com](https://www.serpentisregina.com/
 
 The current visitor view works and the owner has removed the placeholder content. The remaining placement cleanup is to move the fragment from page-header injection into the page Code Block, following the [installation guide](integrations/SQUARESPACE.md).
 
-Run `npm run pages:prepare` to assemble only the built portal under `artifacts/pages-site/`. The source integration branch is `codex/portal-squarespace-connection`. The embedded browser checks use `npm run check:squarespace` and record their limits in `docs/validation/squarespace-integration.json`.
+Run `npm run pages:prepare` to assemble only the built portal under `artifacts/pages-site/`. The Amaya route source branch is `codex/amaya-drive-link`, continuing the connection work from `codex/portal-squarespace-connection`. The embedded browser checks use `npm run check:squarespace` and record their limits in `docs/validation/squarespace-integration.json`.
 
 The cross-origin embed checks passed on desktop and emulated mobile: real nested-path assets, all three heads, viewport fit, reveal/rotation and full-window atelier navigation. Unrelated-page and editor controls remained visible in the fixtures. Live files were verified separately. Actual Squarespace installation and its authenticated editor require account-side checks.
 
@@ -36,7 +44,7 @@ A nonmetallic physical material adds clearcoat and soft neutral studio reflectio
 - Mother → **Amaya Kelsea**; Maiden → **Serpentis Regina**; Crown → **KLS**.
 - Only the three heads appear initially, against black. Desktop uses three columns; mobile keeps all three within one viewport as three rows.
 - Hover or keyboard focus reveals information beneath a head. Click/tap pins or toggles it; Escape dismisses it. Dragging rotates the head.
-- Serpentis Regina links to the actual atelier. Amaya and KLS retain introductions; their full mini-sites are separate work.
+- Amaya Kelsea reveals **Open Google Drive** for the founder's folder. Serpentis Regina retains **Enter the atelier** for `/home`. Both open in the complete browser window. KLS retains its introduction without an external destination; full Amaya/KLS mini-sites remain separate work.
 - Reduced-motion preferences and unavailable-WebGL access are supported.
 
 ## Run and rebuild
