@@ -1,0 +1,69 @@
+{
+  "version": "2.1",
+  "passed": true,
+  "checkedAt": "2026-10-21T18:55:47.936Z",
+  "modelsChecked": 3,
+  "method": "Actual approved GLBs loaded through GLTFLoader; independent edge-angle and buffer-preservation checks.",
+  "thresholds": {
+    "minimumMeanEdgeAngleReductionPercent": 2,
+    "maximumNormalChangeDegrees": 20.01,
+    "maximumUnitLengthError": 0.000001,
+    "sharpEdgeOriginalAngleDegrees": 60,
+    "sharpEdgeRetainedAngleDegrees": 45,
+    "minimumSharpEdgeRetentionFraction": 0.95
+  },
+  "actualModelSurfaceChecks": [
+    {
+      "file": "kelsea-mother.glb",
+      "primitives": 3,
+      "vertices": 72371,
+      "triangles": 144738,
+      "uniqueEdges": 217107,
+      "meanEdgeAngleBefore": 2.315651356342537,
+      "meanEdgeAngleAfter": 2.051277694697493,
+      "variationReductionPercent": 11.41681630617356,
+      "normalChangeP99Degrees": 5.864663370192697,
+      "maximumNormalChangeDegrees": 20.000002227101927,
+      "originalSharpEdges": 5,
+      "sharpEdgesRetained": 5,
+      "maximumUnitError": 4.730717573231402e-8,
+      "positionsAndTopologyUnchanged": true,
+      "sourceBuffersUnmutated": true
+    },
+    {
+      "file": "serpentis-maiden.glb",
+      "primitives": 5,
+      "vertices": 81801,
+      "triangles": 163602,
+      "uniqueEdges": 245403,
+      "meanEdgeAngleBefore": 5.622295346994126,
+      "meanEdgeAngleAfter": 4.5854286301820055,
+      "variationReductionPercent": 18.442053517634317,
+      "normalChangeP99Degrees": 11.388254305114838,
+      "maximumNormalChangeDegrees": 20.00000251967875,
+      "originalSharpEdges": 415,
+      "sharpEdgesRetained": 399,
+      "maximumUnitError": 4.94910292747619e-8,
+      "positionsAndTopologyUnchanged": true,
+      "sourceBuffersUnmutated": true
+    },
+    {
+      "file": "crown.glb",
+      "primitives": 3,
+      "vertices": 73180,
+      "triangles": 146356,
+      "uniqueEdges": 219534,
+      "meanEdgeAngleBefore": 3.5492669164407067,
+      "meanEdgeAngleAfter": 2.93043796331414,
+      "variationReductionPercent": 17.435401949063444,
+      "normalChangeP99Degrees": 9.079680961121824,
+      "maximumNormalChangeDegrees": 20.000002115225897,
+      "originalSharpEdges": 78,
+      "sharpEdgesRetained": 77,
+      "maximumUnitError": 4.705850220609875e-8,
+      "positionsAndTopologyUnchanged": true,
+      "sourceBuffersUnmutated": true
+    }
+  ],
+  "limits": "Measures lighting-normal continuity and exact vertex/topology preservation, not visual gloss quality or physical-device GPU performance. Edge checks do not prove the absence of all non-local surface intersections."
+}

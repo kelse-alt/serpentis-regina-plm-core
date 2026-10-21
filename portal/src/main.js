@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { worlds } from './worlds.js';
+import { smoothHeadNormals } from './surface.js';
+import { logoMaterial, studioEnvironment } from './finish.js';
 import './style.css';
 
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -10,7 +12,7 @@ let pinnedWorld = null;
 let hideTimer;
 let suppressNextFocus = false;
 
-window.portal = { version: 2, loaded: [], errors: [], selectedWorld: null, rotations: {}, sceneMeshes: {} };
+window.portal = { version: 2, revision: '2.1', loaded: [], errors: [], selectedWorld: null, rotations: {}, sceneMeshes: {}, surfaces: {} };
 
 function revealWorld(id) {
   clearTimeout(hideTimer);
@@ -58,53 +60,6 @@ document.addEventListener('pointerdown', event => {
   }
 });
 
-// The website logo supplies the pearl-gray and pink contour palette.
-// View-normal shading replaces chrome, rainbow reflections and environment lights.
-function logoMaterial() {
-  return new THREE.ShaderMaterial({
-    uniforms: {
-      pearl: { value: new THREE.Color('#b8b8b8') },
-      rose: { value: new THREE.Color('#b68294') },
-      contour: { value: new THREE.Color('#b00046') },
-    },
-    vertexShader: `
-      varying vec3 viewNormal;
-      varying vec3 viewPosition;
-      void main() {
-        vec4 positionInView = modelViewMatrix * vec4(position, 1.0);
-        viewNormal = normalize(normalMatrix * normal);
-        viewPosition = -positionInView.xyz;
-        gl_Position = projectionMatrix * positionInView;
-      }
-    `,
-    fragmentShader: `
-      uniform vec3 pearl;
-      uniform vec3 rose;
-      uniform vec3 contour;
-      varying vec3 viewNormal;
-      varying vec3 viewPosition;
-      void main() {
-        vec3 n = normalize(viewNormal);
-        if (!gl_FrontFacing) n = -n;
-        vec3 v = normalize(viewPosition);
-        float facing = max(dot(n, v), 0.0);
-        float rim = pow(1.0 - facing, 1.6);
-        vec3 color = mix(pearl, rose, smoothstep(0.05, 0.35, rim) * 0.83);
-        color = mix(color, contour, smoothstep(0.18, 0.70, rim));
-        vec3 light = normalize(vec3(-0.35, 0.65, 1.0));
-        float diffuse = max(dot(n, light), 0.0);
-        color *= 0.88 + 0.12 * diffuse;
-        float specular = pow(max(dot(reflect(-light, n), v), 0.0), 24.0);
-        color = mix(color, vec3(0.82), specular * 0.15);
-        gl_FragColor = vec4(color, 1.0);
-        #include <colorspace_fragment>
-      }
-    `,
-    side: THREE.DoubleSide,
-    toneMapped: false,
-  });
-}
-
 async function createHead(world, card) {
   let renderer;
   try {
@@ -112,10 +67,13 @@ async function createHead(world, card) {
     renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
     renderer.setClearColor(0x000000, 1);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.NeutralToneMapping;
     const canvas = renderer.domElement;
     canvas.setAttribute('aria-hidden', 'true');
     card.stage.append(canvas);
     const scene = new THREE.Scene();
+    scene.environment = studioEnvironment(renderer);
+    scene.add(new THREE.HemisphereLight(0xffffff, 0xffffff, 2));
     const pivot = new THREE.Group();
     scene.add(pivot);
     const camera = new THREE.PerspectiveCamera(36, 1, 0.05, 100);
@@ -161,6 +119,7 @@ async function createHead(world, card) {
     const url = window.__PORTAL_MODEL_URLS__?.[world.model] ?? `${import.meta.env.BASE_URL}models/${world.model}`;
     const gltf = await new GLTFLoader().loadAsync(url);
     const model = gltf.scene;
+    window.portal.surfaces[world.id] = smoothHeadNormals(model);
     model.updateMatrixWorld(true);
     const bounds = new THREE.Box3().setFromObject(model, true);
     const originalSize = bounds.getSize(new THREE.Vector3());
