@@ -7,6 +7,8 @@
 - [Mobile preview](previews/portal-v2-mobile.png)
 - [Six browser check groups](validation/portal-v2-checks.json)
 - [Embedded HTML verification and limits](validation/portal-v2-standalone.json)
+- [Verified GitHub download and SHA-256](validation/portal-v2-github-delivery.json)
+- [Version 2 review](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/2)
 - [Open the interactive Version 2 preview](../downloads/README.md)
 
 ## Version 1 and source audit history

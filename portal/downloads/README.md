@@ -18,3 +18,5 @@ No coding-tool installation or separate model download is required. The HTML emb
 Versioned downloads are used because GitHub's separate release-asset upload service previously rejected authentication, while the repository/Git route works. Rebuild with `npm run standalone` from `portal/`, verify the generated file, then deliberately update the identified Version 2 snapshot. Keep Version 1 intact.
 
 Version 2's production build, desktop/mobile interaction checks and embedded HTML verification passed. See the [validation and screenshot record](../docs/README.md). The managed cloud browser checks the embedded document over loopback with extra requests blocked; direct `file://` opening is restricted in that browser.
+
+The [GitHub delivery verification](../docs/validation/portal-v2-github-delivery.json) records a matching downloaded copy: 15,356,781 bytes, SHA-256 `18dfd85b0d913c2fa2fba25a7962db2838f69e9610d68d23c64ae6905b6effd4`.

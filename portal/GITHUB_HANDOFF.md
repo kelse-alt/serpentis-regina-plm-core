@@ -18,6 +18,7 @@ The surface shader uses the sampled website-logo palette `#b8b8b8`, `#b68294`, `
 - Current branch: `codex/portal-entrance-v0.2.0`; milestone tag `portal-v0.2.0`.
 - [Preserved Version 1](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal): tag `portal-v0.1.0`, commit `6fedc025eb6cfcc60a6fab1c94a7d4e75666f6a2`.
 - [Version 2 source](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/codex/portal-entrance-v0.2.0/portal) and [Version 2 download](https://github.com/kelse-alt/serpentis-regina-plm-core/blob/codex/portal-entrance-v0.2.0/portal/downloads/Portal-Entrance-Version-2.html).
+- [Version 2 draft PR #2](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/2) compares this design with Version 1. The [delivery record](docs/validation/portal-v2-github-delivery.json) confirms that the authenticated GitHub download matched the tested HTML byte-for-byte.
 
 Do not replace the preserved Version 1 preview when delivering Version 2. Existing PLM application files are outside this entrance change.
 
