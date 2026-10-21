@@ -16,7 +16,7 @@ VALIDATION = ROOT / 'docs' / 'validation'
 PREVIEWS.mkdir(parents=True, exist_ok=True)
 VALIDATION.mkdir(parents=True, exist_ok=True)
 BASE = os.environ.get('PORTAL_CHECK_URL', 'http://127.0.0.1:8035/')
-PREFIX = os.environ.get('PORTAL_CHECK_PREFIX', 'portal-v2.1')
+PREFIX = os.environ.get('PORTAL_CHECK_PREFIX', 'portal-squarespace')
 WORLDS = [('amaya-kelsea', 'Amaya Kelsea'), ('serpentis-regina', 'Serpentis Regina'), ('kls', 'KLS')]
 OUTCOMES = []
 
@@ -159,7 +159,8 @@ with sync_playwright() as p:
         expect(page.locator(f'#{world_id} .world-info')).to_be_visible()
         expect(control).to_have_attribute('aria-expanded', 'true')
         if world_id == 'serpentis-regina':
-            expect(page.locator(f'#{world_id} .world-info a')).to_have_attribute('href', 'https://www.serpentisregina.com/')
+            expect(page.locator(f'#{world_id} .world-info a')).to_have_attribute('href', 'https://www.serpentisregina.com/home')
+            expect(page.locator(f'#{world_id} .world-info a')).to_have_attribute('target', '_top')
         page.keyboard.press('Escape')
         expect(page.locator(f'#{world_id} .world-info')).to_be_hidden()
         expect(control).to_be_focused()

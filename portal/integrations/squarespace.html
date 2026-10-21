@@ -1,0 +1,67 @@
+<!-- Paste this entire fragment into one HTML Code Block on /landing-portal.
+     First verify that the GitHub Pages address below loads the portal.
+     This fragment is scoped to the inspected landing page's collection ID. -->
+<style>
+  body#collection-6a8bb66559785a1838e75235 .sr-portal-frame {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border: 0;
+    background: #000;
+  }
+
+  /* Visitor presentation only. Squarespace's editor controls remain outside
+     these selectors; the iframe stays in document flow rather than covering them. */
+  body#collection-6a8bb66559785a1838e75235:not(.sqs-edit-mode-active):not(.sqs-edit-mode):not(.sqs-layout-editing) {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    background: #000;
+  }
+
+  body#collection-6a8bb66559785a1838e75235:not(.sqs-edit-mode-active):not(.sqs-edit-mode):not(.sqs-layout-editing) :is(#header, #footer-sections) {
+    display: none !important;
+  }
+
+  body#collection-6a8bb66559785a1838e75235:not(.sqs-edit-mode-active):not(.sqs-edit-mode):not(.sqs-layout-editing) :is(#siteWrapper, #page, #page .sections, #page .page-section, #page .content-wrapper, #page .content, #page .sqs-layout, #page .sqs-block-code, #page .sqs-block-content) {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #000;
+  }
+
+  body#collection-6a8bb66559785a1838e75235:not(.sqs-edit-mode-active):not(.sqs-edit-mode):not(.sqs-layout-editing) #page .fluid-engine {
+    display: block !important;
+    gap: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body#collection-6a8bb66559785a1838e75235:not(.sqs-edit-mode-active):not(.sqs-edit-mode):not(.sqs-layout-editing) #page .fe-block {
+    position: relative !important;
+    grid-area: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Keep the block manageable while editing, with controls above and below it. */
+  body#collection-6a8bb66559785a1838e75235:is(.sqs-edit-mode-active, .sqs-edit-mode, .sqs-layout-editing) .sr-portal-frame {
+    height: min(65vh, 600px);
+    pointer-events: none;
+  }
+</style>
+
+<iframe
+  class="sr-portal-frame"
+  src="https://kelse-alt.github.io/serpentis-regina-plm-core/"
+  title="The three worlds — Serpentis Regina portal"
+  loading="eager"
+  referrerpolicy="strict-origin-when-cross-origin"
+></iframe>

@@ -11,7 +11,7 @@ from threading import Thread
 from playwright.sync_api import sync_playwright, expect
 
 root = Path(__file__).resolve().parents[1]
-prefix = os.environ.get('PORTAL_CHECK_PREFIX', 'portal-v2.1')
+prefix = os.environ.get('PORTAL_CHECK_PREFIX', 'portal-squarespace')
 document = root / 'Serpentis-Regina-Portal.html'
 class DocumentOnly(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -57,7 +57,8 @@ with sync_playwright() as p:
         page.keyboard.press('Enter')
         expect(page.locator(f'#{world_id}-info')).to_be_visible()
         page.keyboard.press('Escape')
-    expect(page.locator('#serpentis-regina-info a')).to_have_attribute('href', 'https://www.serpentisregina.com/')
+    expect(page.locator('#serpentis-regina-info a')).to_have_attribute('href', 'https://www.serpentisregina.com/home')
+    expect(page.locator('#serpentis-regina-info a')).to_have_attribute('target', '_top')
     assert not errors and not network, (errors, network)
     record = {
         'version': 2, 'revision': state.get('revision'), 'file': document.name,

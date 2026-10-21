@@ -1,5 +1,13 @@
 # Project record
 
+## Squarespace connection preparation
+
+- [Connection and installation guide](../integrations/SQUARESPACE.md)
+- [Squarespace HTML fragment](../integrations/squarespace.html)
+- [Cross-origin embed checks and limits](validation/squarespace-integration.json)
+- [Embedded desktop preview](previews/squarespace-embedded-desktop.png)
+- [Embedded mobile preview](previews/squarespace-embedded-mobile.png)
+
 ## Version 2.1 — Smooth glossy finish
 
 - [Desktop preview](previews/portal-v2.1-desktop.png)

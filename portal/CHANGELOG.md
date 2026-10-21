@@ -1,5 +1,15 @@
 # Changelog
 
+## Squarespace connection preparation — 2026-10-21
+
+- Preserved the approved Version 2.1 material, geometry and black composition.
+- Made asset/model URLs relative for deployment at a GitHub project URL.
+- Pointed the atelier link and JavaScript-free fallback to `/home`, opening the complete browser window when embedded.
+- Added a page-scoped Squarespace iframe and installation guide for the inspected `/landing-portal` page.
+- Added a deploy-only `portal-site` branch preparation script and cross-origin iframe checks. Hosting activation and Squarespace publication are separate owner steps.
+- Preserved all earlier tagged source, downloads and validation records.
+- Cross-origin desktop/mobile embed checks passed, including real nested-path assets and full-window atelier navigation. Squarespace editor/plan and live publication remain separate checks.
+
 ## v0.2.1 — Version 2.1: Surface polish — 2026-10-21
 
 The founder approved Version 2's clean black composition and requested a smoother, glossier finish. This edit retains the layout, three-head framing, logo palette and interaction model.

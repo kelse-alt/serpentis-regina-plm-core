@@ -1,5 +1,11 @@
 # GitHub development handoff — Portal Version 2.1
 
+## Squarespace connection preparation
+
+The current connection work is on `codex/portal-squarespace-connection`. It keeps the approved Version 2.1 appearance, uses relative asset/model URLs and changes the atelier destination to `https://www.serpentisregina.com/home` with `target="_top"`. The archived `portal-v0.2.1` tag and download remain unchanged.
+
+The deploy-only branch is `portal-site`, assembled by `npm run pages:prepare` from `portal/`. It contains only the built portal, original models, `.nojekyll` and a deployment fingerprint. The source repository's other applications are outside that website branch. See [the Squarespace handoff](integrations/SQUARESPACE.md) for activation and embed installation. Connection verification is recorded separately in `docs/validation/squarespace-integration.json`.
+
 ## Current direction
 
 The founder approved Version 2's black, heads-only entrance and requested a smoother, glossier surface. Preserve the three large heads, black background, logo palette and information beneath a head only on touch, hover or focus. No visible props, plinths, headings, controls or other page furniture are part of the composition.

@@ -2,6 +2,18 @@
 
 Version 2.1 refines the approved black, heads-only entrance with smoother shading and a glossy clear-coated finish. The three large heads, logo palette and reveal-on-interaction layout remain the same.
 
+## Squarespace connection build
+
+The connection build preserves that appearance and prepares it for the existing Squarespace `/landing-portal` page. Relative assets work at the GitHub project URL; the atelier link opens `/home` in the complete browser window. See the [installation guide](integrations/SQUARESPACE.md) and [copyable Squarespace embed](integrations/squarespace.html).
+
+Run `npm run pages:prepare` to assemble only the built portal under `artifacts/pages-site/`. The prepared hosting branch is `portal-site`; enabling it in GitHub Pages is a separate owner setting. The source integration branch is `codex/portal-squarespace-connection`. The embedded browser checks use `npm run check:squarespace` and record their limits in `docs/validation/squarespace-integration.json`.
+
+The cross-origin embed checks passed on desktop and emulated mobile: real nested-path assets, all three heads, viewport fit, reveal/rotation and full-window atelier navigation. Unrelated-page and editor controls remained visible in the fixtures. Actual Squarespace installation and live hosting require separate verification.
+
+The downloads below preserve the approved versions before this navigation change. The Squarespace site is changed only when its owner installs the embed and changes its homepage setting.
+
+## Saved previews
+
 - [Download Version 2.1](downloads/Portal-Entrance-Version-2.1.html): open the file on GitHub, click **Download raw file** (the downward-arrow icon), then open the saved HTML in Chrome or Edge.
 - [Viewing instructions](downloads/README.md)
 - [Version 2.1 source](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/codex/portal-entrance-v0.2.1/portal)
@@ -54,7 +66,7 @@ npm run check:browser
 npm run check:standalone
 ```
 
-Browser checks require Python Playwright and Chromium in the cloud environment. Set `PORTAL_CHECK_URL` when using a preview port other than 8035. Version 2.1 screenshots and records use the `portal-v2.1` prefix under `docs/previews/` and `docs/validation/`; the older evidence remains historical.
+Browser checks require Python Playwright and Chromium in the cloud environment. Set `PORTAL_CHECK_URL` when using a preview port other than 8035. The original Version 2.1 screenshots and records use the `portal-v2.1` prefix under `docs/previews/` and `docs/validation/`; the connection build's checks default to `portal-squarespace` so older evidence remains intact.
 
 Surface checks assess normal smoothness, retained carved ridges, shared section normals and unchanged source geometry. Browser checks cover actual model loading, black heads-only framing, desktop/mobile fit, reveal/dismissal, rotation, touch/keyboard access, the atelier link, fallback access and embedded HTML.
 
