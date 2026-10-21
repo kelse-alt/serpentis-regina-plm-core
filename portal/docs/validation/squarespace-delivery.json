@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-21T19:24:59.754629+00:00",
+  "repository": "kelse-alt/serpentis-regina-plm-core",
+  "visibility": "PUBLIC",
+  "sourceBranch": "codex/portal-squarespace-connection",
+  "testedSourceCommit": "138f62c1639c9afb9d5c666d8b2abd0bdf6246c6",
+  "deploymentBranch": "portal-site",
+  "deploymentCommit": "96340858374a1ec1fc398a8713ea1628486784ae",
+  "remoteFilesMatchStagedBytes": true,
+  "deploymentFileCount": 9,
+  "previousThreeDownloadsUnchanged": true,
+  "pagesActivation": {
+    "attempted": true,
+    "httpStatus": 403,
+    "reason": "Resource not accessible by integration",
+    "requiresOwnerSetting": true
+  },
+  "pagesSettings": "https://github.com/kelse-alt/serpentis-regina-plm-core/settings/pages",
+  "ownerSelection": {
+    "source": "Deploy from a branch",
+    "branch": "portal-site",
+    "folder": "/(root)"
+  },
+  "intendedSiteUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/",
+  "siteVerifiedLive": false,
+  "squarespaceChanged": false,
+  "pullRequest": "https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4",
+  "verification": "Real built assets checked in representative cross-origin desktop/mobile wrappers. Published Pages and authenticated Squarespace checks remain pending."
+}

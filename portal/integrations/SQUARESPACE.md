@@ -8,9 +8,11 @@ https://kelse-alt.github.io/serpentis-regina-plm-core/
 
 This address is the deployment target. It must load successfully before the embed is installed. These files do not establish that Pages is enabled or that the Squarespace page has been changed.
 
+The repository is now public and the tested `portal-site` branch has been uploaded. All nine hosting files were checked against their local staged bytes. This connection's attempt to enable Pages returned HTTP 403, so the remaining activation is the owner setting below. See [the delivery record](../docs/validation/squarespace-delivery.json) and [PR #4](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/4).
+
 ## 1. Enable the prepared GitHub Pages branch
 
-After the `portal-site` branch has been uploaded:
+Activate the uploaded `portal-site` branch:
 
 1. Open the repository's [Pages settings](https://github.com/kelse-alt/serpentis-regina-plm-core/settings/pages).
 2. Under **Build and deployment**, choose **Deploy from a branch**.
@@ -18,6 +20,8 @@ After the `portal-site` branch has been uploaded:
 4. Wait for GitHub to show the published address, then open it and check all three heads.
 
 The branch contains the built portal and its three models. Its site folder does not include the PLM application's measurement records, reports or database files. The source repository's visibility is a separate setting: GitHub Pages on a free plan uses a public repository; eligible paid plans can also use private repositories. Pages and repository settings need the owner's GitHub account when the connected integration lacks the required permissions.
+
+Once enabled, each new commit to `portal-site` updates the hosted entrance. Keep source changes on review branches and publish only an approved portal build to that branch.
 
 ## 2. Install the Squarespace embed
 
