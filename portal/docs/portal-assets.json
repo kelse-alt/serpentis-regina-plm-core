@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "assignmentConfirmedByFounder": true,
+  "models": [
+    {
+      "brandId": "amaya-kelsea",
+      "brandName": "Amaya Kelsea",
+      "head": "Mother",
+      "sourceName": "(KELSEA) Mother head.glb",
+      "sourceUrl": "https://drive.google.com/file/d/1UJe_XbQQKctfbGU5OfgMUsqBwTcSWa0m/view",
+      "localPath": "public/models/kelsea-mother.glb",
+      "sha256": "96767a86c1632e6d3019e88cc78e1a8a3f31a78a74bbbdacee30f6af9a3f4804",
+      "bytes": 3519276,
+      "triangles": 144738,
+      "uniquePositionVertices": 72371,
+      "embeddedTextures": 0,
+      "embeddedAnimations": 0
+    },
+    {
+      "brandId": "serpentis-regina",
+      "brandName": "Serpentis Regina",
+      "head": "Maiden",
+      "sourceName": "(SERPENTIS REGINA) Maiden head.glb",
+      "sourceUrl": "https://drive.google.com/file/d/1sMm8EnAdDsXkmRjQEbpVXSFFTMjESVvT/view",
+      "localPath": "public/models/serpentis-maiden.glb",
+      "sha256": "74e7f062d930ed9ba3bd1786dca7550c23dd191d387fba11cb2c6171546aafaa",
+      "bytes": 3973076,
+      "triangles": 163602,
+      "uniquePositionVertices": 81801,
+      "embeddedTextures": 0,
+      "embeddedAnimations": 0
+    },
+    {
+      "brandId": "kls",
+      "brandName": "KLS",
+      "head": "Crown",
+      "sourceName": "Crown Head.glb",
+      "sourceUrl": "https://drive.google.com/file/d/1ezEDSqd3jAZZTSJvhf5ZmuA8L---7Grm/view",
+      "localPath": "public/models/crown.glb",
+      "sha256": "60a6313b5276baf5ca7d7e57268dd419fd81d9510b0bf663f094e1ab86af636d",
+      "bytes": 3557760,
+      "triangles": 146356,
+      "uniquePositionVertices": 73180,
+      "embeddedTextures": 0,
+      "embeddedAnimations": 0
+    }
+  ]
+}

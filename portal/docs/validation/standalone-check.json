@@ -1,0 +1,16 @@
+{
+  "file": "Serpentis-Regina-Portal.html",
+  "networkDisabledAfterDocumentLoad": true,
+  "fileProtocolVerification": "Blocked by cloud browser policy; single-document loopback transport used",
+  "modelsLoaded": [
+    "amaya-kelsea",
+    "serpentis-regina",
+    "kls"
+  ],
+  "rotation": "passed",
+  "worldEntryAndClose": "passed",
+  "finishSwitching": "passed",
+  "sameFileNavigation": "passed",
+  "remoteRequests": 0,
+  "pageErrors": []
+}

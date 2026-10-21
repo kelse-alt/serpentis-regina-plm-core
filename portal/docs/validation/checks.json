@@ -1,0 +1,12 @@
+{
+  "passed": 7,
+  "outcomes": [
+    "Production page loads all three real GLBs without page errors or external requests.",
+    "Dragging changes the sculpture orientation without navigating.",
+    "All three worlds open by keyboard, Escape restores focus, and the atelier points to the real website.",
+    "Clicking the actual head selects its world.",
+    "Finish switching changes the rendering; the animated entry also completes.",
+    "390px mobile layout has no horizontal overflow; touch entry and close work.",
+    "Without WebGL, all three text entry controls remain available and the atelier link works."
+  ]
+}
