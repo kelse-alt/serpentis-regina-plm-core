@@ -1,7 +1,7 @@
 {
   "name": "serpentis-regina-plm-core",
   "private": true,
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A versioned fashion measurement register built with JavaScript, SQLite, and an offline browser report",
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
     "sheet:db": "node src/house-measurement-database.mjs sheet",
     "generator": "node src/measurement-generator-server.mjs",
     "generator:build": "node scripts/build-measurement-generator.mjs",
+    "intake": "node src/client-intake-server.mjs",
+    "intake:build": "node scripts/build-client-intake.mjs",
     "test": "node --test tests/*.test.mjs"
   }
 }

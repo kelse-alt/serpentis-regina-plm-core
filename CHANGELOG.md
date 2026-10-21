@@ -2,6 +2,24 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## v0.4.0 — 2026-10-20
+
+### Added
+
+- A client measurement intake based on the supplied Remote Bespoke Dress workbook, preserving its field labels, methods, required markers, and extracted colorway.
+- A sanitized 34-POM RC template with 19 required measurements, preserving the source's absent RC-21 and question-mark annotations for RC-12/RC-13.
+- CM/IN entry with canonical centimeter storage and six-decimal display conversion, without rewriting fixed-unit measuring landmarks.
+- Partial draft save/reopen, a completeness check, CSV/JSON export, compatible JSON import, and blank/filled print controls.
+- Separate local SQLite client-intake storage and a self-contained `client-intake.html` with separate browser storage.
+- Intake validation, conversion, export, persistence, and API tests alongside the existing baseline and generator suites.
+
+### Source and data handling
+
+- No filled client or project information is included in the distributed template or prebuilt form. The original workbook stays outside the checkout, and saved client records remain local.
+- The source contains no delta/reference formula; the intake does not fabricate a comparison with the approved 20-POM house register.
+- The croquis refers to a separate PDF that was not provided. Reference areas hold notes; attachment handling is not implemented.
+- The approved house measurements and previous generator workflows remain unchanged.
+
 ## v0.3.1 — 2026-10-20
 
 - Include a ready-to-open `measurement-sheet-generator.html` in the project ZIP, so the standalone app can be used without installing Node.js or building the source.

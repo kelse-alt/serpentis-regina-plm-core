@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "templateId": "SR-REMOTE-BESPOKE-INTAKE",
+  "revision": "v1",
+  "title": "Remote Bespoke Dress · Client Measurement Intake",
+  "brand": "SERPENTIS REGINA",
+  "source": {
+    "fileName": "SERPENTIS REGINA - REMOTE BESPOKE DRESS CLIENT MEASUREMENT SHEET.xlsx",
+    "sheetName": "CLIENT BODY MEASUREMENTS",
+    "measurementRange": "A31:E65",
+    "formulaCount": 0,
+    "conditionalFormattingCount": 0
+  },
+  "palette": {
+    "brandRed": "#E4002B",
+    "royalBlue": "#1E22AA",
+    "sectionRed": "#EE2737",
+    "referenceGreen": "#1FA824",
+    "measurementBurgundy": "#612028",
+    "tableDark": "#0F1720",
+    "tableRed": "#ED2637",
+    "entryBlush": "#FFF4F4",
+    "text": "#101820",
+    "white": "#FFFFFF"
+  },
+  "paletteSources": {
+    "brandRed": {
+      "cell": "A1",
+      "component": "fill"
+    },
+    "royalBlue": {
+      "cell": "I1",
+      "component": "fill"
+    },
+    "sectionRed": {
+      "cell": "A3",
+      "component": "fill"
+    },
+    "referenceGreen": {
+      "cell": "A9",
+      "component": "fill"
+    },
+    "measurementBurgundy": {
+      "cell": "A30",
+      "component": "fill"
+    },
+    "tableDark": {
+      "cell": "A31",
+      "component": "fill"
+    },
+    "tableRed": {
+      "cell": "A31",
+      "component": "font"
+    },
+    "entryBlush": {
+      "cell": "E32",
+      "component": "fill"
+    },
+    "text": {
+      "cell": "A3",
+      "component": "font"
+    },
+    "white": {
+      "cell": "A30",
+      "component": "font"
+    }
+  },
+  "unitOptions": [
+    "CM",
+    "IN"
+  ],
+  "defaultUnit": "CM",
+  "unitLabel": "MEASUREMENT UNITS",
+  "defaults": {
+    "status": "CLIENT INTAKE - AWAITING MEASUREMENTS",
+    "fittingMethod": "REMOTE / TOILE REQUIRED"
+  },
+  "fields": [
+    {
+      "key": "clientId",
+      "label": "CLIENT ID",
+      "sourceCell": "A4",
+      "type": "text"
+    },
+    {
+      "key": "clientName",
+      "label": "CLIENT NAME",
+      "sourceCell": "A5",
+      "type": "text"
+    },
+    {
+      "key": "projectDescription",
+      "label": "CLIENT / PROJECT DESCRIPTION",
+      "sourceCell": "A2",
+      "type": "text"
+    },
+    {
+      "key": "projectType",
+      "label": "PROJECT TYPE",
+      "sourceCell": "A6",
+      "type": "text"
+    },
+    {
+      "key": "measurementDate",
+      "label": "MEASUREMENT DATE",
+      "sourceCell": "G4",
+      "type": "date"
+    },
+    {
+      "key": "measuredBy",
+      "label": "MEASURED BY",
+      "sourceCell": "G5",
+      "type": "text"
+    },
+    {
+      "key": "foundationGarments",
+      "label": "FOUNDATION GARMENTS",
+      "sourceCell": "G6",
+      "type": "text"
+    },
+    {
+      "key": "shoesHeel",
+      "label": "INTENDED SHOES / HEEL",
+      "sourceCell": "G7",
+      "type": "text"
+    },
+    {
+      "key": "status",
+      "label": "STATUS",
+      "sourceCell": "A8",
+      "type": "text"
+    },
+    {
+      "key": "fittingMethod",
+      "label": "FITTING METHOD",
+      "sourceCell": "G8",
+      "type": "text"
+    },
+    {
+      "key": "revision",
+      "label": "REVISION",
+      "sourceCell": "I2",
+      "type": "text"
+    },
+    {
+      "key": "page",
+      "label": "PAGE",
+      "sourceCell": "I2",
+      "type": "text"
+    }
+  ],
+  "sections": {
+    "client": "CLIENT MEASUREMENTS",
+    "measurements": "REMOTE CLIENT ACTUAL BODY MEASUREMENTS"
+  },
+  "referenceAreas": {
+    "croquisTitle": "CROQUIS DIAGRAM - SEPARATE PDF",
+    "clientReferenceTitle": "CLIENT REFERENCE AREA - BLANK"
+  },
+  "notes": [
+    "POM numbering follows the workbook; RC-21 is not present.",
+    "RC-12 and RC-13 retain question-mark annotations in the source measuring methods.",
+    "The croquis area refers to a separate PDF; no PDF was included with this workbook."
+  ],
+  "measurements": [
+    {
+      "pomCode": "RC-01",
+      "required": true,
+      "sourceLabel": " FULL BUST CIRCUMFERENCE",
+      "label": "FULL BUST CIRCUMFERENCE",
+      "howToMeasure": "Measure around the fullest part of your bust, over your intended bra. Keep the tape level across your back.",
+      "sourceRow": 32,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-02",
+      "required": true,
+      "sourceLabel": "UNDERBUST CIRCUMFERENCE",
+      "label": "UNDERBUST CIRCUMFERENCE",
+      "howToMeasure": "Measure around your rib cage directly beneath your breasts. Keep the tape level and breathe normally.",
+      "sourceRow": 33,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-03",
+      "required": true,
+      "sourceLabel": "NATURAL WAIST CIRCUMFERENCE",
+      "label": "NATURAL WAIST CIRCUMFERENCE",
+      "howToMeasure": "Measure around the most narrow section of torso. Keep the tape close to your body without tightening or drawing in your stomach.",
+      "sourceRow": 34,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-04",
+      "required": true,
+      "sourceLabel": "HIGH HIP CIRCUMFERENCE-10CM BELOW WAIST",
+      "label": "HIGH HIP CIRCUMFERENCE-10CM BELOW WAIST",
+      "howToMeasure": "Measure around your body 10 cm below natural waist. Keep the tape level all the way around.",
+      "sourceRow": 35,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-05",
+      "required": true,
+      "sourceLabel": "FULL HIP / SEAT CIRCUMFERENCE",
+      "label": "FULL HIP / SEAT CIRCUMFERENCE",
+      "howToMeasure": "With feet together, measure around the fullest part of your hips and buttocks. Keep the tape level.",
+      "sourceRow": 36,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-06",
+      "required": true,
+      "sourceLabel": "CENTER FRONT NECK TO WAIST",
+      "label": "CENTER FRONT NECK TO WAIST",
+      "howToMeasure": "Measure from the hollow at the front base of your neck; down the center front to the marked waistline, following your body contour.",
+      "sourceRow": 37,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-07",
+      "required": true,
+      "sourceLabel": "SIDE NECK TO BUST POINT",
+      "label": "SIDE NECK TO BUST POINT",
+      "howToMeasure": "Measure from where the side of your neck meets your shoulder, to the fullest point of your bust, on the same side.",
+      "sourceRow": 38,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-08",
+      "required": true,
+      "sourceLabel": "BUST POINT TO BUST POINT",
+      "label": "BUST POINT TO BUST POINT",
+      "howToMeasure": "Measure directly across the front from one nipple to the other. Do not wrap the tape around your body.",
+      "sourceRow": 39,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-09",
+      "required": true,
+      "sourceLabel": "SHOULDER LENGTH",
+      "label": "SHOULDER LENGTH",
+      "howToMeasure": "Measure from where the side of your neck meets your shoulder, to the bony shoulder tip where your arm begins.",
+      "sourceRow": 40,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-10",
+      "required": true,
+      "sourceLabel": "SIDE NECK TO WAIST- OVER BUST",
+      "label": "SIDE NECK TO WAIST- OVER BUST",
+      "howToMeasure": "Measure from where your neck meets your shoulder, over the bust point, down to the natural waist on the same side.",
+      "sourceRow": 41,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-11",
+      "required": true,
+      "sourceLabel": "NECK BASE CIRCUMFERENCE",
+      "label": "NECK BASE CIRCUMFERENCE",
+      "howToMeasure": "Measure around the base of your neck where it meets your shoulders. Keep the tape touching your skin without tightening.",
+      "sourceRow": 42,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-12",
+      "required": true,
+      "sourceLabel": "ACROSS FRONT CHEST",
+      "label": "ACROSS FRONT CHEST",
+      "howToMeasure": "With arms relaxed, measure across your upper chest between the front creases where your arms meet your top torso. (5cm below CF NECK?)",
+      "sourceRow": 43,
+      "methodNeedsConfirmation": true
+    },
+    {
+      "pomCode": "RC-13",
+      "required": true,
+      "sourceLabel": "ACROSS BACK",
+      "label": "ACROSS BACK",
+      "howToMeasure": "With arms relaxed, measure across your back between the rear creases where your arms meet your torso. Follow your back contour. (5cm below CB NECK?)",
+      "sourceRow": 44,
+      "methodNeedsConfirmation": true
+    },
+    {
+      "pomCode": "RC-14",
+      "required": true,
+      "sourceLabel": "BACK SHOULDER WIDTH",
+      "label": "BACK SHOULDER WIDTH",
+      "howToMeasure": "Measure from one shoulder tip to the other, across your upper back; following its contour.",
+      "sourceRow": 45,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-15",
+      "required": true,
+      "sourceLabel": "CENTER BACK NECK TO WAIST",
+      "label": "CENTER BACK NECK TO WAIST",
+      "howToMeasure": "Measure from the prominent bone at the back base of your neck down the center of your back to the natural waist.",
+      "sourceRow": 46,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-16",
+      "required": true,
+      "sourceLabel": "CENTER BACK NECK TO FULL HIP",
+      "label": "CENTER BACK NECK TO FULL HIP",
+      "howToMeasure": "Measure from the back neck bone; down the center of your back, to the marked full-hip level; following your body contour.",
+      "sourceRow": 47,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-17",
+      "required": true,
+      "sourceLabel": "VERTICAL DEPTH- SIDE NECK TO UNDER ARM LEVEL",
+      "label": "VERTICAL DEPTH- SIDE NECK TO UNDER ARM LEVEL",
+      "howToMeasure": "Measure vertically from where the side of your neck meets your shoulder, to the horizontal level directly beneath your armpit.",
+      "sourceRow": 48,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-18",
+      "required": false,
+      "sourceLabel": "ARMHOLE CIRCUMFERENCE",
+      "label": "ARMHOLE CIRCUMFERENCE",
+      "howToMeasure": "loop the tape over the shoulder tip and beneath the armpit; following the agreed armhole path.",
+      "sourceRow": 49,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-19",
+      "required": true,
+      "sourceLabel": "SIDE NECK TO CROTCH - FRONT - OVER BUST",
+      "label": "SIDE NECK TO CROTCH - FRONT - OVER BUST",
+      "howToMeasure": "Measure starting at side neck; passing bust point, down front; stopping at crotch point.",
+      "sourceRow": 50,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-20",
+      "required": true,
+      "sourceLabel": "WAIST TO FULL HIP- SIDE",
+      "label": "WAIST TO FULL HIP- SIDE",
+      "howToMeasure": "Measure down the side of your body; from the natural waist to the marked full-hip level.",
+      "sourceRow": 51,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-22",
+      "required": false,
+      "sourceLabel": "WAIST TO KNEE LEVEL- SIDE",
+      "label": "WAIST TO KNEE LEVEL- SIDE",
+      "howToMeasure": "Measure down the side, from natural waist to the horizontal level of the center of your kneecap.",
+      "sourceRow": 52,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-23",
+      "required": false,
+      "sourceLabel": "WAIST TO FLOOR",
+      "label": "WAIST TO FLOOR",
+      "howToMeasure": "Stand barefoot with feet together. Have your helper measure vertically from your natural waist at your side to the floor.",
+      "sourceRow": 53,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-24",
+      "required": false,
+      "sourceLabel": "THIGH CIRCUMFERENCE - 9CM BELOW CROTCH",
+      "label": "THIGH CIRCUMFERENCE - 9CM BELOW CROTCH",
+      "howToMeasure": "Mark 9 cm down the inner thigh from the crotch crease. Measure horizontally; around the thigh at this level, with your leg relaxed.",
+      "sourceRow": 54,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-25",
+      "required": false,
+      "sourceLabel": "DESIRED FRONT HEM LENGTH - SIDE NECK",
+      "label": "DESIRED FRONT HEM LENGTH - SIDE NECK",
+      "howToMeasure": "Wearing your intended shoes, measure from the side-neck point; over your bust to the agreed front hem position.",
+      "sourceRow": 55,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-26",
+      "required": false,
+      "sourceLabel": "DESIRED BACK HEM/TRAIN LENGTH",
+      "label": "DESIRED BACK HEM/TRAIN LENGTH",
+      "howToMeasure": "Measure from the back neck bone, to the agreed back hem going down Center back.",
+      "sourceRow": 56,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-27",
+      "required": false,
+      "sourceLabel": "SHOE HEEL HEIGHT",
+      "label": "SHOE HEEL HEIGHT",
+      "howToMeasure": "Measure vertically from the floor, to the top of the heel at the back of the shoe. Include a side-view photo of the shoe.",
+      "sourceRow": 57,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-28",
+      "required": false,
+      "sourceLabel": "ARM LENGTH - SHOULDER TO WRIST",
+      "label": "ARM LENGTH - SHOULDER TO WRIST",
+      "howToMeasure": "With your elbow gently bent, measure from the shoulder tip; over the elbow to the wrist bone.",
+      "sourceRow": 58,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-29",
+      "required": false,
+      "sourceLabel": "SHOULDER TO ELBOW LENGTH",
+      "label": "SHOULDER TO ELBOW LENGTH",
+      "howToMeasure": "With your elbow gently bent, measure from the shoulder tip down the outside of your arm to the point of your elbow.",
+      "sourceRow": 59,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-30",
+      "required": false,
+      "sourceLabel": "UPPER ARM CIRCUMFERENCE",
+      "label": "UPPER ARM CIRCUMFERENCE",
+      "howToMeasure": "Measure around the fullest part of your upper arm, with your arm relaxed. Do not flex.",
+      "sourceRow": 60,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-31",
+      "required": false,
+      "sourceLabel": "ELBOW CIRCUMFERENCE",
+      "label": "ELBOW CIRCUMFERENCE",
+      "howToMeasure": "Bend your elbow approximately 45°. Measure around the elbow, passing the tape over its point without tightening.",
+      "sourceRow": 61,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-32",
+      "required": false,
+      "sourceLabel": "FOREARM CIRCUMFERENCE",
+      "label": "FOREARM CIRCUMFERENCE",
+      "howToMeasure": "Measure around the fullest part of your forearm with your arm relaxed.",
+      "sourceRow": 62,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-33",
+      "required": false,
+      "sourceLabel": "WRIST CIRCUMFERENCE",
+      "label": "WRIST CIRCUMFERENCE",
+      "howToMeasure": "Measure around your wrist at the wrist bones. Keep the tape touching your skin without tightening.",
+      "sourceRow": 63,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-34",
+      "required": false,
+      "sourceLabel": "HAND CIRCUMFERENCE",
+      "label": "HAND CIRCUMFERENCE",
+      "howToMeasure": "Bring your fingers together and tuck your thumb across your palm. Measure around the widest part of your hand, including the thumb.",
+      "sourceRow": 64,
+      "methodNeedsConfirmation": false
+    },
+    {
+      "pomCode": "RC-35",
+      "required": false,
+      "sourceLabel": "INNER ARM LENGTH - UNDERARM TO WRIST",
+      "label": "INNER ARM LENGTH - UNDERARM TO WRIST",
+      "howToMeasure": "With your arm slightly lifted and elbow gently bent, measure from the underarm crease; along your inner arm to the wrist bone.",
+      "sourceRow": 65,
+      "methodNeedsConfirmation": false
+    }
+  ]
+}

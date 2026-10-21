@@ -1,11 +1,44 @@
 # Serpentis Regina — PLM Core
 
-A fashion technology prototype that turns a house mannequin measurement sheet into a controlled, searchable fit-form register. It connects technical-design practice with beginner JavaScript learning: one approved measurement object becomes one displayed row and one SQLite record.
+A fashion technology prototype for client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects technical-design practice with beginner JavaScript learning: one measurement object becomes one displayed row and one saved record.
+
+## Start with the client intake — v0.4.0
+
+**Without installing anything:** [download the v0.4.0 ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/tags/v0.4.0.zip), extract the folder, and open **client-intake.html** in your browser.
+
+The intake follows the supplied Remote Bespoke Dress workbook's fields, measuring
+instructions, required markers, and red/blue/green/burgundy/dark/blush colorway.
+It starts with blank client and project information and **34 RC POMs**, of which
+**19 are required**. Choose **CM** (the workbook default) or **IN**, enter values,
+save/reopen partial drafts, import/export JSON, download CSV, or print a blank or
+filled sheet.
+
+The completeness check requires a client ID or name, a measurement date, and all
+19 required measurements; it does not approve the intake. RC-21 is absent in the
+source and remains absent. RC-12/RC-13 retain source questions that need house
+clarification. The croquis refers to a separate PDF that was not supplied; the
+reference areas accept notes, not file attachments.
+
+Switching units converts from canonical stored centimeters, displaying up to six
+decimal places. It does not change fixed centimeter landmarks written in the
+measuring methods. The workbook has no comparison reference or delta formula, so
+this client form does not invent a comparison with the separate 20-POM house form.
+
+For local SQLite storage, use Node.js 24+ and run `npm run intake`; open the address
+printed in the terminal (default port 3002). Run `npm run intake:build` to rebuild
+the standalone file. Browser drafts and SQLite records are separate stores.
+Filled client records stay local and are not included in the public form or Git
+history. See the [client-intake guide](docs/client-intake.md) for the full workflow.
+
+Source palette: brand red `#E4002B`, royal blue `#1E22AA`, section red `#EE2737`,
+reference green `#1FA824`, burgundy `#612028`, dark table `#0F1720`, table red
+`#ED2637`, blush entries `#FFF4F4`, text `#101820`, and white `#FFFFFF`.
 
 This public portfolio includes the actual founder-approved **SR-FORM-001 v1** dataset: **20 points of measure (POMs)** in inches, original measuring instructions, and manufacturer references where supplied. The founder authorized publication of these records and the repository's existing history on **2026-10-20**.
 
 ## What works today
 
+- Capture the separate workbook-based client intake, convert CM/IN, check required-field completeness, and save/export/reopen partial drafts.
 - Enter new measurements for the same 20 POMs, calculate deltas immediately, save sessions, reopen them, and export CSV/JSON.
 - Generate a local HTML measurement sheet with search, reference filters, and print / Save PDF controls.
 - Display all 20 approved house standards alongside their original source labels and measuring methods.
@@ -75,13 +108,15 @@ Open `reports/SR-FORM-001-measurement-sheet.html` locally in a browser. Both she
 | Command | Purpose |
 |---|---|
 | `npm test` | Run all baseline, database, session-calculation, and API tests |
+| `npm run intake` | Start the client-intake app with separate local SQLite storage |
+| `npm run intake:build` | Build the self-contained client-intake HTML with browser storage |
 | `npm run generator` | Start the interactive local measurement-entry app with SQLite session storage |
 | `npm run generator:build` | Build a downloadable, self-contained HTML generator with browser storage |
 | `npm run sheet` | Read approved JSON, print the measurement table, and generate HTML |
 | `npm run db:import` | Create `storage/serpentis-regina.sqlite` and import the 20-record v1 register |
 | `npm run sheet:db` | Open the database read-only and generate the measurement sheet |
 
-Running `db:import` again with the same content reports **20 POMs unchanged**. It does not add duplicates. The generated database, SQLite sidecars, and HTML report are Git-ignored because they can be rebuilt from the tracked source records.
+Running `db:import` again with the same content reports **20 POMs unchanged**. It does not add duplicates. Baseline reports can be rebuilt from tracked source records. SQLite databases and sidecars are Git-ignored local storage; newly entered measurement sessions and client drafts cannot be recreated from the baseline files, so export them for portable copies.
 
 ## Measurement rules and provenance
 
@@ -101,15 +136,20 @@ Their provenance is `MEASUREMENT SHEET_SERPENTIS REGINA`, tab `BODY REF-MANNEQUI
 | **v0.1.0** | JSON-backed terminal and HTML measurement sheet | 7 tests | Baseline at `d0f02b8` |
 | **v0.2.0** | SQLite import, persistence checks, and database-backed HTML | 16 tests | Database implementation at `9bee461` |
 | **v0.3.0** | New measurement entry, live deltas, saved sessions, exports, and standalone HTML | Baseline, session, and API suites | Generator milestone |
-| **v0.3.1** | Ready-to-open HTML included in the downloadable project ZIP | 31 tests + browser acceptance | Current packaged application |
+| **v0.3.1** | Ready-to-open HTML included in the downloadable project ZIP | 31 tests + browser acceptance | Packaged 20-POM generator |
+| **v0.4.0** | Workbook-based 34-POM client intake, CM/IN, saved drafts, and import/export/print | Intake calculation/API and existing suites | Current packaged application |
 
-Application versions, measurement revisions, and JSON schema versions describe different things. **v0.3.1** is the packaged application version; **SR-FORM-001 v1** is the approved measurement dataset; **`schemaVersion: "1.0"`** describes the baseline JSON format. Adding measurement sessions did not revise the approved measurements.
+Application versions, measurement revisions, and JSON schema versions describe different things. **v0.4.0** is the packaged application version; **SR-FORM-001 v1** is the approved measurement dataset; **`schemaVersion: "1.0"`** describes the baseline JSON format. The separate client-intake template has its own identity and revision. Adding the intake did not revise the approved house measurements.
 
 See the [changelog](CHANGELOG.md) for the development and publication record.
 
 ## Explore the code and lesson
 
 - [Measurement-sheet program](src/house-measurement-sheet.mjs)
+- [Client-intake workflow](docs/client-intake.md)
+- [Sanitized client-intake template and source colors](data/templates/remote-bespoke-client-intake.v1.json)
+- [Client-intake calculations and validation](src/client-intake.mjs)
+- [Local client-intake server](src/client-intake-server.mjs)
 - [SQLite importer and reader](src/house-measurement-database.mjs)
 - [Shared new-measurement calculation and validation](src/measurement-session.mjs)
 - [Local generator server](src/measurement-generator-server.mjs)
@@ -120,4 +160,4 @@ See the [changelog](CHANGELOG.md) for the development and publication record.
 
 ## Prototype scope
 
-This is a local measurement register and session-entry prototype, rather than a complete production PLM system. The approved baseline is read-only, and its importer supports SR-FORM-001 v1. The generator records new sessions separately. Multiuser editing, accounts and permissions, live spreadsheet integration, tech-pack generation, grading, and general baseline revision management are future work. The existing approved revision is never silently overwritten.
+This is a local measurement register, session-entry, and client-intake prototype, rather than a complete production PLM system. The approved baseline is read-only, and its importer supports SR-FORM-001 v1. New measurement sessions and client drafts are stored separately. Remote client submissions, attachment storage, multiuser editing, accounts and permissions, live spreadsheet integration, tech-pack generation, grading, and general baseline revision management are future work. The existing approved revision is never silently overwritten.

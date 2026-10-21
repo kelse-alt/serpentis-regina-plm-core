@@ -21,3 +21,5 @@ jobs:
       - run: npm run sheet:db > /dev/null
       - run: npm run generator:build
       - run: git diff --exit-code -- measurement-sheet-generator.html
+      - run: npm run intake:build
+      - run: git diff --exit-code -- client-intake.html
