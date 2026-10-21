@@ -211,7 +211,7 @@ await Promise.all(worlds.map(async world => {
   const summary = document.createElement('p'); summary.className = 'world-summary'; summary.textContent = world.summary;
   info.append(role, name, summary);
   if (world.destination) {
-    const link = document.createElement('a'); link.href = world.destination; link.target = '_top'; link.textContent = 'Enter the atelier'; info.append(link);
+    const link = document.createElement('a'); link.href = world.destination; link.target = '_top'; link.textContent = world.destinationLabel ?? 'Enter the atelier'; info.append(link);
   }
   article.append(stage, status, control, info);
   document.querySelector('#worlds').append(article);

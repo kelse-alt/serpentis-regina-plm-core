@@ -1,5 +1,15 @@
 # GitHub development handoff — Portal Version 2.1
 
+## Amaya Google Drive route
+
+The current route work is on `codex/amaya-drive-link`. Mother / Amaya Kelsea retains its reveal interaction and gains **Open Google Drive**, pointing to `https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s`. The shared renderer reads the world's destination label and uses the existing top-window navigation. Serpentis Regina keeps **Enter the atelier** for `/home`; KLS remains an introduction without an external destination.
+
+Publish the tested build to the existing `portal-site` branch. Keep the approved material, layout, original GLBs, prior downloads and milestone tags intact. Verify both destination labels and full-window navigation from the Squarespace embed after deployment.
+
+Google Drive controls access. A signed-out check redirected to Google Sign-In, without a folder listing, download or sharing change; public access is unverified. If public viewing is desired, the owner can set **Share → General access → Anyone with the link → Viewer** in Drive.
+
+Amaya Drive route deployment and live verification are pending.
+
 ## Squarespace connection preparation
 
 The current connection work is on `codex/portal-squarespace-connection`. It keeps the approved Version 2.1 appearance, uses relative asset/model URLs and changes the atelier destination to `https://www.serpentisregina.com/home` with `target="_top"`. The archived `portal-v0.2.1` tag and download remain unchanged.
@@ -16,7 +26,7 @@ The founder approved Version 2's black, heads-only entrance and requested a smoo
 
 | World | Head | Current content |
 |---|---|---|
-| Amaya Kelsea — The Designer | Mother | Inline introduction |
+| Amaya Kelsea — The Designer | Mother | Inline introduction and Open Google Drive link |
 | Serpentis Regina — The Bespoke | Maiden | Inline introduction and actual atelier link |
 | KLS — Procurement & Consulting | Crown | Inline introduction |
 
@@ -30,8 +40,9 @@ The GLBs contain no original logo texture/material capture. Describe the result 
 
 ## GitHub locations
 
-- Private repository: `kelse-alt/serpentis-regina-plm-core`; source under `portal/`.
-- Branch: `codex/portal-entrance-v0.2.1`; milestone tag `portal-v0.2.1`.
+- Public repository: `kelse-alt/serpentis-regina-plm-core`; source under `portal/`.
+- Current route branch: `codex/amaya-drive-link`; website branch: `portal-site`.
+- Archived surface-polish branch: `codex/portal-entrance-v0.2.1`; milestone tag `portal-v0.2.1`.
 - [Version 2.1 source](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/codex/portal-entrance-v0.2.1/portal) and [Version 2.1 download](https://github.com/kelse-alt/serpentis-regina-plm-core/blob/codex/portal-entrance-v0.2.1/portal/downloads/Portal-Entrance-Version-2.1.html).
 - [Draft PR #3](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/3) compares the surface polish with Version 2. The [delivery record](docs/validation/portal-v2.1-github-delivery.json) records the verified download and unchanged earlier artifacts.
 - [Preserved Version 2](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.2.0/portal); [Version 2 review PR #2](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/2).

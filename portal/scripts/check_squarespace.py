@@ -22,6 +22,7 @@ SNIPPET = ROOT / 'integrations' / 'squarespace.html'
 PROJECT_PATH = '/serpentis-regina-plm-core/'
 PAGES_URL = 'https://kelse-alt.github.io/serpentis-regina-plm-core/'
 ATELIER_URL = 'https://www.serpentisregina.com/home'
+DRIVE_URL = 'https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s'
 COLLECTION = 'collection-6a8bb66559785a1838e75235'
 WORLDS = {'amaya-kelsea', 'serpentis-regina', 'kls'}
 MODELS = {'kelsea-mother.glb', 'serpentis-maiden.glb', 'crown.glb'}
@@ -161,16 +162,16 @@ def viewport_metrics(page, frame):
     return {'parent': parent, 'portal': child}
 
 
-def check_top_navigation(page, frame):
-    link = frame.get_by_role('link', name='Enter the atelier', exact=True)
-    expect(link).to_have_attribute('href', ATELIER_URL)
+def check_top_navigation(page, frame, label='Enter the atelier', destination=ATELIER_URL):
+    link = frame.get_by_role('link', name=label, exact=True)
+    expect(link).to_have_attribute('href', destination)
     expect(link).to_have_attribute('target', '_top')
-    page.route(ATELIER_URL, lambda route: route.fulfill(
-        status=200, content_type='text/html', body='<h1>Atelier navigation fixture</h1>'))
+    page.route(destination, lambda route: route.fulfill(
+        status=200, content_type='text/html', body='<h1>Destination navigation fixture</h1>'))
     link.click()
-    page.wait_for_url(ATELIER_URL)
-    expect(page.get_by_role('heading', name='Atelier navigation fixture')).to_be_visible()
-    assert page.locator('iframe').count() == 0, 'Atelier stayed inside the portal iframe'
+    page.wait_for_url(destination)
+    expect(page.get_by_role('heading', name='Destination navigation fixture')).to_be_visible()
+    assert page.locator('iframe').count() == 0, 'Destination stayed inside the portal iframe'
 
 
 errors, unexpected_requests, asset_responses = [], [], []
@@ -190,7 +191,7 @@ try:
                 if response.url.startswith(pages_url) else None)
             page.on('request', lambda request: unexpected_requests.append(request.url)
                 if request.url.startswith(('http:', 'https:')) and
-                not request.url.startswith((pages_url, parent_url)) and request.url != ATELIER_URL else None)
+                not request.url.startswith((pages_url, parent_url)) and request.url not in (ATELIER_URL, DRIVE_URL) else None)
             frame = embedded_portal(page)
             viewports[mode] = viewport_metrics(page, frame)
             page.screenshot(path=str(PREVIEWS / f'squarespace-embedded-{mode}.png'), full_page=True)
@@ -213,7 +214,13 @@ try:
                 canvas.tap(position={'x': bounds['width'] / 2, 'y': bounds['height'] / 2})
             expect(frame.locator('#serpentis-regina .world-info')).to_be_visible()
             check_top_navigation(page, frame)
-            outcomes.append(f'{mode}: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier navigation passed.')
+            frame = embedded_portal(page)
+            frame.get_by_role('button', name='Reveal Amaya Kelsea', exact=True).focus()
+            expect(frame.locator('#amaya-kelsea .world-info')).to_be_visible()
+            assert frame.locator('#kls .world-info a').count() == 0
+            page.screenshot(path=str(PREVIEWS / f'amaya-drive-{mode}.png'), full_page=True)
+            check_top_navigation(page, frame, 'Open Google Drive', DRIVE_URL)
+            outcomes.append(f'{mode}: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier and Amaya Drive navigation passed.')
             print(outcomes[-1], flush=True)
             context.close()
 
@@ -263,6 +270,9 @@ record = {
     'assetResponses': asset_responses,
     'atelierNavigation': {'destination': ATELIER_URL, 'topWindow': True,
                            'responseStubbed': True, 'liveSquarespaceVisited': False},
+    'amayaDriveNavigation': {'destination': DRIVE_URL, 'label': 'Open Google Drive',
+                            'topWindow': True, 'responseStubbed': True,
+                            'driveSharingPermissionsChanged': False},
     'pageErrors': errors,
     'unexpectedExternalRequests': unexpected_requests,
     'limits': 'Local representative Squarespace wrappers and emulated mobile Chromium. This does not validate an authenticated Squarespace editor, plan-level custom-code support, the live page or physical-device GPU performance. The GitHub Pages URL was not deployed or contacted by this check.',

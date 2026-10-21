@@ -1,14 +1,14 @@
 {
-  "checkedAt": "2026-10-21T19:40:35.570623+00:00",
+  "checkedAt": "2026-10-21T20:44:09.403506+00:00",
   "passed": true,
   "portalRevision": "2.1",
   "pagesLikePath": "/serpentis-regina-plm-core/",
   "distinctParentAndIframeOrigins": true,
   "snippetSha256": "6a33f0586c2422bad4c5afe0cac4b09921104fe0625fdfed41ba2e625ac74f95",
-  "buildIndexSha256": "8ee1ae7824831fc31cc8f08305a1722d156cb835b36d2e25999dfa9b883a15e7",
+  "buildIndexSha256": "b3f90b970b20039d8757edbe877b311233e3bfc622b194bbd059e3887f4ea637",
   "outcomes": [
-    "desktop: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier navigation passed.",
-    "mobile: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier navigation passed.",
+    "desktop: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier and Amaya Drive navigation passed.",
+    "mobile: nested Pages assets, three real GLBs, heads-only black framing, viewport fit, reveal and top-window atelier and Amaya Drive navigation passed.",
     "Unrelated collection: site header and footer remain visible.",
     "Editor fixture: toolbar, header and footer remain visible; iframe stays in document flow with editing interactions disabled."
   ],
@@ -64,7 +64,7 @@
       "status": 200
     },
     {
-      "path": "/serpentis-regina-plm-core/assets/index-CAg9nivA.js",
+      "path": "/serpentis-regina-plm-core/assets/index-B2UYnO4H.js",
       "status": 200
     },
     {
@@ -88,7 +88,7 @@
       "status": 200
     },
     {
-      "path": "/serpentis-regina-plm-core/assets/index-CAg9nivA.js",
+      "path": "/serpentis-regina-plm-core/assets/index-B2UYnO4H.js",
       "status": 200
     },
     {
@@ -102,6 +102,54 @@
     {
       "path": "/serpentis-regina-plm-core/models/crown.glb",
       "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/index.html",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/assets/index-D_iSA1tc.css",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/assets/index-B2UYnO4H.js",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/kelsea-mother.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/serpentis-maiden.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/crown.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/index.html",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/assets/index-D_iSA1tc.css",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/assets/index-B2UYnO4H.js",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/kelsea-mother.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/crown.glb",
+      "status": 200
+    },
+    {
+      "path": "/serpentis-regina-plm-core/models/serpentis-maiden.glb",
+      "status": 200
     }
   ],
   "atelierNavigation": {
@@ -109,6 +157,13 @@
     "topWindow": true,
     "responseStubbed": true,
     "liveSquarespaceVisited": false
+  },
+  "amayaDriveNavigation": {
+    "destination": "https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s",
+    "label": "Open Google Drive",
+    "topWindow": true,
+    "responseStubbed": true,
+    "driveSharingPermissionsChanged": false
   },
   "pageErrors": [],
   "unexpectedExternalRequests": [],

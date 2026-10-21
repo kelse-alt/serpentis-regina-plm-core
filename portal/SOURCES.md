@@ -4,9 +4,12 @@
 
 The founder approved Version 2's clean black composition and requested a smoother, glossier finish. Version 2.1 changes surface shading and material response while preserving the three-head layout, logo palette and information-on-interaction behavior.
 
+The subsequent navigation instruction assigns the founder's Google Drive folder to Mother / Amaya Kelsea. Its information reveals **Open Google Drive**, opening the folder in the complete browser window. The existing Serpentis Regina `/home` route and KLS introduction remain unchanged.
+
 - Master blueprint: https://app.notion.com/p/SERPENTIS-REGINA-COM-255bab06d9b4802fb8dcfc4d396f6446
 - Existing atelier and top-left head-logo reference: https://www.serpentisregina.com/
 - Founder-supplied 3D folder: https://drive.google.com/drive/folders/1HLX5S5KM13apPqvJSkcgrytp5rNggKm1
+- Founder-specified Amaya destination: https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s
 - [Version 2 archive](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.2.0/portal) preserves the approved layout and its original surface treatment.
 - [Version 1 archive](https://github.com/kelse-alt/serpentis-regina-plm-core/tree/portal-v0.1.0/portal) preserves the earlier gallery design and evidence.
 
@@ -34,6 +37,10 @@ The Version 2.1 production build, all six browser check groups and actual-model 
 
 Actual-model checks assess source-buffer preservation, shared normals, reduced local normal variation and retained carved ridges. Version 2.1 screenshot/validation files use the `portal-v2.1` prefix. Existing Version 1 and Version 2 evidence remains historical.
 
-Introductions retain Amaya's design/technical practice, Serpentis Regina's bespoke atelier and KLS procurement/consulting. The only live destination is the existing Serpentis Regina website. Full Amaya/KLS mini-sites remain separate work.
+Introductions retain Amaya's design/technical practice, Serpentis Regina's bespoke atelier and KLS procurement/consulting. The current route build links Amaya to the founder-specified Google Drive folder and Serpentis Regina to `https://www.serpentisregina.com/home`; KLS has no external destination. Full Amaya/KLS mini-sites remain separate work.
 
-The portal includes no filled client records, raw technical portfolio documents, original workbooks, credentials or analytics. No live Squarespace edits or hosted deployment are part of this version.
+The signed-out Drive check redirected to Google Sign-In and did not establish public folder access. Google Drive sharing settings control visitor access; the owner can enable **Anyone with the link → Viewer** if public viewing is desired. No folder listing, download or permission change was performed during this check.
+
+Amaya Drive route deployment and live verification are pending.
+
+The portal includes no filled client records, raw technical portfolio documents, original workbooks, credentials or analytics. The saved surface-polish download predates the Squarespace connection and Amaya route. The current portal is served through GitHub Pages; remaining Squarespace Code Block placement cleanup is documented in the [installation guide](integrations/SQUARESPACE.md).

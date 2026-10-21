@@ -1,5 +1,15 @@
 # Changelog
 
+## Amaya Google Drive route — 2026-10-21
+
+- Connected Mother / Amaya Kelsea's revealed information to the founder-specified folder: `https://drive.google.com/drive/folders/1NWWe-fKklVC0gDS5jVu3IcHMhTCRxe7s`.
+- Added the destination label **Open Google Drive**, retaining full-window navigation from the Squarespace embed. Serpentis Regina keeps **Enter the atelier** for `/home`; KLS keeps its introduction without an external route.
+- Preserved the approved finish, black composition, reveal/rotation behavior, original models and earlier downloads/tags.
+- Source work is on `codex/amaya-drive-link`; deployment targets the existing `portal-site` branch.
+- A signed-out Drive check redirected to Google Sign-In. Public folder access remains unverified and is controlled by the owner's Google Drive sharing settings.
+
+Amaya Drive route deployment and live verification are pending.
+
 ## Squarespace connection preparation — 2026-10-21
 
 - Preserved the approved Version 2.1 material, geometry and black composition.
