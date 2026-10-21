@@ -8,7 +8,7 @@ Publish the tested build to the existing `portal-site` branch. Keep the approved
 
 Google Drive controls access. A signed-out check redirected to Google Sign-In, without a folder listing, download or sharing change; public access is unverified. If public viewing is desired, the owner can set **Share → General access → Anyone with the link → Viewer** in Drive.
 
-Amaya Drive route deployment and live verification are pending.
+The route is published on `portal-site`. Live desktop and emulated-mobile checks confirmed the revealed button opens the exact Drive folder in the full window; the atelier route and KLS introduction remain intact. See [live verification](docs/validation/amaya-drive-live.json).
 
 ## Squarespace connection preparation
 

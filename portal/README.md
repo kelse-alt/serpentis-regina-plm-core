@@ -8,7 +8,7 @@ The current build connects Mother / **Amaya Kelsea** to the founder's [Google Dr
 
 Google Drive controls folder access. A signed-out check redirected to Google Sign-In, so public folder access has not been verified. For public viewing, the owner can choose **Share → General access → Anyone with the link → Viewer** in Google Drive.
 
-Amaya Drive route deployment and live verification are pending.
+The route is published on `portal-site`. Live desktop and emulated-mobile checks confirmed the revealed button opens the exact Drive folder in the full window; the atelier route and KLS introduction remain intact. See [live verification](docs/validation/amaya-drive-live.json).
 
 ## Squarespace connection build
 

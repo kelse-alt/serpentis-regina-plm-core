@@ -8,7 +8,7 @@
 - Source work is on `codex/amaya-drive-link`; deployment targets the existing `portal-site` branch.
 - A signed-out Drive check redirected to Google Sign-In. Public folder access remains unverified and is controlled by the owner's Google Drive sharing settings.
 
-Amaya Drive route deployment and live verification are pending.
+The route is published on `portal-site`. Live desktop and emulated-mobile checks confirmed the revealed button opens the exact Drive folder in the full window; the atelier route and KLS introduction remain intact. See [live verification](docs/validation/amaya-drive-live.json).
 
 ## Squarespace connection preparation — 2026-10-21
 

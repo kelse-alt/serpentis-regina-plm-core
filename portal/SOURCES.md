@@ -41,6 +41,6 @@ Introductions retain Amaya's design/technical practice, Serpentis Regina's bespo
 
 The signed-out Drive check redirected to Google Sign-In and did not establish public folder access. Google Drive sharing settings control visitor access; the owner can enable **Anyone with the link → Viewer** if public viewing is desired. No folder listing, download or permission change was performed during this check.
 
-Amaya Drive route deployment and live verification are pending.
+The route is published on `portal-site`. Live desktop and emulated-mobile checks confirmed the revealed button opens the exact Drive folder in the full window; the atelier route and KLS introduction remain intact. See [live verification](docs/validation/amaya-drive-live.json).
 
 The portal includes no filled client records, raw technical portfolio documents, original workbooks, credentials or analytics. The saved surface-polish download predates the Squarespace connection and Amaya route. The current portal is served through GitHub Pages; remaining Squarespace Code Block placement cleanup is documented in the [installation guide](integrations/SQUARESPACE.md).

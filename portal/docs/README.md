@@ -1,5 +1,11 @@
 # Project record
 
+## Amaya Google Drive destination
+
+- [Live desktop/mobile navigation checks](validation/amaya-drive-live.json)
+- [Live Amaya desktop preview](previews/amaya-drive-live-desktop.png)
+- [Live Amaya mobile preview](previews/amaya-drive-live-mobile.png)
+
 ## Squarespace connection preparation
 
 - [Live Squarespace desktop/mobile checks](validation/squarespace-live.json)
