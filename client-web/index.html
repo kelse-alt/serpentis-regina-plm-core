@@ -4,64 +4,77 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>Remote Bespoke Dress · Client Measurement Intake</title>
+  <title>Serpentis Regina · Client Measurement Intake</title>
+  <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/intake.css">
 </head>
 <body>
   <a class="skip-link" href="#intake-table">Skip to client measurements</a>
-  <main>
+  <main class="sheet">
     <form id="client-intake-form">
-      <header class="sheet-header">
-        <div class="brand-block"><p class="eyebrow">REMOTE BESPOKE · CLIENT INTAKE</p><h1>SERPENTIS REGINA</h1></div>
-        <div class="document-block"><p class="document-type">BESPOKE DRESS</p><p class="document-subtitle">CLIENT ID / REVISION / PAGE</p><div class="doc-fields"><div class="doc-summary"><span>CLIENT ID</span><strong id="document-client-id">—</strong></div><div data-field-slot="revision"></div><div data-field-slot="page"></div></div></div>
+      <header class="masthead">
+        <div class="title-bar">
+          <div class="brand-line"><span class="wordmark">SERPENTIS REGINA</span><span class="division">TECHNICAL DESIGN / CLIENT INTAKE</span><span class="case">REMOTE BESPOKE</span></div>
+          <h1>CLIENT MEASUREMENT INTAKE</h1>
+          <div class="identity-strip"><span>CLIENT ID / <strong id="document-client-id">—</strong></span><span>34 POINTS OF MEASURE</span><span>19 REQUIRED</span><span>CM / IN</span><span class="approval">CLIENT INTAKE · DRAFT</span></div>
+        </div>
+        <div class="seal-zone"><div class="seal"><img src="/assets/house-sheet/serpentis-regina-seal.png" alt="Serpentis Regina sculpted head seal" width="1366" height="892"></div></div>
       </header>
-      <div class="project-strip" data-field-slot="projectDescription"></div>
-      <section class="metadata-section" aria-labelledby="client-heading">
-        <h2 id="client-heading" class="section-bar">CLIENT MEASUREMENTS</h2>
-        <div class="metadata-grid">
-          <div data-field-slot="clientId"></div><div data-field-slot="measurementDate"></div>
-          <div data-field-slot="clientName"></div><div data-field-slot="measuredBy"></div>
-          <div data-field-slot="projectType"></div><div data-field-slot="foundationGarments"></div>
-          <label class="field" for="intake-unit"><span id="unit-label">MEASUREMENT UNITS</span><select id="intake-unit"><option value="CM">CM</option><option value="IN">IN</option></select><span id="print-unit" class="print-only print-value"></span></label>
-          <div data-field-slot="shoesHeel"></div>
-          <div data-field-slot="status"></div><div data-field-slot="fittingMethod"></div>
-        </div>
-        <p class="unit-help">Changing CM / IN converts the displayed values while preserving the measurements. Source measuring landmarks stay as written: 10 cm ≈ 3.937 in; 9 cm ≈ 3.543 in.</p>
-      </section>
-      <section class="reference-grid" aria-label="Client reference areas">
-        <div class="reference-card"><h3 id="croquis-title">CROQUIS DIAGRAM - SEPARATE PDF</h3><label class="field" for="croquis-reference">Croquis filename or reference notes<textarea id="croquis-reference" rows="4" maxlength="4000" placeholder="Record the filename or reference for the separate croquis PDF"></textarea><span id="croquis-print" class="print-only print-value"></span></label><p class="hint">The workbook refers to a separate PDF. No croquis diagram was included with this template.</p></div>
-        <div class="reference-card"><h3 id="client-reference-title">CLIENT REFERENCE AREA - BLANK</h3><label class="field" for="client-reference">Client reference notes<textarea id="client-reference" rows="4" maxlength="4000" placeholder="Reference photo filenames, fit notes, or details to discuss"></textarea><span id="client-reference-print" class="print-only print-value"></span></label><p class="hint">For shoe heel height, the source instruction asks for a side-view shoe photo. Keep that separate reference with the intake.</p></div>
-      </section>
-      <section class="progress-grid" aria-label="Intake completeness">
-        <div class="progress-card"><strong id="stat-total">34</strong><span>Client POMs</span></div>
-        <div class="progress-card"><strong id="stat-measured">0</strong><span>Measurements entered</span></div>
-        <div class="progress-card"><strong id="stat-required">0 / 19</strong><span>Required measurements entered</span></div>
-        <div class="progress-card"><strong id="stat-optional">15</strong><span>Optional POMs</span></div>
-      </section>
-      <section class="measurements-section" aria-labelledby="measurements-heading">
-        <div class="measurement-bar"><h2 id="measurements-heading">REMOTE CLIENT ACTUAL BODY MEASUREMENTS</h2><p>Enter decimal <span class="current-unit">cm</span>. Leave unknown values blank.</p></div>
-        <p class="progress-note" id="method-note">The original measuring instructions are preserved. Two source notes need clarification before they can be treated as confirmed methods.</p>
-        <div class="table-wrap" tabindex="0" role="region" aria-label="Client measurements and original measuring instructions">
-          <table id="intake-table"><caption class="sr-only">Client measurement intake, preserving the workbook POM codes, required flags, and original methods.</caption><thead><tr><th scope="col">POM</th><th scope="col">CRITICAL</th><th scope="col">BODY MEASUREMENT</th><th scope="col">HOW TO MEASURE</th><th scope="col">CLIENT MEASUREMENT (<span class="current-unit">CM</span>)</th></tr></thead><tbody id="intake-rows"></tbody></table>
-        </div>
+      <section class="workspace" aria-label="Client intake workroom">
+        <details id="intake-context" class="context-panel" open>
+          <summary class="context-toggle">Client details &amp; drafts</summary>
+          <div class="context-shell">
+            <div class="context-tabs" role="tablist" aria-label="Client intake information">
+              <button type="button" id="tab-client" data-context-tab="client" role="tab" aria-selected="true" aria-controls="context-client">Client</button>
+              <button type="button" id="tab-references" data-context-tab="references" role="tab" aria-selected="false" aria-controls="context-references" tabindex="-1">References</button>
+              <button type="button" id="tab-drafts" data-context-tab="drafts" role="tab" aria-selected="false" aria-controls="context-drafts" tabindex="-1">Drafts &amp; exports</button>
+            </div>
+            <div class="context-body">
+              <section id="context-client" class="context-page metadata-section" role="tabpanel" aria-labelledby="tab-client">
+                <div class="section-bar"><span class="section-number" aria-hidden="true">01</span><h2 id="client-heading">CLIENT MEASUREMENTS</h2></div>
+                <div class="metadata-grid">
+                  <div data-field-slot="clientId"></div><div data-field-slot="measurementDate"></div>
+                  <div class="wide" data-field-slot="clientName"></div><div class="wide" data-field-slot="projectDescription"></div>
+                  <div data-field-slot="measuredBy"></div><div data-field-slot="projectType"></div>
+                  <div class="wide" data-field-slot="foundationGarments"></div><div class="wide" data-field-slot="shoesHeel"></div>
+                  <div class="wide" data-field-slot="status"></div><div class="wide" data-field-slot="fittingMethod"></div>
+                  <div data-field-slot="revision"></div><div data-field-slot="page"></div>
+                </div>
+                <p class="hint">A client ID or name, measurement date, and all 19 required POMs are needed for completeness. Completeness is not approval.</p>
+              </section>
+              <section id="context-references" class="context-page" role="tabpanel" aria-labelledby="tab-references" hidden>
+                <div class="reference-grid" aria-label="Client reference areas">
+                  <div class="reference-card"><h3 id="croquis-title">CROQUIS DIAGRAM - SEPARATE PDF</h3><label class="field" for="croquis-reference">Croquis filename or reference notes<textarea id="croquis-reference" rows="4" maxlength="4000" placeholder="Filename or reference for the separate croquis PDF"></textarea><span id="croquis-print" class="print-only print-value"></span></label><p class="hint">The workbook refers to a separate PDF. Reference notes do not attach or upload files.</p></div>
+                  <div class="reference-card"><h3 id="client-reference-title">CLIENT REFERENCE AREA - BLANK</h3><label class="field" for="client-reference">Client reference notes<textarea id="client-reference" rows="4" maxlength="4000" placeholder="Reference photo filenames, fit notes, or details to discuss"></textarea><span id="client-reference-print" class="print-only print-value"></span></label><p class="hint">Keep the source-requested side-view shoe photograph with the separate client references.</p></div>
+                </div>
+                <p class="unit-help">CM / IN changes the displayed values. Original measuring landmarks stay as written: 10 cm ≈ 3.937 in; 9 cm ≈ 3.543 in.</p>
+                <div class="reference-card"><h3>SOURCE MEASUREMENT NOTES</h3><ul id="source-intake-notes"></ul></div>
+              </section>
+              <section id="context-drafts" class="context-page records-section" role="tabpanel" aria-labelledby="tab-drafts" hidden>
+                <div class="records-heading"><h2 id="records-heading">KEEP YOUR WORK</h2><span id="storage-mode" class="storage-mode">Loading storage…</span></div>
+                <div class="saved-controls"><label class="field" for="saved-intakes">Saved intake drafts<select id="saved-intakes"><option value="">No saved intakes yet</option></select></label><button id="open-intake" type="button" disabled>Open draft</button></div>
+                <div class="actions"><button id="download-csv" type="button" disabled>Download CSV</button><button id="download-json" type="button" disabled>Download JSON</button><label class="import-label" for="import-json">Import JSON backup<input id="import-json" type="file" accept=".json,application/json" disabled></label><button id="new-intake" type="button" disabled>New blank intake</button></div>
+                <p class="hint" id="storage-help">Each save creates a separate draft. Saving does not approve client measurements or revise house standards.</p>
+              </section>
+            </div>
+          </div>
+        </details>
+        <section class="measurements-section" aria-labelledby="measurements-heading">
+          <div class="measurement-bar"><div class="heading-group"><span class="section-number" aria-hidden="true">02</span><h2 id="measurements-heading">MEASUREMENTS</h2></div><label class="unit-tag" for="intake-unit"><span class="unit-prefix" aria-hidden="true">UNIT /</span><span id="unit-label" class="sr-only">MEASUREMENT UNITS</span><select id="intake-unit"><option value="CM">CM</option><option value="IN">IN</option></select><span class="print-only unit-print" id="print-unit">CM</span></label></div>
+          <span class="sr-only" id="source-measurements-heading">REMOTE CLIENT ACTUAL BODY MEASUREMENTS</span>
+          <span class="sr-only" id="intake-unit-status" role="status" aria-live="polite">Client values displayed in CM. Original measuring landmarks remain unchanged.</span>
+          <section class="progress-grid" aria-label="Intake completeness"><div class="progress-card"><strong id="stat-total">34</strong><span>Client POMs</span></div><div class="progress-card"><strong id="stat-measured">0</strong><span>Entered</span></div><div class="progress-card"><strong id="stat-required">0 / 19</strong><span>Required entered</span></div><div class="progress-card"><strong id="stat-optional">15</strong><span>Optional POMs</span></div></section>
+          <div class="toolbar"><label class="search-field" for="intake-search"><span class="sr-only">Find client POM, measurement, or method</span><input type="search" id="intake-search" placeholder="Find POM or measurement…" aria-controls="intake-rows"></label><div class="filter-group" role="group" aria-label="Client measurement filters"><button type="button" data-intake-filter="all" aria-pressed="true"><span class="filter-check" aria-hidden="true">✓</span> All 34</button><button type="button" data-intake-filter="required" aria-pressed="false"><span class="filter-check" aria-hidden="true">✓</span> Required 19</button><button type="button" data-intake-filter="missing" aria-pressed="false"><span class="filter-check" aria-hidden="true">✓</span> Missing required</button></div></div>
+          <div class="table-caption"><span id="visible-count" role="status" aria-live="polite">Showing 34 of 34 measurements</span><span class="print-count">All 34 client measurements</span><p id="method-note">RC-12 / RC-13 need method clarification.</p></div>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable client measurements; use arrow keys to scroll" aria-describedby="intake-unit-status">
+            <table id="intake-table"><caption class="sr-only">Client measurement intake, preserving the workbook POM codes, required flags, and original methods.</caption><colgroup><col class="pom-col"><col class="critical-col"><col class="name-col"><col class="method-col"><col class="measurement-col"></colgroup><thead><tr><th scope="col">POM</th><th scope="col">CRITICAL</th><th scope="col">BODY MEASUREMENT</th><th scope="col">HOW TO MEASURE</th><th scope="col">CLIENT VALUE <span class="column-unit">(<span class="current-unit">CM</span>)</span></th></tr></thead><tbody id="intake-rows"></tbody></table>
+            <div class="empty-state" id="intake-empty" hidden><p>No client measurements match this search and filter.</p><button type="button" id="clear-intake-search">Clear search and show all</button></div>
+          </div>
+          <div class="workroom-footer"><div class="workroom-actions"><button id="save-intake" type="button" aria-label="Save as a new intake draft" disabled>Save draft</button><button id="check-required" type="button" disabled>Check required</button><button id="print-intake" type="button" aria-label="Print all 34 client measurements or save PDF in the selected unit" disabled>Print all 34 / PDF</button></div><p id="status" class="status-message" role="status" aria-live="polite">Loading the client intake template…</p><p class="chart-hint"><span>Unknown values stay blank.</span><span class="scroll-hint">Swipe to values ↔</span></p></div>
+        </section>
       </section>
     </form>
-    <section class="records-section" aria-labelledby="records-heading">
-      <div class="records-heading"><div><p class="eyebrow">KEEP YOUR WORK</p><h2 id="records-heading">Save, reopen, or hand off the intake</h2></div><span id="storage-mode" class="storage-mode">Loading storage…</span></div>
-      <div class="actions">
-        <button id="save-intake" type="button" class="primary" disabled>Save as new draft</button>
-        <button id="check-required" type="button" disabled>Check required measurements</button>
-        <button id="download-csv" type="button" disabled>Download CSV</button>
-        <button id="download-json" type="button" disabled>Download JSON</button>
-        <label class="import-label" for="import-json">Import JSON backup<input id="import-json" type="file" accept=".json,application/json" disabled></label>
-        <button id="print-intake" type="button" disabled>Print / Save PDF</button>
-        <button id="new-intake" type="button" class="secondary" disabled>New blank intake</button>
-      </div>
-      <p id="status" class="status-message" role="status" aria-live="polite">Loading the client intake template…</p>
-      <div class="saved-controls"><label class="field" for="saved-intakes">Saved intake drafts<select id="saved-intakes"><option value="">No saved intakes yet</option></select></label><button id="open-intake" type="button" disabled>Open draft</button></div>
-      <p class="hint" id="storage-help">Each save creates a separate draft. Saving client measurements does not approve them or revise house standards.</p>
-    </section>
-    <footer><p class="footnote">Original client POMs, measuring instructions, required flags, and colorway are taken from the supplied workbook. Client details start blank.</p><p class="footnote">Client records stay in the chosen local store. Download a JSON backup before clearing browser data or changing devices.</p></footer>
+    <footer><p class="footnote">Client drafts stay in the chosen local store. Download JSON for a portable backup. Original POMs and methods are preserved; intake completeness is not approval.</p></footer>
     <noscript><p class="status-message error">JavaScript is needed to enter, convert, and save client measurements.</p></noscript>
   </main>
   <script type="module" src="/intake-app.mjs"></script>

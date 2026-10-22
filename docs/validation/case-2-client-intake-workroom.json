@@ -1,0 +1,573 @@
+{
+  "capturedAtUtc": "2026-10-22T22:51:26.055199+00:00",
+  "sourceCommit": "dbcdd95c0e625907d7ccbde93e56d0741a50acd7",
+  "uncommittedChanges": false,
+  "renderMode": "Local Chromium review of blank standalone and temporary SQLite intake apps; no deployment.",
+  "privacy": "All screenshots show blank forms only. Synthetic test values, client metadata, downloads and filled PDFs are excluded from published evidence.",
+  "sources": {
+    "comparedWith": "8c40eb82f23d2918ed502d9938899fc6d2631cac",
+    "allControlledBytesPreserved": true,
+    "sha256": {
+      "data/templates/remote-bespoke-client-intake.v1.json": "b74f4fb4690f4c19bed1861a11e0f1f68e246ccf4cef1ceba712e36f2262af6a",
+      "data/house-fit-forms/SR-FORM-001.v1.json": "695a60a35f6f40daa1783b6813f3f8d5d788d06a8818b80f3444b44ec958cc43",
+      "data/house-fit-forms/SR-FORM-001-methods.v1.json": "19d40eb0ce5e0f98c9f6bed93bbd6ca3662cf4aba56432a0001c8880b09a8372",
+      "design/brand-tokens.json": "beb87088fa14388ba3232f873ff6d87d5ac7114b6b0090988d04a489c4401bd6",
+      "sheet-web/sheet.css": "d2809430391373b1517525e48406bc5b1ac643766fe2054c88a17cc33670b67b",
+      "sheet-web/sheet.js": "9b5cc2571b68ff466b147a140045f3b031ed98e8063bb20ab4ce6797364185ca",
+      "sheet-web/matte-grain.svg": "ac646484924c614a4e8f9e534e18ffded6f16ccf69e93dd2efca5f7f427d8f10",
+      "src/house-measurement-sheet.mjs": "afc3a48e2aeb12d1615fdfe5fb2bf255f45069e4cb29c27804e5ae108928db13",
+      "src/house-sheet-units.mjs": "5b57fb1e0e1f86c37284f3eff9e5128b5024f8736c3108220c70de8fb43a4c84",
+      "src/client-intake.mjs": "f9b89454104a78e70b6640dad53d12be0e72db7a77e474c6e4a5cbe00f47af8b",
+      "assets/house-sheet/mannequin-front.jpg": "70764b8015c5b6b5cf6884656b7adc8e47c33431f5117bfaa7685a71e64a94ae",
+      "assets/house-sheet/mannequin-back.jpg": "3de7eef55315ba44fe18f7d86762ea5c2ae4c89d082213b8f95db04175970905",
+      "assets/house-sheet/serpentis-regina-seal.png": "8692dfffb2be2a949735bf106617778e6c52d5e375b03bc60dee06a557bda95f",
+      "assets/house-sheet/fonts/barlow-condensed-500.ttf": "cc9fb2539cf27df48255982e896d28f544483537cdb41f9fabd741af8992d719",
+      "assets/house-sheet/fonts/barlow-condensed-700.ttf": "7dde307fa887fc65ff5830cfada77a7decc5dae8d3c816c9d39ba3f1af1c4ed7"
+    }
+  },
+  "modes": {
+    "standalone": {
+      "viewports": [
+        {
+          "name": "desktop",
+          "width": 1500,
+          "height": 1000,
+          "rootWidth": 1500,
+          "chartHeight": 510,
+          "chartScrollHeight": 3161,
+          "completeVisibleRows": 5,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "laptop",
+          "width": 1280,
+          "height": 720,
+          "rootWidth": 1280,
+          "chartHeight": 238,
+          "chartScrollHeight": 3334,
+          "completeVisibleRows": 2,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "mobile",
+          "width": 390,
+          "height": 844,
+          "rootWidth": 390,
+          "chartHeight": 287,
+          "chartScrollHeight": 3251,
+          "completeVisibleRows": 2,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "small-mobile",
+          "width": 390,
+          "height": 667,
+          "rootWidth": 390,
+          "chartHeight": 232,
+          "chartScrollHeight": 3251,
+          "completeVisibleRows": 2,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "landscape",
+          "width": 844,
+          "height": 390,
+          "rootWidth": 844,
+          "chartHeight": 120,
+          "chartScrollHeight": 2950,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "narrow-phone",
+          "width": 320,
+          "height": 568,
+          "rootWidth": 320,
+          "chartHeight": 168,
+          "chartScrollHeight": 3251,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "short-phone",
+          "width": 320,
+          "height": 480,
+          "rootWidth": 320,
+          "chartHeight": 126,
+          "chartScrollHeight": 3042,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "short-tablet",
+          "width": 768,
+          "height": 400,
+          "rootWidth": 768,
+          "chartHeight": 130,
+          "chartScrollHeight": 2950,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "reduced-layout",
+          "width": 750,
+          "height": 500,
+          "rootWidth": 750,
+          "chartHeight": 134,
+          "chartScrollHeight": 3334,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        }
+      ],
+      "workflow": {
+        "canonicalCentimetersAndThreeUnitRoundTrips": true,
+        "zeroAndNullPreserved": true,
+        "invalidInputPreventsUnitSwitch": true,
+        "missingRequiredRevealedAndFocused": true,
+        "invalidOptionalTakesPriorityAndWhitespaceIdentityRecovers": true,
+        "missingRowRemainsDuringTypingThenTabAdvances": true,
+        "viewChangesDoNotDirtyOrDropValues": true,
+        "jsonAndCsvExportVerifiedAndTemporaryDownloadsDeleted": true,
+        "newDraftSaveAndEarlierRecordReopen": true,
+        "memoryOnlyJsonImport": true,
+        "completenessIsNotApproval": true,
+        "separateLocalStorageVerified": true,
+        "syntheticFieldsClearedBeforeClosing": true,
+        "print": [
+          {
+            "scenario": "required-search",
+            "pages": 5,
+            "unit": "CM",
+            "all34PomsAndOriginalQuestions": true,
+            "metadataAndReferenceValuesPresent": true,
+            "screenStateRestoredExactly": true,
+            "filledPdfKeptInMemoryOnly": true
+          },
+          {
+            "scenario": "missing-only",
+            "pages": 5,
+            "unit": "IN",
+            "all34PomsAndOriginalQuestions": true,
+            "metadataAndReferenceValuesPresent": true,
+            "screenStateRestoredExactly": true,
+            "filledPdfKeptInMemoryOnly": true
+          },
+          {
+            "scenario": "empty-search",
+            "pages": 5,
+            "unit": "CM",
+            "all34PomsAndOriginalQuestions": true,
+            "metadataAndReferenceValuesPresent": true,
+            "screenStateRestoredExactly": true,
+            "filledPdfKeptInMemoryOnly": true
+          }
+        ]
+      }
+    },
+    "sqlite": {
+      "viewports": [
+        {
+          "name": "desktop",
+          "width": 1500,
+          "height": 1000,
+          "rootWidth": 1500,
+          "chartHeight": 510,
+          "chartScrollHeight": 3161,
+          "completeVisibleRows": 5,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "laptop",
+          "width": 1280,
+          "height": 720,
+          "rootWidth": 1280,
+          "chartHeight": 238,
+          "chartScrollHeight": 3334,
+          "completeVisibleRows": 2,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "mobile",
+          "width": 390,
+          "height": 844,
+          "rootWidth": 390,
+          "chartHeight": 287,
+          "chartScrollHeight": 3251,
+          "completeVisibleRows": 2,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "small-mobile",
+          "width": 390,
+          "height": 667,
+          "rootWidth": 390,
+          "chartHeight": 232,
+          "chartScrollHeight": 3251,
+          "completeVisibleRows": 2,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "landscape",
+          "width": 844,
+          "height": 390,
+          "rootWidth": 844,
+          "chartHeight": 120,
+          "chartScrollHeight": 2950,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "narrow-phone",
+          "width": 320,
+          "height": 568,
+          "rootWidth": 320,
+          "chartHeight": 168,
+          "chartScrollHeight": 3251,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "short-phone",
+          "width": 320,
+          "height": 480,
+          "rootWidth": 320,
+          "chartHeight": 126,
+          "chartScrollHeight": 3042,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "short-tablet",
+          "width": 768,
+          "height": 400,
+          "rootWidth": 768,
+          "chartHeight": 130,
+          "chartScrollHeight": 2950,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        },
+        {
+          "name": "reduced-layout",
+          "width": 750,
+          "height": 500,
+          "rootWidth": 750,
+          "chartHeight": 134,
+          "chartScrollHeight": 3334,
+          "completeVisibleRows": 1,
+          "colors": {
+            "housePaletteOnly": true,
+            "electricRubyPairing": true,
+            "ashBodyText": true,
+            "neutralBorders": true,
+            "noSalmonOrLegacyWorkbookUi": true
+          },
+          "blankCaptureGuard": true,
+          "fiveColumnsAnd34OriginalPoms": true,
+          "requiredAndMissingFilters": true,
+          "stickyPomAndHeadings": true,
+          "contextFieldsReachable": true
+        }
+      ],
+      "workflow": {
+        "canonicalCentimetersAndThreeUnitRoundTrips": true,
+        "zeroAndNullPreserved": true,
+        "invalidInputPreventsUnitSwitch": true,
+        "missingRequiredRevealedAndFocused": true,
+        "invalidOptionalTakesPriorityAndWhitespaceIdentityRecovers": true,
+        "missingRowRemainsDuringTypingThenTabAdvances": true,
+        "viewChangesDoNotDirtyOrDropValues": true,
+        "jsonAndCsvExportVerifiedAndTemporaryDownloadsDeleted": true,
+        "newDraftSaveAndEarlierRecordReopen": true,
+        "memoryOnlyJsonImport": true,
+        "completenessIsNotApproval": true,
+        "separateLocalStorageVerified": true,
+        "syntheticFieldsClearedBeforeClosing": true,
+        "print": [
+          {
+            "scenario": "required-search",
+            "pages": 5,
+            "unit": "CM",
+            "all34PomsAndOriginalQuestions": true,
+            "metadataAndReferenceValuesPresent": true,
+            "screenStateRestoredExactly": true,
+            "filledPdfKeptInMemoryOnly": true
+          },
+          {
+            "scenario": "missing-only",
+            "pages": 5,
+            "unit": "IN",
+            "all34PomsAndOriginalQuestions": true,
+            "metadataAndReferenceValuesPresent": true,
+            "screenStateRestoredExactly": true,
+            "filledPdfKeptInMemoryOnly": true
+          },
+          {
+            "scenario": "empty-search",
+            "pages": 5,
+            "unit": "CM",
+            "all34PomsAndOriginalQuestions": true,
+            "metadataAndReferenceValuesPresent": true,
+            "screenStateRestoredExactly": true,
+            "filledPdfKeptInMemoryOnly": true
+          }
+        ]
+      }
+    }
+  },
+  "storageUnavailable": {
+    "saveUnavailableExplained": true,
+    "jsonBackupStillWorks": true,
+    "temporaryDownloadDeleted": true,
+    "errorColorsRemainHousePalette": true
+  },
+  "limits": "750\u00d7500 CSS pixels checks a reduced layout, not actual browser zoom. This does not establish assistive-technology compliance or remote client submission.",
+  "screenshots": [
+    {
+      "filename": "case-2-client-intake-sqlite-desktop.png",
+      "sha256": "6c9d7e295c6eb944e62f51d2f7a13d5d7de4edd8d09884448c2f80906a5e4ede",
+      "bytes": 258354
+    },
+    {
+      "filename": "case-2-client-intake-sqlite-drafts.png",
+      "sha256": "89d83a8af62afd600a97fb3cb3e7c756338a94c6178544db21a763384702cb52",
+      "bytes": 247420
+    },
+    {
+      "filename": "case-2-client-intake-sqlite-landscape.png",
+      "sha256": "362ca89c455e2370461320f1d06a9c969e4dd394662df08077b9aba09c4b91b9",
+      "bytes": 70984
+    },
+    {
+      "filename": "case-2-client-intake-sqlite-mobile-values.png",
+      "sha256": "224c60d02721dc389476dd635fe767af95961d09b9ccf9be3b2c0bde748d956b",
+      "bytes": 73350
+    },
+    {
+      "filename": "case-2-client-intake-sqlite-mobile.png",
+      "sha256": "a890ec4d1ea4f6c2f18b4fa1410728d3e53f45e60dcf4474aaa516fa9afdbf0a",
+      "bytes": 80912
+    },
+    {
+      "filename": "case-2-client-intake-sqlite-references.png",
+      "sha256": "2a8e9f1bfab827aa4ef9cf50b801566e21738d004726601c7e709665bdcfe0c7",
+      "bytes": 265230
+    },
+    {
+      "filename": "case-2-client-intake-standalone-desktop.png",
+      "sha256": "6c9d7e295c6eb944e62f51d2f7a13d5d7de4edd8d09884448c2f80906a5e4ede",
+      "bytes": 258354
+    },
+    {
+      "filename": "case-2-client-intake-standalone-drafts.png",
+      "sha256": "0dd73bd1b23b80c148ca1b020713d8b2ce46e672e289bbdbb6762ff08b9f80a2",
+      "bytes": 248295
+    },
+    {
+      "filename": "case-2-client-intake-standalone-landscape.png",
+      "sha256": "362ca89c455e2370461320f1d06a9c969e4dd394662df08077b9aba09c4b91b9",
+      "bytes": 70984
+    },
+    {
+      "filename": "case-2-client-intake-standalone-mobile-values.png",
+      "sha256": "cb8809d70a7292dc3f4021543e30305f0f08facba6a1d4a7a5f7b223a998982c",
+      "bytes": 72966
+    },
+    {
+      "filename": "case-2-client-intake-standalone-mobile.png",
+      "sha256": "a890ec4d1ea4f6c2f18b4fa1410728d3e53f45e60dcf4474aaa516fa9afdbf0a",
+      "bytes": 80912
+    },
+    {
+      "filename": "case-2-client-intake-standalone-references.png",
+      "sha256": "2a8e9f1bfab827aa4ef9cf50b801566e21738d004726601c7e709665bdcfe0c7",
+      "bytes": 265230
+    }
+  ]
+}

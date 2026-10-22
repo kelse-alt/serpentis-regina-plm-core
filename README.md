@@ -2,16 +2,26 @@
 
 A fashion technology prototype for client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects technical-design practice with beginner JavaScript learning: one measurement object becomes one displayed row and one saved record.
 
-## Start with the client intake — v0.4.0
+## Start with the client intake — workroom edition
 
-**Without installing anything:** [download the v0.4.0 ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/tags/v0.4.0.zip), extract the folder, and open **client-intake.html** in your browser.
+**Without installing anything:** [download the workroom ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/heads/codex/client-intake-workroom-style.zip), extract the folder, and open **client-intake.html** in your browser.
 
 The intake follows the supplied Remote Bespoke Dress workbook's fields, measuring
-instructions, required markers, and red/blue/green/burgundy/dark/blush colorway.
+instructions and required markers. Its current workroom edition matches the
+mannequin sheet's Obsidian/Ruby/Electric house style, Barlow Condensed type,
+standalone head seal, ash chart text, and neutral borders. It is designed for
+fashion technical designers, pattern makers, and seamstresses.
 It starts with blank client and project information and **34 RC POMs**, of which
 **19 are required**. Choose **CM** (the workbook default) or **IN**, enter values,
 save/reopen partial drafts, import/export JSON, download CSV, or print a blank or
 filled sheet.
+
+Client details, reference notes, and saved drafts have their own tabs beside the
+chart. Search by POM, measurement, or method; filter to all, required, or missing
+required measurements. POM codes and headings stay visible while scrolling.
+Print always includes all 34 POMs and the original source notes in the selected
+unit, then restores the working screen. On phones, the context panel opens for
+editing and closes to return to measurements.
 
 The completeness check requires a client ID or name, a measurement date, and all
 19 required measurements; it does not approve the intake. RC-21 is absent in the
@@ -30,7 +40,8 @@ the standalone file. Browser drafts and SQLite records are separate stores.
 Filled client records stay local and are not included in the public form or Git
 history. See the [client-intake guide](docs/client-intake.md) for the full workflow.
 
-Source palette: brand red `#E4002B`, royal blue `#1E22AA`, section red `#EE2737`,
+Historical source palette, retained as provenance rather than active UI colors:
+brand red `#E4002B`, royal blue `#1E22AA`, section red `#EE2737`,
 reference green `#1FA824`, burgundy `#612028`, dark table `#0F1720`, table red
 `#ED2637`, blush entries `#FFF4F4`, text `#101820`, and white `#FFFFFF`.
 

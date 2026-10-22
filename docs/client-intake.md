@@ -2,7 +2,10 @@
 
 A working intake form based on the supplied **Remote Bespoke Dress Client
 Measurement Sheet**, tab **CLIENT BODY MEASUREMENTS**. It preserves the workbook's
-field labels, measuring instructions, required markers, and extracted colorway.
+field labels, measuring instructions, and required markers. The current workroom
+edition uses the same house colors, Barlow Condensed typography, original head
+seal, ash chart treatment, and neutral borders as the mannequin measurement sheet.
+Its audience is fashion technical designers, pattern makers, and seamstresses.
 
 ## Open the form
 
@@ -27,6 +30,16 @@ The build produces `client-intake.html` and an identical copy in `reports/`.
 
 ## Take a client intake
 
+The **Client**, **References**, and **Drafts & exports** tabs keep the original
+details, reference notes, and saved-record controls beside the chart. On phones,
+open **Client details & drafts** to edit these sections; close it to return to
+measurements. The Save, Check required, and Print actions remain available.
+
+Search by RC POM, measurement label, or method. **Required 19** shows the original
+required set; **Missing required** shows required values still unentered. A row
+being typed remains visible until its input loses focus, so the filter does not
+interrupt entry. Search and filters do not change measurement values.
+
 1. Enter the client/project details and measurement date. The distributed form
    starts without any filled client identity or project information.
 2. Choose **CM** or **IN**. The workbook's default is **CM**.
@@ -37,8 +50,11 @@ The build produces `client-intake.html` and an identical copy in `reports/`.
 5. Use the completeness check when ready. It checks for a client ID or name, a
    measurement date, and all **19 required measurements**. It does not approve
    measurements or resolve questions in the source methods.
-6. Export CSV or JSON, import a compatible intake JSON to continue, or print a
-   blank/filled form using the print controls.
+6. Export CSV or JSON, import a compatible intake JSON to continue, or use
+   **Print all 34 / PDF** for a blank or filled form. Every POM, client/detail
+   field, reference note, and original source note is included regardless of
+   the selected search, filter, or context tab. The working screen is restored
+   afterward.
 
 The workbook contains **34 RC POMs**, numbered RC-01 through RC-35 with **RC-21
 absent**. That gap is preserved. These RC measurements are not mapped to the BF
@@ -81,15 +97,23 @@ filled workbook, or screenshots to the public repository. The prebuilt form
 contains the blank template, not saved clients. This prototype does not provide
 remote submissions, accounts, attachment storage, or live Google Sheets syncing.
 
-## Source and colorway
+## Source provenance and current house style
 
 The sanitized [template](../data/templates/remote-bespoke-client-intake.v1.json)
-records the workbook sheet/range and palette source cells. Its colors include
+records the workbook sheet/range and original palette source cells. These
+historical colors include
 brand red `#E4002B`, royal blue `#1E22AA`, reference green `#1FA824`, measurement
 burgundy `#612028`, dark table `#0F1720`, and blush entry cells `#FFF4F4`.
 Original labels and methods remain traceable; filled workbook values are excluded.
-The dark table header uses white labels with the source red as an accent for
-readable contrast.
+The source palette remains unchanged in that controlled JSON. Active UI colors
+come from `design/brand-tokens.json`: Obsidian backgrounds, Ruby title with black
+text, Electric/Ruby headings and buttons, green title metadata, ash body text,
+and neutral borders. No blush/Salmon or burgundy is used in the current interface.
+Original artwork, fonts, and matte texture are bundled locally and embedded in
+the standalone HTML without external requests.
+
+See the [workroom design review](client-intake-workroom.md) for blank previews
+and browser evidence.
 
 See the shared [calculation/validation module](../src/client-intake.mjs) and
 [local intake server](../src/client-intake-server.mjs) for the executable code.

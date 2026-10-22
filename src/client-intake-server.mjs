@@ -7,6 +7,7 @@ import { randomUUID } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { validateIntakeDraft, summarizeIntake } from './client-intake.mjs';
+import { CLIENT_INTAKE_ASSETS, loadClientIntakeStyles } from './client-intake-assets.mjs';
 
 export const CLIENT_DATABASE_PATH = fileURLToPath(new URL('../storage/client-intakes.sqlite', import.meta.url));
 const TEMPLATE = new URL('../data/templates/remote-bespoke-client-intake.v1.json', import.meta.url);
@@ -16,6 +17,7 @@ const ASSETS = new Map([
   ['/intake.css', [new URL('../client-web/app.css', import.meta.url), 'text/css; charset=utf-8']],
   ['/intake-app.mjs', [new URL('../client-web/app.mjs', import.meta.url), 'text/javascript; charset=utf-8']],
   ['/client-intake.mjs', [new URL('./client-intake.mjs', import.meta.url), 'text/javascript; charset=utf-8']],
+  ...CLIENT_INTAKE_ASSETS,
 ]);
 
 class HttpError extends Error {
@@ -102,7 +104,7 @@ export async function createClientIntakeServer({ databasePath = CLIENT_DATABASE_
     response.setHeader('Cache-Control', 'no-store');
     response.setHeader('X-Content-Type-Options', 'nosniff');
     response.setHeader('Referrer-Policy', 'no-referrer');
-    response.setHeader('Content-Security-Policy', "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'self'; frame-ancestors 'none'");
+    response.setHeader('Content-Security-Policy', "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'self'; frame-ancestors 'none'");
     try {
       const port = server.address()?.port;
       if (![ `127.0.0.1:${port}`, `localhost:${port}` ].includes(request.headers.host?.toLowerCase())) {
@@ -143,7 +145,7 @@ export async function createClientIntakeServer({ databasePath = CLIENT_DATABASE_
       } else if (ASSETS.has(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
         const [path, type] = ASSETS.get(url.pathname);
         let content;
-        try { content = await readFile(path); }
+        try { content = url.pathname === '/intake.css' ? Buffer.from(await loadClientIntakeStyles()) : await readFile(path); }
         catch (error) { if (error.code === 'ENOENT') throw new HttpError(404, 'Not found.'); throw error; }
         response.writeHead(200, { 'Content-Type': type, 'Content-Length': content.length });
         response.end(request.method === 'HEAD' ? undefined : content);
