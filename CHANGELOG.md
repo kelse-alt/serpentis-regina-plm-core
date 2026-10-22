@@ -2,6 +2,12 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## Case 1 matte ink refinement — 2026-10-22
+
+- Replace previously Ruby text with ash charcoal `#92989D` and red outlines with neutral `#293239`; add subtle embedded grain to selected text for the matte treatment.
+- Keep the Ruby title fill, Obsidian title/metadata, two green photo-caption fills, original assets, layout, and measurement rules unchanged.
+- Record this as a Case 1 exception; retain the general Electric-fill/Ruby-text house standard for other surfaces. See the [current review](docs/case-1-matte-ink.md).
+
 ## Case 1 corrected Ruby rule — 2026-10-22
 
 - Correct the standing house rule: every Electric Blue fill box uses Ruby text. Remove Salmon/light pink from all active interface styling, including chart text, controls, borders, and deltas.

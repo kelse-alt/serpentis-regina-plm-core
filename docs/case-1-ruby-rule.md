@@ -1,10 +1,15 @@
-# Case 1 — corrected Ruby rule
+# Case 1 — earlier Ruby-text layout
+
+This preserves an earlier Case 1 appearance. The founder's
+[matte ink refinement](case-1-matte-ink.md) now governs this report's lettering
+and outlines. The general Electric-fill/Ruby-text house standard remains in
+place for other surfaces, with the current mannequin report as an exception.
 
 **Electric Blue fills always use Ruby text. No Salmon/light pink UI.**
 This corrected house rule supersedes the
 [previous pink-text direction](case-1-house-colors.md).
 
-![Current desktop preview](previews/case-1-ruby-rule-desktop.png)
+![Earlier desktop preview](previews/case-1-ruby-rule-desktop.png)
 
 [Phone preview](previews/case-1-ruby-rule-mobile.png) ·
 [Browser evidence](validation/case-1-ruby-rule.json)
