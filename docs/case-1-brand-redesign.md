@@ -4,6 +4,9 @@ This implements the founder's October 22, 2026 design comments on the existing
 mannequin measurement report. The [original design](case-1-mannequin-review.md)
 is preserved for comparison.
 
+This is the earlier color layout. The founder's subsequent edits are in the
+[latest layout refinement](case-1-layout-refinement.md).
+
 ![Desktop redesign](previews/case-1-brand-desktop.png)
 
 [Phone preview](previews/case-1-brand-mobile.png)

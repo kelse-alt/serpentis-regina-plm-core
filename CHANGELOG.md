@@ -2,6 +2,13 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## Case 1 layout refinement — 2026-10-22
+
+- Match the title to the existing Barlow Condensed chart font and remove Bodoni from the generated report.
+- Give the original head seal a standalone Obsidian region beside the title. Move all brand/case/form/approval text into the title box, retaining green metadata.
+- Replace Ruby box fills with Electric Blue and Ruby lettering; remove all Salmon UI styling, using Slytheren and Obsidian for the chart and controls.
+- Align both original mannequin photographs in equal frames that fill the photo area using CSS cover. Original image files and approved measurements remain unchanged.
+
 ## Case 1 brand redesign — 2026-10-22
 
 - Restyle the existing mannequin report with the founder's Obsidian/Ruby/Salmon/Slytheren/Electric palette, larger bundled Bodoni Moda and Barlow Condensed type, and the original sculpted head seal.

@@ -50,9 +50,10 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 
 ## Case 1 — mannequin sheet design review
 
-The mannequin report now uses the founder's designated Obsidian, Ruby, Salmon,
-Slytheren, and Electric colors, larger editorial type, the original head seal,
-and the workbook's original front/back photographs. Only the measurement chart
+The mannequin report uses Obsidian, Ruby, Slytheren, and Electric colors, with
+Barlow Condensed throughout, a standalone head seal, and the workbook's
+front/back photographs in aligned frames. Salmon has been removed from this
+sheet's interface. Only the measurement chart
 scrolls; the upper page and chart headings stay in place. Its six columns use
 the workbook labels **MFR** and **ACTUAL FORM**, with **Delta = ACTUAL FORM − MFR**.
 
@@ -61,9 +62,9 @@ fonts, and scripts are embedded, so no external requests are needed. The
 approved baseline data and calculation rule are preserved. This report is a
 browser preview, separate from the live Squarespace portal.
 
-See the [redesign review](docs/case-1-brand-redesign.md),
+See the [latest design review](docs/case-1-layout-refinement.md),
 [brand system](docs/brand-system.md), and
-[original design](docs/case-1-mannequin-review.md).
+[previous color layout](docs/case-1-brand-redesign.md).
 
 ## Enter new measurements
 

@@ -18,9 +18,15 @@
     "slytheren": "Workbook BODY REF-MANNEQUIN-SIZE 8-V1!A9 and G9 fills.",
     "electric": "Workbook BODY REF-MANNEQUIN-SIZE 8-V1!I1 fill and PATTERN CARD!B5 font."
   },
-  "typographyProposal": {
-    "display": "Bodoni Moda",
+  "typography": {
+    "display": "Barlow Condensed",
     "body": "Barlow Condensed",
-    "status": "Proposed for founder review; not a verified Notion font specification."
+    "status": "Founder requested the title match the existing chart font on 2026-10-22; not a verified Notion font specification."
+  },
+  "houseMeasurementSheet": {
+    "excludedColors": ["salmon"],
+    "headerFill": "electric",
+    "headerText": "ruby",
+    "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
   }
 }

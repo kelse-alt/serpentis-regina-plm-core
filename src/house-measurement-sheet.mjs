@@ -22,7 +22,6 @@ const assetTypes = {
   'mannequin-front.jpg': 'image/jpeg',
   'mannequin-back.jpg': 'image/jpeg',
   'serpentis-regina-seal.png': 'image/png',
-  'fonts/bodoni-moda-600.ttf': 'font/ttf',
   'fonts/barlow-condensed-500.ttf': 'font/ttf',
   'fonts/barlow-condensed-700.ttf': 'font/ttf',
 };
@@ -30,9 +29,10 @@ const assets = Object.fromEntries(await Promise.all(Object.entries(assetTypes).m
   const bytes = await readFile(new URL(`../assets/house-sheet/${name}`, import.meta.url));
   return [name, `data:${type};base64,${bytes.toString('base64')}`];
 })));
-const brandCss = ':root{' + Object.entries(brand.colors).map(([name, value]) => `--${name}:${value}`).join(';') + '}';
+// Salmon remains in the house palette, but the founder removed it from this sheet.
+const excludedColors = new Set(brand.houseMeasurementSheet.excludedColors);
+const brandCss = ':root{' + Object.entries(brand.colors).filter(([name]) => !excludedColors.has(name)).map(([name, value]) => `--${name}:${value}`).join(';') + '}';
 const fontCss = [
-  ['Bodoni Moda', 600, 'fonts/bodoni-moda-600.ttf'],
   ['Barlow Condensed', 500, 'fonts/barlow-condensed-500.ttf'],
   ['Barlow Condensed', 700, 'fonts/barlow-condensed-700.ttf'],
 ].map(([family, weight, file]) => `@font-face{font-family:'${family}';font-style:normal;font-weight:${weight};font-display:swap;src:url('${assets[file]}') format('truetype')}`).join('\n');
@@ -109,11 +109,11 @@ export function buildHtml(form, rows) {
 <link rel="icon" href="data:,">
 <style>${brandCss}\n${fontCss}\n${sheetCss}</style></head><body>
 <a class="skip-link" href="#measurement-chart">Skip to measurements</a>
-<main class="sheet"><header class="masthead">
+<main class="sheet"><header class="masthead"><div class="title-bar">
 <div class="brand-line"><span class="wordmark">SERPENTIS REGINA</span><span class="division">Technical design / House archive</span><span class="case">CASE / 001</span></div>
-<div class="title-bar"><h1><span class="title-subject">Mannequin</span> <span class="title-primary">Measurement Sheet</span></h1>
-<div class="seal"><img src="${assets['serpentis-regina-seal.png']}" alt="Serpentis Regina sculpted head seal" width="1366" height="892"></div></div>
+<h1><span class="title-subject">Mannequin</span> <span class="title-primary">Measurement Sheet</span></h1>
 <div class="identity-strip"><strong>${escapeHtml(form.formId)}</strong><span>SIZE ${escapeHtml(form.manufacturerDesignatedSize)}</span><span>INCHES</span><span>${stats.total} POINTS OF MEASURE</span><span class="approval">Approved house standard</span></div>
+</div><div class="seal-zone"><div class="seal"><img src="${assets['serpentis-regina-seal.png']}" alt="Serpentis Regina sculpted head seal" width="1366" height="892"></div></div>
 </header>
 <section class="workspace" aria-label="Mannequin measurement study">
 <aside class="form-panel" aria-labelledby="form-heading">
