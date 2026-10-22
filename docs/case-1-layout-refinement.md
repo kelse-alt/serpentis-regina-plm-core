@@ -1,5 +1,10 @@
 # Case 1 — layout refinement
 
+Historical review: the layout remains relevant, but its color instructions
+are superseded by the [current house color rule](case-1-house-colors.md),
+including Salmon text on every Electric Blue fill and green restricted to
+the Front/Back caption backgrounds.
+
 This applies the founder's next design comments to the
 [previous brand layout](case-1-brand-redesign.md).
 

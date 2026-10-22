@@ -23,10 +23,18 @@
     "body": "Barlow Condensed",
     "status": "Founder requested the title match the existing chart font on 2026-10-22; not a verified Notion font specification."
   },
+  "houseRules": {
+    "electricFillRequiresText": "salmon",
+    "source": "Founder instruction: every Electric Blue filled text box must pair with pink text, for all brand work moving forward."
+  },
   "houseMeasurementSheet": {
-    "excludedColors": ["salmon"],
+    "excludedColors": [],
+    "titleFill": "ruby",
+    "titleText": "obsidian",
+    "titleMetadataFill": "transparent",
     "headerFill": "electric",
-    "headerText": "ruby",
+    "headerText": "salmon",
+    "slytherenUsage": "Front and Back photo-caption backgrounds only; no other green interface styling.",
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
   }
 }

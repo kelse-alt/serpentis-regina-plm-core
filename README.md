@@ -50,21 +50,25 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 
 ## Case 1 — mannequin sheet design review
 
-The mannequin report uses Obsidian, Ruby, Slytheren, and Electric colors, with
-Barlow Condensed throughout, a standalone head seal, and the workbook's
-front/back photographs in aligned frames. Salmon has been removed from this
-sheet's interface. Only the measurement chart
-scrolls; the upper page and chart headings stay in place. Its six columns use
-the workbook labels **MFR** and **ACTUAL FORM**, with **Delta = ACTUAL FORM − MFR**.
+The mannequin report uses a Ruby title box with Obsidian title text, transparent
+metadata strips, and the house rule **Electric Blue fills always use Salmon
+pink text**. This latest direction supersedes the earlier Salmon removal.
+Slytheren is limited to the two Front/Back photo-caption fills; chart text and
+controls use Salmon on Obsidian, with Ruby Actual Form numbers.
+
+Barlow Condensed type, the standalone original head seal, and aligned workbook
+photographs remain in place. Only the measurement chart scrolls; the upper
+page and chart headings stay fixed. Its six columns use **MFR** and
+**ACTUAL FORM**, with **Delta = ACTUAL FORM − MFR**.
 
 Run `npm run sheet` to generate the self-contained browser report. Its photos,
 fonts, and scripts are embedded, so no external requests are needed. The
 approved baseline data and calculation rule are preserved. This report is a
 browser preview, separate from the live Squarespace portal.
 
-See the [latest design review](docs/case-1-layout-refinement.md),
+See the [latest design review](docs/case-1-house-colors.md),
 [brand system](docs/brand-system.md), and
-[previous color layout](docs/case-1-brand-redesign.md).
+[previous layout review](docs/case-1-layout-refinement.md).
 
 ## Enter new measurements
 
