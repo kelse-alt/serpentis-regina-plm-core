@@ -29,9 +29,11 @@ const assets = Object.fromEntries(await Promise.all(Object.entries(assetTypes).m
   const bytes = await readFile(new URL(`../assets/house-sheet/${name}`, import.meta.url));
   return [name, `data:${type};base64,${bytes.toString('base64')}`];
 })));
-// Standing house rule: Electric boxes use Ruby text; Salmon is excluded from UI.
+// The current Case 1 matte-ink treatment overrides Ruby lettering; Salmon stays excluded.
 const excludedColors = new Set([...brand.houseRules.excludedInterfaceColors, ...brand.houseMeasurementSheet.excludedColors]);
-const brandCss = ':root{' + Object.entries(brand.colors).filter(([name]) => !excludedColors.has(name)).map(([name, value]) => `--${name}:${value}`).join(';') + '}';
+const grainSvg = await readFile(new URL('../sheet-web/matte-grain.svg', import.meta.url));
+const sheetColors = { ...brand.colors, 'ash-ink': brand.houseMeasurementSheet.matteInk.color, 'ash-line': brand.houseMeasurementSheet.matteInk.line };
+const brandCss = ':root{' + Object.entries(sheetColors).filter(([name]) => !excludedColors.has(name)).map(([name, value]) => `--${name}:${value}`).join(';') + `;--matte-grain:url("data:image/svg+xml;base64,${grainSvg.toString('base64')}")}`;
 const fontCss = [
   ['Barlow Condensed', 500, 'fonts/barlow-condensed-500.ttf'],
   ['Barlow Condensed', 700, 'fonts/barlow-condensed-700.ttf'],
@@ -91,6 +93,9 @@ export function formatDifference(value) {
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 }
+function matteText(value) {
+  return `<span class="matte-ink">${escapeHtml(value)}</span>`;
+}
 
 // Read-only, offline browser report: no external libraries or third-party servers.
 export function buildHtml(form, rows) {
@@ -99,9 +104,9 @@ export function buildHtml(form, rows) {
   for (const row of rows) {
     const status = row.hasReference ? 'compared' : 'missing';
     body += `<tr data-status="${status}" data-search="${escapeHtml((row.pomCode + ' ' + row.description + ' ' + row.sourceLabel + ' ' + row.howToMeasure).toLowerCase())}">
-<td class="pom">${escapeHtml(row.pomCode)}</td><td class="measurement-name">${escapeHtml(row.description)}</td>
-<td class="method">${escapeHtml(row.howToMeasure)}</td><td class="num mfr">${row.hasReference ? row.manufacturerReference : '<span class="missing" aria-label="No manufacturer measurement">—</span>'}</td>
-<td class="num actual">${row.houseStandard}</td><td class="num delta">${row.hasReference ? escapeHtml(formatDifference(row.difference)) : '<span class="missing" aria-label="Delta unavailable without manufacturer measurement">—</span>'}</td></tr>`;
+<td class="pom">${matteText(row.pomCode)}</td><td class="measurement-name">${matteText(row.description)}</td>
+<td class="method">${matteText(row.howToMeasure)}</td><td class="num mfr">${row.hasReference ? matteText(row.manufacturerReference) : '<span class="missing matte-ink" aria-label="No manufacturer measurement">—</span>'}</td>
+<td class="num actual">${matteText(row.houseStandard)}</td><td class="num delta">${row.hasReference ? matteText(formatDifference(row.difference)) : '<span class="missing matte-ink" aria-label="Delta unavailable without manufacturer measurement">—</span>'}</td></tr>`;
   }
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; font-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'">
@@ -117,7 +122,7 @@ export function buildHtml(form, rows) {
 </header>
 <section class="workspace" aria-label="Mannequin measurement study">
 <aside class="form-panel" aria-labelledby="form-heading">
-<div class="panel-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="form-heading">The house form</h2></div>
+<div class="panel-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="form-heading" class="matte-ink">The house form</h2></div>
 <div class="photo-pair">
 <figure><img src="${assets['mannequin-front.jpg']}" alt="Front view of the actual size 8 house mannequin" width="724" height="2048"><figcaption>Front</figcaption></figure>
 <figure><img src="${assets['mannequin-back.jpg']}" alt="Back view of the actual size 8 house mannequin" width="696" height="2048"><figcaption>Back</figcaption></figure>
@@ -125,7 +130,7 @@ export function buildHtml(form, rows) {
 <div class="form-caption"><p>ACTUAL FORM<strong>The physical house standard.</strong></p><span class="size-tag" aria-label="Manufacturer designated size ${escapeHtml(form.manufacturerDesignatedSize)}">${escapeHtml(form.manufacturerDesignatedSize)}</span></div>
 </aside>
 <section class="measurement-panel" aria-labelledby="measurement-heading">
-<div class="panel-heading measure-heading"><div class="heading-group"><span class="section-number" aria-hidden="true">02</span><h2 id="measurement-heading">Measurements</h2></div><span class="unit-tag">UNIT / IN</span></div>
+<div class="panel-heading measure-heading"><div class="heading-group"><span class="section-number" aria-hidden="true">02</span><h2 id="measurement-heading" class="matte-ink">Measurements</h2></div><span class="unit-tag">UNIT / IN</span></div>
 <div class="toolbar"><label class="search-field"><span class="sr-only">Search measurements</span><input id="search" type="search" placeholder="Find a measurement…"></label>
 <button type="button" data-filter="all" aria-pressed="true">All ${stats.total}</button><button type="button" data-filter="compared" aria-pressed="false">With MFR ${stats.compared}</button>
 <button type="button" data-filter="missing" aria-pressed="false">MFR missing ${stats.missingReferences}</button><button type="button" class="print" id="print-sheet">Print / PDF</button></div>

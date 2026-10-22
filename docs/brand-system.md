@@ -31,29 +31,40 @@ whose exported XLSX SHA-256 is
 This is the founder's corrected standing rule for new and redesigned interface
 surfaces. It supersedes the previous blue-fill/pink-text instruction.
 
+### Current Case 1 exception: matte ink
+
+The founder subsequently requested matte black lettering and removal of red
+outlines on the mannequin sheet. This specific report uses **ash charcoal
+`#92989D`** for previously Ruby text, including text on Electric headers,
+and **neutral `#293239`** for former red outlines. This is a report-specific
+exception; the general Electric/Ruby house pairing above remains the default
+for other surfaces.
+
 For the current mannequin sheet:
 
 - The title box uses **Ruby fill with Obsidian title text**. Its metadata
   strips are transparent over Ruby with Obsidian text and no separate dark boxes.
-- Section boxes and chart headings use **Electric fill with Ruby text**.
+- Section boxes and chart headings use **Electric fill with ash-charcoal text**.
 - **Slytheren is restricted to the two Front/Back caption backgrounds**;
   their text is Obsidian. It is not used for text, controls, borders, or
   metadata elsewhere on this sheet.
-- Chart text, controls, deltas, borders, and supporting details use Ruby on
-  Obsidian. Actual Form numbers remain Ruby on Obsidian.
+- Chart text, controls, deltas, Actual Form numbers, and supporting details use
+  ash charcoal on Obsidian. Outlines use the neutral line color, with no red
+  outlines. Selected text has subtle, locally embedded grain for a matte finish.
 
 The measured mannequin data and delta rule are separate from these visual
-rules. See the [current Case 1 review](case-1-ruby-rule.md). Earlier
+rules. See the [current Case 1 review](case-1-matte-ink.md). Earlier
 [brand](case-1-brand-redesign.md) and
 [layout](case-1-layout-refinement.md) reviews preserve prior directions;
 their conflicting color instructions, including the later
-[pink-text review](case-1-house-colors.md), are historical.
+[pink-text review](case-1-house-colors.md) and
+[Ruby-text Case 1 layout](case-1-ruby-rule.md), are historical for this report.
 
 ## Apply the current combinations
 
-Use Ruby on Obsidian for chart text and supporting controls, and Ruby on
-Electric wherever a blue fill is used. Keep the two photo captions Obsidian
-on Slytheren. The title and its metadata use Obsidian directly on Ruby.
+Apply the report-specific matte ink exception to Case 1; retain the general
+Electric/Ruby rule for other surfaces. Keep the two photo captions Obsidian
+on Slytheren. The Case 1 title and its metadata use Obsidian directly on Ruby.
 Original artwork and photographs retain their source pixels and colors;
 this does not authorize Salmon in interface styling.
 
