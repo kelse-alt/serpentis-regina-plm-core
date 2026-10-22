@@ -5,7 +5,10 @@ palette on October 22, 2026. [design/brand-tokens.json](../design/brand-tokens.j
 is the canonical token file for new and redesigned interface surfaces.
 Photographs and original artwork retain their original colors.
 
-## Verified interface palette
+## Source palette provenance
+
+The table records source colors. Salmon is retained for historical provenance
+only and is **not permitted in current interface styling**.
 
 | Token | Hex | Source |
 |---|---|---|
@@ -24,33 +27,35 @@ whose exported XLSX SHA-256 is
 
 ## Current house color rule
 
-**Every Electric Blue fill box uses Salmon pink text.** This is the founder's
-latest standing rule for new and redesigned interface surfaces. It supersedes
-the earlier Case 1 instruction to remove Salmon from the interface.
+**Every Electric Blue fill box uses Ruby text. No Salmon/light pink UI.**
+This is the founder's corrected standing rule for new and redesigned interface
+surfaces. It supersedes the previous blue-fill/pink-text instruction.
 
 For the current mannequin sheet:
 
 - The title box uses **Ruby fill with Obsidian title text**. Its metadata
-  strips are transparent over Ruby, with no separate dark boxes.
-- Section boxes and chart headings use **Electric fill with Salmon text**.
+  strips are transparent over Ruby with Obsidian text and no separate dark boxes.
+- Section boxes and chart headings use **Electric fill with Ruby text**.
 - **Slytheren is restricted to the two Front/Back caption backgrounds**;
   their text is Obsidian. It is not used for text, controls, borders, or
   metadata elsewhere on this sheet.
-- Chart text, controls, and supporting details use Salmon on Obsidian.
-  Actual Form numbers remain Ruby on Obsidian.
+- Chart text, controls, deltas, borders, and supporting details use Ruby on
+  Obsidian. Actual Form numbers remain Ruby on Obsidian.
 
 The measured mannequin data and delta rule are separate from these visual
-rules. See the [current Case 1 review](case-1-house-colors.md). Earlier
+rules. See the [current Case 1 review](case-1-ruby-rule.md). Earlier
 [brand](case-1-brand-redesign.md) and
 [layout](case-1-layout-refinement.md) reviews preserve prior directions;
-their conflicting color instructions are historical.
+their conflicting color instructions, including the later
+[pink-text review](case-1-house-colors.md), are historical.
 
-## Readable combinations
+## Apply the current combinations
 
-Use Salmon on Obsidian for chart text and supporting controls, and Salmon
-on Electric wherever a blue fill is used. Keep the two photo captions
-Obsidian on Slytheren. Ruby on Obsidian is reserved for the large, bold
-Actual Form numbers; the main title reverses this to Obsidian on Ruby.
+Use Ruby on Obsidian for chart text and supporting controls, and Ruby on
+Electric wherever a blue fill is used. Keep the two photo captions Obsidian
+on Slytheren. The title and its metadata use Obsidian directly on Ruby.
+Original artwork and photographs retain their source pixels and colors;
+this does not authorize Salmon in interface styling.
 
 ## Typography and Notion access
 

@@ -24,16 +24,17 @@
     "status": "Founder requested the title match the existing chart font on 2026-10-22; not a verified Notion font specification."
   },
   "houseRules": {
-    "electricFillRequiresText": "salmon",
-    "source": "Founder instruction: every Electric Blue filled text box must pair with pink text, for all brand work moving forward."
+    "electricFillRequiresText": "ruby",
+    "excludedInterfaceColors": ["salmon"],
+    "source": "Founder correction: Electric Blue text-box fill ALWAYS pairs with Ruby text. Stop using light pink/Salmon in interfaces."
   },
   "houseMeasurementSheet": {
-    "excludedColors": [],
+    "excludedColors": ["salmon"],
     "titleFill": "ruby",
     "titleText": "obsidian",
     "titleMetadataFill": "transparent",
     "headerFill": "electric",
-    "headerText": "salmon",
+    "headerText": "ruby",
     "slytherenUsage": "Front and Back photo-caption backgrounds only; no other green interface styling.",
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
   }

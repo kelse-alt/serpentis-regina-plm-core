@@ -2,7 +2,15 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
-## Case 1 house color rule — 2026-10-22
+## Case 1 corrected Ruby rule — 2026-10-22
+
+- Correct the standing house rule: every Electric Blue fill box uses Ruby text. Remove Salmon/light pink from all active interface styling, including chart text, controls, borders, and deltas.
+- Keep the Ruby title with Obsidian text and transparent metadata overlays; restrict Slytheren to the two Front/Back caption backgrounds.
+- Preserve layout, type, original artwork/photos, approved measurements, and calculation rules. See the [current review](docs/case-1-ruby-rule.md).
+
+## Case 1 house color rule (superseded) — 2026-10-22
+
+Historical direction only; the corrected Ruby rule above replaces its pink-text guidance.
 
 - Establish the latest house standard: every Electric Blue fill box uses Salmon pink text. This supersedes the earlier Salmon removal.
 - Restore a Ruby title fill with Obsidian title text; keep metadata transparent directly over Ruby, without separate dark boxes.

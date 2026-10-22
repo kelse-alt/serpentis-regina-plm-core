@@ -29,8 +29,8 @@ const assets = Object.fromEntries(await Promise.all(Object.entries(assetTypes).m
   const bytes = await readFile(new URL(`../assets/house-sheet/${name}`, import.meta.url));
   return [name, `data:${type};base64,${bytes.toString('base64')}`];
 })));
-// Apply the current report theme; Electric boxes pair with Salmon under the house rule.
-const excludedColors = new Set(brand.houseMeasurementSheet.excludedColors);
+// Standing house rule: Electric boxes use Ruby text; Salmon is excluded from UI.
+const excludedColors = new Set([...brand.houseRules.excludedInterfaceColors, ...brand.houseMeasurementSheet.excludedColors]);
 const brandCss = ':root{' + Object.entries(brand.colors).filter(([name]) => !excludedColors.has(name)).map(([name, value]) => `--${name}:${value}`).join(';') + '}';
 const fontCss = [
   ['Barlow Condensed', 500, 'fonts/barlow-condensed-500.ttf'],
