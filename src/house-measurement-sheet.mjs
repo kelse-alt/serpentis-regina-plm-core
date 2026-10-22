@@ -29,7 +29,7 @@ const assets = Object.fromEntries(await Promise.all(Object.entries(assetTypes).m
   const bytes = await readFile(new URL(`../assets/house-sheet/${name}`, import.meta.url));
   return [name, `data:${type};base64,${bytes.toString('base64')}`];
 })));
-// The current Case 1 matte-ink treatment overrides Ruby lettering; Salmon stays excluded.
+// Electric boxes use Ruby; matte ink is retained outside them. Salmon stays excluded.
 const excludedColors = new Set([...brand.houseRules.excludedInterfaceColors, ...brand.houseMeasurementSheet.excludedColors]);
 const grainSvg = await readFile(new URL('../sheet-web/matte-grain.svg', import.meta.url));
 const sheetColors = { ...brand.colors, 'ash-ink': brand.houseMeasurementSheet.matteInk.color, 'ash-line': brand.houseMeasurementSheet.matteInk.line };
@@ -122,7 +122,7 @@ export function buildHtml(form, rows) {
 </header>
 <section class="workspace" aria-label="Mannequin measurement study">
 <aside class="form-panel" aria-labelledby="form-heading">
-<div class="panel-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="form-heading" class="matte-ink">The house form</h2></div>
+<div class="panel-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="form-heading">The house form</h2></div>
 <div class="photo-pair">
 <figure><img src="${assets['mannequin-front.jpg']}" alt="Front view of the actual size 8 house mannequin" width="724" height="2048"><figcaption>Front</figcaption></figure>
 <figure><img src="${assets['mannequin-back.jpg']}" alt="Back view of the actual size 8 house mannequin" width="696" height="2048"><figcaption>Back</figcaption></figure>
@@ -130,7 +130,7 @@ export function buildHtml(form, rows) {
 <div class="form-caption"><p>ACTUAL FORM<strong>The physical house standard.</strong></p><span class="size-tag" aria-label="Manufacturer designated size ${escapeHtml(form.manufacturerDesignatedSize)}">${escapeHtml(form.manufacturerDesignatedSize)}</span></div>
 </aside>
 <section class="measurement-panel" aria-labelledby="measurement-heading">
-<div class="panel-heading measure-heading"><div class="heading-group"><span class="section-number" aria-hidden="true">02</span><h2 id="measurement-heading" class="matte-ink">Measurements</h2></div><span class="unit-tag">UNIT / IN</span></div>
+<div class="panel-heading measure-heading"><div class="heading-group"><span class="section-number" aria-hidden="true">02</span><h2 id="measurement-heading">Measurements</h2></div><span class="unit-tag">UNIT / IN</span></div>
 <div class="toolbar"><label class="search-field"><span class="sr-only">Search measurements</span><input id="search" type="search" placeholder="Find a measurement…"></label>
 <button type="button" data-filter="all" aria-pressed="true">All ${stats.total}</button><button type="button" data-filter="compared" aria-pressed="false">With MFR ${stats.compared}</button>
 <button type="button" data-filter="missing" aria-pressed="false">MFR missing ${stats.missingReferences}</button><button type="button" class="print" id="print-sheet">Print / PDF</button></div>

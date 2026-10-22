@@ -58,6 +58,13 @@ def check_house_colors(page, viewport_name):
         const green = 'rgb(31, 168, 36)', electric = 'rgb(30, 34, 170)', ruby = 'rgb(228, 0, 43)', ash = 'rgb(146, 152, 157)';
         const hasSalmon = value => /rgba?\(\s*244[\s,]+166[\s,]+160(?:\s*[,/)]|$)/.test(value);
         const hasRuby = value => /rgba?\(\s*228[\s,]+0[\s,]+43(?:\s*[,/)]|$)/.test(value);
+        const effectiveBackground = el => {
+            for (let ancestor = el; ancestor && ancestor !== sheet.parentElement; ancestor = ancestor.parentElement) {
+                const color = getComputedStyle(ancestor).backgroundColor;
+                if (color !== 'rgba(0, 0, 0, 0)' && color !== 'transparent') return color;
+            }
+            return 'rgba(0, 0, 0, 0)';
+        };
         const visible = el => {
             const rect = el.getBoundingClientRect(), style = getComputedStyle(el);
             return rect.width > 0 && rect.height > 0 && style.display !== 'none' &&
@@ -70,9 +77,17 @@ def check_house_colors(page, viewport_name):
             for (const property of ['color','backgroundColor','borderTopColor','borderRightColor','borderBottomColor','borderLeftColor','outlineColor','scrollbarColor','boxShadow','textShadow']) {
                 if (hasSalmon(style[property])) violations.push({...identity, rule:'Salmon UI is forbidden', property});
             }
-            for (const property of ['color','webkitTextFillColor','borderTopColor','borderRightColor','borderBottomColor','borderLeftColor','outlineColor','scrollbarColor','boxShadow','textShadow']) {
-                if (hasRuby(style[property])) violations.push({...identity, rule:'Ruby foreground and outlines are excluded from this report override', property});
+            if ((hasRuby(style.color) || hasRuby(style.webkitTextFillColor)) && effectiveBackground(el) !== electric)
+                violations.push({...identity, rule:'Ruby text must appear only on an Electric surface'});
+            for (const property of ['scrollbarColor','boxShadow','textShadow']) {
+                if (hasRuby(style[property])) violations.push({...identity, rule:'Ruby outlines and decorations remain excluded', property});
             }
+            for (const side of ['Top','Right','Bottom','Left']) {
+                if (parseFloat(style['border'+side+'Width']) > 0 && style['border'+side+'Style'] !== 'none' && hasRuby(style['border'+side+'Color']))
+                    violations.push({...identity, rule:'Ruby outlines and decorations remain excluded', property:'border'+side});
+            }
+            if (parseFloat(style.outlineWidth) > 0 && style.outlineStyle !== 'none' && hasRuby(style.outlineColor))
+                violations.push({...identity, rule:'Ruby outlines and decorations remain excluded', property:'outline'});
             if (el.matches('.matte-ink') && style.webkitTextFillColor === 'rgba(0, 0, 0, 0)') {
                 if (!style.backgroundImage.includes('data:image/svg+xml') || ![style.backgroundClip, style.webkitBackgroundClip].includes('text'))
                     violations.push({...identity, rule:'Transparent matte ink must retain a local SVG text texture'});
@@ -89,20 +104,15 @@ def check_house_colors(page, viewport_name):
             if (style.scrollbarColor.includes(green)) violations.push({...identity, rule:'Green scrollbar'});
             if (style.backgroundColor === electric) {
                 boxes.push(identity);
-                if (style.color !== ash) violations.push({...identity, rule:'Electric background must pair with the report-specific ash ink'});
+                if (style.color !== ruby) violations.push({...identity, rule:'Electric background must pair with Ruby text'});
             }
             const directText = [...el.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
             if (directText) {
-                let background = 'rgba(0, 0, 0, 0)';
-                for (let ancestor = el; ancestor && ancestor !== sheet.parentElement; ancestor = ancestor.parentElement) {
-                    const color = getComputedStyle(ancestor).backgroundColor;
-                    if (color !== 'rgba(0, 0, 0, 0)' && color !== 'transparent') { background = color; break; }
-                }
-                if (background === electric && style.color !== ash)
-                    violations.push({...identity, rule:'Text on Electric ancestor must use the report-specific ash ink'});
+                if (effectiveBackground(el) === electric && style.color !== ruby)
+                    violations.push({...identity, rule:'Text on Electric surface must be Ruby'});
             }
         }
-        return {captionCount:sheet.querySelectorAll('.photo-pair figcaption').length, electricBoxCount:boxes.length, matteInkCount:sheet.querySelectorAll('.matte-ink').length, salmonUiExcluded:!violations.some(item => item.rule === 'Salmon UI is forbidden'), rubyForegroundAndOutlinesExcluded:!violations.some(item => item.rule === 'Ruby foreground and outlines are excluded from this report override'), violations};
+        return {captionCount:sheet.querySelectorAll('.photo-pair figcaption').length, electricBoxCount:boxes.length, matteInkCount:sheet.querySelectorAll('.matte-ink').length, salmonUiExcluded:!violations.some(item => item.rule === 'Salmon UI is forbidden'), rubyTextScopedToElectric:!violations.some(item => item.rule === 'Ruby text must appear only on an Electric surface'), rubyOutlinesExcluded:!violations.some(item => item.rule === 'Ruby outlines and decorations remain excluded'), violations};
     }""")
     assert result['captionCount'] == 2 and result['electricBoxCount'] > 0, (viewport_name, result)
     assert not result['violations'], (viewport_name, result['violations'])
@@ -149,14 +159,15 @@ try:
             assert 'Barlow Condensed' in title_font['family'] and title_font['family'].split(',')[0] == body_font.split(',')[0], (name, title_font, body_font)
             assert title_font['weight'] == '700', (name, title_font)
             assert page.locator('th.actual-heading').evaluate('(el) => getComputedStyle(el).backgroundColor') == 'rgb(30, 34, 170)'
-            assert page.locator('th.actual-heading').evaluate('(el) => getComputedStyle(el).color') == 'rgb(146, 152, 157)'
+            assert page.locator('th.actual-heading').evaluate('(el) => getComputedStyle(el).color') == 'rgb(228, 0, 43)'
             assert page.locator('td.actual').first.evaluate('(el) => getComputedStyle(el).color') == 'rgb(146, 152, 157)'
             assert page.locator('td.delta').first.evaluate('(el) => getComputedStyle(el).color') == 'rgb(146, 152, 157)'
             active = page.locator('[data-filter][aria-pressed="true"]')
             assert active.count() == 1
             assert active.evaluate('(el) => getComputedStyle(el).backgroundColor') == 'rgb(30, 34, 170)'
-            assert active.evaluate('(el) => getComputedStyle(el).color') == 'rgb(146, 152, 157)'
+            assert active.evaluate('(el) => getComputedStyle(el).color') == 'rgb(228, 0, 43)'
             color_rules = check_house_colors(page, name)
+            body_styles_before = page.locator('#measurements td').evaluate_all('(cells) => cells.map(el => ({color:getComputedStyle(el).color, background:getComputedStyle(el).backgroundColor, border:getComputedStyle(el).borderBottomColor}))')
             if name == 'desktop' and color_rules['matteInkCount']:
                 sample = page.locator('td.actual .matte-ink').first
                 original_style = sample.get_attribute('style')
@@ -212,7 +223,7 @@ try:
             assert layout['chartHeight'] >= 120, (name, layout)
             assert layout['chartScrollHeight'] > layout['chartHeight'], (name, layout)
             if name in ('desktop', 'mobile'):
-                page.screenshot(path=str(args.output / f'case-1-matte-ink-{name}.png'))
+                page.screenshot(path=str(args.output / f'case-1-scoped-ruby-{name}.png'))
             chart = page.locator('#measurement-chart')
             header_before = page.locator('.masthead').bounding_box()
             tablehead_before = page.locator('thead').bounding_box()
@@ -242,6 +253,8 @@ try:
             page.locator('[data-filter="all"]').click()
             assert page.locator('#measurements tr:visible').count() == 20
             check_house_colors(page, name + ': active filter hover/focus')
+            body_styles_after = page.locator('#measurements td').evaluate_all('(cells) => cells.map(el => ({color:getComputedStyle(el).color, background:getComputedStyle(el).backgroundColor, border:getComputedStyle(el).borderBottomColor}))')
+            assert body_styles_after == body_styles_before, 'Focus/filter states must retain the existing matte table-body colors.'
             page.evaluate('window.__printInvoked = false; window.print = () => { window.__printInvoked = true; }')
             page.locator('#print-sheet').click()
             assert page.evaluate('window.__printInvoked')
@@ -250,7 +263,7 @@ try:
                 assert chart.evaluate('(el) => getComputedStyle(el).overflow') == 'visible'
                 assert page.locator('thead').evaluate('(el) => getComputedStyle(el).position') == 'static'
                 assert page.locator('#measurements tr:visible').count() == 20
-                pdf_path = args.output / 'case-1-matte-ink-print.pdf'
+                pdf_path = args.output / 'case-1-scoped-ruby-print.pdf'
                 page.pdf(path=str(pdf_path), print_background=True)
                 pdf = PdfReader(str(pdf_path))
                 pdf_text = unicodedata.normalize('NFKC', '\n'.join(p.extract_text() or '' for p in pdf.pages))
@@ -262,8 +275,8 @@ try:
             assert not errors, (name, errors)
             assert not external, (name, external)
             results['viewports'].append({'name': name, **layout,
-                'titleBox': title_box, 'sealBox': seal_box, 'photoFrames': photos, 'colorRules': color_rules,
-                'checks': 'Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Case 1 ash matte ink override on Electric boxes/body, no Ruby text or outlines, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors.'})
+                'titleBox': title_box, 'sealBox': seal_box, 'photoFrames': photos, 'colorRules': color_rules, 'tableBodyColorsPreservedAcrossStates': True,
+                'checks': 'Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Ruby text scoped to Electric surfaces, outside-blue ash matte ink preserved, no Ruby outlines, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors.'})
             print(f'{name}: passed', flush=True)
             context.close()
         browser.close()
@@ -271,6 +284,6 @@ finally:
     server.shutdown()
     server.server_close()
 
-results['screenshots'] = [{'filename': path.name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'bytes': path.stat().st_size} for path in sorted(args.output.glob('case-1-matte-ink-*.png'))]
-(args.output / 'case-1-matte-ink.json').write_text(json.dumps(results, indent=2) + '\n')
+results['screenshots'] = [{'filename': path.name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'bytes': path.stat().st_size} for path in sorted(args.output.glob('case-1-scoped-ruby-*.png'))]
+(args.output / 'case-1-scoped-ruby.json').write_text(json.dumps(results, indent=2) + '\n')
 print('All eight viewport checks passed. Output:', args.output)
