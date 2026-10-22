@@ -9,9 +9,9 @@ The [brand tokens](../../design/brand-tokens.json) define the interface palette;
 | [mannequin-front.jpg](mannequin-front.jpg) | Original embedded front-view photo from the supplied workbook's mannequin tab, anchored at C10. |
 | [mannequin-back.jpg](mannequin-back.jpg) | Original embedded back-view photo from the same tab, anchored at H10. |
 | [serpentis-regina-seal.png](serpentis-regina-seal.png) | Original transparent sculpted-head logo from the existing Squarespace website, reused as the page seal. |
-| [bodoni-moda-600.ttf](fonts/bodoni-moda-600.ttf) | Proposed editorial title font, weight 600. |
-| [barlow-condensed-500.ttf](fonts/barlow-condensed-500.ttf) | Proposed reading/table font, weight 500. |
-| [barlow-condensed-700.ttf](fonts/barlow-condensed-700.ttf) | Proposed emphasis and table-heading font, weight 700. |
+| [bodoni-moda-600.ttf](fonts/bodoni-moda-600.ttf) | Preserved earlier title-font proposal; no longer loaded by this report. |
+| [barlow-condensed-500.ttf](fonts/barlow-condensed-500.ttf) | Reading/table font, weight 500. |
+| [barlow-condensed-700.ttf](fonts/barlow-condensed-700.ttf) | Title, emphasis, and table-heading font, weight 700. |
 
 The two mannequin photos were extracted byte-for-byte from
 `BODY REF-MANNEQUIN-SIZE 8-V1` in the
@@ -24,10 +24,11 @@ The seal is a supplied PNG of the sculpted 3D artwork, rather than a new render
 or an interactive WebGL model. The founder requested this same upper-right
 stamp across future pages.
 
-Bodoni Moda and Barlow Condensed are proposals for review. The linked Notion
-Brand Bible requires sign-in, so its typography could not be verified. Fonts
-are stored locally for embedding; the generated report needs no remote font
-service. Both families use the SIL Open Font License 1.1:
+The founder requested Barlow Condensed for the title to match the chart.
+The linked Notion Brand Bible requires sign-in, so its typography could not be
+verified. Font files are stored locally for embedding; the generated report
+needs no remote font service. The earlier Bodoni file is retained for source
+history. Both families use the SIL Open Font License 1.1:
 
 - [Bodoni Moda license](fonts/Bodoni-Moda-OFL.txt)
 - [Barlow Condensed license](fonts/Barlow-Condensed-OFL.txt)
