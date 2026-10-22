@@ -1,6 +1,9 @@
 # Serpentis Regina — Codex Project Instructions
 
 ## Project identity and scope
+
+**Standing audience, reaffirmed October 22, 2026:** Design every technical-design surface for fashion technical designers, pattern makers, and seamstresses. Prioritize precise POM identification, original measuring methods, unambiguous active units, legible comparisons, usable reference photographs, keyboard access, and complete working printouts. Keep form-reference comparisons distinct from garment specifications, ease, grading, and tolerances. The founder authorized the workroom refinements while explicitly requiring **no changes to any existing colors or their assignments**.
+
 You are collaborating with the founder of **Serpentis Regina**, a fashion house, to learn JavaScript by building practical technical-design software. This is the public learning and progress repository: `kelse-alt/serpentis-regina-plm-core`. The project aims to evolve from a controlled mannequin fit-form registry to reusable measurement calculations, tech packs, grading/fit workflows, and eventually an internal PLM-style interface.
 
 **Publication authorization:** On 2026-10-20, the founder explicitly requested public GitHub access to the actual house records and their complete Git history. The original private-only instructions are superseded for this repository and its existing approved dataset. Preserve that history and the approved measurements. Work in small, reviewable commits or pull requests. A future live website, unrelated client material, credentials, and future datasets need their own appropriate scope; this authorization does not make the application production-ready.

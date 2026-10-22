@@ -1,0 +1,286 @@
+{
+  "capturedAtUtc": "2026-10-22T20:07:46.300429+00:00",
+  "sourceCommit": "0a40ad2eaa7cb9d2513d936d86615f0ad3204980",
+  "uncommittedChanges": false,
+  "renderMode": "Real local Chromium render of the standalone report; no live deployment.",
+  "sources": {
+    "comparedWith": "e5b94d183f7daf6cb7782d768b47bf9efe0c4f3b",
+    "exactSourceBytesPreserved": true,
+    "sha256": {
+      "design/brand-tokens.json": "beb87088fa14388ba3232f873ff6d87d5ac7114b6b0090988d04a489c4401bd6",
+      "data/house-fit-forms/SR-FORM-001.v1.json": "695a60a35f6f40daa1783b6813f3f8d5d788d06a8818b80f3444b44ec958cc43",
+      "data/house-fit-forms/SR-FORM-001-methods.v1.json": "19d40eb0ce5e0f98c9f6bed93bbd6ca3662cf4aba56432a0001c8880b09a8372",
+      "assets/house-sheet/mannequin-front.jpg": "70764b8015c5b6b5cf6884656b7adc8e47c33431f5117bfaa7685a71e64a94ae",
+      "assets/house-sheet/mannequin-back.jpg": "3de7eef55315ba44fe18f7d86762ea5c2ae4c89d082213b8f95db04175970905",
+      "assets/house-sheet/serpentis-regina-seal.png": "8692dfffb2be2a949735bf106617778e6c52d5e375b03bc60dee06a557bda95f",
+      "sheet-web/matte-grain.svg": "ac646484924c614a4e8f9e534e18ffded6f16ccf69e93dd2efca5f7f427d8f10",
+      "assets/house-sheet/fonts/barlow-condensed-500.ttf": "cc9fb2539cf27df48255982e896d28f544483537cdb41f9fabd741af8992d719",
+      "assets/house-sheet/fonts/barlow-condensed-700.ttf": "7dde307fa887fc65ff5830cfada77a7decc5dae8d3c816c9d39ba3f1af1c4ed7"
+    }
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "rootWidth": 1500,
+      "rootHeight": 1000,
+      "width": 1500,
+      "height": 1000,
+      "chartHeight": 633,
+      "chartScrollHeight": 1558,
+      "mastheadHeight": 146.265625,
+      "completeVisibleRows": 7,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    },
+    {
+      "name": "laptop",
+      "rootWidth": 1280,
+      "rootHeight": 720,
+      "width": 1280,
+      "height": 720,
+      "chartHeight": 361,
+      "chartScrollHeight": 1737,
+      "mastheadHeight": 137.71875,
+      "completeVisibleRows": 3,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    },
+    {
+      "name": "mobile",
+      "rootWidth": 390,
+      "rootHeight": 844,
+      "width": 390,
+      "height": 844,
+      "chartHeight": 364,
+      "chartScrollHeight": 1761,
+      "mastheadHeight": 147.6875,
+      "completeVisibleRows": 3,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    },
+    {
+      "name": "small-mobile",
+      "rootWidth": 390,
+      "rootHeight": 667,
+      "width": 390,
+      "height": 667,
+      "chartHeight": 246,
+      "chartScrollHeight": 1761,
+      "mastheadHeight": 109.25,
+      "completeVisibleRows": 2,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    },
+    {
+      "name": "landscape",
+      "rootWidth": 844,
+      "rootHeight": 390,
+      "width": 844,
+      "height": 390,
+      "chartHeight": 138,
+      "chartScrollHeight": 1570,
+      "mastheadHeight": 87.5,
+      "completeVisibleRows": 1,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    },
+    {
+      "name": "narrow-phone",
+      "rootWidth": 320,
+      "rootHeight": 568,
+      "width": 320,
+      "height": 568,
+      "chartHeight": 154,
+      "chartScrollHeight": 1761,
+      "mastheadHeight": 133.375,
+      "completeVisibleRows": 1,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    },
+    {
+      "name": "short-phone",
+      "rootWidth": 320,
+      "rootHeight": 480,
+      "width": 320,
+      "height": 480,
+      "chartHeight": 127,
+      "chartScrollHeight": 1732,
+      "mastheadHeight": 98,
+      "completeVisibleRows": 1,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    },
+    {
+      "name": "short-tablet",
+      "rootWidth": 768,
+      "rootHeight": 400,
+      "width": 768,
+      "height": 400,
+      "chartHeight": 148,
+      "chartScrollHeight": 1570,
+      "mastheadHeight": 87.5,
+      "completeVisibleRows": 1,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    },
+    {
+      "name": "reduced-layout",
+      "rootWidth": 750,
+      "rootHeight": 500,
+      "width": 750,
+      "height": 500,
+      "chartHeight": 248,
+      "chartScrollHeight": 1764,
+      "mastheadHeight": 87.5,
+      "completeVisibleRows": 2,
+      "colors": {
+        "exactBrandAssignmentsPreserved": true,
+        "rubyScopedToElectric": true,
+        "noSalmon": true,
+        "neutralBorders": true,
+        "greenScopesPreserved": true
+      },
+      "canonicalValuesVerifiedInBothUnits": true,
+      "roundTripsWithoutRoundingDrift": 3,
+      "searchFilterAndReset": true,
+      "fixedMastheadStickyHeadingsAndPom": true,
+      "originalPhotographsEnlargedWithKeyboardReturn": true
+    }
+  ],
+  "print": [
+    {
+      "scenario": "waist-search",
+      "pages": 3,
+      "unit": "cm",
+      "all20PomsAndNotesPresent": true,
+      "screenStateRestoredExactly": true
+    },
+    {
+      "scenario": "missing-only",
+      "pages": 3,
+      "unit": "in",
+      "all20PomsAndNotesPresent": true,
+      "screenStateRestoredExactly": true
+    },
+    {
+      "scenario": "empty-search",
+      "pages": 3,
+      "unit": "cm",
+      "all20PomsAndNotesPresent": true,
+      "screenStateRestoredExactly": true
+    }
+  ],
+  "reducedLayoutLimit": "750\u00d7500 CSS pixels exercises the available layout at a reduced viewport; this is not a claim that actual browser zoom or assistive technology was audited.",
+  "screenshots": [
+    {
+      "filename": "case-1-workroom-desktop-cm.png",
+      "sha256": "60f8ffda7db0280e428dfdef0a877c5a8fe22cb13eff2a29b08e520b081c9dd2",
+      "bytes": 578546
+    },
+    {
+      "filename": "case-1-workroom-desktop.png",
+      "sha256": "7b63493cbe3a69fe52f6c9d9c0c45922fa336c798f839e081659f182c883a63b",
+      "bytes": 573831
+    },
+    {
+      "filename": "case-1-workroom-landscape.png",
+      "sha256": "3003fe1e6484be9cfa71d6a5359312d0985197156cddfab02868d240e73a478e",
+      "bytes": 101215
+    },
+    {
+      "filename": "case-1-workroom-mobile-values.png",
+      "sha256": "cc9ebc9e215887511697191597de2efb1998d08fc6b6d2693277c4b8d81c31f5",
+      "bytes": 76510
+    },
+    {
+      "filename": "case-1-workroom-mobile.png",
+      "sha256": "7de47a1cea7371394e8fbad8cc6e1aa9c6d4fb3dc0f8ceab6bc2ae40e6dad0a3",
+      "bytes": 104122
+    },
+    {
+      "filename": "case-1-workroom-photo-dialog.png",
+      "sha256": "d046b33d2937a849e62f6fe5b32682b3f4253a4869641362de5a58ed8e9c444b",
+      "bytes": 672481
+    }
+  ]
+}

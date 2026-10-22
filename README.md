@@ -50,6 +50,14 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 
 ## Case 1 — mannequin sheet design review
 
+The latest [workroom refinement](docs/case-1-workroom-refinement.md) is designed
+for fashion technical designers, pattern makers, and seamstresses. It preserves
+every existing color while giving the chart more space, keeping POM identifiers
+visible during horizontal scrolling, repeating active units in numeric headings,
+clarifying selected filters, providing search recovery and enlarged original
+photographs, and printing all 20 measurements regardless of on-screen filters.
+The screen's working state is restored after printing.
+
 The mannequin report keeps **Ruby text inside Electric Blue fills**, including
 all toolbar filter/Print buttons in every state. The wordmark uses Electric
 text; CASE/identity metadata and the delta formula use Slytheren. The main
