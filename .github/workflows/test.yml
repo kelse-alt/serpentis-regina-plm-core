@@ -23,3 +23,5 @@ jobs:
       - run: git diff --exit-code -- measurement-sheet-generator.html
       - run: npm run intake:build
       - run: git diff --exit-code -- client-intake.html
+      - run: npm run techpack:build
+      - run: git diff --exit-code -- tech-pack.html
