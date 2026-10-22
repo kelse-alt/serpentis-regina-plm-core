@@ -22,25 +22,35 @@ appear in the workbook. The palette evidence comes from the
 whose exported XLSX SHA-256 is
 `2fc52c4d87a69dd064b01126a2ada6b90a816deecc212a13f16fc0ac6bb38b33`.
 
-The latest Case 1 direction uses Obsidian, Electric, Ruby, and Slytheren.
-**Salmon/light pink is removed from this sheet's interface**. It remains in
-the documented house palette for provenance, while the report excludes it
-through `houseMeasurementSheet.excludedColors` in the token file. Original
-artwork retains its pixels and colors.
+## Current house color rule
 
-Title and section boxes use **Electric fills with Ruby lettering**. Slytheren
-is used for chart text, controls, borders, and metadata; Actual Form numbers
-use Ruby on Obsidian. The measured mannequin data and delta rule are separate
-from the visual system. The earlier Salmon layout is preserved in the
-[previous design review](case-1-brand-redesign.md).
+**Every Electric Blue fill box uses Salmon pink text.** This is the founder's
+latest standing rule for new and redesigned interface surfaces. It supersedes
+the earlier Case 1 instruction to remove Salmon from the interface.
+
+For the current mannequin sheet:
+
+- The title box uses **Ruby fill with Obsidian title text**. Its metadata
+  strips are transparent over Ruby, with no separate dark boxes.
+- Section boxes and chart headings use **Electric fill with Salmon text**.
+- **Slytheren is restricted to the two Front/Back caption backgrounds**;
+  their text is Obsidian. It is not used for text, controls, borders, or
+  metadata elsewhere on this sheet.
+- Chart text, controls, and supporting details use Salmon on Obsidian.
+  Actual Form numbers remain Ruby on Obsidian.
+
+The measured mannequin data and delta rule are separate from these visual
+rules. See the [current Case 1 review](case-1-house-colors.md). Earlier
+[brand](case-1-brand-redesign.md) and
+[layout](case-1-layout-refinement.md) reviews preserve prior directions;
+their conflicting color instructions are historical.
 
 ## Readable combinations
 
-Slytheren on Obsidian and Obsidian on Slytheren have 5.70:1 contrast, supporting
-the main chart text, controls, and metadata. Ruby on Obsidian has 3.69:1 and is
-used for the large, bold actual-form numbers. The founder's requested
-Ruby/Electric pairing has 2.32:1; it is reserved for display/section headings,
-not measurement body text. The earlier Salmon pairings are no longer used.
+Use Salmon on Obsidian for chart text and supporting controls, and Salmon
+on Electric wherever a blue fill is used. Keep the two photo captions
+Obsidian on Slytheren. Ruby on Obsidian is reserved for the large, bold
+Actual Form numbers; the main title reverses this to Obsidian on Ruby.
 
 ## Typography and Notion access
 

@@ -2,6 +2,13 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## Case 1 house color rule — 2026-10-22
+
+- Establish the latest house standard: every Electric Blue fill box uses Salmon pink text. This supersedes the earlier Salmon removal.
+- Restore a Ruby title fill with Obsidian title text; keep metadata transparent directly over Ruby, without separate dark boxes.
+- Restrict Slytheren to the two Front/Back caption backgrounds. Use Salmon for the earlier green interface text, controls, metadata, and borders elsewhere; retain Ruby Actual Form numbers.
+- Preserve the approved layout, Barlow Condensed type, standalone original seal, aligned photos, chart-only scrolling, measurements, and delta calculation. See the [current review](docs/case-1-house-colors.md).
+
 ## Case 1 layout refinement — 2026-10-22
 
 - Match the title to the existing Barlow Condensed chart font and remove Bodoni from the generated report.
