@@ -1,9 +1,13 @@
-# Case 1 — matte ink refinement
+# Case 1 — earlier matte ink refinement
+
+The [current scoped Ruby review](case-1-scoped-ruby.md) restores Ruby text
+inside Electric Blue fills. This page records the earlier matte-header
+appearance; matte ash lettering outside blue and neutral outlines remain.
 
 The founder requested matte black lettering that stands out from the dark
 background, with red outlines removed.
 
-![Current desktop preview](previews/case-1-matte-ink-desktop.png)
+![Earlier desktop preview](previews/case-1-matte-ink-desktop.png)
 
 [Phone preview](previews/case-1-matte-ink-mobile.png) ·
 [Browser evidence](validation/case-1-matte-ink.json)

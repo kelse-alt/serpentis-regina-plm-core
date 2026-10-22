@@ -2,6 +2,11 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## Case 1 Ruby text scoped to blue fills — 2026-10-22
+
+- Restore Ruby text only on Electric Blue section headers, chart headings, and blue-filled selected/hovered buttons, applying the house Electric/Ruby rule to Case 1.
+- Preserve matte ash text outside blue, neutral outlines, Ruby title with Obsidian text/direct metadata, two green caption fills, original assets, layout, and all measurement rules. See the [current review](docs/case-1-scoped-ruby.md).
+
 ## Case 1 matte ink refinement — 2026-10-22
 
 - Replace previously Ruby text with ash charcoal `#92989D` and red outlines with neutral `#293239`; add subtle embedded grain to selected text for the matte treatment.

@@ -34,13 +34,13 @@
     "titleText": "obsidian",
     "titleMetadataFill": "transparent",
     "headerFill": "electric",
-    "headerText": "matteInk",
+    "headerText": "ruby",
     "matteInk": {
       "color": "#92989D",
       "line": "#293239",
       "finish": "Ashy matte charcoal with fine grain; a lifted black neutral to remain visible against Obsidian.",
       "source": "Founder requested removal of red outlines and replacement of red lettering with ashy matte black.",
-      "scope": "Current Case 1 treatment overrides the standing Ruby foreground rule for this report only."
+      "scope": "Retain matte ash text outside Electric Blue boxes. Only text painted on Electric Blue fills uses Ruby; never recolor outside text red."
     },
     "slytherenUsage": "Front and Back photo-caption backgrounds only; no other green interface styling.",
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."

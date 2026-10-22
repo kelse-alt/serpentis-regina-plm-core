@@ -50,14 +50,12 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 
 ## Case 1 — mannequin sheet design review
 
-The mannequin report uses ash-charcoal matte lettering (`#92989D`) and neutral
-outlines (`#293239`), replacing the previous red text and outlines. Some text
-has subtle embedded grain. The Ruby title box keeps Obsidian text and
-transparent metadata strips. Slytheren is limited to the Front/Back caption
-fills; Salmon remains excluded from the interface.
-
-This founder-requested Case 1 treatment is an exception to the general
-Electric-fill/Ruby-text house rule, which remains the default for other surfaces.
+The mannequin report applies **Ruby text inside Electric Blue fills** to
+section headers, chart headings, and blue-filled button states. Body text,
+values, methods, and controls outside blue retain matte ash charcoal
+(`#92989D`), with neutral outlines (`#293239`) and existing subtle grain.
+The Ruby title keeps Obsidian text and transparent metadata. Green remains
+limited to the Front/Back caption fills; Salmon remains excluded.
 
 Barlow Condensed type, the standalone original head seal, and aligned workbook
 photographs remain in place. Only the measurement chart scrolls; the upper
@@ -69,7 +67,7 @@ fonts, and scripts are embedded, so no external requests are needed. The
 approved baseline data and calculation rule are preserved. This report is a
 browser preview, separate from the live Squarespace portal.
 
-See the [latest design review](docs/case-1-matte-ink.md),
+See the [latest design review](docs/case-1-scoped-ruby.md),
 [brand system](docs/brand-system.md), and
 [previous layout review](docs/case-1-layout-refinement.md).
 
