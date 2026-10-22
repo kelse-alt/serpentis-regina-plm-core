@@ -1,14 +1,16 @@
-# Case 1 — current house color rule
+# Case 1 — historical house color review
 
-The founder's latest color direction supersedes the Salmon removal in the
-[previous layout review](case-1-layout-refinement.md).
+**Superseded: use the [corrected Ruby rule](case-1-ruby-rule.md). Electric
+Blue fills always use Ruby text, and Salmon/light pink is banned from current
+UI styling.** This page preserves the earlier direction and its screenshots
+as history; it is not implementation guidance.
 
-![Current desktop preview](previews/case-1-house-colors-desktop.png)
+![Historical desktop preview](previews/case-1-house-colors-desktop.png)
 
 [Phone preview](previews/case-1-house-colors-mobile.png) ·
 [Browser evidence](validation/case-1-house-colors.json)
 
-## Apply these colors
+## Historical colors (superseded)
 
 | Area | Fill | Text |
 |---|---|---|
@@ -18,10 +20,10 @@ The founder's latest color direction supersedes the Salmon removal in the
 | Front and Back captions only | Slytheren `#1FA824` | Obsidian `#101820` |
 | Chart and controls | Obsidian | Salmon; Actual Form numbers remain Ruby |
 
-**All Electric Blue fill boxes must use Salmon pink text.** This is the new
-house standard. Green is limited to the two photo-caption fills on this
-sheet; remove its earlier use in metadata, text, controls, and borders.
-Metadata remains directly over the Ruby title fill, without dark boxes.
+The earlier review requested Salmon text on Electric fills. That instruction
+is superseded by Ruby text on Electric and the ban on Salmon UI. Green remains
+limited to the two caption backgrounds, and metadata remains directly over
+Ruby without dark boxes.
 
 ## Keep the approved layout and measurements
 
