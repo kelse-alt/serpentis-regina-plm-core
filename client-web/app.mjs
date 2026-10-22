@@ -13,6 +13,62 @@ async function startClientIntake() {
   let checkAttempted = false;
   let controls = [];
   const fieldControls = new Map();
+  const contextPanel = byId('intake-context');
+  const contextTabs = [...document.querySelectorAll('[data-context-tab]')];
+  const contextPages = [...document.querySelectorAll('.context-page')];
+  const contextBody = document.querySelector('.context-body');
+  const chart = document.querySelector('.table-wrap');
+  const search = byId('intake-search');
+  const filterButtons = [...document.querySelectorAll('[data-intake-filter]')];
+  const compactLayout = window.matchMedia('(max-width: 740px)');
+  let viewFilter = 'all';
+  let printState = null;
+
+  function selectContext(name, focusTab = false) {
+    for (const tab of contextTabs) {
+      const selected = tab.dataset.contextTab === name;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      if (selected && focusTab) tab.focus();
+    }
+    for (const page of contextPages) page.hidden = page.id !== 'context-' + name;
+    contextPanel.open = true;
+    contextBody.scrollTop = 0;
+  }
+
+  function updateView(resetScroll = false) {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+    for (const control of controls) {
+      // Keep the row being entered visible until the operator leaves its input.
+      const missing = control.record.valueCm === null || control.input === document.activeElement;
+      const matchesFilter = viewFilter === 'all' || (viewFilter === 'required' && control.definition.required)
+        || (viewFilter === 'missing' && control.definition.required && missing);
+      control.row.hidden = !(matchesFilter && control.row.dataset.search.includes(query));
+      if (!control.row.hidden) visible++;
+    }
+    for (const button of filterButtons) button.setAttribute('aria-pressed', String(button.dataset.intakeFilter === viewFilter));
+    byId('visible-count').textContent = `Showing ${visible} of ${controls.length} measurements`;
+    byId('intake-empty').hidden = visible !== 0;
+    if (resetScroll) chart.scrollTop = 0;
+    if (!visible) chart.scrollLeft = 0;
+  }
+
+  function revealMeasurement(control, missingOnly = false) {
+    search.value = '';
+    viewFilter = missingOnly ? 'missing' : 'all';
+    updateView(true);
+    if (compactLayout.matches) contextPanel.open = false;
+    control.input.focus({ preventScroll: true });
+    control.input.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+
+  function matteText(text) {
+    const span = document.createElement('span');
+    span.className = 'matte-ink';
+    span.textContent = text;
+    return span;
+  }
 
   function setStatus(message, tone = '') {
     byId('status').textContent = message;
@@ -59,7 +115,7 @@ async function startClientIntake() {
 
   function updateButtons() {
     byId('save-intake').disabled = busy || !storageAvailable || !dirty;
-    byId('save-intake').textContent = busy ? 'Working…' : 'Save as new draft';
+    byId('save-intake').textContent = busy ? 'Working…' : 'Save draft';
     for (const element of document.querySelectorAll('#client-intake-form input, #client-intake-form select, #client-intake-form textarea')) element.disabled = busy;
     for (const id of ['new-intake', 'check-required', 'download-csv', 'download-json', 'import-json', 'print-intake', 'saved-intakes']) byId(id).disabled = busy;
     byId('open-intake').disabled = busy || !byId('saved-intakes').value;
@@ -69,6 +125,7 @@ async function startClientIntake() {
   function updateMetadataPrint() {
     for (const { input, print } of fieldControls.values()) print.textContent = input.value || '—';
     byId('document-client-id').textContent = fieldControls.get('clientId').input.value || '—';
+    byId('document-client-id').title = fieldControls.get('clientId').input.value;
     byId('croquis-print').textContent = byId('croquis-reference').value || '—';
     byId('client-reference-print').textContent = byId('client-reference').value || '—';
     byId('print-unit').textContent = draft.unit;
@@ -114,6 +171,7 @@ async function startClientIntake() {
       row.error.textContent = row.invalid ? row.message : missingRequired ? 'Required measurement not entered.' : '';
       row.print.textContent = row.input.value || '—';
     }
+    updateView();
   }
 
   function renderMeasurements() {
@@ -125,10 +183,11 @@ async function startClientIntake() {
       const record = records.get(definition.pomCode);
       const row = document.createElement('tr');
       row.dataset.pom = definition.pomCode;
+      row.dataset.search = [definition.pomCode, definition.label, definition.sourceLabel, definition.howToMeasure].join(' ').toLowerCase();
       const code = document.createElement('th');
       code.scope = 'row';
       code.className = 'pom-code';
-      code.textContent = definition.pomCode;
+      code.append(matteText(definition.pomCode));
       const critical = document.createElement('td');
       critical.className = 'critical-cell';
       const tag = document.createElement('span');
@@ -137,12 +196,12 @@ async function startClientIntake() {
       critical.append(tag);
       const label = document.createElement('td');
       label.className = 'measure-label';
-      label.textContent = definition.label;
+      label.append(matteText(definition.label));
       const method = document.createElement('td');
       method.className = 'method-cell';
       const methodText = document.createElement('p');
       methodText.className = 'method-text';
-      methodText.textContent = definition.howToMeasure;
+      methodText.append(matteText(definition.howToMeasure));
       method.append(methodText);
       if (definition.methodNeedsConfirmation) {
         const warning = document.createElement('p');
@@ -189,17 +248,21 @@ async function startClientIntake() {
         updateProgress();
         markDirty();
       });
+      input.addEventListener('blur', () => updateView());
       controls.push(control);
       measurement.append(input, unit, print, error);
       row.append(code, critical, label, method, measurement);
       body.append(row);
     }
     for (const node of document.querySelectorAll('.current-unit')) node.textContent = draft.unit;
+    byId('intake-unit-status').textContent = `Client values displayed in ${draft.unit}. Original measuring landmarks remain unchanged.`;
     updateProgress();
   }
 
   function showDraft(next) {
     draft = structuredClone(next);
+    search.value = '';
+    viewFilter = 'all';
     for (const [key, control] of fieldControls) control.input.value = draft.fields[key];
     byId('intake-unit').value = draft.unit;
     byId('croquis-reference').value = draft.croquisReference;
@@ -220,18 +283,25 @@ async function startClientIntake() {
     showDraft(createIntakeDraft(template, { fields: { measurementDate: localToday() } }));
     byId('saved-intakes').value = '';
     updateButtons();
-    setStatus('Blank client intake ready. Enter client details and measurements; save a draft at any stage.');
+    setStatus('Blank intake ready. Save a draft at any stage.');
   }
 
   function collectDraft(options = {}) {
     const invalid = controls.find(control => control.invalid || control.input.validity.badInput);
     if (invalid) {
+      revealMeasurement(invalid);
       invalid.input.reportValidity();
       throw Error('Correct the highlighted measurement value before continuing.');
     }
     for (const [key, control] of fieldControls) draft.fields[key] = control.input.value;
     draft.croquisReference = byId('croquis-reference').value;
     draft.clientReference = byId('client-reference').value;
+    const invalidField = [...fieldControls.values()].find(control => !control.input.validity.valid);
+    if (invalidField) {
+      selectContext('client');
+      invalidField.input.reportValidity();
+      throw Error('Check the highlighted intake fields.');
+    }
     if (!byId('client-intake-form').reportValidity()) throw Error('Check the highlighted intake fields.');
     updateMetadataPrint();
     // Measurement values remain canonical centimetres. Do not reparse rounded display values here.
@@ -333,7 +403,22 @@ async function startClientIntake() {
       collectDraft({ requireComplete: true });
       const pending = template.measurements.filter(record => record.methodNeedsConfirmation).map(record => record.pomCode);
       setStatus('All required measurements and identifying details are entered. This is a completeness check, not approval.' + (pending.length ? ` Source method notes still need clarification: ${pending.join(', ')}.` : ''), 'success');
-    } catch (problem) { setStatus(problem.message, 'error'); }
+    } catch (problem) {
+      setStatus(problem.message, 'error');
+      const invalid = controls.find(control => control.invalid || control.input.validity.badInput);
+      if (invalid) {
+        revealMeasurement(invalid);
+      } else if (!draft.fields.clientId.trim() && !draft.fields.clientName.trim()) {
+        selectContext('client');
+        fieldControls.get('clientId').input.focus();
+      } else if (!draft.fields.measurementDate) {
+        selectContext('client');
+        fieldControls.get('measurementDate').input.focus();
+      } else {
+        const missing = controls.find(control => control.invalid || (control.definition.required && control.record.valueCm === null));
+        if (missing) revealMeasurement(missing, missing.definition.required);
+      }
+    }
   }
 
   async function importIntake() {
@@ -357,21 +442,48 @@ async function startClientIntake() {
 
   template = offline ? window.__CLIENT_INTAKE_TEMPLATE__ : await request('/template');
   if (!template || !Array.isArray(template.measurements) || template.measurements.length !== 34) throw Error('The 34-POM client intake template could not be loaded.');
-  for (const [key, value] of Object.entries(template.palette)) {
-    const variable = key.replace(/[A-Z]/g, letter => '-' + letter.toLowerCase());
-    if (/^#[0-9a-f]{6}$/i.test(value)) document.documentElement.style.setProperty('--' + variable, value);
-  }
+  // Source palette values remain provenance; the current house style is shared in CSS.
   byId('client-heading').textContent = template.sections?.client || 'CLIENT MEASUREMENTS';
-  byId('measurements-heading').textContent = template.sections?.measurements || 'REMOTE CLIENT ACTUAL BODY MEASUREMENTS';
+  byId('source-measurements-heading').textContent = template.sections?.measurements || 'REMOTE CLIENT ACTUAL BODY MEASUREMENTS';
   byId('croquis-title').textContent = template.referenceAreas.croquisTitle;
   byId('client-reference-title').textContent = template.referenceAreas.clientReferenceTitle;
   byId('unit-label').textContent = template.unitLabel;
+  for (const text of template.notes) {
+    const note = document.createElement('li');
+    note.textContent = text;
+    byId('source-intake-notes').append(note);
+  }
   byId('storage-mode').textContent = offline ? 'Browser storage · this device' : 'Local client-intake SQLite';
   byId('storage-help').textContent = offline
     ? 'Drafts save only in this browser on this device and do not sync to SQLite. Browser data can be cleared; download JSON as a portable backup. Each save creates a separate record.'
     : 'Client drafts save in a separate local SQLite store and do not sync to the standalone browser file. Each save creates a separate record. Saving does not approve measurements.';
   renderMetadata();
   newIntake(true);
+  contextPanel.open = !compactLayout.matches;
+  compactLayout.addEventListener('change', event => { contextPanel.open = !event.matches; });
+  for (const [index, tab] of contextTabs.entries()) {
+    tab.addEventListener('click', () => selectContext(tab.dataset.contextTab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % contextTabs.length;
+      if (event.key === 'ArrowLeft') next = (index + contextTabs.length - 1) % contextTabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = contextTabs.length - 1;
+      if (next !== undefined) { event.preventDefault(); selectContext(contextTabs[next].dataset.contextTab, true); }
+    });
+  }
+  search.addEventListener('input', () => updateView(true));
+  for (const button of filterButtons) button.addEventListener('click', () => {
+    viewFilter = button.dataset.intakeFilter;
+    updateView(true);
+  });
+  byId('clear-intake-search').addEventListener('click', () => {
+    search.value = '';
+    viewFilter = 'all';
+    updateView(true);
+    chart.scrollLeft = 0;
+    search.focus();
+  });
   byId('client-intake-form').addEventListener('submit', event => event.preventDefault());
   for (const id of ['croquis-reference', 'client-reference']) byId(id).addEventListener('input', () => { updateMetadataPrint(); markDirty(); });
   byId('intake-unit').addEventListener('change', () => {
@@ -381,8 +493,11 @@ async function startClientIntake() {
       return;
     }
     draft.unit = byId('intake-unit').value;
+    const scrollPosition = { top: chart.scrollTop, left: chart.scrollLeft };
     renderMeasurements();
     updateMetadataPrint();
+    chart.scrollTop = scrollPosition.top;
+    chart.scrollLeft = scrollPosition.left;
     markDirty();
   });
   byId('save-intake').addEventListener('click', saveIntake);
@@ -396,6 +511,38 @@ async function startClientIntake() {
   byId('print-intake').addEventListener('click', () => {
     try { collectDraft({ allowEmpty: true }); window.print(); }
     catch (problem) { setStatus(problem.message, 'error'); }
+  });
+  window.addEventListener('beforeprint', () => {
+    if (printState) return;
+    updateMetadataPrint();
+    printState = {
+      open: contextPanel.open,
+      hiddenPages: contextPages.map(page => page.hidden),
+      hiddenRows: controls.map(control => control.row.hidden),
+      emptyHidden: byId('intake-empty').hidden,
+      count: byId('visible-count').textContent,
+      chartTop: chart.scrollTop,
+      chartLeft: chart.scrollLeft,
+      contextTop: contextBody.scrollTop,
+    };
+    contextPanel.open = true;
+    for (const page of contextPages) page.hidden = page.id === 'context-drafts';
+    for (const control of controls) control.row.hidden = false;
+    byId('intake-empty').hidden = true;
+    byId('visible-count').textContent = 'Showing 34 of 34 measurements';
+  });
+  window.addEventListener('afterprint', () => {
+    if (!printState) return;
+    const saved = printState;
+    printState = null;
+    contextPanel.open = saved.open;
+    contextPages.forEach((page, index) => { page.hidden = saved.hiddenPages[index]; });
+    controls.forEach((control, index) => { control.row.hidden = saved.hiddenRows[index]; });
+    byId('intake-empty').hidden = saved.emptyHidden;
+    byId('visible-count').textContent = saved.count;
+    chart.scrollTop = saved.chartTop;
+    chart.scrollLeft = saved.chartLeft;
+    contextBody.scrollTop = saved.contextTop;
   });
   window.addEventListener('beforeunload', event => {
     if (dirty) { event.preventDefault(); event.returnValue = ''; }

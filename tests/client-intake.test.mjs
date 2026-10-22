@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { createIntakeDraft, parseClientMeasurement, displayClientMeasurement, summarizeIntake, validateIntakeDraft, intakeToCsv } from '../src/client-intake.mjs';
+import { CLIENT_INTAKE_ASSETS, loadClientIntakeStyles } from '../src/client-intake-assets.mjs';
 
 const template = JSON.parse(await readFile(new URL('../data/templates/remote-bespoke-client-intake.v1.json', import.meta.url), 'utf8'));
 function draftWithClient() {
@@ -19,12 +20,20 @@ test('the uploaded template preserves 34 source POMs, the RC-21 gap, 19 required
   assert.ok(template.measurements.every(record => record.sourceLabel && record.howToMeasure && record.sourceRow));
 });
 
-test('the form uses the actual workbook palette, not the previous measurement-generator palette', () => {
+test('source palette provenance is preserved while the intake uses the current shared house colors', async () => {
   assert.deepEqual(template.palette, {
     brandRed: '#E4002B', royalBlue: '#1E22AA', sectionRed: '#EE2737', referenceGreen: '#1FA824',
     measurementBurgundy: '#612028', tableDark: '#0F1720', tableRed: '#ED2637', entryBlush: '#FFF4F4',
     text: '#101820', white: '#FFFFFF',
   });
+  const css = await loadClientIntakeStyles();
+  const brand = JSON.parse(await readFile(new URL('../design/brand-tokens.json', import.meta.url), 'utf8'));
+  for (const [name, value] of Object.entries({ obsidian: brand.colors.obsidian, ruby: brand.colors.ruby,
+    electric: brand.colors.electric, slytheren: brand.colors.slytheren,
+    'ash-ink': brand.houseMeasurementSheet.matteInk.color, 'ash-line': brand.houseMeasurementSheet.matteInk.line })) {
+    assert.ok(css.includes(`--${name}:${value}`));
+  }
+  assert.doesNotMatch(css, /#(?:fff4f4|f4a6a0|612028)\b|--entry-blush|--measurement-burgundy/i);
 });
 
 test('new intakes start with empty client values and never populate measurements from an existing client', () => {
@@ -39,6 +48,19 @@ test('new intakes start with empty client values and never populate measurements
   assert.ok(draft.measurements.every(record => record.valueCm === null));
   draft.measurements[0].valueCm = 100;
   assert.deepEqual(template, original);
+});
+
+test('the distributed intake embeds the blank source template and every original house asset for offline use', async () => {
+  const html = await readFile(new URL('../client-intake.html', import.meta.url), 'utf8');
+  const embeddedTemplate = html.match(/window\.__CLIENT_INTAKE_TEMPLATE__ = (.*);\n/);
+  assert.ok(embeddedTemplate, 'The standalone form must include its controlled blank template.');
+  assert.deepEqual(JSON.parse(embeddedTemplate[1]), template);
+  for (const [url, [path, type]] of CLIENT_INTAKE_ASSETS) {
+    assert.ok(html.includes(`data:${type};base64,${(await readFile(path)).toString('base64')}`), `Original asset missing: ${url}`);
+    assert.ok(!html.includes(url), `Runtime asset request remains: ${url}`);
+  }
+  assert.doesNotMatch(html, /(?:src|href)=["']\/(?:intake\.css|intake-app\.mjs)/);
+  assert.match(html, /img-src data:; font-src data:; connect-src 'none'/);
 });
 
 test('decimal measurements convert to canonical centimetres, preserving explicit zero and missing values', () => {

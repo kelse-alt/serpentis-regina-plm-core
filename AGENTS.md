@@ -93,6 +93,18 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 
 ## Client measurement intake (v0.4.0)
 
+- **Current client workroom edition, October 22, 2026:** The founder requested
+  a new client intake in the same style as the completed mannequin sheet.
+  Use the exact active house palette and assignments, Barlow Condensed, the
+  original standalone seal, ash chart text, and neutral borders. The source
+  template's historical palette/provenance stays intact in JSON but does not
+  override current UI styling. Client/reference/draft tabs, POM search and
+  required/missing-required filters, fixed headings/POM codes, and complete
+  34-POM printing serve the standing technical-design audience. Preserve the
+  distinct RC intake workflow: no MFR/Delta, no house-form auto-fill, no approval
+  inferred from completeness, no automatic publication of filled records.
+  Rebuild the tracked `client-intake.html` after source changes.
+
 - `data/templates/remote-bespoke-client-intake.v1.json` is the sanitized template extracted from the supplied Remote Bespoke Dress workbook's `CLIENT BODY MEASUREMENTS` tab. Preserve original labels, methods, required markers, palette values, and palette source-cell provenance.
 - The client template has **34 RC POMs**, **19 required**, with **RC-21 absent**. Do not renumber them or map them onto the approved 20 BF POMs. RC-12/RC-13 retain source questions that need house clarification; never silently resolve them.
 - The source contains no comparison reference or delta formula. Do not invent a house/manufacturer baseline or import the existing generator's delta rule into this intake.

@@ -221,3 +221,32 @@ test('the client application serves only declared assets and API methods', async
     assert.doesNotMatch(await error.text(), /SELECT|SQLITE|\.mjs|stack/i);
   });
 });
+
+test('local intake serves the unchanged original seal, fonts, and texture through its explicit asset allowlist', async () => {
+  await withServer(async ({ base }) => {
+    const paths = [
+      ['/assets/house-sheet/serpentis-regina-seal.png', '../assets/house-sheet/serpentis-regina-seal.png', 'image/png'],
+      ['/assets/house-sheet/fonts/barlow-condensed-500.ttf', '../assets/house-sheet/fonts/barlow-condensed-500.ttf', 'font/ttf'],
+      ['/assets/house-sheet/fonts/barlow-condensed-700.ttf', '../assets/house-sheet/fonts/barlow-condensed-700.ttf', 'font/ttf'],
+      ['/intake-grain.svg', '../sheet-web/matte-grain.svg', 'image/svg+xml'],
+    ];
+    for (const [url, source, type] of paths) {
+      const response = await fetch(base + url);
+      assert.equal(response.status, 200);
+      assert.equal(response.headers.get('content-type'), type);
+      assert.deepEqual(Buffer.from(await response.arrayBuffer()), await readFile(new URL(source, import.meta.url)));
+      const head = await fetch(base + url, { method: 'HEAD' });
+      assert.equal(head.status, 200);
+      assert.equal((await head.arrayBuffer()).byteLength, 0);
+    }
+    const cssResponse = await fetch(base + '/intake.css');
+    assert.match(await cssResponse.text(), /--obsidian:#101820/);
+    const csp = cssResponse.headers.get('content-security-policy');
+    assert.match(csp, /img-src 'self'/);
+    assert.match(csp, /font-src 'self'/);
+    assert.doesNotMatch(csp, /unsafe-inline|https:/);
+    assert.equal((await fetch(base + '/assets/house-sheet/provenance.json')).status, 404);
+    assert.equal((await fetch(base + '/assets/house-sheet/mannequin-front.jpg')).status, 404);
+    assert.equal((await fetch(base + '/assets/house-sheet/fonts/barlow-condensed-500.ttf?extra')).status, 404);
+  });
+});
