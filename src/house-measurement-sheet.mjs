@@ -133,26 +133,28 @@ export function buildHtml(form, rows) {
 <figure><img src="${assets['mannequin-front.jpg']}" alt="Front view of the actual size 8 house mannequin" width="724" height="2048"><figcaption>Front</figcaption></figure>
 <figure><img src="${assets['mannequin-back.jpg']}" alt="Back view of the actual size 8 house mannequin" width="696" height="2048"><figcaption>Back</figcaption></figure>
 </div>
-<div class="form-caption"><p>ACTUAL FORM<strong>The physical house standard.</strong></p><span class="size-tag" aria-label="Manufacturer designated size ${escapeHtml(form.manufacturerDesignatedSize)}">${escapeHtml(form.manufacturerDesignatedSize)}</span></div>
+<div class="form-caption"><div class="form-caption-copy"><p>ACTUAL FORM<strong>The physical house standard.</strong></p><span class="size-tag" aria-label="Manufacturer designated size ${escapeHtml(form.manufacturerDesignatedSize)}">${escapeHtml(form.manufacturerDesignatedSize)}</span></div><button type="button" id="enlarge-photos" class="photo-open" aria-haspopup="dialog" aria-controls="photo-dialog">Enlarge photos</button></div>
 </aside>
 <section class="measurement-panel" aria-labelledby="measurement-heading">
 <div class="panel-heading measure-heading"><div class="heading-group"><span class="section-number" aria-hidden="true">02</span><h2 id="measurement-heading">Measurements</h2></div><label class="unit-tag" for="measurement-unit"><span>UNIT /</span><select id="measurement-unit" aria-label="Measurement unit"><option value="in">INCHES</option><option value="cm">CM</option></select></label><span class="unit-print" id="unit-print">UNIT / INCHES</span></div>
 <span class="sr-only" id="unit-status" role="status" aria-live="polite">Measurements displayed in inches.</span>
-<div class="toolbar"><label class="search-field"><span class="sr-only">Search measurements</span><input id="search" type="search" placeholder="Find a measurement…"></label>
-<button type="button" data-filter="all" aria-pressed="true">All ${stats.total}</button><button type="button" data-filter="compared" aria-pressed="false">With MFR ${stats.compared}</button>
-<button type="button" data-filter="missing" aria-pressed="false">MFR missing ${stats.missingReferences}</button><button type="button" class="print" id="print-sheet">Print / PDF</button></div>
-<div class="table-caption"><span id="count" role="status" aria-live="polite">Showing ${stats.total} of ${stats.total} measurements</span><span class="formula">DELTA = ACTUAL FORM − MFR</span></div>
-<div class="table-scroll" id="measurement-chart" tabindex="0" role="region" aria-label="Scrollable measurement chart; use arrow keys to scroll">
+<div class="toolbar"><label class="search-field"><span class="sr-only">Search by POM, body measurement, or measuring method</span><input id="search" type="search" placeholder="Find POM or measurement…" aria-controls="measurements"></label>
+<div class="filter-group" role="group" aria-label="Manufacturer reference filters"><button type="button" data-filter="all" aria-pressed="true"><span class="filter-check" aria-hidden="true">✓</span> All ${stats.total}</button><button type="button" data-filter="compared" aria-pressed="false"><span class="filter-check" aria-hidden="true">✓</span> With MFR ${stats.compared}</button>
+<button type="button" data-filter="missing" aria-pressed="false"><span class="filter-check" aria-hidden="true">✓</span> MFR missing ${stats.missingReferences}</button></div><button type="button" class="print" id="print-sheet" aria-label="Print all ${stats.total} measurements or save PDF in the selected unit">Print all ${stats.total} / PDF</button></div>
+<div class="table-caption"><span id="count" role="status" aria-live="polite">Showing ${stats.total} of ${stats.total} measurements</span><span class="print-count">All ${stats.total} measurements</span><span class="formula">DELTA = ACTUAL FORM − MFR</span></div>
+<div class="table-scroll" id="measurement-chart" tabindex="0" role="region" aria-label="Scrollable measurement chart; use arrow keys to scroll" aria-describedby="unit-status">
 <table aria-label="House mannequin measurement register"><colgroup><col class="pom-col"><col class="name-col"><col class="method-col"><col class="mfr-col"><col class="actual-col"><col class="delta-col"></colgroup>
-<thead><tr><th scope="col">POM</th><th scope="col">Body measurement</th><th scope="col">How to measure</th><th scope="col" class="num">MFR</th><th scope="col" class="num actual-heading">Actual form</th><th scope="col" class="num">Delta</th></tr></thead>
+<thead><tr><th scope="col">POM</th><th scope="col">Body measurement</th><th scope="col">How to measure</th><th scope="col" class="num">MFR <span class="column-unit" data-unit-label>(IN)</span></th><th scope="col" class="num actual-heading">Actual form <span class="column-unit" data-unit-label>(IN)</span></th><th scope="col" class="num">Delta <span class="column-unit" data-unit-label>(IN)</span></th></tr></thead>
 <tbody id="measurements">${body}</tbody></table>
-<p class="empty-state" id="empty-state" hidden>No measurements match. Try another search or choose All.</p>
+<div class="empty-state" id="empty-state" hidden><p>No measurements match this search and filter.</p><button type="button" class="reset-view" id="reset-view">Clear search and show all</button></div>
 <details class="record-notes"><summary>Record history & measurement notes</summary>
 <p>PUBLIC HOUSE REGISTER · ${escapeHtml(form.source.document)} · ${escapeHtml(form.source.tab)}. Original Google Sheet currently shows an earlier pending-verification status; it has not been edited. This approved designation comes from the versioned approved record.</p>
 <p>Delta = approved house standard − manufacturer reference. These differences are not garment tolerances or fit pass/fail results. Verify methods and approval trace before manufacturing.</p></details>
 </div>
-<div class="panel-foot"><p>“—” means no MFR value, so no delta is calculated.</p><span class="scroll-hint">Scroll the chart ↕</span></div>
-</section></section></main><script>${sheetScript}</script></body></html>`;
+<div class="panel-foot"><p>“—” means no MFR reference; delta unavailable.</p><span class="scroll-hint"><span class="desktop-scroll-hint">Scroll the chart ↕</span><span class="mobile-scroll-hint">Swipe to compare values ↔</span></span></div>
+</section></section></main>
+<dialog class="photo-dialog" id="photo-dialog" aria-labelledby="photo-dialog-title" aria-describedby="photo-dialog-note"><div class="panel-heading"><h2 id="photo-dialog-title">${escapeHtml(form.formId)} · House mannequin</h2><button type="button" class="photo-close" id="close-photos" autofocus>Close photos</button></div><div class="photo-pair photo-viewer-pair" id="enlarged-photos" tabindex="0" role="region" aria-label="Original mannequin photographs; use arrow keys to scroll"></div><p class="photo-dialog-note" id="photo-dialog-note">Original front and back photographs · manufacturer-designated size ${escapeHtml(form.manufacturerDesignatedSize)}. Press Escape to close.</p></dialog>
+<script>${sheetScript}</script></body></html>`;
 }
 
 export async function writeMeasurementSheet(form, rows, outputArgument) {
