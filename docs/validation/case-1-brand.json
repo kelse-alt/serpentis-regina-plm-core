@@ -1,0 +1,116 @@
+{
+  "capturedAtUtc": "2026-10-22T16:58:27.771880+00:00",
+  "sourceCommit": "081782ef8810d9927bebbaaad45e39aaa99e778c",
+  "uncommittedChanges": false,
+  "renderMode": "Real local Chromium render of the standalone report; no live website deployment.",
+  "viewports": [
+    {
+      "name": "desktop",
+      "rootWidth": 1500,
+      "rootHeight": 1000,
+      "width": 1500,
+      "height": 1000,
+      "chartHeight": 577,
+      "chartScrollHeight": 1847,
+      "checks": "Six columns, original images/fonts, exact brand colors, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "laptop",
+      "rootWidth": 1280,
+      "rootHeight": 720,
+      "width": 1280,
+      "height": 720,
+      "chartHeight": 297,
+      "chartScrollHeight": 1937,
+      "checks": "Six columns, original images/fonts, exact brand colors, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "mobile",
+      "rootWidth": 390,
+      "rootHeight": 844,
+      "width": 390,
+      "height": 844,
+      "chartHeight": 274,
+      "chartScrollHeight": 1947,
+      "checks": "Six columns, original images/fonts, exact brand colors, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "small-mobile",
+      "rootWidth": 390,
+      "rootHeight": 667,
+      "width": 390,
+      "height": 667,
+      "chartHeight": 228,
+      "chartScrollHeight": 1947,
+      "checks": "Six columns, original images/fonts, exact brand colors, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "landscape",
+      "rootWidth": 844,
+      "rootHeight": 390,
+      "width": 844,
+      "height": 390,
+      "chartHeight": 146,
+      "chartScrollHeight": 1947,
+      "checks": "Six columns, original images/fonts, exact brand colors, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "narrow-phone",
+      "rootWidth": 320,
+      "rootHeight": 568,
+      "width": 320,
+      "height": 568,
+      "chartHeight": 146,
+      "chartScrollHeight": 1947,
+      "checks": "Six columns, original images/fonts, exact brand colors, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "short-phone",
+      "rootWidth": 320,
+      "rootHeight": 480,
+      "width": 320,
+      "height": 480,
+      "chartHeight": 134,
+      "chartScrollHeight": 1947,
+      "checks": "Six columns, original images/fonts, exact brand colors, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "short-tablet",
+      "rootWidth": 768,
+      "rootHeight": 400,
+      "width": 768,
+      "height": 400,
+      "chartHeight": 156,
+      "chartScrollHeight": 1947,
+      "checks": "Six columns, original images/fonts, exact brand colors, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    }
+  ],
+  "print": {
+    "pages": 3,
+    "all20PomsAndProvenanceAndMissingValueNotePresent": true
+  },
+  "screenshots": [
+    {
+      "filename": "case-1-brand-desktop.png",
+      "sha256": "9ffdb185a7041caa6b73ef6bd53ae5b36d134b5e926f8d7bf79af27f15fc044f",
+      "bytes": 415038
+    },
+    {
+      "filename": "case-1-brand-mobile.png",
+      "sha256": "3604ba2b91cead50aa47c0785e28fdf2c8ddab300395ba84ffc0a6dd43918be0",
+      "bytes": 95272
+    }
+  ],
+  "applicationTests": {
+    "command": "npm test",
+    "passed": 48,
+    "failed": 0
+  },
+  "databaseWorkflow": {
+    "imported": 20,
+    "secondImport": "unchanged",
+    "databaseReportGenerated": true
+  },
+  "existingStandaloneArtifactsReproducible": true,
+  "approvedDataUnchangedFromMain": true
+}

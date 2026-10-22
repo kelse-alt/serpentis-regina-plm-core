@@ -1,0 +1,2 @@
+# Preserve upstream font license files byte-for-byte, including their spacing.
+assets/house-sheet/fonts/*-OFL.txt -whitespace

@@ -32,6 +32,17 @@ Teaching style: **Notion-friendly, ADHD-friendly, visually organized, warm, femi
 - The original live Google Sheet retains an older "Pending Verification" label; the versioned approved record holds the newer approval status. Do not silently reconcile provenance or fabricate measurement dates/approval signatures.
 - Before manufacturing use, validate fit-form identity, source methods, and approval trace.
 
+## Brand direction — founder instruction, October 22, 2026
+
+- All future interface work uses the designated brand palette in `design/brand-tokens.json`: **Obsidian #101820**, **Ruby #E4002B**, **Salmon #F4A6A0**, **Slytheren #1FA824**, and **Electric #1E22AA**. This supersedes the earlier generic pink/ivory direction. Preserve original colors in supplied photographs and sculpted artwork.
+- Use Obsidian page backgrounds and Ruby title/section boxes. Electric text on Salmon and Salmon on Electric are approved combinations; use Slytheren as a balanced accent. Keep contrast readable: Ruby is suitable for large dark headings, while small body text needs a higher-contrast combination.
+- Reuse the original Serpentis Regina sculpted head artwork as the upper-right seal on newly designed pages: `assets/house-sheet/serpentis-regina-seal.png`.
+- The Brand Bible is `https://app.notion.com/p/BRAND-BIBLE-VISION-255bab06d9b4801d99def02a9914973b`. It required sign-in in the current connection. Do not claim its typography was verified; Bodoni Moda and Barlow Condensed are proposed fonts for founder review.
+- The founder supplied the full tech pack workbook at `https://docs.google.com/spreadsheets/d/1ALn9OogQy6x4YSEohhlew-NaIdeEdm2F/edit?gid=1422941812#gid=1422941812`. Its mannequin tab matches all 20 approved records and original methods. This is additional provenance; do not rewrite the approved baseline's original source URL or approval metadata.
+- **Case 1** starts with the mannequin page, using **MFR**, **ACTUAL FORM**, and **Delta = ACTUAL FORM − MFR**. The other workbook pages will be coded in subsequent steps as directed.
+- For this report, only the measurement chart scrolls. Keep the upper page, form photographs, controls, and chart headings in place. Preserve keyboard access, compact-screen usability, and a full print layout.
+- The founder removed the reference-status column and repeated “Source:” labels from the visible rows. Keep source labels/methods in the controlled data and provenance, without duplicating them in each visible row.
+
 ## Files and entry points
 - `src/house-measurement-sheet.mjs`: Node.js script that reads the 20 POMs, computes signed deltas, outputs `console.table`, and generates an offline HTML measurement-sheet report.
 - `tests/house-measurement-sheet.test.mjs`: test suite for references, comparisons, and report.
@@ -50,7 +61,7 @@ Teaching style: **Notion-friendly, ADHD-friendly, visually organized, warm, femi
 5. Later educational topics: `return` versus `console.log`, missing-data validation, tests, UI, and versioned tech-pack data.
 
 ## Collaboration and safeguards
-The founder authorized publication of this repository's actual approved records and Git history. Do not invent data changes or apply that authorization to unrelated third-party information. No credentials in code; no unrequested cloud deployment, network analytics, or external CDNs in reports. Favor accessible, elegant, print-friendly table design with a pink/ivory house aesthetic and clear POM columns.
+The founder authorized publication of this repository's actual approved records and Git history. Do not invent data changes or apply that authorization to unrelated third-party information. No credentials in code; no unrequested cloud deployment, network analytics, or external CDNs in reports. Favor accessible, elegant, print-friendly table design using the founder's designated brand palette and clear POM columns.
 
 Explain *why* code changes are needed. Do not jump ahead of the learner, and distinguish source facts from assumptions. Use `AGENTS.md` as transferable context rather than treating this as the entire original chat transcript.
 

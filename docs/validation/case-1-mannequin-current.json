@@ -1,0 +1,36 @@
+{
+  "capturedAtUtc": "2026-10-22T16:27:11.483353+00:00",
+  "sourceCommit": "c0f0c8eda017e0c702d137a1ff02c31c920094f1",
+  "reportSource": "src/house-measurement-sheet.mjs",
+  "renderMode": "Unmodified existing report served over loopback HTTP in Chromium; this is not a live Squarespace deployment.",
+  "viewport": {
+    "width": 1440,
+    "height": 1050
+  },
+  "sourceWorkbookUrl": "https://docs.google.com/spreadsheets/d/1ALn9OogQy6x4YSEohhlew-NaIdeEdm2F/edit?gid=1422941812#gid=1422941812",
+  "freshWorkbookExportSha256": "2fc52c4d87a69dd064b01126a2ada6b90a816deecc212a13f16fc0ac6bb38b33",
+  "checks": {
+    "renderedRows": 20,
+    "manufacturerComparisons": 7,
+    "missingReferences": 13,
+    "waistSearchDelta": "+0.75",
+    "filtersVerified": true,
+    "pageErrors": [],
+    "existingApplicationTests": {
+      "passed": 48,
+      "failed": 0
+    }
+  },
+  "screenshots": [
+    {
+      "path": "docs/previews/case-1-mannequin-current-desktop.png",
+      "bytes": 283915,
+      "sha256": "e94a3b9a74065545ac46256f82205ea380e089e73281f52012c452b3e69f2932"
+    },
+    {
+      "path": "docs/previews/case-1-mannequin-current-full.png",
+      "bytes": 445348,
+      "sha256": "cc5bfa8eb81cb03ceb2d7f21f52a8b7322bbb85a0498e755add747705c2ff105"
+    }
+  ]
+}

@@ -48,7 +48,25 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 - Reject changes to an already imported revision, detect inconsistent stored records, and roll back failed imports.
 - Run automated tests covering baseline rules, new-session calculations, database behavior, and the local API.
 
+## Case 1 — mannequin sheet design review
+
+The mannequin report now uses the founder's designated Obsidian, Ruby, Salmon,
+Slytheren, and Electric colors, larger editorial type, the original head seal,
+and the workbook's original front/back photographs. Only the measurement chart
+scrolls; the upper page and chart headings stay in place. Its six columns use
+the workbook labels **MFR** and **ACTUAL FORM**, with **Delta = ACTUAL FORM − MFR**.
+
+Run `npm run sheet` to generate the self-contained browser report. Its photos,
+fonts, and scripts are embedded, so no external requests are needed. The
+approved baseline data and calculation rule are preserved. This report is a
+browser preview, separate from the live Squarespace portal.
+
+See the [redesign review](docs/case-1-brand-redesign.md),
+[brand system](docs/brand-system.md), and
+[original design](docs/case-1-mannequin-review.md).
+
 ## Enter new measurements
+
 
 **Without installing anything:** [download the v0.3.1 ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/tags/v0.3.1.zip), extract the folder, and open `measurement-sheet-generator.html` in your browser. It starts blank and saves sessions in that browser on that device. Download JSON for a portable copy.
 

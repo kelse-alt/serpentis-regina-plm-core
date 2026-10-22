@@ -1,0 +1,26 @@
+{
+  "brand": "Serpentis Regina",
+  "revision": "2026-10-22",
+  "colors": {
+    "obsidian": "#101820",
+    "ruby": "#E4002B",
+    "salmon": "#F4A6A0",
+    "slytheren": "#1FA824",
+    "electric": "#1E22AA"
+  },
+  "source": {
+    "brandBible": "https://app.notion.com/p/BRAND-BIBLE-VISION-255bab06d9b4801d99def02a9914973b",
+    "brandBibleAccess": "Sign-in required; typography could not be verified.",
+    "workbook": "https://docs.google.com/spreadsheets/d/1ALn9OogQy6x4YSEohhlew-NaIdeEdm2F/edit?gid=1422941812#gid=1422941812",
+    "obsidian": "Founder-specified RGB 16, 24, 32; Pantone Black 6 CP.",
+    "ruby": "Founder-specified RGB 228, 0, 43; Pantone 185 CP.",
+    "salmon": "Workbook PATTERN CARD!G5 fill and BW-AW-SPEC!B10:F10 fills.",
+    "slytheren": "Workbook BODY REF-MANNEQUIN-SIZE 8-V1!A9 and G9 fills.",
+    "electric": "Workbook BODY REF-MANNEQUIN-SIZE 8-V1!I1 fill and PATTERN CARD!B5 font."
+  },
+  "typographyProposal": {
+    "display": "Bodoni Moda",
+    "body": "Barlow Condensed",
+    "status": "Proposed for founder review; not a verified Notion font specification."
+  }
+}
