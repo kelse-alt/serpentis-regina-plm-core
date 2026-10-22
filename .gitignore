@@ -1,5 +1,6 @@
 # Reproducible reports are generated locally from the versioned register.
 reports/*.html
+reports/browser-review/
 .DS_Store
 node_modules/
 # SQLite files and journal/WAL files are generated local outputs.

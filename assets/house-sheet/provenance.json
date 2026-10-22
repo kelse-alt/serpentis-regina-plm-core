@@ -1,0 +1,122 @@
+{
+  "brandTokens": "design/brand-tokens.json",
+  "verificationDate": "2026-10-22",
+  "assetPaths": "Relative to the repository root.",
+  "brandSources": {
+    "notionBrandBible": "https://app.notion.com/p/BRAND-BIBLE-VISION-255bab06d9b4801d99def02a9914973b",
+    "notionAccess": "Sign-in required; typography and palette could not be read from this page.",
+    "paletteEvidence": "Founder-provided Obsidian/Ruby RGB specifications and exact RGB styles in the supplied tech pack workbook; see design/brand-tokens.json and docs/brand-system.md.",
+    "typography": "Bodoni Moda 600 and Barlow Condensed 500/700 are proposed typefaces for founder review, not verified Notion selections."
+  },
+  "runtime": "Fonts and images are embedded locally in the generated report; external source URLs are provenance only.",
+  "fontLicense": "SIL Open Font License 1.1; unmodified upstream licenses are retained for both font families.",
+  "fontRetrievedAtUtc": "2026-10-22T16:46:10.931902+00:00",
+  "assets": [
+    {
+      "sourceZipEntry": "xl/media/image2.jpg",
+      "sourceWorkbook": "https://docs.google.com/spreadsheets/d/1ALn9OogQy6x4YSEohhlew-NaIdeEdm2F/edit?gid=1422941812#gid=1422941812",
+      "sourceWorkbookSha256": "2fc52c4d87a69dd064b01126a2ada6b90a816deecc212a13f16fc0ac6bb38b33",
+      "sourceWorksheet": "BODY REF-MANNEQUIN-SIZE 8-V1",
+      "sourceDrawing": "xl/drawings/drawing6.xml",
+      "sourceAnchorCell": "C10",
+      "sourceColumnOffsetEmu": 781050,
+      "sourceRowOffsetEmu": 9525,
+      "mime": "image/jpeg",
+      "width": 724,
+      "height": 2048,
+      "bytes": 232262,
+      "sha256": "70764b8015c5b6b5cf6884656b7adc8e47c33431f5117bfaa7685a71e64a94ae",
+      "processing": "Original embedded JPEG extracted byte-for-byte; no cropping, retouching or generated imagery.",
+      "path": "assets/house-sheet/mannequin-front.jpg"
+    },
+    {
+      "sourceZipEntry": "xl/media/image1.jpg",
+      "sourceWorkbook": "https://docs.google.com/spreadsheets/d/1ALn9OogQy6x4YSEohhlew-NaIdeEdm2F/edit?gid=1422941812#gid=1422941812",
+      "sourceWorkbookSha256": "2fc52c4d87a69dd064b01126a2ada6b90a816deecc212a13f16fc0ac6bb38b33",
+      "sourceWorksheet": "BODY REF-MANNEQUIN-SIZE 8-V1",
+      "sourceDrawing": "xl/drawings/drawing6.xml",
+      "sourceAnchorCell": "H10",
+      "sourceColumnOffsetEmu": 666750,
+      "sourceRowOffsetEmu": 19050,
+      "mime": "image/jpeg",
+      "width": 696,
+      "height": 2048,
+      "bytes": 214859,
+      "sha256": "3de7eef55315ba44fe18f7d86762ea5c2ae4c89d082213b8f95db04175970905",
+      "processing": "Original embedded JPEG extracted byte-for-byte; no cropping, retouching or generated imagery.",
+      "path": "assets/house-sheet/mannequin-back.jpg"
+    },
+    {
+      "kind": "Original transparent website logo image, unchanged bytes; not a new render or generated image.",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/69fbac625cc80853dbc54886/61fabb67-67b1-4f92-a5c3-19960c9bf69f/IMG_1653.png?format=1500w",
+      "sourcePage": "https://www.serpentisregina.com/home",
+      "dimensions": [
+        1366,
+        892
+      ],
+      "mode": "RGBA",
+      "alphaBounds": [
+        331,
+        106,
+        1035,
+        892
+      ],
+      "bytes": 672487,
+      "sha256": "8692dfffb2be2a949735bf106617778e6c52d5e375b03bc60dee06a557bda95f",
+      "verification": "Live header logo URL returned byte-identical image on 2026-10-22.",
+      "geometry": "Sculpted Serpentis Regina head logo from existing website; 3D artwork rendered in supplied PNG, no WebGL dependency.",
+      "path": "assets/house-sheet/serpentis-regina-seal.png"
+    },
+    {
+      "sourceUrl": "https://fonts.gstatic.com/s/bodonimoda/v28/aFT67PxzY382XsXX63LUYL6GYFcan6NJrKp-VPjfJMShrpsGFUt8oZDdwIA.ttf",
+      "family": "Bodoni Moda",
+      "weight": 600,
+      "bytes": 44880,
+      "sha256": "d82b1ebb07c1550f87993e7326a8e5168ab9a7dec8ed25f4aaa68ef72b5e95e9",
+      "contentType": "font/ttf",
+      "path": "assets/house-sheet/fonts/bodoni-moda-600.ttf",
+      "license": "SIL Open Font License 1.1",
+      "licensePath": "assets/house-sheet/fonts/Bodoni-Moda-OFL.txt"
+    },
+    {
+      "sourceUrl": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4-Lw_3E.ttf",
+      "family": "Barlow Condensed",
+      "weight": 500,
+      "bytes": 81448,
+      "sha256": "cc9fb2539cf27df48255982e896d28f544483537cdb41f9fabd741af8992d719",
+      "contentType": "font/ttf",
+      "path": "assets/house-sheet/fonts/barlow-condensed-500.ttf",
+      "license": "SIL Open Font License 1.1",
+      "licensePath": "assets/house-sheet/fonts/Barlow-Condensed-OFL.txt"
+    },
+    {
+      "sourceUrl": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2_3E.ttf",
+      "family": "Barlow Condensed",
+      "weight": 700,
+      "bytes": 87120,
+      "sha256": "7dde307fa887fc65ff5830cfada77a7decc5dae8d3c816c9d39ba3f1af1c4ed7",
+      "contentType": "font/ttf",
+      "path": "assets/house-sheet/fonts/barlow-condensed-700.ttf",
+      "license": "SIL Open Font License 1.1",
+      "licensePath": "assets/house-sheet/fonts/Barlow-Condensed-OFL.txt"
+    },
+    {
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/bodonimoda/OFL.txt",
+      "family": "Bodoni Moda",
+      "weight": null,
+      "bytes": 4400,
+      "sha256": "931dfe2e0cd3c9443295f5c1d754b8a8403bf060df50c1d5900267ade83d0046",
+      "contentType": "text/plain; charset=utf-8",
+      "path": "assets/house-sheet/fonts/Bodoni-Moda-OFL.txt"
+    },
+    {
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlowcondensed/OFL.txt",
+      "family": "Barlow Condensed",
+      "weight": null,
+      "bytes": 4377,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "contentType": "text/plain; charset=utf-8",
+      "path": "assets/house-sheet/fonts/Barlow-Condensed-OFL.txt"
+    }
+  ]
+}

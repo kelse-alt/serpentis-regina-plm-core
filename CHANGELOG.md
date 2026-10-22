@@ -2,6 +2,15 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## Case 1 brand redesign — 2026-10-22
+
+- Restyle the existing mannequin report with the founder's Obsidian/Ruby/Salmon/Slytheren/Electric palette, larger bundled Bodoni Moda and Barlow Condensed type, and the original sculpted head seal.
+- Display the original front/back mannequin photos extracted unchanged from the supplied tech pack workbook.
+- Keep the page heading, form panel, search/filters, and chart headings fixed while the measurement region scrolls vertically and horizontally.
+- Use the workbook labels MFR and ACTUAL FORM; remove the reference-status column and duplicate source labels from each row.
+- Retain approved values, exact methods, house-minus-manufacturer calculations, missing-data rules, search, filters, and PDF printing. Printed output includes all visible measurement rows and record notes.
+- Add shared brand tokens, source/asset documentation, and browser checks for chart scrolling, responsive layouts, offline assets, and complete PDF output. The Notion Brand Bible requires sign-in; the type pairing is a proposal for founder review.
+
 ## v0.4.0 — 2026-10-20
 
 ### Added
