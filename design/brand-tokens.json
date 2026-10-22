@@ -33,16 +33,38 @@
     "titleFill": "ruby",
     "titleText": "obsidian",
     "titleMetadataFill": "transparent",
+    "wordmarkText": "electric",
+    "divisionText": "obsidian",
+    "caseText": "slytheren",
+    "identityText": "slytheren",
+    "identityUnitLabel": "INCHES / CM",
+    "unitControlText": "matteInk",
+    "formulaText": "slytheren",
     "headerFill": "electric",
     "headerText": "ruby",
+    "toolbarButtons": {
+      "fill": "electric",
+      "text": "ruby",
+      "scope": "All filter and Print buttons retain Electric fill and Ruby text in every state."
+    },
     "matteInk": {
       "color": "#92989D",
       "line": "#293239",
       "finish": "Ashy matte charcoal with fine grain; a lifted black neutral to remain visible against Obsidian.",
       "source": "Founder requested removal of red outlines and replacement of red lettering with ashy matte black.",
-      "scope": "Retain matte ash text outside Electric Blue boxes. Only text painted on Electric Blue fills uses Ruby; never recolor outside text red."
+      "scope": "Preserve matte ash chart values, methods, deltas, and supporting details. Apply only the explicit wordmark, CASE/identity metadata, and formula foreground overrides; text on Electric fills remains Ruby."
     },
-    "slytherenUsage": "Front and Back photo-caption backgrounds only; no other green interface styling.",
+    "slytherenUsage": "CASE and identity metadata foregrounds, delta formula foreground, and Front/Back caption backgrounds only; no green table values, buttons, borders, or outlines.",
+    "displayUnits": {
+      "canonical": "in",
+      "default": "in",
+      "options": ["in", "cm"],
+      "centimetersPerInch": 2.54,
+      "maximumFractionDigits": 6,
+      "trimTrailingZeros": true,
+      "sourceMethods": "Preserve original source measuring instructions and fixed inch landmarks.",
+      "print": "Use the currently selected display unit."
+    },
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
   }
 }

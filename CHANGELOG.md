@@ -2,6 +2,12 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## Case 1 metadata colors and centimeter display — 2026-10-22
+
+- Apply Electric text to the wordmark and Slytheren text to CASE/identity metadata and the delta formula; retain the Ruby title with Obsidian title/division text and transparent overlays.
+- Keep all toolbar filter/Print buttons permanently Electric with Ruby text; preserve matte ash chart text, neutral outlines, and original assets/layouts.
+- Add a native inches/centimeters selector. Convert MFR, Actual Form, and deltas from canonical inches at exactly 2.54 cm/in, showing up to six trimmed decimal places; print the selected unit. Preserve approved measurements, missing references, and original source instructions. See the [current review](docs/case-1-centimeters.md).
+
 ## Case 1 Ruby text scoped to blue fills — 2026-10-22
 
 - Restore Ruby text only on Electric Blue section headers, chart headings, and blue-filled selected/hovered buttons, applying the house Electric/Ruby rule to Case 1.

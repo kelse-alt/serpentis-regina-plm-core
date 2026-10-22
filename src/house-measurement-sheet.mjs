@@ -6,6 +6,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { formatMeasurementInUnit } from './house-sheet-units.mjs';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const FORM = new URL('../data/house-fit-forms/SR-FORM-001.v1.json', import.meta.url);
@@ -14,10 +15,12 @@ const METHODS = new URL('../data/house-fit-forms/SR-FORM-001-methods.v1.json', i
 // Bundle the reusable brand system and original artwork into every offline report.
 // The browser never requests fonts, images, or measurements from another service.
 const brand = JSON.parse(await readFile(new URL('../design/brand-tokens.json', import.meta.url), 'utf8'));
-const [sheetCss, sheetScript] = await Promise.all([
+const [sheetCss, browserScript] = await Promise.all([
   readFile(new URL('../sheet-web/sheet.css', import.meta.url), 'utf8'),
   readFile(new URL('../sheet-web/sheet.js', import.meta.url), 'utf8'),
 ]);
+// Share the same pure formatter with the offline browser; no runtime imports.
+const sheetScript = formatMeasurementInUnit.toString() + '\n' + browserScript;
 const assetTypes = {
   'mannequin-front.jpg': 'image/jpeg',
   'mannequin-back.jpg': 'image/jpeg',
@@ -96,6 +99,9 @@ function escapeHtml(value) {
 function matteText(value) {
   return `<span class="matte-ink">${escapeHtml(value)}</span>`;
 }
+function measurementText(value, signed = false) {
+  return `<span class="matte-ink" data-value-inches="${value}" data-signed="${signed}">${formatMeasurementInUnit(value, 'in', signed)}</span>`;
+}
 
 // Read-only, offline browser report: no external libraries or third-party servers.
 export function buildHtml(form, rows) {
@@ -105,8 +111,8 @@ export function buildHtml(form, rows) {
     const status = row.hasReference ? 'compared' : 'missing';
     body += `<tr data-status="${status}" data-search="${escapeHtml((row.pomCode + ' ' + row.description + ' ' + row.sourceLabel + ' ' + row.howToMeasure).toLowerCase())}">
 <td class="pom">${matteText(row.pomCode)}</td><td class="measurement-name">${matteText(row.description)}</td>
-<td class="method">${matteText(row.howToMeasure)}</td><td class="num mfr">${row.hasReference ? matteText(row.manufacturerReference) : '<span class="missing matte-ink" aria-label="No manufacturer measurement">—</span>'}</td>
-<td class="num actual">${matteText(row.houseStandard)}</td><td class="num delta">${row.hasReference ? matteText(formatDifference(row.difference)) : '<span class="missing matte-ink" aria-label="Delta unavailable without manufacturer measurement">—</span>'}</td></tr>`;
+<td class="method">${matteText(row.howToMeasure)}</td><td class="num mfr">${row.hasReference ? measurementText(row.manufacturerReference) : '<span class="missing matte-ink" aria-label="No manufacturer measurement">—</span>'}</td>
+<td class="num actual">${measurementText(row.houseStandard)}</td><td class="num delta">${row.hasReference ? measurementText(row.difference, true) : '<span class="missing matte-ink" aria-label="Delta unavailable without manufacturer measurement">—</span>'}</td></tr>`;
   }
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; font-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'">
@@ -117,7 +123,7 @@ export function buildHtml(form, rows) {
 <main class="sheet"><header class="masthead"><div class="title-bar">
 <div class="brand-line"><span class="wordmark">SERPENTIS REGINA</span><span class="division">Technical design / House archive</span><span class="case">CASE / 001</span></div>
 <h1><span class="title-subject">Mannequin</span> <span class="title-primary">Measurement Sheet</span></h1>
-<div class="identity-strip"><strong>${escapeHtml(form.formId)}</strong><span>SIZE ${escapeHtml(form.manufacturerDesignatedSize)}</span><span>INCHES</span><span>${stats.total} POINTS OF MEASURE</span><span class="approval">Approved house standard</span></div>
+<div class="identity-strip"><strong>${escapeHtml(form.formId)}</strong><span>SIZE ${escapeHtml(form.manufacturerDesignatedSize)}</span><span>INCHES / CM</span><span>${stats.total} POINTS OF MEASURE</span><span class="approval">Approved house standard</span></div>
 </div><div class="seal-zone"><div class="seal"><img src="${assets['serpentis-regina-seal.png']}" alt="Serpentis Regina sculpted head seal" width="1366" height="892"></div></div>
 </header>
 <section class="workspace" aria-label="Mannequin measurement study">
@@ -130,11 +136,12 @@ export function buildHtml(form, rows) {
 <div class="form-caption"><p>ACTUAL FORM<strong>The physical house standard.</strong></p><span class="size-tag" aria-label="Manufacturer designated size ${escapeHtml(form.manufacturerDesignatedSize)}">${escapeHtml(form.manufacturerDesignatedSize)}</span></div>
 </aside>
 <section class="measurement-panel" aria-labelledby="measurement-heading">
-<div class="panel-heading measure-heading"><div class="heading-group"><span class="section-number" aria-hidden="true">02</span><h2 id="measurement-heading">Measurements</h2></div><span class="unit-tag">UNIT / IN</span></div>
+<div class="panel-heading measure-heading"><div class="heading-group"><span class="section-number" aria-hidden="true">02</span><h2 id="measurement-heading">Measurements</h2></div><label class="unit-tag" for="measurement-unit"><span>UNIT /</span><select id="measurement-unit" aria-label="Measurement unit"><option value="in">INCHES</option><option value="cm">CM</option></select></label><span class="unit-print" id="unit-print">UNIT / INCHES</span></div>
+<span class="sr-only" id="unit-status" role="status" aria-live="polite">Measurements displayed in inches.</span>
 <div class="toolbar"><label class="search-field"><span class="sr-only">Search measurements</span><input id="search" type="search" placeholder="Find a measurement…"></label>
 <button type="button" data-filter="all" aria-pressed="true">All ${stats.total}</button><button type="button" data-filter="compared" aria-pressed="false">With MFR ${stats.compared}</button>
 <button type="button" data-filter="missing" aria-pressed="false">MFR missing ${stats.missingReferences}</button><button type="button" class="print" id="print-sheet">Print / PDF</button></div>
-<div class="table-caption"><span id="count" role="status" aria-live="polite">Showing ${stats.total} of ${stats.total} measurements</span><span class="formula">Δ = ACTUAL FORM − MFR</span></div>
+<div class="table-caption"><span id="count" role="status" aria-live="polite">Showing ${stats.total} of ${stats.total} measurements</span><span class="formula">DELTA = ACTUAL FORM − MFR</span></div>
 <div class="table-scroll" id="measurement-chart" tabindex="0" role="region" aria-label="Scrollable measurement chart; use arrow keys to scroll">
 <table aria-label="House mannequin measurement register"><colgroup><col class="pom-col"><col class="name-col"><col class="method-col"><col class="mfr-col"><col class="actual-col"><col class="delta-col"></colgroup>
 <thead><tr><th scope="col">POM</th><th scope="col">Body measurement</th><th scope="col">How to measure</th><th scope="col" class="num">MFR</th><th scope="col" class="num actual-heading">Actual form</th><th scope="col" class="num">Delta</th></tr></thead>
