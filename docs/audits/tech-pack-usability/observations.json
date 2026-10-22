@@ -1,0 +1,109 @@
+{
+  "sourceCommit": "a9a3e597d89f8e3bfefc401400c8f2571fbc1ecc",
+  "steps": [
+    {
+      "image": "01-start.png",
+      "description": "Start a new blank tech pack",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      }
+    },
+    {
+      "image": "02-pattern-details.png",
+      "description": "Enter pattern and style metadata",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      }
+    },
+    {
+      "image": "03-master-details.png",
+      "description": "Work on garment specifications and repeated style metadata",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      }
+    },
+    {
+      "image": "04-graded-grid.png",
+      "description": "Enter graded measurements across eleven size slots",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      }
+    },
+    {
+      "image": "06-print-first-page.png",
+      "description": "Print all six tabs; first page of the actual blank A3 landscape PDF"
+    },
+    {
+      "image": "05-mobile-actions.png",
+      "description": "Save or export on a phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "observations": {
+    "patternStylePropagatesToMaster": false,
+    "fractionalInputValidation": {
+      "valid": false,
+      "message": "Enter a decimal measurement, or leave the field blank."
+    },
+    "gradeGrid": {
+      "gridWidth": 1730,
+      "visibleWidth": 1123,
+      "numericInputs": 336
+    },
+    "twoSavesStoredRecords": 1,
+    "blankFullPrint": {
+      "pages": 12,
+      "pageSizePoints": [
+        0.0,
+        0.0,
+        1191.12,
+        841.91998
+      ],
+      "hasAllSourceTabs": true
+    },
+    "mobileFooter": {
+      "visibleWidth": 374,
+      "allActionsWidth": 585,
+      "buttons": [
+        {
+          "name": "Save pack",
+          "fullyVisible": true
+        },
+        {
+          "name": "New blank",
+          "fullyVisible": true
+        },
+        {
+          "name": "Download JSON",
+          "fullyVisible": true
+        },
+        {
+          "name": "Import JSON",
+          "fullyVisible": true
+        },
+        {
+          "name": "Sheet CSV",
+          "fullyVisible": false
+        },
+        {
+          "name": "Current sheetAll six sheets",
+          "fullyVisible": false
+        },
+        {
+          "name": "Print / PDF",
+          "fullyVisible": false
+        }
+      ]
+    },
+    "rubyElectricContrast": 2.324348450320154,
+    "greenRubyContrast": 1.5425203138785222
+  },
+  "captureNotes": "All six published images inspected in this audit. Screens03/04 were recaptured in a fresh blank context after runtime-only synthetic probes; no entered project values appear in published screenshots. Local browser contexts and temporary PDF discarded."
+}
