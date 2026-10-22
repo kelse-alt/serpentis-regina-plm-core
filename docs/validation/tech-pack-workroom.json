@@ -1,0 +1,2336 @@
+{
+  "generatedAt": "2026-10-22T23:23:11.021847+00:00",
+  "standalone": true,
+  "sourceTabs": [
+    "PATTERN CARD",
+    "BW-AW-SPEC",
+    "FIT & COM",
+    "GRADED SPECS",
+    "00-MEASUREMENT SHEET MASTER",
+    "BODY REF-MANNEQUIN-SIZE 8-V1"
+  ],
+  "layouts": [
+    {
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "sheet": "pattern",
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 346.90625,
+        "y": 319.109375,
+        "width": 1129.09375,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-pattern-desktop.png"
+    },
+    {
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "sheet": "wash",
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 346.90625,
+        "y": 319.109375,
+        "width": 1129.09375,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-wash-desktop.png"
+    },
+    {
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "sheet": "fit",
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 346.90625,
+        "y": 319.109375,
+        "width": 1129.09375,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-fit-desktop.png"
+    },
+    {
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "sheet": "graded",
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 346.90625,
+        "y": 319.109375,
+        "width": 1129.09375,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-graded-desktop.png"
+    },
+    {
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "sheet": "master",
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 346.90625,
+        "y": 319.109375,
+        "width": 1129.09375,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-master-desktop.png"
+    },
+    {
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "sheet": "body",
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 346.90625,
+        "y": 319.109375,
+        "width": 1129.09375,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-body-desktop.png"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "sheet": "pattern",
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 300.71875,
+        "y": 311.46875,
+        "width": 955.28125,
+        "height": 335.53125,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "sheet": "wash",
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 300.71875,
+        "y": 311.46875,
+        "width": 955.28125,
+        "height": 335.53125,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "sheet": "fit",
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 300.71875,
+        "y": 311.46875,
+        "width": 955.28125,
+        "height": 335.53125,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "sheet": "graded",
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 300.71875,
+        "y": 317.03125,
+        "width": 955.28125,
+        "height": 329.96875,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "sheet": "master",
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 300.71875,
+        "y": 317.03125,
+        "width": 955.28125,
+        "height": 329.96875,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "sheet": "body",
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 300.71875,
+        "y": 311.46875,
+        "width": 955.28125,
+        "height": 335.53125,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 81.359375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 81.921875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 111.40625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 93.890625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 80.125,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 84.734375,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sheet": "pattern",
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 342.328125,
+        "width": 374,
+        "height": 410.078125,
+        "bottom": 752.40625,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 758.40625,
+        "width": 374,
+        "height": 77.59375,
+        "bottom": 836,
+        "right": 382
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-pattern-mobile.png"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sheet": "wash",
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 342.328125,
+        "width": 374,
+        "height": 410.078125,
+        "bottom": 752.40625,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 758.40625,
+        "width": 374,
+        "height": 77.59375,
+        "bottom": 836,
+        "right": 382
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sheet": "fit",
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 342.328125,
+        "width": 374,
+        "height": 410.078125,
+        "bottom": 752.40625,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 758.40625,
+        "width": 374,
+        "height": 77.59375,
+        "bottom": 836,
+        "right": 382
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sheet": "graded",
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 357.328125,
+        "width": 374,
+        "height": 395.078125,
+        "bottom": 752.40625,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 758.40625,
+        "width": 374,
+        "height": 77.59375,
+        "bottom": 836,
+        "right": 382
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-graded-mobile.png"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sheet": "master",
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 357.328125,
+        "width": 374,
+        "height": 395.078125,
+        "bottom": 752.40625,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 758.40625,
+        "width": 374,
+        "height": 77.59375,
+        "bottom": 836,
+        "right": 382
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sheet": "body",
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 342.328125,
+        "width": 374,
+        "height": 410.078125,
+        "bottom": 752.40625,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 758.40625,
+        "width": 374,
+        "height": 77.59375,
+        "bottom": 836,
+        "right": 382
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true,
+      "blankScreenshot": "tech-pack-body-mobile.png"
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "sheet": "pattern",
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 365.515625,
+        "width": 310,
+        "height": 119.84375,
+        "bottom": 485.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 490.359375,
+        "width": 310,
+        "height": 72.640625,
+        "bottom": 563,
+        "right": 315
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "sheet": "wash",
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 380.515625,
+        "width": 310,
+        "height": 104.84375,
+        "bottom": 485.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 490.359375,
+        "width": 310,
+        "height": 72.640625,
+        "bottom": 563,
+        "right": 315
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "sheet": "fit",
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 365.515625,
+        "width": 310,
+        "height": 119.84375,
+        "bottom": 485.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 490.359375,
+        "width": 310,
+        "height": 72.640625,
+        "bottom": 563,
+        "right": 315
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "sheet": "graded",
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 380.515625,
+        "width": 310,
+        "height": 104.84375,
+        "bottom": 485.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 490.359375,
+        "width": 310,
+        "height": 72.640625,
+        "bottom": 563,
+        "right": 315
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "sheet": "master",
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 380.515625,
+        "width": 310,
+        "height": 104.84375,
+        "bottom": 485.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 490.359375,
+        "width": 310,
+        "height": 72.640625,
+        "bottom": 563,
+        "right": 315
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "sheet": "body",
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 380.515625,
+        "width": 310,
+        "height": 104.84375,
+        "bottom": 485.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 490.359375,
+        "width": 310,
+        "height": 72.640625,
+        "bottom": 563,
+        "right": 315
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 67.9375,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 68.4375,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 94.21875,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 78.90625,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 66.859375,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 70.890625,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "sheet": "pattern",
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 280,
+        "y": 238.546875,
+        "width": 548,
+        "height": 72.8125,
+        "bottom": 311.359375,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 315.359375,
+        "width": 812,
+        "height": 70.640625,
+        "bottom": 386,
+        "right": 828
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 62.21875,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 62.6875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 86.640625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 72.421875,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 61.21875,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 64.96875,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "sheet": "wash",
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 280,
+        "y": 238.546875,
+        "width": 548,
+        "height": 72.8125,
+        "bottom": 311.359375,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 315.359375,
+        "width": 812,
+        "height": 70.640625,
+        "bottom": 386,
+        "right": 828
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 62.21875,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 62.6875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 86.640625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 72.421875,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 61.21875,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 64.96875,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "sheet": "fit",
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 280,
+        "y": 238.546875,
+        "width": 548,
+        "height": 72.8125,
+        "bottom": 311.359375,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 315.359375,
+        "width": 812,
+        "height": 70.640625,
+        "bottom": 386,
+        "right": 828
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 62.21875,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 62.6875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 86.640625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 72.421875,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 61.21875,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 64.96875,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "sheet": "graded",
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 280,
+        "y": 238.546875,
+        "width": 548,
+        "height": 72.8125,
+        "bottom": 311.359375,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 315.359375,
+        "width": 812,
+        "height": 70.640625,
+        "bottom": 386,
+        "right": 828
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 62.21875,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 62.6875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 86.640625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 72.421875,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 61.21875,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 64.96875,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "sheet": "master",
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 280,
+        "y": 238.546875,
+        "width": 548,
+        "height": 72.8125,
+        "bottom": 311.359375,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 315.359375,
+        "width": 812,
+        "height": 70.640625,
+        "bottom": 386,
+        "right": 828
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 62.21875,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 62.6875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 86.640625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 72.421875,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 61.21875,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 64.96875,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "sheet": "body",
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 280,
+        "y": 238.546875,
+        "width": 548,
+        "height": 72.8125,
+        "bottom": 311.359375,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 315.359375,
+        "width": 812,
+        "height": 70.640625,
+        "bottom": 386,
+        "right": 828
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "height": 44,
+          "width": 62.21875,
+          "reachable": true
+        },
+        {
+          "id": "new-pack",
+          "height": 44,
+          "width": 62.6875,
+          "reachable": true
+        },
+        {
+          "id": "export-json",
+          "height": 44,
+          "width": 86.640625,
+          "reachable": true
+        },
+        {
+          "id": "import-json",
+          "height": 44,
+          "width": 72.421875,
+          "reachable": true
+        },
+        {
+          "id": "export-csv",
+          "height": 44,
+          "width": 61.21875,
+          "reachable": true
+        },
+        {
+          "id": "print-scope",
+          "height": 44,
+          "width": 114,
+          "reachable": true
+        },
+        {
+          "id": "print-pack",
+          "height": 44,
+          "width": 64.96875,
+          "reachable": true
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "blueTextMismatches": [],
+      "sealLoaded": true
+    }
+  ],
+  "workflow": {
+    "referenceTargetWithoutGarmentUnit": true,
+    "approvedReference": {
+      "rows": 20,
+      "manufacturerReferences": 7,
+      "missingReferences": 13,
+      "readonly": true,
+      "exactLabelsMethodsValues": true
+    },
+    "rasterAttachmentRoundtrip": true,
+    "keyboardTabs": true,
+    "unitChoiceRequired": true,
+    "washFormula": true,
+    "sourceFormulaGapsAndManualDeltaEntriesPreserved": true,
+    "zeroAndMissingDistinct": true,
+    "invalidInputBlocksNavigation": true,
+    "masterFormula": true,
+    "canonicalUnitRoundtrip": true,
+    "fitStyleLink": true,
+    "gradedHeaderPersisted": true,
+    "search": true,
+    "csvAllRowsAndFormulaSafety": true,
+    "twoSavedDrafts": true,
+    "jsonRoundtrip": true,
+    "unsafeImportRejected": true,
+    "currentSheetPrint": {
+      "pages": 2,
+      "tableWidths": [
+        {
+          "width": 1500,
+          "available": 1500
+        }
+      ]
+    },
+    "allSheetsPrint": {
+      "pages": 13,
+      "rows": 190,
+      "tableWidths": [
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        }
+      ]
+    },
+    "printRestoresFilter": true,
+    "unavailableStorageBackup": true
+  },
+  "issues": [],
+  "passed": true,
+  "buildSha256": "32951f8f3240fc4e40439b4be7d789e0f7b90479550222f966b2789941abce69",
+  "sourceCodeCommit": "62223f89cd03594e3012217d0dbeebfe06e8c12e",
+  "nodeTests": {
+    "passed": 63,
+    "failed": 0
+  },
+  "preservedSources": "Approved house data, methods, original artwork, brand tokens and prior app source/builds unchanged from parent52b3680.",
+  "capturePolicy": "Only pristine blank drafts captured. Synthetic workflow data, attachments, downloads and filled PDFs were used in temporary test memory and are excluded from public artifacts."
+}

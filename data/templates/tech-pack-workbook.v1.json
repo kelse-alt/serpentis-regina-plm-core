@@ -1,0 +1,2303 @@
+{
+  "id": "SR-TECH-PACK-002",
+  "version": 1,
+  "title": "Serpentis Regina · Tech pack workroom",
+  "sourceUrl": "https://docs.google.com/spreadsheets/d/1yXo2dRFUFBJXT7fQlsxJkoWVH5pfSSQn/edit",
+  "sheets": [
+    {
+      "id": "pattern",
+      "title": "PATTERN CARD",
+      "shortTitle": "Pattern card",
+      "note": "Piece quantities, pattern references, release notes and template grading.",
+      "fields": [
+        {
+          "key": "style",
+          "label": "Style / Pattern No.",
+          "sourceCell": "A1"
+        },
+        {
+          "key": "styleNumber",
+          "label": "Style #",
+          "sourceCell": "G1"
+        },
+        {
+          "key": "size",
+          "label": "Size",
+          "sourceCell": "G4"
+        },
+        {
+          "key": "fabric",
+          "label": "Fabric",
+          "sourceCell": "G5"
+        },
+        {
+          "key": "roll",
+          "label": "Roll #",
+          "sourceCell": "G5"
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "sourceCell": "G6",
+          "inputType": "date"
+        },
+        {
+          "key": "wash",
+          "label": "Wash",
+          "sourceCell": "G6"
+        },
+        {
+          "key": "reference",
+          "label": "REF.",
+          "sourceCell": "G7"
+        },
+        {
+          "key": "delivery",
+          "label": "Del.",
+          "sourceCell": "G8"
+        },
+        {
+          "key": "marker",
+          "label": "MARKER RELEASE",
+          "sourceCell": "F32",
+          "multiline": true
+        },
+        {
+          "key": "gradedRevision",
+          "label": "GRADED SPECS / REVISION",
+          "sourceCell": "F33",
+          "multiline": true
+        },
+        {
+          "key": "patternStatus",
+          "label": "PATTERN CHECK / FILE STATUS",
+          "sourceCell": "F35",
+          "multiline": true
+        },
+        {
+          "key": "trim",
+          "label": "THREAD & TRIM — SEE TECH PACK",
+          "sourceCell": "F37:J47",
+          "multiline": true
+        },
+        {
+          "key": "breakdown",
+          "label": "BREAKDOWN",
+          "sourceCell": "B39:D40",
+          "multiline": true
+        },
+        {
+          "key": "placement",
+          "label": "PLACEMENT",
+          "sourceCell": "B42:D42",
+          "multiline": true
+        }
+      ],
+      "attachments": [
+        {
+          "key": "reference",
+          "label": "Pattern reference / sketch",
+          "sourceRange": "F9:J30"
+        }
+      ],
+      "tables": [
+        {
+          "id": "pieces",
+          "title": "Pattern pieces",
+          "columns": [
+            {
+              "key": "qty",
+              "label": "Qty",
+              "type": "number"
+            },
+            {
+              "key": "piece",
+              "label": "Piece Name",
+              "type": "text"
+            },
+            {
+              "key": "sourceE",
+              "label": "Unlabelled column E",
+              "type": "text"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 7,
+              "values": {}
+            },
+            {
+              "id": "2",
+              "sourceRow": 8,
+              "values": {}
+            },
+            {
+              "id": "3",
+              "sourceRow": 9,
+              "values": {}
+            },
+            {
+              "id": "4",
+              "sourceRow": 10,
+              "values": {}
+            },
+            {
+              "id": "5",
+              "sourceRow": 11,
+              "values": {}
+            },
+            {
+              "id": "6",
+              "sourceRow": 12,
+              "values": {}
+            },
+            {
+              "id": "7",
+              "sourceRow": 13,
+              "values": {}
+            },
+            {
+              "id": "8",
+              "sourceRow": 14,
+              "values": {}
+            },
+            {
+              "id": "9",
+              "sourceRow": 15,
+              "values": {}
+            },
+            {
+              "id": "10",
+              "sourceRow": 16,
+              "values": {}
+            },
+            {
+              "id": "11",
+              "sourceRow": 17,
+              "values": {}
+            },
+            {
+              "id": "12",
+              "sourceRow": 18,
+              "values": {}
+            },
+            {
+              "id": "13",
+              "sourceRow": 19,
+              "values": {}
+            },
+            {
+              "id": "14",
+              "sourceRow": 20,
+              "values": {}
+            }
+          ],
+          "note": "The source leaves column E unlabelled; its meaning remains open."
+        },
+        {
+          "id": "lining",
+          "title": "LINING",
+          "columns": [
+            {
+              "key": "qty",
+              "label": "Qty",
+              "type": "number"
+            },
+            {
+              "key": "piece",
+              "label": "Piece Name",
+              "type": "text"
+            },
+            {
+              "key": "sourceE",
+              "label": "Unlabelled column E",
+              "type": "text"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 22,
+              "values": {}
+            },
+            {
+              "id": "2",
+              "sourceRow": 23,
+              "values": {}
+            },
+            {
+              "id": "3",
+              "sourceRow": 24,
+              "values": {}
+            },
+            {
+              "id": "4",
+              "sourceRow": 25,
+              "values": {}
+            },
+            {
+              "id": "5",
+              "sourceRow": 26,
+              "values": {}
+            }
+          ],
+          "note": "The source leaves column E unlabelled; its meaning remains open."
+        },
+        {
+          "id": "templates",
+          "title": "TEMPLATES",
+          "columns": [
+            {
+              "key": "qty",
+              "label": "Qty",
+              "type": "number"
+            },
+            {
+              "key": "piece",
+              "label": "Piece Name",
+              "type": "text"
+            },
+            {
+              "key": "sourceE",
+              "label": "Unlabelled column E",
+              "type": "text"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 28,
+              "values": {}
+            },
+            {
+              "id": "2",
+              "sourceRow": 29,
+              "values": {}
+            },
+            {
+              "id": "3",
+              "sourceRow": 30,
+              "values": {}
+            },
+            {
+              "id": "4",
+              "sourceRow": 31,
+              "values": {}
+            },
+            {
+              "id": "5",
+              "sourceRow": 32,
+              "values": {}
+            },
+            {
+              "id": "6",
+              "sourceRow": 33,
+              "values": {}
+            },
+            {
+              "id": "7",
+              "sourceRow": 34,
+              "values": {}
+            },
+            {
+              "id": "8",
+              "sourceRow": 35,
+              "values": {}
+            },
+            {
+              "id": "9",
+              "sourceRow": 36,
+              "values": {}
+            },
+            {
+              "id": "10",
+              "sourceRow": 37,
+              "values": {}
+            }
+          ],
+          "note": "The source leaves column E unlabelled; its meaning remains open."
+        },
+        {
+          "id": "grading",
+          "title": "TEMPLATE GRADING",
+          "columns": [
+            {
+              "key": "size",
+              "label": "SIZE",
+              "type": "text"
+            },
+            {
+              "key": "details",
+              "label": "Template grading",
+              "type": "text"
+            },
+            {
+              "key": "sourceE",
+              "label": "Unlabelled column E",
+              "type": "text"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 45,
+              "values": {}
+            },
+            {
+              "id": "2",
+              "sourceRow": 46,
+              "values": {}
+            },
+            {
+              "id": "3",
+              "sourceRow": 47,
+              "values": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wash",
+      "title": "BW-AW-SPEC",
+      "shortTitle": "Wash specs",
+      "note": "Two sample rounds. Delta = Target − After Wash; blank inputs leave the delta blank.",
+      "fields": [
+        {
+          "key": "style",
+          "label": "STYLE #",
+          "sourceCell": ""
+        },
+        {
+          "key": "stage",
+          "label": "STAGE",
+          "sourceCell": ""
+        },
+        {
+          "key": "refPattern",
+          "label": "Ref Pattern",
+          "sourceCell": ""
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "sourceCell": ""
+        },
+        {
+          "key": "fabric",
+          "label": "Fabric",
+          "sourceCell": ""
+        },
+        {
+          "key": "roll",
+          "label": "Roll #",
+          "sourceCell": ""
+        },
+        {
+          "key": "wash",
+          "label": "Wash",
+          "sourceCell": ""
+        },
+        {
+          "key": "measurements",
+          "label": "Measurements",
+          "sourceCell": ""
+        },
+        {
+          "key": "width",
+          "label": "W",
+          "sourceCell": ""
+        },
+        {
+          "key": "length",
+          "label": "L",
+          "sourceCell": ""
+        },
+        {
+          "key": "adate",
+          "label": "Date · Round A",
+          "sourceCell": "",
+          "inputType": "date"
+        },
+        {
+          "key": "asampleSize",
+          "label": "Sample Size · Round A",
+          "sourceCell": "",
+          "inputType": "text"
+        },
+        {
+          "key": "aseason",
+          "label": "Season · Round A",
+          "sourceCell": "",
+          "inputType": "text"
+        },
+        {
+          "key": "asampleStage",
+          "label": "SAMPLE STAGE · Round A",
+          "sourceCell": "",
+          "inputType": "text"
+        },
+        {
+          "key": "bdate",
+          "label": "Date · Round B",
+          "sourceCell": "",
+          "inputType": "date"
+        },
+        {
+          "key": "bsampleSize",
+          "label": "Sample Size · Round B",
+          "sourceCell": "",
+          "inputType": "text"
+        },
+        {
+          "key": "bseason",
+          "label": "Season · Round B",
+          "sourceCell": "",
+          "inputType": "text"
+        },
+        {
+          "key": "bsampleStage",
+          "label": "SAMPLE STAGE · Round B",
+          "sourceCell": "",
+          "inputType": "text"
+        },
+        {
+          "key": "attendees",
+          "label": "FIT ATTENDEES",
+          "sourceCell": "",
+          "multiline": true
+        },
+        {
+          "key": "model",
+          "label": "MODEL",
+          "sourceCell": "",
+          "multiline": true
+        },
+        {
+          "key": "patternMaker",
+          "label": "PATTERN MAKER",
+          "sourceCell": "",
+          "multiline": true
+        },
+        {
+          "key": "fitNote",
+          "label": "FIT NOTE",
+          "sourceCell": "",
+          "multiline": true
+        }
+      ],
+      "tables": [
+        {
+          "id": "measurements",
+          "title": "Before / after wash comparison",
+          "columns": [
+            {
+              "key": "line",
+              "label": "Line",
+              "type": "readonly"
+            },
+            {
+              "key": "pom",
+              "label": "P O M",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "label": "DESCRIPTION",
+              "type": "text"
+            },
+            {
+              "key": "atarget",
+              "label": "Round A · Target",
+              "type": "measurement",
+              "allowNegative": false,
+              "formula": null,
+              "stage": "a"
+            },
+            {
+              "key": "abefore",
+              "label": "Round A · B4 wash",
+              "type": "measurement",
+              "allowNegative": false,
+              "formula": null,
+              "stage": "a"
+            },
+            {
+              "key": "aafter",
+              "label": "Round A · After Wash",
+              "type": "measurement",
+              "allowNegative": false,
+              "formula": null,
+              "stage": "a"
+            },
+            {
+              "key": "adelta",
+              "label": "Round A · −/+",
+              "type": "calculated",
+              "allowNegative": false,
+              "formula": "target-minus-after",
+              "stage": "a",
+              "formulaRows": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23",
+                "24",
+                "25",
+                "26",
+                "27",
+                "28",
+                "29",
+                "32"
+              ]
+            },
+            {
+              "key": "aadjustment",
+              "label": "Round A · Adj.",
+              "type": "measurement",
+              "allowNegative": true,
+              "formula": null,
+              "stage": "a"
+            },
+            {
+              "key": "btarget",
+              "label": "Round B · Target",
+              "type": "measurement",
+              "allowNegative": false,
+              "formula": null,
+              "stage": "b"
+            },
+            {
+              "key": "bbefore",
+              "label": "Round B · B4 wash",
+              "type": "measurement",
+              "allowNegative": false,
+              "formula": null,
+              "stage": "b"
+            },
+            {
+              "key": "bafter",
+              "label": "Round B · After Wash",
+              "type": "measurement",
+              "allowNegative": false,
+              "formula": null,
+              "stage": "b"
+            },
+            {
+              "key": "bdelta",
+              "label": "Round B · −/+",
+              "type": "calculated",
+              "allowNegative": false,
+              "formula": "target-minus-after",
+              "stage": "b",
+              "formulaRows": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23",
+                "24",
+                "25",
+                "26",
+                "27",
+                "28",
+                "29",
+                "32"
+              ]
+            },
+            {
+              "key": "badjustment",
+              "label": "Round B · Adj.",
+              "type": "measurement",
+              "allowNegative": true,
+              "formula": null,
+              "stage": "b"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 11,
+              "values": {
+                "line": "1"
+              }
+            },
+            {
+              "id": "2",
+              "sourceRow": 12,
+              "values": {
+                "line": "2"
+              }
+            },
+            {
+              "id": "3",
+              "sourceRow": 13,
+              "values": {
+                "line": "3"
+              }
+            },
+            {
+              "id": "4",
+              "sourceRow": 14,
+              "values": {
+                "line": "4"
+              }
+            },
+            {
+              "id": "5",
+              "sourceRow": 15,
+              "values": {
+                "line": "5"
+              }
+            },
+            {
+              "id": "6",
+              "sourceRow": 16,
+              "values": {
+                "line": "6"
+              }
+            },
+            {
+              "id": "7",
+              "sourceRow": 17,
+              "values": {
+                "line": "7"
+              }
+            },
+            {
+              "id": "8",
+              "sourceRow": 18,
+              "values": {
+                "line": "8"
+              }
+            },
+            {
+              "id": "9",
+              "sourceRow": 19,
+              "values": {
+                "line": "9"
+              }
+            },
+            {
+              "id": "10",
+              "sourceRow": 20,
+              "values": {
+                "line": "10"
+              }
+            },
+            {
+              "id": "11",
+              "sourceRow": 21,
+              "values": {
+                "line": "11"
+              }
+            },
+            {
+              "id": "12",
+              "sourceRow": 22,
+              "values": {
+                "line": "12"
+              }
+            },
+            {
+              "id": "13",
+              "sourceRow": 23,
+              "values": {
+                "line": "13"
+              }
+            },
+            {
+              "id": "14",
+              "sourceRow": 24,
+              "values": {
+                "line": "14"
+              }
+            },
+            {
+              "id": "15",
+              "sourceRow": 25,
+              "values": {
+                "line": "15"
+              }
+            },
+            {
+              "id": "16",
+              "sourceRow": 26,
+              "values": {
+                "line": "16"
+              }
+            },
+            {
+              "id": "17",
+              "sourceRow": 27,
+              "values": {
+                "line": "17"
+              }
+            },
+            {
+              "id": "18",
+              "sourceRow": 28,
+              "values": {
+                "line": "18"
+              }
+            },
+            {
+              "id": "19",
+              "sourceRow": 29,
+              "values": {
+                "line": "19"
+              }
+            },
+            {
+              "id": "20",
+              "sourceRow": 30,
+              "values": {
+                "line": "20"
+              }
+            },
+            {
+              "id": "21",
+              "sourceRow": 31,
+              "values": {
+                "line": "21"
+              }
+            },
+            {
+              "id": "22",
+              "sourceRow": 32,
+              "values": {
+                "line": "22"
+              }
+            },
+            {
+              "id": "23",
+              "sourceRow": 33,
+              "values": {
+                "line": "23"
+              }
+            },
+            {
+              "id": "24",
+              "sourceRow": 34,
+              "values": {
+                "line": "24"
+              }
+            },
+            {
+              "id": "25",
+              "sourceRow": 35,
+              "values": {
+                "line": "25"
+              }
+            },
+            {
+              "id": "26",
+              "sourceRow": 36,
+              "values": {
+                "line": "26"
+              }
+            },
+            {
+              "id": "27",
+              "sourceRow": 37,
+              "values": {
+                "line": "27"
+              }
+            },
+            {
+              "id": "28",
+              "sourceRow": 38,
+              "values": {
+                "line": "28"
+              }
+            },
+            {
+              "id": "29",
+              "sourceRow": 40,
+              "values": {
+                "line": "SPEC 1"
+              }
+            },
+            {
+              "id": "30",
+              "sourceRow": 41,
+              "values": {
+                "line": "SPEC 2"
+              },
+              "columnOverrides": {
+                "adelta": {
+                  "type": "measurement",
+                  "allowNegative": true,
+                  "formula": null,
+                  "formulaRows": null
+                },
+                "bdelta": {
+                  "type": "measurement",
+                  "allowNegative": true,
+                  "formula": null,
+                  "formulaRows": null
+                }
+              }
+            },
+            {
+              "id": "31",
+              "sourceRow": 42,
+              "values": {
+                "line": "SPEC 3"
+              },
+              "columnOverrides": {
+                "adelta": {
+                  "type": "measurement",
+                  "allowNegative": true,
+                  "formula": null,
+                  "formulaRows": null
+                },
+                "bdelta": {
+                  "type": "measurement",
+                  "allowNegative": true,
+                  "formula": null,
+                  "formulaRows": null
+                }
+              }
+            },
+            {
+              "id": "32",
+              "sourceRow": 43,
+              "values": {
+                "line": "SPEC 4"
+              }
+            }
+          ],
+          "note": "28 numbered rows and 4 FOR SPECS ONLY rows. Source spec rows 1 and 4 calculate Target minus After Wash; spec rows 2 and 3 retain manual signed delta entry cells."
+        }
+      ],
+      "attachments": []
+    },
+    {
+      "id": "fit",
+      "title": "FIT & COM",
+      "shortTitle": "Fit & comments",
+      "note": "Fitting references, sample photographs, participants and comments.",
+      "fields": [
+        {
+          "key": "style",
+          "label": "STYLE # · linked from Pattern Card",
+          "sourceCell": "C3",
+          "type": "calculated"
+        },
+        {
+          "key": "stage",
+          "label": "STAGE",
+          "sourceCell": ""
+        },
+        {
+          "key": "refPattern",
+          "label": "Ref Pattern",
+          "sourceCell": ""
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "sourceCell": ""
+        },
+        {
+          "key": "fabric",
+          "label": "Fabric",
+          "sourceCell": ""
+        },
+        {
+          "key": "roll",
+          "label": "Roll #",
+          "sourceCell": ""
+        },
+        {
+          "key": "wash",
+          "label": "Wash",
+          "sourceCell": ""
+        },
+        {
+          "key": "measurements",
+          "label": "Measurements",
+          "sourceCell": ""
+        },
+        {
+          "key": "date",
+          "label": "Date",
+          "sourceCell": "",
+          "inputType": "date"
+        },
+        {
+          "key": "sampleSize",
+          "label": "Sample Size",
+          "sourceCell": ""
+        },
+        {
+          "key": "season",
+          "label": "Season",
+          "sourceCell": ""
+        },
+        {
+          "key": "sampleStage",
+          "label": "SAMPLE STAGE",
+          "sourceCell": ""
+        },
+        {
+          "key": "size",
+          "label": "SIZE",
+          "sourceCell": ""
+        },
+        {
+          "key": "width",
+          "label": "W",
+          "sourceCell": ""
+        },
+        {
+          "key": "length",
+          "label": "L",
+          "sourceCell": ""
+        },
+        {
+          "key": "attendees",
+          "label": "FIT ATTENDEES",
+          "sourceCell": "",
+          "multiline": true
+        },
+        {
+          "key": "model",
+          "label": "MODEL",
+          "sourceCell": ""
+        },
+        {
+          "key": "patternMaker",
+          "label": "PATTERN MAKER",
+          "sourceCell": ""
+        },
+        {
+          "key": "comments",
+          "label": "Fit & comments",
+          "sourceCell": "A59:N62",
+          "multiline": true
+        }
+      ],
+      "tables": [],
+      "attachments": [
+        {
+          "key": "headerReference",
+          "label": "Header reference area · source unlabelled",
+          "sourceRange": "J1:N9"
+        },
+        {
+          "key": "sample1",
+          "label": "SAMPLE PICS · 1",
+          "sourceRange": "A11:N54"
+        },
+        {
+          "key": "sample2",
+          "label": "SAMPLE PICS · 2",
+          "sourceRange": "A11:N54"
+        },
+        {
+          "key": "sample3",
+          "label": "SAMPLE PICS · 3",
+          "sourceRange": "A11:N54"
+        }
+      ]
+    },
+    {
+      "id": "graded",
+      "title": "GRADED SPECS",
+      "shortTitle": "Graded specs",
+      "note": "Before- and after-wash size grids. Size names and grading values are supplied by the pattern maker; no grade rules are inferred.",
+      "fields": [
+        {
+          "key": "style",
+          "label": "Style",
+          "sourceCell": ""
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "sourceCell": ""
+        },
+        {
+          "key": "group",
+          "label": "Group",
+          "sourceCell": ""
+        },
+        {
+          "key": "wash",
+          "label": "Wash",
+          "sourceCell": ""
+        },
+        {
+          "key": "washColor",
+          "label": "Wash Color Code",
+          "sourceCell": ""
+        },
+        {
+          "key": "selfFabric",
+          "label": "Fabric Self",
+          "sourceCell": ""
+        },
+        {
+          "key": "selfContent",
+          "label": "Content · self",
+          "sourceCell": ""
+        },
+        {
+          "key": "liningFabric",
+          "label": "Fabric Lining",
+          "sourceCell": ""
+        },
+        {
+          "key": "liningContent",
+          "label": "Content · lining",
+          "sourceCell": ""
+        },
+        {
+          "key": "patternNumber",
+          "label": "Pattern Number",
+          "sourceCell": ""
+        },
+        {
+          "key": "sizeF",
+          "label": "Size header 1 · F",
+          "sourceCell": "F10 / F40"
+        },
+        {
+          "key": "sizeG",
+          "label": "Size header 2 · G",
+          "sourceCell": "G10 / G40"
+        },
+        {
+          "key": "sizeH",
+          "label": "Size header 3 · H",
+          "sourceCell": "H10 / H40"
+        },
+        {
+          "key": "sizeI",
+          "label": "Size header 4 · I",
+          "sourceCell": "I10 / I40"
+        },
+        {
+          "key": "sizeJ",
+          "label": "Size header 5 · J",
+          "sourceCell": "J10 / J40"
+        },
+        {
+          "key": "sizeK",
+          "label": "Size header 6 · K",
+          "sourceCell": "K10 / K40"
+        },
+        {
+          "key": "sizeL",
+          "label": "Size header 7 · L",
+          "sourceCell": "L10 / L40"
+        },
+        {
+          "key": "sizeM",
+          "label": "Size header 8 · M",
+          "sourceCell": "M10 / M40"
+        },
+        {
+          "key": "sizeN",
+          "label": "Size header 9 · N",
+          "sourceCell": "N10 / N40"
+        },
+        {
+          "key": "sizeO",
+          "label": "Size header 10 · O",
+          "sourceCell": "O10 / O40"
+        },
+        {
+          "key": "sizeP",
+          "label": "Size header 11 · P",
+          "sourceCell": "P10 / P40"
+        }
+      ],
+      "tables": [
+        {
+          "id": "before",
+          "title": "Graded Measurements — Before Wash",
+          "columns": [
+            {
+              "key": "line",
+              "label": "Line",
+              "type": "readonly"
+            },
+            {
+              "key": "pom",
+              "label": "P O M",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "label": "DESCRIPTION",
+              "type": "text"
+            },
+            {
+              "key": "tolerance",
+              "label": "Tol (+−)",
+              "type": "measurement"
+            },
+            {
+              "key": "sizeF",
+              "label": "Size 1",
+              "type": "measurement",
+              "headerField": "sizeF"
+            },
+            {
+              "key": "sizeG",
+              "label": "Size 2",
+              "type": "measurement",
+              "headerField": "sizeG"
+            },
+            {
+              "key": "sizeH",
+              "label": "Size 3",
+              "type": "measurement",
+              "headerField": "sizeH"
+            },
+            {
+              "key": "sizeI",
+              "label": "Size 4",
+              "type": "measurement",
+              "headerField": "sizeI"
+            },
+            {
+              "key": "sizeJ",
+              "label": "Size 5",
+              "type": "measurement",
+              "headerField": "sizeJ"
+            },
+            {
+              "key": "sizeK",
+              "label": "Size 6",
+              "type": "measurement",
+              "headerField": "sizeK"
+            },
+            {
+              "key": "sizeL",
+              "label": "Size 7",
+              "type": "measurement",
+              "headerField": "sizeL"
+            },
+            {
+              "key": "sizeM",
+              "label": "Size 8",
+              "type": "measurement",
+              "headerField": "sizeM"
+            },
+            {
+              "key": "sizeN",
+              "label": "Size 9",
+              "type": "measurement",
+              "headerField": "sizeN"
+            },
+            {
+              "key": "sizeO",
+              "label": "Size 10",
+              "type": "measurement",
+              "headerField": "sizeO"
+            },
+            {
+              "key": "sizeP",
+              "label": "Size 11",
+              "type": "measurement",
+              "headerField": "sizeP"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 11,
+              "values": {
+                "line": "1"
+              }
+            },
+            {
+              "id": "2",
+              "sourceRow": 12,
+              "values": {
+                "line": "2"
+              }
+            },
+            {
+              "id": "3",
+              "sourceRow": 13,
+              "values": {
+                "line": "3"
+              }
+            },
+            {
+              "id": "4",
+              "sourceRow": 14,
+              "values": {
+                "line": "4"
+              }
+            },
+            {
+              "id": "5",
+              "sourceRow": 15,
+              "values": {
+                "line": "5"
+              }
+            },
+            {
+              "id": "6",
+              "sourceRow": 16,
+              "values": {
+                "line": "6"
+              }
+            },
+            {
+              "id": "7",
+              "sourceRow": 17,
+              "values": {
+                "line": "7"
+              }
+            },
+            {
+              "id": "8",
+              "sourceRow": 18,
+              "values": {
+                "line": "8"
+              }
+            },
+            {
+              "id": "9",
+              "sourceRow": 19,
+              "values": {
+                "line": "9"
+              }
+            },
+            {
+              "id": "10",
+              "sourceRow": 20,
+              "values": {
+                "line": "10"
+              }
+            },
+            {
+              "id": "11",
+              "sourceRow": 21,
+              "values": {
+                "line": "11"
+              }
+            },
+            {
+              "id": "12",
+              "sourceRow": 22,
+              "values": {
+                "line": "12"
+              }
+            },
+            {
+              "id": "13",
+              "sourceRow": 23,
+              "values": {
+                "line": "13"
+              }
+            },
+            {
+              "id": "14",
+              "sourceRow": 24,
+              "values": {
+                "line": "14"
+              }
+            },
+            {
+              "id": "15",
+              "sourceRow": 25,
+              "values": {
+                "line": "15"
+              }
+            },
+            {
+              "id": "16",
+              "sourceRow": 26,
+              "values": {
+                "line": "16"
+              }
+            },
+            {
+              "id": "17",
+              "sourceRow": 27,
+              "values": {
+                "line": "17"
+              }
+            },
+            {
+              "id": "18",
+              "sourceRow": 28,
+              "values": {
+                "line": "18"
+              }
+            },
+            {
+              "id": "19",
+              "sourceRow": 29,
+              "values": {
+                "line": "19"
+              }
+            },
+            {
+              "id": "20",
+              "sourceRow": 30,
+              "values": {
+                "line": "20"
+              }
+            },
+            {
+              "id": "21",
+              "sourceRow": 31,
+              "values": {
+                "line": "21"
+              }
+            },
+            {
+              "id": "22",
+              "sourceRow": 32,
+              "values": {
+                "line": "22"
+              }
+            },
+            {
+              "id": "23",
+              "sourceRow": 33,
+              "values": {
+                "line": "23"
+              }
+            },
+            {
+              "id": "24",
+              "sourceRow": 34,
+              "values": {
+                "line": "24"
+              }
+            },
+            {
+              "id": "25",
+              "sourceRow": 35,
+              "values": {
+                "line": "25"
+              }
+            },
+            {
+              "id": "26",
+              "sourceRow": 36,
+              "values": {
+                "line": "26"
+              }
+            },
+            {
+              "id": "27",
+              "sourceRow": 37,
+              "values": {
+                "line": "27"
+              }
+            },
+            {
+              "id": "28",
+              "sourceRow": 38,
+              "values": {
+                "line": "28"
+              }
+            }
+          ]
+        },
+        {
+          "id": "after",
+          "title": "Graded Measurements — After Wash",
+          "columns": [
+            {
+              "key": "line",
+              "label": "Line",
+              "type": "readonly"
+            },
+            {
+              "key": "pom",
+              "label": "P O M",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "label": "DESCRIPTION",
+              "type": "text"
+            },
+            {
+              "key": "tolerance",
+              "label": "Tol (+−)",
+              "type": "measurement"
+            },
+            {
+              "key": "sizeF",
+              "label": "Size 1",
+              "type": "measurement",
+              "headerField": "sizeF"
+            },
+            {
+              "key": "sizeG",
+              "label": "Size 2",
+              "type": "measurement",
+              "headerField": "sizeG"
+            },
+            {
+              "key": "sizeH",
+              "label": "Size 3",
+              "type": "measurement",
+              "headerField": "sizeH"
+            },
+            {
+              "key": "sizeI",
+              "label": "Size 4",
+              "type": "measurement",
+              "headerField": "sizeI"
+            },
+            {
+              "key": "sizeJ",
+              "label": "Size 5",
+              "type": "measurement",
+              "headerField": "sizeJ"
+            },
+            {
+              "key": "sizeK",
+              "label": "Size 6",
+              "type": "measurement",
+              "headerField": "sizeK"
+            },
+            {
+              "key": "sizeL",
+              "label": "Size 7",
+              "type": "measurement",
+              "headerField": "sizeL"
+            },
+            {
+              "key": "sizeM",
+              "label": "Size 8",
+              "type": "measurement",
+              "headerField": "sizeM"
+            },
+            {
+              "key": "sizeN",
+              "label": "Size 9",
+              "type": "measurement",
+              "headerField": "sizeN"
+            },
+            {
+              "key": "sizeO",
+              "label": "Size 10",
+              "type": "measurement",
+              "headerField": "sizeO"
+            },
+            {
+              "key": "sizeP",
+              "label": "Size 11",
+              "type": "measurement",
+              "headerField": "sizeP"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 41,
+              "values": {
+                "line": "1"
+              }
+            },
+            {
+              "id": "2",
+              "sourceRow": 42,
+              "values": {
+                "line": "2"
+              }
+            },
+            {
+              "id": "3",
+              "sourceRow": 43,
+              "values": {
+                "line": "3"
+              }
+            },
+            {
+              "id": "4",
+              "sourceRow": 44,
+              "values": {
+                "line": "4"
+              }
+            },
+            {
+              "id": "5",
+              "sourceRow": 45,
+              "values": {
+                "line": "5"
+              }
+            },
+            {
+              "id": "6",
+              "sourceRow": 46,
+              "values": {
+                "line": "6"
+              }
+            },
+            {
+              "id": "7",
+              "sourceRow": 47,
+              "values": {
+                "line": "7"
+              }
+            },
+            {
+              "id": "8",
+              "sourceRow": 48,
+              "values": {
+                "line": "8"
+              }
+            },
+            {
+              "id": "9",
+              "sourceRow": 49,
+              "values": {
+                "line": "9"
+              }
+            },
+            {
+              "id": "10",
+              "sourceRow": 50,
+              "values": {
+                "line": "10"
+              }
+            },
+            {
+              "id": "11",
+              "sourceRow": 51,
+              "values": {
+                "line": "11"
+              }
+            },
+            {
+              "id": "12",
+              "sourceRow": 52,
+              "values": {
+                "line": "12"
+              }
+            },
+            {
+              "id": "13",
+              "sourceRow": 53,
+              "values": {
+                "line": "13"
+              }
+            },
+            {
+              "id": "14",
+              "sourceRow": 54,
+              "values": {
+                "line": "14"
+              }
+            },
+            {
+              "id": "15",
+              "sourceRow": 55,
+              "values": {
+                "line": "15"
+              }
+            },
+            {
+              "id": "16",
+              "sourceRow": 56,
+              "values": {
+                "line": "16"
+              }
+            },
+            {
+              "id": "17",
+              "sourceRow": 57,
+              "values": {
+                "line": "17"
+              }
+            },
+            {
+              "id": "18",
+              "sourceRow": 58,
+              "values": {
+                "line": "18"
+              }
+            },
+            {
+              "id": "19",
+              "sourceRow": 59,
+              "values": {
+                "line": "19"
+              }
+            },
+            {
+              "id": "20",
+              "sourceRow": 60,
+              "values": {
+                "line": "20"
+              }
+            },
+            {
+              "id": "21",
+              "sourceRow": 61,
+              "values": {
+                "line": "21"
+              }
+            },
+            {
+              "id": "22",
+              "sourceRow": 62,
+              "values": {
+                "line": "22"
+              }
+            },
+            {
+              "id": "23",
+              "sourceRow": 63,
+              "values": {
+                "line": "23"
+              }
+            },
+            {
+              "id": "24",
+              "sourceRow": 64,
+              "values": {
+                "line": "24"
+              }
+            },
+            {
+              "id": "25",
+              "sourceRow": 65,
+              "values": {
+                "line": "25"
+              }
+            },
+            {
+              "id": "26",
+              "sourceRow": 66,
+              "values": {
+                "line": "26"
+              }
+            },
+            {
+              "id": "27",
+              "sourceRow": 67,
+              "values": {
+                "line": "27"
+              }
+            },
+            {
+              "id": "28",
+              "sourceRow": 68,
+              "values": {
+                "line": "28"
+              }
+            }
+          ]
+        }
+      ],
+      "attachments": []
+    },
+    {
+      "id": "master",
+      "title": "00-MEASUREMENT SHEET MASTER",
+      "shortTitle": "Measurement master",
+      "note": "Garment specifications remain separate from body and fit-form references. Delta = Sample Actual − Approved Base Spec.",
+      "fields": [
+        {
+          "key": "style",
+          "label": "STYLE #",
+          "sourceCell": "C4"
+        },
+        {
+          "key": "description",
+          "label": "DESCRIPTION",
+          "sourceCell": "C5"
+        },
+        {
+          "key": "category",
+          "label": "CATEGORY",
+          "sourceCell": "C6"
+        },
+        {
+          "key": "season",
+          "label": "SEASON",
+          "sourceCell": "C7"
+        },
+        {
+          "key": "status",
+          "label": "STATUS",
+          "sourceCell": "C8"
+        },
+        {
+          "key": "sizeRange",
+          "label": "SIZE RANGE",
+          "sourceCell": "I4"
+        },
+        {
+          "key": "sampleSize",
+          "label": "SAMPLE SIZE",
+          "sourceCell": "I5"
+        },
+        {
+          "key": "fabric",
+          "label": "FABRIC",
+          "sourceCell": "I6"
+        },
+        {
+          "key": "content",
+          "label": "CONTENT",
+          "sourceCell": "I7"
+        },
+        {
+          "key": "maker",
+          "label": "FACTORY / MAKER",
+          "sourceCell": "I8"
+        },
+        {
+          "key": "revision",
+          "label": "REVISION / PAGE",
+          "sourceCell": "I2"
+        }
+      ],
+      "attachments": [
+        {
+          "key": "front",
+          "label": "FRONT FLAT",
+          "sourceRange": "A10:F28"
+        },
+        {
+          "key": "back",
+          "label": "BACK FLAT",
+          "sourceRange": "G10:L28"
+        }
+      ],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "BASE SIZE MEASUREMENT SPECIFICATION",
+          "columns": [
+            {
+              "key": "pom",
+              "label": "POM",
+              "type": "text"
+            },
+            {
+              "key": "critical",
+              "label": "CRIT",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "label": "POM DESCRIPTION",
+              "type": "text"
+            },
+            {
+              "key": "method",
+              "label": "HOW TO MEASURE",
+              "type": "text"
+            },
+            {
+              "key": "tolerance",
+              "label": "TOL (+−)",
+              "type": "measurement"
+            },
+            {
+              "key": "gradeRule",
+              "label": "GRADE RULE",
+              "type": "text"
+            },
+            {
+              "key": "base",
+              "label": "APPROVED BASE SPEC",
+              "type": "measurement"
+            },
+            {
+              "key": "actual",
+              "label": "SAMPLE ACTUAL",
+              "type": "measurement"
+            },
+            {
+              "key": "delta",
+              "label": "DELTA",
+              "type": "calculated",
+              "formula": "actual-minus-base"
+            },
+            {
+              "key": "target",
+              "label": "TARGET SPEC",
+              "type": "measurement"
+            },
+            {
+              "key": "revision",
+              "label": "REV / DATE",
+              "type": "text"
+            },
+            {
+              "key": "note",
+              "label": "FIT / ACTION NOTE",
+              "type": "text"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 31,
+              "values": {}
+            },
+            {
+              "id": "2",
+              "sourceRow": 32,
+              "values": {}
+            },
+            {
+              "id": "3",
+              "sourceRow": 33,
+              "values": {}
+            },
+            {
+              "id": "4",
+              "sourceRow": 34,
+              "values": {}
+            },
+            {
+              "id": "5",
+              "sourceRow": 35,
+              "values": {}
+            },
+            {
+              "id": "6",
+              "sourceRow": 36,
+              "values": {}
+            },
+            {
+              "id": "7",
+              "sourceRow": 37,
+              "values": {}
+            },
+            {
+              "id": "8",
+              "sourceRow": 38,
+              "values": {}
+            },
+            {
+              "id": "9",
+              "sourceRow": 39,
+              "values": {}
+            },
+            {
+              "id": "10",
+              "sourceRow": 40,
+              "values": {}
+            },
+            {
+              "id": "11",
+              "sourceRow": 41,
+              "values": {}
+            },
+            {
+              "id": "12",
+              "sourceRow": 42,
+              "values": {}
+            },
+            {
+              "id": "13",
+              "sourceRow": 43,
+              "values": {}
+            },
+            {
+              "id": "14",
+              "sourceRow": 44,
+              "values": {}
+            },
+            {
+              "id": "15",
+              "sourceRow": 45,
+              "values": {}
+            },
+            {
+              "id": "16",
+              "sourceRow": 46,
+              "values": {}
+            },
+            {
+              "id": "17",
+              "sourceRow": 47,
+              "values": {}
+            },
+            {
+              "id": "18",
+              "sourceRow": 48,
+              "values": {}
+            },
+            {
+              "id": "19",
+              "sourceRow": 49,
+              "values": {}
+            },
+            {
+              "id": "20",
+              "sourceRow": 50,
+              "values": {}
+            },
+            {
+              "id": "21",
+              "sourceRow": 51,
+              "values": {}
+            },
+            {
+              "id": "22",
+              "sourceRow": 52,
+              "values": {}
+            },
+            {
+              "id": "23",
+              "sourceRow": 53,
+              "values": {}
+            },
+            {
+              "id": "24",
+              "sourceRow": 54,
+              "values": {}
+            },
+            {
+              "id": "25",
+              "sourceRow": 55,
+              "values": {}
+            },
+            {
+              "id": "26",
+              "sourceRow": 56,
+              "values": {}
+            },
+            {
+              "id": "27",
+              "sourceRow": 57,
+              "values": {}
+            },
+            {
+              "id": "28",
+              "sourceRow": 58,
+              "values": {}
+            },
+            {
+              "id": "29",
+              "sourceRow": 59,
+              "values": {}
+            },
+            {
+              "id": "30",
+              "sourceRow": 60,
+              "values": {}
+            }
+          ],
+          "note": "A base-spec entry does not grant approval. Delta is calculated for each app row using the source formula pattern. Source examples are retained in the source notes, not loaded into a new garment draft."
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "title": "BODY REF-MANNEQUIN-SIZE 8-V1",
+      "shortTitle": "Mannequin reference",
+      "note": "SR-FORM-001 · Approved house standard · Canonical inches · Read-only measurements.",
+      "fields": [
+        {
+          "key": "manufacturer",
+          "label": "MANUFACTURER · source blank",
+          "sourceCell": ""
+        },
+        {
+          "key": "model",
+          "label": "MODEL / FORM · source blank",
+          "sourceCell": ""
+        },
+        {
+          "key": "measurementDate",
+          "label": "MEASUREMENT DATE · source placeholder",
+          "sourceCell": ""
+        },
+        {
+          "key": "measuredBy",
+          "label": "MEASURED BY · draft note",
+          "sourceCell": ""
+        },
+        {
+          "key": "observation",
+          "label": "Reference observations",
+          "sourceCell": "",
+          "multiline": true
+        }
+      ],
+      "tables": [
+        {
+          "id": "referenceNotes",
+          "title": "HOUSE TARGET / RECORD NOTES",
+          "columns": [
+            {
+              "key": "pom",
+              "label": "POM",
+              "type": "readonly"
+            },
+            {
+              "key": "critical",
+              "label": "CRIT",
+              "type": "text"
+            },
+            {
+              "key": "houseTarget",
+              "label": "HOUSE TARGET",
+              "type": "measurement"
+            },
+            {
+              "key": "targetDelta",
+              "label": "TARGET DELTA",
+              "type": "readonly"
+            },
+            {
+              "key": "status",
+              "label": "STATUS",
+              "type": "text"
+            },
+            {
+              "key": "revision",
+              "label": "REV / DATE",
+              "type": "text"
+            },
+            {
+              "key": "note",
+              "label": "FIT / OBSERVATION",
+              "type": "text"
+            }
+          ],
+          "rows": [
+            {
+              "id": "1",
+              "sourceRow": 32,
+              "values": {
+                "pom": "BF-01",
+                "targetDelta": "Unresolved source formula"
+              }
+            },
+            {
+              "id": "2",
+              "sourceRow": 33,
+              "values": {
+                "pom": "BF-02",
+                "targetDelta": "Unresolved source formula"
+              }
+            },
+            {
+              "id": "3",
+              "sourceRow": 34,
+              "values": {
+                "pom": "BF-03",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "4",
+              "sourceRow": 35,
+              "values": {
+                "pom": "BF-04",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "5",
+              "sourceRow": 36,
+              "values": {
+                "pom": "BF-05",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "6",
+              "sourceRow": 37,
+              "values": {
+                "pom": "BF-06",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "7",
+              "sourceRow": 38,
+              "values": {
+                "pom": "BF-07",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "8",
+              "sourceRow": 39,
+              "values": {
+                "pom": "BF-08",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "9",
+              "sourceRow": 40,
+              "values": {
+                "pom": "BF-09",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "10",
+              "sourceRow": 41,
+              "values": {
+                "pom": "BF-10",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "11",
+              "sourceRow": 42,
+              "values": {
+                "pom": "BF-11",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "12",
+              "sourceRow": 43,
+              "values": {
+                "pom": "BF-12",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "13",
+              "sourceRow": 44,
+              "values": {
+                "pom": "BF-13",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "14",
+              "sourceRow": 45,
+              "values": {
+                "pom": "BF-14",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "15",
+              "sourceRow": 46,
+              "values": {
+                "pom": "BF-15",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "16",
+              "sourceRow": 47,
+              "values": {
+                "pom": "BF-16",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "17",
+              "sourceRow": 48,
+              "values": {
+                "pom": "BF-17",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "18",
+              "sourceRow": 49,
+              "values": {
+                "pom": "BF-18",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "19",
+              "sourceRow": 50,
+              "values": {
+                "pom": "BF-19",
+                "targetDelta": "—"
+              }
+            },
+            {
+              "id": "20",
+              "sourceRow": 51,
+              "values": {
+                "pom": "BF-20",
+                "targetDelta": "—"
+              }
+            }
+          ],
+          "note": "Source target formulas I31:I33 subtract column G (DELTA), not ACTUAL FORM. Their intended meaning is unresolved. TARGET DELTA remains unavailable; raw formulas are preserved in Source notes. No approval or garment target is inferred."
+        }
+      ],
+      "attachments": [],
+      "reference": true
+    }
+  ],
+  "unitPolicy": "The source does not declare garment units. A new pack requires a unit choice before measurement entry. Garment values are stored in canonical CM; the approved house reference stays canonical IN.",
+  "sourceExamples": {
+    "sheet": "00-MEASUREMENT SHEET MASTER",
+    "unit": null,
+    "rows": [
+      {
+        "cells": "G31:H31",
+        "base": 20,
+        "actual": 24.75
+      },
+      {
+        "cells": "G32:H32",
+        "base": 25,
+        "actual": 37
+      },
+      {
+        "cells": "G33:H33",
+        "base": 25,
+        "actual": 24.75
+      }
+    ],
+    "note": "Unlabelled source examples with no POM or unit. Not approved garment specifications."
+  }
+}

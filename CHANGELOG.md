@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.5.0 — Six-tab tech pack workroom — 2026-10-22
+
+- Implement every tab of the supplied V2 workbook in the established house style: Pattern Card, both wash rounds, Fit & Comments, before/after graded grids, garment Measurement Master and approved mannequin reference.
+- Add unit-aware editable tables, local raster references, browser pack saves, validated JSON transfer, sheet CSV, keyboard tabs, POM search and complete current/all-sheet printing.
+- Preserve all original source cells/formulas separately; leave unassigned garment examples blank and expose unresolved body-target formula semantics. Approved measurements and prior intake/generator workflows are unchanged.
+
+
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
 ## Case 1 metadata colors and centimeter display — 2026-10-22

@@ -138,6 +138,12 @@ cannot save and still offers downloads. There are no external services or assets
 The local server binds only to this computer. New session data is stored locally
 and is not automatically committed, uploaded, or deployed as a website.
 
+## Six-tab tech pack workroom (v0.5.0)
+
+Extract the project ZIP and open **[tech-pack.html](tech-pack.html)**. The complete supplied workbook now has coordinated Pattern Card, Wash Specs, Fit & Comments, Graded Specs, Measurement Master and Mannequin Reference tabs in the established house style. Choose garment units, enter specifications, attach local drawings, save/reopen packs, download/import JSON, export sheet CSV and print the current sheet or all six. The approved mannequin measurements remain read-only.
+
+See [the workroom guide](docs/tech-pack-workroom.md) for every source section, formula, unresolved workbook detail, and local-data behavior. The original Drive workbook is unchanged. New garment tables start blank; source example values never become approved specs.
+
 ## Run it locally
 
 Use **Node.js 24+**. SQLite comes from Node's built-in `node:sqlite` module; there are **no third-party packages to install** and no database service to start.
@@ -157,6 +163,8 @@ Open `reports/SR-FORM-001-measurement-sheet.html` locally in a browser. Both she
 | Command | Purpose |
 |---|---|
 | `npm test` | Run all baseline, database, session-calculation, and API tests |
+| `npm run techpack` | Preview the offline six-tab app at localhost:3003 |
+| `npm run techpack:build` | Build the blank, self-contained tech-pack.html |
 | `npm run intake` | Start the client-intake app with separate local SQLite storage |
 | `npm run intake:build` | Build the self-contained client-intake HTML with browser storage |
 | `npm run generator` | Start the interactive local measurement-entry app with SQLite session storage |
@@ -186,9 +194,10 @@ Their provenance is `MEASUREMENT SHEET_SERPENTIS REGINA`, tab `BODY REF-MANNEQUI
 | **v0.2.0** | SQLite import, persistence checks, and database-backed HTML | 16 tests | Database implementation at `9bee461` |
 | **v0.3.0** | New measurement entry, live deltas, saved sessions, exports, and standalone HTML | Baseline, session, and API suites | Generator milestone |
 | **v0.3.1** | Ready-to-open HTML included in the downloadable project ZIP | 31 tests + browser acceptance | Packaged 20-POM generator |
+| **v0.5.0** | Six source tabs, garment specs, graded grids, local images, pack save/import/export and complete printing | Core, source and browser acceptance | Packaged tech-pack workroom |
 | **v0.4.0** | Workbook-based 34-POM client intake, CM/IN, saved drafts, and import/export/print | Intake calculation/API and existing suites | Current packaged application |
 
-Application versions, measurement revisions, and JSON schema versions describe different things. **v0.4.0** is the packaged application version; **SR-FORM-001 v1** is the approved measurement dataset; **`schemaVersion: "1.0"`** describes the baseline JSON format. The separate client-intake template has its own identity and revision. Adding the intake did not revise the approved house measurements.
+Application versions, measurement revisions, and JSON schema versions describe different things. **v0.5.0** is the packaged application version; **SR-FORM-001 v1** is the approved measurement dataset; **`schemaVersion: "1.0"`** describes the baseline JSON format. The separate client-intake template has its own identity and revision. Adding the intake did not revise the approved house measurements.
 
 See the [changelog](CHANGELOG.md) for the development and publication record.
 
@@ -209,4 +218,4 @@ See the [changelog](CHANGELOG.md) for the development and publication record.
 
 ## Prototype scope
 
-This is a local measurement register, session-entry, and client-intake prototype, rather than a complete production PLM system. The approved baseline is read-only, and its importer supports SR-FORM-001 v1. New measurement sessions and client drafts are stored separately. Remote client submissions, attachment storage, multiuser editing, accounts and permissions, live spreadsheet integration, tech-pack generation, grading, and general baseline revision management are future work. The existing approved revision is never silently overwritten.
+This is a local technical-design prototype with measurement registers, client intake and six-tab tech packs. Approved baseline data stays read-only. Pack images and drafts are saved locally and transferred through JSON backups. Remote submissions, multiuser editing, accounts and permissions, live spreadsheet synchronization, automatic grading rules and general baseline revision management remain future work. The existing approved revision is never silently overwritten.
