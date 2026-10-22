@@ -35,39 +35,53 @@ surfaces. It supersedes the previous blue-fill/pink-text instruction.
 
 The Electric/Ruby rule applies to this report's blue-filled regions as well.
 **Ruby text is scoped to Electric fills**: section headers, chart headings,
-and blue-filled selected or hovered buttons. Outside blue fills, preserve
-the existing **ash-charcoal `#92989D`** lettering and matte grain. Outlines
-remain **neutral `#293239`**, with no red outlines.
+and every toolbar filter/Print button. Toolbar buttons retain that pairing
+in all states. Chart values, methods, and deltas keep **ash-charcoal `#92989D`**
+and matte grain. Outlines remain **neutral `#293239`**, with no red outlines.
 
 For the current mannequin sheet:
 
-- The title box uses **Ruby fill with Obsidian title text**. Its metadata
-  strips are transparent over Ruby with Obsidian text and no separate dark boxes.
+- The title box uses **Ruby fill with Obsidian main title and division text**.
+  Metadata strips stay transparent over Ruby, with no separate dark boxes.
+- The **SERPENTIS REGINA wordmark uses Electric text**. **CASE / 001**, form ID,
+  size, the static **INCHES / CM identity label**, point count, and approval
+  label use Slytheren text. The separate dark native UNIT selector retains
+  matte ash text for its selected value.
 - Section boxes and chart headings use **Electric fill with Ruby text**.
-- Selected or hovered buttons with Electric fill also use Ruby text; controls
-  outside those blue-filled states retain ash-charcoal text.
-- **Slytheren is restricted to the two Front/Back caption backgrounds**;
-  their text is Obsidian. It is not used for text, controls, borders, or
-  metadata elsewhere on this sheet.
+- All toolbar filter/Print buttons keep **Electric fill with Ruby text**,
+  including inactive, selected, hovered, and focused states.
+- **Slytheren is limited to the requested CASE/identity metadata and delta
+  formula foregrounds, plus the two Front/Back caption backgrounds**. Caption
+  text stays Obsidian; green is not used for table values, buttons, or borders.
 - Body measurements, methods, deltas, Actual Form numbers, and supporting
   details retain ash charcoal on Obsidian and the existing matte treatment.
 
 The measured mannequin data and delta rule are separate from these visual
-rules. See the [current Case 1 review](case-1-scoped-ruby.md). Earlier
+rules. See the [current Case 1 review](case-1-centimeters.md). Earlier
 [brand](case-1-brand-redesign.md) and
 [layout](case-1-layout-refinement.md) reviews preserve prior directions;
 their conflicting color instructions, including the later
 [pink-text review](case-1-house-colors.md) and
 [Ruby-text Case 1 layout](case-1-ruby-rule.md) and
-[matte-header layout](case-1-matte-ink.md), are historical for this report.
+[matte-header layout](case-1-matte-ink.md), and
+[scoped Ruby review](case-1-scoped-ruby.md) preserve earlier iterations.
 
 ## Apply the current combinations
 
-Use Ruby text on Electric fills and preserve matte ash text outside blue.
-Keep the two photo captions Obsidian on Slytheren. The Case 1 title and its
-metadata use Obsidian directly on Ruby.
+Use Ruby text on Electric fills, preserve matte ash chart text, and apply only
+the explicitly requested wordmark/metadata/formula overrides above. Keep the
+two photo captions Obsidian on Slytheren. The main title and division retain
+Obsidian text directly on Ruby.
 Original artwork and photographs retain their source pixels and colors;
 this does not authorize Salmon in interface styling.
+
+## Case 1 display units
+
+The native UNIT selector offers `in` and `cm`. All MFR, Actual Form, and delta
+values are displayed from the approved inch values using **1 in = 2.54 cm**,
+with up to six decimal places and trailing zeros trimmed. Switching units
+never rewrites the approved data or original measuring instructions. Missing
+references remain dashes, and Print/PDF reflects the selected unit.
 
 ## Typography and Notion access
 

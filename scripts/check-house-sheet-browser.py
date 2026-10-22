@@ -5,6 +5,7 @@ Requires optional Python Playwright/pypdf packages and /usr/bin/chromium; it doe
 not add a browser dependency to the measurement application's Node runtime.
 """
 from datetime import datetime, timezone
+from decimal import Decimal, ROUND_HALF_UP
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from threading import Thread
@@ -24,6 +25,7 @@ parser.add_argument('--output', type=Path, default=ROOT / 'reports' / 'browser-r
 args = parser.parse_args()
 args.output.mkdir(parents=True, exist_ok=True)
 REPORT = ROOT / 'reports' / 'SR-FORM-001-measurement-sheet.html'
+HOUSE_MEASUREMENTS = json.loads((ROOT / 'data' / 'house-fit-forms' / 'SR-FORM-001.v1.json').read_text())['measurements']
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -51,6 +53,42 @@ results = {
     'renderMode': 'Real local Chromium render of the standalone report; no live website deployment.',
     'viewports': [],
 }
+
+
+
+def format_unit_value(value, unit, signed=False):
+    if value is None:
+        return '—'
+    factor = Decimal('2.54') if unit == 'cm' else Decimal(1)
+    displayed = (Decimal(str(value)) * factor).quantize(Decimal('0.000001'), rounding=ROUND_HALF_UP)
+    if displayed == 0:
+        displayed = Decimal(0)
+    label = format(displayed, 'f')
+    if '.' in label:
+        label = label.rstrip('0').rstrip('.')
+    return ('+' if signed and displayed > 0 else '') + label
+
+
+def check_unit_values(page, unit):
+    assert page.locator('#measurement-unit').input_value() == unit
+    actual = page.locator('#measurements tr').evaluate_all("""(rows) => rows.map(row => ({
+        pom:row.querySelector('td.pom').textContent.trim(),
+        mfr:row.querySelector('td.mfr').textContent.trim(),
+        actual:row.querySelector('td.actual').textContent.trim(),
+        delta:row.querySelector('td.delta').textContent.trim()
+    }))""")
+    expected = []
+    for record in HOUSE_MEASUREMENTS:
+        reference = record['manufacturerReference']
+        difference = None if reference is None else Decimal(str(record['houseStandard'])) - Decimal(str(reference))
+        expected.append({'pom': record['pomCode'], 'mfr': format_unit_value(reference, unit),
+                         'actual': format_unit_value(record['houseStandard'], unit),
+                         'delta': format_unit_value(difference, unit, signed=True)})
+    assert actual == expected, {'unit': unit, 'actual': actual, 'expected': expected}
+    assert 'INCHES / CM' in page.locator('.identity-strip').inner_text()
+    assert page.locator('#unit-print').text_content() == 'UNIT / ' + ('CM' if unit == 'cm' else 'INCHES')
+    assert page.locator('#unit-status').text_content() == 'Measurements displayed in ' + ('centimeters.' if unit == 'cm' else 'inches.')
+    return actual
 
 
 def check_house_colors(page, viewport_name):
@@ -92,7 +130,8 @@ def check_house_colors(page, viewport_name):
                 if (!style.backgroundImage.includes('data:image/svg+xml') || ![style.backgroundClip, style.webkitBackgroundClip].includes('text'))
                     violations.push({...identity, rule:'Transparent matte ink must retain a local SVG text texture'});
             }
-            if (style.color === green) violations.push({...identity, rule:'Green foreground outside allowed caption backgrounds'});
+            if (style.color === green && !el.closest('.identity-strip, .case, .formula'))
+                violations.push({...identity, rule:'Green foreground outside the designated metadata, case, and formula scopes'});
             if (style.backgroundColor === green && !el.matches('.photo-pair figcaption'))
                 violations.push({...identity, rule:'Green background outside front/back labels'});
             for (const side of ['Top','Right','Bottom','Left']) {
@@ -166,6 +205,13 @@ try:
             assert active.count() == 1
             assert active.evaluate('(el) => getComputedStyle(el).backgroundColor') == 'rgb(30, 34, 170)'
             assert active.evaluate('(el) => getComputedStyle(el).color') == 'rgb(228, 0, 43)'
+            assert page.locator('.toolbar button').evaluate_all("""(buttons) => buttons.length === 4 && buttons.every(el =>
+                getComputedStyle(el).backgroundColor === 'rgb(30, 34, 170)' && getComputedStyle(el).color === 'rgb(228, 0, 43)')""")
+            unit_control = page.locator('#measurement-unit')
+            assert unit_control.locator('option').evaluate_all('(options) => options.map(option => option.value)') == ['in', 'cm']
+            assert unit_control.evaluate('(el) => getComputedStyle(el).backgroundColor') == 'rgb(16, 24, 32)'
+            assert unit_control.evaluate('(el) => getComputedStyle(el).color') == 'rgb(146, 152, 157)'
+            check_unit_values(page, 'in')
             color_rules = check_house_colors(page, name)
             body_styles_before = page.locator('#measurements td').evaluate_all('(cells) => cells.map(el => ({color:getComputedStyle(el).color, background:getComputedStyle(el).backgroundColor, border:getComputedStyle(el).borderBottomColor}))')
             if name == 'desktop' and color_rules['matteInkCount']:
@@ -184,8 +230,12 @@ try:
                 getComputedStyle(el).color === 'rgb(16, 24, 32)')""")
             for selector in ('.brand-line', '.identity-strip'):
                 assert page.locator('.title-bar ' + selector).evaluate('(el) => getComputedStyle(el).backgroundColor') == 'rgba(0, 0, 0, 0)'
-                assert page.locator('.title-bar ' + selector).evaluate("""(el) => [el, ...el.querySelectorAll('*')].every(child =>
-                    getComputedStyle(child).color === 'rgb(16, 24, 32)')""")
+            assert page.locator('.identity-strip').evaluate("""(el) => [el, ...el.querySelectorAll('*')].every(child =>
+                getComputedStyle(child).color === 'rgb(31, 168, 36)')""")
+            assert page.locator('.wordmark').evaluate('(el) => getComputedStyle(el).color') == 'rgb(30, 34, 170)'
+            assert page.locator('.case').evaluate('(el) => getComputedStyle(el).color') == 'rgb(31, 168, 36)'
+            assert page.locator('.division').evaluate('(el) => getComputedStyle(el).color') == 'rgb(16, 24, 32)'
+            assert page.locator('.formula').evaluate('(el) => getComputedStyle(el).color') == 'rgb(31, 168, 36)'
             assert page.locator('.title-bar .brand-line').count() == 1
             assert page.locator('.title-bar .identity-strip').count() == 1
             seal = page.locator('.seal-zone')
@@ -223,7 +273,14 @@ try:
             assert layout['chartHeight'] >= 120, (name, layout)
             assert layout['chartScrollHeight'] > layout['chartHeight'], (name, layout)
             if name in ('desktop', 'mobile'):
-                page.screenshot(path=str(args.output / f'case-1-scoped-ruby-{name}.png'))
+                page.screenshot(path=str(args.output / f'case-1-centimeters-{name}.png'))
+            for round_trip in range(3):
+                unit_control.select_option('cm')
+                check_unit_values(page, 'cm')
+                if name == 'desktop' and round_trip == 0:
+                    page.screenshot(path=str(args.output / 'case-1-centimeters-desktop-cm.png'))
+                unit_control.select_option('in')
+                check_unit_values(page, 'in')
             chart = page.locator('#measurement-chart')
             header_before = page.locator('.masthead').bounding_box()
             tablehead_before = page.locator('thead').bounding_box()
@@ -240,6 +297,15 @@ try:
             assert page.locator('#measurements tr:visible').count() == 1
             assert page.locator('#measurements tr:visible td.actual').inner_text() == '27.25'
             assert page.locator('#measurements tr:visible td.delta').inner_text() == '+0.75'
+            unit_control.select_option('cm')
+            check_unit_values(page, 'cm')
+            assert page.locator('#search').input_value() == 'BF-02'
+            assert page.locator('#measurements tr:visible').count() == 1
+            assert page.locator('#measurements tr:visible td.actual').inner_text() == '69.215'
+            assert page.locator('#measurements tr:visible td.delta').inner_text() == '+1.905'
+            assert page.locator('[data-filter="all"]').get_attribute('aria-pressed') == 'true'
+            unit_control.select_option('in')
+            check_unit_values(page, 'in')
             page.locator('#search').fill('no-such-measurement')
             assert page.locator('#empty-state').is_visible()
             assert page.locator('#measurements tr:visible').count() == 0
@@ -248,6 +314,16 @@ try:
             assert page.locator('#measurements tr:visible').count() == 13
             assert page.locator('#measurements tr:visible td.mfr').evaluate_all('(cells) => cells.every(cell => cell.textContent === "—")')
             assert page.locator('#measurements tr:visible td.delta').evaluate_all('(cells) => cells.every(cell => cell.textContent === "—")')
+            unit_control.select_option('cm')
+            check_unit_values(page, 'cm')
+            assert page.locator('[data-filter="missing"]').get_attribute('aria-pressed') == 'true'
+            assert page.locator('#measurements tr:visible').count() == 13
+            assert page.locator('#measurements tr:visible td.mfr').evaluate_all('(cells) => cells.every(cell => cell.textContent === "—")')
+            assert page.locator('#measurements tr:visible td.delta').evaluate_all('(cells) => cells.every(cell => cell.textContent === "—")')
+            unit_control.select_option('in')
+            check_unit_values(page, 'in')
+            assert page.locator('[data-filter="missing"]').get_attribute('aria-pressed') == 'true'
+            assert page.locator('#measurements tr:visible').count() == 13
             page.locator('[data-filter="compared"]').click()
             assert page.locator('#measurements tr:visible').count() == 7
             page.locator('[data-filter="all"]').click()
@@ -259,11 +335,13 @@ try:
             page.locator('#print-sheet').click()
             assert page.evaluate('window.__printInvoked')
             if name == 'desktop':
+                unit_control.select_option('cm')
+                check_unit_values(page, 'cm')
                 page.emulate_media(media='print')
                 assert chart.evaluate('(el) => getComputedStyle(el).overflow') == 'visible'
                 assert page.locator('thead').evaluate('(el) => getComputedStyle(el).position') == 'static'
                 assert page.locator('#measurements tr:visible').count() == 20
-                pdf_path = args.output / 'case-1-scoped-ruby-print.pdf'
+                pdf_path = args.output / 'case-1-centimeters-print.pdf'
                 page.pdf(path=str(pdf_path), print_background=True)
                 pdf = PdfReader(str(pdf_path))
                 pdf_text = unicodedata.normalize('NFKC', '\n'.join(p.extract_text() or '' for p in pdf.pages))
@@ -271,12 +349,14 @@ try:
                 assert 'earlier pending-verification status' in pdf_text
                 assert 'not garment tolerances' in pdf_text
                 assert 'no MFR value' in pdf_text
-                results['print'] = {'pages': len(pdf.pages), 'all20PomsAndProvenanceAndMissingValueNotePresent': True}
+                assert re.search(r'UNIT\s*/\s*CM\b', pdf_text), 'Printed unit must match the selected centimeters view.'
+                assert '69.215' in pdf_text and '+1.905' in pdf_text, 'Printed waist measurement and delta must be centimeters.'
+                results['print'] = {'pages': len(pdf.pages), 'selectedUnit': 'cm', 'selectedUnitAndConvertedWaistValuesPresent': True, 'all20PomsAndProvenanceAndMissingValueNotePresent': True}
             assert not errors, (name, errors)
             assert not external, (name, external)
             results['viewports'].append({'name': name, **layout,
-                'titleBox': title_box, 'sealBox': seal_box, 'photoFrames': photos, 'colorRules': color_rules, 'tableBodyColorsPreservedAcrossStates': True,
-                'checks': 'Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Ruby text scoped to Electric surfaces, outside-blue ash matte ink preserved, no Ruby outlines, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors.'})
+                'titleBox': title_box, 'sealBox': seal_box, 'photoFrames': photos, 'colorRules': color_rules, 'tableBodyColorsPreservedAcrossStates': True, 'unitChecks': {'all20CanonicalValuesVerifiedInBothUnits': True, 'roundTripsWithoutCumulativeRounding': 3, 'searchAndFilterPreservedOnSwitch': True, 'missingValuesRemainDashes': True},
+                'checks': 'Six columns, original images and Barlow fonts, Ruby title with designated Slytheren metadata and Electric wordmark, all toolbar buttons Electric/Ruby, IN/CM conversion from canonical inches, Ruby text scoped to Electric surfaces, outside-blue ash matte ink preserved, no Ruby outlines, no Salmon UI tokens or styles, Slytheren backgrounds restricted to front/back labels and foreground restricted to designated metadata/case/formula, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors.'})
             print(f'{name}: passed', flush=True)
             context.close()
         browser.close()
@@ -284,6 +364,6 @@ finally:
     server.shutdown()
     server.server_close()
 
-results['screenshots'] = [{'filename': path.name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'bytes': path.stat().st_size} for path in sorted(args.output.glob('case-1-scoped-ruby-*.png'))]
-(args.output / 'case-1-scoped-ruby.json').write_text(json.dumps(results, indent=2) + '\n')
+results['screenshots'] = [{'filename': path.name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'bytes': path.stat().st_size} for path in sorted(args.output.glob('case-1-centimeters-*.png'))]
+(args.output / 'case-1-centimeters.json').write_text(json.dumps(results, indent=2) + '\n')
 print('All eight viewport checks passed. Output:', args.output)

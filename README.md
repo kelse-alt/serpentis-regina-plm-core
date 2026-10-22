@@ -50,12 +50,18 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 
 ## Case 1 — mannequin sheet design review
 
-The mannequin report applies **Ruby text inside Electric Blue fills** to
-section headers, chart headings, and blue-filled button states. Body text,
-values, methods, and controls outside blue retain matte ash charcoal
-(`#92989D`), with neutral outlines (`#293239`) and existing subtle grain.
-The Ruby title keeps Obsidian text and transparent metadata. Green remains
-limited to the Front/Back caption fills; Salmon remains excluded.
+The mannequin report keeps **Ruby text inside Electric Blue fills**, including
+all toolbar filter/Print buttons in every state. The wordmark uses Electric
+text; CASE/identity metadata and the delta formula use Slytheren. The main
+title and division remain Obsidian on Ruby with transparent metadata overlays.
+Chart values and methods retain matte ash text and neutral outlines; green
+is limited to the requested metadata/formula and Front/Back caption fills.
+
+A native **UNIT** dropdown switches MFR, Actual Form, and delta displays between
+inches and centimeters using **1 in = 2.54 cm**, up to six decimal places with
+trailing zeros trimmed. Calculations always start from canonical inches, and
+Print/PDF reflects the selected unit. Approved data and source instructions,
+including their inch landmarks, remain unchanged.
 
 Barlow Condensed type, the standalone original head seal, and aligned workbook
 photographs remain in place. Only the measurement chart scrolls; the upper
@@ -67,7 +73,7 @@ fonts, and scripts are embedded, so no external requests are needed. The
 approved baseline data and calculation rule are preserved. This report is a
 browser preview, separate from the live Squarespace portal.
 
-See the [latest design review](docs/case-1-scoped-ruby.md),
+See the [latest design review](docs/case-1-centimeters.md),
 [brand system](docs/brand-system.md), and
 [previous layout review](docs/case-1-layout-refinement.md).
 

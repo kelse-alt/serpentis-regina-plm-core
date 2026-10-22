@@ -5,7 +5,25 @@
   const chart = document.getElementById('measurement-chart');
   const count = document.getElementById('count');
   const empty = document.getElementById('empty-state');
+  const unitSelect = document.getElementById('measurement-unit');
+  const numericValues = [...document.querySelectorAll('[data-value-inches]')].map(element => ({
+    element,
+    valueInches: Number(element.dataset.valueInches),
+    signed: element.dataset.signed === 'true',
+  }));
   let filter = 'all';
+
+  function updateUnit() {
+    const unit = unitSelect.value;
+    for (const { element, valueInches, signed } of numericValues) {
+      element.textContent = formatMeasurementInUnit(valueInches, unit, signed);
+    }
+    document.getElementById('unit-print').textContent = 'UNIT / ' + (unit === 'cm' ? 'CM' : 'INCHES');
+    document.getElementById('unit-status').textContent = 'Measurements displayed in ' + (unit === 'cm' ? 'centimeters.' : 'inches.');
+  }
+  unitSelect.addEventListener('change', updateUnit);
+  // Match native form restoration when returning to an already-open report.
+  window.addEventListener('pageshow', updateUnit);
 
   function update() {
     const query = search.value.trim().toLowerCase();
