@@ -1,0 +1,366 @@
+{
+  "capturedAtUtc": "2026-10-22T18:19:45.759376+00:00",
+  "sourceCommit": "a4b3bf139db8675d90f54f44e26ff14e97cbd3e0",
+  "uncommittedChanges": false,
+  "renderMode": "Real local Chromium render of the standalone report; no live website deployment.",
+  "viewports": [
+    {
+      "name": "desktop",
+      "rootWidth": 1500,
+      "rootHeight": 1000,
+      "width": 1500,
+      "height": 1000,
+      "chartHeight": 583,
+      "chartScrollHeight": 1848,
+      "titleBox": {
+        "x": 24,
+        "y": 18,
+        "width": 1280,
+        "height": 183.71875
+      },
+      "sealBox": {
+        "x": 1326,
+        "y": 18,
+        "width": 150,
+        "height": 183.71875
+      },
+      "photoFrames": [
+        {
+          "y": 269.71875,
+          "width": 162.96875,
+          "height": 594.28125,
+          "objectFit": "cover"
+        },
+        {
+          "y": 269.71875,
+          "width": 162.984375,
+          "height": 594.28125,
+          "objectFit": "cover"
+        }
+      ],
+      "colorRules": {
+        "captionCount": 2,
+        "electricBoxCount": 9,
+        "salmonUiExcluded": true,
+        "violations": []
+      },
+      "checks": "Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Electric boxes with Ruby text, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "laptop",
+      "rootWidth": 1280,
+      "rootHeight": 720,
+      "width": 1280,
+      "height": 720,
+      "chartHeight": 313,
+      "chartScrollHeight": 1938,
+      "titleBox": {
+        "x": 24,
+        "y": 18,
+        "width": 1060,
+        "height": 173.796875
+      },
+      "sealBox": {
+        "x": 1106,
+        "y": 18,
+        "width": 150,
+        "height": 173.796875
+      },
+      "photoFrames": [
+        {
+          "y": 259.796875,
+          "width": 137.671875,
+          "height": 300.515625,
+          "objectFit": "cover"
+        },
+        {
+          "y": 259.796875,
+          "width": 137.6875,
+          "height": 300.515625,
+          "objectFit": "cover"
+        }
+      ],
+      "colorRules": {
+        "captionCount": 2,
+        "electricBoxCount": 9,
+        "salmonUiExcluded": true,
+        "violations": []
+      },
+      "checks": "Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Electric boxes with Ruby text, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "mobile",
+      "rootWidth": 390,
+      "rootHeight": 844,
+      "width": 390,
+      "height": 844,
+      "chartHeight": 267,
+      "chartScrollHeight": 1971,
+      "titleBox": {
+        "x": 10,
+        "y": 10,
+        "width": 296,
+        "height": 189.1875
+      },
+      "sealBox": {
+        "x": 316,
+        "y": 10,
+        "width": 64,
+        "height": 189.1875
+      },
+      "photoFrames": [
+        {
+          "y": 210.1875,
+          "width": 37,
+          "height": 136,
+          "objectFit": "cover"
+        },
+        {
+          "y": 210.1875,
+          "width": 37,
+          "height": 136,
+          "objectFit": "cover"
+        }
+      ],
+      "colorRules": {
+        "captionCount": 2,
+        "electricBoxCount": 9,
+        "salmonUiExcluded": true,
+        "violations": []
+      },
+      "checks": "Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Electric boxes with Ruby text, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "small-mobile",
+      "rootWidth": 390,
+      "rootHeight": 667,
+      "width": 390,
+      "height": 667,
+      "chartHeight": 195,
+      "chartScrollHeight": 1971,
+      "titleBox": {
+        "x": 6,
+        "y": 6,
+        "width": 318,
+        "height": 155.6875
+      },
+      "sealBox": {
+        "x": 330,
+        "y": 6,
+        "width": 54,
+        "height": 155.6875
+      },
+      "photoFrames": [
+        {
+          "y": 168.6875,
+          "width": 24,
+          "height": 98,
+          "objectFit": "cover"
+        },
+        {
+          "y": 168.6875,
+          "width": 24,
+          "height": 98,
+          "objectFit": "cover"
+        }
+      ],
+      "colorRules": {
+        "captionCount": 2,
+        "electricBoxCount": 9,
+        "salmonUiExcluded": true,
+        "violations": []
+      },
+      "checks": "Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Electric boxes with Ruby text, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "landscape",
+      "rootWidth": 844,
+      "rootHeight": 390,
+      "width": 844,
+      "height": 390,
+      "chartHeight": 152,
+      "chartScrollHeight": 1971,
+      "titleBox": {
+        "x": 12,
+        "y": 6,
+        "width": 726,
+        "height": 87.390625
+      },
+      "sealBox": {
+        "x": 750,
+        "y": 6,
+        "width": 82,
+        "height": 87.390625
+      },
+      "photoFrames": [
+        {
+          "y": 144.578125,
+          "width": 86,
+          "height": 82.4375,
+          "objectFit": "cover"
+        },
+        {
+          "y": 144.578125,
+          "width": 86,
+          "height": 82.4375,
+          "objectFit": "cover"
+        }
+      ],
+      "colorRules": {
+        "captionCount": 2,
+        "electricBoxCount": 9,
+        "salmonUiExcluded": true,
+        "violations": []
+      },
+      "checks": "Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Electric boxes with Ruby text, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "narrow-phone",
+      "rootWidth": 320,
+      "rootHeight": 568,
+      "width": 320,
+      "height": 568,
+      "chartHeight": 128,
+      "chartScrollHeight": 1971,
+      "titleBox": {
+        "x": 6,
+        "y": 6,
+        "width": 248,
+        "height": 143.375
+      },
+      "sealBox": {
+        "x": 260,
+        "y": 6,
+        "width": 54,
+        "height": 143.375
+      },
+      "photoFrames": [
+        {
+          "y": 156.375,
+          "width": 21,
+          "height": 86,
+          "objectFit": "cover"
+        },
+        {
+          "y": 156.375,
+          "width": 21,
+          "height": 86,
+          "objectFit": "cover"
+        }
+      ],
+      "colorRules": {
+        "captionCount": 2,
+        "electricBoxCount": 9,
+        "salmonUiExcluded": true,
+        "violations": []
+      },
+      "checks": "Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Electric boxes with Ruby text, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "short-phone",
+      "rootWidth": 320,
+      "rootHeight": 480,
+      "width": 320,
+      "height": 480,
+      "chartHeight": 121,
+      "chartScrollHeight": 1971,
+      "titleBox": {
+        "x": 6,
+        "y": 6,
+        "width": 259,
+        "height": 127.1875
+      },
+      "sealBox": {
+        "x": 271,
+        "y": 6,
+        "width": 43,
+        "height": 127.1875
+      },
+      "photoFrames": [
+        {
+          "y": 140.1875,
+          "width": 19,
+          "height": 58,
+          "objectFit": "cover"
+        },
+        {
+          "y": 140.1875,
+          "width": 19,
+          "height": 58,
+          "objectFit": "cover"
+        }
+      ],
+      "colorRules": {
+        "captionCount": 2,
+        "electricBoxCount": 9,
+        "salmonUiExcluded": true,
+        "violations": []
+      },
+      "checks": "Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Electric boxes with Ruby text, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    },
+    {
+      "name": "short-tablet",
+      "rootWidth": 768,
+      "rootHeight": 400,
+      "width": 768,
+      "height": 400,
+      "chartHeight": 162,
+      "chartScrollHeight": 1971,
+      "titleBox": {
+        "x": 12,
+        "y": 6,
+        "width": 650,
+        "height": 87.390625
+      },
+      "sealBox": {
+        "x": 674,
+        "y": 6,
+        "width": 82,
+        "height": 87.390625
+      },
+      "photoFrames": [
+        {
+          "y": 144.578125,
+          "width": 86,
+          "height": 92.4375,
+          "objectFit": "cover"
+        },
+        {
+          "y": 144.578125,
+          "width": 86,
+          "height": 92.4375,
+          "objectFit": "cover"
+        }
+      ],
+      "colorRules": {
+        "captionCount": 2,
+        "electricBoxCount": 9,
+        "salmonUiExcluded": true,
+        "violations": []
+      },
+      "checks": "Six columns, original images and Barlow fonts, Ruby title with Obsidian metadata, Electric boxes with Ruby text, no Salmon UI tokens or styles, Slytheren restricted to front/back label backgrounds, title-contained metadata and separate text-free seal, equal photo frames using object-fit cover, chart-only keyboard scrolling and sticky headings, search/filter/missing values, print action, no external requests or script/CSP errors."
+    }
+  ],
+  "print": {
+    "pages": 3,
+    "all20PomsAndProvenanceAndMissingValueNotePresent": true
+  },
+  "screenshots": [
+    {
+      "filename": "case-1-ruby-rule-desktop.png",
+      "sha256": "f99b08782b1a07100485907a51126ba20e6ece3495e8ac044156970462531179",
+      "bytes": 502892
+    },
+    {
+      "filename": "case-1-ruby-rule-mobile.png",
+      "sha256": "dd17d3aa40d5410d186233f6c09ed5a42178136fad9ad1fe5a2ea9cf7b145181",
+      "bytes": 87898
+    }
+  ],
+  "applicationTests": {
+    "command": "npm test",
+    "passed": 48,
+    "failed": 0
+  },
+  "approvedDataUnchangedFromMain": true
+}
