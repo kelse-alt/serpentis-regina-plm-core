@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.6.0 — Daily style and revision workflow — 2026-10-23
+
+- Add a shared style record with explicit sheet/sample overrides and migrate version-1 tech-pack drafts to schema 2 without changing approved house records.
+- Add recoverable IndexedDB autosave, original-image Blob storage, named immutable local revisions with compare/restore, isolated legacy-record recovery and portable JSON backups. These snapshots do not confer authentication or production approval.
+- Add fractional-inch input, previewed atomic spreadsheet paste, undo/redo, task comparison views and visible mobile Save/Export actions while preserving house colors, original assets, units, formulas and complete printing.
+- Document a future curated master-library strategy for reviewed house terminology and reusable definitions. No past-job documents, master measurements, grading rules, BOM or production-release engine are imported or invented.
+
 ## v0.5.0 — Six-tab tech pack workroom — 2026-10-22
 
 - Implement every tab of the supplied V2 workbook in the established house style: Pattern Card, both wash rounds, Fit & Comments, before/after graded grids, garment Measurement Master and approved mannequin reference.

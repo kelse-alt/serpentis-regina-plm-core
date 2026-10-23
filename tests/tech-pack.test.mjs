@@ -56,7 +56,7 @@ test('source subtraction semantics distinguish blanks, measured zero, and signed
 
 test('imports validate known template shape, units, numbers, dates, immutable columns, and unsafe keys', () => {
   for (const edit of [
-    d => { d.extra = 'unrecognized'; }, d => { d.schemaVersion = 2; }, d => { d.templateId = 'other'; },
+    d => { d.extra = 'unrecognized'; }, d => { d.schemaVersion = 3; }, d => { d.templateId = 'other'; },
     d => { d.id = '../../unsafe'; }, d => { d.title = 'x'.repeat(241); }, d => { d.updatedAt = '2026-02-30T00:00:00.000Z'; },
     d => { d.unit = 'CM'; }, d => { d.fields.pattern.date = '2026-02-30'; }, d => { d.fields.pattern.style = 1; },
     d => { d.fields.pattern.unknown = ''; }, d => { delete d.fields.pattern.style; }, d => { d.tables.pattern.pieces['1'].length = 10; },
