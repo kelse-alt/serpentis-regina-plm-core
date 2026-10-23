@@ -1,10 +1,23 @@
 # Serpentis Regina — PLM Core
 
-A local fashion technical-design workroom for six-tab tech packs, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning.
+A fashion technical-design workroom for six-tab tech packs, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning. Working records remain local to the browser/app.
 
-## Start with the six-tab workroom — v0.6.0
+## Use the iPhone app — v0.7.0
 
-[Download the current workroom ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/heads/codex/workroom-style-revisions.zip),
+Open the [Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/)
+in iPhone Safari, then choose **Share → Add to Home Screen → Add**. Keep
+**Open as Web App** enabled if shown. Open the new icon online once and wait
+for **Export → Install & app info** to report **Offline ready on this device**.
+
+The installed web app keeps the existing six-sheet workflow, house design,
+local autosave and named revisions. Updates wait for an explicit action after
+valid entries are saved. Safari, the Home Screen app and desktop browsers may
+have separate stores; transfer a current pack with Export/Import JSON.
+Read the [iPhone installation and usage guide](docs/iphone-workroom-app.md).
+
+## Desktop and standalone workroom
+
+[Download the current workroom ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/heads/codex/workroom-iphone-app.zip),
 extract it, and open **tech-pack.html**. With Node.js 24+, `npm run techpack`
 provides a local HTTP preview.
 
@@ -218,9 +231,10 @@ Their provenance is `MEASUREMENT SHEET_SERPENTIS REGINA`, tab `BODY REF-MANNEQUI
 | **v0.3.1** | Ready-to-open HTML included in the downloadable project ZIP | 31 tests + browser acceptance | Packaged 20-POM generator |
 | **v0.5.0** | Six source tabs, garment specs, graded grids, local images, pack save/import/export and complete printing | Core, source and browser acceptance | Packaged tech-pack workroom |
 | **v0.6.0** | Shared style record, schema migration, recoverable drafts/revisions and faster specification entry | See current validation evidence | Daily workroom workflow |
+| **v0.7.0** | Installable iPhone/web app, scoped offline caching and explicit save-first application updates | See iPhone guide and current browser evidence | Hosted workroom distribution |
 | **v0.4.0** | Workbook-based 34-POM client intake, CM/IN, saved drafts, and import/export/print | Intake calculation/API and existing suites | Separate client intake |
 
-Application versions, measurement revisions, and JSON schema versions describe different things. **v0.6.0** is the packaged application version; tech-pack drafts use schema 2 with version-1 migration. **SR-FORM-001 v1** remains the approved measurement dataset; **`schemaVersion: "1.0"`** describes that baseline JSON format. The separate client-intake template has its own identity and revision. Application changes do not revise approved house measurements.
+Application versions, measurement revisions, and JSON schema versions describe different things. **v0.7.0** adds the installable iPhone/web distribution; tech-pack drafts retain schema 2 with version-1 migration. **SR-FORM-001 v1** remains the approved measurement dataset; **`schemaVersion: "1.0"`** describes that baseline JSON format. The separate client-intake template has its own identity and revision. Application changes do not revise approved house measurements.
 
 See the [changelog](CHANGELOG.md) for the development and publication record.
 

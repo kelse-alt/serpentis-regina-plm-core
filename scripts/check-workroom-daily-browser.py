@@ -601,6 +601,7 @@ def check_legacy_migration(browser):
         download.delete()
         page.locator('#saved-packs').select_option(good['id'])
         page.locator('#open-pack').click()
+        page.wait_for_function("()=>document.getElementById('status').textContent==='Reopened the saved working draft.'")
         open_details_for(page,'[data-style-key="number"]')
         page.locator('[data-style-key="number"]').fill('SYNTHETIC-LEGACY-EDITED')
         wait_saved_value(page,good['id'],['style','number'],'SYNTHETIC-LEGACY-EDITED')

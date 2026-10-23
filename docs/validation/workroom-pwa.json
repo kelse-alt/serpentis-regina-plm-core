@@ -1,0 +1,195 @@
+{
+  "capturedAtUtc": "2026-10-23T18:14:40.808036+00:00",
+  "sourceCommit": "f2bc9483fdb72ef8d9eb41dd03bc3d2531122d77",
+  "uncommittedChanges": false,
+  "scope": "/serpentis-regina-plm-core/workroom/",
+  "engines": {
+    "chromium": {
+      "available": true,
+      "browserVersion": "154.0.8037.57",
+      "device": "390\u00d7844 CSS px; touch emulation; not iPhone hardware",
+      "checks": {
+        "installAndVerifiedPrecache": true,
+        "portalOutsideWorkerScope": true,
+        "scopedStaticShellCacheOnly": true,
+        "onlineReadinessRepairsEvictedStaticAsset": true,
+        "selectedOlderPackRetainedOnOfflineReopen": true,
+        "offlineWorkroomReopenWithIndexedDbAutosave": true,
+        "offlineClientIntake34Poms": true,
+        "unknownPathsHaveNoAppFallback": true,
+        "newShellWaitsWithoutAutomaticReload": true,
+        "pendingFileOperationBlocksUpdate": true,
+        "explicitUpdateRejectsInvalidEntry": true,
+        "reviewChangedDuringSaveBlocksUpdate": true,
+        "failedIndexedDbWriteBlocksUpdateWithoutLosingEdits": true,
+        "otherOpenWindowIsNeverAutomaticallyReloaded": true,
+        "explicitUpdateSavesValidEditsBeforeReload": true,
+        "unrelatedPortalCachePreservedAfterUpdate": true,
+        "updatedShellReopensOffline": true,
+        "noRuntimeErrorsOrExternalFetches": true,
+        "unavailableStorageBlocksUpdateWithoutLosingEdits": true
+      },
+      "initialVersion": {
+        "version": "0.7.0",
+        "buildId": "de5ec96417074d4b0a4df0e2a05866c664d1a28b09ce57356a4b6fb8ddb6f5be",
+        "offlineReady": true
+      },
+      "metadata": {
+        "standalone": true,
+        "scope": "/serpentis-regina-plm-core/workroom/",
+        "iconDimensions": [
+          "192x192",
+          "512x512"
+        ],
+        "appleTouchIcon": "180x180"
+      },
+      "layouts": [
+        {
+          "viewport": "iphone",
+          "width": 390,
+          "height": 844,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        },
+        {
+          "viewport": "narrow-phone",
+          "width": 320,
+          "height": 568,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        },
+        {
+          "viewport": "landscape",
+          "width": 844,
+          "height": 390,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        }
+      ],
+      "cachedShellPaths": [
+        "/serpentis-regina-plm-core/workroom/client-intake.html",
+        "/serpentis-regina-plm-core/workroom/icons/apple-touch-icon.png",
+        "/serpentis-regina-plm-core/workroom/icons/icon-192.png",
+        "/serpentis-regina-plm-core/workroom/icons/icon-512.png",
+        "/serpentis-regina-plm-core/workroom/index.html",
+        "/serpentis-regina-plm-core/workroom/manifest.webmanifest",
+        "/serpentis-regina-plm-core/workroom/pwa.js"
+      ],
+      "keyboardResponse": {
+        "simulatedVisualViewportHeight": 420,
+        "saveExportReachable": true,
+        "nativeKeyboardTested": false
+      },
+      "networkOutageMethod": "Playwright browser context offline",
+      "updatedVersion": {
+        "version": "0.7.0-audit-b",
+        "buildId": "480d339ea7e29811f619d9e930c8e574701dfc93fe6eed37266f1bb255e946af",
+        "offlineReady": true
+      }
+    },
+    "webkit": {
+      "available": true,
+      "browserVersion": "26.5",
+      "device": "390\u00d7844 CSS px; touch emulation; not iPhone hardware",
+      "checks": {
+        "installAndVerifiedPrecache": true,
+        "portalOutsideWorkerScope": true,
+        "scopedStaticShellCacheOnly": true,
+        "onlineReadinessRepairsEvictedStaticAsset": true,
+        "selectedOlderPackRetainedOnOfflineReopen": true,
+        "offlineWorkroomReopenWithIndexedDbAutosave": true,
+        "offlineClientIntake34Poms": true,
+        "unknownPathsHaveNoAppFallback": true,
+        "newShellWaitsWithoutAutomaticReload": true,
+        "pendingFileOperationBlocksUpdate": true,
+        "explicitUpdateRejectsInvalidEntry": true,
+        "reviewChangedDuringSaveBlocksUpdate": true,
+        "failedIndexedDbWriteBlocksUpdateWithoutLosingEdits": true,
+        "otherOpenWindowIsNeverAutomaticallyReloaded": true,
+        "explicitUpdateSavesValidEditsBeforeReload": true,
+        "unrelatedPortalCachePreservedAfterUpdate": true,
+        "updatedShellReopensOffline": true,
+        "noRuntimeErrorsOrExternalFetches": true,
+        "unavailableStorageBlocksUpdateWithoutLosingEdits": true
+      },
+      "initialVersion": {
+        "version": "0.7.0",
+        "buildId": "de5ec96417074d4b0a4df0e2a05866c664d1a28b09ce57356a4b6fb8ddb6f5be",
+        "offlineReady": true
+      },
+      "metadata": {
+        "standalone": true,
+        "scope": "/serpentis-regina-plm-core/workroom/",
+        "iconDimensions": [
+          "192x192",
+          "512x512"
+        ],
+        "appleTouchIcon": "180x180"
+      },
+      "layouts": [
+        {
+          "viewport": "iphone",
+          "width": 390,
+          "height": 844,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        },
+        {
+          "viewport": "narrow-phone",
+          "width": 320,
+          "height": 568,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        },
+        {
+          "viewport": "landscape",
+          "width": 844,
+          "height": 390,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        }
+      ],
+      "cachedShellPaths": [
+        "/serpentis-regina-plm-core/workroom/client-intake.html",
+        "/serpentis-regina-plm-core/workroom/icons/apple-touch-icon.png",
+        "/serpentis-regina-plm-core/workroom/icons/icon-192.png",
+        "/serpentis-regina-plm-core/workroom/icons/icon-512.png",
+        "/serpentis-regina-plm-core/workroom/index.html",
+        "/serpentis-regina-plm-core/workroom/manifest.webmanifest",
+        "/serpentis-regina-plm-core/workroom/pwa.js"
+      ],
+      "keyboardResponse": {
+        "simulatedVisualViewportHeight": 420,
+        "saveExportReachable": true,
+        "nativeKeyboardTested": false
+      },
+      "networkOutageMethod": "HTTP server refuses all connections; uncached fetch must fail",
+      "engineLimitations": [
+        "Playwright WebKit context.set_offline(true) made navigation fail with an internal browser error; service-worker outage checks instead refuse all HTTP server connections.",
+        "Playwright WPE ephemeral profiles reject bare IndexedDB Blob writes; this check uses isolated temporary persistent WebKit profiles, where Blob commits succeed."
+      ],
+      "updatedVersion": {
+        "version": "0.7.0-audit-b",
+        "buildId": "480d339ea7e29811f619d9e930c8e574701dfc93fe6eed37266f1bb255e946af",
+        "offlineReady": true
+      }
+    }
+  },
+  "issues": [],
+  "publicationBoundary": "Only blank-template screenshots and non-identifying evidence are written. Synthetic records remain in temporary isolated browser profiles.",
+  "limits": [
+    "Browser touch/viewport emulation is not physical iPhone testing.",
+    "Native Safari Share, Add to Home Screen, iOS keyboard and Home Screen storage separation require device verification."
+  ],
+  "buildFiles": {
+    "client-intake.html": "a72fabec6089544c597dcd6ea36faf155baec5505cf8cdea7244b47191119226",
+    "icons/apple-touch-icon.png": "8998d2a0465dde807c8eef1d8247924e750862bbcee82d5e269746bd4526c010",
+    "icons/icon-192.png": "dfd0d95f0d7e9d4f10579828bc794f0438a566da1359c2a91ff35365e593de88",
+    "icons/icon-512.png": "6363ee20c1da487dbc591f6c7b76ddf37c04bd8fe4c964388d12d5fbb5c4fb41",
+    "index.html": "e03f6945515dcc4124355f11930ffb44010b9d31d0e7f7ed41109c9b612b802c",
+    "manifest.webmanifest": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c",
+    "pwa.js": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf",
+    "sw.js": "f75f0adbac12c697d895c9ac232bce831089dcf0c5262f986e35a71128994030"
+  },
+  "passed": true
+}

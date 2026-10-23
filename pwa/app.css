@@ -1,0 +1,24 @@
+/* Hosted-app additions only. The standalone sheets retain their original CSS. */
+#pwa-info-dialog { width:min(94vw,580px); max-height:90dvh; min-width:0; overflow:auto; overscroll-behavior:contain; padding:16px; border:1px solid var(--ash-line); background:var(--obsidian); color:var(--ash-ink); font:inherit; }
+#pwa-info-dialog::backdrop { background:var(--obsidian); opacity:.85; }
+#pwa-info-dialog h2 { margin:0; font-size:26px; }
+#pwa-info-dialog p, #pwa-info-dialog li { font-size:18px; line-height:1.4; overflow-wrap:anywhere; }
+#pwa-info-dialog .pwa-heading { display:flex; gap:12px; align-items:center; justify-content:space-between; }
+#pwa-info-dialog ol { padding-left:24px; }
+#pwa-info-dialog a { color:var(--ash-ink); }
+#pwa-info-dialog button, #pwa-info-open { min-height:44px; border:1px solid var(--ash-line); background:var(--electric); color:var(--ruby); font:inherit; font-weight:700; padding:9px 12px; }
+#pwa-info-dialog #pwa-version { font-size:16px; }
+#pwa-info-dialog #pwa-apply-update { width:100%; }
+@media screen {
+  .app-shell, main.sheet { height:var(--pwa-viewport-height,100dvh); padding-top:max(8px,env(safe-area-inset-top)); padding-right:max(8px,env(safe-area-inset-right)); padding-bottom:max(8px,env(safe-area-inset-bottom)); padding-left:max(8px,env(safe-area-inset-left)); }
+}
+@media screen and (min-width:741px) {
+  .app-shell, main.sheet { padding-top:max(16px,env(safe-area-inset-top)); padding-right:max(24px,env(safe-area-inset-right)); padding-bottom:max(10px,env(safe-area-inset-bottom)); padding-left:max(24px,env(safe-area-inset-left)); }
+}
+@media screen and (pointer:coarse) {
+  input:not([type=checkbox]):not([type=radio]), select, textarea { font-size:max(16px,1em); }
+  .app-footer .footer-actions > button, .workroom-footer .workroom-actions > button { min-height:44px; }
+  body.pwa-keyboard-open .app-shell { grid-template-rows:minmax(0,1fr) auto; }
+  body.pwa-keyboard-open .app-shell > .masthead, body.pwa-keyboard-open .app-shell > #sheet-tabs { display:none; }
+}
+@media print { #pwa-info-open, #pwa-info-dialog { display:none!important; } }
