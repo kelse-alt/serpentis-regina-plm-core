@@ -1,8 +1,29 @@
 # Serpentis Regina — PLM Core
 
-A fashion technology prototype for client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects technical-design practice with beginner JavaScript learning: one measurement object becomes one displayed row and one saved record.
+A local fashion technical-design workroom for six-tab tech packs, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning.
 
-## Start with the client intake — workroom edition
+## Start with the six-tab workroom — v0.6.0
+
+[Download the current workroom ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/heads/codex/workroom-style-revisions.zip),
+extract it, and open **tech-pack.html**. With Node.js 24+, `npm run techpack`
+provides a local HTTP preview.
+
+Set up shared style information once, retain explicit sheet/sample overrides,
+and work across the original six worksheets. Recoverable IndexedDB drafts,
+separate original-image Blobs, named local revisions with compare/restore,
+portable JSON backups, fractional-inch entry, validated spreadsheet paste,
+undo/redo and task comparison views support daily workroom use. Save/Export
+actions remain available on phones. Existing house colors, assets, formulas
+and the approved reference stay intact.
+
+Read the [daily workflow guide](docs/workroom-daily-workflow.md) before moving
+existing drafts. Version-1 packs migrate to the separate tech-pack schema 2;
+locally named revisions are not authenticated approvals or maker releases.
+The [master-library strategy](docs/master-library-strategy.md) describes future
+house terminology, POM/methods and reusable standards; it does not import
+past-job documents or provide a new master measurement dataset.
+
+## Separate client intake — workroom edition
 
 **Without installing anything:** [download the workroom ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/heads/codex/client-intake-workroom-style.zip), extract the folder, and open **client-intake.html** in your browser.
 
@@ -49,6 +70,7 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 
 ## What works today
 
+- Develop the six-tab tech pack with shared style data, recoverable local drafts, named revisions, CM/IN entry, spreadsheet paste and complete export/print.
 - Capture the separate workbook-based client intake, convert CM/IN, check required-field completeness, and save/export/reopen partial drafts.
 - Enter new measurements for the same 20 POMs, calculate deltas immediately, save sessions, reopen them, and export CSV/JSON.
 - Generate a local HTML measurement sheet with search, reference filters, and print / Save PDF controls.
@@ -138,11 +160,11 @@ cannot save and still offers downloads. There are no external services or assets
 The local server binds only to this computer. New session data is stored locally
 and is not automatically committed, uploaded, or deployed as a website.
 
-## Six-tab tech pack workroom (v0.5.0)
+## Six-tab workbook coverage
 
 Extract the project ZIP and open **[tech-pack.html](tech-pack.html)**. The complete supplied workbook now has coordinated Pattern Card, Wash Specs, Fit & Comments, Graded Specs, Measurement Master and Mannequin Reference tabs in the established house style. Choose garment units, enter specifications, attach local drawings, save/reopen packs, download/import JSON, export sheet CSV and print the current sheet or all six. The approved mannequin measurements remain read-only.
 
-See [the workroom guide](docs/tech-pack-workroom.md) for every source section, formula, unresolved workbook detail, and local-data behavior. The original Drive workbook is unchanged. New garment tables start blank; source example values never become approved specs.
+See [the original workroom guide](docs/tech-pack-workroom.md) for source sections, formulas and unresolved workbook details; use the [v0.6 daily workflow](docs/workroom-daily-workflow.md) for current storage and editing behavior. The original Drive workbook is unchanged. New garment tables start blank; source example values never become approved specs.
 
 ## Run it locally
 
@@ -195,9 +217,10 @@ Their provenance is `MEASUREMENT SHEET_SERPENTIS REGINA`, tab `BODY REF-MANNEQUI
 | **v0.3.0** | New measurement entry, live deltas, saved sessions, exports, and standalone HTML | Baseline, session, and API suites | Generator milestone |
 | **v0.3.1** | Ready-to-open HTML included in the downloadable project ZIP | 31 tests + browser acceptance | Packaged 20-POM generator |
 | **v0.5.0** | Six source tabs, garment specs, graded grids, local images, pack save/import/export and complete printing | Core, source and browser acceptance | Packaged tech-pack workroom |
-| **v0.4.0** | Workbook-based 34-POM client intake, CM/IN, saved drafts, and import/export/print | Intake calculation/API and existing suites | Current packaged application |
+| **v0.6.0** | Shared style record, schema migration, recoverable drafts/revisions and faster specification entry | See current validation evidence | Daily workroom workflow |
+| **v0.4.0** | Workbook-based 34-POM client intake, CM/IN, saved drafts, and import/export/print | Intake calculation/API and existing suites | Separate client intake |
 
-Application versions, measurement revisions, and JSON schema versions describe different things. **v0.5.0** is the packaged application version; **SR-FORM-001 v1** is the approved measurement dataset; **`schemaVersion: "1.0"`** describes the baseline JSON format. The separate client-intake template has its own identity and revision. Adding the intake did not revise the approved house measurements.
+Application versions, measurement revisions, and JSON schema versions describe different things. **v0.6.0** is the packaged application version; tech-pack drafts use schema 2 with version-1 migration. **SR-FORM-001 v1** remains the approved measurement dataset; **`schemaVersion: "1.0"`** describes that baseline JSON format. The separate client-intake template has its own identity and revision. Application changes do not revise approved house measurements.
 
 See the [changelog](CHANGELOG.md) for the development and publication record.
 
@@ -218,4 +241,4 @@ See the [changelog](CHANGELOG.md) for the development and publication record.
 
 ## Prototype scope
 
-This is a local technical-design prototype with measurement registers, client intake and six-tab tech packs. Approved baseline data stays read-only. Pack images and drafts are saved locally and transferred through JSON backups. Remote submissions, multiuser editing, accounts and permissions, live spreadsheet synchronization, automatic grading rules and general baseline revision management remain future work. The existing approved revision is never silently overwritten.
+This is a local technical-design prototype with measurement registers, client intake and six-tab tech packs. Approved baseline data stays read-only. Pack images, recoverable drafts and named revision snapshots remain local; JSON backups provide manual transfer. Revision names/authors are not authenticated production approvals. A house terminology/POM library, structured fittings, BOM/construction modules, maker releases, remote submissions, multiuser editing, accounts/permissions, live spreadsheet synchronization and automatic grading remain future work. The existing approved revision is never silently overwritten.

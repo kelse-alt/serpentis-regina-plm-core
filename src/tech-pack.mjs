@@ -3,6 +3,36 @@ const MAX_NUMBER = 1e9;
 const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
 const UNSAFE_KEYS = new Set(['__proto__', 'prototype', 'constructor']);
 const EDITABLE_TYPES = new Set(['text', 'number', 'measurement']);
+const STYLE_KEYS = ['number', 'description', 'category', 'season', 'baseSize', 'sampleSize', 'maker', 'patternRevision', 'owner', 'fabric'];
+const SHARED_FIELDS = {
+  pattern: { style: 'number', styleNumber: 'number', size: 'baseSize', fabric: 'fabric' },
+  wash: { style: 'number', description: 'description', fabric: 'fabric', asampleSize: 'sampleSize', bsampleSize: 'sampleSize', aseason: 'season', bseason: 'season' },
+  fit: { style: 'number', description: 'description', fabric: 'fabric', sampleSize: 'sampleSize', season: 'season' },
+  graded: { style: 'number', description: 'description', selfFabric: 'fabric' },
+  master: { style: 'number', description: 'description', category: 'category', season: 'season', sampleSize: 'sampleSize', fabric: 'fabric', maker: 'maker' },
+};
+
+/** Only fields with the same garment meaning inherit shared style defaults. */
+export function sharedStyleKey(sheetId, fieldKey) {
+  return Object.hasOwn(SHARED_FIELDS, sheetId) && Object.hasOwn(SHARED_FIELDS[sheetId], fieldKey)
+    ? SHARED_FIELDS[sheetId][fieldKey] : null;
+}
+
+function hasText(value) { return typeof value === 'string' && value.trim() !== ''; }
+
+/** Explicit sheet values win; blank fields inherit without changing stored data. */
+export function resolveFieldValue(pack, sheet, field) {
+  const sheetId = typeof sheet === 'string' ? sheet : sheet.id;
+  const fieldKey = typeof field === 'string' ? field : field.key;
+  if (sheetId === 'fit' && fieldKey === 'style') {
+    const linked = pack.fields.pattern?.style;
+    return hasText(linked) ? linked : pack.style?.number ?? '';
+  }
+  const local = pack.fields[sheetId]?.[fieldKey];
+  if (hasText(local)) return local;
+  const key = sharedStyleKey(sheetId, fieldKey);
+  return key ? pack.style?.[key] ?? '' : local ?? '';
+}
 
 function object(value, label) {
   if (!value || typeof value !== 'object' || Array.isArray(value) ||
@@ -61,7 +91,8 @@ function newId() {
 /** Create a blank local draft, never copying source examples into editable specs. */
 export function createTechPack(template) {
   const pack = {
-    schemaVersion: 1, templateId: template.id, id: newId(), title: 'Untitled tech pack', unit: null,
+    schemaVersion: 2, templateId: template.id, id: newId(), title: 'Untitled tech pack', unit: null,
+    style: Object.fromEntries(STYLE_KEYS.map(key => [key, ''])),
     fields: {}, tables: {}, attachments: {}, updatedAt: new Date().toISOString(),
   };
   for (const sheet of template.sheets) {
@@ -74,10 +105,11 @@ export function createTechPack(template) {
   return pack;
 }
 
-/** Validate an imported snapshot against the controlled schema; no arbitrary fields survive. */
-export function normalizeTechPack(input, template) {
-  exactKeys(input, ['schemaVersion', 'templateId', 'id', 'title', 'unit', 'fields', 'tables', 'attachments', 'updatedAt'], 'Tech pack');
-  if (input.schemaVersion !== 1 || input.templateId !== template.id) throw Error('This tech-pack template or version is not compatible.');
+/** Validate either known schema before migrating; no arbitrary fields survive. */
+function validateTechPack(input, template, version) {
+  const keys = ['schemaVersion', 'templateId', 'id', 'title', 'unit', 'fields', 'tables', 'attachments', 'updatedAt'];
+  exactKeys(input, version === 2 ? [...keys, 'style'] : keys, 'Tech pack');
+  if (input.schemaVersion !== version || input.templateId !== template.id) throw Error('This tech-pack template or version is not compatible.');
   if (input.unit !== null) requireUnit(input.unit);
   const id = text(input.id, 'Pack ID', 128);
   if (!/^[\w-]{1,128}$/.test(id)) throw Error('Pack ID contains unsupported characters.');
@@ -87,6 +119,12 @@ export function normalizeTechPack(input, template) {
   const sheetIds = template.sheets.map(sheet => sheet.id);
   for (const key of ['fields', 'tables', 'attachments']) exactKeys(input[key], sheetIds, key);
   const result = createTechPack(template);
+  result.schemaVersion = version;
+  if (version === 1) delete result.style;
+  else {
+    exactKeys(input.style, STYLE_KEYS, 'Shared style');
+    for (const key of STYLE_KEYS) result.style[key] = text(input.style[key], `Style ${key}`, key === 'description' ? 4000 : 2000);
+  }
   Object.assign(result, { id, title, unit: input.unit, updatedAt: input.updatedAt });
   let attachmentCount = 0;
   for (const sheet of template.sheets) {
@@ -142,14 +180,84 @@ export function normalizeTechPack(input, template) {
   return result;
 }
 
-/** Parse only decimal text; an empty field is missing, never zero. */
+/** Migrate known v1 drafts without changing their existing fields or measurements. */
+export function migrateTechPack(input, template) {
+  object(input, 'Tech pack');
+  if (input.schemaVersion === 2) return validateTechPack(input, template, 2);
+  if (input.schemaVersion !== 1) throw Error('This tech-pack template or version is not compatible.');
+  const legacy = validateTechPack(input, template, 1);
+  const migrated = { ...legacy, schemaVersion: 2, style: Object.fromEntries(STYLE_KEYS.map(key => [key, ''])) };
+  const get = (sheet, key) => legacy.fields[sheet]?.[key];
+  const unique = values => [...new Set(values.filter(hasText).map(value => value.trim()))];
+  const prefer = (primary, fallback = []) => hasText(primary) ? primary.trim() : unique(fallback).length === 1 ? unique(fallback)[0] : '';
+  // Conflicting Pattern Card style/pattern identifiers stay explicit, not guessed.
+  const patternNumbers = unique([get('pattern', 'styleNumber'), get('pattern', 'style')]);
+  migrated.style.number = patternNumbers.length === 1 ? patternNumbers[0] : patternNumbers.length > 1 ? ''
+    : prefer(get('master', 'style'), [get('wash', 'style'), get('graded', 'style')]);
+  migrated.style.description = prefer(get('master', 'description'), [get('wash', 'description'), get('fit', 'description'), get('graded', 'description')]);
+  migrated.style.category = prefer(get('master', 'category'));
+  migrated.style.season = prefer(get('master', 'season'), [get('fit', 'season')]);
+  migrated.style.baseSize = prefer(get('pattern', 'size'));
+  migrated.style.sampleSize = prefer(get('master', 'sampleSize'), [get('fit', 'sampleSize')]);
+  migrated.style.maker = prefer(get('master', 'maker'));
+  migrated.style.fabric = prefer(get('pattern', 'fabric'), [get('master', 'fabric'), get('wash', 'fabric'), get('fit', 'fabric'), get('graded', 'selfFabric')]);
+  // Owner and pattern revision have no unambiguous predecessor fields.
+  return migrated;
+}
+
+/** Return a validated independent current-schema draft, accepting known v1 input. */
+export function normalizeTechPack(input, template) {
+  return migrateTechPack(input, template);
+}
+
+function attachmentSummary(attachment) {
+  if (!attachment) return null;
+  const encoded = attachment.dataUrl ?? '';
+  let hash = 2166136261;
+  for (let index = 0; index < encoded.length; index++) hash = Math.imul(hash ^ encoded.charCodeAt(index), 16777619) >>> 0;
+  const payload = encoded.slice(encoded.indexOf(',') + 1);
+  const bytes = payload.length / 4 * 3 - (payload.endsWith('==') ? 2 : payload.endsWith('=') ? 1 : 0);
+  return { name: attachment.name, type: attachment.type, bytes, contentFingerprint: hash.toString(16).padStart(8, '0') };
+}
+
+/** Human-readable change records; image content is represented by compact metadata. */
+export function compareTechPacks(before, after) {
+  const flatten = pack => {
+    const values = new Map();
+    const visit = (value, path) => {
+      if (value !== null && typeof value === 'object') {
+        for (const key of Object.keys(value).sort()) visit(value[key], `${path}.${key}`);
+      } else values.set(path, value);
+    };
+    for (const key of ['title', 'unit', 'style', 'fields', 'tables']) visit(pack[key] ?? null, key);
+    for (const [sheetId, slots] of Object.entries(pack.attachments ?? {})) {
+      for (const [key, attachment] of Object.entries(slots)) values.set(`attachments.${sheetId}.${key}`, attachmentSummary(attachment));
+    }
+    return values;
+  };
+  const left = flatten(before), right = flatten(after), changes = [];
+  for (const path of [...new Set([...left.keys(), ...right.keys()])].sort()) {
+    const oldValue = left.get(path) ?? null, newValue = right.get(path) ?? null;
+    if (JSON.stringify(oldValue) !== JSON.stringify(newValue)) changes.push({ path, before: oldValue, after: newValue });
+  }
+  return changes;
+}
+
+/** Decimals in either unit; tape-measure fractions in inches only. */
 export function parseMeasure(value, unit, { allowNegative = false } = {}) {
   requireUnit(unit);
   if (value === null || (typeof value === 'string' && !value.trim())) return null;
   if (typeof value === 'string') {
     const pattern = allowNegative ? /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/ : /^\+?(?:\d+(?:\.\d*)?|\.\d+)$/;
-    if (!pattern.test(value.trim())) throw Error('Enter a decimal measurement, or leave the field blank.');
-    value = Number(value.trim());
+    const entered = value.trim();
+    if (pattern.test(entered)) value = Number(entered);
+    else {
+      const fraction = unit === 'in' && entered.match(/^([+-]?)(?:(\d+)\s+)?(\d+)\/(\d+)$/);
+      if (!fraction || (!allowNegative && fraction[1] === '-')) throw Error(unit === 'in' ? 'Enter a decimal or fraction such as 24 3/8, or leave the field blank.' : 'Enter a decimal measurement, or leave the field blank.');
+      const whole = Number(fraction[2] ?? 0), numerator = Number(fraction[3]), denominator = Number(fraction[4]);
+      if (![whole, numerator, denominator].every(Number.isSafeInteger) || !denominator || (fraction[2] !== undefined && numerator >= denominator)) throw Error('Enter a valid fraction with a nonzero denominator.');
+      value = (whole + numerator / denominator) * (fraction[1] === '-' ? -1 : 1);
+    }
   }
   numeric(value, 'Measurement', allowNegative);
   return numeric(value * (unit === 'in' ? 2.54 : 1), 'Measurement', allowNegative);
