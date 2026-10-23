@@ -11,6 +11,18 @@ const styleLabels = {number:'Style number',description:'Description',category:'G
 let pack = createTechPack(template), active = template.sheets[0].id, refUnit = 'in', dirty = false;
 let saved = [], revisions = [], storageAvailable = false, conflicted = false, autosaveTimer;
 let generation = 0, saveQueue = Promise.resolve(), pendingPaste = null, pasteOrigin = null, restoreTarget = null;
+let pendingActions = 0, preparingUpdate = false, recordedRevisionDetails = '';
+const revisionDetails = () => JSON.stringify(['revision-name','revision-author','revision-reason'].map(id=>$(id).value.trim()));
+const activePackKey = 'serpentis-regina.workroom.active.v2';
+function rememberedPack() {
+ try { const id=sessionStorage.getItem(activePackKey);if(id)return id; } catch { /* Fall back to this browser's last active pack. */ }
+ try { return localStorage.getItem(activePackKey); } catch { return null; }
+}
+function rememberPack(id) {
+ try { localStorage.setItem(activePackKey,id); } catch { /* Draft storage is separate. */ }
+ try { sessionStorage.setItem(activePackKey,id);return sessionStorage.getItem(activePackKey)===id; } catch { return false; }
+}
+const openWorkroomReview = () => pendingPaste||restoreTarget||['export-dialog','paste-dialog','revision-dialog','image-dialog'].some(id=>$(id).open);
 const columnViews = {master:'full',wash:'full'};
 const editHistory = createEditHistory(40);
 const store = createPackStore(template);
@@ -78,7 +90,7 @@ function saveNow() {
  saveState('Saving on this device…');
  const operation=saveQueue.catch(()=>{}).then(async()=>{
   await store.saveDraft(snapshot);
-  if(pack.id===snapshot.id&&generation===savedGeneration){dirty=false;saveState('Saved locally · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}));updateIdentity();}
+  if(pack.id===snapshot.id&&generation===savedGeneration){dirty=false;rememberPack(snapshot.id);saveState('Saved locally · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}));updateIdentity();}
   await refreshSaved();
  });
  saveQueue=operation.catch(error=>{
@@ -184,6 +196,8 @@ function updateResults(tableId,rowId){
 }
 async function loadPack(next,message,{savedDraft=false}={}){
  clearTimeout(autosaveTimer);pack=normalizeTechPack(next,template);generation++;dirty=!savedDraft;conflicted=false;editHistory.reset();updateHistory();
+ rememberPack(pack.id);
+ if(saved.some(p=>p.id===pack.id))$('saved-packs').value=pack.id;
  $('pack-title').value=pack.title;$('sheet-search').value='';renderStyle();renderSheet();updateIdentity();
  saveState(savedDraft?'Saved locally · '+pack.updatedAt.slice(0,19).replace('T',' '):'Working draft · not saved yet');
  try{await refreshRevisions();status(message);}catch(error){$('revision-status').textContent='Revision history could not be read. Your working draft remains on screen.';status(message+' Revision history unavailable: '+error.message);}
@@ -270,7 +284,10 @@ async function prepareSwitch(){
  if(pack.id!==leavingId||generation!==leavingGeneration||invalidInputs().length){status('The draft changed. Finish the edit, then try again.');return false;}
  return true;
 }
-const run = handler => event => { Promise.resolve().then(()=>handler(event)).catch(error=>status(error.message)); };
+const run = handler => event => {
+ pendingActions++;
+ Promise.resolve().then(()=>handler(event)).catch(error=>status(error.message)).finally(()=>pendingActions--);
+};
 $('sheet-tabs').innerHTML=template.sheets.map((s,i)=>`<button id="tab-${s.id}" type="button" role="tab" aria-controls="working-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-sheet="${s.id}"><span aria-hidden="true">0${i+1} / </span>${esc(s.shortTitle)}</button>`).join('');
 $('sheet-tabs').addEventListener('click',event=>{const b=event.target.closest('[data-sheet]');if(!b||!validScreen())return;active=b.dataset.sheet;$('sheet-search').value='';renderSheet();b.scrollIntoView({block:'nearest',inline:'nearest'});});
 $('sheet-tabs').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const buttons=[...$('sheet-tabs').children],i=buttons.indexOf(document.activeElement);const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(i+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;if(validScreen()){buttons[next].click();buttons[next].focus();}});
@@ -383,6 +400,7 @@ $('create-revision').addEventListener('click',run(async()=>{
  if(!name||!author){const input=!name?$('revision-name'):$('revision-author');input.setCustomValidity('Enter '+(!name?'a revision name.':'the person recording this revision.'));input.reportValidity();input.focus();return;}
  const snapshot=normalizeTechPack(pack,template);await saveNow();
  const revision=await store.createRevision(snapshot,{name,author,reason});await refreshRevisions();$('revision-list').value=revision.id;status('Named revision preserved locally. It is a snapshot, not production approval.');
+ recordedRevisionDetails=JSON.stringify([name,author,reason]);
 }));
 for(const id of ['revision-name','revision-author'])$(id).addEventListener('input',()=>$(id).setCustomValidity(''));
 $('compare-revision').addEventListener('click',run(()=>reviewRevision(false)));$('restore-revision').addEventListener('click',run(()=>reviewRevision(true)));
@@ -426,13 +444,20 @@ $('print-pack').addEventListener('click',()=>{if(validScreen()){$('export-dialog
 window.addEventListener('beforeprint',buildPrint);window.addEventListener('afterprint',()=>{$('print-view').innerHTML='';$('print-view').setAttribute('aria-hidden','true');});
 $('recovery-list').addEventListener('click',run(async event=>{const button=event.target.closest('[data-recover]');if(!button)return;download('workroom-original-recovery.json',await store.exportRecovery(button.dataset.recover),'application/json');status('Downloaded the untouched original entry. Valid packs remain available.');}));
 $('close-image').addEventListener('click',()=>$('image-dialog').close());
-window.addEventListener('beforeunload',event=>{if(dirty||invalidInputs().length){event.preventDefault();event.returnValue='';}});
+window.addEventListener('beforeunload',event=>{if(dirty||invalidInputs().length||pendingActions){event.preventDefault();event.returnValue='';}});
+// iOS can suspend a hidden app before the typing debounce fires. Flush valid
+// work on backgrounding as well; the saved label still waits for the database.
+const flushBackgroundDraft = () => {
+ if(dirty&&storageAvailable&&!conflicted&&!invalidInputs().length)saveNow().catch(()=>{});
+};
+document.addEventListener('visibilitychange',()=>{if(document.hidden)flushBackgroundDraft();});
+window.addEventListener('pagehide',flushBackgroundDraft);
 async function initialize(){
  $('save-pack').disabled=true;$('working-panel').inert=true;$('context-panel').inert=true;
  $('pack-title').value=pack.title;renderStyle();renderSheet();
  try{
   const report=await store.init();storageAvailable=true;await refreshSaved();
-  if(saved.length){const next=await store.getDraft(saved[0].id);if(next)await loadPack(next,'Recovered your most recently edited local draft.',{savedDraft:true});}
+  if(saved.length){const selectedId=rememberedPack(),selected=saved.find(p=>p.id===selectedId)||saved[0];const next=await store.getDraft(selected.id);if(next)await loadPack(next,'Recovered your selected local draft.',{savedDraft:true});}
   else saveState('Blank local draft · edits autosave');
   await refreshRecoveries();
   if(report.recoveryCount)status('Valid older packs are available. Open Older pack recovery for entries that need review.');
@@ -445,3 +470,31 @@ async function initialize(){
  }
 }
 await initialize();
+
+// The hosted shell may request an update; it cannot read or export working data.
+// Keep edits unlocked until a valid save completes, then prevent the last-moment
+// edit/reload race. A failed or timed-out update calls cancel() to unlock again.
+window.WORKROOM_UPDATES = {
+ async prepare() {
+  if(preparingUpdate)return {ready:false,message:'An update check is already in progress.'};
+  if(pendingActions)return {ready:false,message:'Wait for the current file or draft operation to finish, then update again.'};
+  if(openWorkroomReview())return {ready:false,message:'Finish or cancel the open review before updating the app.'};
+  if(['revision-name','revision-author','revision-reason'].some(id=>$(id).value.trim())&&revisionDetails()!==recordedRevisionDetails)return {ready:false,message:'Create the named revision, or clear its unfinished details, before updating the app.'};
+  if(!validScreen())return {ready:false,message:'Correct the marked entry before updating. Your last valid draft is retained.'};
+  preparingUpdate=true;
+  const selectedId=pack.id,selectedGeneration=generation,revisionEntry=revisionDetails();
+  try {
+   if(!storageAvailable)throw Error('Local storage is unavailable. Export a JSON backup before reopening the app.');
+   if(conflicted)throw Error('Resolve the draft conflict or export a JSON backup before updating.');
+   await saveNow();
+   if(pack.id!==selectedId||generation!==selectedGeneration||dirty||pendingActions||invalidInputs().length||openWorkroomReview()||revisionDetails()!==revisionEntry)throw Error('The draft or review changed while saving. Finish your edit, then update again.');
+   if(!rememberPack(selectedId))throw Error('This browser could not remember the active pack. Export a JSON backup before reopening the app.');
+   document.querySelector('.app-shell').inert=true;
+   return {ready:true,message:'The active pack is saved on this device. Ready to update.'};
+  } catch(error) {
+   preparingUpdate=false;
+   return {ready:false,message:error.message};
+  }
+ },
+ cancel() { preparingUpdate=false;document.querySelector('.app-shell').inert=false; }
+};

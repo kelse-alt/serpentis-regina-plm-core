@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.7.0 — Installable iPhone workroom — 2026-10-23
+
+- Package the workroom as a Home Screen web app with installation metadata, original-head icons, scoped offline caching and application information/update controls.
+- Host the public application under the existing GitHub Pages `/workroom/` subdirectory while preserving the three-head portal. Filled records and attached project images remain device-local; schema 2 and existing measurement rules are unchanged.
+- Apply updates only after an explicit request and valid confirmed saving. Document Safari installation, separate iOS/browser stores, current-pack JSON transfer, offline preparation and device feedback.
+
 ## v0.6.0 — Daily style and revision workflow — 2026-10-23
 
 - Add a shared style record with explicit sheet/sample overrides and migrate version-1 tech-pack drafts to schema 2 without changing approved house records.

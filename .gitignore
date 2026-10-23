@@ -1,7 +1,10 @@
 # Reproducible reports are generated locally from the versioned register.
 reports/*.html
 reports/browser-review/
+reports/workroom-pwa/
+reports/workroom-pwa.building-*/
 .DS_Store
 node_modules/
+__pycache__/
 # SQLite files and journal/WAL files are generated local outputs.
 /storage/*.sqlite*
