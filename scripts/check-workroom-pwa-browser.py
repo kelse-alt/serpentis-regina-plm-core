@@ -351,7 +351,7 @@ def exercise_engine(browser, name, second_build):
     report['engines'][name] = {'available':True,**evidence}
     context = isolated_context(browser,name,viewport={'width':390,'height':844}, device_scale_factor=3,
                                is_mobile=True, has_touch=True, accept_downloads=True)
-    context.add_init_script('''navigator.serviceWorker.addEventListener('controllerchange',()=>{
+    context.add_init_script('''navigator.serviceWorker?.addEventListener('controllerchange',()=>{
       const events=JSON.parse(sessionStorage.getItem('pwa-audit-worker-events')||'[]');
       events.push({event:'controllerchange',state:navigator.serviceWorker.controller?.state});
       sessionStorage.setItem('pwa-audit-worker-events',JSON.stringify(events));
@@ -373,6 +373,7 @@ def exercise_engine(browser, name, second_build):
         pristine(page)
         page.screenshot(path=str(args.output/'workroom-pwa-iphone.png'))
         open_info(page)
+        require(page.locator('#pwa-apply-update').is_hidden(),'Initial install exposes a stale update action before any newer shell exists.')
         pristine(page)
         page.screenshot(path=str(args.output/'workroom-pwa-install.png'))
         close_info(page)
@@ -537,6 +538,7 @@ def exercise_engine(browser, name, second_build):
     require(page.locator('#saved-packs').input_value() == pack_id,'Update changed the chosen pack.')
     require(sibling.evaluate('window.__pwaAuditSiblingToken') == 'retained','Updating one window reloaded another window.')
     require(sibling.locator('[data-table=specs][data-row="1"][data-col=base]').input_value() == 'uncommitted invalid sibling edit','Update discarded another window’s active input.')
+    require(sibling.locator('#pwa-apply-update').is_hidden(),'Other window retains a stale update action after worker activation.')
     sibling.close()
     evidence['checks']['otherOpenWindowIsNeverAutomaticallyReloaded'] = True
     require(page.evaluate("async()=>{const c=await caches.open('portal-unrelated-cache');return (await c.match('/serpentis-regina-plm-core/sentinel'))?.text();}") == 'preserve','Update deleted unrelated portal cache.')

@@ -150,3 +150,92 @@ test('invalid icon or missing standalone CSP fails before replacing a previous b
   await assert.rejects(buildWorkroomPwa({ rootDir }), /content-security policy/);
   assert.equal(await readFile(path.join(result.outputDir, 'sw.js'), 'utf8'), previous);
 });
+
+test('explicit update waits for full controller activation; timeout unlocks without a later reload', async () => {
+  const script = await readFile(path.join(root, 'pwa/pwa.js'), 'utf8');
+  async function pageFixture({ firstInstall = false } = {}) {
+    function target(extra = {}) {
+      const listeners = new Map();
+      return Object.assign({
+        addEventListener(type, listener) {
+          if (!listeners.has(type)) listeners.set(type, new Set());
+          listeners.get(type).add(listener);
+        },
+        removeEventListener(type, listener) { listeners.get(type)?.delete(listener); },
+        async fire(type) { await Promise.all([...(listeners.get(type) || [])].map(listener => listener({ type }))); }
+      }, extra);
+    }
+    const elements = new Map();
+    const element = () => target({ dataset:{}, setAttribute() {}, append() {}, close() {}, showModal() {} });
+    const byId = id => {
+      if (!elements.has(id)) elements.set(id, element());
+      return elements.get(id);
+    };
+    const timers = new Map();
+    let timerId = 0, reloads = 0, cancellations = 0;
+    const active = target({ state:'activated', postMessage(_data, ports) {
+      queueMicrotask(() => ports[0].postMessage({ version:'0.7.0', buildId:'old', offlineReady:true }));
+    } });
+    const waiting = target({ state:'installed', postMessage() {} });
+    const registration = target({ active:firstInstall ? null : active, waiting, async update() {} });
+    const serviceWorker = target({ controller:firstInstall ? null : active, ready:Promise.resolve(registration), async register() { return registration; } });
+    const window = target({ isSecureContext:true, WORKROOM_UPDATES:{
+      async prepare() { return { ready:true }; }, cancel() { cancellations++; }
+    } });
+    const document = target({
+      body:{ dataset:{ pwaPage:'workroom' }, append() {} },
+      createElement:element, getElementById:byId,
+      querySelector(selector) { return selector.startsWith('meta') ? { content:'0.7.0' } : element(); }
+    });
+    class Channel {
+      constructor() {
+        this.port1 = { close() {}, onmessage:null };
+        this.port2 = { postMessage:data => this.port1.onmessage?.({ data }) };
+      }
+    }
+    vm.runInNewContext(script, { window, document, navigator:{ serviceWorker, onLine:true },
+      matchMedia:() => ({ matches:false }), MessageChannel:Channel,
+      setTimeout(callback, delay) { const id = ++timerId; timers.set(id, { callback, delay }); return id; },
+      clearTimeout(id) { timers.delete(id); }, location:{ reload() { reloads++; } }
+    });
+    await new Promise(resolve => setImmediate(resolve));
+    return { byId, serviceWorker, registration, waiting, timers,
+      get reloads() { return reloads; }, get cancellations() { return cancellations; } };
+  }
+
+  const page = await pageFixture();
+  await page.byId('pwa-apply-update').fire('click');
+  page.waiting.state = 'activating';
+  page.registration.active = page.waiting;
+  page.serviceWorker.controller = page.waiting;
+  await page.serviceWorker.fire('controllerchange');
+  assert.equal(page.reloads, 0, 'claiming an activating worker must not reload');
+  assert.ok([...page.timers.values()].some(timer => timer.delay === 15000), 'activation keeps the existing cancellation timeout');
+  page.waiting.state = 'activated';
+  await page.waiting.fire('statechange');
+  assert.equal(page.reloads, 1, 'requesting page reloads only after activation completes');
+  assert.equal(page.cancellations, 0);
+
+  const timedOut = await pageFixture();
+  await timedOut.byId('pwa-apply-update').fire('click');
+  timedOut.waiting.state = 'activating';
+  timedOut.serviceWorker.controller = timedOut.waiting;
+  await timedOut.serviceWorker.fire('controllerchange');
+  [...timedOut.timers.values()].find(timer => timer.delay === 15000).callback();
+  assert.equal(timedOut.cancellations, 1, 'a stalled activation unlocks editing');
+  timedOut.waiting.state = 'activated';
+  await timedOut.waiting.fire('statechange');
+  assert.equal(timedOut.reloads, 0, 'late activation after cancellation cannot discard resumed edits');
+
+  const sibling = await pageFixture();
+  assert.equal(sibling.byId('pwa-apply-update').hidden, false);
+  sibling.serviceWorker.controller = sibling.waiting;
+  sibling.waiting.state = 'activated';
+  sibling.registration.active = sibling.waiting;
+  sibling.registration.waiting = null;
+  await sibling.serviceWorker.fire('controllerchange');
+  assert.equal(sibling.reloads, 0, 'a page without an explicit update never reloads on controller change');
+  assert.equal(sibling.byId('pwa-apply-update').hidden, true, 'another window applying the update clears a stale update action');
+  const firstInstall = await pageFixture({ firstInstall:true });
+  assert.equal(firstInstall.byId('pwa-apply-update').hidden, true, 'the first worker transiently waiting must not be advertised as an update');
+});
