@@ -1,7 +1,7 @@
 {
   "version": "0.7.0",
-  "sourceCommit": "77ff00d2bb8a4195c61c61503fb261dde29e6184",
-  "buildId": "0b94a62801d1f2204924008747b9d59de0279dd9015478b8ad05faaaffb386a9",
+  "sourceCommit": "f2bc9483fdb72ef8d9eb41dd03bc3d2531122d77",
+  "buildId": "de5ec96417074d4b0a4df0e2a05866c664d1a28b09ce57356a4b6fb8ddb6f5be",
   "appUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/",
   "previousPortalCommit": "673a2195179bebebca88c3f095153ca7d1728416",
   "files": {
@@ -11,7 +11,7 @@
     "icons/icon-512.png": "6363ee20c1da487dbc591f6c7b76ddf37c04bd8fe4c964388d12d5fbb5c4fb41",
     "index.html": "e03f6945515dcc4124355f11930ffb44010b9d31d0e7f7ed41109c9b612b802c",
     "manifest.webmanifest": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c",
-    "pwa.js": "a06af82071c985b3467d936b0f05c0466df0797774591fad1de1bff32a1afb6d",
-    "sw.js": "c5136a684894c2ba9b94126bb4b36640ee21b7004f0309e2d514b9da5f75686f"
+    "pwa.js": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf",
+    "sw.js": "f75f0adbac12c697d895c9ac232bce831089dcf0c5262f986e35a71128994030"
   }
 }

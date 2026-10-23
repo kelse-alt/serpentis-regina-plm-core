@@ -6,6 +6,7 @@
   let registration;
   let updateInFlight = false;
   let updateTimer;
+  let stopWatchingActivation;
   let lastUpdateCheck = 0;
 
   const dialog = document.createElement('dialog');
@@ -87,7 +88,14 @@
   }
 
   function showWaitingUpdate() {
-    if (!registration?.waiting || updateInFlight) return;
+    if (updateInFlight) return;
+    // The first worker can briefly be waiting during installation; it is not an
+    // update until there is an existing activated version to replace.
+    if (!registration?.waiting || registration.active?.state !== 'activated') {
+      updateButton.hidden = true;
+      updateState.textContent = 'The app checks for updates when you are online.';
+      return;
+    }
     updateButton.hidden = false;
     updateState.textContent = isClientIntake
       ? 'An app update is ready. Save or export this intake, then return to Workroom to apply it.'
@@ -97,8 +105,11 @@
 
   function cancelUpdate(message) {
     clearTimeout(updateTimer);
+    stopWatchingActivation?.();
+    stopWatchingActivation = undefined;
     updateInFlight = false;
     window.WORKROOM_UPDATES?.cancel?.();
+    showWaitingUpdate();
     updateButton.disabled = false;
     updateState.textContent = message;
   }
@@ -145,9 +156,34 @@
   }
   navigator.serviceWorker.addEventListener('controllerchange', () => {
     if (updateInFlight) {
-      clearTimeout(updateTimer);
-      location.reload();
-    } else refreshOfflineState();
+      // clients.claim() can change the controller while its activate event is
+      // still running. Reloading during that transition can stall WebKit's
+      // navigation/activation. Keep the saved pack locked until fully active.
+      const controller = navigator.serviceWorker.controller;
+      if (!controller) return;
+      stopWatchingActivation?.();
+      const finishActivation = () => {
+        if (!updateInFlight || navigator.serviceWorker.controller !== controller) {
+          stopWatchingActivation?.();
+          stopWatchingActivation = undefined;
+          return;
+        }
+        if (controller.state === 'activated') {
+          stopWatchingActivation?.();
+          stopWatchingActivation = undefined;
+          clearTimeout(updateTimer);
+          location.reload();
+        } else if (controller.state === 'redundant') {
+          cancelUpdate('The update did not finish. Your saved pack is safe; try again when online.');
+        }
+      };
+      stopWatchingActivation = () => controller.removeEventListener('statechange', finishActivation);
+      controller.addEventListener('statechange', finishActivation);
+      finishActivation();
+    } else {
+      showWaitingUpdate();
+      refreshOfflineState();
+    }
   });
   navigator.serviceWorker.register('./sw.js', { scope:'./', updateViaCache:'none' }).then(async result => {
     registration = result;
@@ -163,6 +199,7 @@
       });
     });
     await navigator.serviceWorker.ready;
+    showWaitingUpdate();
     await refreshOfflineState();
   }).catch(() => {
     offlineState.textContent = 'Offline preparation could not finish. Check your connection and reopen the HTTPS Workroom link in Safari.';
