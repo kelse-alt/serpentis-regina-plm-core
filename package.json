@@ -1,7 +1,7 @@
 {
   "name": "serpentis-regina-plm-core",
   "private": true,
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Local fashion technical-design workroom with six-tab tech packs, client intake and an approved fit-form register",
   "repository": {
     "type": "git",

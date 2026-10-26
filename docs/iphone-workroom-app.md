@@ -1,8 +1,8 @@
-# iPhone workroom app — v0.7.0
+# iPhone workroom app — v0.7.1
 
 Open the [Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/) in **Safari** on your iPhone. The workroom installs on your Home Screen from Safari and opens in its own app window. It is an installable web app; no App Store download or Apple developer account is needed.
 
-The app contains the six workroom sheets, shared style record, local autosave and named revisions, measurement entry, original photographs and house styling. The separate client intake remains available from the workroom. The public site serves application code, blank templates and authorized house reference/provenance; filled packs and attached project images stay on the device.
+The app contains a [pinned style reference panel](pinned-style-reference.md) with front/back example images and Hide/Show style controls, the six workroom sheets, shared style record, local autosave and named revisions, measurement entry, original photographs and house styling. The separate client intake remains available from the workroom. The public site serves application code, blank templates and authorized house reference/provenance; filled packs and attached project images stay on the device.
 
 ## Install on your iPhone
 
@@ -31,7 +31,7 @@ Pack JSON contains the current draft and its original images. Ordinary pack JSON
 
 ## Receive a new version
 
-Open **Export → Install & app info** to see the **Workroom app** screen, its build (for example, **Workroom v0.7.0**) and offline/update state. Open the app online to allow an update check. When a newer application is ready, choose **Save & update app**. The update waits for that explicit action; it does not automatically reload your working draft while you are editing.
+Open **Export → Install & app info** to see the **Workroom app** screen, its build (for example, **Workroom v0.7.1**) and offline/update state. Open the app online to allow an update check. When a newer application is ready, choose **Save & update app**. The update waits for that explicit action; it does not automatically reload your working draft while you are editing.
 
 The workroom checks valid entries and confirmed local saving before applying an update. If an entry needs correction, a file operation is still running, or saving cannot be confirmed, resolve that condition before trying again. Keep a portable JSON backup whenever export is available. The update changes application files and preserves local records; it does not create a new measurement approval or revise the approved house data.
 
@@ -56,8 +56,10 @@ The hosted app lives only under `/serpentis-regina-plm-core/workroom/`. Its mani
 
 The PWA retains application schema 2 and the existing workroom database identity. It preserves the house palette/assignments, Barlow Condensed, original seal and reference artwork, all measurement formulas, and the separation of BF house references, RC intake and garment specifications. No account, remote submission, background synchronization, hosted project database or App Store binary is introduced.
 
-Verified source commit `f2bc948` passes **86 Node tests**, **36 sheet/viewport combinations** and **38 daily workflow checks**. Chromium 154 and WebKit 26.5 each pass **19 PWA workflow checks**, three phone layouts and simulated keyboard resizing, including real saved images, offline reopening, pending-file/invalid-entry/failed-write update refusal, post-save review races and an actual two-build update. See the [PWA browser evidence](validation/workroom-pwa.json) and [daily regression evidence](validation/workroom-pwa-daily-regression.json). The [blank iPhone preview](previews/workroom-pwa-iphone.png) and [installation screen](previews/workroom-pwa-install.png) contain no filled projects.
+Historical v0.7.0 verification: source commit `f2bc948` passes **86 Node tests**, **36 sheet/viewport combinations** and **38 daily workflow checks**. Chromium 154 and WebKit 26.5 each pass **19 PWA workflow checks**, three phone layouts and simulated keyboard resizing, including real saved images, offline reopening, pending-file/invalid-entry/failed-write update refusal, post-save review races and an actual two-build update. See the [PWA browser evidence](validation/workroom-pwa.json) and [daily regression evidence](validation/workroom-pwa-daily-regression.json). The [blank iPhone preview](previews/workroom-pwa-iphone.png) and [installation screen](previews/workroom-pwa-install.png) contain no filled projects.
 
-GitHub Pages deployment `f3f7062` is built and live. All eight hosted application files match the tested build byte for byte. Live checks confirm manifest/icon delivery, offline reopening of the workroom and client intake, unchanged portal root bytes, and a worker confined to the workroom. All ten existing portal files are unchanged in the deployment tree. See the [live deployment evidence](validation/workroom-pwa-live.json) and [Pages run](https://github.com/kelse-alt/serpentis-regina-plm-core/actions/runs/40001895455).
+Historical v0.7.0 GitHub Pages deployment: `f3f7062`. All eight hosted application files match the tested build byte for byte. Live checks confirm manifest/icon delivery, offline reopening of the workroom and client intake, unchanged portal root bytes, and a worker confined to the workroom. All ten existing portal files are unchanged in the deployment tree. See the [live deployment evidence](validation/workroom-pwa-live.json) and [Pages run](https://github.com/kelse-alt/serpentis-regina-plm-core/actions/runs/40001895455).
 
 These automated checks do not test a physical iPhone, its native Share menu or native keyboard. WebKit used temporary persistent profiles because its Linux ephemeral profile rejects even a bare IndexedDB Blob write; its outage checks refuse HTTP server connections because Playwright’s offline switch causes an internal engine error. The evidence records those limits and the execution proxy certificate workaround used for the live headless check. The founder’s first Home Screen session supplies the device-specific feedback.
+
+Current v0.7.1 adds the pinned style reference panel and passes the fresh checks recorded in [pinned-style validation](validation/pinned-style-reference.json). Use the [pinned-panel guide](pinned-style-reference.md) for Show/Hide controls and the compact phone reference strip.

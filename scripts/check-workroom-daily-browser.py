@@ -120,12 +120,12 @@ def select_sheet(page, sheet_id):
 
 def open_context(page):
     if not page.locator('#context-panel').evaluate('(el) => el.open'):
-        page.locator('#context-panel > summary').click()
+        page.locator('#context-panel > summary .context-panel-heading').click()
 
 
 def close_context(page):
     if page.viewport_size['width'] <= 740 and page.locator('#context-panel').evaluate('(el) => el.open'):
-        page.locator('#context-panel > summary').click()
+        page.locator('#context-panel > summary .context-panel-heading').click()
 
 
 def open_details_for(page, selector):
@@ -188,7 +188,9 @@ def pristine(page):
     require(page.locator('[data-style-key]').evaluate_all('(els) => els.every(el=>el.value==="")'), 'Refusing to capture filled shared metadata.')
     require(page.locator('#sheet-content [data-field]').evaluate_all('(els)=>els.every(el=>el.value==="")'), 'Refusing to capture filled sheet metadata.')
     require(page.locator('#sheet-content textarea,#sheet-content input[type=text]').evaluate_all('(els)=>els.every(el=>el.value==="")'), 'Refusing to capture filled specifications.')
-    require(page.locator('#sheet-content .attachment-card img').count() == 0, 'Refusing to capture attached project images.')
+    require(page.locator('#sheet-content .attachment-card img,#pinned-pattern-content .attachment-card img').count() == 0, 'Refusing to capture attached project images.')
+    require(page.locator('#pinned-pattern-content input,#pinned-pattern-content textarea').evaluate_all('(els)=>els.every(el=>!el.value)'), 'Refusing to capture filled pinned Pattern Card data.')
+    require(page.locator('#style-reference-caption').inner_text() == 'Example reference · SR-FORM-001', 'Refusing to capture a private style reference.')
 
 
 def capture(page, suffix):
@@ -250,7 +252,7 @@ def check_layouts(browser):
                 if geometry['content']['height'] < 44:report['layoutFailure']={'layout':name,'sheet':sheet['id'],**geometry}
                 require(geometry['content']['height'] >= 44, f'{name}/{sheet["id"]}: working content below one usable control ({geometry["content"]["height"]:.2f}px).')
                 require(geometry['footer']['bottom'] <= height + 1, f'{name}/{sheet["id"]}: footer outside viewport.')
-                require(len(geometry['primary']) == 4, 'Footer must contain four primary actions.')
+                require({c['id'] for c in geometry['primary']} == {'save-pack','toggle-style-panel','undo-edit','redo-edit','export-menu-toggle'}, 'Footer must retain Save, style visibility, Undo, Redo and Export.')
                 for control in geometry['primary']:
                     require(control['x'] >= -1 and control['right'] <= width + 1 and control['y'] >= 0 and control['bottom'] <= height + 1, f'{name}/{sheet["id"]}: primary action offscreen: '+control['id'])
                     require(control['height'] >= 33.5, 'Primary action is too short to operate.')
@@ -356,17 +358,17 @@ def check_daily_workflow(browser):
         require(first['schemaVersion'] == 2 and first['style']['number'] == 'SYNTHETIC-STYLE-01', 'Shared style did not export in the new schema.')
         wait_saved_value(page, pack_id, ['style', 'number'], 'SYNTHETIC-STYLE-01')
         select_sheet(page, 'master')
-        open_details_for(page, '[data-field="style"]')
-        require(page.locator('[data-field="style"]').input_value() == 'SYNTHETIC-STYLE-01', 'Master did not inherit shared style.')
-        page.locator('[data-field="style"]').fill('SYNTHETIC-MASTER-OVERRIDE')
+        open_details_for(page, '#sheet-content [data-field="style"]')
+        require(page.locator('#sheet-content [data-field="style"]').input_value() == 'SYNTHETIC-STYLE-01', 'Master did not inherit shared style.')
+        page.locator('#sheet-content [data-field="style"]').fill('SYNTHETIC-MASTER-OVERRIDE')
         select_sheet(page, 'graded')
-        open_details_for(page, '[data-field="style"]')
-        require(page.locator('[data-field="style"]').input_value() == 'SYNTHETIC-STYLE-01', 'Master override leaked into another sheet.')
+        open_details_for(page, '#sheet-content [data-field="style"]')
+        require(page.locator('#sheet-content [data-field="style"]').input_value() == 'SYNTHETIC-STYLE-01', 'Master override leaked into another sheet.')
         select_sheet(page, 'master')
-        open_details_for(page, '[data-field="style"]')
-        require(page.locator('[data-field="style"]').input_value() == 'SYNTHETIC-MASTER-OVERRIDE', 'Explicit override was lost.')
-        page.locator('[data-use-shared="style"]').click()
-        require(page.locator('[data-field="style"]').input_value() == 'SYNTHETIC-STYLE-01', 'Use shared did not restore inheritance.')
+        open_details_for(page, '#sheet-content [data-field="style"]')
+        require(page.locator('#sheet-content [data-field="style"]').input_value() == 'SYNTHETIC-MASTER-OVERRIDE', 'Explicit override was lost.')
+        page.locator('#sheet-content [data-use-shared="style"]').click()
+        require(page.locator('#sheet-content [data-field="style"]').input_value() == 'SYNTHETIC-STYLE-01', 'Use shared did not restore inheritance.')
         restored = exported_json(page)
         require(restored['fields']['master']['style'] == '', 'Use shared must clear the override rather than copy a value.')
         report['workflows']['sharedStyleInheritanceAndExplicitOverrides'] = True
@@ -486,10 +488,10 @@ def check_daily_workflow(browser):
         report['workflows'].update({'distinctWashFormulaZeroAndMissing':True,'manualSourceDeltaCellsPreserved':True,'gradedSizeHeaderUpdates':True})
 
         select_sheet(page,'pattern')
-        open_details_for(page,'[data-attachment="reference"]')
+        open_details_for(page,'#sheet-content [data-attachment="reference"]')
         image = BytesIO()
         Image.new('RGB',(2,2),(16,24,32)).save(image,format='PNG')
-        page.locator('[data-attachment="reference"]').set_input_files({'name':'synthetic-reference.png','mimeType':'image/png','buffer':image.getvalue()})
+        page.locator('#sheet-content [data-attachment="reference"]').set_input_files({'name':'synthetic-reference.png','mimeType':'image/png','buffer':image.getvalue()})
         page.wait_for_function('() => document.querySelector("#sheet-content .attachment-card img")?.naturalWidth === 2')
         page.locator('#save-pack').click()
         wait_saved_value(page,pack_id,['attachments','pattern','reference','name'],'synthetic-reference.png')

@@ -2,7 +2,7 @@
 
 A fashion technical-design workroom for six-tab tech packs, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning. Working records remain local to the browser/app.
 
-## Use the iPhone app — v0.7.0
+## Use the iPhone app — v0.7.1
 
 Open the [Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/)
 in iPhone Safari, then choose **Share → Add to Home Screen → Add**. Keep
@@ -14,6 +14,11 @@ local autosave and named revisions. Updates wait for an explicit action after
 valid entries are saved. Safari, the Home Screen app and desktop browsers may
 have separate stores; transfer a current pack with Export/Import JSON.
 Read the [iPhone installation and usage guide](docs/iphone-workroom-app.md).
+
+The [pinned style reference panel](docs/pinned-style-reference.md) keeps front/back
+images, the Shared Style Record, Pattern Card details and Named Revisions & Restore
+available across every worksheet. Use **Hide style / Show style** in the action bar.
+On phones, a compact image strip expands into the complete reference panel.
 
 ## Desktop and standalone workroom
 
