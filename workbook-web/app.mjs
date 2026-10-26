@@ -27,11 +27,79 @@ const columnViews = {master:'full',wash:'full'};
 const editHistory = createEditHistory(40);
 const store = createPackStore(template);
 const activeSheet = () => template.sheets.find(s => s.id === active);
+const patternSheet = template.sheets.find(s=>s.id==='pattern');
+const sheetForElement = el => template.sheets.find(s=>s.id===el.closest('[data-editor-sheet]')?.dataset.editorSheet)||activeSheet();
+const editorRoots = s => [...document.querySelectorAll(`.sheet-editor[data-editor-sheet="${s.id}"]`)].filter(el=>!el.closest('#print-view'));
+const panelPreferenceKey = 'serpentis-regina.workroom.style-panel-visible';
+let sidebarImages = [];
+function setStylePanelVisible(visible,remember=true) {
+ $('context-panel').hidden=!visible;
+ document.querySelector('.workspace').classList.toggle('style-panel-hidden',!visible);
+ $('toggle-style-panel').textContent=visible?'Hide style':'Show style';
+ $('toggle-style-panel').setAttribute('aria-expanded',String(visible));
+ $('toggle-style-panel').setAttribute('aria-label',(visible?'Hide':'Show')+' style reference panel');
+ if(remember)try{localStorage.setItem(panelPreferenceKey,String(visible));}catch{/* This view preference never blocks local drafts. */}
+}
+function renderReferenceImages() {
+ const flats=pack.attachments.master,pattern=pack.attachments.pattern.reference;
+ const provided=['front','back'].filter(view=>flats[view]).map(view=>({key:view,label:view==='front'?'Front':'Back',src:flats[view].dataUrl,name:flats[view].name}));
+ const images=provided.length?provided:pattern?[{key:'reference',label:'Style reference',src:pattern.dataUrl,name:pattern.name}]:['front','back'].map(view=>({key:view,label:view==='front'?'Front':'Back',src:housePhotos[view],name:'SR-FORM-001 · '+view}));
+ const caption=provided.length?'Current style · front/back references':pattern?'Current style · pattern reference':'Example reference · SR-FORM-001';
+ $('style-reference-caption').textContent=caption;
+ if(images.length===sidebarImages.length&&images.every((image,i)=>Object.keys(image).every(key=>image[key]===sidebarImages[i][key])))return;
+ sidebarImages=images;
+ $('style-reference-images').innerHTML=images.map(image=>`<span class="reference-photo"><button type="button" class="image-open" data-sidebar-image="${image.key}" aria-label="Enlarge ${esc(image.label)} reference"><img src="${image.src}" alt="${esc(image.name)}"></button><span class="reference-photo-caption${image.key==='reference'?' reference-caption-other':''}">${esc(image.label)}</span></span>`).join('');
+}
+function renderPinnedPattern() {
+ const content=$('pinned-pattern-content'),scroll=$('context-panel').querySelector('.context-body').scrollTop;
+ const opened=new Map([...content.querySelectorAll('[data-details]')].map(el=>[el.dataset.details,el.open]));
+ content.innerHTML=`<div class="sheet-editor" data-editor-sheet="pattern">${renderFields(patternSheet)}${renderAttachments(patternSheet)}${patternSheet.tables.map(t=>renderTable(patternSheet,t)).join('')}</div>`;
+ for(const el of content.querySelectorAll('[data-details]'))if(opened.has(el.dataset.details))el.open=opened.get(el.dataset.details);
+ $('context-panel').querySelector('.context-body').scrollTop=scroll;
+}
+function refreshAttachmentViews(s) {
+ for(const root of editorRoots(s)){
+  const current=root.querySelector('.attachment-details');if(!current)continue;
+  const fragment=document.createElement('template');fragment.innerHTML=renderAttachments(s);
+  const next=fragment.content.firstElementChild;next.open=current.open;current.replaceWith(next);
+ }
+ renderReferenceImages();
+}
+function syncDerivedFields() {
+ for(const s of template.sheets)for(const f of s.fields||[])if(f.type==='calculated')syncFieldViews(s,f);
+}
+function updateFieldHint(input,s,f) {
+ const key=sharedStyleKey(s.id,f.key);if(!key)return;
+ const label=input.closest('.field'),hint=label.querySelector('.inherit-hint'),button=label.querySelector('[data-use-shared]');
+ if(hint)hint.textContent=(pack.fields[s.id][f.key]?'Sheet override':'Inherited from shared style')+' · '+styleLabels[key];
+ if(button)button.hidden=!pack.fields[s.id][f.key];
+}
+function syncFieldViews(s,f,origin=null,preserveInvalid=false) {
+ for(const root of editorRoots(s))for(const el of root.querySelectorAll(`[data-field="${f.key}"],[data-derived-field="${f.key}"]`)){
+  if(preserveInvalid&&el.tagName!=='OUTPUT'&&!el.checkValidity())continue;
+  if(el!==origin){if(el.tagName==='OUTPUT')el.textContent=fieldValue(s,f)||'—';else{el.value=fieldValue(s,f)||'';setInlineError(el,'');}}
+  updateFieldHint(el,s,f);
+ }
+}
+function syncInheritedFields() {
+ for(const s of template.sheets)for(const f of s.fields||[])if(sharedStyleKey(s.id,f.key)||f.type==='calculated')syncFieldViews(s,f,null,true);
+}
+function syncTableViews(s,t,r,c,origin) {
+ const value=valueFor(s,t,r,c);
+ for(const root of editorRoots(s))for(const el of root.querySelectorAll(`[data-table="${t.id}"][data-row="${r.id}"][data-col="${c.key}"]`))if(el!==origin){
+  el.value=c.type==='measurement'?formatMeasure(value,unitFor(s)||'cm'):value??'';setInlineError(el,'');
+ }
+}
+
 const unitFor = s => s.reference ? refUnit : pack.unit;
 const status = message => { $('status').textContent = message; };
-const invalidInputs = () => [...document.querySelectorAll('#sheet-content input,#sheet-content textarea,#style-fields input,#pack-title')].filter(el => !el.checkValidity());
+const invalidInputs = () => [...document.querySelectorAll('#sheet-content input,#sheet-content textarea,#pinned-pattern-content input,#pinned-pattern-content textarea,#style-fields input,#pack-title')].filter(el => !el.checkValidity());
 function saveState(message) { $('save-state').textContent = message; $('footer-save-state').textContent = message; }
-function updateIdentity() { $('pack-identity').textContent = `${pack.style.number || pack.title} · ${pack.style.patternRevision ? 'PATTERN '+pack.style.patternRevision+' · ' : ''}${dirty ? 'UNSAVED DRAFT' : 'LOCAL DRAFT'}`; }
+function updateIdentity() {
+ $('pack-identity').textContent = `${pack.style.number || pack.title} · ${pack.style.patternRevision ? 'PATTERN '+pack.style.patternRevision+' · ' : ''}${dirty ? 'UNSAVED DRAFT' : 'LOCAL DRAFT'}`;
+ $('style-reference-summary').textContent=[pack.style.number||pack.title,pack.style.description,pack.style.sampleSize?'Sample '+pack.style.sampleSize:'',pack.style.patternRevision?'Pattern '+pack.style.patternRevision:''].filter(Boolean).join(' · ');
+ $('style-reference-summary').title=$('style-reference-summary').textContent;
+}
 function updateHistory() { $('undo-edit').disabled = !editHistory.canUndo; $('redo-edit').disabled = !editHistory.canRedo; }
 function rememberEdit(key) { editHistory.push(pack,key); }
 function markDirty() {
@@ -47,7 +115,7 @@ function scheduleAutosave() {
 }
 function setInlineError(input,message) {
  const wasInvalid=input.getAttribute('aria-invalid')==='true';
- const id=input.id || ['cell',active,input.dataset.table,input.dataset.row,input.dataset.col || input.dataset.field || input.dataset.styleKey].filter(Boolean).join('-');
+ const id=input.id || ['cell',input.closest('#pinned-pattern-content')?'pinned':'sheet',sheetForElement(input).id,input.dataset.table,input.dataset.row,input.dataset.col || input.dataset.field || input.dataset.styleKey].filter(Boolean).join('-');
  if(!input.id)input.id=id;
  const errorId=id+'-error';let error=document.getElementById(errorId);
  input.setCustomValidity(message);
@@ -62,7 +130,7 @@ function setInlineError(input,message) {
 }
 function validScreen() {
  const invalid=invalidInputs()[0];
- if(invalid){const details=invalid.closest('details');if(details)details.open=true;if(invalid.closest('#context-panel'))$('context-panel').open=true;invalid.focus();invalid.reportValidity();status('Correct the marked entry before continuing. Your last valid draft is retained.');return false;}
+ if(invalid){if(invalid.closest('#context-panel'))setStylePanelVisible(true);for(let ancestor=invalid.parentElement;ancestor;ancestor=ancestor.parentElement)if(ancestor.tagName==='DETAILS')ancestor.open=true;invalid.focus();invalid.scrollIntoView({block:'nearest'});invalid.reportValidity();status('Correct the marked entry before continuing. Your last valid draft is retained.');return false;}
  return true;
 }
 async function refreshSaved() {
@@ -113,6 +181,7 @@ function fieldValue(s,f){return resolveFieldValue(pack,s,f);}
 function renderStyle() {
  $('style-fields').innerHTML=Object.entries(styleLabels).map(([key,label])=>`<label class="field"><span>${esc(label)}</span><input data-style-key="${key}" aria-label="${esc(label)}" maxlength="${key==='description'?4000:2000}" value="${esc(pack.style[key])}"></label>`).join('');
  $('style-unit').value=pack.unit||'';
+ renderPinnedPattern();renderReferenceImages();
 }
 function inheritanceHint(s,f) {
  const key=sharedStyleKey(s.id,f.key);
@@ -122,7 +191,7 @@ function inheritanceHint(s,f) {
 }
 function renderFields(s) {
  if(!s.fields?.length)return '';
- return `<details class="sheet-details" data-details="fields" ${s.tables?.length?'':'open'}><summary>Sheet details · ${s.fields.length} fields</summary><section class="form-section"><div class="field-grid">${s.fields.map(f=>`<label class="field${f.multiline?' wide':''}"><span>${esc(f.label)}</span>${isEditable(f)?f.multiline?`<textarea rows="3" maxlength="${f.multiline?10000:2000}" data-field="${f.key}" aria-label="${esc(f.label)}">${esc(fieldValue(s,f))}</textarea>`:`<input type="${f.inputType==='date'?'date':'text'}" maxlength="2000" data-field="${f.key}" value="${esc(fieldValue(s,f))}" aria-label="${esc(f.label)}">`:`<output>${esc(fieldValue(s,f)||'—')}</output>`}${inheritanceHint(s,f)}</label>`).join('')}</div></section></details>`;
+ return `<details class="sheet-details" data-details="fields" ${s.tables?.length?'':'open'}><summary>Sheet details · ${s.fields.length} fields</summary><section class="form-section"><div class="field-grid">${s.fields.map(f=>`<label class="field${f.multiline?' wide':''}"><span>${esc(f.label)}</span>${isEditable(f)?f.multiline?`<textarea rows="3" maxlength="${f.multiline?10000:2000}" data-field="${f.key}" aria-label="${esc(f.label)}">${esc(fieldValue(s,f))}</textarea>`:`<input type="${f.inputType==='date'?'date':'text'}" maxlength="2000" data-field="${f.key}" value="${esc(fieldValue(s,f))}" aria-label="${esc(f.label)}">`:`<output data-derived-field="${f.key}">${esc(fieldValue(s,f)||'—')}</output>`}${inheritanceHint(s,f)}</label>`).join('')}</div></section></details>`;
 }
 function renderAttachments(s) {
  if(!s.attachments?.length)return '';
@@ -163,7 +232,7 @@ function renderSource(s) {
  const original=source.sheets.find(item=>item.title===s.title);
  return `<details class="source-note"><summary>Source notes, original cells & formulas</summary><p>Exact original tab: ${esc(s.title)}. Source values and formulas below are provenance; they are not editable draft values.</p>${s.id==='master'?`<p>${esc(template.sourceExamples.note)} Original pairs: 20 / 24.75, 25 / 37, 25 / 24.75. No source unit is supplied.</p>`:''}${s.reference?'<p>HOUSE TARGET / TARGET DELTA: source I31:I33 refers to blank column G. These unresolved formulas are preserved below and are not relabelled as target minus actual form.</p>':''}<pre>${esc(JSON.stringify(original,null,2))}</pre></details>`;
 }
-function sheetMarkup(s,complete=false){return(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`+renderSource(s);}
+function sheetMarkup(s,complete=false){return `<div class="sheet-editor" data-editor-sheet="${s.id}">`+(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`+renderSource(s)+'</div>';}
 function renderSheet(preserve=false){
  const s=activeSheet(), content=$('sheet-content'),scroll=content.scrollTop;
  const opened=new Map([...content.querySelectorAll('[data-details]')].map(el=>[el.dataset.details,el.open]));
@@ -189,10 +258,10 @@ function applySearch(){
  $('row-status').textContent=total?`${shown} of ${total} rows · ${activeSheet().reference?'approved reference & local notes':'local garment draft'}${columnViews[active]==='comparison'?' · comparison columns':''}`:'Sheet details & sample references';
  $('no-rows').hidden=shown>0||total===0;
 }
-function updateResults(tableId,rowId){
- const s=activeSheet(),t=s.tables.find(t=>t.id===tableId),r=t.rows.find(r=>r.id===rowId);
- const tr=$('sheet-content').querySelector(`table[data-table="${t.id}"] tr[data-row="${r.id}"]`);
- for(const c of columnsForRow(t,r).filter(c=>c.type==='calculated')){const out=tr.querySelector(`[data-result="${c.key}"] .matte-ink`);if(out)out.textContent=formatMeasure(valueFor(s,t,r,c),unitFor(s)||'cm',true);}
+function updateResults(s,tableId,rowId){
+ const t=s.tables.find(t=>t.id===tableId),r=t.rows.find(r=>r.id===rowId);
+ for(const root of editorRoots(s)){const tr=root.querySelector(`table[data-table="${t.id}"] tr[data-row="${r.id}"]`);if(!tr)continue;
+ for(const c of columnsForRow(t,r).filter(c=>c.type==='calculated')){const out=tr.querySelector(`[data-result="${c.key}"] .matte-ink`);if(out)out.textContent=formatMeasure(valueFor(s,t,r,c),unitFor(s)||'cm',true);}}
 }
 async function loadPack(next,message,{savedDraft=false}={}){
  clearTimeout(autosaveTimer);pack=normalizeTechPack(next,template);generation++;dirty=!savedDraft;conflicted=false;editHistory.reset();updateHistory();
@@ -255,9 +324,9 @@ async function reviewRevision(restore=false){
  $('revision-diff').innerHTML=changes.length?`<table><thead><tr><th>Field / cell</th><th>Named revision</th><th>Current draft</th></tr></thead><tbody>${changes.map(c=>`<tr><td>${esc(changeLabel(c.path))}</td><td class="diff-value">${diffCell(c,c.before,snapshot)}</td><td class="diff-value">${diffCell(c,c.after,pack)}</td></tr>`).join('')}</tbody></table>`:'<p>The named revision and current draft contain the same values.</p>';
  $('confirm-restore').hidden=!restore;$('revision-dialog').showModal();
 }
-function changeGarmentUnit(unit){if(!validScreen()){renderStyle();return false;}if(pack.unit===unit)return true;rememberEdit('unit');pack.unit=unit;markDirty();renderSheet(true);return true;}
+function changeGarmentUnit(unit){if(!validScreen()){$('style-unit').value=pack.unit||'';return false;}if(pack.unit===unit)return true;rememberEdit('unit');pack.unit=unit;markDirty();renderSheet(true);return true;}
 function previewPaste(event){
- const el=event.target;if(!el.dataset.col)return;
+ const el=event.target,s=sheetForElement(el);if(!el.dataset.col)return;
  const text=event.clipboardData?.getData('text/plain')||'';
  if(!/[\t\r\n]/.test(text))return;
  event.preventDefault();if(!validScreen())return;
@@ -266,8 +335,8 @@ function previewPaste(event){
  $('paste-errors').textContent='';$('paste-preview').innerHTML='';$('apply-paste').disabled=true;
  try{
   const table=el.closest('table'),rows=[...table.querySelectorAll('tbody tr:not([hidden])')].map(r=>r.dataset.row);
-  pendingPaste=previewGridPaste(pack,template,{sheetId:active,tableId:el.dataset.table,rowId:el.dataset.row,columnKey:el.dataset.col,text,columnKeys:[...table.querySelectorAll('thead th[data-column]')].map(c=>c.dataset.column),rowIds:rows,unit:unitFor(activeSheet())});
-  const targetTable=activeSheet().tables.find(t=>t.id===pendingPaste.tableId),columnNames=pendingPaste.columnKeys.map(key=>heading(activeSheet(),targetTable.columns.find(c=>c.key===key)));
+  pendingPaste=previewGridPaste(pack,template,{sheetId:s.id,tableId:el.dataset.table,rowId:el.dataset.row,columnKey:el.dataset.col,text,columnKeys:[...table.querySelectorAll('thead th[data-column]')].map(c=>c.dataset.column),rowIds:rows,unit:unitFor(s)});
+  const targetTable=s.tables.find(t=>t.id===pendingPaste.tableId),columnNames=pendingPaste.columnKeys.map(key=>heading(s,targetTable.columns.find(c=>c.key===key)));
   $('paste-summary').textContent=`${pendingPaste.rowCount} rows × ${pendingPaste.columnCount} editable columns. Locked and calculated columns are skipped. Columns: ${columnNames.join(', ')}. Blank numeric cells remain missing.`;
   $('paste-preview').innerHTML=`<table class="paste-table"><thead><tr><th>Destination</th><th>Before</th><th>After</th></tr></thead><tbody>${pendingPaste.changes.map(c=>`<tr><td>${esc(c.label)}</td><td>${esc(diffValue(c.before))}</td><td>${esc(diffValue(c.after))}</td></tr>`).join('')}</tbody></table><p>Numeric preview values are canonical CM for measurements; quantities are unchanged. Nothing is applied until you choose Apply paste.</p>`;
   $('apply-paste').disabled=false;
@@ -297,11 +366,12 @@ $('style-fields').addEventListener('input',event=>{
   if(el.value.includes('\0'))throw Error('Remove the unsupported control character.');
   if(!el.checkValidity()&&el.validity.tooLong)throw Error('This style detail is too long.');
   setInlineError(el,'');if(pack.style[key]===el.value)return;
-  rememberEdit('style:'+key);pack.style[key]=el.value;markDirty();renderSheet(true);
+  rememberEdit('style:'+key);pack.style[key]=el.value;markDirty();syncInheritedFields();
  }catch(error){setInlineError(el,error.message);}
 });
-$('sheet-content').addEventListener('input',event=>{
- const el=event.target,s=activeSheet();
+for(const editor of [$('sheet-content'),$('pinned-pattern-content')]){
+editor.addEventListener('input',event=>{
+ const el=event.target,s=sheetForElement(el);
  if(el.dataset.field){
   try{
    if(el.value.includes('\0'))throw Error('Remove the unsupported control character.');
@@ -309,9 +379,9 @@ $('sheet-content').addEventListener('input',event=>{
    el.setCustomValidity('');if(!el.checkValidity())throw Error('Enter a valid '+f.label+'.');
    setInlineError(el,'');
    if(pack.fields[s.id][f.key]!==el.value){rememberEdit('field:'+s.id+':'+f.key);pack.fields[s.id][f.key]=el.value;markDirty();}
-   const label=el.closest('.field');if(sharedStyleKey(s.id,f.key)){const hint=label.querySelector('.inherit-hint');hint.textContent=(el.value?'Sheet override':'Inherited from shared style')+' · '+styleLabels[sharedStyleKey(s.id,f.key)];label.querySelector('[data-use-shared]').hidden=!el.value;}
+   syncFieldViews(s,f,el);syncDerivedFields();
    for(const t of s.tables||[])for(const c of t.columns.filter(c=>c.headerField===f.key)){
-    const table=$('sheet-content').querySelector(`table[data-table="${t.id}"]`),th=table.querySelector(`th[data-column="${c.key}"]`);
+    const table=el.closest('.sheet-editor').querySelector(`table[data-table="${t.id}"]`),th=table.querySelector(`th[data-column="${c.key}"]`);
     if(th)th.innerHTML=esc(heading(s,c))+` <span class="column-unit">(${(unitFor(s)||'?').toUpperCase()})</span>`;
     for(const input of table.querySelectorAll(`[data-col="${c.key}"]`))input.setAttribute('aria-label',`${t.title}, row ${input.dataset.row}, ${heading(s,c)}`);
    }
@@ -327,43 +397,44 @@ $('sheet-content').addEventListener('input',event=>{
   else if(value.length>(c.maxLength||4000))throw Error('Use at most '+(c.maxLength||4000)+' characters in this cell.');
   setInlineError(el,'');
   if(pack.tables[s.id][t.id][r.id][c.key]!==value){rememberEdit(['cell',s.id,t.id,r.id,c.key].join(':'));pack.tables[s.id][t.id][r.id][c.key]=value;markDirty();}
-  updateResults(t.id,el.dataset.row);status('Entry updated. Valid edits autosave on this device.');
+  syncTableViews(s,t,r,c,el);updateResults(s,t.id,el.dataset.row);status('Entry updated. Valid edits autosave on this device.');
  }catch(error){setInlineError(el,error.message);}
 });
-$('sheet-content').addEventListener('focusout',event=>{
+editor.addEventListener('focusout',event=>{
  const el=event.target;editHistory.breakGroup();
  if(!el.matches('input,textarea')||!el.checkValidity())return;
- const s=activeSheet();
+ const s=sheetForElement(el);
  if(el.dataset.field){const f=s.fields.find(f=>f.key===el.dataset.field);el.value=fieldValue(s,f)||'';}
  else if(el.dataset.numeric){const value=pack.tables[s.id][el.dataset.table][el.dataset.row][el.dataset.col];el.value=el.dataset.numeric==='measurement'?formatMeasure(value,unitFor(s)||'cm'):value??'';}
  applySearch();
 });
-$('style-fields').addEventListener('focusout',()=>editHistory.breakGroup());
-$('sheet-content').addEventListener('paste',previewPaste);
-$('sheet-content').addEventListener('keydown',event=>{
+editor.addEventListener('paste',previewPaste);
+editor.addEventListener('keydown',event=>{
  const el=event.target;
  if(event.key==='Enter'&&el.dataset.numeric&&el.checkValidity()){
   const rows=[...el.closest('tbody').querySelectorAll('tr:not([hidden])')],index=rows.indexOf(el.closest('tr'))+(event.shiftKey?-1:1);
   const next=rows[index]?.querySelector(`[data-col="${el.dataset.col}"]`);if(next){event.preventDefault();next.focus();next.select();}
  }
 });
-$('sheet-content').addEventListener('change',run(async event=>{
- const el=event.target,key=el.dataset.attachment,s=activeSheet();if(!key)return;
+editor.addEventListener('change',run(async event=>{
+ const el=event.target,key=el.dataset.attachment,s=sheetForElement(el);if(!key)return;
  const file=el.files[0],uploadPackId=pack.id;if(!file)return;
  try{
   if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>5*1024*1024)throw Error('Choose a PNG, JPEG or WebP up to 5 MB.');
   const dataUrl=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('Could not read image.'));reader.readAsDataURL(file);});
   const image=new Image();image.src=dataUrl;await image.decode();if(pack.id!==uploadPackId)throw Error('The active pack changed during upload. Attach the image in the intended pack.');
-  rememberEdit('image:'+s.id+':'+key);const next=structuredClone(pack);next.attachments[s.id][key]={name:file.name,type:file.type,dataUrl};pack=normalizeTechPack(next,template);markDirty();renderSheet(true);status('Original image attached locally; autosave includes its bytes.');
+  rememberEdit('image:'+s.id+':'+key);const next=structuredClone(pack);next.attachments[s.id][key]={name:file.name,type:file.type,dataUrl};pack=normalizeTechPack(next,template);markDirty();refreshAttachmentViews(s);status('Original image attached locally; autosave includes its bytes.');
  }catch(error){el.value='';status(error.message);}
 }));
-$('sheet-content').addEventListener('click',event=>{
- const button=event.target.closest('button');if(!button)return;const s=activeSheet();
- if(button.dataset.useShared){rememberEdit('shared:'+s.id+':'+button.dataset.useShared);pack.fields[s.id][button.dataset.useShared]='';markDirty();renderSheet(true);}
- if(button.dataset.remove){rememberEdit('image:'+s.id+':'+button.dataset.remove);pack.attachments[s.id][button.dataset.remove]=null;markDirty();renderSheet(true);}
+editor.addEventListener('click',event=>{
+ const button=event.target.closest('button');if(!button)return;const s=sheetForElement(button);
+ if(button.dataset.useShared){rememberEdit('shared:'+s.id+':'+button.dataset.useShared);pack.fields[s.id][button.dataset.useShared]='';markDirty();syncFieldViews(s,s.fields.find(f=>f.key===button.dataset.useShared));syncDerivedFields();}
+ if(button.dataset.remove){rememberEdit('image:'+s.id+':'+button.dataset.remove);pack.attachments[s.id][button.dataset.remove]=null;markDirty();refreshAttachmentViews(s);}
  if(button.dataset.image){const image=pack.attachments[s.id][button.dataset.image];showImage(image.dataUrl,image.name);}
  if(button.dataset.housePhoto)showImage(button.querySelector('img').src,'SR-FORM-001 · '+button.dataset.housePhoto);
 });
+}
+$('style-fields').addEventListener('focusout',()=>editHistory.breakGroup());
 $('pack-title').addEventListener('input',()=>{rememberEdit('title');pack.title=$('pack-title').value.trim()||'Untitled tech pack';markDirty();});
 $('pack-title').addEventListener('focusout',()=>editHistory.breakGroup());
 $('pack-unit').addEventListener('change',()=>{
@@ -383,7 +454,7 @@ document.addEventListener('keydown',event=>{
 });
 $('apply-paste').addEventListener('click',()=>{
  if(!pendingPaste)return;
- try{const next=applyGridPaste(pack,template,pendingPaste,{unit:unitFor(activeSheet())});rememberEdit('paste:'+Date.now());pack=next;markDirty();$('paste-dialog').close();renderSheet(true);status(`Applied ${pendingPaste.changes.length} cells as one undoable edit.`);pendingPaste=null;}
+ try{const next=applyGridPaste(pack,template,pendingPaste,{unit:unitFor(template.sheets.find(s=>s.id===pendingPaste.sheetId))});rememberEdit('paste:'+Date.now());pack=next;markDirty();$('paste-dialog').close();renderPinnedPattern();renderSheet(true);status(`Applied ${pendingPaste.changes.length} cells as one undoable edit.`);pendingPaste=null;}
  catch(error){$('paste-errors').textContent=error.message;$('apply-paste').disabled=true;}
 });
 $('cancel-paste').addEventListener('click',()=>{$('paste-dialog').close();pendingPaste=null;});
@@ -466,9 +537,16 @@ async function initialize(){
  finally{
   $('save-pack').disabled=false;$('working-panel').inert=false;$('context-panel').inert=false;
   if(matchMedia('(max-width: 740px)').matches)$('context-panel').open=false;
+  let visible=true;try{visible=localStorage.getItem(panelPreferenceKey)!=='false';}catch{}setStylePanelVisible(visible,false);
   updateIdentity();updateHistory();document.body.dataset.workroomReady='true';window.__workroomReady=true;
  }
 }
+$('toggle-style-panel').addEventListener('click',()=>setStylePanelVisible($('context-panel').hidden));
+$('context-panel').addEventListener('toggle',()=>{$('context-panel').querySelector('.context-summary-action').textContent=$('context-panel').open?'Collapse details':'Open details';});
+$('style-reference-images').addEventListener('click',event=>{
+ const button=event.target.closest('[data-sidebar-image]');if(!button)return;event.preventDefault();event.stopPropagation();
+ const image=sidebarImages.find(image=>image.key===button.dataset.sidebarImage);if(image)showImage(image.src,image.name);
+});
 await initialize();
 
 // The hosted shell may request an update; it cannot read or export working data.

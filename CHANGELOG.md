@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.7.1 — Pinned style reference panel — 2026-10-26
+
+- Keep original front/back mannequin example photographs above Shared Style Record, synchronized Pattern Card details/pieces and Named Revisions & Restore across all six tabs.
+- Add device-local Hide/Show style controls, a compact persistent phone image strip, and complete image enlargement. Reuse supplied working-pack references without changing schema or saved records.
+- Preserve invalid entries through image refreshes, update linked Fit style immediately, and reveal hidden invalid sidebar controls before saving. Complete printing stays at the original 190 source rows.
+
+
 ## v0.7.0 — Installable iPhone workroom — 2026-10-23
 
 - Package the workroom as a Home Screen web app with installation metadata, original-head icons, scoped offline caching and application information/update controls.

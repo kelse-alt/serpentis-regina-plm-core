@@ -1,8 +1,8 @@
-# iPhone workroom app — v0.7.0
+# iPhone workroom app — v0.7.1
 
 Open the [Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/) in **Safari** on your iPhone. The workroom installs on your Home Screen from Safari and opens in its own app window. It is an installable web app; no App Store download or Apple developer account is needed.
 
-The app contains the six workroom sheets, shared style record, local autosave and named revisions, measurement entry, original photographs and house styling. The separate client intake remains available from the workroom. The public site serves application code, blank templates and authorized house reference/provenance; filled packs and attached project images stay on the device.
+The app contains a [pinned style reference panel](pinned-style-reference.md) with front/back example images and Hide/Show style controls, the six workroom sheets, shared style record, local autosave and named revisions, measurement entry, original photographs and house styling. The separate client intake remains available from the workroom. The public site serves application code, blank templates and authorized house reference/provenance; filled packs and attached project images stay on the device.
 
 ## Install on your iPhone
 
@@ -31,7 +31,7 @@ Pack JSON contains the current draft and its original images. Ordinary pack JSON
 
 ## Receive a new version
 
-Open **Export → Install & app info** to see the **Workroom app** screen, its build (for example, **Workroom v0.7.0**) and offline/update state. Open the app online to allow an update check. When a newer application is ready, choose **Save & update app**. The update waits for that explicit action; it does not automatically reload your working draft while you are editing.
+Open **Export → Install & app info** to see the **Workroom app** screen, its build (for example, **Workroom v0.7.1**) and offline/update state. Open the app online to allow an update check. When a newer application is ready, choose **Save & update app**. The update waits for that explicit action; it does not automatically reload your working draft while you are editing.
 
 The workroom checks valid entries and confirmed local saving before applying an update. If an entry needs correction, a file operation is still running, or saving cannot be confirmed, resolve that condition before trying again. Keep a portable JSON backup whenever export is available. The update changes application files and preserves local records; it does not create a new measurement approval or revise the approved house data.
 
