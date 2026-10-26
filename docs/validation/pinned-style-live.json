@@ -1,0 +1,88 @@
+{
+  "checkedAtUtc": "2026-10-26T17:26:34.276682+00:00",
+  "version": "0.7.1",
+  "appUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/",
+  "sourceCommit": "a656136a99dc6ed2fe40f08a8b18f2bbd0c6340f",
+  "codeCommit": "d0ed02d4a0bfe3e9533d7cc7454aa69edb870435",
+  "deploymentCommit": "421cc31c4a6ccc75c772ba0e567d8c214b1b74b9",
+  "files": {
+    "client-intake.html": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 1212427,
+      "sha256": "9e97564760775e745eb82f368201577940168a2bb6bc2625d6564b1ef8f35720",
+      "matchesTestedBuild": true
+    },
+    "icons/apple-touch-icon.png": {
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 25175,
+      "sha256": "8998d2a0465dde807c8eef1d8247924e750862bbcee82d5e269746bd4526c010",
+      "matchesTestedBuild": true
+    },
+    "icons/icon-192.png": {
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 27919,
+      "sha256": "dfd0d95f0d7e9d4f10579828bc794f0438a566da1359c2a91ff35365e593de88",
+      "matchesTestedBuild": true
+    },
+    "icons/icon-512.png": {
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 146051,
+      "sha256": "6363ee20c1da487dbc591f6c7b76ddf37c04bd8fe4c964388d12d5fbb5c4fb41",
+      "matchesTestedBuild": true
+    },
+    "index.html": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 1923290,
+      "sha256": "e0a9ba16c1b72bf69de07a3848558452eebcfe6293f17a094913bc44aebb8fe3",
+      "matchesTestedBuild": true
+    },
+    "manifest.webmanifest": {
+      "status": 200,
+      "contentType": "application/manifest+json; charset=utf-8",
+      "bytes": 596,
+      "sha256": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c",
+      "matchesTestedBuild": true
+    },
+    "pwa.js": {
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "bytes": 10647,
+      "sha256": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf",
+      "matchesTestedBuild": true
+    },
+    "sw.js": {
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "bytes": 5799,
+      "sha256": "9fbaf49b0466eaebb2fb43258ce4399ecb48a8a2e3e5ab43aa8fbfb4e7696e2c",
+      "matchesTestedBuild": true
+    }
+  },
+  "limits": [
+    "Live HTTPS responses verified with certificate validation enabled. Fresh Chromium PWA checks use the identical hosted build on loopback; headless Chromium does not trust this execution proxy CA for direct live navigation.",
+    "No physical iPhone/native Safari Share-menu or keyboard test. Only blank templates are public."
+  ],
+  "buildId": "a802e9a73c315aacaf56fc3789de96de0947f587301b5c8aaaa9bfb4e229b4a1",
+  "unchangedPortalFiles": [
+    ".gitattributes",
+    ".nojekyll",
+    "assets/index-B2UYnO4H.js",
+    "assets/index-CAg9nivA.js",
+    "assets/index-D_iSA1tc.css",
+    "index.html",
+    "models/crown.glb",
+    "models/kelsea-mother.glb",
+    "models/serpentis-maiden.glb",
+    "portal-deployment.json"
+  ],
+  "passed": true,
+  "githubPages": {
+    "status": "success",
+    "url": "https://github.com/kelse-alt/serpentis-regina-plm-core/actions/runs/40368417443"
+  }
+}
