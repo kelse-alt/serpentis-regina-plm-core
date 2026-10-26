@@ -33,3 +33,9 @@ The change keeps tech-pack schema 2 and the existing IndexedDB identity. Previou
 Open the existing **SR Workroom** app while online, then choose **Export → Install & app info**. When the update is ready, choose **Save & update app**. The information screen should show **Workroom v0.7.1** after reopening. Continue using the same Home Screen app and its local records.
 
 [Open the Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/).
+
+## Verification
+
+The v0.7.1 build passes 86 Node tests, 36 sidebar/viewport checks and 16 focused sidebar workflows, the existing 36 workroom layouts and 38 daily workflows, and 19 Chromium offline/update workflows. The focused checks include two-way Pattern Card editing, persistent pane state, hidden invalid-entry recovery, image refresh without losing invalid text, revision restore, JSON, and all 190 printed rows. See [validation evidence](validation/pinned-style-reference.json). Browser emulation does not verify physical iPhone Share-menu or native keyboard behavior.
+
+[Desktop preview](previews/pinned-style-desktop.png) · [Phone preview](previews/pinned-style-mobile.png) · [Expanded phone details](previews/pinned-style-mobile-expanded.png) · [Hidden panel](previews/pinned-style-desktop-hidden.png).

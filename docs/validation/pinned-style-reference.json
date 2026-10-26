@@ -1,0 +1,7730 @@
+{
+  "version": "0.7.1",
+  "sourceCodeCommit": "d0ed02d4a0bfe3e9533d7cc7454aa69edb870435",
+  "buildId": "a802e9a73c315aacaf56fc3789de96de0947f587301b5c8aaaa9bfb4e229b4a1",
+  "nodeTests": {
+    "passed": 86,
+    "failed": 0
+  },
+  "validatedBundleSha256": "17e2de9a25ef068d7e799a9035dbf0cb6f0663822a9f4435308de8d396a1d73d",
+  "captureNote": "Browser runs captured the working source before its commit; the recorded final committed bundle and every hosted build byte match those verified runs. Only pristine blank screenshots are published.",
+  "sidebar": {
+    "checkedAtUtc": "2026-10-26T17:20:21.272221+00:00",
+    "sourceCommit": "7d7562654cc69e06644ba243150f1cf07f5e07a7",
+    "buildSha256": "17e2de9a25ef068d7e799a9035dbf0cb6f0663822a9f4435308de8d396a1d73d",
+    "layouts": [
+      {
+        "viewport": "desktop",
+        "sheet": "pattern",
+        "width": 1500,
+        "height": 1000,
+        "documentWidth": 1500,
+        "documentHeight": 1000,
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "right": 1476,
+          "bottom": 927,
+          "width": 1044,
+          "height": 607.890625
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 216.015625,
+          "right": 414,
+          "bottom": 927,
+          "width": 390,
+          "height": 710.984375
+        },
+        "photos": {
+          "x": 25,
+          "y": 267.015625,
+          "right": 413,
+          "bottom": 516.265625,
+          "width": 388,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 104,
+            "bottom": 990,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 189,
+            "bottom": 990,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 274,
+            "bottom": 990,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 359,
+            "bottom": 990,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 444,
+            "bottom": 990,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "desktop",
+        "sheet": "wash",
+        "width": 1500,
+        "height": 1000,
+        "documentWidth": 1500,
+        "documentHeight": 1000,
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "right": 1476,
+          "bottom": 927,
+          "width": 1044,
+          "height": 607.890625
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 216.015625,
+          "right": 414,
+          "bottom": 927,
+          "width": 390,
+          "height": 710.984375
+        },
+        "photos": {
+          "x": 25,
+          "y": 267.015625,
+          "right": 413,
+          "bottom": 516.265625,
+          "width": 388,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 104,
+            "bottom": 990,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 189,
+            "bottom": 990,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 274,
+            "bottom": 990,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 359,
+            "bottom": 990,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 444,
+            "bottom": 990,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "desktop",
+        "sheet": "fit",
+        "width": 1500,
+        "height": 1000,
+        "documentWidth": 1500,
+        "documentHeight": 1000,
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "right": 1476,
+          "bottom": 927,
+          "width": 1044,
+          "height": 607.890625
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 216.015625,
+          "right": 414,
+          "bottom": 927,
+          "width": 390,
+          "height": 710.984375
+        },
+        "photos": {
+          "x": 25,
+          "y": 267.015625,
+          "right": 413,
+          "bottom": 516.265625,
+          "width": 388,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 104,
+            "bottom": 990,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 189,
+            "bottom": 990,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 274,
+            "bottom": 990,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 359,
+            "bottom": 990,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 444,
+            "bottom": 990,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "desktop",
+        "sheet": "graded",
+        "width": 1500,
+        "height": 1000,
+        "documentWidth": 1500,
+        "documentHeight": 1000,
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "right": 1476,
+          "bottom": 927,
+          "width": 1044,
+          "height": 607.890625
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 216.015625,
+          "right": 414,
+          "bottom": 927,
+          "width": 390,
+          "height": 710.984375
+        },
+        "photos": {
+          "x": 25,
+          "y": 267.015625,
+          "right": 413,
+          "bottom": 516.265625,
+          "width": 388,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 104,
+            "bottom": 990,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 189,
+            "bottom": 990,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 274,
+            "bottom": 990,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 359,
+            "bottom": 990,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 444,
+            "bottom": 990,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "desktop",
+        "sheet": "master",
+        "width": 1500,
+        "height": 1000,
+        "documentWidth": 1500,
+        "documentHeight": 1000,
+        "content": {
+          "x": 432,
+          "y": 324.671875,
+          "right": 1476,
+          "bottom": 927,
+          "width": 1044,
+          "height": 602.328125
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 216.015625,
+          "right": 414,
+          "bottom": 927,
+          "width": 390,
+          "height": 710.984375
+        },
+        "photos": {
+          "x": 25,
+          "y": 267.015625,
+          "right": 413,
+          "bottom": 516.265625,
+          "width": 388,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 104,
+            "bottom": 990,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 189,
+            "bottom": 990,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 274,
+            "bottom": 990,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 359,
+            "bottom": 990,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 444,
+            "bottom": 990,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "desktop",
+        "sheet": "body",
+        "width": 1500,
+        "height": 1000,
+        "documentWidth": 1500,
+        "documentHeight": 1000,
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "right": 1476,
+          "bottom": 927,
+          "width": 1044,
+          "height": 607.890625
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 216.015625,
+          "right": 414,
+          "bottom": 927,
+          "width": 390,
+          "height": 710.984375
+        },
+        "photos": {
+          "x": 25,
+          "y": 267.015625,
+          "right": 413,
+          "bottom": 516.265625,
+          "width": 388,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 104,
+            "bottom": 990,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 189,
+            "bottom": 990,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 274,
+            "bottom": 990,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 359,
+            "bottom": 990,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "top": 946,
+            "right": 444,
+            "bottom": 990,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "laptop",
+        "sheet": "pattern",
+        "width": 1280,
+        "height": 720,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "content": {
+          "x": 387.59375,
+          "y": 311.46875,
+          "right": 1256,
+          "bottom": 647,
+          "width": 868.40625,
+          "height": 335.53125
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 208.375,
+          "right": 369.59375,
+          "bottom": 647,
+          "width": 345.59375,
+          "height": 438.625
+        },
+        "photos": {
+          "x": 25,
+          "y": 259.375,
+          "right": 368.59375,
+          "bottom": 508.625,
+          "width": 343.59375,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 104,
+            "bottom": 710,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 189,
+            "bottom": 710,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 274,
+            "bottom": 710,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 359,
+            "bottom": 710,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 444,
+            "bottom": 710,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "laptop",
+        "sheet": "wash",
+        "width": 1280,
+        "height": 720,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "content": {
+          "x": 387.59375,
+          "y": 317.03125,
+          "right": 1256,
+          "bottom": 647,
+          "width": 868.40625,
+          "height": 329.96875
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 208.375,
+          "right": 369.59375,
+          "bottom": 647,
+          "width": 345.59375,
+          "height": 438.625
+        },
+        "photos": {
+          "x": 25,
+          "y": 259.375,
+          "right": 368.59375,
+          "bottom": 508.625,
+          "width": 343.59375,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 104,
+            "bottom": 710,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 189,
+            "bottom": 710,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 274,
+            "bottom": 710,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 359,
+            "bottom": 710,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 444,
+            "bottom": 710,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "laptop",
+        "sheet": "fit",
+        "width": 1280,
+        "height": 720,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "content": {
+          "x": 387.59375,
+          "y": 311.46875,
+          "right": 1256,
+          "bottom": 647,
+          "width": 868.40625,
+          "height": 335.53125
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 208.375,
+          "right": 369.59375,
+          "bottom": 647,
+          "width": 345.59375,
+          "height": 438.625
+        },
+        "photos": {
+          "x": 25,
+          "y": 259.375,
+          "right": 368.59375,
+          "bottom": 508.625,
+          "width": 343.59375,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 104,
+            "bottom": 710,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 189,
+            "bottom": 710,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 274,
+            "bottom": 710,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 359,
+            "bottom": 710,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 444,
+            "bottom": 710,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "laptop",
+        "sheet": "graded",
+        "width": 1280,
+        "height": 720,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "content": {
+          "x": 387.59375,
+          "y": 317.03125,
+          "right": 1256,
+          "bottom": 647,
+          "width": 868.40625,
+          "height": 329.96875
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 208.375,
+          "right": 369.59375,
+          "bottom": 647,
+          "width": 345.59375,
+          "height": 438.625
+        },
+        "photos": {
+          "x": 25,
+          "y": 259.375,
+          "right": 368.59375,
+          "bottom": 508.625,
+          "width": 343.59375,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 104,
+            "bottom": 710,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 189,
+            "bottom": 710,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 274,
+            "bottom": 710,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 359,
+            "bottom": 710,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 444,
+            "bottom": 710,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "laptop",
+        "sheet": "master",
+        "width": 1280,
+        "height": 720,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "content": {
+          "x": 387.59375,
+          "y": 364.90625,
+          "right": 1256,
+          "bottom": 647,
+          "width": 868.40625,
+          "height": 282.09375
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 208.375,
+          "right": 369.59375,
+          "bottom": 647,
+          "width": 345.59375,
+          "height": 438.625
+        },
+        "photos": {
+          "x": 25,
+          "y": 259.375,
+          "right": 368.59375,
+          "bottom": 508.625,
+          "width": 343.59375,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 104,
+            "bottom": 710,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 189,
+            "bottom": 710,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 274,
+            "bottom": 710,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 359,
+            "bottom": 710,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 444,
+            "bottom": 710,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "laptop",
+        "sheet": "body",
+        "width": 1280,
+        "height": 720,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "content": {
+          "x": 387.59375,
+          "y": 311.46875,
+          "right": 1256,
+          "bottom": 647,
+          "width": 868.40625,
+          "height": 335.53125
+        },
+        "sidebar": {
+          "x": 24,
+          "y": 208.375,
+          "right": 369.59375,
+          "bottom": 647,
+          "width": 345.59375,
+          "height": 438.625
+        },
+        "photos": {
+          "x": 25,
+          "y": 259.375,
+          "right": 368.59375,
+          "bottom": 508.625,
+          "width": 343.59375,
+          "height": 249.25
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 104,
+            "bottom": 710,
+            "left": 24
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 189,
+            "bottom": 710,
+            "left": 109
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 274,
+            "bottom": 710,
+            "left": 194
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 359,
+            "bottom": 710,
+            "left": 279
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "top": 666,
+            "right": 444,
+            "bottom": 710,
+            "left": 364
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "mobile",
+        "sheet": "pattern",
+        "width": 390,
+        "height": 844,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "content": {
+          "x": 8,
+          "y": 378.421875,
+          "right": 382,
+          "bottom": 730.21875,
+          "width": 374,
+          "height": 351.796875
+        },
+        "sidebar": {
+          "x": 8,
+          "y": 152.546875,
+          "right": 382,
+          "bottom": 234.640625,
+          "width": 374,
+          "height": 82.09375
+        },
+        "photos": {
+          "x": 14,
+          "y": 158.546875,
+          "right": 126,
+          "bottom": 228.640625,
+          "width": 112,
+          "height": 70.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 79.59375,
+            "bottom": 786.21875,
+            "left": 8
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 155.1875,
+            "bottom": 786.21875,
+            "left": 83.59375
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 230.796875,
+            "bottom": 786.21875,
+            "left": 159.1875
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 306.390625,
+            "bottom": 786.21875,
+            "left": 234.796875
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 381.984375,
+            "bottom": 786.21875,
+            "left": 310.390625
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "mobile",
+        "sheet": "wash",
+        "width": 390,
+        "height": 844,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "content": {
+          "x": 8,
+          "y": 378.421875,
+          "right": 382,
+          "bottom": 730.21875,
+          "width": 374,
+          "height": 351.796875
+        },
+        "sidebar": {
+          "x": 8,
+          "y": 152.546875,
+          "right": 382,
+          "bottom": 234.640625,
+          "width": 374,
+          "height": 82.09375
+        },
+        "photos": {
+          "x": 14,
+          "y": 158.546875,
+          "right": 126,
+          "bottom": 228.640625,
+          "width": 112,
+          "height": 70.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 79.59375,
+            "bottom": 786.21875,
+            "left": 8
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 155.1875,
+            "bottom": 786.21875,
+            "left": 83.59375
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 230.796875,
+            "bottom": 786.21875,
+            "left": 159.1875
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 306.390625,
+            "bottom": 786.21875,
+            "left": 234.796875
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 381.984375,
+            "bottom": 786.21875,
+            "left": 310.390625
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "mobile",
+        "sheet": "fit",
+        "width": 390,
+        "height": 844,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "content": {
+          "x": 8,
+          "y": 378.421875,
+          "right": 382,
+          "bottom": 730.21875,
+          "width": 374,
+          "height": 351.796875
+        },
+        "sidebar": {
+          "x": 8,
+          "y": 152.546875,
+          "right": 382,
+          "bottom": 234.640625,
+          "width": 374,
+          "height": 82.09375
+        },
+        "photos": {
+          "x": 14,
+          "y": 158.546875,
+          "right": 126,
+          "bottom": 228.640625,
+          "width": 112,
+          "height": 70.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 79.59375,
+            "bottom": 786.21875,
+            "left": 8
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 155.1875,
+            "bottom": 786.21875,
+            "left": 83.59375
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 230.796875,
+            "bottom": 786.21875,
+            "left": 159.1875
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 306.390625,
+            "bottom": 786.21875,
+            "left": 234.796875
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 381.984375,
+            "bottom": 786.21875,
+            "left": 310.390625
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "mobile",
+        "sheet": "graded",
+        "width": 390,
+        "height": 844,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "content": {
+          "x": 8,
+          "y": 393.421875,
+          "right": 382,
+          "bottom": 730.21875,
+          "width": 374,
+          "height": 336.796875
+        },
+        "sidebar": {
+          "x": 8,
+          "y": 152.546875,
+          "right": 382,
+          "bottom": 234.640625,
+          "width": 374,
+          "height": 82.09375
+        },
+        "photos": {
+          "x": 14,
+          "y": 158.546875,
+          "right": 126,
+          "bottom": 228.640625,
+          "width": 112,
+          "height": 70.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 79.59375,
+            "bottom": 786.21875,
+            "left": 8
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 155.1875,
+            "bottom": 786.21875,
+            "left": 83.59375
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 230.796875,
+            "bottom": 786.21875,
+            "left": 159.1875
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 306.390625,
+            "bottom": 786.21875,
+            "left": 234.796875
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 381.984375,
+            "bottom": 786.21875,
+            "left": 310.390625
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "mobile",
+        "sheet": "master",
+        "width": 390,
+        "height": 844,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "content": {
+          "x": 8,
+          "y": 393.421875,
+          "right": 382,
+          "bottom": 730.21875,
+          "width": 374,
+          "height": 336.796875
+        },
+        "sidebar": {
+          "x": 8,
+          "y": 152.546875,
+          "right": 382,
+          "bottom": 234.640625,
+          "width": 374,
+          "height": 82.09375
+        },
+        "photos": {
+          "x": 14,
+          "y": 158.546875,
+          "right": 126,
+          "bottom": 228.640625,
+          "width": 112,
+          "height": 70.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 79.59375,
+            "bottom": 786.21875,
+            "left": 8
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 155.1875,
+            "bottom": 786.21875,
+            "left": 83.59375
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 230.796875,
+            "bottom": 786.21875,
+            "left": 159.1875
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 306.390625,
+            "bottom": 786.21875,
+            "left": 234.796875
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 381.984375,
+            "bottom": 786.21875,
+            "left": 310.390625
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "mobile",
+        "sheet": "body",
+        "width": 390,
+        "height": 844,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "content": {
+          "x": 8,
+          "y": 378.421875,
+          "right": 382,
+          "bottom": 730.21875,
+          "width": 374,
+          "height": 351.796875
+        },
+        "sidebar": {
+          "x": 8,
+          "y": 152.546875,
+          "right": 382,
+          "bottom": 234.640625,
+          "width": 374,
+          "height": 82.09375
+        },
+        "photos": {
+          "x": 14,
+          "y": 158.546875,
+          "right": 126,
+          "bottom": 228.640625,
+          "width": 112,
+          "height": 70.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 79.59375,
+            "bottom": 786.21875,
+            "left": 8
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 155.1875,
+            "bottom": 786.21875,
+            "left": 83.59375
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 230.796875,
+            "bottom": 786.21875,
+            "left": 159.1875
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 306.390625,
+            "bottom": 786.21875,
+            "left": 234.796875
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "top": 742.21875,
+            "right": 381.984375,
+            "bottom": 786.21875,
+            "left": 310.390625
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "narrow-phone",
+        "sheet": "pattern",
+        "width": 320,
+        "height": 568,
+        "documentWidth": 320,
+        "documentHeight": 568,
+        "content": {
+          "x": 5,
+          "y": 360.828125,
+          "right": 315,
+          "bottom": 464,
+          "width": 310,
+          "height": 103.171875
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 145.140625,
+          "right": 315,
+          "bottom": 221.140625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 150.59375,
+          "right": 110,
+          "bottom": 215.6875,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 63.796875,
+            "bottom": 518,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 126.59375,
+            "bottom": 518,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 189.390625,
+            "bottom": 518,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 252.1875,
+            "bottom": 518,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 314.984375,
+            "bottom": 518,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "narrow-phone",
+        "sheet": "wash",
+        "width": 320,
+        "height": 568,
+        "documentWidth": 320,
+        "documentHeight": 568,
+        "content": {
+          "x": 5,
+          "y": 375.828125,
+          "right": 315,
+          "bottom": 464,
+          "width": 310,
+          "height": 88.171875
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 145.140625,
+          "right": 315,
+          "bottom": 221.140625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 150.59375,
+          "right": 110,
+          "bottom": 215.6875,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 63.796875,
+            "bottom": 518,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 126.59375,
+            "bottom": 518,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 189.390625,
+            "bottom": 518,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 252.1875,
+            "bottom": 518,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 314.984375,
+            "bottom": 518,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "narrow-phone",
+        "sheet": "fit",
+        "width": 320,
+        "height": 568,
+        "documentWidth": 320,
+        "documentHeight": 568,
+        "content": {
+          "x": 5,
+          "y": 360.828125,
+          "right": 315,
+          "bottom": 464,
+          "width": 310,
+          "height": 103.171875
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 145.140625,
+          "right": 315,
+          "bottom": 221.140625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 150.59375,
+          "right": 110,
+          "bottom": 215.6875,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 63.796875,
+            "bottom": 518,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 126.59375,
+            "bottom": 518,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 189.390625,
+            "bottom": 518,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 252.1875,
+            "bottom": 518,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 314.984375,
+            "bottom": 518,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "narrow-phone",
+        "sheet": "graded",
+        "width": 320,
+        "height": 568,
+        "documentWidth": 320,
+        "documentHeight": 568,
+        "content": {
+          "x": 5,
+          "y": 375.828125,
+          "right": 315,
+          "bottom": 464,
+          "width": 310,
+          "height": 88.171875
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 145.140625,
+          "right": 315,
+          "bottom": 221.140625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 150.59375,
+          "right": 110,
+          "bottom": 215.6875,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 63.796875,
+            "bottom": 518,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 126.59375,
+            "bottom": 518,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 189.390625,
+            "bottom": 518,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 252.1875,
+            "bottom": 518,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 314.984375,
+            "bottom": 518,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "narrow-phone",
+        "sheet": "master",
+        "width": 320,
+        "height": 568,
+        "documentWidth": 320,
+        "documentHeight": 568,
+        "content": {
+          "x": 5,
+          "y": 375.828125,
+          "right": 315,
+          "bottom": 464,
+          "width": 310,
+          "height": 88.171875
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 145.140625,
+          "right": 315,
+          "bottom": 221.140625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 150.59375,
+          "right": 110,
+          "bottom": 215.6875,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 63.796875,
+            "bottom": 518,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 126.59375,
+            "bottom": 518,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 189.390625,
+            "bottom": 518,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 252.1875,
+            "bottom": 518,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 314.984375,
+            "bottom": 518,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "narrow-phone",
+        "sheet": "body",
+        "width": 320,
+        "height": 568,
+        "documentWidth": 320,
+        "documentHeight": 568,
+        "content": {
+          "x": 5,
+          "y": 375.828125,
+          "right": 315,
+          "bottom": 464,
+          "width": 310,
+          "height": 88.171875
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 145.140625,
+          "right": 315,
+          "bottom": 221.140625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 150.59375,
+          "right": 110,
+          "bottom": 215.6875,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 63.796875,
+            "bottom": 518,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 126.59375,
+            "bottom": 518,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 189.390625,
+            "bottom": 518,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 252.1875,
+            "bottom": 518,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "top": 474,
+            "right": 314.984375,
+            "bottom": 518,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "short-phone",
+        "sheet": "pattern",
+        "width": 320,
+        "height": 480,
+        "documentWidth": 320,
+        "documentHeight": 480,
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "right": 315,
+          "bottom": 380.359375,
+          "width": 310,
+          "height": 55.3125
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 128.5625,
+          "right": 315,
+          "bottom": 204.5625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 134.015625,
+          "right": 110,
+          "bottom": 199.109375,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 63.796875,
+            "bottom": 433.359375,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 126.59375,
+            "bottom": 433.359375,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 189.390625,
+            "bottom": 433.359375,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 252.1875,
+            "bottom": 433.359375,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 314.984375,
+            "bottom": 433.359375,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "short-phone",
+        "sheet": "wash",
+        "width": 320,
+        "height": 480,
+        "documentWidth": 320,
+        "documentHeight": 480,
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "right": 315,
+          "bottom": 380.359375,
+          "width": 310,
+          "height": 55.3125
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 128.5625,
+          "right": 315,
+          "bottom": 204.5625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 134.015625,
+          "right": 110,
+          "bottom": 199.109375,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 63.796875,
+            "bottom": 433.359375,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 126.59375,
+            "bottom": 433.359375,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 189.390625,
+            "bottom": 433.359375,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 252.1875,
+            "bottom": 433.359375,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 314.984375,
+            "bottom": 433.359375,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "short-phone",
+        "sheet": "fit",
+        "width": 320,
+        "height": 480,
+        "documentWidth": 320,
+        "documentHeight": 480,
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "right": 315,
+          "bottom": 380.359375,
+          "width": 310,
+          "height": 55.3125
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 128.5625,
+          "right": 315,
+          "bottom": 204.5625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 134.015625,
+          "right": 110,
+          "bottom": 199.109375,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 63.796875,
+            "bottom": 433.359375,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 126.59375,
+            "bottom": 433.359375,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 189.390625,
+            "bottom": 433.359375,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 252.1875,
+            "bottom": 433.359375,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 314.984375,
+            "bottom": 433.359375,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "short-phone",
+        "sheet": "graded",
+        "width": 320,
+        "height": 480,
+        "documentWidth": 320,
+        "documentHeight": 480,
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "right": 315,
+          "bottom": 380.359375,
+          "width": 310,
+          "height": 55.3125
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 128.5625,
+          "right": 315,
+          "bottom": 204.5625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 134.015625,
+          "right": 110,
+          "bottom": 199.109375,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 63.796875,
+            "bottom": 433.359375,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 126.59375,
+            "bottom": 433.359375,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 189.390625,
+            "bottom": 433.359375,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 252.1875,
+            "bottom": 433.359375,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 314.984375,
+            "bottom": 433.359375,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "short-phone",
+        "sheet": "master",
+        "width": 320,
+        "height": 480,
+        "documentWidth": 320,
+        "documentHeight": 480,
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "right": 315,
+          "bottom": 380.359375,
+          "width": 310,
+          "height": 55.3125
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 128.5625,
+          "right": 315,
+          "bottom": 204.5625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 134.015625,
+          "right": 110,
+          "bottom": 199.109375,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 63.796875,
+            "bottom": 433.359375,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 126.59375,
+            "bottom": 433.359375,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 189.390625,
+            "bottom": 433.359375,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 252.1875,
+            "bottom": 433.359375,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 314.984375,
+            "bottom": 433.359375,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "short-phone",
+        "sheet": "body",
+        "width": 320,
+        "height": 480,
+        "documentWidth": 320,
+        "documentHeight": 480,
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "right": 315,
+          "bottom": 380.359375,
+          "width": 310,
+          "height": 55.3125
+        },
+        "sidebar": {
+          "x": 5,
+          "y": 128.5625,
+          "right": 315,
+          "bottom": 204.5625,
+          "width": 310,
+          "height": 76
+        },
+        "photos": {
+          "x": 10,
+          "y": 134.015625,
+          "right": 110,
+          "bottom": 199.109375,
+          "width": 100,
+          "height": 65.09375
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 63.796875,
+            "bottom": 433.359375,
+            "left": 5
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 126.59375,
+            "bottom": 433.359375,
+            "left": 67.796875
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 189.390625,
+            "bottom": 433.359375,
+            "left": 130.59375
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 252.1875,
+            "bottom": 433.359375,
+            "left": 193.390625
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "top": 389.359375,
+            "right": 314.984375,
+            "bottom": 433.359375,
+            "left": 256.1875
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "landscape",
+        "sheet": "pattern",
+        "width": 844,
+        "height": 390,
+        "documentWidth": 844,
+        "documentHeight": 390,
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "right": 828,
+          "bottom": 333,
+          "width": 490,
+          "height": 94.453125
+        },
+        "sidebar": {
+          "x": 16,
+          "y": 116.5625,
+          "right": 326,
+          "bottom": 333,
+          "width": 310,
+          "height": 216.4375
+        },
+        "photos": {
+          "x": 17,
+          "y": 152.5625,
+          "right": 325,
+          "bottom": 222.359375,
+          "width": 308,
+          "height": 69.796875
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 96,
+            "bottom": 386,
+            "left": 16
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 181,
+            "bottom": 386,
+            "left": 101
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 266,
+            "bottom": 386,
+            "left": 186
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 351,
+            "bottom": 386,
+            "left": 271
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 436,
+            "bottom": 386,
+            "left": 356
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "landscape",
+        "sheet": "wash",
+        "width": 844,
+        "height": 390,
+        "documentWidth": 844,
+        "documentHeight": 390,
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "right": 828,
+          "bottom": 333,
+          "width": 490,
+          "height": 94.453125
+        },
+        "sidebar": {
+          "x": 16,
+          "y": 116.5625,
+          "right": 326,
+          "bottom": 333,
+          "width": 310,
+          "height": 216.4375
+        },
+        "photos": {
+          "x": 17,
+          "y": 152.5625,
+          "right": 325,
+          "bottom": 222.359375,
+          "width": 308,
+          "height": 69.796875
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 96,
+            "bottom": 386,
+            "left": 16
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 181,
+            "bottom": 386,
+            "left": 101
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 266,
+            "bottom": 386,
+            "left": 186
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 351,
+            "bottom": 386,
+            "left": 271
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 436,
+            "bottom": 386,
+            "left": 356
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "landscape",
+        "sheet": "fit",
+        "width": 844,
+        "height": 390,
+        "documentWidth": 844,
+        "documentHeight": 390,
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "right": 828,
+          "bottom": 333,
+          "width": 490,
+          "height": 94.453125
+        },
+        "sidebar": {
+          "x": 16,
+          "y": 116.5625,
+          "right": 326,
+          "bottom": 333,
+          "width": 310,
+          "height": 216.4375
+        },
+        "photos": {
+          "x": 17,
+          "y": 152.5625,
+          "right": 325,
+          "bottom": 222.359375,
+          "width": 308,
+          "height": 69.796875
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 96,
+            "bottom": 386,
+            "left": 16
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 181,
+            "bottom": 386,
+            "left": 101
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 266,
+            "bottom": 386,
+            "left": 186
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 351,
+            "bottom": 386,
+            "left": 271
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 436,
+            "bottom": 386,
+            "left": 356
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "landscape",
+        "sheet": "graded",
+        "width": 844,
+        "height": 390,
+        "documentWidth": 844,
+        "documentHeight": 390,
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "right": 828,
+          "bottom": 333,
+          "width": 490,
+          "height": 94.453125
+        },
+        "sidebar": {
+          "x": 16,
+          "y": 116.5625,
+          "right": 326,
+          "bottom": 333,
+          "width": 310,
+          "height": 216.4375
+        },
+        "photos": {
+          "x": 17,
+          "y": 152.5625,
+          "right": 325,
+          "bottom": 222.359375,
+          "width": 308,
+          "height": 69.796875
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 96,
+            "bottom": 386,
+            "left": 16
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 181,
+            "bottom": 386,
+            "left": 101
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 266,
+            "bottom": 386,
+            "left": 186
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 351,
+            "bottom": 386,
+            "left": 271
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 436,
+            "bottom": 386,
+            "left": 356
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "landscape",
+        "sheet": "master",
+        "width": 844,
+        "height": 390,
+        "documentWidth": 844,
+        "documentHeight": 390,
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "right": 828,
+          "bottom": 333,
+          "width": 490,
+          "height": 94.453125
+        },
+        "sidebar": {
+          "x": 16,
+          "y": 116.5625,
+          "right": 326,
+          "bottom": 333,
+          "width": 310,
+          "height": 216.4375
+        },
+        "photos": {
+          "x": 17,
+          "y": 152.5625,
+          "right": 325,
+          "bottom": 222.359375,
+          "width": 308,
+          "height": 69.796875
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 96,
+            "bottom": 386,
+            "left": 16
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 181,
+            "bottom": 386,
+            "left": 101
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 266,
+            "bottom": 386,
+            "left": 186
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 351,
+            "bottom": 386,
+            "left": 271
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 436,
+            "bottom": 386,
+            "left": 356
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      },
+      {
+        "viewport": "landscape",
+        "sheet": "body",
+        "width": 844,
+        "height": 390,
+        "documentWidth": 844,
+        "documentHeight": 390,
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "right": 828,
+          "bottom": 333,
+          "width": 490,
+          "height": 94.453125
+        },
+        "sidebar": {
+          "x": 16,
+          "y": 116.5625,
+          "right": 326,
+          "bottom": 333,
+          "width": 310,
+          "height": 216.4375
+        },
+        "photos": {
+          "x": 17,
+          "y": 152.5625,
+          "right": 325,
+          "bottom": 222.359375,
+          "width": 308,
+          "height": 69.796875
+        },
+        "controls": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 96,
+            "bottom": 386,
+            "left": 16
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 181,
+            "bottom": 386,
+            "left": 101
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 266,
+            "bottom": 386,
+            "left": 186
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 351,
+            "bottom": 386,
+            "left": 271
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "top": 342,
+            "right": 436,
+            "bottom": 386,
+            "left": 356
+          }
+        ],
+        "sameEditor": true,
+        "sameSharedField": true
+      }
+    ],
+    "checks": {
+      "originalImageBytesAndMountedEditorsAcrossTabs": true,
+      "hideShowReclaimsWorksheetSpaceAndPrimaryControlsRemainVisible": true,
+      "tabChangesPreserveLowerDomScrollFieldsAndUnfinishedRevision": true,
+      "pinnedPatternStyleImmediatelyRefreshesActiveFitLink": true,
+      "samePackMetadataAndTablesMirrorBothDirectionsAcrossActiveSheets": true,
+      "hiddenInvalidSidebarBlocksUpdateRevealsAncestorsAndRetainsInput": true,
+      "sidebarPasteUsesItsOwnSheetAndUndoRedoPreserveOtherSheets": true,
+      "hidePreferenceIsViewOnlyAndAutosavedPackReopens": true,
+      "sidebarImageUploadsStayLocalAndPendingFileBlocksUpdate": true,
+      "enlargingPinnedReferenceKeepsPanelState": true,
+      "imageUploadAndRemovalPreserveUnrelatedInvalidEditorsAndUpdateGuards": true,
+      "currentFrontBackReferencesStayPinnedAcrossTabs": true,
+      "namedRevisionRestoreRefreshesPinnedViewsAndPreservesBackup": true,
+      "compatibleJsonTransferRestoresPinnedValuesAndImages": true,
+      "completePrintHas190SourceRowsWithoutSidebarDuplication": true,
+      "noRuntimeErrorsOrExternalRequests": true
+    },
+    "issues": [],
+    "limits": [
+      "Automated Chromium viewports are not a physical iPhone/native keyboard test."
+    ],
+    "privacy": "Only pristine blank-template screenshots are saved. Synthetic projects, images, JSON and filled PDFs remain temporary.",
+    "passed": true,
+    "screenshots": [
+      {
+        "filename": "pinned-style-desktop-hidden.png",
+        "sha256": "26b4e857fafe4081c1a00f9015aafcef4d46735167a82576be9daeaefe1a7fb7"
+      },
+      {
+        "filename": "pinned-style-desktop.png",
+        "sha256": "cf75d560a293e41bb6755e38ec3ed00f6165c61f1360ba0563913cf39d2ce0f5"
+      },
+      {
+        "filename": "pinned-style-landscape.png",
+        "sha256": "087a32d4217ff093b4e9af633140c424aebe8969abf00810e9233c2fd13732be"
+      },
+      {
+        "filename": "pinned-style-mobile-expanded.png",
+        "sha256": "dffd96fd5088d780929d93aa32358b5ff1798158c629e6cf416361ef8322ad1d"
+      },
+      {
+        "filename": "pinned-style-mobile-hidden.png",
+        "sha256": "6753753cd1519d2d87221d7c56cfd039e645abf2a44d26ccd1939ba7c8c0760b"
+      },
+      {
+        "filename": "pinned-style-mobile.png",
+        "sha256": "8e9c261ab9a9c5afdfc41a63df123f50a1dac95c18a961a9a4dff5aaf9fcdcf4"
+      },
+      {
+        "filename": "pinned-style-narrow-phone.png",
+        "sha256": "10f41f2f687389b2d0d5fb16964f3dd02f75dd4dc426e659f18e06fc6f8f23f5"
+      }
+    ]
+  },
+  "dailyRegression": {
+    "capturedAtUtc": "2026-10-26T17:20:22.666209+00:00",
+    "sourceCommit": "7d7562654cc69e06644ba243150f1cf07f5e07a7",
+    "uncommittedChanges": true,
+    "standalone": true,
+    "sourceTabs": [
+      "PATTERN CARD",
+      "BW-AW-SPEC",
+      "FIT & COM",
+      "GRADED SPECS",
+      "00-MEASUREMENT SHEET MASTER",
+      "BODY REF-MANNEQUIN-SIZE 8-V1"
+    ],
+    "layouts": [
+      {
+        "layout": "desktop",
+        "sheet": "pattern",
+        "viewport": {
+          "width": 1500,
+          "height": 1000
+        },
+        "document": {
+          "width": 1500,
+          "height": 1000
+        },
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "width": 1044,
+          "height": 607.890625,
+          "bottom": 927,
+          "right": 1476
+        },
+        "footer": {
+          "x": 24,
+          "y": 937,
+          "width": 1452,
+          "height": 53,
+          "bottom": 990,
+          "right": 1476
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1452,
+          "height": 133.015625,
+          "bottom": 149.015625,
+          "right": 1476
+        },
+        "tabs": {
+          "x": 24,
+          "y": 159.015625,
+          "width": 1452,
+          "height": 47,
+          "bottom": 206.015625,
+          "right": 1476
+        },
+        "context": {
+          "x": 24,
+          "y": 216.015625,
+          "width": 390,
+          "height": 710.984375,
+          "bottom": 927,
+          "right": 414
+        },
+        "toolbar": {
+          "x": 432,
+          "y": 216.015625,
+          "width": 1044,
+          "height": 95.09375,
+          "bottom": 311.109375,
+          "right": 1476
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true,
+        "blankScreenshot": "workroom-daily-desktop.png"
+      },
+      {
+        "layout": "desktop",
+        "sheet": "wash",
+        "viewport": {
+          "width": 1500,
+          "height": 1000
+        },
+        "document": {
+          "width": 1500,
+          "height": 1000
+        },
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "width": 1044,
+          "height": 607.890625,
+          "bottom": 927,
+          "right": 1476
+        },
+        "footer": {
+          "x": 24,
+          "y": 937,
+          "width": 1452,
+          "height": 53,
+          "bottom": 990,
+          "right": 1476
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1452,
+          "height": 133.015625,
+          "bottom": 149.015625,
+          "right": 1476
+        },
+        "tabs": {
+          "x": 24,
+          "y": 159.015625,
+          "width": 1452,
+          "height": 47,
+          "bottom": 206.015625,
+          "right": 1476
+        },
+        "context": {
+          "x": 24,
+          "y": 216.015625,
+          "width": 390,
+          "height": 710.984375,
+          "bottom": 927,
+          "right": 414
+        },
+        "toolbar": {
+          "x": 432,
+          "y": 216.015625,
+          "width": 1044,
+          "height": 95.09375,
+          "bottom": 311.109375,
+          "right": 1476
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "desktop",
+        "sheet": "fit",
+        "viewport": {
+          "width": 1500,
+          "height": 1000
+        },
+        "document": {
+          "width": 1500,
+          "height": 1000
+        },
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "width": 1044,
+          "height": 607.890625,
+          "bottom": 927,
+          "right": 1476
+        },
+        "footer": {
+          "x": 24,
+          "y": 937,
+          "width": 1452,
+          "height": 53,
+          "bottom": 990,
+          "right": 1476
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1452,
+          "height": 133.015625,
+          "bottom": 149.015625,
+          "right": 1476
+        },
+        "tabs": {
+          "x": 24,
+          "y": 159.015625,
+          "width": 1452,
+          "height": 47,
+          "bottom": 206.015625,
+          "right": 1476
+        },
+        "context": {
+          "x": 24,
+          "y": 216.015625,
+          "width": 390,
+          "height": 710.984375,
+          "bottom": 927,
+          "right": 414
+        },
+        "toolbar": {
+          "x": 432,
+          "y": 216.015625,
+          "width": 1044,
+          "height": 95.09375,
+          "bottom": 311.109375,
+          "right": 1476
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "desktop",
+        "sheet": "graded",
+        "viewport": {
+          "width": 1500,
+          "height": 1000
+        },
+        "document": {
+          "width": 1500,
+          "height": 1000
+        },
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "width": 1044,
+          "height": 607.890625,
+          "bottom": 927,
+          "right": 1476
+        },
+        "footer": {
+          "x": 24,
+          "y": 937,
+          "width": 1452,
+          "height": 53,
+          "bottom": 990,
+          "right": 1476
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1452,
+          "height": 133.015625,
+          "bottom": 149.015625,
+          "right": 1476
+        },
+        "tabs": {
+          "x": 24,
+          "y": 159.015625,
+          "width": 1452,
+          "height": 47,
+          "bottom": 206.015625,
+          "right": 1476
+        },
+        "context": {
+          "x": 24,
+          "y": 216.015625,
+          "width": 390,
+          "height": 710.984375,
+          "bottom": 927,
+          "right": 414
+        },
+        "toolbar": {
+          "x": 432,
+          "y": 216.015625,
+          "width": 1044,
+          "height": 95.09375,
+          "bottom": 311.109375,
+          "right": 1476
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "desktop",
+        "sheet": "master",
+        "viewport": {
+          "width": 1500,
+          "height": 1000
+        },
+        "document": {
+          "width": 1500,
+          "height": 1000
+        },
+        "content": {
+          "x": 432,
+          "y": 324.671875,
+          "width": 1044,
+          "height": 602.328125,
+          "bottom": 927,
+          "right": 1476
+        },
+        "footer": {
+          "x": 24,
+          "y": 937,
+          "width": 1452,
+          "height": 53,
+          "bottom": 990,
+          "right": 1476
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1452,
+          "height": 133.015625,
+          "bottom": 149.015625,
+          "right": 1476
+        },
+        "tabs": {
+          "x": 24,
+          "y": 159.015625,
+          "width": 1452,
+          "height": 47,
+          "bottom": 206.015625,
+          "right": 1476
+        },
+        "context": {
+          "x": 24,
+          "y": 216.015625,
+          "width": 390,
+          "height": 710.984375,
+          "bottom": 927,
+          "right": 414
+        },
+        "toolbar": {
+          "x": 432,
+          "y": 216.015625,
+          "width": 1044,
+          "height": 100.65625,
+          "bottom": 316.671875,
+          "right": 1476
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true,
+        "blankComparisonScreenshot": "workroom-daily-master.png"
+      },
+      {
+        "layout": "desktop",
+        "sheet": "body",
+        "viewport": {
+          "width": 1500,
+          "height": 1000
+        },
+        "document": {
+          "width": 1500,
+          "height": 1000
+        },
+        "content": {
+          "x": 432,
+          "y": 319.109375,
+          "width": 1044,
+          "height": 607.890625,
+          "bottom": 927,
+          "right": 1476
+        },
+        "footer": {
+          "x": 24,
+          "y": 937,
+          "width": 1452,
+          "height": 53,
+          "bottom": 990,
+          "right": 1476
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1452,
+          "height": 133.015625,
+          "bottom": 149.015625,
+          "right": 1476
+        },
+        "tabs": {
+          "x": 24,
+          "y": 159.015625,
+          "width": 1452,
+          "height": 47,
+          "bottom": 206.015625,
+          "right": 1476
+        },
+        "context": {
+          "x": 24,
+          "y": 216.015625,
+          "width": 390,
+          "height": 710.984375,
+          "bottom": 927,
+          "right": 414
+        },
+        "toolbar": {
+          "x": 432,
+          "y": 216.015625,
+          "width": 1044,
+          "height": 95.09375,
+          "bottom": 311.109375,
+          "right": 1476
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 946,
+            "width": 80,
+            "height": 44,
+            "bottom": 990,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "laptop",
+        "sheet": "pattern",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "content": {
+          "x": 387.59375,
+          "y": 311.46875,
+          "width": 868.40625,
+          "height": 335.53125,
+          "bottom": 647,
+          "right": 1256
+        },
+        "footer": {
+          "x": 24,
+          "y": 657,
+          "width": 1232,
+          "height": 53,
+          "bottom": 710,
+          "right": 1256
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1232,
+          "height": 125.375,
+          "bottom": 141.375,
+          "right": 1256
+        },
+        "tabs": {
+          "x": 24,
+          "y": 151.375,
+          "width": 1232,
+          "height": 47,
+          "bottom": 198.375,
+          "right": 1256
+        },
+        "context": {
+          "x": 24,
+          "y": 208.375,
+          "width": 345.59375,
+          "height": 438.625,
+          "bottom": 647,
+          "right": 369.59375
+        },
+        "toolbar": {
+          "x": 387.59375,
+          "y": 208.375,
+          "width": 868.40625,
+          "height": 95.09375,
+          "bottom": 303.46875,
+          "right": 1256
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "laptop",
+        "sheet": "wash",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "content": {
+          "x": 387.59375,
+          "y": 317.03125,
+          "width": 868.40625,
+          "height": 329.96875,
+          "bottom": 647,
+          "right": 1256
+        },
+        "footer": {
+          "x": 24,
+          "y": 657,
+          "width": 1232,
+          "height": 53,
+          "bottom": 710,
+          "right": 1256
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1232,
+          "height": 125.375,
+          "bottom": 141.375,
+          "right": 1256
+        },
+        "tabs": {
+          "x": 24,
+          "y": 151.375,
+          "width": 1232,
+          "height": 47,
+          "bottom": 198.375,
+          "right": 1256
+        },
+        "context": {
+          "x": 24,
+          "y": 208.375,
+          "width": 345.59375,
+          "height": 438.625,
+          "bottom": 647,
+          "right": 369.59375
+        },
+        "toolbar": {
+          "x": 387.59375,
+          "y": 208.375,
+          "width": 868.40625,
+          "height": 100.65625,
+          "bottom": 309.03125,
+          "right": 1256
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "laptop",
+        "sheet": "fit",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "content": {
+          "x": 387.59375,
+          "y": 311.46875,
+          "width": 868.40625,
+          "height": 335.53125,
+          "bottom": 647,
+          "right": 1256
+        },
+        "footer": {
+          "x": 24,
+          "y": 657,
+          "width": 1232,
+          "height": 53,
+          "bottom": 710,
+          "right": 1256
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1232,
+          "height": 125.375,
+          "bottom": 141.375,
+          "right": 1256
+        },
+        "tabs": {
+          "x": 24,
+          "y": 151.375,
+          "width": 1232,
+          "height": 47,
+          "bottom": 198.375,
+          "right": 1256
+        },
+        "context": {
+          "x": 24,
+          "y": 208.375,
+          "width": 345.59375,
+          "height": 438.625,
+          "bottom": 647,
+          "right": 369.59375
+        },
+        "toolbar": {
+          "x": 387.59375,
+          "y": 208.375,
+          "width": 868.40625,
+          "height": 95.09375,
+          "bottom": 303.46875,
+          "right": 1256
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "laptop",
+        "sheet": "graded",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "content": {
+          "x": 387.59375,
+          "y": 317.03125,
+          "width": 868.40625,
+          "height": 329.96875,
+          "bottom": 647,
+          "right": 1256
+        },
+        "footer": {
+          "x": 24,
+          "y": 657,
+          "width": 1232,
+          "height": 53,
+          "bottom": 710,
+          "right": 1256
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1232,
+          "height": 125.375,
+          "bottom": 141.375,
+          "right": 1256
+        },
+        "tabs": {
+          "x": 24,
+          "y": 151.375,
+          "width": 1232,
+          "height": 47,
+          "bottom": 198.375,
+          "right": 1256
+        },
+        "context": {
+          "x": 24,
+          "y": 208.375,
+          "width": 345.59375,
+          "height": 438.625,
+          "bottom": 647,
+          "right": 369.59375
+        },
+        "toolbar": {
+          "x": 387.59375,
+          "y": 208.375,
+          "width": 868.40625,
+          "height": 100.65625,
+          "bottom": 309.03125,
+          "right": 1256
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "laptop",
+        "sheet": "master",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "content": {
+          "x": 387.59375,
+          "y": 364.90625,
+          "width": 868.40625,
+          "height": 282.09375,
+          "bottom": 647,
+          "right": 1256
+        },
+        "footer": {
+          "x": 24,
+          "y": 657,
+          "width": 1232,
+          "height": 53,
+          "bottom": 710,
+          "right": 1256
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1232,
+          "height": 125.375,
+          "bottom": 141.375,
+          "right": 1256
+        },
+        "tabs": {
+          "x": 24,
+          "y": 151.375,
+          "width": 1232,
+          "height": 47,
+          "bottom": 198.375,
+          "right": 1256
+        },
+        "context": {
+          "x": 24,
+          "y": 208.375,
+          "width": 345.59375,
+          "height": 438.625,
+          "bottom": 647,
+          "right": 369.59375
+        },
+        "toolbar": {
+          "x": 387.59375,
+          "y": 208.375,
+          "width": 868.40625,
+          "height": 148.53125,
+          "bottom": 356.90625,
+          "right": 1256
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "laptop",
+        "sheet": "body",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "content": {
+          "x": 387.59375,
+          "y": 311.46875,
+          "width": 868.40625,
+          "height": 335.53125,
+          "bottom": 647,
+          "right": 1256
+        },
+        "footer": {
+          "x": 24,
+          "y": 657,
+          "width": 1232,
+          "height": 53,
+          "bottom": 710,
+          "right": 1256
+        },
+        "masthead": {
+          "x": 24,
+          "y": 16,
+          "width": 1232,
+          "height": 125.375,
+          "bottom": 141.375,
+          "right": 1256
+        },
+        "tabs": {
+          "x": 24,
+          "y": 151.375,
+          "width": 1232,
+          "height": 47,
+          "bottom": 198.375,
+          "right": 1256
+        },
+        "context": {
+          "x": 24,
+          "y": 208.375,
+          "width": 345.59375,
+          "height": 438.625,
+          "bottom": 647,
+          "right": 369.59375
+        },
+        "toolbar": {
+          "x": 387.59375,
+          "y": 208.375,
+          "width": 868.40625,
+          "height": 95.09375,
+          "bottom": 303.46875,
+          "right": 1256
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 24,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 104,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 109,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 189,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 194,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 274,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 279,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 359,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 364,
+            "y": 666,
+            "width": 80,
+            "height": 44,
+            "bottom": 710,
+            "right": 444,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "mobile",
+        "sheet": "pattern",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "width": 390,
+          "height": 844
+        },
+        "content": {
+          "x": 8,
+          "y": 378.421875,
+          "width": 374,
+          "height": 351.796875,
+          "bottom": 730.21875,
+          "right": 382
+        },
+        "footer": {
+          "x": 8,
+          "y": 736.21875,
+          "width": 374,
+          "height": 99.78125,
+          "bottom": 836,
+          "right": 382
+        },
+        "masthead": {
+          "x": 8,
+          "y": 8,
+          "width": 374,
+          "height": 85.546875,
+          "bottom": 93.546875,
+          "right": 382
+        },
+        "tabs": {
+          "x": 8,
+          "y": 99.546875,
+          "width": 374,
+          "height": 47,
+          "bottom": 146.546875,
+          "right": 382
+        },
+        "context": {
+          "x": 8,
+          "y": 152.546875,
+          "width": 374,
+          "height": 82.09375,
+          "bottom": 234.640625,
+          "right": 382
+        },
+        "toolbar": {
+          "x": 8,
+          "y": 240.640625,
+          "width": 374,
+          "height": 132.78125,
+          "bottom": 373.421875,
+          "right": 382
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 79.59375,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 155.1875,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 230.796875,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 306.390625,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 381.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true,
+        "blankScreenshot": "workroom-daily-mobile.png"
+      },
+      {
+        "layout": "mobile",
+        "sheet": "wash",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "width": 390,
+          "height": 844
+        },
+        "content": {
+          "x": 8,
+          "y": 378.421875,
+          "width": 374,
+          "height": 351.796875,
+          "bottom": 730.21875,
+          "right": 382
+        },
+        "footer": {
+          "x": 8,
+          "y": 736.21875,
+          "width": 374,
+          "height": 99.78125,
+          "bottom": 836,
+          "right": 382
+        },
+        "masthead": {
+          "x": 8,
+          "y": 8,
+          "width": 374,
+          "height": 85.546875,
+          "bottom": 93.546875,
+          "right": 382
+        },
+        "tabs": {
+          "x": 8,
+          "y": 99.546875,
+          "width": 374,
+          "height": 47,
+          "bottom": 146.546875,
+          "right": 382
+        },
+        "context": {
+          "x": 8,
+          "y": 152.546875,
+          "width": 374,
+          "height": 82.09375,
+          "bottom": 234.640625,
+          "right": 382
+        },
+        "toolbar": {
+          "x": 8,
+          "y": 240.640625,
+          "width": 374,
+          "height": 132.78125,
+          "bottom": 373.421875,
+          "right": 382
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 79.59375,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 155.1875,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 230.796875,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 306.390625,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 381.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "mobile",
+        "sheet": "fit",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "width": 390,
+          "height": 844
+        },
+        "content": {
+          "x": 8,
+          "y": 378.421875,
+          "width": 374,
+          "height": 351.796875,
+          "bottom": 730.21875,
+          "right": 382
+        },
+        "footer": {
+          "x": 8,
+          "y": 736.21875,
+          "width": 374,
+          "height": 99.78125,
+          "bottom": 836,
+          "right": 382
+        },
+        "masthead": {
+          "x": 8,
+          "y": 8,
+          "width": 374,
+          "height": 85.546875,
+          "bottom": 93.546875,
+          "right": 382
+        },
+        "tabs": {
+          "x": 8,
+          "y": 99.546875,
+          "width": 374,
+          "height": 47,
+          "bottom": 146.546875,
+          "right": 382
+        },
+        "context": {
+          "x": 8,
+          "y": 152.546875,
+          "width": 374,
+          "height": 82.09375,
+          "bottom": 234.640625,
+          "right": 382
+        },
+        "toolbar": {
+          "x": 8,
+          "y": 240.640625,
+          "width": 374,
+          "height": 132.78125,
+          "bottom": 373.421875,
+          "right": 382
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 79.59375,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 155.1875,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 230.796875,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 306.390625,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 381.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "mobile",
+        "sheet": "graded",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "width": 390,
+          "height": 844
+        },
+        "content": {
+          "x": 8,
+          "y": 393.421875,
+          "width": 374,
+          "height": 336.796875,
+          "bottom": 730.21875,
+          "right": 382
+        },
+        "footer": {
+          "x": 8,
+          "y": 736.21875,
+          "width": 374,
+          "height": 99.78125,
+          "bottom": 836,
+          "right": 382
+        },
+        "masthead": {
+          "x": 8,
+          "y": 8,
+          "width": 374,
+          "height": 85.546875,
+          "bottom": 93.546875,
+          "right": 382
+        },
+        "tabs": {
+          "x": 8,
+          "y": 99.546875,
+          "width": 374,
+          "height": 47,
+          "bottom": 146.546875,
+          "right": 382
+        },
+        "context": {
+          "x": 8,
+          "y": 152.546875,
+          "width": 374,
+          "height": 82.09375,
+          "bottom": 234.640625,
+          "right": 382
+        },
+        "toolbar": {
+          "x": 8,
+          "y": 240.640625,
+          "width": 374,
+          "height": 147.78125,
+          "bottom": 388.421875,
+          "right": 382
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 79.59375,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 155.1875,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 230.796875,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 306.390625,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 381.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "mobile",
+        "sheet": "master",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "width": 390,
+          "height": 844
+        },
+        "content": {
+          "x": 8,
+          "y": 393.421875,
+          "width": 374,
+          "height": 336.796875,
+          "bottom": 730.21875,
+          "right": 382
+        },
+        "footer": {
+          "x": 8,
+          "y": 736.21875,
+          "width": 374,
+          "height": 99.78125,
+          "bottom": 836,
+          "right": 382
+        },
+        "masthead": {
+          "x": 8,
+          "y": 8,
+          "width": 374,
+          "height": 85.546875,
+          "bottom": 93.546875,
+          "right": 382
+        },
+        "tabs": {
+          "x": 8,
+          "y": 99.546875,
+          "width": 374,
+          "height": 47,
+          "bottom": 146.546875,
+          "right": 382
+        },
+        "context": {
+          "x": 8,
+          "y": 152.546875,
+          "width": 374,
+          "height": 82.09375,
+          "bottom": 234.640625,
+          "right": 382
+        },
+        "toolbar": {
+          "x": 8,
+          "y": 240.640625,
+          "width": 374,
+          "height": 147.78125,
+          "bottom": 388.421875,
+          "right": 382
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 79.59375,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 155.1875,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 230.796875,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 306.390625,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 381.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "mobile",
+        "sheet": "body",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "width": 390,
+          "height": 844
+        },
+        "content": {
+          "x": 8,
+          "y": 378.421875,
+          "width": 374,
+          "height": 351.796875,
+          "bottom": 730.21875,
+          "right": 382
+        },
+        "footer": {
+          "x": 8,
+          "y": 736.21875,
+          "width": 374,
+          "height": 99.78125,
+          "bottom": 836,
+          "right": 382
+        },
+        "masthead": {
+          "x": 8,
+          "y": 8,
+          "width": 374,
+          "height": 85.546875,
+          "bottom": 93.546875,
+          "right": 382
+        },
+        "tabs": {
+          "x": 8,
+          "y": 99.546875,
+          "width": 374,
+          "height": 47,
+          "bottom": 146.546875,
+          "right": 382
+        },
+        "context": {
+          "x": 8,
+          "y": 152.546875,
+          "width": 374,
+          "height": 82.09375,
+          "bottom": 234.640625,
+          "right": 382
+        },
+        "toolbar": {
+          "x": 8,
+          "y": 240.640625,
+          "width": 374,
+          "height": 132.78125,
+          "bottom": 373.421875,
+          "right": 382
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 8,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 79.59375,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 83.59375,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 155.1875,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 159.1875,
+            "y": 742.21875,
+            "width": 71.609375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 230.796875,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 234.796875,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 306.390625,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 310.390625,
+            "y": 742.21875,
+            "width": 71.59375,
+            "height": 44,
+            "bottom": 786.21875,
+            "right": 381.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "narrow-phone",
+        "sheet": "pattern",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "document": {
+          "width": 320,
+          "height": 568
+        },
+        "content": {
+          "x": 5,
+          "y": 360.828125,
+          "width": 310,
+          "height": 103.171875,
+          "bottom": 464,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 469,
+          "width": 310,
+          "height": 94,
+          "bottom": 563,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 6,
+          "width": 310,
+          "height": 82.140625,
+          "bottom": 88.140625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 93.140625,
+          "width": 310,
+          "height": 47,
+          "bottom": 140.140625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 145.140625,
+          "width": 310,
+          "height": 76,
+          "bottom": 221.140625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 227.140625,
+          "width": 310,
+          "height": 128.6875,
+          "bottom": 355.828125,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "narrow-phone",
+        "sheet": "wash",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "document": {
+          "width": 320,
+          "height": 568
+        },
+        "content": {
+          "x": 5,
+          "y": 375.828125,
+          "width": 310,
+          "height": 88.171875,
+          "bottom": 464,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 469,
+          "width": 310,
+          "height": 94,
+          "bottom": 563,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 6,
+          "width": 310,
+          "height": 82.140625,
+          "bottom": 88.140625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 93.140625,
+          "width": 310,
+          "height": 47,
+          "bottom": 140.140625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 145.140625,
+          "width": 310,
+          "height": 76,
+          "bottom": 221.140625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 227.140625,
+          "width": 310,
+          "height": 143.6875,
+          "bottom": 370.828125,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "narrow-phone",
+        "sheet": "fit",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "document": {
+          "width": 320,
+          "height": 568
+        },
+        "content": {
+          "x": 5,
+          "y": 360.828125,
+          "width": 310,
+          "height": 103.171875,
+          "bottom": 464,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 469,
+          "width": 310,
+          "height": 94,
+          "bottom": 563,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 6,
+          "width": 310,
+          "height": 82.140625,
+          "bottom": 88.140625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 93.140625,
+          "width": 310,
+          "height": 47,
+          "bottom": 140.140625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 145.140625,
+          "width": 310,
+          "height": 76,
+          "bottom": 221.140625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 227.140625,
+          "width": 310,
+          "height": 128.6875,
+          "bottom": 355.828125,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "narrow-phone",
+        "sheet": "graded",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "document": {
+          "width": 320,
+          "height": 568
+        },
+        "content": {
+          "x": 5,
+          "y": 375.828125,
+          "width": 310,
+          "height": 88.171875,
+          "bottom": 464,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 469,
+          "width": 310,
+          "height": 94,
+          "bottom": 563,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 6,
+          "width": 310,
+          "height": 82.140625,
+          "bottom": 88.140625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 93.140625,
+          "width": 310,
+          "height": 47,
+          "bottom": 140.140625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 145.140625,
+          "width": 310,
+          "height": 76,
+          "bottom": 221.140625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 227.140625,
+          "width": 310,
+          "height": 143.6875,
+          "bottom": 370.828125,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "narrow-phone",
+        "sheet": "master",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "document": {
+          "width": 320,
+          "height": 568
+        },
+        "content": {
+          "x": 5,
+          "y": 375.828125,
+          "width": 310,
+          "height": 88.171875,
+          "bottom": 464,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 469,
+          "width": 310,
+          "height": 94,
+          "bottom": 563,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 6,
+          "width": 310,
+          "height": 82.140625,
+          "bottom": 88.140625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 93.140625,
+          "width": 310,
+          "height": 47,
+          "bottom": 140.140625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 145.140625,
+          "width": 310,
+          "height": 76,
+          "bottom": 221.140625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 227.140625,
+          "width": 310,
+          "height": 143.6875,
+          "bottom": 370.828125,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "narrow-phone",
+        "sheet": "body",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "document": {
+          "width": 320,
+          "height": 568
+        },
+        "content": {
+          "x": 5,
+          "y": 375.828125,
+          "width": 310,
+          "height": 88.171875,
+          "bottom": 464,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 469,
+          "width": 310,
+          "height": 94,
+          "bottom": 563,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 6,
+          "width": 310,
+          "height": 82.140625,
+          "bottom": 88.140625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 93.140625,
+          "width": 310,
+          "height": 47,
+          "bottom": 140.140625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 145.140625,
+          "width": 310,
+          "height": 76,
+          "bottom": 221.140625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 227.140625,
+          "width": 310,
+          "height": 143.6875,
+          "bottom": 370.828125,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 474,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 518,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "landscape",
+        "sheet": "pattern",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "document": {
+          "width": 844,
+          "height": 390
+        },
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "width": 490,
+          "height": 94.453125,
+          "bottom": 333,
+          "right": 828
+        },
+        "footer": {
+          "x": 16,
+          "y": 337,
+          "width": 812,
+          "height": 49,
+          "bottom": 386,
+          "right": 828
+        },
+        "masthead": {
+          "x": 16,
+          "y": 4,
+          "width": 812,
+          "height": 57.5625,
+          "bottom": 61.5625,
+          "right": 828
+        },
+        "tabs": {
+          "x": 16,
+          "y": 65.5625,
+          "width": 812,
+          "height": 47,
+          "bottom": 112.5625,
+          "right": 828
+        },
+        "context": {
+          "x": 16,
+          "y": 116.5625,
+          "width": 310,
+          "height": 216.4375,
+          "bottom": 333,
+          "right": 326
+        },
+        "toolbar": {
+          "x": 338,
+          "y": 116.5625,
+          "width": 490,
+          "height": 113.984375,
+          "bottom": 230.546875,
+          "right": 828
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 96,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 181,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 266,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 351,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 436,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "landscape",
+        "sheet": "wash",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "document": {
+          "width": 844,
+          "height": 390
+        },
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "width": 490,
+          "height": 94.453125,
+          "bottom": 333,
+          "right": 828
+        },
+        "footer": {
+          "x": 16,
+          "y": 337,
+          "width": 812,
+          "height": 49,
+          "bottom": 386,
+          "right": 828
+        },
+        "masthead": {
+          "x": 16,
+          "y": 4,
+          "width": 812,
+          "height": 57.5625,
+          "bottom": 61.5625,
+          "right": 828
+        },
+        "tabs": {
+          "x": 16,
+          "y": 65.5625,
+          "width": 812,
+          "height": 47,
+          "bottom": 112.5625,
+          "right": 828
+        },
+        "context": {
+          "x": 16,
+          "y": 116.5625,
+          "width": 310,
+          "height": 216.4375,
+          "bottom": 333,
+          "right": 326
+        },
+        "toolbar": {
+          "x": 338,
+          "y": 116.5625,
+          "width": 490,
+          "height": 113.984375,
+          "bottom": 230.546875,
+          "right": 828
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 96,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 181,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 266,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 351,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 436,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "landscape",
+        "sheet": "fit",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "document": {
+          "width": 844,
+          "height": 390
+        },
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "width": 490,
+          "height": 94.453125,
+          "bottom": 333,
+          "right": 828
+        },
+        "footer": {
+          "x": 16,
+          "y": 337,
+          "width": 812,
+          "height": 49,
+          "bottom": 386,
+          "right": 828
+        },
+        "masthead": {
+          "x": 16,
+          "y": 4,
+          "width": 812,
+          "height": 57.5625,
+          "bottom": 61.5625,
+          "right": 828
+        },
+        "tabs": {
+          "x": 16,
+          "y": 65.5625,
+          "width": 812,
+          "height": 47,
+          "bottom": 112.5625,
+          "right": 828
+        },
+        "context": {
+          "x": 16,
+          "y": 116.5625,
+          "width": 310,
+          "height": 216.4375,
+          "bottom": 333,
+          "right": 326
+        },
+        "toolbar": {
+          "x": 338,
+          "y": 116.5625,
+          "width": 490,
+          "height": 113.984375,
+          "bottom": 230.546875,
+          "right": 828
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 96,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 181,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 266,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 351,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 436,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "landscape",
+        "sheet": "graded",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "document": {
+          "width": 844,
+          "height": 390
+        },
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "width": 490,
+          "height": 94.453125,
+          "bottom": 333,
+          "right": 828
+        },
+        "footer": {
+          "x": 16,
+          "y": 337,
+          "width": 812,
+          "height": 49,
+          "bottom": 386,
+          "right": 828
+        },
+        "masthead": {
+          "x": 16,
+          "y": 4,
+          "width": 812,
+          "height": 57.5625,
+          "bottom": 61.5625,
+          "right": 828
+        },
+        "tabs": {
+          "x": 16,
+          "y": 65.5625,
+          "width": 812,
+          "height": 47,
+          "bottom": 112.5625,
+          "right": 828
+        },
+        "context": {
+          "x": 16,
+          "y": 116.5625,
+          "width": 310,
+          "height": 216.4375,
+          "bottom": 333,
+          "right": 326
+        },
+        "toolbar": {
+          "x": 338,
+          "y": 116.5625,
+          "width": 490,
+          "height": 113.984375,
+          "bottom": 230.546875,
+          "right": 828
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 96,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 181,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 266,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 351,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 436,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "landscape",
+        "sheet": "master",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "document": {
+          "width": 844,
+          "height": 390
+        },
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "width": 490,
+          "height": 94.453125,
+          "bottom": 333,
+          "right": 828
+        },
+        "footer": {
+          "x": 16,
+          "y": 337,
+          "width": 812,
+          "height": 49,
+          "bottom": 386,
+          "right": 828
+        },
+        "masthead": {
+          "x": 16,
+          "y": 4,
+          "width": 812,
+          "height": 57.5625,
+          "bottom": 61.5625,
+          "right": 828
+        },
+        "tabs": {
+          "x": 16,
+          "y": 65.5625,
+          "width": 812,
+          "height": 47,
+          "bottom": 112.5625,
+          "right": 828
+        },
+        "context": {
+          "x": 16,
+          "y": 116.5625,
+          "width": 310,
+          "height": 216.4375,
+          "bottom": 333,
+          "right": 326
+        },
+        "toolbar": {
+          "x": 338,
+          "y": 116.5625,
+          "width": 490,
+          "height": 113.984375,
+          "bottom": 230.546875,
+          "right": 828
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 96,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 181,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 266,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 351,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 436,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "landscape",
+        "sheet": "body",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "document": {
+          "width": 844,
+          "height": 390
+        },
+        "content": {
+          "x": 338,
+          "y": 238.546875,
+          "width": 490,
+          "height": 94.453125,
+          "bottom": 333,
+          "right": 828
+        },
+        "footer": {
+          "x": 16,
+          "y": 337,
+          "width": 812,
+          "height": 49,
+          "bottom": 386,
+          "right": 828
+        },
+        "masthead": {
+          "x": 16,
+          "y": 4,
+          "width": 812,
+          "height": 57.5625,
+          "bottom": 61.5625,
+          "right": 828
+        },
+        "tabs": {
+          "x": 16,
+          "y": 65.5625,
+          "width": 812,
+          "height": 47,
+          "bottom": 112.5625,
+          "right": 828
+        },
+        "context": {
+          "x": 16,
+          "y": 116.5625,
+          "width": 310,
+          "height": 216.4375,
+          "bottom": 333,
+          "right": 326
+        },
+        "toolbar": {
+          "x": 338,
+          "y": 116.5625,
+          "width": 490,
+          "height": 113.984375,
+          "bottom": 230.546875,
+          "right": 828
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 16,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 96,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 101,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 181,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 186,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 266,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 271,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 351,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 356,
+            "y": 342,
+            "width": 80,
+            "height": 44,
+            "bottom": 386,
+            "right": 436,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "short-phone",
+        "sheet": "pattern",
+        "viewport": {
+          "width": 320,
+          "height": 480
+        },
+        "document": {
+          "width": 320,
+          "height": 480
+        },
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "width": 310,
+          "height": 55.3125,
+          "bottom": 380.359375,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 384.359375,
+          "width": 310,
+          "height": 91.640625,
+          "bottom": 476,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 4,
+          "width": 310,
+          "height": 69.5625,
+          "bottom": 73.5625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 77.5625,
+          "width": 310,
+          "height": 47,
+          "bottom": 124.5625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 128.5625,
+          "width": 310,
+          "height": 76,
+          "bottom": 204.5625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 210.5625,
+          "width": 310,
+          "height": 109.484375,
+          "bottom": 320.046875,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "short-phone",
+        "sheet": "wash",
+        "viewport": {
+          "width": 320,
+          "height": 480
+        },
+        "document": {
+          "width": 320,
+          "height": 480
+        },
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "width": 310,
+          "height": 55.3125,
+          "bottom": 380.359375,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 384.359375,
+          "width": 310,
+          "height": 91.640625,
+          "bottom": 476,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 4,
+          "width": 310,
+          "height": 69.5625,
+          "bottom": 73.5625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 77.5625,
+          "width": 310,
+          "height": 47,
+          "bottom": 124.5625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 128.5625,
+          "width": 310,
+          "height": 76,
+          "bottom": 204.5625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 210.5625,
+          "width": 310,
+          "height": 109.484375,
+          "bottom": 320.046875,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "short-phone",
+        "sheet": "fit",
+        "viewport": {
+          "width": 320,
+          "height": 480
+        },
+        "document": {
+          "width": 320,
+          "height": 480
+        },
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "width": 310,
+          "height": 55.3125,
+          "bottom": 380.359375,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 384.359375,
+          "width": 310,
+          "height": 91.640625,
+          "bottom": 476,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 4,
+          "width": 310,
+          "height": 69.5625,
+          "bottom": 73.5625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 77.5625,
+          "width": 310,
+          "height": 47,
+          "bottom": 124.5625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 128.5625,
+          "width": 310,
+          "height": 76,
+          "bottom": 204.5625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 210.5625,
+          "width": 310,
+          "height": 109.484375,
+          "bottom": 320.046875,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "short-phone",
+        "sheet": "graded",
+        "viewport": {
+          "width": 320,
+          "height": 480
+        },
+        "document": {
+          "width": 320,
+          "height": 480
+        },
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "width": 310,
+          "height": 55.3125,
+          "bottom": 380.359375,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 384.359375,
+          "width": 310,
+          "height": 91.640625,
+          "bottom": 476,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 4,
+          "width": 310,
+          "height": 69.5625,
+          "bottom": 73.5625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 77.5625,
+          "width": 310,
+          "height": 47,
+          "bottom": 124.5625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 128.5625,
+          "width": 310,
+          "height": 76,
+          "bottom": 204.5625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 210.5625,
+          "width": 310,
+          "height": 109.484375,
+          "bottom": 320.046875,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "short-phone",
+        "sheet": "master",
+        "viewport": {
+          "width": 320,
+          "height": 480
+        },
+        "document": {
+          "width": 320,
+          "height": 480
+        },
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "width": 310,
+          "height": 55.3125,
+          "bottom": 380.359375,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 384.359375,
+          "width": 310,
+          "height": 91.640625,
+          "bottom": 476,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 4,
+          "width": 310,
+          "height": 69.5625,
+          "bottom": 73.5625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 77.5625,
+          "width": 310,
+          "height": 47,
+          "bottom": 124.5625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 128.5625,
+          "width": 310,
+          "height": 76,
+          "bottom": 204.5625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 210.5625,
+          "width": 310,
+          "height": 109.484375,
+          "bottom": 320.046875,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      },
+      {
+        "layout": "short-phone",
+        "sheet": "body",
+        "viewport": {
+          "width": 320,
+          "height": 480
+        },
+        "document": {
+          "width": 320,
+          "height": 480
+        },
+        "content": {
+          "x": 5,
+          "y": 325.046875,
+          "width": 310,
+          "height": 55.3125,
+          "bottom": 380.359375,
+          "right": 315
+        },
+        "footer": {
+          "x": 5,
+          "y": 384.359375,
+          "width": 310,
+          "height": 91.640625,
+          "bottom": 476,
+          "right": 315
+        },
+        "masthead": {
+          "x": 5,
+          "y": 4,
+          "width": 310,
+          "height": 69.5625,
+          "bottom": 73.5625,
+          "right": 315
+        },
+        "tabs": {
+          "x": 5,
+          "y": 77.5625,
+          "width": 310,
+          "height": 47,
+          "bottom": 124.5625,
+          "right": 315
+        },
+        "context": {
+          "x": 5,
+          "y": 128.5625,
+          "width": 310,
+          "height": 76,
+          "bottom": 204.5625,
+          "right": 315
+        },
+        "toolbar": {
+          "x": 5,
+          "y": 210.5625,
+          "width": 310,
+          "height": 109.484375,
+          "bottom": 320.046875,
+          "right": 315
+        },
+        "primary": [
+          {
+            "id": "save-pack",
+            "x": 5,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 63.796875,
+            "disabled": false
+          },
+          {
+            "id": "toggle-style-panel",
+            "x": 67.796875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 126.59375,
+            "disabled": false
+          },
+          {
+            "id": "undo-edit",
+            "x": 130.59375,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 189.390625,
+            "disabled": true
+          },
+          {
+            "id": "redo-edit",
+            "x": 193.390625,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 252.1875,
+            "disabled": true
+          },
+          {
+            "id": "export-menu-toggle",
+            "x": 256.1875,
+            "y": 389.359375,
+            "width": 58.796875,
+            "height": 44,
+            "bottom": 433.359375,
+            "right": 314.984375,
+            "disabled": false
+          }
+        ],
+        "font": "\"Barlow Condensed\", Arial, sans-serif",
+        "sealLoaded": true
+      }
+    ],
+    "workflows": {
+      "approvedReferenceReadonlyExactAndUnitConversion": true,
+      "sharedStyleInheritanceAndExplicitOverrides": true,
+      "fractionalInchesCanonicalAndSignedDelta": true,
+      "invalidRawNeverAutosaved": true,
+      "inlineErrorClearsAfterCorrection": true,
+      "invalidInputBlocksNavigation": true,
+      "undoAndRedo": true,
+      "pastePreviewBeforeMutation": true,
+      "pasteAtomicValidAndInvalidRectangles": true,
+      "calculatedColumnsSkippedDuringPaste": true,
+      "staleUnitPasteRejected": true,
+      "columnViewIsPresentationOnly": true,
+      "immutableNamedRevisions": true,
+      "revisionComparison": true,
+      "restoreRequiresConfirmationAndBackup": true,
+      "autosaveAndReloadRecovery": true,
+      "distinctWashFormulaZeroAndMissing": true,
+      "manualSourceDeltaCellsPreserved": true,
+      "gradedSizeHeaderUpdates": true,
+      "imagesStoredAsOriginalBlobs": true,
+      "portableJsonRasterRoundtrip": true,
+      "invalidImportDoesNotReplaceDraft": true,
+      "newBlankKeepsPriorSavedPacks": true,
+      "reopenedDraftHydratesOriginalImages": true,
+      "jsonImportAcceptsNewPackIdentity": true,
+      "csvAllRowsAllColumnsAndFormulaSafety": true,
+      "currentPrint": {
+        "pages": 2,
+        "tableWidths": [
+          {
+            "width": 1500,
+            "available": 1500
+          }
+        ],
+        "rows": 30,
+        "tableColumns": {
+          "specs": 12
+        }
+      },
+      "allSheetPrint": {
+        "rows": 190,
+        "pages": 13,
+        "tableWidths": [
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          },
+          {
+            "width": 1500,
+            "available": 1500
+          }
+        ],
+        "tableColumns": {
+          "pieces": 3,
+          "lining": 3,
+          "templates": 3,
+          "grading": 3,
+          "measurements": 13,
+          "before": 15,
+          "after": 15,
+          "specs": 12,
+          "referenceNotes": 7
+        }
+      },
+      "printPreservesSearchAndColumnView": true,
+      "legacyV1MigratesPerRecord": true,
+      "incompatibleLegacyIsolatedAndDownloadable": true,
+      "originalLegacyBytesUnchanged": true,
+      "migrationDoesNotOverwriteNewerDraft": true,
+      "recoveryReloadIsIdempotent": true,
+      "asyncSwitchSaveProtectsNewerEdits": true,
+      "asyncOpenReadProtectsNewerEdits": true,
+      "cancelledAsyncRestoreProtectsNewerEdits": true,
+      "unavailableStorageKeepsPortableJsonBackup": true
+    },
+    "issues": [],
+    "publicationBoundary": "Screenshots show pristine blank templates only. Synthetic projects, original recovery bytes, downloads and filled PDFs are not published.",
+    "sourceIntegrity": {
+      "baselineCommit": "e4affb1c3f69b50fddb392bafaf8a305b816fee5",
+      "unchangedFiles": [
+        "design/brand-tokens.json",
+        "data/house-fit-forms/SR-FORM-001.v1.json",
+        "data/house-fit-forms/SR-FORM-001-methods.v1.json",
+        "data/templates/tech-pack-workbook.v1.json",
+        "data/templates/tech-pack-workbook-source.v1.json",
+        "assets/house-sheet/mannequin-front.jpg",
+        "assets/house-sheet/mannequin-back.jpg",
+        "assets/house-sheet/serpentis-regina-seal.png",
+        "assets/house-sheet/fonts/barlow-condensed-500.ttf",
+        "assets/house-sheet/fonts/barlow-condensed-700.ttf",
+        "sheet-web/matte-grain.svg"
+      ]
+    },
+    "passed": true,
+    "buildSha256": "17e2de9a25ef068d7e799a9035dbf0cb6f0663822a9f4435308de8d396a1d73d",
+    "screenshots": [
+      {
+        "filename": "workroom-daily-desktop.png",
+        "sha256": "57d8381e82b94b9f6c6c0d968f914b036298c1a218c519a13721c6e9eb241080",
+        "bytes": 190232
+      },
+      {
+        "filename": "workroom-daily-master.png",
+        "sha256": "30f5559e9079c75c9f245adf6372dff12c0a71a89e2422af29e6ebbe24e3316b",
+        "bytes": 219204
+      },
+      {
+        "filename": "workroom-daily-mobile.png",
+        "sha256": "596c2cce5614780d2964ef06e1f88b8870f4652e07560c992bf33cda4c68a63a",
+        "bytes": 68920
+      },
+      {
+        "filename": "workroom-daily-style.png",
+        "sha256": "25781c57beec33cad675592064026f181dd7755b626878c6b3cdd02192606d7a",
+        "bytes": 383009
+      }
+    ]
+  },
+  "pwa": {
+    "capturedAtUtc": "2026-10-26T17:22:15.335669+00:00",
+    "sourceCommit": "7d7562654cc69e06644ba243150f1cf07f5e07a7",
+    "uncommittedChanges": true,
+    "scope": "/serpentis-regina-plm-core/workroom/",
+    "engines": {
+      "chromium": {
+        "available": true,
+        "browserVersion": "154.0.8037.57",
+        "device": "390\u00d7844 CSS px; touch emulation; not iPhone hardware",
+        "checks": {
+          "installAndVerifiedPrecache": true,
+          "portalOutsideWorkerScope": true,
+          "scopedStaticShellCacheOnly": true,
+          "onlineReadinessRepairsEvictedStaticAsset": true,
+          "selectedOlderPackRetainedOnOfflineReopen": true,
+          "offlineWorkroomReopenWithIndexedDbAutosave": true,
+          "offlineClientIntake34Poms": true,
+          "unknownPathsHaveNoAppFallback": true,
+          "newShellWaitsWithoutAutomaticReload": true,
+          "pendingFileOperationBlocksUpdate": true,
+          "explicitUpdateRejectsInvalidEntry": true,
+          "reviewChangedDuringSaveBlocksUpdate": true,
+          "failedIndexedDbWriteBlocksUpdateWithoutLosingEdits": true,
+          "otherOpenWindowIsNeverAutomaticallyReloaded": true,
+          "explicitUpdateSavesValidEditsBeforeReload": true,
+          "unrelatedPortalCachePreservedAfterUpdate": true,
+          "updatedShellReopensOffline": true,
+          "noRuntimeErrorsOrExternalFetches": true,
+          "unavailableStorageBlocksUpdateWithoutLosingEdits": true
+        },
+        "initialVersion": {
+          "version": "0.7.1",
+          "buildId": "a802e9a73c315aacaf56fc3789de96de0947f587301b5c8aaaa9bfb4e229b4a1",
+          "offlineReady": true
+        },
+        "metadata": {
+          "standalone": true,
+          "scope": "/serpentis-regina-plm-core/workroom/",
+          "iconDimensions": [
+            "192x192",
+            "512x512"
+          ],
+          "appleTouchIcon": "180x180"
+        },
+        "layouts": [
+          {
+            "viewport": "iphone",
+            "width": 390,
+            "height": 844,
+            "pageOverflow": false,
+            "saveExportReachable": true
+          },
+          {
+            "viewport": "narrow-phone",
+            "width": 320,
+            "height": 568,
+            "pageOverflow": false,
+            "saveExportReachable": true
+          },
+          {
+            "viewport": "landscape",
+            "width": 844,
+            "height": 390,
+            "pageOverflow": false,
+            "saveExportReachable": true
+          }
+        ],
+        "cachedShellPaths": [
+          "/serpentis-regina-plm-core/workroom/client-intake.html",
+          "/serpentis-regina-plm-core/workroom/icons/apple-touch-icon.png",
+          "/serpentis-regina-plm-core/workroom/icons/icon-192.png",
+          "/serpentis-regina-plm-core/workroom/icons/icon-512.png",
+          "/serpentis-regina-plm-core/workroom/index.html",
+          "/serpentis-regina-plm-core/workroom/manifest.webmanifest",
+          "/serpentis-regina-plm-core/workroom/pwa.js"
+        ],
+        "keyboardResponse": {
+          "simulatedVisualViewportHeight": 420,
+          "saveExportReachable": true,
+          "nativeKeyboardTested": false
+        },
+        "networkOutageMethod": "Playwright browser context offline",
+        "updatedVersion": {
+          "version": "0.7.1-audit-b",
+          "buildId": "baa8ed11be9a958310a274f25d6f61733e83d44c84fbec717260081d8917eb2b",
+          "offlineReady": true
+        }
+      }
+    },
+    "issues": [],
+    "publicationBoundary": "Only blank-template screenshots and non-identifying evidence are written. Synthetic records remain in temporary isolated browser profiles.",
+    "limits": [
+      "Browser touch/viewport emulation is not physical iPhone testing.",
+      "Native Safari Share, Add to Home Screen, iOS keyboard and Home Screen storage separation require device verification."
+    ],
+    "buildFiles": {
+      "client-intake.html": "9e97564760775e745eb82f368201577940168a2bb6bc2625d6564b1ef8f35720",
+      "icons/apple-touch-icon.png": "8998d2a0465dde807c8eef1d8247924e750862bbcee82d5e269746bd4526c010",
+      "icons/icon-192.png": "dfd0d95f0d7e9d4f10579828bc794f0438a566da1359c2a91ff35365e593de88",
+      "icons/icon-512.png": "6363ee20c1da487dbc591f6c7b76ddf37c04bd8fe4c964388d12d5fbb5c4fb41",
+      "index.html": "e0a9ba16c1b72bf69de07a3848558452eebcfe6293f17a094913bc44aebb8fe3",
+      "manifest.webmanifest": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c",
+      "pwa.js": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf",
+      "sw.js": "9fbaf49b0466eaebb2fb43258ce4399ecb48a8a2e3e5ab43aa8fbfb4e7696e2c"
+    },
+    "passed": true
+  },
+  "preserved": "No changes to source templates, approved house measurements/methods, original asset bytes, brand tokens, schema2, storage identity or client intake."
+}
