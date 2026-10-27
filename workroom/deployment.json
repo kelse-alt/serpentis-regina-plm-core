@@ -1,18 +1,18 @@
 {
-  "version": "0.7.1",
-  "sourceCommit": "a656136a99dc6ed2fe40f08a8b18f2bbd0c6340f",
-  "codeCommit": "d0ed02d4a0bfe3e9533d7cc7454aa69edb870435",
-  "buildId": "a802e9a73c315aacaf56fc3789de96de0947f587301b5c8aaaa9bfb4e229b4a1",
+  "version": "0.7.2",
+  "sourceCommit": "8bdb5c6dc2abe8a41e2b989abc824463097fac40",
+  "codeCommit": "8bdb5c6dc2abe8a41e2b989abc824463097fac40",
+  "buildId": "f67db7f9290ff7c1cac09adda060307b63d07bf32c2a7dc1a380857ec6bdafd2",
   "appUrl": "https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/",
-  "previousPortalCommit": "f3f7062015ec9fac6e232a0b704ee776fec92651",
+  "previousPortalCommit": "421cc31c4a6ccc75c772ba0e567d8c214b1b74b9",
   "files": {
-    "client-intake.html": "9e97564760775e745eb82f368201577940168a2bb6bc2625d6564b1ef8f35720",
+    "client-intake.html": "f8e0fcccde7ba6bd7ed31c6b3335fb1bbaefc77741fb3f3f7d2af749f899c035",
     "icons/apple-touch-icon.png": "8998d2a0465dde807c8eef1d8247924e750862bbcee82d5e269746bd4526c010",
     "icons/icon-192.png": "dfd0d95f0d7e9d4f10579828bc794f0438a566da1359c2a91ff35365e593de88",
     "icons/icon-512.png": "6363ee20c1da487dbc591f6c7b76ddf37c04bd8fe4c964388d12d5fbb5c4fb41",
-    "index.html": "e0a9ba16c1b72bf69de07a3848558452eebcfe6293f17a094913bc44aebb8fe3",
+    "index.html": "bbcd02d6320171e080ad5d4fc623ca206c451b910fb6b3737df5c781d15cef83",
     "manifest.webmanifest": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c",
     "pwa.js": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf",
-    "sw.js": "9fbaf49b0466eaebb2fb43258ce4399ecb48a8a2e3e5ab43aa8fbfb4e7696e2c"
+    "sw.js": "cd8d9428e5361aeb039a81aa6c38654c07e064d2c4256d87fce739d20c5f61f4"
   }
 }
