@@ -47,6 +47,19 @@ function storageVersion(record) {
   return record.writeId ?? record.updatedAt;
 }
 
+/** Locations keep gallery members independent while reusing the same Blob store. */
+function snapshotImageEntries(snapshot) {
+  const entries = [];
+  for (const attachments of Object.values(snapshot.attachments ?? {})) {
+    for (const [slot, attachment] of Object.entries(attachments ?? {})) {
+      if (Array.isArray(attachment?.images)) {
+        attachment.images.forEach((image, index) => entries.push({ container: attachment.images, key: index, image }));
+      } else if (attachment) entries.push({ container: attachments, key: slot, image: attachment });
+    }
+  }
+  return entries;
+}
+
 /**
  * IndexedDB is required for a successful save. If unavailable, callers must
  * retain the working draft and offer a portable JSON download instead.
@@ -97,26 +110,23 @@ export function createPackStore(template, options = {}) {
   async function encodeSnapshot(input) {
     const snapshot = normalizeTechPack(input, template);
     const images = new Map();
-    for (const [sheetId, attachments] of Object.entries(snapshot.attachments)) {
-      for (const [slot, image] of Object.entries(attachments)) {
-        if (!image) continue;
-        let cached = imageCache.get(image.dataUrl);
-        if (!cached) {
-          const binary = globalThis.atob(image.dataUrl.slice(image.dataUrl.indexOf(',') + 1));
-          const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
-          let id;
-          if (globalThis.crypto?.subtle) {
-            const digest = new Uint8Array(await globalThis.crypto.subtle.digest('SHA-256', bytes));
-            id = 'sha256-' + [...digest].map(byte => byte.toString(16).padStart(2, '0')).join('');
-          } else {
-            id = storageId('image');
-          }
-          cached = { id, type: image.type, blob: new Blob([bytes], { type: image.type }) };
-          imageCache.set(image.dataUrl, cached);
+    for (const { container, key, image } of snapshotImageEntries(snapshot)) {
+      let cached = imageCache.get(image.dataUrl);
+      if (!cached) {
+        const binary = globalThis.atob(image.dataUrl.slice(image.dataUrl.indexOf(',') + 1));
+        const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+        let id;
+        if (globalThis.crypto?.subtle) {
+          const digest = new Uint8Array(await globalThis.crypto.subtle.digest('SHA-256', bytes));
+          id = 'sha256-' + [...digest].map(byte => byte.toString(16).padStart(2, '0')).join('');
+        } else {
+          id = storageId('image');
         }
-        images.set(cached.id, cached);
-        snapshot.attachments[sheetId][slot] = { name: image.name, type: image.type, imageId: cached.id };
+        cached = { id, type: image.type, blob: new Blob([bytes], { type: image.type }) };
+        imageCache.set(image.dataUrl, cached);
       }
+      images.set(cached.id, cached);
+      container[key] = { name: image.name, type: image.type, imageId: cached.id };
     }
     return { snapshot, images: [...images.values()] };
   }
@@ -125,9 +135,8 @@ export function createPackStore(template, options = {}) {
     if (!record?.snapshot || typeof record.snapshot !== 'object') throw Error('The saved snapshot is missing.');
     const snapshot = structuredClone(record.snapshot);
     const ids = new Set();
-    for (const attachments of Object.values(snapshot.attachments ?? {})) {
-      for (const image of Object.values(attachments ?? {})) if (image?.imageId) ids.add(image.imageId);
-    }
+    const entries = snapshotImageEntries(snapshot);
+    for (const { image } of entries) if (image?.imageId) ids.add(image.imageId);
     const found = new Map();
     if (ids.size) {
       const transaction = database.transaction('images', 'readonly');
@@ -153,12 +162,10 @@ export function createPackStore(template, options = {}) {
         imageCache.set(dataUrl, image);
       }
     }
-    for (const attachments of Object.values(snapshot.attachments ?? {})) {
-      for (const [slot, image] of Object.entries(attachments ?? {})) {
-        if (image?.imageId) {
-          if (!found.has(image.imageId)) throw Error('An original image is missing from local storage.');
-          attachments[slot] = { name: image.name, type: image.type, dataUrl: found.get(image.imageId) };
-        }
+    for (const { container, key, image } of entries) {
+      if (image?.imageId) {
+        if (!found.has(image.imageId)) throw Error('An original image is missing from local storage.');
+        container[key] = { name: image.name, type: image.type, dataUrl: found.get(image.imageId) };
       }
     }
     return snapshot;

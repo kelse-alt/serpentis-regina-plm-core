@@ -1,5 +1,10 @@
 # Pinned style reference — v0.7.1
 
+The [v0.7.2 reference gallery](reference-gallery.md) adds multiple-photo uploads
+and one-image navigation to the Pattern Card reference slot. A selected gallery
+image takes priority in the pinned panel; existing single-image packs keep the
+fallback behavior described below.
+
 The workroom keeps a reference image panel beside all six worksheet tabs. Front/back images sit above the Shared Style Record, Pattern Card details and piece lists, working-pack controls, and Named Revisions & Restore. The picture header stays in place while the information underneath scrolls independently.
 
 ## Use the panel

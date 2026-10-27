@@ -114,6 +114,16 @@ a { color: var(--ash-ink); text-underline-offset: 3px; }
 .attachment-card .placeholder { display: grid; place-items: center; min-height: 140px; padding: 14px; border: 1px dashed var(--ash-line); text-align: center; }
 .attachment-card .actions { display: flex; flex-wrap: wrap; gap: 6px; }
 .attachment-card .field textarea { min-height: 75px; }
+.attachment-name { overflow-wrap:anywhere; }
+.gallery-navigation { display:flex; align-items:center; justify-content:space-between; gap:6px; min-width:0; color:var(--ash-ink); background:var(--obsidian); }
+.gallery-navigation button { flex:0 1 auto; min-width:44px; padding:7px; font-size:14px; }
+.gallery-navigation output { flex:0 0 auto; padding:3px; color:var(--ash-ink); font-size:14px; white-space:nowrap; }
+.gallery-picker select { max-width:100%; text-overflow:ellipsis; }
+.pinned-gallery-navigation { padding:4px; }
+.pinned-gallery-navigation button { padding:7px 4px; font-size:13px; }
+@media screen and (max-width:740px) {
+ .context-panel:has(.pinned-gallery-navigation) > summary { grid-template-columns:minmax(165px,43%) minmax(0,1fr); }
+}
 dialog { max-width: min(94vw, 1400px); max-height: 94dvh; padding: 14px; border: 1px solid var(--ash-line); color: var(--ash-ink); background: var(--obsidian); }
 dialog::backdrop { background: var(--obsidian); opacity: .94; }
 dialog img { display: block; max-width: 100%; max-height: 78dvh; margin: 10px auto; object-fit: contain; }
@@ -690,6 +700,37 @@ function createTechPack(template) {
   return pack;
 }
 
+/** Read old single-image references and current galleries without rewriting either. */
+function patternReferenceImages(pack) {
+  const reference = pack.attachments?.pattern?.reference;
+  return reference ? (Array.isArray(reference.images) ? reference.images : [reference]) : [];
+}
+
+/** The current gallery selection is shared by the Pattern Card and pinned panel. */
+function selectedPatternReference(pack) {
+  const reference = pack.attachments?.pattern?.reference;
+  return patternReferenceImages(pack)[reference?.selectedIndex ?? 0] ?? null;
+}
+
+function validateImage(attachment, label) {
+  exactKeys(attachment, ['name', 'type', 'dataUrl'], `${label} image`);
+  const name = text(attachment.name, 'Image filename', 255);
+  if (!['image/png', 'image/jpeg', 'image/webp'].includes(attachment.type)) throw Error('Reference images must be PNG, JPEG, or WebP.');
+  const prefix = `data:${attachment.type};base64,`;
+  if (typeof attachment.dataUrl !== 'string' || !attachment.dataUrl.startsWith(prefix)) throw Error('Reference images must be embedded image data.');
+  const encoded = attachment.dataUrl.slice(prefix.length);
+  if (!encoded || encoded.length > Math.ceil(MAX_IMAGE_BYTES / 3) * 4 || encoded.length % 4 !== 0 ||
+      !/^[A-Za-z0-9+/]*={0,2}$/.test(encoded)) throw Error('Reference images must contain valid base64 data no larger than 5 MB.');
+  const bytes = encoded.length / 4 * 3 - (encoded.endsWith('==') ? 2 : encoded.endsWith('=') ? 1 : 0);
+  if (bytes > MAX_IMAGE_BYTES) throw Error('Each reference image must be no larger than 5 MB.');
+  const header = globalThis.atob(encoded.slice(0, 32));
+  const validHeader = attachment.type === 'image/png' ? header.startsWith('\x89PNG\r\n\x1a\n')
+    : attachment.type === 'image/jpeg' ? header.startsWith('\xff\xd8\xff')
+    : header.startsWith('RIFF') && header.slice(8, 12) === 'WEBP';
+  if (!validHeader) throw Error('The reference image data does not match its image type.');
+  return { name, type: attachment.type, dataUrl: attachment.dataUrl };
+}
+
 /** Validate either known schema before migrating; no arbitrary fields survive. */
 function validateTechPack(input, template, version) {
   const keys = ['schemaVersion', 'templateId', 'id', 'title', 'unit', 'fields', 'tables', 'attachments', 'updatedAt'];
@@ -743,23 +784,20 @@ function validateTechPack(input, template, version) {
     for (const slot of slots) {
       const attachment = input.attachments[sheet.id][slot.key];
       if (attachment === null) continue;
-      if (++attachmentCount > 12) throw Error('A draft can contain at most 12 reference images.');
-      exactKeys(attachment, ['name', 'type', 'dataUrl'], `${slot.key} image`);
-      const name = text(attachment.name, 'Image filename', 255);
-      if (!['image/png', 'image/jpeg', 'image/webp'].includes(attachment.type)) throw Error('Reference images must be PNG, JPEG, or WebP.');
-      const prefix = `data:${attachment.type};base64,`;
-      if (typeof attachment.dataUrl !== 'string' || !attachment.dataUrl.startsWith(prefix)) throw Error('Reference images must be embedded image data.');
-      const encoded = attachment.dataUrl.slice(prefix.length);
-      if (!encoded || encoded.length > Math.ceil(MAX_IMAGE_BYTES / 3) * 4 || encoded.length % 4 !== 0 ||
-          !/^[A-Za-z0-9+/]*={0,2}$/.test(encoded)) throw Error('Reference images must contain valid base64 data no larger than 5 MB.');
-      const bytes = encoded.length / 4 * 3 - (encoded.endsWith('==') ? 2 : encoded.endsWith('=') ? 1 : 0);
-      if (bytes > MAX_IMAGE_BYTES) throw Error('Each reference image must be no larger than 5 MB.');
-      const header = globalThis.atob(encoded.slice(0, 32));
-      const validHeader = attachment.type === 'image/png' ? header.startsWith('\x89PNG\r\n\x1a\n')
-        : attachment.type === 'image/jpeg' ? header.startsWith('\xff\xd8\xff')
-        : header.startsWith('RIFF') && header.slice(8, 12) === 'WEBP';
-      if (!validHeader) throw Error('The reference image data does not match its image type.');
-      result.attachments[sheet.id][slot.key] = { name, type: attachment.type, dataUrl: attachment.dataUrl };
+      if (version === 2 && sheet.id === 'pattern' && slot.key === 'reference' && Object.hasOwn(attachment, 'images')) {
+        exactKeys(attachment, ['images', 'selectedIndex'], 'Pattern reference gallery');
+        if (!Array.isArray(attachment.images) || !attachment.images.length || attachment.images.length > 12) throw Error('A Pattern Card gallery must contain between 1 and 12 reference images.');
+        if (!Number.isInteger(attachment.selectedIndex) || attachment.selectedIndex < 0 || attachment.selectedIndex >= attachment.images.length) throw Error('The selected gallery image is unavailable.');
+        attachmentCount += attachment.images.length;
+        result.attachments[sheet.id][slot.key] = {
+          images: attachment.images.map((image, index) => validateImage(image, `Pattern reference ${index + 1}`)),
+          selectedIndex: attachment.selectedIndex,
+        };
+      } else {
+        attachmentCount++;
+        result.attachments[sheet.id][slot.key] = validateImage(attachment, slot.key);
+      }
+      if (attachmentCount > 12) throw Error('A draft can contain at most 12 reference images across all sheets.');
     }
   }
   return result;
@@ -797,6 +835,7 @@ function normalizeTechPack(input, template) {
 
 function attachmentSummary(attachment) {
   if (!attachment) return null;
+  if (Array.isArray(attachment.images)) return { images: attachment.images.map(attachmentSummary), selectedIndex: attachment.selectedIndex };
   const encoded = attachment.dataUrl ?? '';
   let hash = 2166136261;
   for (let index = 0; index < encoded.length; index++) hash = Math.imul(hash ^ encoded.charCodeAt(index), 16777619) >>> 0;
@@ -879,7 +918,7 @@ function serializeTechPack(pack) {
   return JSON.stringify(pack, null, 2) + '\n';
 }
 
-return {sharedStyleKey,resolveFieldValue,columnsForRow,createTechPack,migrateTechPack,normalizeTechPack,compareTechPacks,parseMeasure,formatMeasure,difference,csvEncode,serializeTechPack};
+return {sharedStyleKey,resolveFieldValue,columnsForRow,createTechPack,patternReferenceImages,selectedPatternReference,migrateTechPack,normalizeTechPack,compareTechPacks,parseMeasure,formatMeasure,difference,csvEncode,serializeTechPack};
 })();
 const TECHPACK_STORAGE = (()=>{
 /** Device-local drafts and immutable named snapshots; original images use Blob storage. */
@@ -929,6 +968,19 @@ function storageLabel(value, label, maximum, required = false) {
 
 function storageVersion(record) {
   return record.writeId ?? record.updatedAt;
+}
+
+/** Locations keep gallery members independent while reusing the same Blob store. */
+function snapshotImageEntries(snapshot) {
+  const entries = [];
+  for (const attachments of Object.values(snapshot.attachments ?? {})) {
+    for (const [slot, attachment] of Object.entries(attachments ?? {})) {
+      if (Array.isArray(attachment?.images)) {
+        attachment.images.forEach((image, index) => entries.push({ container: attachment.images, key: index, image }));
+      } else if (attachment) entries.push({ container: attachments, key: slot, image: attachment });
+    }
+  }
+  return entries;
 }
 
 /**
@@ -981,26 +1033,23 @@ function createPackStore(template, options = {}) {
   async function encodeSnapshot(input) {
     const snapshot = normalizeTechPack(input, template);
     const images = new Map();
-    for (const [sheetId, attachments] of Object.entries(snapshot.attachments)) {
-      for (const [slot, image] of Object.entries(attachments)) {
-        if (!image) continue;
-        let cached = imageCache.get(image.dataUrl);
-        if (!cached) {
-          const binary = globalThis.atob(image.dataUrl.slice(image.dataUrl.indexOf(',') + 1));
-          const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
-          let id;
-          if (globalThis.crypto?.subtle) {
-            const digest = new Uint8Array(await globalThis.crypto.subtle.digest('SHA-256', bytes));
-            id = 'sha256-' + [...digest].map(byte => byte.toString(16).padStart(2, '0')).join('');
-          } else {
-            id = storageId('image');
-          }
-          cached = { id, type: image.type, blob: new Blob([bytes], { type: image.type }) };
-          imageCache.set(image.dataUrl, cached);
+    for (const { container, key, image } of snapshotImageEntries(snapshot)) {
+      let cached = imageCache.get(image.dataUrl);
+      if (!cached) {
+        const binary = globalThis.atob(image.dataUrl.slice(image.dataUrl.indexOf(',') + 1));
+        const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+        let id;
+        if (globalThis.crypto?.subtle) {
+          const digest = new Uint8Array(await globalThis.crypto.subtle.digest('SHA-256', bytes));
+          id = 'sha256-' + [...digest].map(byte => byte.toString(16).padStart(2, '0')).join('');
+        } else {
+          id = storageId('image');
         }
-        images.set(cached.id, cached);
-        snapshot.attachments[sheetId][slot] = { name: image.name, type: image.type, imageId: cached.id };
+        cached = { id, type: image.type, blob: new Blob([bytes], { type: image.type }) };
+        imageCache.set(image.dataUrl, cached);
       }
+      images.set(cached.id, cached);
+      container[key] = { name: image.name, type: image.type, imageId: cached.id };
     }
     return { snapshot, images: [...images.values()] };
   }
@@ -1009,9 +1058,8 @@ function createPackStore(template, options = {}) {
     if (!record?.snapshot || typeof record.snapshot !== 'object') throw Error('The saved snapshot is missing.');
     const snapshot = structuredClone(record.snapshot);
     const ids = new Set();
-    for (const attachments of Object.values(snapshot.attachments ?? {})) {
-      for (const image of Object.values(attachments ?? {})) if (image?.imageId) ids.add(image.imageId);
-    }
+    const entries = snapshotImageEntries(snapshot);
+    for (const { image } of entries) if (image?.imageId) ids.add(image.imageId);
     const found = new Map();
     if (ids.size) {
       const transaction = database.transaction('images', 'readonly');
@@ -1037,12 +1085,10 @@ function createPackStore(template, options = {}) {
         imageCache.set(dataUrl, image);
       }
     }
-    for (const attachments of Object.values(snapshot.attachments ?? {})) {
-      for (const [slot, image] of Object.entries(attachments ?? {})) {
-        if (image?.imageId) {
-          if (!found.has(image.imageId)) throw Error('An original image is missing from local storage.');
-          attachments[slot] = { name: image.name, type: image.type, dataUrl: found.get(image.imageId) };
-        }
+    for (const { container, key, image } of entries) {
+      if (image?.imageId) {
+        if (!found.has(image.imageId)) throw Error('An original image is missing from local storage.');
+        container[key] = { name: image.name, type: image.type, dataUrl: found.get(image.imageId) };
       }
     }
     return snapshot;
@@ -1453,7 +1499,8 @@ function gridHistorySnapshot(snapshot) {
   const { attachments, ...rest } = snapshot;
   const result = structuredClone(rest);
   if (attachments !== undefined) result.attachments = Object.fromEntries(Object.entries(attachments).map(([sheetId, slots]) =>
-    [sheetId, Object.fromEntries(Object.entries(slots).map(([key, image]) => [key, image === null ? null : { ...image }]))]));
+    [sheetId, Object.fromEntries(Object.entries(slots).map(([key, image]) => [key, image === null ? null : Array.isArray(image.images)
+      ? { ...image, images: image.images.map(item => ({ ...item })) } : { ...image }]))]));
   return result;
 }
 
@@ -1494,7 +1541,7 @@ function createEditHistory(limit = 40) {
 
 return {parseGridClipboard,previewGridPaste,applyGridPaste,createEditHistory};
 })();
-const { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack } = TECHPACK_CORE;
+const { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack, patternReferenceImages, selectedPatternReference } = TECHPACK_CORE;
 const { createPackStore } = TECHPACK_STORAGE;
 const { previewGridPaste, applyGridPaste, createEditHistory } = TECHPACK_EDITING;
 
@@ -1527,7 +1574,26 @@ const patternSheet = template.sheets.find(s=>s.id==='pattern');
 const sheetForElement = el => template.sheets.find(s=>s.id===el.closest('[data-editor-sheet]')?.dataset.editorSheet)||activeSheet();
 const editorRoots = s => [...document.querySelectorAll(`.sheet-editor[data-editor-sheet="${s.id}"]`)].filter(el=>!el.closest('#print-view'));
 const panelPreferenceKey = 'serpentis-regina.workroom.style-panel-visible';
-let sidebarImages = [];
+let sidebarImages = [], sidebarGalleryState = '';
+const isPatternReference = (s,key) => s.id==='pattern'&&key==='reference';
+const patternReferenceIndex = () => pack.attachments.pattern.reference?.selectedIndex??0;
+function galleryNavigation(images,index,pinned=false) {
+ if(images.length<2)return '';
+ return `<span class="gallery-navigation${pinned?' pinned-gallery-navigation':''}" role="group" aria-label="${pinned?'Style reference':'Pattern reference'} gallery"><button type="button" data-gallery-prev="reference" aria-label="Previous ${pinned?'style':'pattern'} reference" ${index===0?'disabled':''}>Previous</button><output ${pinned?'data-style-gallery-count':'data-gallery-count="reference"'} aria-live="polite">${index+1} of ${images.length}</output><button type="button" data-gallery-next="reference" aria-label="Next ${pinned?'style':'pattern'} reference" ${index===images.length-1?'disabled':''}>Next</button></span>`;
+}
+function selectPatternReference(index,origin) {
+ const images=patternReferenceImages(pack);
+ if(!Number.isInteger(index)||index<0||index>=images.length||index===patternReferenceIndex())return;
+ const root=origin?.closest('#style-reference-images,.sheet-editor'),attribute=['data-gallery-prev','data-gallery-next','data-gallery-select'].find(key=>origin?.hasAttribute(key));
+ const editorId=root?.closest('#pinned-pattern-content')?'pinned-pattern-content':root?.id==='style-reference-images'?'style-reference-images':'sheet-content';
+ editHistory.breakGroup();rememberEdit('gallery-selection');
+ pack.attachments.pattern.reference={images,selectedIndex:index};markDirty();refreshAttachmentViews(patternSheet);editHistory.breakGroup();
+ if(attribute){
+  const root=$(editorId),target=root.querySelector(`[${attribute}="reference"]`);
+  (target&&!target.disabled?target:root.querySelector('[data-gallery-select],button[data-gallery-prev]:not(:disabled),button[data-gallery-next]:not(:disabled)'))?.focus();
+ }
+ status(`Showing reference ${index+1} of ${images.length}: ${images[index].name}. Selection saves with this pack.`);
+}
 function setStylePanelVisible(visible,remember=true) {
  $('context-panel').hidden=!visible;
  document.querySelector('.workspace').classList.toggle('style-panel-hidden',!visible);
@@ -1537,14 +1603,16 @@ function setStylePanelVisible(visible,remember=true) {
  if(remember)try{localStorage.setItem(panelPreferenceKey,String(visible));}catch{/* This view preference never blocks local drafts. */}
 }
 function renderReferenceImages() {
- const flats=pack.attachments.master,pattern=pack.attachments.pattern.reference;
- const provided=['front','back'].filter(view=>flats[view]).map(view=>({key:view,label:view==='front'?'Front':'Back',src:flats[view].dataUrl,name:flats[view].name}));
+ const flats=pack.attachments.master,pattern=selectedPatternReference(pack),gallery=patternReferenceImages(pack),index=patternReferenceIndex();
+ const provided=Array.isArray(pack.attachments.pattern.reference?.images)?[]:['front','back'].filter(view=>flats[view]).map(view=>({key:view,label:view==='front'?'Front':'Back',src:flats[view].dataUrl,name:flats[view].name}));
  const images=provided.length?provided:pattern?[{key:'reference',label:'Style reference',src:pattern.dataUrl,name:pattern.name}]:['front','back'].map(view=>({key:view,label:view==='front'?'Front':'Back',src:housePhotos[view],name:'SR-FORM-001 · '+view}));
  const caption=provided.length?'Current style · front/back references':pattern?'Current style · pattern reference':'Example reference · SR-FORM-001';
  $('style-reference-caption').textContent=caption;
- if(images.length===sidebarImages.length&&images.every((image,i)=>Object.keys(image).every(key=>image[key]===sidebarImages[i][key])))return;
+ const galleryState=provided.length?'':`${gallery.length}:${index}`;
+ if(galleryState===sidebarGalleryState&&images.length===sidebarImages.length&&images.every((image,i)=>Object.keys(image).every(key=>image[key]===sidebarImages[i][key])))return;
+ sidebarGalleryState=galleryState;
  sidebarImages=images;
- $('style-reference-images').innerHTML=images.map(image=>`<span class="reference-photo"><button type="button" class="image-open" data-sidebar-image="${image.key}" aria-label="Enlarge ${esc(image.label)} reference"><img src="${image.src}" alt="${esc(image.name)}"></button><span class="reference-photo-caption${image.key==='reference'?' reference-caption-other':''}">${esc(image.label)}</span></span>`).join('');
+ $('style-reference-images').innerHTML=images.map(image=>`<span class="reference-photo"><button type="button" class="image-open" data-sidebar-image="${image.key}" aria-label="Enlarge ${esc(image.label)} reference"><img src="${image.src}" alt="${esc(image.name)}"></button><span class="reference-photo-caption${image.key==='reference'?' reference-caption-other':''}">${esc(image.label)}</span>${image.key==='reference'?galleryNavigation(gallery,index,true):''}</span>`).join('');
 }
 function renderPinnedPattern() {
  const content=$('pinned-pattern-content'),scroll=$('context-panel').querySelector('.context-body').scrollTop;
@@ -1692,8 +1760,8 @@ function renderFields(s) {
 function renderAttachments(s) {
  if(!s.attachments?.length)return '';
  return `<details class="sheet-details attachment-details" data-details="attachments" ${s.tables?.length?'':'open'}><summary>Drawings & photographic references · ${s.attachments.length} slots</summary><section class="form-section"><div class="attachment-grid">${s.attachments.map(a=>{
- const image=pack.attachments[s.id][a.key];
- return `<article class="attachment-card"><h4>${esc(a.label)}</h4>${image?`<button class="image-open" data-image="${a.key}" type="button" aria-label="Enlarge ${esc(a.label)}"><img src="${image.dataUrl}" alt="${esc(a.label+' · '+image.name)}"></button><p>${esc(image.name)}</p><button type="button" data-remove="${a.key}">Remove image</button>`:'<p class="attachment-empty">No image attached</p>'}<label class="field"><span>${image?'Replace':'Attach'} PNG, JPEG or WebP · max 5 MB</span><input type="file" data-attachment="${a.key}" accept="image/png,image/jpeg,image/webp" aria-label="Attach ${esc(a.label)}"></label></article>`;
+ const gallery=isPatternReference(s,a.key),images=gallery?patternReferenceImages(pack):[],index=gallery?patternReferenceIndex():0,image=gallery?selectedPatternReference(pack):pack.attachments[s.id][a.key];
+ return `<article class="attachment-card"><h4>${esc(a.label)}</h4>${image?`<button class="image-open" data-image="${a.key}" type="button" aria-label="Enlarge ${esc(a.label)}"><img src="${image.dataUrl}" alt="${esc(a.label+' · '+image.name)}"></button><p class="attachment-name">${esc(image.name)}</p>${gallery?galleryNavigation(images,index):''}${gallery&&images.length>1?`<label class="field gallery-picker"><span>Displayed photo</span><select data-gallery-select="reference" aria-label="Displayed pattern reference">${images.map((photo,i)=>`<option value="${i}" ${i===index?'selected':''}>${i+1}. ${esc(photo.name)}</option>`).join('')}</select></label>`:''}<button type="button" data-remove="${a.key}">${gallery?'Remove displayed photo':'Remove image'}</button>`:'<p class="attachment-empty">No image attached</p>'}<label class="field"><span>${gallery?'Add photos · PNG, JPEG or WebP · max 5 MB each':`${image?'Replace':'Attach'} PNG, JPEG or WebP · max 5 MB`}</span><input type="file" data-attachment="${a.key}" ${gallery?'multiple':''} accept="image/png,image/jpeg,image/webp" aria-label="Attach ${esc(a.label)}"></label>${gallery?'<p class="hint">One photo is displayed at a time; all photos stay in your pack and JSON backup. Up to 12 photos per pack.</p>':''}</article>`;
  }).join('')}</div></section></details>`;
 }
 function heading(s,c) { return c.headerField ? pack.fields[s.id][c.headerField] || `${c.label} · ${c.headerField.slice(-1)}` : c.label; }
@@ -1784,7 +1852,7 @@ function buildPrint(){
  const shared=Object.entries(styleLabels).filter(([key])=>pack.style[key]).map(([key,label])=>`<span>${esc(label)}: ${esc(pack.style[key])}</span>`).join(' · ');
  $('print-view').innerHTML=selected.map(s=>`<article class="print-sheet"><header class="print-masthead"><strong>SERPENTIS REGINA</strong><h1>${esc(s.title)}</h1><p>${esc(pack.style.number||pack.title)} · ${s.reference?refUnit.toUpperCase():pack.unit?.toUpperCase()||'UNIT NOT SELECTED'} · LOCAL DRAFT</p></header><p>${shared}</p><p>${esc(s.note)}</p>${sheetMarkup(s,true)}</article>`).join('');
  $('print-view').querySelectorAll('.sheet-details').forEach(el=>el.open=true);
- $('print-view').querySelectorAll('.source-note,.empty-state,input[type=file],button,.inherit-hint').forEach(el=>{if(el.classList.contains('image-open'))el.replaceWith(...el.childNodes);else el.remove();});
+ $('print-view').querySelectorAll('.source-note,.empty-state,input[type=file],button,.inherit-hint,.gallery-picker,.gallery-navigation').forEach(el=>{if(el.classList.contains('image-open'))el.replaceWith(...el.childNodes);else el.remove();});
  $('print-view').querySelectorAll('input,textarea,select').forEach(el=>{const span=document.createElement('span');span.className='print-value';span.textContent=el.value||'—';el.replaceWith(span);});
  $('print-view').querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));$('print-view').setAttribute('aria-hidden','false');
 }
@@ -1806,8 +1874,8 @@ function changeLabel(path){
 }
 function diffCell(change,value,snapshot){
  if(!change.path.startsWith('attachments.'))return esc(diffValue(value));
- const [,sheetId,key]=change.path.split('.'),image=snapshot.attachments[sheetId]?.[key];
- return image?`<p>${esc(image.name)}</p><img class="revision-image" src="${image.dataUrl}" alt="${esc(changeLabel(change.path))}">`:'—';
+ const [,sheetId,key]=change.path.split('.'),gallery=sheetId==='pattern'&&key==='reference',image=gallery?selectedPatternReference(snapshot):snapshot.attachments[sheetId]?.[key],images=gallery?patternReferenceImages(snapshot):[];
+ return image?`${gallery?`<p>${images.length} photo${images.length===1?'':'s'} · displayed ${(snapshot.attachments.pattern.reference.selectedIndex??0)+1} of ${images.length}</p><ul>${images.map(photo=>`<li>${esc(photo.name)}</li>`).join('')}</ul>`:''}<p>${esc(image.name)}</p><img class="revision-image" src="${image.dataUrl}" alt="${esc(changeLabel(change.path))}">`:'—';
 }
 async function reviewRevision(restore=false){
  if(!validScreen())return;
@@ -1913,20 +1981,37 @@ editor.addEventListener('keydown',event=>{
  }
 });
 editor.addEventListener('change',run(async event=>{
- const el=event.target,key=el.dataset.attachment,s=sheetForElement(el);if(!key)return;
- const file=el.files[0],uploadPackId=pack.id;if(!file)return;
+ const el=event.target,key=el.dataset.attachment,s=sheetForElement(el);
+ if(el.dataset.gallerySelect){selectPatternReference(Number(el.value),el);return;}
+ if(!key)return;
+ const files=[...el.files],uploadPackId=pack.id,gallery=isPatternReference(s,key);if(!files.length)return;
  try{
-  if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>5*1024*1024)throw Error('Choose a PNG, JPEG or WebP up to 5 MB.');
-  const dataUrl=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('Could not read image.'));reader.readAsDataURL(file);});
-  const image=new Image();image.src=dataUrl;await image.decode();if(pack.id!==uploadPackId)throw Error('The active pack changed during upload. Attach the image in the intended pack.');
-  rememberEdit('image:'+s.id+':'+key);const next=structuredClone(pack);next.attachments[s.id][key]={name:file.name,type:file.type,dataUrl};pack=normalizeTechPack(next,template);markDirty();refreshAttachmentViews(s);status('Original image attached locally; autosave includes its bytes.');
+  if(gallery&&files.length+patternReferenceImages(pack).length>12)throw Error('A reference gallery can hold up to 12 photos. No photos were added.');
+  if(files.some(file=>!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>5*1024*1024))throw Error('Choose PNG, JPEG or WebP images up to 5 MB each. No photos were added.');
+  const images=[];
+  for(const file of files){
+   const dataUrl=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('Could not read image. No photos were added.'));reader.readAsDataURL(file);});
+   const image=new Image();image.src=dataUrl;await image.decode();images.push({name:file.name,type:file.type,dataUrl});
+  }
+  if(pack.id!==uploadPackId)throw Error('The active pack changed during upload. Attach the images in the intended pack.');
+  const next=structuredClone(pack);next.attachments[s.id][key]=gallery?{images:[...patternReferenceImages(pack),...images],selectedIndex:patternReferenceIndex()}:images[0];
+  const normalized=normalizeTechPack(next,template);editHistory.breakGroup();rememberEdit('image:'+s.id+':'+key);pack=normalized;markDirty();refreshAttachmentViews(s);editHistory.breakGroup();
+  status(gallery?`Added ${images.length} photo${images.length===1?'':'s'} to the reference gallery. Use Previous / Next or Displayed photo to choose the preview.`:'Original image attached locally; autosave includes its bytes.');
  }catch(error){el.value='';status(error.message);}
 }));
 editor.addEventListener('click',event=>{
  const button=event.target.closest('button');if(!button)return;const s=sheetForElement(button);
  if(button.dataset.useShared){rememberEdit('shared:'+s.id+':'+button.dataset.useShared);pack.fields[s.id][button.dataset.useShared]='';markDirty();syncFieldViews(s,s.fields.find(f=>f.key===button.dataset.useShared));syncDerivedFields();}
- if(button.dataset.remove){rememberEdit('image:'+s.id+':'+button.dataset.remove);pack.attachments[s.id][button.dataset.remove]=null;markDirty();refreshAttachmentViews(s);}
- if(button.dataset.image){const image=pack.attachments[s.id][button.dataset.image];showImage(image.dataUrl,image.name);}
+ if(button.dataset.galleryPrev||button.dataset.galleryNext){selectPatternReference(patternReferenceIndex()+(button.dataset.galleryNext?1:-1),button);return;}
+ if(button.dataset.remove){
+  const key=button.dataset.remove;editHistory.breakGroup();rememberEdit('image:'+s.id+':'+key);
+  if(isPatternReference(s,key)){
+   const images=[...patternReferenceImages(pack)],index=patternReferenceIndex();images.splice(index,1);
+   pack.attachments.pattern.reference=images.length?{images,selectedIndex:Math.min(index,images.length-1)}:null;
+  }else pack.attachments[s.id][key]=null;
+  markDirty();refreshAttachmentViews(s);editHistory.breakGroup();status('Displayed photo removed. Other gallery photos are kept.');
+ }
+ if(button.dataset.image){const image=isPatternReference(s,button.dataset.image)?selectedPatternReference(pack):pack.attachments[s.id][button.dataset.image];if(image)showImage(image.dataUrl,image.name);}
  if(button.dataset.housePhoto)showImage(button.querySelector('img').src,'SR-FORM-001 · '+button.dataset.housePhoto);
 });
 }
@@ -2040,6 +2125,8 @@ async function initialize(){
 $('toggle-style-panel').addEventListener('click',()=>setStylePanelVisible($('context-panel').hidden));
 $('context-panel').addEventListener('toggle',()=>{$('context-panel').querySelector('.context-summary-action').textContent=$('context-panel').open?'Collapse details':'Open details';});
 $('style-reference-images').addEventListener('click',event=>{
+ const navigation=event.target.closest('[data-gallery-prev],[data-gallery-next]');
+ if(navigation){event.preventDefault();event.stopPropagation();selectPatternReference(patternReferenceIndex()+(navigation.dataset.galleryNext?1:-1),navigation);return;}
  const button=event.target.closest('[data-sidebar-image]');if(!button)return;event.preventDefault();event.stopPropagation();
  const image=sidebarImages.find(image=>image.key===button.dataset.sidebarImage);if(image)showImage(image.src,image.name);
 });
