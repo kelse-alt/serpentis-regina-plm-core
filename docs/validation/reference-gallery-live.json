@@ -1,0 +1,68 @@
+{
+  "checkedAtUtc": "2026-10-27T23:46:36.543885+00:00",
+  "version": "0.7.2",
+  "sourceCommit": "8bdb5c6dc2abe8a41e2b989abc824463097fac40",
+  "deploymentCommit": "d4e97bc307caf682965041ada00e756769c8de23",
+  "buildId": "f67db7f9290ff7c1cac09adda060307b63d07bf32c2a7dc1a380857ec6bdafd2",
+  "files": [
+    {
+      "path": "client-intake.html",
+      "status": 200,
+      "expected": "f8e0fcccde7ba6bd7ed31c6b3335fb1bbaefc77741fb3f3f7d2af749f899c035",
+      "actual": "f8e0fcccde7ba6bd7ed31c6b3335fb1bbaefc77741fb3f3f7d2af749f899c035",
+      "matches": true
+    },
+    {
+      "path": "icons/apple-touch-icon.png",
+      "status": 200,
+      "expected": "8998d2a0465dde807c8eef1d8247924e750862bbcee82d5e269746bd4526c010",
+      "actual": "8998d2a0465dde807c8eef1d8247924e750862bbcee82d5e269746bd4526c010",
+      "matches": true
+    },
+    {
+      "path": "icons/icon-192.png",
+      "status": 200,
+      "expected": "dfd0d95f0d7e9d4f10579828bc794f0438a566da1359c2a91ff35365e593de88",
+      "actual": "dfd0d95f0d7e9d4f10579828bc794f0438a566da1359c2a91ff35365e593de88",
+      "matches": true
+    },
+    {
+      "path": "icons/icon-512.png",
+      "status": 200,
+      "expected": "6363ee20c1da487dbc591f6c7b76ddf37c04bd8fe4c964388d12d5fbb5c4fb41",
+      "actual": "6363ee20c1da487dbc591f6c7b76ddf37c04bd8fe4c964388d12d5fbb5c4fb41",
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "expected": "bbcd02d6320171e080ad5d4fc623ca206c451b910fb6b3737df5c781d15cef83",
+      "actual": "bbcd02d6320171e080ad5d4fc623ca206c451b910fb6b3737df5c781d15cef83",
+      "matches": true
+    },
+    {
+      "path": "manifest.webmanifest",
+      "status": 200,
+      "expected": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c",
+      "actual": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c",
+      "matches": true
+    },
+    {
+      "path": "pwa.js",
+      "status": 200,
+      "expected": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf",
+      "actual": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf",
+      "matches": true
+    },
+    {
+      "path": "sw.js",
+      "status": 200,
+      "expected": "cd8d9428e5361aeb039a81aa6c38654c07e064d2c4256d87fce739d20c5f61f4",
+      "actual": "cd8d9428e5361aeb039a81aa6c38654c07e064d2c4256d87fce739d20c5f61f4",
+      "matches": true
+    }
+  ],
+  "portalFilesPreservedInGit": true,
+  "livePortalRootUnchanged": true,
+  "passed": true
+}

@@ -51,3 +51,9 @@ iPhone picker or physical-device behavior.
 Validation: 92 Node tests, [15 focused gallery checks](validation/reference-gallery.json),
 [14 pinned-panel workflows](validation/reference-gallery-pinned-regression.json),
 and the [Chromium offline/update suite](validation/reference-gallery-pwa.json) pass.
+
+The update is [live at the existing Workroom address](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/).
+[Live verification](validation/reference-gallery-live.json) confirms all eight
+hosted files match the tested build and the portal is unchanged. The
+[GitHub Pages deployment](https://github.com/kelse-alt/serpentis-regina-plm-core/actions/runs/40604361559)
+and source CI completed successfully.
