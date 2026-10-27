@@ -335,7 +335,8 @@ def check_workflow(browser):
         page.wait_for_function('()=>document.querySelector("#style-reference-images img")?.naturalWidth===2')
         page.evaluate('window.__pinnedSlowRead=false')
         require(page.locator('#style-reference-images img').count() == 1 and 'pattern reference' in page.locator('#style-reference-caption').inner_text(), 'Current pattern image did not replace the example reference.')
-        require(export_pack(page)['attachments']['pattern']['reference']['name'] == 'synthetic-sidebar.png', 'Sidebar uploaded image was written to the active sheet.')
+        attached = export_pack(page)['attachments']['pattern']['reference']
+        require(attached['images'][attached['selectedIndex']]['name'] == 'synthetic-sidebar.png', 'Sidebar uploaded image was written to the active sheet.')
         before_open = page.locator('#context-panel').evaluate('(e)=>e.open')
         page.locator('[data-sidebar-image=reference]').click()
         require(page.locator('#image-dialog').is_visible() and page.locator('#large-image').evaluate('(e)=>e.naturalWidth') == 2, 'Pinned reference did not enlarge.')
@@ -349,6 +350,10 @@ def check_workflow(browser):
         base.fill('invalid master entry')
         page.evaluate("""window.__masterInvalidNode=document.querySelector('#sheet-content [data-table=specs][data-row="1"][data-col=base]')""")
         open_for(page, '#pinned-pattern-content [data-attachment=reference]').set_input_files({'name':'synthetic-sidebar-replacement.png','mimeType':'image/png','buffer':raster(2,4)})
+        # Gallery uploads append and retain the displayed photo; explicitly
+        # select the newly added reference before checking its preview geometry.
+        page.wait_for_function('()=>document.querySelector("#pinned-pattern-content [data-gallery-count=reference]")?.textContent==="1 of 2"')
+        open_for(page, '#pinned-pattern-content [data-gallery-select=reference]').select_option('1')
         page.wait_for_function('()=>document.querySelector("#style-reference-images img")?.naturalHeight===4')
         require(base.input_value() == 'invalid master entry' and not base.evaluate('(e)=>e.checkValidity()'), 'Sidebar upload erased a different worksheet’s invalid in-progress entry.')
         require(page.evaluate("""window.__masterInvalidNode===document.querySelector('#sheet-content [data-table=specs][data-row="1"][data-col=base]')"""), 'Sidebar upload remounted the active invalid measurement.')
@@ -359,7 +364,8 @@ def check_workflow(browser):
         quantity.fill('-3')
         page.evaluate("""window.__sidebarInvalidNode=document.querySelector('#pinned-pattern-content [data-table=pieces][data-row="1"][data-col=qty]')""")
         open_for(page, '#sheet-content [data-attachment=front]').set_input_files({'name':'synthetic-front.png','mimeType':'image/png','buffer':raster(2,3)})
-        page.wait_for_function('()=>document.querySelector("#style-reference-images img")?.naturalHeight===3')
+        page.wait_for_function('()=>document.querySelector("#sheet-content [data-image=front] img")?.naturalHeight===3')
+        require(page.locator('#style-reference-images img').evaluate('(el)=>el.naturalHeight') == 4, 'Master upload replaced the selected gallery preview.')
         require(quantity.input_value() == '-3' and not quantity.evaluate('(e)=>e.checkValidity()'), 'Master image upload erased invalid sidebar quantity.')
         require(page.evaluate("""window.__sidebarInvalidNode===document.querySelector('#pinned-pattern-content [data-table=pieces][data-row="1"][data-col=qty]')"""), 'Master image upload remounted invalid sidebar table.')
         page.locator('#sheet-content [data-remove=front]').click()
@@ -369,13 +375,15 @@ def check_workflow(browser):
         quantity.fill('4')
         report['checks']['imageUploadAndRemovalPreserveUnrelatedInvalidEditorsAndUpdateGuards'] = True
         open_for(page, '#sheet-content [data-attachment=front]').set_input_files({'name':'synthetic-front.png','mimeType':'image/png','buffer':raster(2,3)})
-        page.wait_for_function('()=>document.querySelector("#style-reference-images img")?.naturalHeight===3')
+        page.wait_for_function('()=>document.querySelector("#sheet-content [data-image=front] img")?.naturalHeight===3')
         open_for(page, '#sheet-content [data-attachment=back]').set_input_files({'name':'synthetic-back.png','mimeType':'image/png','buffer':raster(3,2)})
-        page.wait_for_function('()=>document.querySelectorAll("#style-reference-images img").length===2')
-        require('front/back' in page.locator('#style-reference-caption').inner_text(), 'Current front/back references did not take precedence.')
+        page.wait_for_function('()=>document.querySelector("#sheet-content [data-image=back] img")?.naturalWidth===3')
+        require(page.locator('#style-reference-images img').count() == 1 and 'pattern reference' in page.locator('#style-reference-caption').inner_text(), 'The gallery did not retain its selected preview alongside Master flats.')
         select_sheet(page, 'wash')
-        require(page.locator('#style-reference-images img').evaluate_all('els=>els.length===2&&els[0].naturalHeight===3&&els[1].naturalWidth===3'), 'Current style photos changed on a worksheet switch.')
-        report['checks']['currentFrontBackReferencesStayPinnedAcrossTabs'] = True
+        require(page.locator('#style-reference-images img').evaluate_all('els=>els.length===1&&els[0].naturalHeight===4'), 'Selected gallery preview changed on a worksheet switch.')
+        saved_flats = export_pack(page)['attachments']['master']
+        require(saved_flats['front']['name'] == 'synthetic-front.png' and saved_flats['back']['name'] == 'synthetic-back.png', 'Gallery priority removed the independently stored Master flats.')
+        report['checks']['galleryPreviewStaysPinnedAcrossTabsAlongsideMasterFlats'] = True
 
         open_context(page)
         open_for(page, '#revision-name').fill('Synthetic sidebar snapshot')

@@ -105,6 +105,37 @@ export function createTechPack(template) {
   return pack;
 }
 
+/** Read old single-image references and current galleries without rewriting either. */
+export function patternReferenceImages(pack) {
+  const reference = pack.attachments?.pattern?.reference;
+  return reference ? (Array.isArray(reference.images) ? reference.images : [reference]) : [];
+}
+
+/** The current gallery selection is shared by the Pattern Card and pinned panel. */
+export function selectedPatternReference(pack) {
+  const reference = pack.attachments?.pattern?.reference;
+  return patternReferenceImages(pack)[reference?.selectedIndex ?? 0] ?? null;
+}
+
+function validateImage(attachment, label) {
+  exactKeys(attachment, ['name', 'type', 'dataUrl'], `${label} image`);
+  const name = text(attachment.name, 'Image filename', 255);
+  if (!['image/png', 'image/jpeg', 'image/webp'].includes(attachment.type)) throw Error('Reference images must be PNG, JPEG, or WebP.');
+  const prefix = `data:${attachment.type};base64,`;
+  if (typeof attachment.dataUrl !== 'string' || !attachment.dataUrl.startsWith(prefix)) throw Error('Reference images must be embedded image data.');
+  const encoded = attachment.dataUrl.slice(prefix.length);
+  if (!encoded || encoded.length > Math.ceil(MAX_IMAGE_BYTES / 3) * 4 || encoded.length % 4 !== 0 ||
+      !/^[A-Za-z0-9+/]*={0,2}$/.test(encoded)) throw Error('Reference images must contain valid base64 data no larger than 5 MB.');
+  const bytes = encoded.length / 4 * 3 - (encoded.endsWith('==') ? 2 : encoded.endsWith('=') ? 1 : 0);
+  if (bytes > MAX_IMAGE_BYTES) throw Error('Each reference image must be no larger than 5 MB.');
+  const header = globalThis.atob(encoded.slice(0, 32));
+  const validHeader = attachment.type === 'image/png' ? header.startsWith('\x89PNG\r\n\x1a\n')
+    : attachment.type === 'image/jpeg' ? header.startsWith('\xff\xd8\xff')
+    : header.startsWith('RIFF') && header.slice(8, 12) === 'WEBP';
+  if (!validHeader) throw Error('The reference image data does not match its image type.');
+  return { name, type: attachment.type, dataUrl: attachment.dataUrl };
+}
+
 /** Validate either known schema before migrating; no arbitrary fields survive. */
 function validateTechPack(input, template, version) {
   const keys = ['schemaVersion', 'templateId', 'id', 'title', 'unit', 'fields', 'tables', 'attachments', 'updatedAt'];
@@ -158,23 +189,20 @@ function validateTechPack(input, template, version) {
     for (const slot of slots) {
       const attachment = input.attachments[sheet.id][slot.key];
       if (attachment === null) continue;
-      if (++attachmentCount > 12) throw Error('A draft can contain at most 12 reference images.');
-      exactKeys(attachment, ['name', 'type', 'dataUrl'], `${slot.key} image`);
-      const name = text(attachment.name, 'Image filename', 255);
-      if (!['image/png', 'image/jpeg', 'image/webp'].includes(attachment.type)) throw Error('Reference images must be PNG, JPEG, or WebP.');
-      const prefix = `data:${attachment.type};base64,`;
-      if (typeof attachment.dataUrl !== 'string' || !attachment.dataUrl.startsWith(prefix)) throw Error('Reference images must be embedded image data.');
-      const encoded = attachment.dataUrl.slice(prefix.length);
-      if (!encoded || encoded.length > Math.ceil(MAX_IMAGE_BYTES / 3) * 4 || encoded.length % 4 !== 0 ||
-          !/^[A-Za-z0-9+/]*={0,2}$/.test(encoded)) throw Error('Reference images must contain valid base64 data no larger than 5 MB.');
-      const bytes = encoded.length / 4 * 3 - (encoded.endsWith('==') ? 2 : encoded.endsWith('=') ? 1 : 0);
-      if (bytes > MAX_IMAGE_BYTES) throw Error('Each reference image must be no larger than 5 MB.');
-      const header = globalThis.atob(encoded.slice(0, 32));
-      const validHeader = attachment.type === 'image/png' ? header.startsWith('\x89PNG\r\n\x1a\n')
-        : attachment.type === 'image/jpeg' ? header.startsWith('\xff\xd8\xff')
-        : header.startsWith('RIFF') && header.slice(8, 12) === 'WEBP';
-      if (!validHeader) throw Error('The reference image data does not match its image type.');
-      result.attachments[sheet.id][slot.key] = { name, type: attachment.type, dataUrl: attachment.dataUrl };
+      if (version === 2 && sheet.id === 'pattern' && slot.key === 'reference' && Object.hasOwn(attachment, 'images')) {
+        exactKeys(attachment, ['images', 'selectedIndex'], 'Pattern reference gallery');
+        if (!Array.isArray(attachment.images) || !attachment.images.length || attachment.images.length > 12) throw Error('A Pattern Card gallery must contain between 1 and 12 reference images.');
+        if (!Number.isInteger(attachment.selectedIndex) || attachment.selectedIndex < 0 || attachment.selectedIndex >= attachment.images.length) throw Error('The selected gallery image is unavailable.');
+        attachmentCount += attachment.images.length;
+        result.attachments[sheet.id][slot.key] = {
+          images: attachment.images.map((image, index) => validateImage(image, `Pattern reference ${index + 1}`)),
+          selectedIndex: attachment.selectedIndex,
+        };
+      } else {
+        attachmentCount++;
+        result.attachments[sheet.id][slot.key] = validateImage(attachment, slot.key);
+      }
+      if (attachmentCount > 12) throw Error('A draft can contain at most 12 reference images across all sheets.');
     }
   }
   return result;
@@ -212,6 +240,7 @@ export function normalizeTechPack(input, template) {
 
 function attachmentSummary(attachment) {
   if (!attachment) return null;
+  if (Array.isArray(attachment.images)) return { images: attachment.images.map(attachmentSummary), selectedIndex: attachment.selectedIndex };
   const encoded = attachment.dataUrl ?? '';
   let hash = 2166136261;
   for (let index = 0; index < encoded.length; index++) hash = Math.imul(hash ^ encoded.charCodeAt(index), 16777619) >>> 0;

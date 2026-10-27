@@ -1,4 +1,4 @@
-import { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack } from '../src/tech-pack.mjs';
+import { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack, patternReferenceImages, selectedPatternReference } from '../src/tech-pack.mjs';
 import { createPackStore } from '../src/tech-pack-storage.mjs';
 import { previewGridPaste, applyGridPaste, createEditHistory } from '../src/workroom-editing.mjs';
 
@@ -31,7 +31,26 @@ const patternSheet = template.sheets.find(s=>s.id==='pattern');
 const sheetForElement = el => template.sheets.find(s=>s.id===el.closest('[data-editor-sheet]')?.dataset.editorSheet)||activeSheet();
 const editorRoots = s => [...document.querySelectorAll(`.sheet-editor[data-editor-sheet="${s.id}"]`)].filter(el=>!el.closest('#print-view'));
 const panelPreferenceKey = 'serpentis-regina.workroom.style-panel-visible';
-let sidebarImages = [];
+let sidebarImages = [], sidebarGalleryState = '';
+const isPatternReference = (s,key) => s.id==='pattern'&&key==='reference';
+const patternReferenceIndex = () => pack.attachments.pattern.reference?.selectedIndex??0;
+function galleryNavigation(images,index,pinned=false) {
+ if(images.length<2)return '';
+ return `<span class="gallery-navigation${pinned?' pinned-gallery-navigation':''}" role="group" aria-label="${pinned?'Style reference':'Pattern reference'} gallery"><button type="button" data-gallery-prev="reference" aria-label="Previous ${pinned?'style':'pattern'} reference" ${index===0?'disabled':''}>Previous</button><output ${pinned?'data-style-gallery-count':'data-gallery-count="reference"'} aria-live="polite">${index+1} of ${images.length}</output><button type="button" data-gallery-next="reference" aria-label="Next ${pinned?'style':'pattern'} reference" ${index===images.length-1?'disabled':''}>Next</button></span>`;
+}
+function selectPatternReference(index,origin) {
+ const images=patternReferenceImages(pack);
+ if(!Number.isInteger(index)||index<0||index>=images.length||index===patternReferenceIndex())return;
+ const root=origin?.closest('#style-reference-images,.sheet-editor'),attribute=['data-gallery-prev','data-gallery-next','data-gallery-select'].find(key=>origin?.hasAttribute(key));
+ const editorId=root?.closest('#pinned-pattern-content')?'pinned-pattern-content':root?.id==='style-reference-images'?'style-reference-images':'sheet-content';
+ editHistory.breakGroup();rememberEdit('gallery-selection');
+ pack.attachments.pattern.reference={images,selectedIndex:index};markDirty();refreshAttachmentViews(patternSheet);editHistory.breakGroup();
+ if(attribute){
+  const root=$(editorId),target=root.querySelector(`[${attribute}="reference"]`);
+  (target&&!target.disabled?target:root.querySelector('[data-gallery-select],button[data-gallery-prev]:not(:disabled),button[data-gallery-next]:not(:disabled)'))?.focus();
+ }
+ status(`Showing reference ${index+1} of ${images.length}: ${images[index].name}. Selection saves with this pack.`);
+}
 function setStylePanelVisible(visible,remember=true) {
  $('context-panel').hidden=!visible;
  document.querySelector('.workspace').classList.toggle('style-panel-hidden',!visible);
@@ -41,14 +60,16 @@ function setStylePanelVisible(visible,remember=true) {
  if(remember)try{localStorage.setItem(panelPreferenceKey,String(visible));}catch{/* This view preference never blocks local drafts. */}
 }
 function renderReferenceImages() {
- const flats=pack.attachments.master,pattern=pack.attachments.pattern.reference;
- const provided=['front','back'].filter(view=>flats[view]).map(view=>({key:view,label:view==='front'?'Front':'Back',src:flats[view].dataUrl,name:flats[view].name}));
+ const flats=pack.attachments.master,pattern=selectedPatternReference(pack),gallery=patternReferenceImages(pack),index=patternReferenceIndex();
+ const provided=Array.isArray(pack.attachments.pattern.reference?.images)?[]:['front','back'].filter(view=>flats[view]).map(view=>({key:view,label:view==='front'?'Front':'Back',src:flats[view].dataUrl,name:flats[view].name}));
  const images=provided.length?provided:pattern?[{key:'reference',label:'Style reference',src:pattern.dataUrl,name:pattern.name}]:['front','back'].map(view=>({key:view,label:view==='front'?'Front':'Back',src:housePhotos[view],name:'SR-FORM-001 · '+view}));
  const caption=provided.length?'Current style · front/back references':pattern?'Current style · pattern reference':'Example reference · SR-FORM-001';
  $('style-reference-caption').textContent=caption;
- if(images.length===sidebarImages.length&&images.every((image,i)=>Object.keys(image).every(key=>image[key]===sidebarImages[i][key])))return;
+ const galleryState=provided.length?'':`${gallery.length}:${index}`;
+ if(galleryState===sidebarGalleryState&&images.length===sidebarImages.length&&images.every((image,i)=>Object.keys(image).every(key=>image[key]===sidebarImages[i][key])))return;
+ sidebarGalleryState=galleryState;
  sidebarImages=images;
- $('style-reference-images').innerHTML=images.map(image=>`<span class="reference-photo"><button type="button" class="image-open" data-sidebar-image="${image.key}" aria-label="Enlarge ${esc(image.label)} reference"><img src="${image.src}" alt="${esc(image.name)}"></button><span class="reference-photo-caption${image.key==='reference'?' reference-caption-other':''}">${esc(image.label)}</span></span>`).join('');
+ $('style-reference-images').innerHTML=images.map(image=>`<span class="reference-photo"><button type="button" class="image-open" data-sidebar-image="${image.key}" aria-label="Enlarge ${esc(image.label)} reference"><img src="${image.src}" alt="${esc(image.name)}"></button><span class="reference-photo-caption${image.key==='reference'?' reference-caption-other':''}">${esc(image.label)}</span>${image.key==='reference'?galleryNavigation(gallery,index,true):''}</span>`).join('');
 }
 function renderPinnedPattern() {
  const content=$('pinned-pattern-content'),scroll=$('context-panel').querySelector('.context-body').scrollTop;
@@ -196,8 +217,8 @@ function renderFields(s) {
 function renderAttachments(s) {
  if(!s.attachments?.length)return '';
  return `<details class="sheet-details attachment-details" data-details="attachments" ${s.tables?.length?'':'open'}><summary>Drawings & photographic references · ${s.attachments.length} slots</summary><section class="form-section"><div class="attachment-grid">${s.attachments.map(a=>{
- const image=pack.attachments[s.id][a.key];
- return `<article class="attachment-card"><h4>${esc(a.label)}</h4>${image?`<button class="image-open" data-image="${a.key}" type="button" aria-label="Enlarge ${esc(a.label)}"><img src="${image.dataUrl}" alt="${esc(a.label+' · '+image.name)}"></button><p>${esc(image.name)}</p><button type="button" data-remove="${a.key}">Remove image</button>`:'<p class="attachment-empty">No image attached</p>'}<label class="field"><span>${image?'Replace':'Attach'} PNG, JPEG or WebP · max 5 MB</span><input type="file" data-attachment="${a.key}" accept="image/png,image/jpeg,image/webp" aria-label="Attach ${esc(a.label)}"></label></article>`;
+ const gallery=isPatternReference(s,a.key),images=gallery?patternReferenceImages(pack):[],index=gallery?patternReferenceIndex():0,image=gallery?selectedPatternReference(pack):pack.attachments[s.id][a.key];
+ return `<article class="attachment-card"><h4>${esc(a.label)}</h4>${image?`<button class="image-open" data-image="${a.key}" type="button" aria-label="Enlarge ${esc(a.label)}"><img src="${image.dataUrl}" alt="${esc(a.label+' · '+image.name)}"></button><p class="attachment-name">${esc(image.name)}</p>${gallery?galleryNavigation(images,index):''}${gallery&&images.length>1?`<label class="field gallery-picker"><span>Displayed photo</span><select data-gallery-select="reference" aria-label="Displayed pattern reference">${images.map((photo,i)=>`<option value="${i}" ${i===index?'selected':''}>${i+1}. ${esc(photo.name)}</option>`).join('')}</select></label>`:''}<button type="button" data-remove="${a.key}">${gallery?'Remove displayed photo':'Remove image'}</button>`:'<p class="attachment-empty">No image attached</p>'}<label class="field"><span>${gallery?'Add photos · PNG, JPEG or WebP · max 5 MB each':`${image?'Replace':'Attach'} PNG, JPEG or WebP · max 5 MB`}</span><input type="file" data-attachment="${a.key}" ${gallery?'multiple':''} accept="image/png,image/jpeg,image/webp" aria-label="Attach ${esc(a.label)}"></label>${gallery?'<p class="hint">One photo is displayed at a time; all photos stay in your pack and JSON backup. Up to 12 photos per pack.</p>':''}</article>`;
  }).join('')}</div></section></details>`;
 }
 function heading(s,c) { return c.headerField ? pack.fields[s.id][c.headerField] || `${c.label} · ${c.headerField.slice(-1)}` : c.label; }
@@ -288,7 +309,7 @@ function buildPrint(){
  const shared=Object.entries(styleLabels).filter(([key])=>pack.style[key]).map(([key,label])=>`<span>${esc(label)}: ${esc(pack.style[key])}</span>`).join(' · ');
  $('print-view').innerHTML=selected.map(s=>`<article class="print-sheet"><header class="print-masthead"><strong>SERPENTIS REGINA</strong><h1>${esc(s.title)}</h1><p>${esc(pack.style.number||pack.title)} · ${s.reference?refUnit.toUpperCase():pack.unit?.toUpperCase()||'UNIT NOT SELECTED'} · LOCAL DRAFT</p></header><p>${shared}</p><p>${esc(s.note)}</p>${sheetMarkup(s,true)}</article>`).join('');
  $('print-view').querySelectorAll('.sheet-details').forEach(el=>el.open=true);
- $('print-view').querySelectorAll('.source-note,.empty-state,input[type=file],button,.inherit-hint').forEach(el=>{if(el.classList.contains('image-open'))el.replaceWith(...el.childNodes);else el.remove();});
+ $('print-view').querySelectorAll('.source-note,.empty-state,input[type=file],button,.inherit-hint,.gallery-picker,.gallery-navigation').forEach(el=>{if(el.classList.contains('image-open'))el.replaceWith(...el.childNodes);else el.remove();});
  $('print-view').querySelectorAll('input,textarea,select').forEach(el=>{const span=document.createElement('span');span.className='print-value';span.textContent=el.value||'—';el.replaceWith(span);});
  $('print-view').querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));$('print-view').setAttribute('aria-hidden','false');
 }
@@ -310,8 +331,8 @@ function changeLabel(path){
 }
 function diffCell(change,value,snapshot){
  if(!change.path.startsWith('attachments.'))return esc(diffValue(value));
- const [,sheetId,key]=change.path.split('.'),image=snapshot.attachments[sheetId]?.[key];
- return image?`<p>${esc(image.name)}</p><img class="revision-image" src="${image.dataUrl}" alt="${esc(changeLabel(change.path))}">`:'—';
+ const [,sheetId,key]=change.path.split('.'),gallery=sheetId==='pattern'&&key==='reference',image=gallery?selectedPatternReference(snapshot):snapshot.attachments[sheetId]?.[key],images=gallery?patternReferenceImages(snapshot):[];
+ return image?`${gallery?`<p>${images.length} photo${images.length===1?'':'s'} · displayed ${(snapshot.attachments.pattern.reference.selectedIndex??0)+1} of ${images.length}</p><ul>${images.map(photo=>`<li>${esc(photo.name)}</li>`).join('')}</ul>`:''}<p>${esc(image.name)}</p><img class="revision-image" src="${image.dataUrl}" alt="${esc(changeLabel(change.path))}">`:'—';
 }
 async function reviewRevision(restore=false){
  if(!validScreen())return;
@@ -417,20 +438,37 @@ editor.addEventListener('keydown',event=>{
  }
 });
 editor.addEventListener('change',run(async event=>{
- const el=event.target,key=el.dataset.attachment,s=sheetForElement(el);if(!key)return;
- const file=el.files[0],uploadPackId=pack.id;if(!file)return;
+ const el=event.target,key=el.dataset.attachment,s=sheetForElement(el);
+ if(el.dataset.gallerySelect){selectPatternReference(Number(el.value),el);return;}
+ if(!key)return;
+ const files=[...el.files],uploadPackId=pack.id,gallery=isPatternReference(s,key);if(!files.length)return;
  try{
-  if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>5*1024*1024)throw Error('Choose a PNG, JPEG or WebP up to 5 MB.');
-  const dataUrl=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('Could not read image.'));reader.readAsDataURL(file);});
-  const image=new Image();image.src=dataUrl;await image.decode();if(pack.id!==uploadPackId)throw Error('The active pack changed during upload. Attach the image in the intended pack.');
-  rememberEdit('image:'+s.id+':'+key);const next=structuredClone(pack);next.attachments[s.id][key]={name:file.name,type:file.type,dataUrl};pack=normalizeTechPack(next,template);markDirty();refreshAttachmentViews(s);status('Original image attached locally; autosave includes its bytes.');
+  if(gallery&&files.length+patternReferenceImages(pack).length>12)throw Error('A reference gallery can hold up to 12 photos. No photos were added.');
+  if(files.some(file=>!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>5*1024*1024))throw Error('Choose PNG, JPEG or WebP images up to 5 MB each. No photos were added.');
+  const images=[];
+  for(const file of files){
+   const dataUrl=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('Could not read image. No photos were added.'));reader.readAsDataURL(file);});
+   const image=new Image();image.src=dataUrl;await image.decode();images.push({name:file.name,type:file.type,dataUrl});
+  }
+  if(pack.id!==uploadPackId)throw Error('The active pack changed during upload. Attach the images in the intended pack.');
+  const next=structuredClone(pack);next.attachments[s.id][key]=gallery?{images:[...patternReferenceImages(pack),...images],selectedIndex:patternReferenceIndex()}:images[0];
+  const normalized=normalizeTechPack(next,template);editHistory.breakGroup();rememberEdit('image:'+s.id+':'+key);pack=normalized;markDirty();refreshAttachmentViews(s);editHistory.breakGroup();
+  status(gallery?`Added ${images.length} photo${images.length===1?'':'s'} to the reference gallery. Use Previous / Next or Displayed photo to choose the preview.`:'Original image attached locally; autosave includes its bytes.');
  }catch(error){el.value='';status(error.message);}
 }));
 editor.addEventListener('click',event=>{
  const button=event.target.closest('button');if(!button)return;const s=sheetForElement(button);
  if(button.dataset.useShared){rememberEdit('shared:'+s.id+':'+button.dataset.useShared);pack.fields[s.id][button.dataset.useShared]='';markDirty();syncFieldViews(s,s.fields.find(f=>f.key===button.dataset.useShared));syncDerivedFields();}
- if(button.dataset.remove){rememberEdit('image:'+s.id+':'+button.dataset.remove);pack.attachments[s.id][button.dataset.remove]=null;markDirty();refreshAttachmentViews(s);}
- if(button.dataset.image){const image=pack.attachments[s.id][button.dataset.image];showImage(image.dataUrl,image.name);}
+ if(button.dataset.galleryPrev||button.dataset.galleryNext){selectPatternReference(patternReferenceIndex()+(button.dataset.galleryNext?1:-1),button);return;}
+ if(button.dataset.remove){
+  const key=button.dataset.remove;editHistory.breakGroup();rememberEdit('image:'+s.id+':'+key);
+  if(isPatternReference(s,key)){
+   const images=[...patternReferenceImages(pack)],index=patternReferenceIndex();images.splice(index,1);
+   pack.attachments.pattern.reference=images.length?{images,selectedIndex:Math.min(index,images.length-1)}:null;
+  }else pack.attachments[s.id][key]=null;
+  markDirty();refreshAttachmentViews(s);editHistory.breakGroup();status('Displayed photo removed. Other gallery photos are kept.');
+ }
+ if(button.dataset.image){const image=isPatternReference(s,button.dataset.image)?selectedPatternReference(pack):pack.attachments[s.id][button.dataset.image];if(image)showImage(image.dataUrl,image.name);}
  if(button.dataset.housePhoto)showImage(button.querySelector('img').src,'SR-FORM-001 · '+button.dataset.housePhoto);
 });
 }
@@ -544,6 +582,8 @@ async function initialize(){
 $('toggle-style-panel').addEventListener('click',()=>setStylePanelVisible($('context-panel').hidden));
 $('context-panel').addEventListener('toggle',()=>{$('context-panel').querySelector('.context-summary-action').textContent=$('context-panel').open?'Collapse details':'Open details';});
 $('style-reference-images').addEventListener('click',event=>{
+ const navigation=event.target.closest('[data-gallery-prev],[data-gallery-next]');
+ if(navigation){event.preventDefault();event.stopPropagation();selectPatternReference(patternReferenceIndex()+(navigation.dataset.galleryNext?1:-1),navigation);return;}
  const button=event.target.closest('[data-sidebar-image]');if(!button)return;event.preventDefault();event.stopPropagation();
  const image=sidebarImages.find(image=>image.key===button.dataset.sidebarImage);if(image)showImage(image.src,image.name);
 });
