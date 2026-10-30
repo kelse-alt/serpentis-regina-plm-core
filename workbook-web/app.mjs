@@ -1,6 +1,9 @@
 import { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack } from '../src/tech-pack.mjs';
 import { createPackStore } from '../src/tech-pack-storage.mjs';
 import { previewGridPaste, applyGridPaste, createEditHistory } from '../src/workroom-editing.mjs';
+import { createDevelopment, previewComponentWorkbook, applyComponentWorkbook, compareObservation } from '../src/garment-development.mjs';
+import { readWorkbookXlsx } from '../src/workbook-xlsx.mjs';
+import { renderDevelopment, renderWorkbookPreview } from './development-view.mjs';
 
 const { template, source, form, methods } = WORKBOOK_DATA;
 const $ = id => document.getElementById(id);
@@ -12,6 +15,11 @@ let pack = createTechPack(template), active = template.sheets[0].id, refUnit = '
 let saved = [], revisions = [], storageAvailable = false, conflicted = false, autosaveTimer;
 let generation = 0, saveQueue = Promise.resolve(), pendingPaste = null, pasteOrigin = null, restoreTarget = null;
 let pendingActions = 0, preparingUpdate = false, recordedRevisionDetails = '';
+let workbookReview = null;
+const developmentView = {componentId:'',sampleId:'',side:'general'};
+const newSampleEntry = {label:'',round:'',notes:''};
+const componentSheet = {id:'components',title:'Component specifications',shortTitle:'Components',note:'Imported garment POMs · working targets, sample observations and proposed changes are separate local records.'};
+const sheetList = () => pack.development?.components.length ? [...template.sheets,componentSheet] : template.sheets;
 const revisionDetails = () => JSON.stringify(['revision-name','revision-author','revision-reason'].map(id=>$(id).value.trim()));
 const activePackKey = 'serpentis-regina.workroom.active.v2';
 function rememberedPack() {
@@ -22,11 +30,11 @@ function rememberPack(id) {
  try { localStorage.setItem(activePackKey,id); } catch { /* Draft storage is separate. */ }
  try { sessionStorage.setItem(activePackKey,id);return sessionStorage.getItem(activePackKey)===id; } catch { return false; }
 }
-const openWorkroomReview = () => pendingPaste||restoreTarget||['export-dialog','paste-dialog','revision-dialog','image-dialog'].some(id=>$(id).open);
+const openWorkroomReview = () => pendingPaste||restoreTarget||workbookReview||['export-dialog','paste-dialog','revision-dialog','image-dialog','workbook-dialog'].some(id=>$(id).open);
 const columnViews = {master:'full',wash:'full'};
 const editHistory = createEditHistory(40);
 const store = createPackStore(template);
-const activeSheet = () => template.sheets.find(s => s.id === active);
+const activeSheet = () => sheetList().find(s => s.id === active) || template.sheets[0];
 const unitFor = s => s.reference ? refUnit : pack.unit;
 const status = message => { $('status').textContent = message; };
 const invalidInputs = () => [...document.querySelectorAll('#sheet-content input,#sheet-content textarea,#style-fields input,#pack-title')].filter(el => !el.checkValidity());
@@ -163,13 +171,30 @@ function renderSource(s) {
  const original=source.sheets.find(item=>item.title===s.title);
  return `<details class="source-note"><summary>Source notes, original cells & formulas</summary><p>Exact original tab: ${esc(s.title)}. Source values and formulas below are provenance; they are not editable draft values.</p>${s.id==='master'?`<p>${esc(template.sourceExamples.note)} Original pairs: 20 / 24.75, 25 / 37, 25 / 24.75. No source unit is supplied.</p>`:''}${s.reference?'<p>HOUSE TARGET / TARGET DELTA: source I31:I33 refers to blank column G. These unresolved formulas are preserved below and are not relabelled as target minus actual form.</p>':''}<pre>${esc(JSON.stringify(original,null,2))}</pre></details>`;
 }
-function sheetMarkup(s,complete=false){return(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`+renderSource(s);}
+function sheetMarkup(s,complete=false){
+ const empty=`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`;
+ if(s.id==='components')return renderDevelopment(pack.development||createDevelopment(),{unit:pack.unit,...developmentView,complete})+empty;
+ return(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+empty+renderSource(s);
+}
+function renderTabs(){
+ const sheets=sheetList();
+ if(!sheets.some(s=>s.id===active))active=sheets[0].id;
+ if([...$('sheet-tabs').children].map(b=>b.dataset.sheet).join('|')===sheets.map(s=>s.id).join('|'))return;
+ $('sheet-tabs').innerHTML=sheets.map((s,i)=>`<button id="tab-${s.id}" type="button" role="tab" aria-controls="working-panel" aria-selected="${s.id===active}" tabindex="${s.id===active?0:-1}" data-sheet="${s.id}"><span aria-hidden="true">${String(i+1).padStart(2,'0')} / </span>${esc(s.shortTitle)}</button>`).join('');
+}
 function renderSheet(preserve=false){
+ renderTabs();
  const s=activeSheet(), content=$('sheet-content'),scroll=content.scrollTop;
  const opened=new Map([...content.querySelectorAll('[data-details]')].map(el=>[el.dataset.details,el.open]));
  $('sheet-title').textContent=s.title;$('sheet-note').textContent=s.note;
  $('working-panel').setAttribute('aria-labelledby','tab-'+s.id);
  content.innerHTML=sheetMarkup(s);
+ if(s.id==='components'){
+  developmentView.componentId=$('component-select')?.value||'';
+  developmentView.sampleId=$('development-sample')?.value||'';
+  developmentView.side=$('development-side')?.value||'general';
+  for(const [id,key] of [['development-sample-name','label'],['development-sample-round','round'],['development-sample-notes','notes']])if($(id))$(id).value=newSampleEntry[key];
+ }
  if(preserve)for(const el of content.querySelectorAll('[data-details]'))if(opened.has(el.dataset.details))el.open=opened.get(el.dataset.details);
  content.scrollTop=preserve?scroll:0;
  $('pack-unit').value=unitFor(s)||'';
@@ -194,8 +219,28 @@ function updateResults(tableId,rowId){
  const tr=$('sheet-content').querySelector(`table[data-table="${t.id}"] tr[data-row="${r.id}"]`);
  for(const c of columnsForRow(t,r).filter(c=>c.type==='calculated')){const out=tr.querySelector(`[data-result="${c.key}"] .matte-ink`);if(out)out.textContent=formatMeasure(valueFor(s,t,r,c),unitFor(s)||'cm',true);}
 }
+function developmentRow(input){
+ const component=pack.development?.components.find(item=>item.id===input.dataset.devComponent);
+ const row=component?.rows.find(item=>item.id===input.dataset.devRow);
+ if(!row)throw Error('That component row is unavailable. Reopen its sheet.');
+ return row;
+}
+function updateDevelopmentResults(row){
+ const compared=compareObservation(row,developmentView.sampleId,developmentView.side);
+ const proposed=row.targetCm===null||row.proposedDeltaCm===null?null:row.targetCm+row.proposedDeltaCm;
+ const labels={'missing':'Missing target or actual','not-set':'Tolerance not set','within':'Within entered tolerance','outside':'Outside entered tolerance'};
+ for(const output of $('sheet-content').querySelectorAll('[data-dev-result]')){
+  if(output.dataset.devRow!==row.id)continue;
+  const key=output.dataset.devResult;
+  const value=key==='toleranceStatus'?labels[compared.toleranceStatus]||compared.toleranceStatus:key==='proposedTargetCm'?formatMeasure(proposed,pack.unit||'cm'):formatMeasure(compared[key]??null,pack.unit||'cm',key==='deltaCm');
+  (output.querySelector('.matte-ink')||output).textContent=value||'—';
+ }
+}
+function hasUnfinishedSample(){return Object.values(newSampleEntry).some(value=>value.trim());}
 async function loadPack(next,message,{savedDraft=false}={}){
  clearTimeout(autosaveTimer);pack=normalizeTechPack(next,template);generation++;dirty=!savedDraft;conflicted=false;editHistory.reset();updateHistory();
+ renderTabs();
+ Object.assign(newSampleEntry,{label:'',round:'',notes:''});
  rememberPack(pack.id);
  if(saved.some(p=>p.id===pack.id))$('saved-packs').value=pack.id;
  $('pack-title').value=pack.title;$('sheet-search').value='';renderStyle();renderSheet();updateIdentity();
@@ -209,13 +254,27 @@ function exportCsv(){
  const s=activeSheet(),unit=unitFor(s),numericCell=(v,u)=>v===null?'':Number(formatMeasure(v,u));
  const rows=[['SERPENTIS REGINA',pack.title],['Sheet',s.title],['Unit',unit?.toUpperCase()||'NOT SELECTED']];
  for(const [key,label] of Object.entries(styleLabels))rows.push(['Shared '+label,pack.style[key]]);
+ if(s.id==='components'){
+  rows.push([],['Component','POM','Description','Original measuring method','Source row','Retired','Working target','Tolerance minus','Tolerance plus','Proposed adjustment (unapproved)','Proposed target (unapproved)','Sample','Round','Sample notes','Side','Actual','Actual minus target','Tolerance check','POM notes','Earlier source definitions']);
+  for(const component of pack.development.components)for(const row of component.rows){
+   const observations=[];
+   for(const sample of pack.development.samples)for(const side of ['general','front','back','left','right'])if(row.observations[sample.id]?.[side]!==null&&row.observations[sample.id]?.[side]!==undefined)observations.push({sample,side});
+   if(!observations.length)observations.push({sample:null,side:''});
+   for(const {sample,side} of observations){
+    const compared=sample?compareObservation(row,sample.id,side):null;
+    const proposed=row.targetCm===null||row.proposedDeltaCm===null?null:row.targetCm+row.proposedDeltaCm;
+    rows.push([component.name,row.code,row.description,row.method,row.sourceRow,row.retired?'YES':'',numericCell(row.targetCm,unit||'cm'),numericCell(row.toleranceMinusCm,unit||'cm'),numericCell(row.tolerancePlusCm,unit||'cm'),numericCell(row.proposedDeltaCm,unit||'cm'),numericCell(proposed,unit||'cm'),sample?.label||'',sample?.round||'',sample?.notes||'',side,numericCell(compared?.actualCm??null,unit||'cm'),numericCell(compared?.deltaCm??null,unit||'cm'),compared?.toleranceStatus||'',row.notes,JSON.stringify(row.definitionHistory||[])]);
+   }
+  }
+  download(safeName()+'-components.csv',csvEncode(rows),'text/csv;charset=utf-8');status('Exported all component POMs and all entered sample/side observations, including retained rows.');return;
+ }
  for(const f of s.fields||[])rows.push([f.label,fieldValue(s,f)||'']);
  if(s.reference){rows.push([],['POM','BODY MEASUREMENT','HOW TO MEASURE',`MFR (${unit})`,`ACTUAL FORM (${unit})`,`Delta (${unit})`]);for(const r of form.measurements){const m=methods.methods.find(m=>m.pomCode===r.pomCode);rows.push([r.pomCode,m.sourceLabel,m.howToMeasure,numericCell(r.manufacturerReference===null?null:r.manufacturerReference*2.54,unit),numericCell(r.houseStandard*2.54,unit),numericCell(difference(r.houseStandard,r.manufacturerReference)===null?null:difference(r.houseStandard,r.manufacturerReference)*2.54,unit)]);}}
  for(const t of s.tables||[]){rows.push([],[t.title],t.columns.map(c=>heading(s,c)+(['measurement','calculated'].includes(c.type)?` (${(unit||'?').toUpperCase()})`:'')));for(const r of t.rows)rows.push(columnsForRow(t,r).map(c=>['measurement','calculated'].includes(c.type)?numericCell(valueFor(s,t,r,c),unit||'cm'):valueFor(s,t,r,c)));}
  download(safeName()+'-'+s.id+'.csv',csvEncode(rows),'text/csv;charset=utf-8');status('Exported every source row and column on this sheet, independent of search or view.');
 }
 function buildPrint(){
- const selected=$('print-scope').value==='all'?template.sheets:[activeSheet()];
+ const selected=$('print-scope').value==='all'?sheetList():[activeSheet()];
  const shared=Object.entries(styleLabels).filter(([key])=>pack.style[key]).map(([key,label])=>`<span>${esc(label)}: ${esc(pack.style[key])}</span>`).join(' · ');
  $('print-view').innerHTML=selected.map(s=>`<article class="print-sheet"><header class="print-masthead"><strong>SERPENTIS REGINA</strong><h1>${esc(s.title)}</h1><p>${esc(pack.style.number||pack.title)} · ${s.reference?refUnit.toUpperCase():pack.unit?.toUpperCase()||'UNIT NOT SELECTED'} · LOCAL DRAFT</p></header><p>${shared}</p><p>${esc(s.note)}</p>${sheetMarkup(s,true)}</article>`).join('');
  $('print-view').querySelectorAll('.sheet-details').forEach(el=>el.open=true);
@@ -255,7 +314,11 @@ async function reviewRevision(restore=false){
  $('revision-diff').innerHTML=changes.length?`<table><thead><tr><th>Field / cell</th><th>Named revision</th><th>Current draft</th></tr></thead><tbody>${changes.map(c=>`<tr><td>${esc(changeLabel(c.path))}</td><td class="diff-value">${diffCell(c,c.before,snapshot)}</td><td class="diff-value">${diffCell(c,c.after,pack)}</td></tr>`).join('')}</tbody></table>`:'<p>The named revision and current draft contain the same values.</p>';
  $('confirm-restore').hidden=!restore;$('revision-dialog').showModal();
 }
-function changeGarmentUnit(unit){if(!validScreen()){renderStyle();return false;}if(pack.unit===unit)return true;rememberEdit('unit');pack.unit=unit;markDirty();renderSheet(true);return true;}
+function changeGarmentUnit(unit){
+ if(!validScreen()){renderStyle();return false;}if(pack.unit===unit)return true;
+ try{const next=normalizeTechPack({...pack,unit},template);rememberEdit('unit');pack=next;markDirty();renderSheet(true);return true;}
+ catch(error){$('pack-unit').value=unitFor(activeSheet())||'';renderStyle();status(error.message);return false;}
+}
 function previewPaste(event){
  const el=event.target;if(!el.dataset.col)return;
  const text=event.clipboardData?.getData('text/plain')||'';
@@ -277,6 +340,7 @@ function previewPaste(event){
 async function prepareSwitch(){
  clearTimeout(autosaveTimer);
  if(!validScreen())return false;
+ if(hasUnfinishedSample()&&!confirm('The new sample details have not been added. Add the sample first to keep them. Discard these unfinished details?'))return false;
  const leavingId=pack.id,leavingGeneration=generation;
  if(dirty&&storageAvailable&&!conflicted){try{await saveNow();if(pack.id!==leavingId||generation!==leavingGeneration||dirty||invalidInputs().length){status('The draft changed while saving. Finish the edit, then open the other pack again.');return false;}return true;}catch{}}
  if(dirty)return confirm('This draft is not saved. Download JSON before leaving if you need to keep it. Continue and discard the on-screen draft?');
@@ -288,7 +352,7 @@ const run = handler => event => {
  pendingActions++;
  Promise.resolve().then(()=>handler(event)).catch(error=>status(error.message)).finally(()=>pendingActions--);
 };
-$('sheet-tabs').innerHTML=template.sheets.map((s,i)=>`<button id="tab-${s.id}" type="button" role="tab" aria-controls="working-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-sheet="${s.id}"><span aria-hidden="true">0${i+1} / </span>${esc(s.shortTitle)}</button>`).join('');
+renderTabs();
 $('sheet-tabs').addEventListener('click',event=>{const b=event.target.closest('[data-sheet]');if(!b||!validScreen())return;active=b.dataset.sheet;$('sheet-search').value='';renderSheet();b.scrollIntoView({block:'nearest',inline:'nearest'});});
 $('sheet-tabs').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const buttons=[...$('sheet-tabs').children],i=buttons.indexOf(document.activeElement);const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(i+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;if(validScreen()){buttons[next].click();buttons[next].focus();}});
 $('style-fields').addEventListener('input',event=>{
@@ -302,6 +366,30 @@ $('style-fields').addEventListener('input',event=>{
 });
 $('sheet-content').addEventListener('input',event=>{
  const el=event.target,s=activeSheet();
+ const sampleKeys={'development-sample-name':'label','development-sample-round':'round','development-sample-notes':'notes'};
+ if(Object.hasOwn(sampleKeys,el.id)){newSampleEntry[sampleKeys[el.id]]=el.value;return;}
+ if(el.dataset.devField||el.dataset.devObservation){
+  try{
+   const row=developmentRow(el),key=el.dataset.devField;
+   const observation=!!el.dataset.devObservation;
+   const value=key==='notes'?el.value:parseMeasure(el.value,pack.unit,{allowNegative:key==='proposedDeltaCm'});
+   if(key==='notes'&&(value.length>4000||value.includes('\0')))throw Error('Use at most 4000 characters without control characters.');
+   if(!observation&&!['notes','targetCm','toleranceMinusCm','tolerancePlusCm','proposedDeltaCm'].includes(key))throw Error('Unknown component field.');
+   const target=key==='targetCm'?value:row.targetCm,proposal=key==='proposedDeltaCm'?value:row.proposedDeltaCm;
+   if(target!==null&&proposal!==null&&target+proposal<0)throw Error('The proposed adjustment would create a negative target. Review the target or adjustment.');
+   const sampleId=el.dataset.devSample,side=el.dataset.devSide;
+   if(observation&&(!pack.development.samples.some(sample=>sample.id===sampleId)||!['general','front','back','left','right'].includes(side)))throw Error('Select a sample and measurement side before entering an actual.');
+   el.id ||= 'dev-'+encodeURIComponent([row.id,key||'actual',sampleId,side].join('|'));
+   setInlineError(el,'');
+   const prior=observation?row.observations[sampleId]?.[side]:row[key];
+   if(prior!==value){
+    rememberEdit('component:'+row.id+':'+(key||sampleId+':'+side));
+    if(observation){row.observations[sampleId] ||= {general:null,front:null,back:null,left:null,right:null};row.observations[sampleId][side]=value;}else row[key]=value;
+    markDirty();
+   }
+   updateDevelopmentResults(row);status('Component entry updated locally. Actual minus target is a comparison; proposed adjustments do not approve or replace targets.');
+  }catch(error){setInlineError(el,error.message);}return;
+ }
  if(el.dataset.field){
   try{
    if(el.value.includes('\0'))throw Error('Remove the unsupported control character.');
@@ -334,6 +422,10 @@ $('sheet-content').addEventListener('focusout',event=>{
  const el=event.target;editHistory.breakGroup();
  if(!el.matches('input,textarea')||!el.checkValidity())return;
  const s=activeSheet();
+ if(el.dataset.devObservation||el.dataset.devField){
+  const row=developmentRow(el);if(el.dataset.devField!=='notes')el.value=formatMeasure(el.dataset.devObservation?row.observations[el.dataset.devSample]?.[el.dataset.devSide]??null:row[el.dataset.devField],pack.unit||'cm',el.dataset.devField==='proposedDeltaCm');
+  applySearch();return;
+ }
  if(el.dataset.field){const f=s.fields.find(f=>f.key===el.dataset.field);el.value=fieldValue(s,f)||'';}
  else if(el.dataset.numeric){const value=pack.tables[s.id][el.dataset.table][el.dataset.row][el.dataset.col];el.value=el.dataset.numeric==='measurement'?formatMeasure(value,unitFor(s)||'cm'):value??'';}
  applySearch();
@@ -348,7 +440,10 @@ $('sheet-content').addEventListener('keydown',event=>{
  }
 });
 $('sheet-content').addEventListener('change',run(async event=>{
- const el=event.target,key=el.dataset.attachment,s=activeSheet();if(!key)return;
+ const el=event.target,key=el.dataset.attachment,s=activeSheet();
+ const viewKeys={'component-select':'componentId','development-sample':'sampleId','development-side':'side'};
+ if(Object.hasOwn(viewKeys,el.id)){if(!validScreen()){el.value=developmentView[viewKeys[el.id]];return;}developmentView[viewKeys[el.id]]=el.value;renderSheet(true);return;}
+ if(!key)return;
  const file=el.files[0],uploadPackId=pack.id;if(!file)return;
  try{
   if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>5*1024*1024)throw Error('Choose a PNG, JPEG or WebP up to 5 MB.');
@@ -359,6 +454,16 @@ $('sheet-content').addEventListener('change',run(async event=>{
 }));
 $('sheet-content').addEventListener('click',event=>{
  const button=event.target.closest('button');if(!button)return;const s=activeSheet();
+ if(button.id==='add-development-sample'){
+  if(!validScreen())return;
+  const label=$('development-sample-name').value.trim(),round=$('development-sample-round')?.value.trim()||'',notes=$('development-sample-notes')?.value||'';
+  if(!label){status('Enter a sample name before adding it.');$('development-sample-name').focus();return;}
+  const next=structuredClone(pack),id='sample-'+createTechPack(template).id;
+  next.development.samples.push({id,label,round,notes});
+  for(const component of next.development.components)for(const row of component.rows)row.observations[id]={general:null,front:null,back:null,left:null,right:null};
+  try{const normalized=normalizeTechPack(next,template);rememberEdit('add-sample:'+id);pack=normalized;Object.assign(newSampleEntry,{label:'',round:'',notes:''});developmentView.sampleId=id;markDirty();renderSheet(true);status('Added a separate sample record. Front, back, left and right actuals remain independent.');}catch(error){status(error.message);}
+  return;
+ }
  if(button.dataset.useShared){rememberEdit('shared:'+s.id+':'+button.dataset.useShared);pack.fields[s.id][button.dataset.useShared]='';markDirty();renderSheet(true);}
  if(button.dataset.remove){rememberEdit('image:'+s.id+':'+button.dataset.remove);pack.attachments[s.id][button.dataset.remove]=null;markDirty();renderSheet(true);}
  if(button.dataset.image){const image=pack.attachments[s.id][button.dataset.image];showImage(image.dataUrl,image.name);}
@@ -428,6 +533,57 @@ $('export-menu-toggle').addEventListener('click',()=>$('export-dialog').showModa
 $('export-json').addEventListener('click',()=>{if(!validScreen())return;download(safeName()+'.json',serializeTechPack(normalizeTechPack(pack,template)),'application/json');status('Downloaded the current pack and original images. Named revision history stays on this device.');});
 $('export-csv').addEventListener('click',exportCsv);
 $('import-json').addEventListener('click',()=>$('json-file').click());
+function workbookStyleDefaults(workbook){
+ const sheet=workbook.sheets.find(item=>/-SPEC$/i.test(item.name));
+ if(!sheet)return {};
+ const read=coordinate=>{const cell=sheet.cells[coordinate];return cell&&cell.formula===null&&cell.value!==null?String(cell.value).slice(0,2000):'';};
+ return {number:read('C3'),description:read('C5'),sampleSize:read('F5'),season:read('F6'),fabric:read('C6')};
+}
+$('import-workbook').addEventListener('click',()=>{if(validScreen())$('workbook-file').click();});
+$('workbook-file').addEventListener('change',run(async()=>{
+ const file=$('workbook-file').files[0];if(!file)return;
+ const readingId=pack.id,readingGeneration=generation;
+ try{
+  if(!validScreen())return;
+  if(file.size>20*1024*1024)throw Error('Choose an XLSX workbook up to 20 MB.');
+  status('Reading component workbook locally. No source file is uploaded.');
+  const workbook=await readWorkbookXlsx(new Uint8Array(await file.arrayBuffer()),{fileName:file.name});
+  if(pack.id!==readingId||generation!==readingGeneration||!validScreen())throw Error('The draft changed while reading the file. Import again into the intended pack.');
+  const preview=previewComponentWorkbook(workbook,pack.development||null,{unit:pack.unit});
+  workbookReview={preview,packId:pack.id,generation};
+  $('workbook-preview').innerHTML=renderWorkbookPreview(preview);
+  $('workbook-style-defaults').checked=false;
+  $('workbook-style-preview').textContent=Object.entries(workbookStyleDefaults(workbook)).filter(([,value])=>value).map(([key,value])=>styleLabels[key]+': '+value).join(' · ');
+  $('workbook-error').textContent='';$('export-dialog').close();$('workbook-dialog').showModal();
+  status(`Review ${preview.summary.rows} authored POMs before applying. The current draft has not changed.`);
+ }catch(error){status('Workbook import refused: '+error.message);}finally{$('workbook-file').value='';}
+}));
+$('cancel-workbook').addEventListener('click',()=>$('workbook-dialog').close());
+$('workbook-dialog').addEventListener('close',()=>{workbookReview=null;});
+$('apply-workbook').addEventListener('click',run(async()=>{
+ const review=workbookReview;if(!review)return;
+ const unchanged=()=>workbookReview===review&&pack.id===review.packId&&generation===review.generation&&!invalidInputs().length;
+ $('apply-workbook').disabled=true;
+ try{
+  if(!unchanged())throw Error('The draft changed since this preview. Cancel and import again.');
+  const sourceChanged=pack.development?.source&&pack.development.source.sha256!==review.preview.workbook.sha256;
+  if(sourceChanged&&storageAvailable&&!conflicted){
+   const before=normalizeTechPack(pack,template);await saveNow();
+   if(!unchanged())throw Error('The draft changed while saving. Cancel and review the workbook again.');
+   await store.createRevision(before,{name:'Before workbook reimport · '+new Date().toISOString().slice(0,19),author:'Local recovery',reason:'Preserved current source and working values before replacing imported workbook definitions. Not production approval.'});
+   if(!unchanged())throw Error('The draft changed while preserving its source. A recovery revision was kept; preview again.');
+  }
+  const next=structuredClone(pack);next.schemaVersion=3;
+  next.development=applyComponentWorkbook(pack.development||null,review.preview,{unit:pack.unit});
+  if($('workbook-style-defaults').checked)for(const [key,value] of Object.entries(workbookStyleDefaults(review.preview.workbook)))if(!next.style[key].trim())next.style[key]=value;
+  const normalized=normalizeTechPack(next,template);
+  rememberEdit('component-import:'+Date.now());pack=normalized;active='components';developmentView.componentId=pack.development.components[0]?.id||'';
+  $('workbook-dialog').close();$('sheet-search').value='';renderStyle();renderSheet();markDirty();
+  try{await refreshRevisions();}catch{status('The import is applied, but the revision list could not refresh. Keep a JSON backup.');return;}
+  status(`Imported ${review.preview.summary.rows} authored component POMs. Local working measurements remain independent; the workbook is unchanged.`);
+ }catch(error){$('workbook-error').textContent=error.message;status('Workbook import not applied: '+error.message);}
+ finally{$('apply-workbook').disabled=false;}
+}));
 $('json-file').addEventListener('change',run(async()=>{
  const file=$('json-file').files[0];if(!file)return;
  try{
@@ -444,7 +600,7 @@ $('print-pack').addEventListener('click',()=>{if(validScreen()){$('export-dialog
 window.addEventListener('beforeprint',buildPrint);window.addEventListener('afterprint',()=>{$('print-view').innerHTML='';$('print-view').setAttribute('aria-hidden','true');});
 $('recovery-list').addEventListener('click',run(async event=>{const button=event.target.closest('[data-recover]');if(!button)return;download('workroom-original-recovery.json',await store.exportRecovery(button.dataset.recover),'application/json');status('Downloaded the untouched original entry. Valid packs remain available.');}));
 $('close-image').addEventListener('click',()=>$('image-dialog').close());
-window.addEventListener('beforeunload',event=>{if(dirty||invalidInputs().length||pendingActions){event.preventDefault();event.returnValue='';}});
+window.addEventListener('beforeunload',event=>{if(dirty||invalidInputs().length||pendingActions||workbookReview||hasUnfinishedSample()){event.preventDefault();event.returnValue='';}});
 // iOS can suspend a hidden app before the typing debounce fires. Flush valid
 // work on backgrounding as well; the saved label still waits for the database.
 const flushBackgroundDraft = () => {
@@ -479,6 +635,7 @@ window.WORKROOM_UPDATES = {
   if(preparingUpdate)return {ready:false,message:'An update check is already in progress.'};
   if(pendingActions)return {ready:false,message:'Wait for the current file or draft operation to finish, then update again.'};
   if(openWorkroomReview())return {ready:false,message:'Finish or cancel the open review before updating the app.'};
+  if(hasUnfinishedSample())return {ready:false,message:'Add the new sample, or clear its unfinished details, before updating the app.'};
   if(['revision-name','revision-author','revision-reason'].some(id=>$(id).value.trim())&&revisionDetails()!==recordedRevisionDetails)return {ready:false,message:'Create the named revision, or clear its unfinished details, before updating the app.'};
   if(!validScreen())return {ready:false,message:'Correct the marked entry before updating. Your last valid draft is retained.'};
   preparingUpdate=true;

@@ -1,4 +1,5 @@
 /** Local tech-pack draft data. Measurements are canonical centimetres. */
+import { normalizeDevelopment } from './garment-development.mjs';
 const MAX_NUMBER = 1e9;
 const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
 const UNSAFE_KEYS = new Set(['__proto__', 'prototype', 'constructor']);
@@ -108,7 +109,7 @@ export function createTechPack(template) {
 /** Validate either known schema before migrating; no arbitrary fields survive. */
 function validateTechPack(input, template, version) {
   const keys = ['schemaVersion', 'templateId', 'id', 'title', 'unit', 'fields', 'tables', 'attachments', 'updatedAt'];
-  exactKeys(input, version === 2 ? [...keys, 'style'] : keys, 'Tech pack');
+  exactKeys(input, version === 3 ? [...keys, 'style', 'development'] : version === 2 ? [...keys, 'style'] : keys, 'Tech pack');
   if (input.schemaVersion !== version || input.templateId !== template.id) throw Error('This tech-pack template or version is not compatible.');
   if (input.unit !== null) requireUnit(input.unit);
   const id = text(input.id, 'Pack ID', 128);
@@ -126,6 +127,7 @@ function validateTechPack(input, template, version) {
     for (const key of STYLE_KEYS) result.style[key] = text(input.style[key], `Style ${key}`, key === 'description' ? 4000 : 2000);
   }
   Object.assign(result, { id, title, unit: input.unit, updatedAt: input.updatedAt });
+  if (version === 3) result.development = normalizeDevelopment(input.development, input.unit);
   let attachmentCount = 0;
   for (const sheet of template.sheets) {
     const fields = (sheet.fields ?? []).filter(editable);
@@ -183,6 +185,7 @@ function validateTechPack(input, template, version) {
 /** Migrate known v1 drafts without changing their existing fields or measurements. */
 export function migrateTechPack(input, template) {
   object(input, 'Tech pack');
+  if (input.schemaVersion === 3) return validateTechPack(input, template, 3);
   if (input.schemaVersion === 2) return validateTechPack(input, template, 2);
   if (input.schemaVersion !== 1) throw Error('This tech-pack template or version is not compatible.');
   const legacy = validateTechPack(input, template, 1);
@@ -229,7 +232,7 @@ export function compareTechPacks(before, after) {
         for (const key of Object.keys(value).sort()) visit(value[key], `${path}.${key}`);
       } else values.set(path, value);
     };
-    for (const key of ['title', 'unit', 'style', 'fields', 'tables']) visit(pack[key] ?? null, key);
+    for (const key of ['title', 'unit', 'style', 'fields', 'tables', 'development']) visit(pack[key] ?? null, key);
     for (const [sheetId, slots] of Object.entries(pack.attachments ?? {})) {
       for (const [key, attachment] of Object.entries(slots)) values.set(`attachments.${sheetId}.${key}`, attachmentSummary(attachment));
     }
