@@ -176,10 +176,11 @@ def wait_saved_value(page, pack_id, path, expected):
     for attempt in range(150):
         record=next((row for row in database_records(page,('drafts',))['drafts'] if row['id']==pack_id),None)
         value=record.get('snapshot') if record else None
-        for key in path:value=value.get(key) if isinstance(value,dict) else None
+        for key in path:
+            value=value.get(key) if isinstance(value,dict) else value[key] if isinstance(value,list) and isinstance(key,int) and 0<=key<len(value) else None
         if value==expected:return
         page.wait_for_timeout(100)
-    raise AssertionError('Expected valid autosave was not persisted: '+'.'.join(path))
+    raise AssertionError('Expected valid autosave was not persisted: '+'.'.join(map(str,path)))
 
 
 def pristine(page):
@@ -494,11 +495,14 @@ def check_daily_workflow(browser):
         page.locator('#sheet-content [data-attachment="reference"]').set_input_files({'name':'synthetic-reference.png','mimeType':'image/png','buffer':image.getvalue()})
         page.wait_for_function('() => document.querySelector("#sheet-content .attachment-card img")?.naturalWidth === 2')
         page.locator('#save-pack').click()
-        wait_saved_value(page,pack_id,['attachments','pattern','reference','name'],'synthetic-reference.png')
+        wait_saved_value(page,pack_id,['attachments','pattern','reference','images',0,'name'],'synthetic-reference.png')
         images = database_records(page,('images',))['images']
         require(len(images)==1 and images[0]['isBlob'] and images[0]['bytes']==len(image.getvalue()), 'Original raster was not kept as an IndexedDB Blob.')
         with_image = exported_json(page)
-        require(with_image['attachments']['pattern']['reference']['dataUrl'].startswith('data:image/png;base64,'), 'Portable JSON lost the embedded original raster.')
+        gallery=with_image['attachments']['pattern']['reference']
+        require(len(gallery['images'])==1 and gallery['selectedIndex']==0, 'Portable JSON lost the reference gallery selection.')
+        import base64
+        require(base64.b64decode(gallery['images'][0]['dataUrl'].split(',',1)[1])==image.getvalue(), 'Portable JSON changed the embedded original raster.')
         page.locator('#json-file').set_input_files({'name':'synthetic-roundtrip.json','mimeType':'application/json','buffer':json.dumps(with_image).encode()})
         page.wait_for_function("() => /import/i.test(document.getElementById('status').textContent)")
         require('import' in page.locator('#status').inner_text().lower(), 'Compatible JSON import did not reopen the pack.')

@@ -71,3 +71,13 @@ test('malformed component JSON and unassigned units cannot enter the existing st
   }
   assert.deepEqual(pack,before);
 });
+
+test('component packs retain the current photo gallery and selected reference through portable JSON',()=>{
+  const pack=componentPack();
+  const image={name:'synthetic-reference.png',type:'image/png',dataUrl:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+j0QAAAABJRU5ErkJggg=='};
+  pack.attachments.pattern.reference={images:[image,{...image,name:'second-synthetic-reference.png'}],selectedIndex:1};
+  const reopened=normalizeTechPack(JSON.parse(serializeTechPack(pack)),template);
+  assert.deepEqual(reopened.attachments.pattern.reference,pack.attachments.pattern.reference);
+  assert.deepEqual(reopened.development,pack.development);
+  assert.equal(reopened.schemaVersion,3);
+});

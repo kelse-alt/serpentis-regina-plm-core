@@ -16,6 +16,7 @@ let saved = [], revisions = [], storageAvailable = false, conflicted = false, au
 let generation = 0, saveQueue = Promise.resolve(), pendingPaste = null, pasteOrigin = null, restoreTarget = null;
 let pendingActions = 0, preparingUpdate = false, recordedRevisionDetails = '';
 let workbookReview = null;
+let workbookBackup = null;
 const developmentView = {componentId:'',sampleId:'',side:'general'};
 const newSampleEntry = {label:'',round:'',notes:''};
 const componentSheet = {id:'components',title:'Component specifications',shortTitle:'Components',note:'Imported garment POMs · working targets, sample observations and proposed changes are separate local records.'};
@@ -664,15 +665,26 @@ $('workbook-file').addEventListener('change',run(async()=>{
   if(pack.id!==readingId||generation!==readingGeneration||!validScreen())throw Error('The draft changed while reading the file. Import again into the intended pack.');
   const preview=previewComponentWorkbook(workbook,pack.development||null,{unit:pack.unit});
   workbookReview={preview,packId:pack.id,generation};
+  workbookBackup=null;
   $('workbook-preview').innerHTML=renderWorkbookPreview(preview);
   $('workbook-style-defaults').checked=false;
   $('workbook-style-preview').textContent=Object.entries(workbookStyleDefaults(workbook)).filter(([,value])=>value).map(([key,value])=>styleLabels[key]+': '+value).join(' · ');
   $('workbook-error').textContent='';$('export-dialog').close();$('workbook-dialog').showModal();
+  $('workbook-backup').hidden=!(pack.development?.source&&pack.development.source.sha256!==preview.workbook.sha256&&!storageAvailable);
+  $('confirm-workbook-backup').checked=false;$('workbook-backup-status').textContent='';
   status(`Review ${preview.summary.rows} authored POMs before applying. The current draft has not changed.`);
  }catch(error){status('Workbook import refused: '+error.message);}finally{$('workbook-file').value='';}
 }));
 $('cancel-workbook').addEventListener('click',()=>$('workbook-dialog').close());
-$('workbook-dialog').addEventListener('close',()=>{workbookReview=null;});
+$('workbook-dialog').addEventListener('close',()=>{workbookReview=null;workbookBackup=null;});
+$('download-workbook-backup').addEventListener('click',()=>{
+ if(!validScreen())return;
+ try{
+  download(safeName()+'-before-workbook-reimport.json',serializeTechPack(normalizeTechPack(pack,template)),'application/json');
+  workbookBackup={packId:pack.id,generation};$('confirm-workbook-backup').checked=false;
+  $('workbook-backup-status').textContent='JSON backup download requested. Keep the file, then confirm below before applying.';
+ }catch(error){$('workbook-error').textContent=error.message;}
+});
 $('apply-workbook').addEventListener('click',run(async()=>{
  const review=workbookReview;if(!review)return;
  const unchanged=()=>workbookReview===review&&pack.id===review.packId&&generation===review.generation&&!invalidInputs().length;
@@ -680,6 +692,8 @@ $('apply-workbook').addEventListener('click',run(async()=>{
  try{
   if(!unchanged())throw Error('The draft changed since this preview. Cancel and import again.');
   const sourceChanged=pack.development?.source&&pack.development.source.sha256!==review.preview.workbook.sha256;
+  if(sourceChanged&&conflicted)throw Error('Resolve the storage conflict or export JSON and reopen a separate working copy before replacing the source workbook.');
+  if(sourceChanged&&!storageAvailable&&(!workbookBackup||workbookBackup.packId!==pack.id||workbookBackup.generation!==generation||!$('confirm-workbook-backup').checked))throw Error('Local recovery storage is unavailable. Download and keep the current pack backup, then confirm it before replacing the earlier source.');
   if(sourceChanged&&storageAvailable&&!conflicted){
    const before=normalizeTechPack(pack,template);await saveNow();
    if(!unchanged())throw Error('The draft changed while saving. Cancel and review the workbook again.');
