@@ -1,6 +1,31 @@
 # Serpentis Regina — PLM Core
 
-A fashion technical-design workroom for six-tab tech packs, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning. Working records remain local to the browser/app.
+A fashion technical-design workroom for six-tab tech packs, locally imported garment components, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning. Working records remain local to the browser/app.
+
+## Component workbook development — v0.8.0
+
+Use **Export → Import component workbook (.xlsx)** to review a local workbook's
+authored `-SPEC` definitions before applying them. The **Components** tab appears
+after import. Original codes, labels, and measuring methods remain traceable;
+working targets, tolerances, sample actuals, and proposed adjustments start blank.
+No garment unit is inferred: choose CM or IN before entering numbers.
+
+Create sample rounds and keep general/front/back/left/right observations separate.
+Delta is **sample actual − working target**. Tolerance assessment requires both
+explicit limits; proposed target changes remain unapproved and do not apply
+automatically. Reimport retains local work, retired rows, and earlier source
+definitions, with a stale-preview guard and recovery revision when storage permits.
+The optional source-style checkbox only fills blank shared fields and starts off.
+
+The supplied review workbook has nine worksheets, four components, and 60 POMs;
+its raw contents and filled metadata are not distributed in this public build.
+CSV/print includes every component and entered sample-side observation; JSON keeps
+the local source snapshot and definition history. Existing BF, RC, six-sheet,
+IndexedDB, revision, brand, and image workflows remain separate and intact.
+
+Read the [component workbook guide](docs/component-workbook-workflow.md).
+Validation and hosted-update verification are pending for this new workflow;
+earlier v0.7.0 evidence does not establish v0.8.0 deployment.
 
 ## Use the iPhone app — v0.7.0
 
@@ -84,6 +109,7 @@ This public portfolio includes the actual founder-approved **SR-FORM-001 v1** da
 ## What works today
 
 - Develop the six-tab tech pack with shared style data, recoverable local drafts, named revisions, CM/IN entry, spreadsheet paste and complete export/print.
+- Review/import local component XLSX definitions and develop separate targets, sample-side observations, explicit tolerance limits, and unapproved proposals.
 - Capture the separate workbook-based client intake, convert CM/IN, check required-field completeness, and save/export/reopen partial drafts.
 - Enter new measurements for the same 20 POMs, calculate deltas immediately, save sessions, reopen them, and export CSV/JSON.
 - Generate a local HTML measurement sheet with search, reference filters, and print / Save PDF controls.
@@ -232,9 +258,10 @@ Their provenance is `MEASUREMENT SHEET_SERPENTIS REGINA`, tab `BODY REF-MANNEQUI
 | **v0.5.0** | Six source tabs, garment specs, graded grids, local images, pack save/import/export and complete printing | Core, source and browser acceptance | Packaged tech-pack workroom |
 | **v0.6.0** | Shared style record, schema migration, recoverable drafts/revisions and faster specification entry | See current validation evidence | Daily workroom workflow |
 | **v0.7.0** | Installable iPhone/web app, scoped offline caching and explicit save-first application updates | See iPhone guide and current browser evidence | Hosted workroom distribution |
+| **v0.8.0** | Reviewed local XLSX component import, sample-side development, safe reimport, and complete component export/print | Validation and hosted update pending | Component workflow source integration |
 | **v0.4.0** | Workbook-based 34-POM client intake, CM/IN, saved drafts, and import/export/print | Intake calculation/API and existing suites | Separate client intake |
 
-Application versions, measurement revisions, and JSON schema versions describe different things. **v0.7.0** adds the installable iPhone/web distribution; tech-pack drafts retain schema 2 with version-1 migration. **SR-FORM-001 v1** remains the approved measurement dataset; **`schemaVersion: "1.0"`** describes that baseline JSON format. The separate client-intake template has its own identity and revision. Application changes do not revise approved house measurements.
+Application versions, measurement revisions, and JSON schema versions describe different things. **v0.7.0** adds the installable iPhone/web distribution; **v0.8.0** adds local component development. New packs retain schema 2 with version-1 migration; component packs use schema 3 with development schema 1 in the same local database. **SR-FORM-001 v1** remains the approved measurement dataset; **`schemaVersion: "1.0"`** describes that baseline JSON format. The separate client-intake template has its own identity and revision. Application changes do not revise approved house measurements.
 
 See the [changelog](CHANGELOG.md) for the development and publication record.
 

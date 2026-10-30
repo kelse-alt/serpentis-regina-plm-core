@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.8.0 — Local component workbook workflow — 2026-10-30
+
+- Add reviewed local XLSX import of authored component POM codes, labels, and methods while retaining raw source cells/formulas separately. Source measurement values never become working targets, tolerance limits, actuals, or proposals automatically; garment units remain unassigned until chosen.
+- Add component/sample/round/side development with actual-minus-target deltas, explicit two-limit tolerance assessment, separate signed unapproved proposals, and complete component CSV/print output including zero observations.
+- Preserve local values on reimport, retain removed definitions as retired rows, record prior labels/methods with source hashes, reject stale previews, and preserve a recovery revision before replacing a changed source when local storage is available.
+- Keep shared-style source defaults opt-in and limited to blank fields. Preserve existing six worksheets, approved BF references, separate RC intake, original brand/assets, existing local database, and older-pack compatibility. Component packs add tech-pack schema 3/development schema 1; ordinary new packs remain schema 2.
+- Keep source workbooks, raw project metadata, filled packs, images, and user exports local. Application builds and public documentation contain no filled source project. Workbook images are not imported.
+
+Validation and hosted-update verification for this milestone are pending; no v0.8.0 deployment is claimed by this entry.
+
 ## v0.7.0 — Installable iPhone workroom — 2026-10-23
 
 - Package the workroom as a Home Screen web app with installation metadata, original-head icons, scoped offline caching and application information/update controls.
