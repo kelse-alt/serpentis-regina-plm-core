@@ -1,0 +1,3337 @@
+{
+  "checkedAtUtc": "2026-10-30T22:20:52.629412+00:00",
+  "sourceCommit": "257104498d7871e3f8eabb9b442a743ec1487308",
+  "buildSha256": "ee310f6063e7153ded51574bfe025e390c190b8d787369120970da78e89e7a4c",
+  "layouts": [
+    {
+      "viewport": "desktop",
+      "sheet": "pattern",
+      "width": 1500,
+      "height": 1000,
+      "documentWidth": 1500,
+      "documentHeight": 1000,
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "right": 1476,
+        "bottom": 927,
+        "width": 1044,
+        "height": 607.890625
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 216.015625,
+        "right": 414,
+        "bottom": 927,
+        "width": 390,
+        "height": 710.984375
+      },
+      "photos": {
+        "x": 25,
+        "y": 267.015625,
+        "right": 413,
+        "bottom": 516.265625,
+        "width": 388,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 104,
+          "bottom": 990,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 189,
+          "bottom": 990,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 274,
+          "bottom": 990,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 359,
+          "bottom": 990,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 444,
+          "bottom": 990,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "desktop",
+      "sheet": "wash",
+      "width": 1500,
+      "height": 1000,
+      "documentWidth": 1500,
+      "documentHeight": 1000,
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "right": 1476,
+        "bottom": 927,
+        "width": 1044,
+        "height": 607.890625
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 216.015625,
+        "right": 414,
+        "bottom": 927,
+        "width": 390,
+        "height": 710.984375
+      },
+      "photos": {
+        "x": 25,
+        "y": 267.015625,
+        "right": 413,
+        "bottom": 516.265625,
+        "width": 388,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 104,
+          "bottom": 990,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 189,
+          "bottom": 990,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 274,
+          "bottom": 990,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 359,
+          "bottom": 990,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 444,
+          "bottom": 990,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "desktop",
+      "sheet": "fit",
+      "width": 1500,
+      "height": 1000,
+      "documentWidth": 1500,
+      "documentHeight": 1000,
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "right": 1476,
+        "bottom": 927,
+        "width": 1044,
+        "height": 607.890625
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 216.015625,
+        "right": 414,
+        "bottom": 927,
+        "width": 390,
+        "height": 710.984375
+      },
+      "photos": {
+        "x": 25,
+        "y": 267.015625,
+        "right": 413,
+        "bottom": 516.265625,
+        "width": 388,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 104,
+          "bottom": 990,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 189,
+          "bottom": 990,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 274,
+          "bottom": 990,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 359,
+          "bottom": 990,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 444,
+          "bottom": 990,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "desktop",
+      "sheet": "graded",
+      "width": 1500,
+      "height": 1000,
+      "documentWidth": 1500,
+      "documentHeight": 1000,
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "right": 1476,
+        "bottom": 927,
+        "width": 1044,
+        "height": 607.890625
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 216.015625,
+        "right": 414,
+        "bottom": 927,
+        "width": 390,
+        "height": 710.984375
+      },
+      "photos": {
+        "x": 25,
+        "y": 267.015625,
+        "right": 413,
+        "bottom": 516.265625,
+        "width": 388,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 104,
+          "bottom": 990,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 189,
+          "bottom": 990,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 274,
+          "bottom": 990,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 359,
+          "bottom": 990,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 444,
+          "bottom": 990,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "desktop",
+      "sheet": "master",
+      "width": 1500,
+      "height": 1000,
+      "documentWidth": 1500,
+      "documentHeight": 1000,
+      "content": {
+        "x": 432,
+        "y": 324.671875,
+        "right": 1476,
+        "bottom": 927,
+        "width": 1044,
+        "height": 602.328125
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 216.015625,
+        "right": 414,
+        "bottom": 927,
+        "width": 390,
+        "height": 710.984375
+      },
+      "photos": {
+        "x": 25,
+        "y": 267.015625,
+        "right": 413,
+        "bottom": 516.265625,
+        "width": 388,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 104,
+          "bottom": 990,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 189,
+          "bottom": 990,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 274,
+          "bottom": 990,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 359,
+          "bottom": 990,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 444,
+          "bottom": 990,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "desktop",
+      "sheet": "body",
+      "width": 1500,
+      "height": 1000,
+      "documentWidth": 1500,
+      "documentHeight": 1000,
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "right": 1476,
+        "bottom": 927,
+        "width": 1044,
+        "height": 607.890625
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 216.015625,
+        "right": 414,
+        "bottom": 927,
+        "width": 390,
+        "height": 710.984375
+      },
+      "photos": {
+        "x": 25,
+        "y": 267.015625,
+        "right": 413,
+        "bottom": 516.265625,
+        "width": 388,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 104,
+          "bottom": 990,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 189,
+          "bottom": 990,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 274,
+          "bottom": 990,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 359,
+          "bottom": 990,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "top": 946,
+          "right": 444,
+          "bottom": 990,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "laptop",
+      "sheet": "pattern",
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "content": {
+        "x": 387.59375,
+        "y": 311.46875,
+        "right": 1256,
+        "bottom": 647,
+        "width": 868.40625,
+        "height": 335.53125
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 208.375,
+        "right": 369.59375,
+        "bottom": 647,
+        "width": 345.59375,
+        "height": 438.625
+      },
+      "photos": {
+        "x": 25,
+        "y": 259.375,
+        "right": 368.59375,
+        "bottom": 508.625,
+        "width": 343.59375,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 104,
+          "bottom": 710,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 189,
+          "bottom": 710,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 274,
+          "bottom": 710,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 359,
+          "bottom": 710,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 444,
+          "bottom": 710,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "laptop",
+      "sheet": "wash",
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "content": {
+        "x": 387.59375,
+        "y": 317.03125,
+        "right": 1256,
+        "bottom": 647,
+        "width": 868.40625,
+        "height": 329.96875
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 208.375,
+        "right": 369.59375,
+        "bottom": 647,
+        "width": 345.59375,
+        "height": 438.625
+      },
+      "photos": {
+        "x": 25,
+        "y": 259.375,
+        "right": 368.59375,
+        "bottom": 508.625,
+        "width": 343.59375,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 104,
+          "bottom": 710,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 189,
+          "bottom": 710,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 274,
+          "bottom": 710,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 359,
+          "bottom": 710,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 444,
+          "bottom": 710,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "laptop",
+      "sheet": "fit",
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "content": {
+        "x": 387.59375,
+        "y": 311.46875,
+        "right": 1256,
+        "bottom": 647,
+        "width": 868.40625,
+        "height": 335.53125
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 208.375,
+        "right": 369.59375,
+        "bottom": 647,
+        "width": 345.59375,
+        "height": 438.625
+      },
+      "photos": {
+        "x": 25,
+        "y": 259.375,
+        "right": 368.59375,
+        "bottom": 508.625,
+        "width": 343.59375,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 104,
+          "bottom": 710,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 189,
+          "bottom": 710,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 274,
+          "bottom": 710,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 359,
+          "bottom": 710,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 444,
+          "bottom": 710,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "laptop",
+      "sheet": "graded",
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "content": {
+        "x": 387.59375,
+        "y": 317.03125,
+        "right": 1256,
+        "bottom": 647,
+        "width": 868.40625,
+        "height": 329.96875
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 208.375,
+        "right": 369.59375,
+        "bottom": 647,
+        "width": 345.59375,
+        "height": 438.625
+      },
+      "photos": {
+        "x": 25,
+        "y": 259.375,
+        "right": 368.59375,
+        "bottom": 508.625,
+        "width": 343.59375,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 104,
+          "bottom": 710,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 189,
+          "bottom": 710,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 274,
+          "bottom": 710,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 359,
+          "bottom": 710,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 444,
+          "bottom": 710,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "laptop",
+      "sheet": "master",
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "content": {
+        "x": 387.59375,
+        "y": 364.90625,
+        "right": 1256,
+        "bottom": 647,
+        "width": 868.40625,
+        "height": 282.09375
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 208.375,
+        "right": 369.59375,
+        "bottom": 647,
+        "width": 345.59375,
+        "height": 438.625
+      },
+      "photos": {
+        "x": 25,
+        "y": 259.375,
+        "right": 368.59375,
+        "bottom": 508.625,
+        "width": 343.59375,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 104,
+          "bottom": 710,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 189,
+          "bottom": 710,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 274,
+          "bottom": 710,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 359,
+          "bottom": 710,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 444,
+          "bottom": 710,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "laptop",
+      "sheet": "body",
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "content": {
+        "x": 387.59375,
+        "y": 311.46875,
+        "right": 1256,
+        "bottom": 647,
+        "width": 868.40625,
+        "height": 335.53125
+      },
+      "sidebar": {
+        "x": 24,
+        "y": 208.375,
+        "right": 369.59375,
+        "bottom": 647,
+        "width": 345.59375,
+        "height": 438.625
+      },
+      "photos": {
+        "x": 25,
+        "y": 259.375,
+        "right": 368.59375,
+        "bottom": 508.625,
+        "width": 343.59375,
+        "height": 249.25
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 104,
+          "bottom": 710,
+          "left": 24
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 189,
+          "bottom": 710,
+          "left": 109
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 274,
+          "bottom": 710,
+          "left": 194
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 359,
+          "bottom": 710,
+          "left": 279
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "top": 666,
+          "right": 444,
+          "bottom": 710,
+          "left": 364
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "mobile",
+      "sheet": "pattern",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "documentHeight": 844,
+      "content": {
+        "x": 8,
+        "y": 378.421875,
+        "right": 382,
+        "bottom": 730.21875,
+        "width": 374,
+        "height": 351.796875
+      },
+      "sidebar": {
+        "x": 8,
+        "y": 152.546875,
+        "right": 382,
+        "bottom": 234.640625,
+        "width": 374,
+        "height": 82.09375
+      },
+      "photos": {
+        "x": 14,
+        "y": 158.546875,
+        "right": 126,
+        "bottom": 228.640625,
+        "width": 112,
+        "height": 70.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 79.59375,
+          "bottom": 786.21875,
+          "left": 8
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 155.1875,
+          "bottom": 786.21875,
+          "left": 83.59375
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 230.796875,
+          "bottom": 786.21875,
+          "left": 159.1875
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 306.390625,
+          "bottom": 786.21875,
+          "left": 234.796875
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 381.984375,
+          "bottom": 786.21875,
+          "left": 310.390625
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "mobile",
+      "sheet": "wash",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "documentHeight": 844,
+      "content": {
+        "x": 8,
+        "y": 378.421875,
+        "right": 382,
+        "bottom": 730.21875,
+        "width": 374,
+        "height": 351.796875
+      },
+      "sidebar": {
+        "x": 8,
+        "y": 152.546875,
+        "right": 382,
+        "bottom": 234.640625,
+        "width": 374,
+        "height": 82.09375
+      },
+      "photos": {
+        "x": 14,
+        "y": 158.546875,
+        "right": 126,
+        "bottom": 228.640625,
+        "width": 112,
+        "height": 70.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 79.59375,
+          "bottom": 786.21875,
+          "left": 8
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 155.1875,
+          "bottom": 786.21875,
+          "left": 83.59375
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 230.796875,
+          "bottom": 786.21875,
+          "left": 159.1875
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 306.390625,
+          "bottom": 786.21875,
+          "left": 234.796875
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 381.984375,
+          "bottom": 786.21875,
+          "left": 310.390625
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "mobile",
+      "sheet": "fit",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "documentHeight": 844,
+      "content": {
+        "x": 8,
+        "y": 378.421875,
+        "right": 382,
+        "bottom": 730.21875,
+        "width": 374,
+        "height": 351.796875
+      },
+      "sidebar": {
+        "x": 8,
+        "y": 152.546875,
+        "right": 382,
+        "bottom": 234.640625,
+        "width": 374,
+        "height": 82.09375
+      },
+      "photos": {
+        "x": 14,
+        "y": 158.546875,
+        "right": 126,
+        "bottom": 228.640625,
+        "width": 112,
+        "height": 70.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 79.59375,
+          "bottom": 786.21875,
+          "left": 8
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 155.1875,
+          "bottom": 786.21875,
+          "left": 83.59375
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 230.796875,
+          "bottom": 786.21875,
+          "left": 159.1875
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 306.390625,
+          "bottom": 786.21875,
+          "left": 234.796875
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 381.984375,
+          "bottom": 786.21875,
+          "left": 310.390625
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "mobile",
+      "sheet": "graded",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "documentHeight": 844,
+      "content": {
+        "x": 8,
+        "y": 393.421875,
+        "right": 382,
+        "bottom": 730.21875,
+        "width": 374,
+        "height": 336.796875
+      },
+      "sidebar": {
+        "x": 8,
+        "y": 152.546875,
+        "right": 382,
+        "bottom": 234.640625,
+        "width": 374,
+        "height": 82.09375
+      },
+      "photos": {
+        "x": 14,
+        "y": 158.546875,
+        "right": 126,
+        "bottom": 228.640625,
+        "width": 112,
+        "height": 70.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 79.59375,
+          "bottom": 786.21875,
+          "left": 8
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 155.1875,
+          "bottom": 786.21875,
+          "left": 83.59375
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 230.796875,
+          "bottom": 786.21875,
+          "left": 159.1875
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 306.390625,
+          "bottom": 786.21875,
+          "left": 234.796875
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 381.984375,
+          "bottom": 786.21875,
+          "left": 310.390625
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "mobile",
+      "sheet": "master",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "documentHeight": 844,
+      "content": {
+        "x": 8,
+        "y": 393.421875,
+        "right": 382,
+        "bottom": 730.21875,
+        "width": 374,
+        "height": 336.796875
+      },
+      "sidebar": {
+        "x": 8,
+        "y": 152.546875,
+        "right": 382,
+        "bottom": 234.640625,
+        "width": 374,
+        "height": 82.09375
+      },
+      "photos": {
+        "x": 14,
+        "y": 158.546875,
+        "right": 126,
+        "bottom": 228.640625,
+        "width": 112,
+        "height": 70.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 79.59375,
+          "bottom": 786.21875,
+          "left": 8
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 155.1875,
+          "bottom": 786.21875,
+          "left": 83.59375
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 230.796875,
+          "bottom": 786.21875,
+          "left": 159.1875
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 306.390625,
+          "bottom": 786.21875,
+          "left": 234.796875
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 381.984375,
+          "bottom": 786.21875,
+          "left": 310.390625
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "mobile",
+      "sheet": "body",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "documentHeight": 844,
+      "content": {
+        "x": 8,
+        "y": 378.421875,
+        "right": 382,
+        "bottom": 730.21875,
+        "width": 374,
+        "height": 351.796875
+      },
+      "sidebar": {
+        "x": 8,
+        "y": 152.546875,
+        "right": 382,
+        "bottom": 234.640625,
+        "width": 374,
+        "height": 82.09375
+      },
+      "photos": {
+        "x": 14,
+        "y": 158.546875,
+        "right": 126,
+        "bottom": 228.640625,
+        "width": 112,
+        "height": 70.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 79.59375,
+          "bottom": 786.21875,
+          "left": 8
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 155.1875,
+          "bottom": 786.21875,
+          "left": 83.59375
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 230.796875,
+          "bottom": 786.21875,
+          "left": 159.1875
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 306.390625,
+          "bottom": 786.21875,
+          "left": 234.796875
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "top": 742.21875,
+          "right": 381.984375,
+          "bottom": 786.21875,
+          "left": 310.390625
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "narrow-phone",
+      "sheet": "pattern",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "documentHeight": 568,
+      "content": {
+        "x": 5,
+        "y": 360.828125,
+        "right": 315,
+        "bottom": 464,
+        "width": 310,
+        "height": 103.171875
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 145.140625,
+        "right": 315,
+        "bottom": 221.140625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 150.59375,
+        "right": 110,
+        "bottom": 215.6875,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 63.796875,
+          "bottom": 518,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 126.59375,
+          "bottom": 518,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 189.390625,
+          "bottom": 518,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 252.1875,
+          "bottom": 518,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 314.984375,
+          "bottom": 518,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "narrow-phone",
+      "sheet": "wash",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "documentHeight": 568,
+      "content": {
+        "x": 5,
+        "y": 375.828125,
+        "right": 315,
+        "bottom": 464,
+        "width": 310,
+        "height": 88.171875
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 145.140625,
+        "right": 315,
+        "bottom": 221.140625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 150.59375,
+        "right": 110,
+        "bottom": 215.6875,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 63.796875,
+          "bottom": 518,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 126.59375,
+          "bottom": 518,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 189.390625,
+          "bottom": 518,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 252.1875,
+          "bottom": 518,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 314.984375,
+          "bottom": 518,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "narrow-phone",
+      "sheet": "fit",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "documentHeight": 568,
+      "content": {
+        "x": 5,
+        "y": 360.828125,
+        "right": 315,
+        "bottom": 464,
+        "width": 310,
+        "height": 103.171875
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 145.140625,
+        "right": 315,
+        "bottom": 221.140625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 150.59375,
+        "right": 110,
+        "bottom": 215.6875,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 63.796875,
+          "bottom": 518,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 126.59375,
+          "bottom": 518,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 189.390625,
+          "bottom": 518,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 252.1875,
+          "bottom": 518,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 314.984375,
+          "bottom": 518,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "narrow-phone",
+      "sheet": "graded",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "documentHeight": 568,
+      "content": {
+        "x": 5,
+        "y": 375.828125,
+        "right": 315,
+        "bottom": 464,
+        "width": 310,
+        "height": 88.171875
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 145.140625,
+        "right": 315,
+        "bottom": 221.140625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 150.59375,
+        "right": 110,
+        "bottom": 215.6875,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 63.796875,
+          "bottom": 518,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 126.59375,
+          "bottom": 518,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 189.390625,
+          "bottom": 518,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 252.1875,
+          "bottom": 518,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 314.984375,
+          "bottom": 518,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "narrow-phone",
+      "sheet": "master",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "documentHeight": 568,
+      "content": {
+        "x": 5,
+        "y": 375.828125,
+        "right": 315,
+        "bottom": 464,
+        "width": 310,
+        "height": 88.171875
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 145.140625,
+        "right": 315,
+        "bottom": 221.140625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 150.59375,
+        "right": 110,
+        "bottom": 215.6875,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 63.796875,
+          "bottom": 518,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 126.59375,
+          "bottom": 518,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 189.390625,
+          "bottom": 518,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 252.1875,
+          "bottom": 518,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 314.984375,
+          "bottom": 518,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "narrow-phone",
+      "sheet": "body",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "documentHeight": 568,
+      "content": {
+        "x": 5,
+        "y": 375.828125,
+        "right": 315,
+        "bottom": 464,
+        "width": 310,
+        "height": 88.171875
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 145.140625,
+        "right": 315,
+        "bottom": 221.140625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 150.59375,
+        "right": 110,
+        "bottom": 215.6875,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 63.796875,
+          "bottom": 518,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 126.59375,
+          "bottom": 518,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 189.390625,
+          "bottom": 518,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 252.1875,
+          "bottom": 518,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "top": 474,
+          "right": 314.984375,
+          "bottom": 518,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "short-phone",
+      "sheet": "pattern",
+      "width": 320,
+      "height": 480,
+      "documentWidth": 320,
+      "documentHeight": 480,
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "right": 315,
+        "bottom": 380.359375,
+        "width": 310,
+        "height": 55.3125
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 128.5625,
+        "right": 315,
+        "bottom": 204.5625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 134.015625,
+        "right": 110,
+        "bottom": 199.109375,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 63.796875,
+          "bottom": 433.359375,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 126.59375,
+          "bottom": 433.359375,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 189.390625,
+          "bottom": 433.359375,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 252.1875,
+          "bottom": 433.359375,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 314.984375,
+          "bottom": 433.359375,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "short-phone",
+      "sheet": "wash",
+      "width": 320,
+      "height": 480,
+      "documentWidth": 320,
+      "documentHeight": 480,
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "right": 315,
+        "bottom": 380.359375,
+        "width": 310,
+        "height": 55.3125
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 128.5625,
+        "right": 315,
+        "bottom": 204.5625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 134.015625,
+        "right": 110,
+        "bottom": 199.109375,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 63.796875,
+          "bottom": 433.359375,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 126.59375,
+          "bottom": 433.359375,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 189.390625,
+          "bottom": 433.359375,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 252.1875,
+          "bottom": 433.359375,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 314.984375,
+          "bottom": 433.359375,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "short-phone",
+      "sheet": "fit",
+      "width": 320,
+      "height": 480,
+      "documentWidth": 320,
+      "documentHeight": 480,
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "right": 315,
+        "bottom": 380.359375,
+        "width": 310,
+        "height": 55.3125
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 128.5625,
+        "right": 315,
+        "bottom": 204.5625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 134.015625,
+        "right": 110,
+        "bottom": 199.109375,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 63.796875,
+          "bottom": 433.359375,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 126.59375,
+          "bottom": 433.359375,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 189.390625,
+          "bottom": 433.359375,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 252.1875,
+          "bottom": 433.359375,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 314.984375,
+          "bottom": 433.359375,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "short-phone",
+      "sheet": "graded",
+      "width": 320,
+      "height": 480,
+      "documentWidth": 320,
+      "documentHeight": 480,
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "right": 315,
+        "bottom": 380.359375,
+        "width": 310,
+        "height": 55.3125
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 128.5625,
+        "right": 315,
+        "bottom": 204.5625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 134.015625,
+        "right": 110,
+        "bottom": 199.109375,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 63.796875,
+          "bottom": 433.359375,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 126.59375,
+          "bottom": 433.359375,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 189.390625,
+          "bottom": 433.359375,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 252.1875,
+          "bottom": 433.359375,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 314.984375,
+          "bottom": 433.359375,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "short-phone",
+      "sheet": "master",
+      "width": 320,
+      "height": 480,
+      "documentWidth": 320,
+      "documentHeight": 480,
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "right": 315,
+        "bottom": 380.359375,
+        "width": 310,
+        "height": 55.3125
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 128.5625,
+        "right": 315,
+        "bottom": 204.5625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 134.015625,
+        "right": 110,
+        "bottom": 199.109375,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 63.796875,
+          "bottom": 433.359375,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 126.59375,
+          "bottom": 433.359375,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 189.390625,
+          "bottom": 433.359375,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 252.1875,
+          "bottom": 433.359375,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 314.984375,
+          "bottom": 433.359375,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "short-phone",
+      "sheet": "body",
+      "width": 320,
+      "height": 480,
+      "documentWidth": 320,
+      "documentHeight": 480,
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "right": 315,
+        "bottom": 380.359375,
+        "width": 310,
+        "height": 55.3125
+      },
+      "sidebar": {
+        "x": 5,
+        "y": 128.5625,
+        "right": 315,
+        "bottom": 204.5625,
+        "width": 310,
+        "height": 76
+      },
+      "photos": {
+        "x": 10,
+        "y": 134.015625,
+        "right": 110,
+        "bottom": 199.109375,
+        "width": 100,
+        "height": 65.09375
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 63.796875,
+          "bottom": 433.359375,
+          "left": 5
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 126.59375,
+          "bottom": 433.359375,
+          "left": 67.796875
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 189.390625,
+          "bottom": 433.359375,
+          "left": 130.59375
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 252.1875,
+          "bottom": 433.359375,
+          "left": 193.390625
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "top": 389.359375,
+          "right": 314.984375,
+          "bottom": 433.359375,
+          "left": 256.1875
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "landscape",
+      "sheet": "pattern",
+      "width": 844,
+      "height": 390,
+      "documentWidth": 844,
+      "documentHeight": 390,
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "right": 828,
+        "bottom": 333,
+        "width": 490,
+        "height": 94.453125
+      },
+      "sidebar": {
+        "x": 16,
+        "y": 116.5625,
+        "right": 326,
+        "bottom": 333,
+        "width": 310,
+        "height": 216.4375
+      },
+      "photos": {
+        "x": 17,
+        "y": 152.5625,
+        "right": 325,
+        "bottom": 222.359375,
+        "width": 308,
+        "height": 69.796875
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 96,
+          "bottom": 386,
+          "left": 16
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 181,
+          "bottom": 386,
+          "left": 101
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 266,
+          "bottom": 386,
+          "left": 186
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 351,
+          "bottom": 386,
+          "left": 271
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 436,
+          "bottom": 386,
+          "left": 356
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "landscape",
+      "sheet": "wash",
+      "width": 844,
+      "height": 390,
+      "documentWidth": 844,
+      "documentHeight": 390,
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "right": 828,
+        "bottom": 333,
+        "width": 490,
+        "height": 94.453125
+      },
+      "sidebar": {
+        "x": 16,
+        "y": 116.5625,
+        "right": 326,
+        "bottom": 333,
+        "width": 310,
+        "height": 216.4375
+      },
+      "photos": {
+        "x": 17,
+        "y": 152.5625,
+        "right": 325,
+        "bottom": 222.359375,
+        "width": 308,
+        "height": 69.796875
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 96,
+          "bottom": 386,
+          "left": 16
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 181,
+          "bottom": 386,
+          "left": 101
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 266,
+          "bottom": 386,
+          "left": 186
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 351,
+          "bottom": 386,
+          "left": 271
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 436,
+          "bottom": 386,
+          "left": 356
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "landscape",
+      "sheet": "fit",
+      "width": 844,
+      "height": 390,
+      "documentWidth": 844,
+      "documentHeight": 390,
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "right": 828,
+        "bottom": 333,
+        "width": 490,
+        "height": 94.453125
+      },
+      "sidebar": {
+        "x": 16,
+        "y": 116.5625,
+        "right": 326,
+        "bottom": 333,
+        "width": 310,
+        "height": 216.4375
+      },
+      "photos": {
+        "x": 17,
+        "y": 152.5625,
+        "right": 325,
+        "bottom": 222.359375,
+        "width": 308,
+        "height": 69.796875
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 96,
+          "bottom": 386,
+          "left": 16
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 181,
+          "bottom": 386,
+          "left": 101
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 266,
+          "bottom": 386,
+          "left": 186
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 351,
+          "bottom": 386,
+          "left": 271
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 436,
+          "bottom": 386,
+          "left": 356
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "landscape",
+      "sheet": "graded",
+      "width": 844,
+      "height": 390,
+      "documentWidth": 844,
+      "documentHeight": 390,
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "right": 828,
+        "bottom": 333,
+        "width": 490,
+        "height": 94.453125
+      },
+      "sidebar": {
+        "x": 16,
+        "y": 116.5625,
+        "right": 326,
+        "bottom": 333,
+        "width": 310,
+        "height": 216.4375
+      },
+      "photos": {
+        "x": 17,
+        "y": 152.5625,
+        "right": 325,
+        "bottom": 222.359375,
+        "width": 308,
+        "height": 69.796875
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 96,
+          "bottom": 386,
+          "left": 16
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 181,
+          "bottom": 386,
+          "left": 101
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 266,
+          "bottom": 386,
+          "left": 186
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 351,
+          "bottom": 386,
+          "left": 271
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 436,
+          "bottom": 386,
+          "left": 356
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "landscape",
+      "sheet": "master",
+      "width": 844,
+      "height": 390,
+      "documentWidth": 844,
+      "documentHeight": 390,
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "right": 828,
+        "bottom": 333,
+        "width": 490,
+        "height": 94.453125
+      },
+      "sidebar": {
+        "x": 16,
+        "y": 116.5625,
+        "right": 326,
+        "bottom": 333,
+        "width": 310,
+        "height": 216.4375
+      },
+      "photos": {
+        "x": 17,
+        "y": 152.5625,
+        "right": 325,
+        "bottom": 222.359375,
+        "width": 308,
+        "height": 69.796875
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 96,
+          "bottom": 386,
+          "left": 16
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 181,
+          "bottom": 386,
+          "left": 101
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 266,
+          "bottom": 386,
+          "left": 186
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 351,
+          "bottom": 386,
+          "left": 271
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 436,
+          "bottom": 386,
+          "left": 356
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    },
+    {
+      "viewport": "landscape",
+      "sheet": "body",
+      "width": 844,
+      "height": 390,
+      "documentWidth": 844,
+      "documentHeight": 390,
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "right": 828,
+        "bottom": 333,
+        "width": 490,
+        "height": 94.453125
+      },
+      "sidebar": {
+        "x": 16,
+        "y": 116.5625,
+        "right": 326,
+        "bottom": 333,
+        "width": 310,
+        "height": 216.4375
+      },
+      "photos": {
+        "x": 17,
+        "y": 152.5625,
+        "right": 325,
+        "bottom": 222.359375,
+        "width": 308,
+        "height": 69.796875
+      },
+      "controls": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 96,
+          "bottom": 386,
+          "left": 16
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 181,
+          "bottom": 386,
+          "left": 101
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 266,
+          "bottom": 386,
+          "left": 186
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 351,
+          "bottom": 386,
+          "left": 271
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "top": 342,
+          "right": 436,
+          "bottom": 386,
+          "left": 356
+        }
+      ],
+      "sameEditor": true,
+      "sameSharedField": true
+    }
+  ],
+  "checks": {
+    "originalImageBytesAndMountedEditorsAcrossTabs": true,
+    "hideShowReclaimsWorksheetSpaceAndPrimaryControlsRemainVisible": true,
+    "tabChangesPreserveLowerDomScrollFieldsAndUnfinishedRevision": true,
+    "pinnedPatternStyleImmediatelyRefreshesActiveFitLink": true,
+    "samePackMetadataAndTablesMirrorBothDirectionsAcrossActiveSheets": true,
+    "hiddenInvalidSidebarBlocksUpdateRevealsAncestorsAndRetainsInput": true,
+    "sidebarPasteUsesItsOwnSheetAndUndoRedoPreserveOtherSheets": true,
+    "hidePreferenceIsViewOnlyAndAutosavedPackReopens": true,
+    "sidebarImageUploadsStayLocalAndPendingFileBlocksUpdate": true,
+    "enlargingPinnedReferenceKeepsPanelState": true,
+    "imageUploadAndRemovalPreserveUnrelatedInvalidEditorsAndUpdateGuards": true,
+    "galleryPreviewStaysPinnedAcrossTabsAlongsideMasterFlats": true,
+    "namedRevisionRestoreRefreshesPinnedViewsAndPreservesBackup": true,
+    "compatibleJsonTransferRestoresPinnedValuesAndImages": true,
+    "completePrintHas190SourceRowsWithoutSidebarDuplication": true,
+    "noRuntimeErrorsOrExternalRequests": true
+  },
+  "issues": [],
+  "limits": [
+    "Automated Chromium viewports are not a physical iPhone/native keyboard test."
+  ],
+  "privacy": "Only pristine blank-template screenshots are saved. Synthetic projects, images, JSON and filled PDFs remain temporary.",
+  "passed": true,
+  "screenshots": [
+    {
+      "filename": "pinned-style-desktop-hidden.png",
+      "sha256": "26b4e857fafe4081c1a00f9015aafcef4d46735167a82576be9daeaefe1a7fb7"
+    },
+    {
+      "filename": "pinned-style-desktop.png",
+      "sha256": "cf75d560a293e41bb6755e38ec3ed00f6165c61f1360ba0563913cf39d2ce0f5"
+    },
+    {
+      "filename": "pinned-style-landscape.png",
+      "sha256": "087a32d4217ff093b4e9af633140c424aebe8969abf00810e9233c2fd13732be"
+    },
+    {
+      "filename": "pinned-style-mobile-expanded.png",
+      "sha256": "dffd96fd5088d780929d93aa32358b5ff1798158c629e6cf416361ef8322ad1d"
+    },
+    {
+      "filename": "pinned-style-mobile-hidden.png",
+      "sha256": "6753753cd1519d2d87221d7c56cfd039e645abf2a44d26ccd1939ba7c8c0760b"
+    },
+    {
+      "filename": "pinned-style-mobile.png",
+      "sha256": "8e9c261ab9a9c5afdfc41a63df123f50a1dac95c18a961a9a4dff5aaf9fcdcf4"
+    },
+    {
+      "filename": "pinned-style-narrow-phone.png",
+      "sha256": "10f41f2f687389b2d0d5fb16964f3dd02f75dd4dc426e659f18e06fc6f8f23f5"
+    }
+  ]
+}

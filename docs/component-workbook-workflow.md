@@ -4,9 +4,9 @@ Import a garment component workbook into the existing workroom without replacing
 its six base worksheets, approved BF form reference, or separate RC client intake.
 Imported definitions and local working measurements remain distinct.
 
-**Validation status:** source integration and hosted-update verification are in
-progress. Earlier v0.7.0 results do not establish that this new workflow is verified
-or deployed. Check the app version in **Export → Install & app info**.
+**Verified and live:** Workroom v0.8.0 is published at the existing address.
+Check the version in **Export → Install & app info**. For an existing installed
+copy, choose **Save & update app** when offered before trying component import.
 
 ## Open the current build
 
@@ -98,8 +98,10 @@ a new correspondence: the old identity is retained and a new row starts blank.
 
 Applying a stale or altered preview is refused. When a changed source file is
 applied and local storage is available, the app saves a recovery revision before
-replacing the source snapshot. If storage is unavailable, export JSON first; no
-successful recovery save should be assumed.
+replacing the source snapshot. A storage conflict blocks source replacement.
+If storage is unavailable, the preview requires **Download current pack backup**
+and confirmation that you kept that JSON file before applying. A requested
+download is not described as a successful local recovery save.
 
 ## Save, export, and publication boundaries
 
@@ -121,3 +123,24 @@ artwork, approved BF data, and RC intake rules remain unchanged.
 See [daily workroom use](workroom-daily-workflow.md),
 [iPhone installation](iphone-workroom-app.md), and the
 [future master-library strategy](master-library-strategy.md).
+
+## Verified checks
+
+- **112 Node tests** passed, including XLSX validation, source preservation,
+  schema compatibility, independent observations, fractional tolerance boundaries,
+  and the existing house/client workflows.
+- The supplied workbook's **60 POMs across four components** passed the same
+  [nine browser workflow groups](validation/component-workbook-source-check.json)
+  as the [invented workbook](validation/component-workbook.json): exact import,
+  save/reopen, units, independent samples/sides, gallery preservation, reimport,
+  complete JSON/CSV/PDF, phone layout, unavailable storage and conflicts.
+- Existing daily editing passed **36 layouts and 38 workflow checks**. Pinned
+  style and gallery regressions passed. Chromium passed **19 PWA checks and
+  three phone layouts**, including offline reopening and explicit updates.
+- [Live HTTPS checks](validation/component-workbook-live.json) confirm all eight
+  files match the tested build and all ten portal files remain unchanged.
+
+Functional browser checks used the identical local hosted build. WebKit is not
+installed in this environment; physical iPhone installation and native file-picker
+behavior remain untested. Source records, measurements and project images are
+excluded from the published evidence.

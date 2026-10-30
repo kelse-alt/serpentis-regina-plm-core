@@ -24,10 +24,13 @@ the local source snapshot and definition history. Existing BF, RC, six-sheet,
 IndexedDB, revision, brand, and image workflows remain separate and intact.
 
 Read the [component workbook guide](docs/component-workbook-workflow.md).
-Validation and hosted-update verification are pending for this new workflow;
-earlier v0.7.0 evidence does not establish v0.8.0 deployment.
+Workroom **v0.8.0 is live** at the existing address. All **112 Node tests**,
+component browser checks with both synthetic and supplied workbooks, existing
+daily/pinned/gallery regressions, and Chromium offline/update checks pass.
+All eight hosted files match the tested build; the ten portal files are unchanged.
+See the [validation evidence](docs/validation/component-workbook-live.json).
 
-## Use the iPhone app — v0.7.2
+## Use the iPhone app — v0.8.0
 
 Open the [Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/)
 in iPhone Safari, then choose **Share → Add to Home Screen → Add**. Keep
@@ -39,6 +42,10 @@ local autosave and named revisions. Updates wait for an explicit action after
 valid entries are saved. Safari, the Home Screen app and desktop browsers may
 have separate stores; transfer a current pack with Export/Import JSON.
 Read the [iPhone installation and usage guide](docs/iphone-workroom-app.md).
+For an existing installation, open **Export → Install & app info** and choose
+**Save & update app** when offered. Then download your source workbook as XLSX
+and use **Export → Import component workbook (.xlsx)**. Filled records remain
+on your device; importing a workbook does not publish its contents.
 
 The [pinned style reference panel](docs/pinned-style-reference.md) keeps front/back
 images, the Shared Style Record, Pattern Card details and Named Revisions & Restore
@@ -52,7 +59,7 @@ drafts, named revisions and JSON backups.
 
 ## Desktop and standalone workroom
 
-[Download the current workroom ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/heads/codex/workroom-iphone-app.zip),
+[Download the v0.8.0 workroom ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/tags/v0.8.0.zip),
 extract it, and open **tech-pack.html**. With Node.js 24+, `npm run techpack`
 provides a local HTTP preview.
 

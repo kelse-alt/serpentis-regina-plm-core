@@ -8,7 +8,11 @@
 - Keep shared-style source defaults opt-in and limited to blank fields. Preserve existing six worksheets, approved BF references, separate RC intake, original brand/assets, existing local database, and older-pack compatibility. Component packs add tech-pack schema 3/development schema 1; ordinary new packs remain schema 2.
 - Keep source workbooks, raw project metadata, filled packs, images, and user exports local. Application builds and public documentation contain no filled source project. Workbook images are not imported.
 
-Validation and hosted-update verification for this milestone are pending; no v0.8.0 deployment is claimed by this entry.
+Verified with 112 passing Node tests, nine component browser workflow groups using
+both synthetic and supplied workbooks, existing daily/pinned/gallery regressions,
+and 19 Chromium PWA checks. Deployed sanitized v0.8.0 files under `/workroom/`;
+all eight served files match the tested build and all ten portal files are unchanged.
+WebKit and physical iPhone verification were not run for this milestone.
 
 ## v0.7.2 — Pattern reference gallery — 2026-10-27
 

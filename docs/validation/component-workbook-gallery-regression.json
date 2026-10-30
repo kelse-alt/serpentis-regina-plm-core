@@ -1,0 +1,28 @@
+{
+  "checkedAtUtc": "2026-10-30T22:20:52.595779+00:00",
+  "sourceCommit": "257104498d7871e3f8eabb9b442a743ec1487308",
+  "buildSha256": "ee310f6063e7153ded51574bfe025e390c190b8d787369120970da78e89e7a4c",
+  "checks": {
+    "multiUploadRetainsOriginalBytesAndDisplaysOneImage": true,
+    "selectionMirrorsUndoRedoAndSurvivesSaveReload": true,
+    "unsupportedCorruptOversizeAndOverLimitBatchesAreAtomic": true,
+    "appendPreservesCurrentSelectionAndUnrelatedInvalidText": true,
+    "pendingUploadBlocksUpdateAndBatchIsOneUndoStep": true,
+    "removeOnlyCurrentAndRevisionRestoreRecoversImagesAndSelection": true,
+    "jsonTransferPreservesEveryOriginalAndSelectedImage": true,
+    "completePrintContainsOneSelectedReferenceAnd190Rows": true,
+    "lastRemovalRestoresExplicitExamplePair": true,
+    "desktopNoRuntimeErrorsOrExternalRequests": true,
+    "legacySingleImagePackAppendsWithoutReplacementAndReopens": true,
+    "identicalImageBytesDeduplicateAcrossGalleryAndSingletonAndHydrate": true,
+    "selectedGalleryRemainsPinnedAndNavigableAlongsideMasterFrontBack": true,
+    "phone390x844OneImageNavigationAcrossSixTabs": true,
+    "phone320x568OneImageNavigationAcrossSixTabs": true
+  },
+  "issues": [],
+  "privacy": "Generated rasters, working packs, downloads and revisions remain in isolated temporary browser contexts. No filled screenshots or image data are saved.",
+  "limits": [
+    "Chromium phone viewports do not establish physical iPhone or native picker behavior."
+  ],
+  "passed": true
+}

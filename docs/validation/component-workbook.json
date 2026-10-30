@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "checks": [
+    "Exact source definitions imported with blank working values and unassigned units",
+    "Independent sample and side values, explicit tolerances, zero and separate proposals",
+    "Save, reload, JSON retention and lossless CM/IN switching",
+    "Pinned style and original gallery images retained in component packs",
+    "Same-file and changed-source reimport preserve values, method history, retired rows and recovery revision",
+    "JSON import, complete CSV and PDF include every component and all entered observations",
+    "Phone layout keeps save/export reachable without document overflow",
+    "Unavailable storage reimport requires a complete downloaded backup and explicit acknowledgement",
+    "Conflicted drafts refuse replacement of their workbook source"
+  ],
+  "sourceCommit": "c9dd17a3691bc0f61e4c32c0d80f3555aa635bea",
+  "componentCounts": [
+    32,
+    11,
+    11,
+    6
+  ],
+  "sourceWorkbookProvided": false,
+  "privacy": "Only counts/outcomes are recorded. Imported cells, measurements, files and browser profiles remain local and temporary.",
+  "browserErrors": 0,
+  "totalPOMs": 60,
+  "pdfPages": 7
+}
