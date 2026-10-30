@@ -1,0 +1,21 @@
+{
+  "package": "fflate",
+  "version": "0.8.2",
+  "license": "MIT",
+  "registryMetadata": "https://registry.npmjs.org/fflate/0.8.2",
+  "tarball": "https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz",
+  "verifiedIntegrity": "sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==",
+  "upstreamFile": "package/esm/browser.js",
+  "upstreamFileSha256": "8cc1f687e0159e977addb6b85e274dbd11e622cf151f4fcb7b85d49622ea43e7",
+  "extractedSymbols": [
+    "raw-inflate helpers through inflt",
+    "Inflate"
+  ],
+  "adaptations": [
+    "Extracted subset only",
+    "Removed unused FlateErrorCode ESM export",
+    "Wrapped in isolated IIFE",
+    "Added bounded streaming adapter with 1024-byte compressed chunks"
+  ],
+  "runtimeDependencies": []
+}

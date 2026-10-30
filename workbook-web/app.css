@@ -569,3 +569,107 @@ div.paste-table, .revision-diff-wrap { min-width:0; max-height:52dvh; overflow:a
  .sheet-actions > .column-view { display:none!important; }
  .mobile-column-view:not([hidden]) { display:flex; margin:12px 0; }
 }
+
+/* Imported garment components keep source definitions separate from local development. */
+.development-view { min-width:0; color:var(--ash-ink); }
+.development-toolbar { display:grid; grid-template-columns:minmax(180px,1.35fr) minmax(150px,1fr) minmax(130px,.8fr); align-items:end; gap:10px 12px; min-width:0; margin:0 0 12px; }
+.development-toolbar .field { margin:0; }
+.development-toolbar .development-round { grid-column:1 / 2; }
+.development-toolbar .development-sample-notes { grid-column:2 / -1; }
+.development-toolbar select, .development-toolbar input { width:100%; min-width:0; max-width:100%; }
+.development-sample-add { display:flex; flex-wrap:wrap; align-items:end; gap:8px; min-width:0; margin:0 0 12px; }
+.development-sample-add .field { flex:1 1 190px; }
+.development-sample-add button { flex:0 0 auto; min-height:44px; }
+.development-summary { display:flex; flex-wrap:wrap; gap:5px 16px; min-width:0; margin:10px 0; padding:9px 11px; border:1px solid var(--ash-line); color:var(--ash-ink); font-size:15px; line-height:1.35; }
+.development-summary p { margin:0; }
+.development-summary strong { color:var(--ash-ink); }
+.development-notice, .development-approval-note { margin:10px 0; padding:9px 11px; border-left:3px solid var(--ash-line); color:var(--ash-ink); font-size:15px; line-height:1.4; overflow-wrap:anywhere; }
+.development-notice p, .development-approval-note p { margin:0; }
+.development-notice p + p, .development-approval-note p + p { margin-top:6px; }
+.development-approval-note { font-weight:700; }
+.development-table { min-width:1960px; }
+.development-table [data-dev-column=code] { width:95px; }
+.development-table [data-dev-column=description] { width:400px; }
+.development-table [data-dev-column=method] { width:330px; }
+.development-table [data-dev-column=target], .development-table [data-dev-column=toleranceMinus], .development-table [data-dev-column=tolerancePlus], .development-table [data-dev-column=actual], .development-table [data-dev-column=delta] { width:115px; }
+.development-table [data-dev-column=assessment] { width:170px; }
+.development-table [data-dev-column=proposedAdjustment] { width:155px; }
+.development-table [data-dev-column=proposedTarget] { width:125px; }
+.development-table [data-dev-column=notes] { width:240px; }
+.development-table tbody th.sticky-code, .development-observations tbody th.sticky-code { position:sticky; left:0; z-index:1; background:var(--obsidian); color:var(--ash-ink); }
+.development-table .development-method, .development-observations .development-method { margin:0; white-space:pre-wrap; color:var(--ash-ink); font-size:17px; line-height:1.4; }
+.development-table .measure-label { display:block; margin:0; white-space:pre-wrap; }
+.development-table input { font-variant-numeric:tabular-nums; }
+.development-table input[data-dev-field], .development-table input[data-dev-observation] { text-align:right; font-weight:700; }
+.development-table output, .development-observations output { text-align:right; }
+.development-assessment { display:block; min-height:44px; padding:8px 3px; color:var(--ash-ink); font-size:16px; line-height:1.35; }
+.development-source-context { min-width:0; margin:12px 0; padding:10px 12px; border:1px solid var(--ash-line); color:var(--ash-ink); font-size:14px; line-height:1.4; overflow-wrap:anywhere; }
+.development-source-context > summary { min-height:44px; padding:9px 0; font-size:16px; font-weight:700; cursor:pointer; }
+.development-source-context p { margin:6px 0; }
+.development-source-context dl { display:grid; grid-template-columns:max-content minmax(0,1fr); gap:5px 12px; margin:8px 0; }
+.development-source-context dt { font-weight:700; }
+.development-source-context dd { min-width:0; margin:0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.development-observation-context { margin:12px 0 6px; color:var(--ash-ink); font-size:17px; font-weight:700; line-height:1.35; overflow-wrap:anywhere; }
+.development-observations { min-width:1180px; }
+.development-observations th:first-child { width:95px; }
+.development-observations th:nth-child(2) { width:240px; }
+.development-observations th:last-child { width:160px; }
+.development-print-component { min-width:0; }
+.development-print-component + .development-print-component { margin-top:22px; }
+.workbook-preview { min-width:0; color:var(--ash-ink); }
+.workbook-preview-summary, .workbook-preview-warning { margin:12px 0; padding:10px 12px; border:1px solid var(--ash-line); color:var(--ash-ink); font-size:16px; line-height:1.4; overflow-wrap:anywhere; }
+.workbook-preview-summary p, .workbook-preview-warning p { margin:0; }
+.workbook-preview-summary p + p, .workbook-preview-warning p + p { margin-top:6px; }
+.workbook-preview-warning { border-left-width:3px; }
+.workbook-preview-list { display:grid; gap:12px; min-width:0; margin:12px 0; padding:0; list-style:none; }
+.workbook-preview-list > li, .workbook-preview-list > article { min-width:0; border:1px solid var(--ash-line); }
+.workbook-preview-list h3, .workbook-preview-list h4 { margin:0; padding:9px 11px; color:var(--ruby); background:var(--electric); font-size:19px; line-height:1.3; }
+.workbook-preview-list p { margin:8px 11px; color:var(--ash-ink); font-size:15px; line-height:1.4; overflow-wrap:anywhere; }
+.workbook-preview-list ul { margin:8px 11px; padding-left:20px; font-size:15px; line-height:1.4; }
+.workbook-preview-list .table-wrap { margin:10px; }
+@media screen and (max-width:980px) {
+ .development-toolbar { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .development-toolbar > :first-child { grid-column:1 / -1; }
+ .development-toolbar .development-round { grid-column:1; }
+ .development-toolbar .development-sample-notes { grid-column:2; }
+}
+@media screen and (max-width:740px) {
+ .development-toolbar { gap:8px; margin-bottom:10px; }
+ .development-sample-add { gap:6px; }
+ .development-sample-add .field { flex-basis:145px; }
+ .development-sample-add button { padding:8px; font-size:15px; }
+ .development-summary { gap:4px 12px; padding:8px; font-size:14px; }
+ .development-notice, .development-approval-note { padding:8px; font-size:14px; }
+ .development-source-context { padding:8px; }
+ .development-source-context dl { grid-template-columns:minmax(0,1fr); gap:3px; }
+ .development-source-context dd + dt { margin-top:6px; }
+ .development-table .development-method, .development-observations .development-method { font-size:16px; }
+ .workbook-preview-summary, .workbook-preview-warning { padding:8px; font-size:15px; }
+ .workbook-preview-list { gap:10px; }
+ .workbook-preview-list h3, .workbook-preview-list h4 { padding:8px; font-size:18px; }
+ .workbook-preview-list p { margin:8px; font-size:14px; }
+}
+@media print {
+ .print-view .development-toolbar, .print-view .development-sample-add { display:none!important; }
+ .print-view .development-summary { gap:3px 12px; margin:6px 0; padding:6px 8px; font-size:10px; break-inside:avoid; }
+ .print-view .development-notice, .print-view .development-approval-note { margin:6px 0; padding:5px 8px; font-size:10px; break-inside:avoid; }
+ .print-view .development-table, .print-view .development-observations { min-width:0!important; }
+ .print-view .development-table [data-dev-column], .print-view .development-observations th { width:auto; }
+ .print-view .development-table [data-dev-column=code] { width:6%; }
+ .print-view .development-table [data-dev-column=description] { width:30%; }
+ .print-view .development-table [data-dev-column=method] { width:25%; }
+ .print-view .development-table [data-dev-column=assessment] { width:11%; }
+ .print-view .development-table [data-dev-column=proposedAdjustment] { width:9%; }
+ .print-view .development-table [data-dev-column=proposedTarget] { width:9%; }
+ .print-view .development-table [data-dev-column=notes] { width:18%; }
+ .print-view .development-table tbody th.sticky-code, .print-view .development-observations tbody th.sticky-code { position:static; box-shadow:none; }
+ .print-view .development-table .development-method, .print-view .development-observations .development-method { font-size:10px; line-height:1.35; }
+ .print-view .development-assessment { min-height:0; padding:2px 0; font-size:10px; }
+ .print-view .development-source-context { margin:6px 0; padding:5px 8px; font-size:10px; }
+ .print-view .development-source-context > summary { min-height:0; padding:3px 0; font-size:12px; }
+ .print-view .development-source-context dl { gap:3px 8px; margin:5px 0; }
+ .print-view .development-source-context p { margin:4px 0; }
+ .print-view .development-observation-context { margin:10px 0 5px; font-size:12px; break-after:avoid; }
+ .print-view .development-print-component + .development-print-component { margin-top:14px; break-before:page; page-break-before:always; }
+ .print-view .workbook-preview-summary, .print-view .workbook-preview-warning { margin:6px 0; padding:5px 8px; font-size:10px; }
+}

@@ -1,0 +1,4273 @@
+{
+  "capturedAtUtc": "2026-10-30T22:39:49.040761+00:00",
+  "sourceCommit": "257104498d7871e3f8eabb9b442a743ec1487308",
+  "uncommittedChanges": true,
+  "standalone": true,
+  "sourceTabs": [
+    "PATTERN CARD",
+    "BW-AW-SPEC",
+    "FIT & COM",
+    "GRADED SPECS",
+    "00-MEASUREMENT SHEET MASTER",
+    "BODY REF-MANNEQUIN-SIZE 8-V1"
+  ],
+  "layouts": [
+    {
+      "layout": "desktop",
+      "sheet": "pattern",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "width": 1044,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1452,
+        "height": 133.015625,
+        "bottom": 149.015625,
+        "right": 1476
+      },
+      "tabs": {
+        "x": 24,
+        "y": 159.015625,
+        "width": 1452,
+        "height": 47,
+        "bottom": 206.015625,
+        "right": 1476
+      },
+      "context": {
+        "x": 24,
+        "y": 216.015625,
+        "width": 390,
+        "height": 710.984375,
+        "bottom": 927,
+        "right": 414
+      },
+      "toolbar": {
+        "x": 432,
+        "y": 216.015625,
+        "width": 1044,
+        "height": 95.09375,
+        "bottom": 311.109375,
+        "right": 1476
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true,
+      "blankScreenshot": "workroom-daily-desktop.png"
+    },
+    {
+      "layout": "desktop",
+      "sheet": "wash",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "width": 1044,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1452,
+        "height": 133.015625,
+        "bottom": 149.015625,
+        "right": 1476
+      },
+      "tabs": {
+        "x": 24,
+        "y": 159.015625,
+        "width": 1452,
+        "height": 47,
+        "bottom": 206.015625,
+        "right": 1476
+      },
+      "context": {
+        "x": 24,
+        "y": 216.015625,
+        "width": 390,
+        "height": 710.984375,
+        "bottom": 927,
+        "right": 414
+      },
+      "toolbar": {
+        "x": 432,
+        "y": 216.015625,
+        "width": 1044,
+        "height": 95.09375,
+        "bottom": 311.109375,
+        "right": 1476
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "desktop",
+      "sheet": "fit",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "width": 1044,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1452,
+        "height": 133.015625,
+        "bottom": 149.015625,
+        "right": 1476
+      },
+      "tabs": {
+        "x": 24,
+        "y": 159.015625,
+        "width": 1452,
+        "height": 47,
+        "bottom": 206.015625,
+        "right": 1476
+      },
+      "context": {
+        "x": 24,
+        "y": 216.015625,
+        "width": 390,
+        "height": 710.984375,
+        "bottom": 927,
+        "right": 414
+      },
+      "toolbar": {
+        "x": 432,
+        "y": 216.015625,
+        "width": 1044,
+        "height": 95.09375,
+        "bottom": 311.109375,
+        "right": 1476
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "desktop",
+      "sheet": "graded",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "width": 1044,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1452,
+        "height": 133.015625,
+        "bottom": 149.015625,
+        "right": 1476
+      },
+      "tabs": {
+        "x": 24,
+        "y": 159.015625,
+        "width": 1452,
+        "height": 47,
+        "bottom": 206.015625,
+        "right": 1476
+      },
+      "context": {
+        "x": 24,
+        "y": 216.015625,
+        "width": 390,
+        "height": 710.984375,
+        "bottom": 927,
+        "right": 414
+      },
+      "toolbar": {
+        "x": 432,
+        "y": 216.015625,
+        "width": 1044,
+        "height": 95.09375,
+        "bottom": 311.109375,
+        "right": 1476
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "desktop",
+      "sheet": "master",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 432,
+        "y": 324.671875,
+        "width": 1044,
+        "height": 602.328125,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1452,
+        "height": 133.015625,
+        "bottom": 149.015625,
+        "right": 1476
+      },
+      "tabs": {
+        "x": 24,
+        "y": 159.015625,
+        "width": 1452,
+        "height": 47,
+        "bottom": 206.015625,
+        "right": 1476
+      },
+      "context": {
+        "x": 24,
+        "y": 216.015625,
+        "width": 390,
+        "height": 710.984375,
+        "bottom": 927,
+        "right": 414
+      },
+      "toolbar": {
+        "x": 432,
+        "y": 216.015625,
+        "width": 1044,
+        "height": 100.65625,
+        "bottom": 316.671875,
+        "right": 1476
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true,
+      "blankComparisonScreenshot": "workroom-daily-master.png"
+    },
+    {
+      "layout": "desktop",
+      "sheet": "body",
+      "viewport": {
+        "width": 1500,
+        "height": 1000
+      },
+      "document": {
+        "width": 1500,
+        "height": 1000
+      },
+      "content": {
+        "x": 432,
+        "y": 319.109375,
+        "width": 1044,
+        "height": 607.890625,
+        "bottom": 927,
+        "right": 1476
+      },
+      "footer": {
+        "x": 24,
+        "y": 937,
+        "width": 1452,
+        "height": 53,
+        "bottom": 990,
+        "right": 1476
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1452,
+        "height": 133.015625,
+        "bottom": 149.015625,
+        "right": 1476
+      },
+      "tabs": {
+        "x": 24,
+        "y": 159.015625,
+        "width": 1452,
+        "height": 47,
+        "bottom": 206.015625,
+        "right": 1476
+      },
+      "context": {
+        "x": 24,
+        "y": 216.015625,
+        "width": 390,
+        "height": 710.984375,
+        "bottom": 927,
+        "right": 414
+      },
+      "toolbar": {
+        "x": 432,
+        "y": 216.015625,
+        "width": 1044,
+        "height": 95.09375,
+        "bottom": 311.109375,
+        "right": 1476
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 946,
+          "width": 80,
+          "height": 44,
+          "bottom": 990,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "laptop",
+      "sheet": "pattern",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 387.59375,
+        "y": 311.46875,
+        "width": 868.40625,
+        "height": 335.53125,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1232,
+        "height": 125.375,
+        "bottom": 141.375,
+        "right": 1256
+      },
+      "tabs": {
+        "x": 24,
+        "y": 151.375,
+        "width": 1232,
+        "height": 47,
+        "bottom": 198.375,
+        "right": 1256
+      },
+      "context": {
+        "x": 24,
+        "y": 208.375,
+        "width": 345.59375,
+        "height": 438.625,
+        "bottom": 647,
+        "right": 369.59375
+      },
+      "toolbar": {
+        "x": 387.59375,
+        "y": 208.375,
+        "width": 868.40625,
+        "height": 95.09375,
+        "bottom": 303.46875,
+        "right": 1256
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "laptop",
+      "sheet": "wash",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 387.59375,
+        "y": 317.03125,
+        "width": 868.40625,
+        "height": 329.96875,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1232,
+        "height": 125.375,
+        "bottom": 141.375,
+        "right": 1256
+      },
+      "tabs": {
+        "x": 24,
+        "y": 151.375,
+        "width": 1232,
+        "height": 47,
+        "bottom": 198.375,
+        "right": 1256
+      },
+      "context": {
+        "x": 24,
+        "y": 208.375,
+        "width": 345.59375,
+        "height": 438.625,
+        "bottom": 647,
+        "right": 369.59375
+      },
+      "toolbar": {
+        "x": 387.59375,
+        "y": 208.375,
+        "width": 868.40625,
+        "height": 100.65625,
+        "bottom": 309.03125,
+        "right": 1256
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "laptop",
+      "sheet": "fit",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 387.59375,
+        "y": 311.46875,
+        "width": 868.40625,
+        "height": 335.53125,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1232,
+        "height": 125.375,
+        "bottom": 141.375,
+        "right": 1256
+      },
+      "tabs": {
+        "x": 24,
+        "y": 151.375,
+        "width": 1232,
+        "height": 47,
+        "bottom": 198.375,
+        "right": 1256
+      },
+      "context": {
+        "x": 24,
+        "y": 208.375,
+        "width": 345.59375,
+        "height": 438.625,
+        "bottom": 647,
+        "right": 369.59375
+      },
+      "toolbar": {
+        "x": 387.59375,
+        "y": 208.375,
+        "width": 868.40625,
+        "height": 95.09375,
+        "bottom": 303.46875,
+        "right": 1256
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "laptop",
+      "sheet": "graded",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 387.59375,
+        "y": 317.03125,
+        "width": 868.40625,
+        "height": 329.96875,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1232,
+        "height": 125.375,
+        "bottom": 141.375,
+        "right": 1256
+      },
+      "tabs": {
+        "x": 24,
+        "y": 151.375,
+        "width": 1232,
+        "height": 47,
+        "bottom": 198.375,
+        "right": 1256
+      },
+      "context": {
+        "x": 24,
+        "y": 208.375,
+        "width": 345.59375,
+        "height": 438.625,
+        "bottom": 647,
+        "right": 369.59375
+      },
+      "toolbar": {
+        "x": 387.59375,
+        "y": 208.375,
+        "width": 868.40625,
+        "height": 100.65625,
+        "bottom": 309.03125,
+        "right": 1256
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "laptop",
+      "sheet": "master",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 387.59375,
+        "y": 364.90625,
+        "width": 868.40625,
+        "height": 282.09375,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1232,
+        "height": 125.375,
+        "bottom": 141.375,
+        "right": 1256
+      },
+      "tabs": {
+        "x": 24,
+        "y": 151.375,
+        "width": 1232,
+        "height": 47,
+        "bottom": 198.375,
+        "right": 1256
+      },
+      "context": {
+        "x": 24,
+        "y": 208.375,
+        "width": 345.59375,
+        "height": 438.625,
+        "bottom": 647,
+        "right": 369.59375
+      },
+      "toolbar": {
+        "x": 387.59375,
+        "y": 208.375,
+        "width": 868.40625,
+        "height": 148.53125,
+        "bottom": 356.90625,
+        "right": 1256
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "laptop",
+      "sheet": "body",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "document": {
+        "width": 1280,
+        "height": 720
+      },
+      "content": {
+        "x": 387.59375,
+        "y": 311.46875,
+        "width": 868.40625,
+        "height": 335.53125,
+        "bottom": 647,
+        "right": 1256
+      },
+      "footer": {
+        "x": 24,
+        "y": 657,
+        "width": 1232,
+        "height": 53,
+        "bottom": 710,
+        "right": 1256
+      },
+      "masthead": {
+        "x": 24,
+        "y": 16,
+        "width": 1232,
+        "height": 125.375,
+        "bottom": 141.375,
+        "right": 1256
+      },
+      "tabs": {
+        "x": 24,
+        "y": 151.375,
+        "width": 1232,
+        "height": 47,
+        "bottom": 198.375,
+        "right": 1256
+      },
+      "context": {
+        "x": 24,
+        "y": 208.375,
+        "width": 345.59375,
+        "height": 438.625,
+        "bottom": 647,
+        "right": 369.59375
+      },
+      "toolbar": {
+        "x": 387.59375,
+        "y": 208.375,
+        "width": 868.40625,
+        "height": 95.09375,
+        "bottom": 303.46875,
+        "right": 1256
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 24,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 104,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 109,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 189,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 194,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 274,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 279,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 359,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 364,
+          "y": 666,
+          "width": 80,
+          "height": 44,
+          "bottom": 710,
+          "right": 444,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "mobile",
+      "sheet": "pattern",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 378.421875,
+        "width": 374,
+        "height": 351.796875,
+        "bottom": 730.21875,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 736.21875,
+        "width": 374,
+        "height": 99.78125,
+        "bottom": 836,
+        "right": 382
+      },
+      "masthead": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 85.546875,
+        "bottom": 93.546875,
+        "right": 382
+      },
+      "tabs": {
+        "x": 8,
+        "y": 99.546875,
+        "width": 374,
+        "height": 47,
+        "bottom": 146.546875,
+        "right": 382
+      },
+      "context": {
+        "x": 8,
+        "y": 152.546875,
+        "width": 374,
+        "height": 82.09375,
+        "bottom": 234.640625,
+        "right": 382
+      },
+      "toolbar": {
+        "x": 8,
+        "y": 240.640625,
+        "width": 374,
+        "height": 132.78125,
+        "bottom": 373.421875,
+        "right": 382
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 79.59375,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 155.1875,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 230.796875,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 306.390625,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 381.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true,
+      "blankScreenshot": "workroom-daily-mobile.png"
+    },
+    {
+      "layout": "mobile",
+      "sheet": "wash",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 378.421875,
+        "width": 374,
+        "height": 351.796875,
+        "bottom": 730.21875,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 736.21875,
+        "width": 374,
+        "height": 99.78125,
+        "bottom": 836,
+        "right": 382
+      },
+      "masthead": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 85.546875,
+        "bottom": 93.546875,
+        "right": 382
+      },
+      "tabs": {
+        "x": 8,
+        "y": 99.546875,
+        "width": 374,
+        "height": 47,
+        "bottom": 146.546875,
+        "right": 382
+      },
+      "context": {
+        "x": 8,
+        "y": 152.546875,
+        "width": 374,
+        "height": 82.09375,
+        "bottom": 234.640625,
+        "right": 382
+      },
+      "toolbar": {
+        "x": 8,
+        "y": 240.640625,
+        "width": 374,
+        "height": 132.78125,
+        "bottom": 373.421875,
+        "right": 382
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 79.59375,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 155.1875,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 230.796875,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 306.390625,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 381.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "mobile",
+      "sheet": "fit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 378.421875,
+        "width": 374,
+        "height": 351.796875,
+        "bottom": 730.21875,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 736.21875,
+        "width": 374,
+        "height": 99.78125,
+        "bottom": 836,
+        "right": 382
+      },
+      "masthead": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 85.546875,
+        "bottom": 93.546875,
+        "right": 382
+      },
+      "tabs": {
+        "x": 8,
+        "y": 99.546875,
+        "width": 374,
+        "height": 47,
+        "bottom": 146.546875,
+        "right": 382
+      },
+      "context": {
+        "x": 8,
+        "y": 152.546875,
+        "width": 374,
+        "height": 82.09375,
+        "bottom": 234.640625,
+        "right": 382
+      },
+      "toolbar": {
+        "x": 8,
+        "y": 240.640625,
+        "width": 374,
+        "height": 132.78125,
+        "bottom": 373.421875,
+        "right": 382
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 79.59375,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 155.1875,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 230.796875,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 306.390625,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 381.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "mobile",
+      "sheet": "graded",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 393.421875,
+        "width": 374,
+        "height": 336.796875,
+        "bottom": 730.21875,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 736.21875,
+        "width": 374,
+        "height": 99.78125,
+        "bottom": 836,
+        "right": 382
+      },
+      "masthead": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 85.546875,
+        "bottom": 93.546875,
+        "right": 382
+      },
+      "tabs": {
+        "x": 8,
+        "y": 99.546875,
+        "width": 374,
+        "height": 47,
+        "bottom": 146.546875,
+        "right": 382
+      },
+      "context": {
+        "x": 8,
+        "y": 152.546875,
+        "width": 374,
+        "height": 82.09375,
+        "bottom": 234.640625,
+        "right": 382
+      },
+      "toolbar": {
+        "x": 8,
+        "y": 240.640625,
+        "width": 374,
+        "height": 147.78125,
+        "bottom": 388.421875,
+        "right": 382
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 79.59375,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 155.1875,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 230.796875,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 306.390625,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 381.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "mobile",
+      "sheet": "master",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 393.421875,
+        "width": 374,
+        "height": 336.796875,
+        "bottom": 730.21875,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 736.21875,
+        "width": 374,
+        "height": 99.78125,
+        "bottom": 836,
+        "right": 382
+      },
+      "masthead": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 85.546875,
+        "bottom": 93.546875,
+        "right": 382
+      },
+      "tabs": {
+        "x": 8,
+        "y": 99.546875,
+        "width": 374,
+        "height": 47,
+        "bottom": 146.546875,
+        "right": 382
+      },
+      "context": {
+        "x": 8,
+        "y": 152.546875,
+        "width": 374,
+        "height": 82.09375,
+        "bottom": 234.640625,
+        "right": 382
+      },
+      "toolbar": {
+        "x": 8,
+        "y": 240.640625,
+        "width": 374,
+        "height": 147.78125,
+        "bottom": 388.421875,
+        "right": 382
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 79.59375,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 155.1875,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 230.796875,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 306.390625,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 381.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "mobile",
+      "sheet": "body",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "content": {
+        "x": 8,
+        "y": 378.421875,
+        "width": 374,
+        "height": 351.796875,
+        "bottom": 730.21875,
+        "right": 382
+      },
+      "footer": {
+        "x": 8,
+        "y": 736.21875,
+        "width": 374,
+        "height": 99.78125,
+        "bottom": 836,
+        "right": 382
+      },
+      "masthead": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 85.546875,
+        "bottom": 93.546875,
+        "right": 382
+      },
+      "tabs": {
+        "x": 8,
+        "y": 99.546875,
+        "width": 374,
+        "height": 47,
+        "bottom": 146.546875,
+        "right": 382
+      },
+      "context": {
+        "x": 8,
+        "y": 152.546875,
+        "width": 374,
+        "height": 82.09375,
+        "bottom": 234.640625,
+        "right": 382
+      },
+      "toolbar": {
+        "x": 8,
+        "y": 240.640625,
+        "width": 374,
+        "height": 132.78125,
+        "bottom": 373.421875,
+        "right": 382
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 8,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 79.59375,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 83.59375,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 155.1875,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 159.1875,
+          "y": 742.21875,
+          "width": 71.609375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 230.796875,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 234.796875,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 306.390625,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 310.390625,
+          "y": 742.21875,
+          "width": 71.59375,
+          "height": 44,
+          "bottom": 786.21875,
+          "right": 381.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "narrow-phone",
+      "sheet": "pattern",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 360.828125,
+        "width": 310,
+        "height": 103.171875,
+        "bottom": 464,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 469,
+        "width": 310,
+        "height": 94,
+        "bottom": 563,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 6,
+        "width": 310,
+        "height": 82.140625,
+        "bottom": 88.140625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 93.140625,
+        "width": 310,
+        "height": 47,
+        "bottom": 140.140625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 145.140625,
+        "width": 310,
+        "height": 76,
+        "bottom": 221.140625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 227.140625,
+        "width": 310,
+        "height": 128.6875,
+        "bottom": 355.828125,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "narrow-phone",
+      "sheet": "wash",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 375.828125,
+        "width": 310,
+        "height": 88.171875,
+        "bottom": 464,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 469,
+        "width": 310,
+        "height": 94,
+        "bottom": 563,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 6,
+        "width": 310,
+        "height": 82.140625,
+        "bottom": 88.140625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 93.140625,
+        "width": 310,
+        "height": 47,
+        "bottom": 140.140625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 145.140625,
+        "width": 310,
+        "height": 76,
+        "bottom": 221.140625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 227.140625,
+        "width": 310,
+        "height": 143.6875,
+        "bottom": 370.828125,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "narrow-phone",
+      "sheet": "fit",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 360.828125,
+        "width": 310,
+        "height": 103.171875,
+        "bottom": 464,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 469,
+        "width": 310,
+        "height": 94,
+        "bottom": 563,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 6,
+        "width": 310,
+        "height": 82.140625,
+        "bottom": 88.140625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 93.140625,
+        "width": 310,
+        "height": 47,
+        "bottom": 140.140625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 145.140625,
+        "width": 310,
+        "height": 76,
+        "bottom": 221.140625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 227.140625,
+        "width": 310,
+        "height": 128.6875,
+        "bottom": 355.828125,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "narrow-phone",
+      "sheet": "graded",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 375.828125,
+        "width": 310,
+        "height": 88.171875,
+        "bottom": 464,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 469,
+        "width": 310,
+        "height": 94,
+        "bottom": 563,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 6,
+        "width": 310,
+        "height": 82.140625,
+        "bottom": 88.140625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 93.140625,
+        "width": 310,
+        "height": 47,
+        "bottom": 140.140625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 145.140625,
+        "width": 310,
+        "height": 76,
+        "bottom": 221.140625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 227.140625,
+        "width": 310,
+        "height": 143.6875,
+        "bottom": 370.828125,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "narrow-phone",
+      "sheet": "master",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 375.828125,
+        "width": 310,
+        "height": 88.171875,
+        "bottom": 464,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 469,
+        "width": 310,
+        "height": 94,
+        "bottom": 563,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 6,
+        "width": 310,
+        "height": 82.140625,
+        "bottom": 88.140625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 93.140625,
+        "width": 310,
+        "height": 47,
+        "bottom": 140.140625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 145.140625,
+        "width": 310,
+        "height": 76,
+        "bottom": 221.140625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 227.140625,
+        "width": 310,
+        "height": 143.6875,
+        "bottom": 370.828125,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "narrow-phone",
+      "sheet": "body",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "document": {
+        "width": 320,
+        "height": 568
+      },
+      "content": {
+        "x": 5,
+        "y": 375.828125,
+        "width": 310,
+        "height": 88.171875,
+        "bottom": 464,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 469,
+        "width": 310,
+        "height": 94,
+        "bottom": 563,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 6,
+        "width": 310,
+        "height": 82.140625,
+        "bottom": 88.140625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 93.140625,
+        "width": 310,
+        "height": 47,
+        "bottom": 140.140625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 145.140625,
+        "width": 310,
+        "height": 76,
+        "bottom": 221.140625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 227.140625,
+        "width": 310,
+        "height": 143.6875,
+        "bottom": 370.828125,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 474,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 518,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "landscape",
+      "sheet": "pattern",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "width": 490,
+        "height": 94.453125,
+        "bottom": 333,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 337,
+        "width": 812,
+        "height": 49,
+        "bottom": 386,
+        "right": 828
+      },
+      "masthead": {
+        "x": 16,
+        "y": 4,
+        "width": 812,
+        "height": 57.5625,
+        "bottom": 61.5625,
+        "right": 828
+      },
+      "tabs": {
+        "x": 16,
+        "y": 65.5625,
+        "width": 812,
+        "height": 47,
+        "bottom": 112.5625,
+        "right": 828
+      },
+      "context": {
+        "x": 16,
+        "y": 116.5625,
+        "width": 310,
+        "height": 216.4375,
+        "bottom": 333,
+        "right": 326
+      },
+      "toolbar": {
+        "x": 338,
+        "y": 116.5625,
+        "width": 490,
+        "height": 113.984375,
+        "bottom": 230.546875,
+        "right": 828
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 96,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 181,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 266,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 351,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 436,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "landscape",
+      "sheet": "wash",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "width": 490,
+        "height": 94.453125,
+        "bottom": 333,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 337,
+        "width": 812,
+        "height": 49,
+        "bottom": 386,
+        "right": 828
+      },
+      "masthead": {
+        "x": 16,
+        "y": 4,
+        "width": 812,
+        "height": 57.5625,
+        "bottom": 61.5625,
+        "right": 828
+      },
+      "tabs": {
+        "x": 16,
+        "y": 65.5625,
+        "width": 812,
+        "height": 47,
+        "bottom": 112.5625,
+        "right": 828
+      },
+      "context": {
+        "x": 16,
+        "y": 116.5625,
+        "width": 310,
+        "height": 216.4375,
+        "bottom": 333,
+        "right": 326
+      },
+      "toolbar": {
+        "x": 338,
+        "y": 116.5625,
+        "width": 490,
+        "height": 113.984375,
+        "bottom": 230.546875,
+        "right": 828
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 96,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 181,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 266,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 351,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 436,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "landscape",
+      "sheet": "fit",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "width": 490,
+        "height": 94.453125,
+        "bottom": 333,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 337,
+        "width": 812,
+        "height": 49,
+        "bottom": 386,
+        "right": 828
+      },
+      "masthead": {
+        "x": 16,
+        "y": 4,
+        "width": 812,
+        "height": 57.5625,
+        "bottom": 61.5625,
+        "right": 828
+      },
+      "tabs": {
+        "x": 16,
+        "y": 65.5625,
+        "width": 812,
+        "height": 47,
+        "bottom": 112.5625,
+        "right": 828
+      },
+      "context": {
+        "x": 16,
+        "y": 116.5625,
+        "width": 310,
+        "height": 216.4375,
+        "bottom": 333,
+        "right": 326
+      },
+      "toolbar": {
+        "x": 338,
+        "y": 116.5625,
+        "width": 490,
+        "height": 113.984375,
+        "bottom": 230.546875,
+        "right": 828
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 96,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 181,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 266,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 351,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 436,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "landscape",
+      "sheet": "graded",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "width": 490,
+        "height": 94.453125,
+        "bottom": 333,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 337,
+        "width": 812,
+        "height": 49,
+        "bottom": 386,
+        "right": 828
+      },
+      "masthead": {
+        "x": 16,
+        "y": 4,
+        "width": 812,
+        "height": 57.5625,
+        "bottom": 61.5625,
+        "right": 828
+      },
+      "tabs": {
+        "x": 16,
+        "y": 65.5625,
+        "width": 812,
+        "height": 47,
+        "bottom": 112.5625,
+        "right": 828
+      },
+      "context": {
+        "x": 16,
+        "y": 116.5625,
+        "width": 310,
+        "height": 216.4375,
+        "bottom": 333,
+        "right": 326
+      },
+      "toolbar": {
+        "x": 338,
+        "y": 116.5625,
+        "width": 490,
+        "height": 113.984375,
+        "bottom": 230.546875,
+        "right": 828
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 96,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 181,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 266,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 351,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 436,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "landscape",
+      "sheet": "master",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "width": 490,
+        "height": 94.453125,
+        "bottom": 333,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 337,
+        "width": 812,
+        "height": 49,
+        "bottom": 386,
+        "right": 828
+      },
+      "masthead": {
+        "x": 16,
+        "y": 4,
+        "width": 812,
+        "height": 57.5625,
+        "bottom": 61.5625,
+        "right": 828
+      },
+      "tabs": {
+        "x": 16,
+        "y": 65.5625,
+        "width": 812,
+        "height": 47,
+        "bottom": 112.5625,
+        "right": 828
+      },
+      "context": {
+        "x": 16,
+        "y": 116.5625,
+        "width": 310,
+        "height": 216.4375,
+        "bottom": 333,
+        "right": 326
+      },
+      "toolbar": {
+        "x": 338,
+        "y": 116.5625,
+        "width": 490,
+        "height": 113.984375,
+        "bottom": 230.546875,
+        "right": 828
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 96,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 181,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 266,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 351,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 436,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "landscape",
+      "sheet": "body",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "document": {
+        "width": 844,
+        "height": 390
+      },
+      "content": {
+        "x": 338,
+        "y": 238.546875,
+        "width": 490,
+        "height": 94.453125,
+        "bottom": 333,
+        "right": 828
+      },
+      "footer": {
+        "x": 16,
+        "y": 337,
+        "width": 812,
+        "height": 49,
+        "bottom": 386,
+        "right": 828
+      },
+      "masthead": {
+        "x": 16,
+        "y": 4,
+        "width": 812,
+        "height": 57.5625,
+        "bottom": 61.5625,
+        "right": 828
+      },
+      "tabs": {
+        "x": 16,
+        "y": 65.5625,
+        "width": 812,
+        "height": 47,
+        "bottom": 112.5625,
+        "right": 828
+      },
+      "context": {
+        "x": 16,
+        "y": 116.5625,
+        "width": 310,
+        "height": 216.4375,
+        "bottom": 333,
+        "right": 326
+      },
+      "toolbar": {
+        "x": 338,
+        "y": 116.5625,
+        "width": 490,
+        "height": 113.984375,
+        "bottom": 230.546875,
+        "right": 828
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 16,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 96,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 101,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 181,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 186,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 266,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 271,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 351,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 356,
+          "y": 342,
+          "width": 80,
+          "height": 44,
+          "bottom": 386,
+          "right": 436,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "short-phone",
+      "sheet": "pattern",
+      "viewport": {
+        "width": 320,
+        "height": 480
+      },
+      "document": {
+        "width": 320,
+        "height": 480
+      },
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "width": 310,
+        "height": 55.3125,
+        "bottom": 380.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 384.359375,
+        "width": 310,
+        "height": 91.640625,
+        "bottom": 476,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 4,
+        "width": 310,
+        "height": 69.5625,
+        "bottom": 73.5625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 77.5625,
+        "width": 310,
+        "height": 47,
+        "bottom": 124.5625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 128.5625,
+        "width": 310,
+        "height": 76,
+        "bottom": 204.5625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 210.5625,
+        "width": 310,
+        "height": 109.484375,
+        "bottom": 320.046875,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "short-phone",
+      "sheet": "wash",
+      "viewport": {
+        "width": 320,
+        "height": 480
+      },
+      "document": {
+        "width": 320,
+        "height": 480
+      },
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "width": 310,
+        "height": 55.3125,
+        "bottom": 380.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 384.359375,
+        "width": 310,
+        "height": 91.640625,
+        "bottom": 476,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 4,
+        "width": 310,
+        "height": 69.5625,
+        "bottom": 73.5625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 77.5625,
+        "width": 310,
+        "height": 47,
+        "bottom": 124.5625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 128.5625,
+        "width": 310,
+        "height": 76,
+        "bottom": 204.5625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 210.5625,
+        "width": 310,
+        "height": 109.484375,
+        "bottom": 320.046875,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "short-phone",
+      "sheet": "fit",
+      "viewport": {
+        "width": 320,
+        "height": 480
+      },
+      "document": {
+        "width": 320,
+        "height": 480
+      },
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "width": 310,
+        "height": 55.3125,
+        "bottom": 380.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 384.359375,
+        "width": 310,
+        "height": 91.640625,
+        "bottom": 476,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 4,
+        "width": 310,
+        "height": 69.5625,
+        "bottom": 73.5625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 77.5625,
+        "width": 310,
+        "height": 47,
+        "bottom": 124.5625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 128.5625,
+        "width": 310,
+        "height": 76,
+        "bottom": 204.5625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 210.5625,
+        "width": 310,
+        "height": 109.484375,
+        "bottom": 320.046875,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "short-phone",
+      "sheet": "graded",
+      "viewport": {
+        "width": 320,
+        "height": 480
+      },
+      "document": {
+        "width": 320,
+        "height": 480
+      },
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "width": 310,
+        "height": 55.3125,
+        "bottom": 380.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 384.359375,
+        "width": 310,
+        "height": 91.640625,
+        "bottom": 476,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 4,
+        "width": 310,
+        "height": 69.5625,
+        "bottom": 73.5625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 77.5625,
+        "width": 310,
+        "height": 47,
+        "bottom": 124.5625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 128.5625,
+        "width": 310,
+        "height": 76,
+        "bottom": 204.5625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 210.5625,
+        "width": 310,
+        "height": 109.484375,
+        "bottom": 320.046875,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "short-phone",
+      "sheet": "master",
+      "viewport": {
+        "width": 320,
+        "height": 480
+      },
+      "document": {
+        "width": 320,
+        "height": 480
+      },
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "width": 310,
+        "height": 55.3125,
+        "bottom": 380.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 384.359375,
+        "width": 310,
+        "height": 91.640625,
+        "bottom": 476,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 4,
+        "width": 310,
+        "height": 69.5625,
+        "bottom": 73.5625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 77.5625,
+        "width": 310,
+        "height": 47,
+        "bottom": 124.5625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 128.5625,
+        "width": 310,
+        "height": 76,
+        "bottom": 204.5625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 210.5625,
+        "width": 310,
+        "height": 109.484375,
+        "bottom": 320.046875,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    },
+    {
+      "layout": "short-phone",
+      "sheet": "body",
+      "viewport": {
+        "width": 320,
+        "height": 480
+      },
+      "document": {
+        "width": 320,
+        "height": 480
+      },
+      "content": {
+        "x": 5,
+        "y": 325.046875,
+        "width": 310,
+        "height": 55.3125,
+        "bottom": 380.359375,
+        "right": 315
+      },
+      "footer": {
+        "x": 5,
+        "y": 384.359375,
+        "width": 310,
+        "height": 91.640625,
+        "bottom": 476,
+        "right": 315
+      },
+      "masthead": {
+        "x": 5,
+        "y": 4,
+        "width": 310,
+        "height": 69.5625,
+        "bottom": 73.5625,
+        "right": 315
+      },
+      "tabs": {
+        "x": 5,
+        "y": 77.5625,
+        "width": 310,
+        "height": 47,
+        "bottom": 124.5625,
+        "right": 315
+      },
+      "context": {
+        "x": 5,
+        "y": 128.5625,
+        "width": 310,
+        "height": 76,
+        "bottom": 204.5625,
+        "right": 315
+      },
+      "toolbar": {
+        "x": 5,
+        "y": 210.5625,
+        "width": 310,
+        "height": 109.484375,
+        "bottom": 320.046875,
+        "right": 315
+      },
+      "primary": [
+        {
+          "id": "save-pack",
+          "x": 5,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 63.796875,
+          "disabled": false
+        },
+        {
+          "id": "toggle-style-panel",
+          "x": 67.796875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 126.59375,
+          "disabled": false
+        },
+        {
+          "id": "undo-edit",
+          "x": 130.59375,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 189.390625,
+          "disabled": true
+        },
+        {
+          "id": "redo-edit",
+          "x": 193.390625,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 252.1875,
+          "disabled": true
+        },
+        {
+          "id": "export-menu-toggle",
+          "x": 256.1875,
+          "y": 389.359375,
+          "width": 58.796875,
+          "height": 44,
+          "bottom": 433.359375,
+          "right": 314.984375,
+          "disabled": false
+        }
+      ],
+      "font": "\"Barlow Condensed\", Arial, sans-serif",
+      "sealLoaded": true
+    }
+  ],
+  "workflows": {
+    "approvedReferenceReadonlyExactAndUnitConversion": true,
+    "sharedStyleInheritanceAndExplicitOverrides": true,
+    "fractionalInchesCanonicalAndSignedDelta": true,
+    "invalidRawNeverAutosaved": true,
+    "inlineErrorClearsAfterCorrection": true,
+    "invalidInputBlocksNavigation": true,
+    "undoAndRedo": true,
+    "pastePreviewBeforeMutation": true,
+    "pasteAtomicValidAndInvalidRectangles": true,
+    "calculatedColumnsSkippedDuringPaste": true,
+    "staleUnitPasteRejected": true,
+    "columnViewIsPresentationOnly": true,
+    "immutableNamedRevisions": true,
+    "revisionComparison": true,
+    "restoreRequiresConfirmationAndBackup": true,
+    "autosaveAndReloadRecovery": true,
+    "distinctWashFormulaZeroAndMissing": true,
+    "manualSourceDeltaCellsPreserved": true,
+    "gradedSizeHeaderUpdates": true,
+    "imagesStoredAsOriginalBlobs": true,
+    "portableJsonRasterRoundtrip": true,
+    "invalidImportDoesNotReplaceDraft": true,
+    "newBlankKeepsPriorSavedPacks": true,
+    "reopenedDraftHydratesOriginalImages": true,
+    "jsonImportAcceptsNewPackIdentity": true,
+    "csvAllRowsAllColumnsAndFormulaSafety": true,
+    "currentPrint": {
+      "pages": 2,
+      "tableWidths": [
+        {
+          "width": 1500,
+          "available": 1500
+        }
+      ],
+      "rows": 30,
+      "tableColumns": {
+        "specs": 12
+      }
+    },
+    "allSheetPrint": {
+      "rows": 190,
+      "pages": 13,
+      "tableWidths": [
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        },
+        {
+          "width": 1500,
+          "available": 1500
+        }
+      ],
+      "tableColumns": {
+        "pieces": 3,
+        "lining": 3,
+        "templates": 3,
+        "grading": 3,
+        "measurements": 13,
+        "before": 15,
+        "after": 15,
+        "specs": 12,
+        "referenceNotes": 7
+      }
+    },
+    "printPreservesSearchAndColumnView": true,
+    "legacyV1MigratesPerRecord": true,
+    "incompatibleLegacyIsolatedAndDownloadable": true,
+    "originalLegacyBytesUnchanged": true,
+    "migrationDoesNotOverwriteNewerDraft": true,
+    "recoveryReloadIsIdempotent": true,
+    "asyncSwitchSaveProtectsNewerEdits": true,
+    "asyncOpenReadProtectsNewerEdits": true,
+    "cancelledAsyncRestoreProtectsNewerEdits": true,
+    "unavailableStorageKeepsPortableJsonBackup": true
+  },
+  "issues": [],
+  "publicationBoundary": "Screenshots show pristine blank templates only. Synthetic projects, original recovery bytes, downloads and filled PDFs are not published.",
+  "sourceIntegrity": {
+    "baselineCommit": "e4affb1c3f69b50fddb392bafaf8a305b816fee5",
+    "unchangedFiles": [
+      "design/brand-tokens.json",
+      "data/house-fit-forms/SR-FORM-001.v1.json",
+      "data/house-fit-forms/SR-FORM-001-methods.v1.json",
+      "data/templates/tech-pack-workbook.v1.json",
+      "data/templates/tech-pack-workbook-source.v1.json",
+      "assets/house-sheet/mannequin-front.jpg",
+      "assets/house-sheet/mannequin-back.jpg",
+      "assets/house-sheet/serpentis-regina-seal.png",
+      "assets/house-sheet/fonts/barlow-condensed-500.ttf",
+      "assets/house-sheet/fonts/barlow-condensed-700.ttf",
+      "sheet-web/matte-grain.svg"
+    ]
+  },
+  "passed": true,
+  "buildSha256": "3d6808466f2492f70fe4868d9f1486daafc9e731a3c83dd970cc4dfac70f6115",
+  "screenshots": [
+    {
+      "filename": "workroom-daily-desktop.png",
+      "sha256": "57d8381e82b94b9f6c6c0d968f914b036298c1a218c519a13721c6e9eb241080",
+      "bytes": 190232
+    },
+    {
+      "filename": "workroom-daily-master.png",
+      "sha256": "30f5559e9079c75c9f245adf6372dff12c0a71a89e2422af29e6ebbe24e3316b",
+      "bytes": 219204
+    },
+    {
+      "filename": "workroom-daily-mobile.png",
+      "sha256": "596c2cce5614780d2964ef06e1f88b8870f4652e07560c992bf33cda4c68a63a",
+      "bytes": 68920
+    },
+    {
+      "filename": "workroom-daily-style.png",
+      "sha256": "25781c57beec33cad675592064026f181dd7755b626878c6b3cdd02192606d7a",
+      "bytes": 383009
+    }
+  ]
+}
