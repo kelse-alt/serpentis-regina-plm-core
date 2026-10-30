@@ -2,16 +2,16 @@
 
 // Only the public shell is cached. Working records remain in the app's existing
 // IndexedDB/local storage; neither uploaded images nor API responses enter here.
-const APP_VERSION = "0.7.2";
-const BUILD_ID = "f67db7f9290ff7c1cac09adda060307b63d07bf32c2a7dc1a380857ec6bdafd2";
+const APP_VERSION = "0.8.0";
+const BUILD_ID = "5eb4cbdd1caf5777016a43c93c3c7162da7e949da08138fcaa29a46a613f128b";
 const PRECACHE = [
   {
     "path": "index.html",
-    "sha256": "bbcd02d6320171e080ad5d4fc623ca206c451b910fb6b3737df5c781d15cef83"
+    "sha256": "18c65ea915c28181db1b5097c234583f62b20f146f27f224b9c14ff4bac036a2"
   },
   {
     "path": "client-intake.html",
-    "sha256": "f8e0fcccde7ba6bd7ed31c6b3335fb1bbaefc77741fb3f3f7d2af749f899c035"
+    "sha256": "d20992b5a4b5101728b9dd4c3bb037684a64fc2c0d2c925aee6f62aa91db730e"
   },
   {
     "path": "pwa.js",

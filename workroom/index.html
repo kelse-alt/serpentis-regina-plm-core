@@ -571,7 +571,111 @@ div.paste-table, .revision-diff-wrap { min-width:0; max-height:52dvh; overflow:a
  .sheet-actions > .column-view { display:none!important; }
  .mobile-column-view:not([hidden]) { display:flex; margin:12px 0; }
 }
-</style><meta name="theme-color" content="#101820"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="SR Workroom"><meta name="workroom-app-version" content="0.7.2"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/apple-touch-icon.png"><style id="workroom-pwa-css">/* Hosted-app additions only. The standalone sheets retain their original CSS. */
+
+/* Imported garment components keep source definitions separate from local development. */
+.development-view { min-width:0; color:var(--ash-ink); }
+.development-toolbar { display:grid; grid-template-columns:minmax(180px,1.35fr) minmax(150px,1fr) minmax(130px,.8fr); align-items:end; gap:10px 12px; min-width:0; margin:0 0 12px; }
+.development-toolbar .field { margin:0; }
+.development-toolbar .development-round { grid-column:1 / 2; }
+.development-toolbar .development-sample-notes { grid-column:2 / -1; }
+.development-toolbar select, .development-toolbar input { width:100%; min-width:0; max-width:100%; }
+.development-sample-add { display:flex; flex-wrap:wrap; align-items:end; gap:8px; min-width:0; margin:0 0 12px; }
+.development-sample-add .field { flex:1 1 190px; }
+.development-sample-add button { flex:0 0 auto; min-height:44px; }
+.development-summary { display:flex; flex-wrap:wrap; gap:5px 16px; min-width:0; margin:10px 0; padding:9px 11px; border:1px solid var(--ash-line); color:var(--ash-ink); font-size:15px; line-height:1.35; }
+.development-summary p { margin:0; }
+.development-summary strong { color:var(--ash-ink); }
+.development-notice, .development-approval-note { margin:10px 0; padding:9px 11px; border-left:3px solid var(--ash-line); color:var(--ash-ink); font-size:15px; line-height:1.4; overflow-wrap:anywhere; }
+.development-notice p, .development-approval-note p { margin:0; }
+.development-notice p + p, .development-approval-note p + p { margin-top:6px; }
+.development-approval-note { font-weight:700; }
+.development-table { min-width:1960px; }
+.development-table [data-dev-column=code] { width:95px; }
+.development-table [data-dev-column=description] { width:400px; }
+.development-table [data-dev-column=method] { width:330px; }
+.development-table [data-dev-column=target], .development-table [data-dev-column=toleranceMinus], .development-table [data-dev-column=tolerancePlus], .development-table [data-dev-column=actual], .development-table [data-dev-column=delta] { width:115px; }
+.development-table [data-dev-column=assessment] { width:170px; }
+.development-table [data-dev-column=proposedAdjustment] { width:155px; }
+.development-table [data-dev-column=proposedTarget] { width:125px; }
+.development-table [data-dev-column=notes] { width:240px; }
+.development-table tbody th.sticky-code, .development-observations tbody th.sticky-code { position:sticky; left:0; z-index:1; background:var(--obsidian); color:var(--ash-ink); }
+.development-table .development-method, .development-observations .development-method { margin:0; white-space:pre-wrap; color:var(--ash-ink); font-size:17px; line-height:1.4; }
+.development-table .measure-label { display:block; margin:0; white-space:pre-wrap; }
+.development-table input { font-variant-numeric:tabular-nums; }
+.development-table input[data-dev-field], .development-table input[data-dev-observation] { text-align:right; font-weight:700; }
+.development-table output, .development-observations output { text-align:right; }
+.development-assessment { display:block; min-height:44px; padding:8px 3px; color:var(--ash-ink); font-size:16px; line-height:1.35; }
+.development-source-context { min-width:0; margin:12px 0; padding:10px 12px; border:1px solid var(--ash-line); color:var(--ash-ink); font-size:14px; line-height:1.4; overflow-wrap:anywhere; }
+.development-source-context > summary { min-height:44px; padding:9px 0; font-size:16px; font-weight:700; cursor:pointer; }
+.development-source-context p { margin:6px 0; }
+.development-source-context dl { display:grid; grid-template-columns:max-content minmax(0,1fr); gap:5px 12px; margin:8px 0; }
+.development-source-context dt { font-weight:700; }
+.development-source-context dd { min-width:0; margin:0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.development-observation-context { margin:12px 0 6px; color:var(--ash-ink); font-size:17px; font-weight:700; line-height:1.35; overflow-wrap:anywhere; }
+.development-observations { min-width:1180px; }
+.development-observations th:first-child { width:95px; }
+.development-observations th:nth-child(2) { width:240px; }
+.development-observations th:last-child { width:160px; }
+.development-print-component { min-width:0; }
+.development-print-component + .development-print-component { margin-top:22px; }
+.workbook-preview { min-width:0; color:var(--ash-ink); }
+.workbook-preview-summary, .workbook-preview-warning { margin:12px 0; padding:10px 12px; border:1px solid var(--ash-line); color:var(--ash-ink); font-size:16px; line-height:1.4; overflow-wrap:anywhere; }
+.workbook-preview-summary p, .workbook-preview-warning p { margin:0; }
+.workbook-preview-summary p + p, .workbook-preview-warning p + p { margin-top:6px; }
+.workbook-preview-warning { border-left-width:3px; }
+.workbook-preview-list { display:grid; gap:12px; min-width:0; margin:12px 0; padding:0; list-style:none; }
+.workbook-preview-list > li, .workbook-preview-list > article { min-width:0; border:1px solid var(--ash-line); }
+.workbook-preview-list h3, .workbook-preview-list h4 { margin:0; padding:9px 11px; color:var(--ruby); background:var(--electric); font-size:19px; line-height:1.3; }
+.workbook-preview-list p { margin:8px 11px; color:var(--ash-ink); font-size:15px; line-height:1.4; overflow-wrap:anywhere; }
+.workbook-preview-list ul { margin:8px 11px; padding-left:20px; font-size:15px; line-height:1.4; }
+.workbook-preview-list .table-wrap { margin:10px; }
+@media screen and (max-width:980px) {
+ .development-toolbar { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .development-toolbar > :first-child { grid-column:1 / -1; }
+ .development-toolbar .development-round { grid-column:1; }
+ .development-toolbar .development-sample-notes { grid-column:2; }
+}
+@media screen and (max-width:740px) {
+ .development-toolbar { gap:8px; margin-bottom:10px; }
+ .development-sample-add { gap:6px; }
+ .development-sample-add .field { flex-basis:145px; }
+ .development-sample-add button { padding:8px; font-size:15px; }
+ .development-summary { gap:4px 12px; padding:8px; font-size:14px; }
+ .development-notice, .development-approval-note { padding:8px; font-size:14px; }
+ .development-source-context { padding:8px; }
+ .development-source-context dl { grid-template-columns:minmax(0,1fr); gap:3px; }
+ .development-source-context dd + dt { margin-top:6px; }
+ .development-table .development-method, .development-observations .development-method { font-size:16px; }
+ .workbook-preview-summary, .workbook-preview-warning { padding:8px; font-size:15px; }
+ .workbook-preview-list { gap:10px; }
+ .workbook-preview-list h3, .workbook-preview-list h4 { padding:8px; font-size:18px; }
+ .workbook-preview-list p { margin:8px; font-size:14px; }
+}
+@media print {
+ .print-view .development-toolbar, .print-view .development-sample-add { display:none!important; }
+ .print-view .development-summary { gap:3px 12px; margin:6px 0; padding:6px 8px; font-size:10px; break-inside:avoid; }
+ .print-view .development-notice, .print-view .development-approval-note { margin:6px 0; padding:5px 8px; font-size:10px; break-inside:avoid; }
+ .print-view .development-table, .print-view .development-observations { min-width:0!important; }
+ .print-view .development-table [data-dev-column], .print-view .development-observations th { width:auto; }
+ .print-view .development-table [data-dev-column=code] { width:6%; }
+ .print-view .development-table [data-dev-column=description] { width:30%; }
+ .print-view .development-table [data-dev-column=method] { width:25%; }
+ .print-view .development-table [data-dev-column=assessment] { width:11%; }
+ .print-view .development-table [data-dev-column=proposedAdjustment] { width:9%; }
+ .print-view .development-table [data-dev-column=proposedTarget] { width:9%; }
+ .print-view .development-table [data-dev-column=notes] { width:18%; }
+ .print-view .development-table tbody th.sticky-code, .print-view .development-observations tbody th.sticky-code { position:static; box-shadow:none; }
+ .print-view .development-table .development-method, .print-view .development-observations .development-method { font-size:10px; line-height:1.35; }
+ .print-view .development-assessment { min-height:0; padding:2px 0; font-size:10px; }
+ .print-view .development-source-context { margin:6px 0; padding:5px 8px; font-size:10px; }
+ .print-view .development-source-context > summary { min-height:0; padding:3px 0; font-size:12px; }
+ .print-view .development-source-context dl { gap:3px 8px; margin:5px 0; }
+ .print-view .development-source-context p { margin:4px 0; }
+ .print-view .development-observation-context { margin:10px 0 5px; font-size:12px; break-after:avoid; }
+ .print-view .development-print-component + .development-print-component { margin-top:14px; break-before:page; page-break-before:always; }
+ .print-view .workbook-preview-summary, .print-view .workbook-preview-warning { margin:6px 0; padding:5px 8px; font-size:10px; }
+}
+</style><meta name="theme-color" content="#101820"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="SR Workroom"><meta name="workroom-app-version" content="0.8.0"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/apple-touch-icon.png"><style id="workroom-pwa-css">/* Hosted-app additions only. The standalone sheets retain their original CSS. */
 #pwa-info-dialog { width:min(94vw,580px); max-height:90dvh; min-width:0; overflow:auto; overscroll-behavior:contain; padding:16px; border:1px solid var(--ash-line); background:var(--obsidian); color:var(--ash-ink); font:inherit; }
 #pwa-info-dialog::backdrop { background:var(--obsidian); opacity:.85; }
 #pwa-info-dialog h2 { margin:0; font-size:26px; }
@@ -607,17 +711,335 @@ div.paste-table, .revision-diff-wrap { min-width:0; max-height:52dvh; overflow:a
 <details id="recovery-panel" class="recovery-panel" hidden><summary>Older pack recovery</summary><p>Other valid packs are available. These entries could not be opened; download their original data for recovery.</p><div id="recovery-list"></div></details>
 <label class="field mobile-column-view" id="context-column-view-label" hidden><span>Working columns</span><select id="context-column-view"><option value="full">Full worksheet</option><option value="comparison">Compare measurements</option></select></label>
 <section class="form-section"><h3>Units & records</h3><p id="unit-guidance">Choose CM or IN before entering garment measurements. Fractional inches such as 24 3/8 are supported. Stored garment values remain canonical CM.</p><p>House reference: approved SR-FORM-001, canonical inches. Body references, garment specifications and client intake remain separate records.</p><a href="client-intake.html">Open client intake</a></section>
-<details class="source-note"><summary>Workbook & local storage</summary><a href="https://docs.google.com/spreadsheets/d/1yXo2dRFUFBJXT7fQlsxJkoWVH5pfSSQn/edit" target="_blank" rel="noopener">Original six-tab workbook</a><p>The workbook is unchanged. New packs have blank garment tables; original examples and formulas remain in sheet source notes.</p><p>Autosave and revisions stay in this browser on this device. Download JSON for a portable pack backup. No account or shared-device synchronization is implied.</p></details>
+<details class="source-note"><summary>Workbook & local storage</summary><a href="https://docs.google.com/spreadsheets/d/1yXo2dRFUFBJXT7fQlsxJkoWVH5pfSSQn/edit" target="_blank" rel="noopener">Original source workbook</a><p>The workbook is unchanged. New packs have blank garment tables; original examples and formulas remain in sheet source notes. Import a component XLSX from Export & files to review its authored garment POMs.</p><p>Autosave and revisions stay in this browser on this device. Download JSON for a portable pack backup. No account or shared-device synchronization is implied.</p></details>
 </div></details>
 <section class="sheet-panel" role="tabpanel" id="working-panel" aria-labelledby="tab-pattern"><div class="sheet-toolbar"><div><h2 id="sheet-title">PATTERN CARD</h2><p id="sheet-note"></p></div><div class="sheet-actions"><label class="field search-field"><span>Find a row</span><input type="search" id="sheet-search" placeholder="POM, piece or description…" aria-controls="sheet-content"></label><button id="clear-search" type="button">Clear search</button><label class="field column-view" id="column-view-label" hidden><span>Columns</span><select id="column-view"><option value="full">Full worksheet</option><option value="comparison">Compare measurements</option></select></label><label class="field unit-field"><span id="unit-label">Garment unit</span><select id="pack-unit"><option value="">Choose unit</option><option value="cm">CM</option><option value="in">IN</option></select></label></div><p id="row-status" role="status" aria-live="polite"></p></div><div id="sheet-content" class="sheet-content" tabindex="0" role="region" aria-label="Working sheet; scroll to view all fields"></div></section></div>
 <footer class="app-footer"><div class="actions footer-actions"><button id="save-pack" type="button">Save</button><button id="toggle-style-panel" type="button" aria-controls="context-panel" aria-expanded="true">Hide style</button><button id="undo-edit" type="button" disabled>Undo</button><button id="redo-edit" type="button" disabled>Redo</button><button id="export-menu-toggle" type="button" aria-haspopup="dialog">Export</button></div><p id="footer-save-state" role="status" aria-live="polite">Opening local drafts…</p><p id="status" role="status" aria-live="polite">Work stays on this device. Keep a JSON backup for transfer or recovery.</p></footer>
-</main><input type="file" id="json-file" accept="application/json,.json" hidden><div id="print-view" class="print-view" aria-hidden="true"></div>
-<dialog id="export-dialog" aria-labelledby="export-title"><div class="dialog-heading"><h2 id="export-title">Export & files</h2><button id="close-export" type="button" autofocus>Close</button></div><div class="export-grid"><button id="export-json" type="button">Download pack JSON</button><button id="import-json" type="button">Import JSON</button><button id="export-csv" type="button">Sheet CSV</button><label class="field print-scope"><span>Print scope</span><select id="print-scope"><option value="current">Current sheet</option><option value="all">All six sheets</option></select></label><button id="print-pack" type="button">Print / PDF</button><button id="new-pack" type="button">New blank pack</button></div><p>JSON includes original attached images. CSV includes every row of the current sheet. Printing includes complete worksheets, regardless of search or column view.</p></dialog>
+</main><input type="file" id="json-file" accept="application/json,.json" hidden><input type="file" id="workbook-file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden><div id="print-view" class="print-view" aria-hidden="true"></div>
+<dialog id="export-dialog" aria-labelledby="export-title"><div class="dialog-heading"><h2 id="export-title">Export & files</h2><button id="close-export" type="button" autofocus>Close</button></div><div class="export-grid"><button id="export-json" type="button">Download pack JSON</button><button id="import-json" type="button">Import JSON</button><button id="import-workbook" type="button">Import component workbook (.xlsx)</button><button id="export-csv" type="button">Sheet CSV</button><label class="field print-scope"><span>Print scope</span><select id="print-scope"><option value="current">Current sheet</option><option value="all">All worksheets</option></select></label><button id="print-pack" type="button">Print / PDF</button><button id="new-pack" type="button">New blank pack</button></div><p>JSON includes the current imported source cells and original attached images. CSV includes every row of the current sheet. Component CSV and print include every component and all entered sample/side observations. Printing ignores search and column view.</p></dialog>
+<dialog id="workbook-dialog" aria-labelledby="workbook-title"><div class="dialog-heading"><h2 id="workbook-title">Review component workbook import</h2><button id="cancel-workbook" type="button" autofocus>Cancel</button></div><div id="workbook-preview"></div><label class="field"><span><input type="checkbox" id="workbook-style-defaults"> Fill blank shared style fields from this workbook</span></label><p id="workbook-style-preview"></p><p>Source measurements and formulas stay in local source notes. Working targets, tolerance limits and proposed adjustments are not filled automatically. New sample measurements are entered separately after you choose CM or IN.</p><section id="workbook-backup" hidden><h3>Keep the earlier workbook source</h3><p>Local recovery storage is unavailable. Download the current pack, including its earlier source cells, before replacing that source.</p><button id="download-workbook-backup" type="button">Download current pack backup</button><p id="workbook-backup-status" role="status"></p><label class="field"><span><input type="checkbox" id="confirm-workbook-backup"> I have kept the downloaded JSON backup</span></label></section><button id="apply-workbook" type="button">Apply reviewed component import</button><p id="workbook-error" role="alert"></p></dialog>
 <dialog id="paste-dialog" aria-labelledby="paste-title"><div class="dialog-heading"><h2 id="paste-title">Review spreadsheet paste</h2><button id="cancel-paste" type="button" autofocus>Cancel</button></div><p id="paste-summary" class="paste-summary"></p><p id="paste-errors" class="paste-errors" role="alert"></p><div id="paste-preview"></div><button id="apply-paste" type="button">Apply paste</button><button id="paste-single" type="button" hidden>Keep text in this cell</button></dialog>
 <dialog id="revision-dialog" aria-labelledby="revision-title"><div class="dialog-heading"><h2 id="revision-title">Revision comparison</h2><button id="close-revision" type="button" autofocus>Close</button></div><p id="revision-summary"></p><div id="revision-diff" class="revision-diff"></div><button id="confirm-restore" type="button" hidden>Restore this revision</button></dialog>
 <dialog id="image-dialog" aria-labelledby="image-title"><div class="dialog-heading"><h2 id="image-title">Reference image</h2><button id="close-image" type="button" autofocus>Close image</button></div><img id="large-image" alt=""><p>Original image · Press Escape to close.</p></dialog><script type="module">const WORKBOOK_DATA = {"template":{"id":"SR-TECH-PACK-002","version":1,"title":"Serpentis Regina · Tech pack workroom","sourceUrl":"https://docs.google.com/spreadsheets/d/1yXo2dRFUFBJXT7fQlsxJkoWVH5pfSSQn/edit","sheets":[{"id":"pattern","title":"PATTERN CARD","shortTitle":"Pattern card","note":"Piece quantities, pattern references, release notes and template grading.","fields":[{"key":"style","label":"Style / Pattern No.","sourceCell":"A1"},{"key":"styleNumber","label":"Style #","sourceCell":"G1"},{"key":"size","label":"Size","sourceCell":"G4"},{"key":"fabric","label":"Fabric","sourceCell":"G5"},{"key":"roll","label":"Roll #","sourceCell":"G5"},{"key":"date","label":"Date","sourceCell":"G6","inputType":"date"},{"key":"wash","label":"Wash","sourceCell":"G6"},{"key":"reference","label":"REF.","sourceCell":"G7"},{"key":"delivery","label":"Del.","sourceCell":"G8"},{"key":"marker","label":"MARKER RELEASE","sourceCell":"F32","multiline":true},{"key":"gradedRevision","label":"GRADED SPECS / REVISION","sourceCell":"F33","multiline":true},{"key":"patternStatus","label":"PATTERN CHECK / FILE STATUS","sourceCell":"F35","multiline":true},{"key":"trim","label":"THREAD & TRIM — SEE TECH PACK","sourceCell":"F37:J47","multiline":true},{"key":"breakdown","label":"BREAKDOWN","sourceCell":"B39:D40","multiline":true},{"key":"placement","label":"PLACEMENT","sourceCell":"B42:D42","multiline":true}],"attachments":[{"key":"reference","label":"Pattern reference / sketch","sourceRange":"F9:J30"}],"tables":[{"id":"pieces","title":"Pattern pieces","columns":[{"key":"qty","label":"Qty","type":"number"},{"key":"piece","label":"Piece Name","type":"text"},{"key":"sourceE","label":"Unlabelled column E","type":"text"}],"rows":[{"id":"1","sourceRow":7,"values":{}},{"id":"2","sourceRow":8,"values":{}},{"id":"3","sourceRow":9,"values":{}},{"id":"4","sourceRow":10,"values":{}},{"id":"5","sourceRow":11,"values":{}},{"id":"6","sourceRow":12,"values":{}},{"id":"7","sourceRow":13,"values":{}},{"id":"8","sourceRow":14,"values":{}},{"id":"9","sourceRow":15,"values":{}},{"id":"10","sourceRow":16,"values":{}},{"id":"11","sourceRow":17,"values":{}},{"id":"12","sourceRow":18,"values":{}},{"id":"13","sourceRow":19,"values":{}},{"id":"14","sourceRow":20,"values":{}}],"note":"The source leaves column E unlabelled; its meaning remains open."},{"id":"lining","title":"LINING","columns":[{"key":"qty","label":"Qty","type":"number"},{"key":"piece","label":"Piece Name","type":"text"},{"key":"sourceE","label":"Unlabelled column E","type":"text"}],"rows":[{"id":"1","sourceRow":22,"values":{}},{"id":"2","sourceRow":23,"values":{}},{"id":"3","sourceRow":24,"values":{}},{"id":"4","sourceRow":25,"values":{}},{"id":"5","sourceRow":26,"values":{}}],"note":"The source leaves column E unlabelled; its meaning remains open."},{"id":"templates","title":"TEMPLATES","columns":[{"key":"qty","label":"Qty","type":"number"},{"key":"piece","label":"Piece Name","type":"text"},{"key":"sourceE","label":"Unlabelled column E","type":"text"}],"rows":[{"id":"1","sourceRow":28,"values":{}},{"id":"2","sourceRow":29,"values":{}},{"id":"3","sourceRow":30,"values":{}},{"id":"4","sourceRow":31,"values":{}},{"id":"5","sourceRow":32,"values":{}},{"id":"6","sourceRow":33,"values":{}},{"id":"7","sourceRow":34,"values":{}},{"id":"8","sourceRow":35,"values":{}},{"id":"9","sourceRow":36,"values":{}},{"id":"10","sourceRow":37,"values":{}}],"note":"The source leaves column E unlabelled; its meaning remains open."},{"id":"grading","title":"TEMPLATE GRADING","columns":[{"key":"size","label":"SIZE","type":"text"},{"key":"details","label":"Template grading","type":"text"},{"key":"sourceE","label":"Unlabelled column E","type":"text"}],"rows":[{"id":"1","sourceRow":45,"values":{}},{"id":"2","sourceRow":46,"values":{}},{"id":"3","sourceRow":47,"values":{}}]}]},{"id":"wash","title":"BW-AW-SPEC","shortTitle":"Wash specs","note":"Two sample rounds. Delta = Target − After Wash; blank inputs leave the delta blank.","fields":[{"key":"style","label":"STYLE #","sourceCell":""},{"key":"stage","label":"STAGE","sourceCell":""},{"key":"refPattern","label":"Ref Pattern","sourceCell":""},{"key":"description","label":"Description","sourceCell":""},{"key":"fabric","label":"Fabric","sourceCell":""},{"key":"roll","label":"Roll #","sourceCell":""},{"key":"wash","label":"Wash","sourceCell":""},{"key":"measurements","label":"Measurements","sourceCell":""},{"key":"width","label":"W","sourceCell":""},{"key":"length","label":"L","sourceCell":""},{"key":"adate","label":"Date · Round A","sourceCell":"","inputType":"date"},{"key":"asampleSize","label":"Sample Size · Round A","sourceCell":"","inputType":"text"},{"key":"aseason","label":"Season · Round A","sourceCell":"","inputType":"text"},{"key":"asampleStage","label":"SAMPLE STAGE · Round A","sourceCell":"","inputType":"text"},{"key":"bdate","label":"Date · Round B","sourceCell":"","inputType":"date"},{"key":"bsampleSize","label":"Sample Size · Round B","sourceCell":"","inputType":"text"},{"key":"bseason","label":"Season · Round B","sourceCell":"","inputType":"text"},{"key":"bsampleStage","label":"SAMPLE STAGE · Round B","sourceCell":"","inputType":"text"},{"key":"attendees","label":"FIT ATTENDEES","sourceCell":"","multiline":true},{"key":"model","label":"MODEL","sourceCell":"","multiline":true},{"key":"patternMaker","label":"PATTERN MAKER","sourceCell":"","multiline":true},{"key":"fitNote","label":"FIT NOTE","sourceCell":"","multiline":true}],"tables":[{"id":"measurements","title":"Before / after wash comparison","columns":[{"key":"line","label":"Line","type":"readonly"},{"key":"pom","label":"P O M","type":"text"},{"key":"description","label":"DESCRIPTION","type":"text"},{"key":"atarget","label":"Round A · Target","type":"measurement","allowNegative":false,"formula":null,"stage":"a"},{"key":"abefore","label":"Round A · B4 wash","type":"measurement","allowNegative":false,"formula":null,"stage":"a"},{"key":"aafter","label":"Round A · After Wash","type":"measurement","allowNegative":false,"formula":null,"stage":"a"},{"key":"adelta","label":"Round A · −/+","type":"calculated","allowNegative":false,"formula":"target-minus-after","stage":"a","formulaRows":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","32"]},{"key":"aadjustment","label":"Round A · Adj.","type":"measurement","allowNegative":true,"formula":null,"stage":"a"},{"key":"btarget","label":"Round B · Target","type":"measurement","allowNegative":false,"formula":null,"stage":"b"},{"key":"bbefore","label":"Round B · B4 wash","type":"measurement","allowNegative":false,"formula":null,"stage":"b"},{"key":"bafter","label":"Round B · After Wash","type":"measurement","allowNegative":false,"formula":null,"stage":"b"},{"key":"bdelta","label":"Round B · −/+","type":"calculated","allowNegative":false,"formula":"target-minus-after","stage":"b","formulaRows":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","32"]},{"key":"badjustment","label":"Round B · Adj.","type":"measurement","allowNegative":true,"formula":null,"stage":"b"}],"rows":[{"id":"1","sourceRow":11,"values":{"line":"1"}},{"id":"2","sourceRow":12,"values":{"line":"2"}},{"id":"3","sourceRow":13,"values":{"line":"3"}},{"id":"4","sourceRow":14,"values":{"line":"4"}},{"id":"5","sourceRow":15,"values":{"line":"5"}},{"id":"6","sourceRow":16,"values":{"line":"6"}},{"id":"7","sourceRow":17,"values":{"line":"7"}},{"id":"8","sourceRow":18,"values":{"line":"8"}},{"id":"9","sourceRow":19,"values":{"line":"9"}},{"id":"10","sourceRow":20,"values":{"line":"10"}},{"id":"11","sourceRow":21,"values":{"line":"11"}},{"id":"12","sourceRow":22,"values":{"line":"12"}},{"id":"13","sourceRow":23,"values":{"line":"13"}},{"id":"14","sourceRow":24,"values":{"line":"14"}},{"id":"15","sourceRow":25,"values":{"line":"15"}},{"id":"16","sourceRow":26,"values":{"line":"16"}},{"id":"17","sourceRow":27,"values":{"line":"17"}},{"id":"18","sourceRow":28,"values":{"line":"18"}},{"id":"19","sourceRow":29,"values":{"line":"19"}},{"id":"20","sourceRow":30,"values":{"line":"20"}},{"id":"21","sourceRow":31,"values":{"line":"21"}},{"id":"22","sourceRow":32,"values":{"line":"22"}},{"id":"23","sourceRow":33,"values":{"line":"23"}},{"id":"24","sourceRow":34,"values":{"line":"24"}},{"id":"25","sourceRow":35,"values":{"line":"25"}},{"id":"26","sourceRow":36,"values":{"line":"26"}},{"id":"27","sourceRow":37,"values":{"line":"27"}},{"id":"28","sourceRow":38,"values":{"line":"28"}},{"id":"29","sourceRow":40,"values":{"line":"SPEC 1"}},{"id":"30","sourceRow":41,"values":{"line":"SPEC 2"},"columnOverrides":{"adelta":{"type":"measurement","allowNegative":true,"formula":null,"formulaRows":null},"bdelta":{"type":"measurement","allowNegative":true,"formula":null,"formulaRows":null}}},{"id":"31","sourceRow":42,"values":{"line":"SPEC 3"},"columnOverrides":{"adelta":{"type":"measurement","allowNegative":true,"formula":null,"formulaRows":null},"bdelta":{"type":"measurement","allowNegative":true,"formula":null,"formulaRows":null}}},{"id":"32","sourceRow":43,"values":{"line":"SPEC 4"}}],"note":"28 numbered rows and 4 FOR SPECS ONLY rows. Source spec rows 1 and 4 calculate Target minus After Wash; spec rows 2 and 3 retain manual signed delta entry cells."}],"attachments":[]},{"id":"fit","title":"FIT & COM","shortTitle":"Fit & comments","note":"Fitting references, sample photographs, participants and comments.","fields":[{"key":"style","label":"STYLE # · linked from Pattern Card","sourceCell":"C3","type":"calculated"},{"key":"stage","label":"STAGE","sourceCell":""},{"key":"refPattern","label":"Ref Pattern","sourceCell":""},{"key":"description","label":"Description","sourceCell":""},{"key":"fabric","label":"Fabric","sourceCell":""},{"key":"roll","label":"Roll #","sourceCell":""},{"key":"wash","label":"Wash","sourceCell":""},{"key":"measurements","label":"Measurements","sourceCell":""},{"key":"date","label":"Date","sourceCell":"","inputType":"date"},{"key":"sampleSize","label":"Sample Size","sourceCell":""},{"key":"season","label":"Season","sourceCell":""},{"key":"sampleStage","label":"SAMPLE STAGE","sourceCell":""},{"key":"size","label":"SIZE","sourceCell":""},{"key":"width","label":"W","sourceCell":""},{"key":"length","label":"L","sourceCell":""},{"key":"attendees","label":"FIT ATTENDEES","sourceCell":"","multiline":true},{"key":"model","label":"MODEL","sourceCell":""},{"key":"patternMaker","label":"PATTERN MAKER","sourceCell":""},{"key":"comments","label":"Fit & comments","sourceCell":"A59:N62","multiline":true}],"tables":[],"attachments":[{"key":"headerReference","label":"Header reference area · source unlabelled","sourceRange":"J1:N9"},{"key":"sample1","label":"SAMPLE PICS · 1","sourceRange":"A11:N54"},{"key":"sample2","label":"SAMPLE PICS · 2","sourceRange":"A11:N54"},{"key":"sample3","label":"SAMPLE PICS · 3","sourceRange":"A11:N54"}]},{"id":"graded","title":"GRADED SPECS","shortTitle":"Graded specs","note":"Before- and after-wash size grids. Size names and grading values are supplied by the pattern maker; no grade rules are inferred.","fields":[{"key":"style","label":"Style","sourceCell":""},{"key":"description","label":"Description","sourceCell":""},{"key":"group","label":"Group","sourceCell":""},{"key":"wash","label":"Wash","sourceCell":""},{"key":"washColor","label":"Wash Color Code","sourceCell":""},{"key":"selfFabric","label":"Fabric Self","sourceCell":""},{"key":"selfContent","label":"Content · self","sourceCell":""},{"key":"liningFabric","label":"Fabric Lining","sourceCell":""},{"key":"liningContent","label":"Content · lining","sourceCell":""},{"key":"patternNumber","label":"Pattern Number","sourceCell":""},{"key":"sizeF","label":"Size header 1 · F","sourceCell":"F10 / F40"},{"key":"sizeG","label":"Size header 2 · G","sourceCell":"G10 / G40"},{"key":"sizeH","label":"Size header 3 · H","sourceCell":"H10 / H40"},{"key":"sizeI","label":"Size header 4 · I","sourceCell":"I10 / I40"},{"key":"sizeJ","label":"Size header 5 · J","sourceCell":"J10 / J40"},{"key":"sizeK","label":"Size header 6 · K","sourceCell":"K10 / K40"},{"key":"sizeL","label":"Size header 7 · L","sourceCell":"L10 / L40"},{"key":"sizeM","label":"Size header 8 · M","sourceCell":"M10 / M40"},{"key":"sizeN","label":"Size header 9 · N","sourceCell":"N10 / N40"},{"key":"sizeO","label":"Size header 10 · O","sourceCell":"O10 / O40"},{"key":"sizeP","label":"Size header 11 · P","sourceCell":"P10 / P40"}],"tables":[{"id":"before","title":"Graded Measurements — Before Wash","columns":[{"key":"line","label":"Line","type":"readonly"},{"key":"pom","label":"P O M","type":"text"},{"key":"description","label":"DESCRIPTION","type":"text"},{"key":"tolerance","label":"Tol (+−)","type":"measurement"},{"key":"sizeF","label":"Size 1","type":"measurement","headerField":"sizeF"},{"key":"sizeG","label":"Size 2","type":"measurement","headerField":"sizeG"},{"key":"sizeH","label":"Size 3","type":"measurement","headerField":"sizeH"},{"key":"sizeI","label":"Size 4","type":"measurement","headerField":"sizeI"},{"key":"sizeJ","label":"Size 5","type":"measurement","headerField":"sizeJ"},{"key":"sizeK","label":"Size 6","type":"measurement","headerField":"sizeK"},{"key":"sizeL","label":"Size 7","type":"measurement","headerField":"sizeL"},{"key":"sizeM","label":"Size 8","type":"measurement","headerField":"sizeM"},{"key":"sizeN","label":"Size 9","type":"measurement","headerField":"sizeN"},{"key":"sizeO","label":"Size 10","type":"measurement","headerField":"sizeO"},{"key":"sizeP","label":"Size 11","type":"measurement","headerField":"sizeP"}],"rows":[{"id":"1","sourceRow":11,"values":{"line":"1"}},{"id":"2","sourceRow":12,"values":{"line":"2"}},{"id":"3","sourceRow":13,"values":{"line":"3"}},{"id":"4","sourceRow":14,"values":{"line":"4"}},{"id":"5","sourceRow":15,"values":{"line":"5"}},{"id":"6","sourceRow":16,"values":{"line":"6"}},{"id":"7","sourceRow":17,"values":{"line":"7"}},{"id":"8","sourceRow":18,"values":{"line":"8"}},{"id":"9","sourceRow":19,"values":{"line":"9"}},{"id":"10","sourceRow":20,"values":{"line":"10"}},{"id":"11","sourceRow":21,"values":{"line":"11"}},{"id":"12","sourceRow":22,"values":{"line":"12"}},{"id":"13","sourceRow":23,"values":{"line":"13"}},{"id":"14","sourceRow":24,"values":{"line":"14"}},{"id":"15","sourceRow":25,"values":{"line":"15"}},{"id":"16","sourceRow":26,"values":{"line":"16"}},{"id":"17","sourceRow":27,"values":{"line":"17"}},{"id":"18","sourceRow":28,"values":{"line":"18"}},{"id":"19","sourceRow":29,"values":{"line":"19"}},{"id":"20","sourceRow":30,"values":{"line":"20"}},{"id":"21","sourceRow":31,"values":{"line":"21"}},{"id":"22","sourceRow":32,"values":{"line":"22"}},{"id":"23","sourceRow":33,"values":{"line":"23"}},{"id":"24","sourceRow":34,"values":{"line":"24"}},{"id":"25","sourceRow":35,"values":{"line":"25"}},{"id":"26","sourceRow":36,"values":{"line":"26"}},{"id":"27","sourceRow":37,"values":{"line":"27"}},{"id":"28","sourceRow":38,"values":{"line":"28"}}]},{"id":"after","title":"Graded Measurements — After Wash","columns":[{"key":"line","label":"Line","type":"readonly"},{"key":"pom","label":"P O M","type":"text"},{"key":"description","label":"DESCRIPTION","type":"text"},{"key":"tolerance","label":"Tol (+−)","type":"measurement"},{"key":"sizeF","label":"Size 1","type":"measurement","headerField":"sizeF"},{"key":"sizeG","label":"Size 2","type":"measurement","headerField":"sizeG"},{"key":"sizeH","label":"Size 3","type":"measurement","headerField":"sizeH"},{"key":"sizeI","label":"Size 4","type":"measurement","headerField":"sizeI"},{"key":"sizeJ","label":"Size 5","type":"measurement","headerField":"sizeJ"},{"key":"sizeK","label":"Size 6","type":"measurement","headerField":"sizeK"},{"key":"sizeL","label":"Size 7","type":"measurement","headerField":"sizeL"},{"key":"sizeM","label":"Size 8","type":"measurement","headerField":"sizeM"},{"key":"sizeN","label":"Size 9","type":"measurement","headerField":"sizeN"},{"key":"sizeO","label":"Size 10","type":"measurement","headerField":"sizeO"},{"key":"sizeP","label":"Size 11","type":"measurement","headerField":"sizeP"}],"rows":[{"id":"1","sourceRow":41,"values":{"line":"1"}},{"id":"2","sourceRow":42,"values":{"line":"2"}},{"id":"3","sourceRow":43,"values":{"line":"3"}},{"id":"4","sourceRow":44,"values":{"line":"4"}},{"id":"5","sourceRow":45,"values":{"line":"5"}},{"id":"6","sourceRow":46,"values":{"line":"6"}},{"id":"7","sourceRow":47,"values":{"line":"7"}},{"id":"8","sourceRow":48,"values":{"line":"8"}},{"id":"9","sourceRow":49,"values":{"line":"9"}},{"id":"10","sourceRow":50,"values":{"line":"10"}},{"id":"11","sourceRow":51,"values":{"line":"11"}},{"id":"12","sourceRow":52,"values":{"line":"12"}},{"id":"13","sourceRow":53,"values":{"line":"13"}},{"id":"14","sourceRow":54,"values":{"line":"14"}},{"id":"15","sourceRow":55,"values":{"line":"15"}},{"id":"16","sourceRow":56,"values":{"line":"16"}},{"id":"17","sourceRow":57,"values":{"line":"17"}},{"id":"18","sourceRow":58,"values":{"line":"18"}},{"id":"19","sourceRow":59,"values":{"line":"19"}},{"id":"20","sourceRow":60,"values":{"line":"20"}},{"id":"21","sourceRow":61,"values":{"line":"21"}},{"id":"22","sourceRow":62,"values":{"line":"22"}},{"id":"23","sourceRow":63,"values":{"line":"23"}},{"id":"24","sourceRow":64,"values":{"line":"24"}},{"id":"25","sourceRow":65,"values":{"line":"25"}},{"id":"26","sourceRow":66,"values":{"line":"26"}},{"id":"27","sourceRow":67,"values":{"line":"27"}},{"id":"28","sourceRow":68,"values":{"line":"28"}}]}],"attachments":[]},{"id":"master","title":"00-MEASUREMENT SHEET MASTER","shortTitle":"Measurement master","note":"Garment specifications remain separate from body and fit-form references. Delta = Sample Actual − Approved Base Spec.","fields":[{"key":"style","label":"STYLE #","sourceCell":"C4"},{"key":"description","label":"DESCRIPTION","sourceCell":"C5"},{"key":"category","label":"CATEGORY","sourceCell":"C6"},{"key":"season","label":"SEASON","sourceCell":"C7"},{"key":"status","label":"STATUS","sourceCell":"C8"},{"key":"sizeRange","label":"SIZE RANGE","sourceCell":"I4"},{"key":"sampleSize","label":"SAMPLE SIZE","sourceCell":"I5"},{"key":"fabric","label":"FABRIC","sourceCell":"I6"},{"key":"content","label":"CONTENT","sourceCell":"I7"},{"key":"maker","label":"FACTORY / MAKER","sourceCell":"I8"},{"key":"revision","label":"REVISION / PAGE","sourceCell":"I2"}],"attachments":[{"key":"front","label":"FRONT FLAT","sourceRange":"A10:F28"},{"key":"back","label":"BACK FLAT","sourceRange":"G10:L28"}],"tables":[{"id":"specs","title":"BASE SIZE MEASUREMENT SPECIFICATION","columns":[{"key":"pom","label":"POM","type":"text"},{"key":"critical","label":"CRIT","type":"text"},{"key":"description","label":"POM DESCRIPTION","type":"text"},{"key":"method","label":"HOW TO MEASURE","type":"text"},{"key":"tolerance","label":"TOL (+−)","type":"measurement"},{"key":"gradeRule","label":"GRADE RULE","type":"text"},{"key":"base","label":"APPROVED BASE SPEC","type":"measurement"},{"key":"actual","label":"SAMPLE ACTUAL","type":"measurement"},{"key":"delta","label":"DELTA","type":"calculated","formula":"actual-minus-base"},{"key":"target","label":"TARGET SPEC","type":"measurement"},{"key":"revision","label":"REV / DATE","type":"text"},{"key":"note","label":"FIT / ACTION NOTE","type":"text"}],"rows":[{"id":"1","sourceRow":31,"values":{}},{"id":"2","sourceRow":32,"values":{}},{"id":"3","sourceRow":33,"values":{}},{"id":"4","sourceRow":34,"values":{}},{"id":"5","sourceRow":35,"values":{}},{"id":"6","sourceRow":36,"values":{}},{"id":"7","sourceRow":37,"values":{}},{"id":"8","sourceRow":38,"values":{}},{"id":"9","sourceRow":39,"values":{}},{"id":"10","sourceRow":40,"values":{}},{"id":"11","sourceRow":41,"values":{}},{"id":"12","sourceRow":42,"values":{}},{"id":"13","sourceRow":43,"values":{}},{"id":"14","sourceRow":44,"values":{}},{"id":"15","sourceRow":45,"values":{}},{"id":"16","sourceRow":46,"values":{}},{"id":"17","sourceRow":47,"values":{}},{"id":"18","sourceRow":48,"values":{}},{"id":"19","sourceRow":49,"values":{}},{"id":"20","sourceRow":50,"values":{}},{"id":"21","sourceRow":51,"values":{}},{"id":"22","sourceRow":52,"values":{}},{"id":"23","sourceRow":53,"values":{}},{"id":"24","sourceRow":54,"values":{}},{"id":"25","sourceRow":55,"values":{}},{"id":"26","sourceRow":56,"values":{}},{"id":"27","sourceRow":57,"values":{}},{"id":"28","sourceRow":58,"values":{}},{"id":"29","sourceRow":59,"values":{}},{"id":"30","sourceRow":60,"values":{}}],"note":"A base-spec entry does not grant approval. Delta is calculated for each app row using the source formula pattern. Source examples are retained in the source notes, not loaded into a new garment draft."}]},{"id":"body","title":"BODY REF-MANNEQUIN-SIZE 8-V1","shortTitle":"Mannequin reference","note":"SR-FORM-001 · Approved house standard · Canonical inches · Read-only measurements.","fields":[{"key":"manufacturer","label":"MANUFACTURER · source blank","sourceCell":""},{"key":"model","label":"MODEL / FORM · source blank","sourceCell":""},{"key":"measurementDate","label":"MEASUREMENT DATE · source placeholder","sourceCell":""},{"key":"measuredBy","label":"MEASURED BY · draft note","sourceCell":""},{"key":"observation","label":"Reference observations","sourceCell":"","multiline":true}],"tables":[{"id":"referenceNotes","title":"HOUSE TARGET / RECORD NOTES","columns":[{"key":"pom","label":"POM","type":"readonly"},{"key":"critical","label":"CRIT","type":"text"},{"key":"houseTarget","label":"HOUSE TARGET","type":"measurement"},{"key":"targetDelta","label":"TARGET DELTA","type":"readonly"},{"key":"status","label":"STATUS","type":"text"},{"key":"revision","label":"REV / DATE","type":"text"},{"key":"note","label":"FIT / OBSERVATION","type":"text"}],"rows":[{"id":"1","sourceRow":32,"values":{"pom":"BF-01","targetDelta":"Unresolved source formula"}},{"id":"2","sourceRow":33,"values":{"pom":"BF-02","targetDelta":"Unresolved source formula"}},{"id":"3","sourceRow":34,"values":{"pom":"BF-03","targetDelta":"—"}},{"id":"4","sourceRow":35,"values":{"pom":"BF-04","targetDelta":"—"}},{"id":"5","sourceRow":36,"values":{"pom":"BF-05","targetDelta":"—"}},{"id":"6","sourceRow":37,"values":{"pom":"BF-06","targetDelta":"—"}},{"id":"7","sourceRow":38,"values":{"pom":"BF-07","targetDelta":"—"}},{"id":"8","sourceRow":39,"values":{"pom":"BF-08","targetDelta":"—"}},{"id":"9","sourceRow":40,"values":{"pom":"BF-09","targetDelta":"—"}},{"id":"10","sourceRow":41,"values":{"pom":"BF-10","targetDelta":"—"}},{"id":"11","sourceRow":42,"values":{"pom":"BF-11","targetDelta":"—"}},{"id":"12","sourceRow":43,"values":{"pom":"BF-12","targetDelta":"—"}},{"id":"13","sourceRow":44,"values":{"pom":"BF-13","targetDelta":"—"}},{"id":"14","sourceRow":45,"values":{"pom":"BF-14","targetDelta":"—"}},{"id":"15","sourceRow":46,"values":{"pom":"BF-15","targetDelta":"—"}},{"id":"16","sourceRow":47,"values":{"pom":"BF-16","targetDelta":"—"}},{"id":"17","sourceRow":48,"values":{"pom":"BF-17","targetDelta":"—"}},{"id":"18","sourceRow":49,"values":{"pom":"BF-18","targetDelta":"—"}},{"id":"19","sourceRow":50,"values":{"pom":"BF-19","targetDelta":"—"}},{"id":"20","sourceRow":51,"values":{"pom":"BF-20","targetDelta":"—"}}],"note":"Source target formulas I31:I33 subtract column G (DELTA), not ACTUAL FORM. Their intended meaning is unresolved. TARGET DELTA remains unavailable; raw formulas are preserved in Source notes. No approval or garment target is inferred."}],"attachments":[],"reference":true}],"unitPolicy":"The source does not declare garment units. A new pack requires a unit choice before measurement entry. Garment values are stored in canonical CM; the approved house reference stays canonical IN.","sourceExamples":{"sheet":"00-MEASUREMENT SHEET MASTER","unit":null,"rows":[{"cells":"G31:H31","base":20,"actual":24.75},{"cells":"G32:H32","base":25,"actual":37},{"cells":"G33:H33","base":25,"actual":24.75}],"note":"Unlabelled source examples with no POM or unit. Not approved garment specifications."}},"source":{"schemaVersion":"1.0","sourceId":"SR-TECH-PACK-WORKBOOK-V2","documentTitle":"Copy of TECH PACK TEMPLATE- SERPENTIS REGINA  - V.002 — V2.xlsx","sourceUrl":"https://docs.google.com/spreadsheets/d/1yXo2dRFUFBJXT7fQlsxJkoWVH5pfSSQn/edit","driveFileId":"1yXo2dRFUFBJXT7fQlsxJkoWVH5pfSSQn","mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","driveModifiedTime":"2026-10-22T23:05:12.082Z","sha256":"ffab55f7ca7f5c9f6d92b24f8f01d46773ea3a67f941539953a7ae468ff70214","sizeBytes":501086,"extractedOn":"2026-10-22","sourceModified":false,"notes":["The supplied file is an XLSX stored in Google Drive, not a native Google Sheet. The source workbook was read without modification.","All six visible tabs are included. There are no hidden sheets, external workbook links, comments, hyperlinks, data validations, or charts.","No filled client record is present. AMAYA KELSEA appears only as measured-by metadata on the existing approved house mannequin reference.","00-MEASUREMENT SHEET MASTER G31:H33 contains three unlabeled source example pairs: 20/24.75, 25/37, 25/24.75. They have no assigned POM or stated unit, are not approved garment specifications, and must not populate new blank drafts automatically.","The master I31:I33 source formula is sample actual H minus approved base G, returning blank when either input is blank. BW-AW-SPEC H/N formulas are target minus after wash, not after minus before wash.","BODY REF-MANNEQUIN-SIZE 8-V1 I31:I33 literally subtract source G from H. G (DELTA) is blank in this source; H is HOUSE TARGET. These are retained as ambiguous source provenance and must not be silently relabeled or evaluated as target minus actual form.","The BODY REF source pending-verification status and placeholder date/manufacturer/model values are historical provenance. The existing versioned approved SR-FORM-001 JSON drives the read-only reference viewer and its actual-form-minus-manufacturer comparison.","All 20 BF POM codes, source labels, measuring methods, seven manufacturer values, thirteen null manufacturer values, and twenty actual-form values exactly match the approved repository JSON and methods JSON.","The two embedded mannequin JPEGs exactly match the existing assets/house-sheet/mannequin-front.jpg and mannequin-back.jpg bytes. Reuse those original assets unchanged.","No units, size names, grade increments, pass/fail rules, or garment ease are specified on the blank garment tabs. Preserve blanks; do not infer approved values from the mannequin reference.","PATTERN CARD column E is bordered but unlabeled. No grainline/cut or other specific meaning is asserted for that column. LINING and TEMPLATES row groups follow explicit source labels.","GRADED SPECS has eleven unnamed size slots F:P and no formulas. BW-AW-SPEC has 28 numbered rows plus four unnumbered specs-only rows; only additional rows 40 and 43 carry source difference formulas.","The DELTA_1 defined name is unused and contains a literal LAMBDA expression with escaped sheet quotes. It is preserved as provenance; execution is not required by any source cell."],"canonicalHouseReference":{"measurements":"data/house-fit-forms/SR-FORM-001.v1.json","methods":"data/house-fit-forms/SR-FORM-001-methods.v1.json"},"definedNames":{"DELTA_1":"LAMBDA(IF(OR('00-MEASUREMENT SHEET MASTER'!$G$33=\"\",'00-MEASUREMENT SHEET MASTER'!$H$33=\"\"),\"\",'00-MEASUREMENT SHEET MASTER'!$H$33-'00-MEASUREMENT SHEET MASTER'!$G$33))"},"sheets":[{"title":"PATTERN CARD","visibility":"visible","reportedDimensions":"A1:J47","nonemptyCellCount":22,"formulaCount":0,"freezePane":null,"mergedRanges":["B42:D42","F44:J44","F34:J34","G4:J4","F40:J40","F36:J36","F42:J42","F45:J45","F35:J35","B6:D6","B24:D24","F32:J32","B5:D5","F47:J47","G8:J8","F38:J38","B32:D32","F31:J31","F46:J46","B7:D7","B47:D47","G6:J6","F43:J43","F37:J37","F39:J39","B27:D27","A1:E4","B21:D21","B43:D43","G5:J5","F1:J3"],"keyRanges":{"stylePattern":"A1:E4","metadata":"F1:J8","pieceHeader":"A6:E6","pieces":"A7:E20","liningHeading":"B21:D21","lining":"A22:E26","templatesHeading":"B27:D27","templates":"A28:E37","breakdown":"A38:E40","placement":"A41:E42","templateGradingHeading":"B43:D43","templateGrading":"A44:E47","sketchReference":"F9:J30","markerRelease":"F31:J32","gradedSpecsRevision":"F33:J33","patternCheckFileStatus":"F34:J35","threadTrimNotes":"F36:J47"},"cells":{"A1":"[STYLE / PATTERN NO.]","F1":"Style #","F4":"Size:","B5":"SERPENTIS REGINA","F5":"Fabric:","G5":"[FABRIC]     ROLL#:","A6":"Qty","B6":"Piece Name","F6":"Date:","G6":"[DATE]     WASH:","F7":"REF.","F8":"Del:","B21":"LINING","B27":"TEMPLATES","F31":"MARKER RELEASE:","F33":"GRADED SPECS / REVISION:","F34":"PATTERN CHECK / FILE STATUS:","F36":"THREAD & TRIM- SEE TECH PACK","B38":"BREAKDOWN:","B41":"PLACEMENT:","B43":"TEMPLATE GRADING","A44":"SIZE"},"images":[]},{"title":"BW-AW-SPEC","visibility":"visible","reportedDimensions":"A1:Z47","nonemptyCellCount":125,"formulaCount":60,"freezePane":null,"mergedRanges":["B16:C16","C6:D6","B25:C25","A46:I46","C5:D5","B22:C22","M5:N5","B31:C31","B27:C27","L4:N4","K45:O45","A6:B6","B43:C43","B12:C12","C4:D4","A9:D9","B21:C21","A47:I47","G7:H7","B11:C11","K47:O47","B14:C14","K44:O44","L6:N6","K46:O46","B13:C13","M7:N7","B38:C38","B29:C29","B37:C37","B34:C34","A44:I44","A5:B5","G5:H5","B28:C28","F4:H4","B40:C40","A8:B8","C8:D8","A4:B4","B30:C30","F6:H6","C7:D7","B15:C15","B33:C33","B20:C20","A45:I45","B36:C36","B32:C32","B26:C26","C3:D3","B35:C35"],"keyRanges":{"metadata":"A1:O9","tableHeader":"A10:O10","numberedRows":"A11:O38","specsOnlyHeading":"B39:I39","additionalSpecRows":"A40:O43","fitNotes":"A44:O47","leftComparison":"E11:I43","rightComparison":"K11:O43","differenceFormulaRows":[11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,40,43]},"cells":{"A1":"SERPENTIS REGINA","D1":"STAGE","A2":"GARMENT MEASUREMENTS","A3":"STYLE#","A4":"Ref Pattern:","E4":"Date:","K4":"Date:","A5":"Description:","E5":"Sample Size:","K5":"Sample Size:","A6":"Fabric:","E6":"Season:","K6":"Season:","A7":"Roll#: ","E7":"SAMPLE STAGE","K7":"SAMPLE STAGE","A8":"Wash:","G8":"W:","A9":"Measurements:","G9":"L:","B10":"P O M ","D10":"DESCRIPTION","E10":"Target","F10":"B4 wash","G10":"After Wash","H10":"-/+","I10":"Adj:","K10":"Target","L10":"B4 wash","M10":"After Wash","N10":"-/+","O10":"Adj:","A11":1,"H11":"=IF(OR(E11=\"\",G11=\"\"),\"\",E11-G11)","N11":"=IF(OR(K11=\"\",M11=\"\"),\"\",K11-M11)","A12":2,"H12":"=IF(OR(E12=\"\",G12=\"\"),\"\",E12-G12)","N12":"=IF(OR(K12=\"\",M12=\"\"),\"\",K12-M12)","A13":3,"H13":"=IF(OR(E13=\"\",G13=\"\"),\"\",E13-G13)","N13":"=IF(OR(K13=\"\",M13=\"\"),\"\",K13-M13)","A14":4,"H14":"=IF(OR(E14=\"\",G14=\"\"),\"\",E14-G14)","N14":"=IF(OR(K14=\"\",M14=\"\"),\"\",K14-M14)","A15":5,"H15":"=IF(OR(E15=\"\",G15=\"\"),\"\",E15-G15)","N15":"=IF(OR(K15=\"\",M15=\"\"),\"\",K15-M15)","A16":6,"H16":"=IF(OR(E16=\"\",G16=\"\"),\"\",E16-G16)","N16":"=IF(OR(K16=\"\",M16=\"\"),\"\",K16-M16)","A17":7,"H17":"=IF(OR(E17=\"\",G17=\"\"),\"\",E17-G17)","N17":"=IF(OR(K17=\"\",M17=\"\"),\"\",K17-M17)","A18":8,"H18":"=IF(OR(E18=\"\",G18=\"\"),\"\",E18-G18)","N18":"=IF(OR(K18=\"\",M18=\"\"),\"\",K18-M18)","A19":9,"H19":"=IF(OR(E19=\"\",G19=\"\"),\"\",E19-G19)","N19":"=IF(OR(K19=\"\",M19=\"\"),\"\",K19-M19)","A20":10,"H20":"=IF(OR(E20=\"\",G20=\"\"),\"\",E20-G20)","N20":"=IF(OR(K20=\"\",M20=\"\"),\"\",K20-M20)","A21":11,"H21":"=IF(OR(E21=\"\",G21=\"\"),\"\",E21-G21)","N21":"=IF(OR(K21=\"\",M21=\"\"),\"\",K21-M21)","A22":12,"H22":"=IF(OR(E22=\"\",G22=\"\"),\"\",E22-G22)","N22":"=IF(OR(K22=\"\",M22=\"\"),\"\",K22-M22)","A23":13,"H23":"=IF(OR(E23=\"\",G23=\"\"),\"\",E23-G23)","N23":"=IF(OR(K23=\"\",M23=\"\"),\"\",K23-M23)","A24":14,"H24":"=IF(OR(E24=\"\",G24=\"\"),\"\",E24-G24)","N24":"=IF(OR(K24=\"\",M24=\"\"),\"\",K24-M24)","A25":15,"H25":"=IF(OR(E25=\"\",G25=\"\"),\"\",E25-G25)","N25":"=IF(OR(K25=\"\",M25=\"\"),\"\",K25-M25)","A26":16,"H26":"=IF(OR(E26=\"\",G26=\"\"),\"\",E26-G26)","N26":"=IF(OR(K26=\"\",M26=\"\"),\"\",K26-M26)","A27":17,"H27":"=IF(OR(E27=\"\",G27=\"\"),\"\",E27-G27)","N27":"=IF(OR(K27=\"\",M27=\"\"),\"\",K27-M27)","A28":18,"H28":"=IF(OR(E28=\"\",G28=\"\"),\"\",E28-G28)","N28":"=IF(OR(K28=\"\",M28=\"\"),\"\",K28-M28)","A29":19,"H29":"=IF(OR(E29=\"\",G29=\"\"),\"\",E29-G29)","N29":"=IF(OR(K29=\"\",M29=\"\"),\"\",K29-M29)","A30":20,"H30":"=IF(OR(E30=\"\",G30=\"\"),\"\",E30-G30)","N30":"=IF(OR(K30=\"\",M30=\"\"),\"\",K30-M30)","A31":21,"H31":"=IF(OR(E31=\"\",G31=\"\"),\"\",E31-G31)","N31":"=IF(OR(K31=\"\",M31=\"\"),\"\",K31-M31)","A32":22,"H32":"=IF(OR(E32=\"\",G32=\"\"),\"\",E32-G32)","N32":"=IF(OR(K32=\"\",M32=\"\"),\"\",K32-M32)","A33":23,"H33":"=IF(OR(E33=\"\",G33=\"\"),\"\",E33-G33)","N33":"=IF(OR(K33=\"\",M33=\"\"),\"\",K33-M33)","A34":24,"H34":"=IF(OR(E34=\"\",G34=\"\"),\"\",E34-G34)","N34":"=IF(OR(K34=\"\",M34=\"\"),\"\",K34-M34)","A35":25,"H35":"=IF(OR(E35=\"\",G35=\"\"),\"\",E35-G35)","N35":"=IF(OR(K35=\"\",M35=\"\"),\"\",K35-M35)","A36":26,"H36":"=IF(OR(E36=\"\",G36=\"\"),\"\",E36-G36)","N36":"=IF(OR(K36=\"\",M36=\"\"),\"\",K36-M36)","A37":27,"H37":"=IF(OR(E37=\"\",G37=\"\"),\"\",E37-G37)","N37":"=IF(OR(K37=\"\",M37=\"\"),\"\",K37-M37)","A38":28,"H38":"=IF(OR(E38=\"\",G38=\"\"),\"\",E38-G38)","N38":"=IF(OR(K38=\"\",M38=\"\"),\"\",K38-M38)","B39":"FOR SPECS ONLY","H40":"=IF(OR(E40=\"\",G40=\"\"),\"\",E40-G40)","N40":"=IF(OR(K40=\"\",M40=\"\"),\"\",K40-M40)","H43":"=IF(OR(E43=\"\",G43=\"\"),\"\",E43-G43)","N43":"=IF(OR(K43=\"\",M43=\"\"),\"\",K43-M43)","A44":"FIT ATTENDEES:","A45":"MODEL:","A46":"PATTERN MAKER:","A47":"FIT NOTE:"},"images":[]},{"title":"FIT & COM","visibility":"visible","reportedDimensions":"A1:Z62","nonemptyCellCount":22,"formulaCount":1,"freezePane":null,"mergedRanges":["C6:D6","C5:D5","A59:N59","F8:H8","A56:I56","A60:N60","A1:B1","A6:B6","C4:D4","A57:I57","A61:N61","A7:B7","E3:H3","G7:H7","J1:N9","A3:B3","A5:B5","G5:H5","F4:H4","A11:N54","A58:I58","A8:B8","C8:D8","A4:B4","F6:H6","C7:D7","A62:N62","A10:N10","C3:D3"],"keyRanges":{"metadata":"A1:H9","unlabeledHeaderReference":"J1:N9","samplePicsHeading":"A10:N10","samplePics":"A11:N54","fitAttendees":"A56:I56","model":"A57:I57","patternMaker":"A58:I58","unlabeledNotes":"A59:N62","linkedPatternStyle":"C3:D3"},"cells":{"A1":"SERPENTIS REGINA","C1":"STAGE","A2":"GARMENT MEASUREMENTS","A3":"STYLE#","C3":"=IF('PATTERN CARD'!A1=\"\",\"\",'PATTERN CARD'!A1)","A4":"Ref Pattern:","E4":"Date:","A5":"Description:","E5":"Sample Size:","A6":"Fabric:","E6":"Season:","A7":"Wash:","E7":"SAMPLE STAGE","A8":"Roll #:","E8":"SIZE ","A9":"Measurements:","E9":"W:","G9":"L:","A10":"SAMPLE PICS","A56":"FIT ATTENDEES:","A57":"MODEL:","A58":"PATTERN MAKER:"},"images":[]},{"title":"GRADED SPECS","visibility":"visible","reportedDimensions":"A1:Z68","nonemptyCellCount":76,"formulaCount":0,"freezePane":null,"mergedRanges":["A1:Q1","A3:P3"],"keyRanges":{"metadata":"B4:P8","beforeWashHeading":"A9:P9","beforeWashHeader":"A10:P10","beforeWashRows":"A11:P38","afterWashHeading":"A39:P39","afterWashHeader":"A40:P40","afterWashRows":"A41:P68","blankSizeColumns":"F:P","sizeSlotCount":11,"rowsPerWashStage":28},"cells":{"A1":"SERPENTIS REGINA","A3":"BEFORE AND AFTER WASH MEASUREMENT SPEC","B4":"Style:","F4":"Fabric Self:","B5":"Description:","F5":"Content:","B6":"Group:","F6":"Fabric Lining:","B7":"Wash:","F7":"Content:","B8":"Wash Color Code:","F8":"Pattern Number:","A9":"Graded Measurements- Before Wash","B10":"P O M ","D10":"DESCRIPTION","E10":"Tol (+-)","A11":1,"A12":2,"A13":3,"A14":4,"A15":5,"A16":6,"A17":7,"A18":8,"A19":9,"A20":10,"A21":11,"A22":12,"A23":13,"A24":14,"A25":15,"A26":16,"A27":17,"A28":18,"A29":19,"A30":20,"A31":21,"A32":22,"A33":23,"A34":24,"A35":25,"A36":26,"A37":27,"A38":28,"A39":"Graded Measurements- After Wash","B40":"P O M ","D40":"DESCRIPTION","E40":"Tol (+-)","A41":1,"A42":2,"A43":3,"A44":4,"A45":5,"A46":6,"A47":7,"A48":8,"A49":9,"A50":10,"A51":11,"A52":12,"A53":13,"A54":14,"A55":15,"A56":16,"A57":17,"A58":18,"A59":19,"A60":20,"A61":21,"A62":22,"A63":23,"A64":24,"A65":25,"A66":26,"A67":27,"A68":28},"images":[]},{"title":"00-MEASUREMENT SHEET MASTER","visibility":"visible","reportedDimensions":"A1:Z233","nonemptyCellCount":49,"formulaCount":3,"freezePane":"A9","mergedRanges":["I1:L1","I8:L8","C8:F8","I4:L4","C7:F7","A1:H1","G8:H8","A3:L3","A6:B6","A7:B7","G7:H7","A10:F28","C6:F6","I6:L6","G6:H6","I2:L2","C5:F5","A29:L29","C4:F4","A2:H2","A9:F9","A5:B5","G5:H5","G9:L9","I7:L7","A8:B8","A4:B4","G4:H4","G10:L28","I5:L5"],"keyRanges":{"title":"A1:L3","metadata":"A4:L8","frontFlatHeading":"A9:F9","frontFlat":"A10:F28","backFlatHeading":"G9:L9","backFlat":"G10:L28","specHeading":"A29:L29","tableHeader":"A30:L30","specRows":"A31:L60","unassignedSourceExamples":"G31:I33","rows":30},"cells":{"A1":"SERPENTIS REGINA","I1":"MEASUREMENT SPECIFICATION","A2":"STYLE NAME / DESCRIPTION ","I2":"STYLE #/ REVISION/ PAGE","A3":"MEASURMENTS","A4":"STYLE #","C4":"VALUE","G4":"SIZE RANGE","I4":"VALUE","A5":"DESCRIPTION","C5":"VALUE","G5":"SAMPLE SIZE","I5":"VALUE","A6":"CATEGORY","C6":"VALUE","G6":"FABRIC","I6":"VALUE","A7":"SEASON","C7":"VALUE","G7":"CONTENT","I7":"VALUE","A8":"STATUS","C8":"VALUE","G8":"FACTORY/MAKER","I8":"VALUE","A9":"FRONT FLAT","G9":"BACK FLAT","A29":"BASE SIZE MEASUREMENT SPECIFICATION ","A30":"POM","B30":"CRIT","C30":"POM DESCRIPTION","D30":"HOW TO MEASURE","E30":"TOL(+\\-)","F30":"GRADE RULE","G30":"APPROVED BASE SPEC","H30":"SAMPLE ACTUAL","I30":"DELTA","J30":"TARGET SPEC","K30":"REV/DATE","L30":"FIT/ACTION NOTE","G31":20,"H31":24.75,"I31":"=IF(OR(G31=\"\",H31=\"\"),\"\",H31-G31)","G32":25,"H32":37,"I32":"=IF(OR(G32=\"\",H32=\"\"),\"\",H32-G32)","G33":25,"H33":24.75,"I33":"=IF(OR(G33=\"\",H33=\"\"),\"\",H33-G33)"},"images":[]},{"title":"BODY REF-MANNEQUIN-SIZE 8-V1","visibility":"visible","reportedDimensions":"A1:Z262","nonemptyCellCount":133,"formulaCount":3,"freezePane":"A31","mergedRanges":["I1:L1","I8:L8","C8:F8","I4:L4","C7:F7","A1:H1","G8:H8","A3:L3","A6:B6","A7:B7","G7:H7","A10:F28","C6:F6","I6:L6","G6:H6","I2:L2","C5:F5","A29:L29","C4:F4","A2:H2","A9:F9","A5:B5","G5:H5","G9:L9","I7:L7","A8:B8","A4:B4","G4:H4","G10:L28","I5:L5"],"keyRanges":{"title":"A1:L3","metadata":"A4:L8","frontBodyMapHeading":"A9:F9","frontBodyMap":"A10:F28","backBodyMapHeading":"G9:L9","backBodyMap":"G10:L28","measurementHeading":"A29:L29","tableHeader":"A30:L30","bodyGroupHeading":"A31:D31","approvedPomRows":"A32:L51","unusedBlankRows":"A52:L60","straySourcePunctuation":"J62","rows":20},"cells":{"A1":"SERPENTIS REGINA","I1":"FIT FORM REFERENCE-SIZE 8","A2":"STYLE NAME / DESCRIPTION ","I2":"STYLE #/ REVISION/ PAGE","A3":"MEASURMENTS","A4":"REFERENCE ID","C4":"SR-FORM-001","G4":"MANUFACTURER","I4":"VALUE","A5":"DESCRIPTION","C5":"Serpentis Regina House Fit Form","G5":"MODEL/FORM","I5":"VALUE","A6":"REFERENCE TYPE","C6":"Mannequin/Dress Form","G6":"CLAIMED SIZE","I6":8,"A7":"DESIGNATED SIZE","C7":"Manufacture-designated Size 8","G7":"MEASUREMENT DATE","I7":"Date you physically measure it","A8":"STATUS","C8":"House Reference-Pending Verification","G8":"MEASURED BY","I8":"AMAYA KELSEA","A9":"FRONT BODY MAP","G9":"BACK BODY MAP","A29":"HOUSE FIT FORM-ACTUAL BODY MEASUREMENTS","A30":"POM","B30":"CRIT","C30":"BODY MEASUREMENT","D30":"HOW TO MEASURE","E30":"MFR SIZE 8","F30":"ACTUAL FORM","G30":"DELTA","H30":"HOUSE TARGET","I30":"TARGET DELTA","J30":"STATUS","K30":"REV/DATE","L30":"FIT/OBSERVATION","A31":"BF","C31":"BODY/ FIT FORM","I31":"=IF(OR(G31=\"\",H31=\"\"),\"\",H31-G31)","A32":"BF-01","C32":"BUST CIRCUMFRENCE","D32":"Measure horizontally around fullest point of bust, tape level front-to-back.","E32":35.5,"F32":35.75,"I32":"=IF(OR(G32=\"\",H32=\"\"),\"\",H32-G32)","A33":"BF-02","C33":"WAIST CIRCUMFRENCE","D33":"Measure around established natural waistline, tape level and without compression.","E33":26.5,"F33":27.25,"I33":"=IF(OR(G33=\"\",H33=\"\"),\"\",H33-G33)","A34":"BF-03","C34":"FULL HIP CIRCUMFRENCE (7” BELOW WAIST)","D34":"Measure horizontally around fullest projection of seat/hip.","E34":36.5,"F34":36.5,"A35":"BF-04","C35":"HIGH HIP CIRCUMFRENCE (3” BELOW WAIST)","D35":"Measure horizontally at the established high-hip level; record the vertical distance below waist used.","F35":32.875,"A36":"BF-05","C36":"ACROSS FRONT (3” BELOW MSP)","D36":"Measure horizontally across front torso between armhole crease/reference points at the established chest level.","F36":13.5,"A37":"BF-06","C37":"ACROSS BACK (4” BELOW MSP)","D37":"Measure horizontally across back between armhole crease/reference points at the established back level.","F37":14,"A38":"BF-07","C38":"SHOULDER WIDTH","D38":"Measure shoulder point to shoulder point across back.","F38":15,"A39":"BF-08","C39":"SHOULDER LENGTH","D39":"Measure from neck/shoulder junction to shoulder point.","F39":5,"A40":"BF-09","C40":"FRONT NK - WAIST","D40":"Measure from front neck reference point vertically to established waistline.","E40":14.5,"F40":14.25,"A41":"BF-10","C41":"BACK NK - WAIST","D41":"Measure from center-back neck reference point vertically to waistline.","E41":16.5,"F41":16.5,"A42":"BF-11","C42":"BUST POINT - BUST POINT","D42":"Measure horizontally from bust apex to bust apex.","E42":7,"F42":7,"A43":"BF-12","C43":"MPS - BUST POINT","D43":"Measure from high-point shoulder to bust apex following body contour.","F43":9.25,"A44":"BF-13","C44":"NECK CIRCUMFRENCE","D44":"Measure around established neck-base seam/reference line.","E44":13.5,"F44":15,"A45":"BF-14","C45":"ARMHOLE CIRCUMFRENCE","D45":"Measure around armhole/body-arm junction following the intended armscye reference.","F45":15,"A46":"BF-15","C46":"BICEP (6” FROM SHOULDER JOINT)","D46":"Measure circumference at fullest upper-arm level.","F46":9.75,"A47":"BF-16","C47":"ELBOW CIRCUMFRENCE (12” BELOW SHOULDER JOINT)","D47":"Measure around elbow level at the form’s established elbow reference.","F47":9,"A48":"BF-17","C48":"WRIST CIRCUMFRENCE","D48":"Measure around wrist at established wrist reference.","F48":6.25,"A49":"BF-18","C49":"SHOULDER - ELBOW","D49":"Measure from shoulder point down arm to elbow reference.","F49":12,"A50":"BF-19","C50":"SHOULDER - WRIST","D50":"Measure from shoulder point down arm to wrist reference.","F50":22.5,"A51":"BF-20","C51":"WAIST - FULL HIP","D51":"Measure vertically from waistline to the level used for full-hip circumference.","F51":7.75,"J62":":"},"images":[{"format":"jpeg","width":724,"height":2048,"anchor":{"column":3,"row":10},"sha256":"70764b8015c5b6b5cf6884656b7adc8e47c33431f5117bfaa7685a71e64a94ae","existingAsset":"assets/house-sheet/mannequin-front.jpg"},{"format":"jpeg","width":696,"height":2048,"anchor":{"column":8,"row":10},"sha256":"3de7eef55315ba44fe18f7d86762ea5c2ae4c89d082213b8f95db04175970905","existingAsset":"assets/house-sheet/mannequin-back.jpg"}]}]},"form":{"schemaVersion":"1.0","formId":"SR-FORM-001","description":"Serpentis Regina House Fit Form","referenceType":"Dress form / mannequin","manufacturerDesignatedSize":"8","unit":"in","approval":{"status":"APPROVED","authority":"House founder","basis":"Owner confirmation on 2026-10-20","sourceRevision":"BODY REF-MANNEQUIN-SIZE 8-V1","approvalDate":"2026-10-20","note":"Measured form values designated as approved house standard; not identical to manufacturer reference."},"source":{"document":"MEASUREMENT SHEET_SERPENTIS REGINA","tab":"BODY REF-MANNEQUIN-SIZE 8-V1","url":"https://docs.google.com/spreadsheets/d/1FOpiVvy2RlpEwVJiJjAw27lZxDtCzXPBhuhWv1ibTEc/edit"},"measurements":[{"pomCode":"BF-01","description":"Bust circumference","manufacturerReference":35.5,"houseStandard":35.75},{"pomCode":"BF-02","description":"Waist circumference","manufacturerReference":26.5,"houseStandard":27.25},{"pomCode":"BF-03","description":"Full hip circumference","manufacturerReference":36.5,"houseStandard":36.5},{"pomCode":"BF-04","description":"High hip circumference","manufacturerReference":null,"houseStandard":32.875},{"pomCode":"BF-05","description":"Across front","manufacturerReference":null,"houseStandard":13.5},{"pomCode":"BF-06","description":"Across back","manufacturerReference":null,"houseStandard":14},{"pomCode":"BF-07","description":"Shoulder width","manufacturerReference":null,"houseStandard":15},{"pomCode":"BF-08","description":"Shoulder length","manufacturerReference":null,"houseStandard":5},{"pomCode":"BF-09","description":"Front neck to waist","manufacturerReference":14.5,"houseStandard":14.25},{"pomCode":"BF-10","description":"Back neck to waist","manufacturerReference":16.5,"houseStandard":16.5},{"pomCode":"BF-11","description":"Bust point to bust point","manufacturerReference":7,"houseStandard":7},{"pomCode":"BF-12","description":"High shoulder point to bust point","manufacturerReference":null,"houseStandard":9.25},{"pomCode":"BF-13","description":"Neck circumference","manufacturerReference":13.5,"houseStandard":15},{"pomCode":"BF-14","description":"Armhole circumference","manufacturerReference":null,"houseStandard":15},{"pomCode":"BF-15","description":"Bicep circumference","manufacturerReference":null,"houseStandard":9.75},{"pomCode":"BF-16","description":"Elbow circumference","manufacturerReference":null,"houseStandard":9},{"pomCode":"BF-17","description":"Wrist circumference","manufacturerReference":null,"houseStandard":6.25},{"pomCode":"BF-18","description":"Shoulder to elbow","manufacturerReference":null,"houseStandard":12},{"pomCode":"BF-19","description":"Shoulder to wrist","manufacturerReference":null,"houseStandard":22.5},{"pomCode":"BF-20","description":"Waist to full hip","manufacturerReference":null,"houseStandard":7.75}]},"methods":{"formId":"SR-FORM-001","sourceDocument":"MEASUREMENT SHEET_SERPENTIS REGINA","sourceTab":"BODY REF-MANNEQUIN-SIZE 8-V1","sourceColumns":["BODY MEASUREMENT","HOW TO MEASURE"],"note":"Source sheet labels and measurement methods reproduced as recorded. The source sheet's pending-verification label has not been edited; approvals are held in the private versioned record.","methods":[{"pomCode":"BF-01","sourceLabel":"BUST CIRCUMFRENCE","howToMeasure":"Measure horizontally around fullest point of bust, tape level front-to-back."},{"pomCode":"BF-02","sourceLabel":"WAIST CIRCUMFRENCE","howToMeasure":"Measure around established natural waistline, tape level and without compression."},{"pomCode":"BF-03","sourceLabel":"FULL HIP CIRCUMFRENCE (7” BELOW WAIST)","howToMeasure":"Measure horizontally around fullest projection of seat/hip."},{"pomCode":"BF-04","sourceLabel":"HIGH HIP CIRCUMFRENCE (3” BELOW WAIST)","howToMeasure":"Measure horizontally at the established high-hip level; record the vertical distance below waist used."},{"pomCode":"BF-05","sourceLabel":"ACROSS FRONT (3” BELOW MSP)","howToMeasure":"Measure horizontally across front torso between armhole crease/reference points at the established chest level."},{"pomCode":"BF-06","sourceLabel":"ACROSS BACK (4” BELOW MSP)","howToMeasure":"Measure horizontally across back between armhole crease/reference points at the established back level."},{"pomCode":"BF-07","sourceLabel":"SHOULDER WIDTH","howToMeasure":"Measure shoulder point to shoulder point across back."},{"pomCode":"BF-08","sourceLabel":"SHOULDER LENGTH","howToMeasure":"Measure from neck/shoulder junction to shoulder point."},{"pomCode":"BF-09","sourceLabel":"FRONT NK - WAIST","howToMeasure":"Measure from front neck reference point vertically to established waistline."},{"pomCode":"BF-10","sourceLabel":"BACK NK - WAIST","howToMeasure":"Measure from center-back neck reference point vertically to waistline."},{"pomCode":"BF-11","sourceLabel":"BUST POINT - BUST POINT","howToMeasure":"Measure horizontally from bust apex to bust apex."},{"pomCode":"BF-12","sourceLabel":"MPS - BUST POINT","howToMeasure":"Measure from high-point shoulder to bust apex following body contour."},{"pomCode":"BF-13","sourceLabel":"NECK CIRCUMFRENCE","howToMeasure":"Measure around established neck-base seam/reference line."},{"pomCode":"BF-14","sourceLabel":"ARMHOLE CIRCUMFRENCE","howToMeasure":"Measure around armhole/body-arm junction following the intended armscye reference."},{"pomCode":"BF-15","sourceLabel":"BICEP (6” FROM SHOULDER JOINT)","howToMeasure":"Measure circumference at fullest upper-arm level."},{"pomCode":"BF-16","sourceLabel":"ELBOW CIRCUMFRENCE (12” BELOW SHOULDER JOINT)","howToMeasure":"Measure around elbow level at the form’s established elbow reference."},{"pomCode":"BF-17","sourceLabel":"WRIST CIRCUMFRENCE","howToMeasure":"Measure around wrist at established wrist reference."},{"pomCode":"BF-18","sourceLabel":"SHOULDER - ELBOW","howToMeasure":"Measure from shoulder point down arm to elbow reference."},{"pomCode":"BF-19","sourceLabel":"SHOULDER - WRIST","howToMeasure":"Measure from shoulder point down arm to wrist reference."},{"pomCode":"BF-20","sourceLabel":"WAIST - FULL HIP","howToMeasure":"Measure vertically from waistline to the level used for full-hip circumference."}]}};
+const GARMENT_DEVELOPMENT = (()=>{
+/** Local garment development: imported definitions are separate from working values. */
+const SIDES = ['general', 'front', 'back', 'left', 'right'];
+const UNSAFE_KEYS = new Set(['__proto__', 'prototype', 'constructor']);
+const LOCAL_NUMBERS = ['targetCm', 'toleranceMinusCm', 'tolerancePlusCm', 'proposedDeltaCm'];
+const ROW_KEYS = ['id', 'code', 'description', 'method', 'retired', 'sourceRow', 'sourceSha256', 'definitionHistory', ...LOCAL_NUMBERS, 'notes', 'observations'];
+const MAX_NUMBER = 1e9;
+const SOURCE_WARNING = 'Workbook measurement values remain source notes; enter working targets after selecting CM/IN. The source ± and Adj labels are not interpreted as tolerance or proposed change.';
+
+function object(value, label) {
+  if (!value || typeof value !== 'object' || Array.isArray(value) || ![Object.prototype, null].includes(Object.getPrototypeOf(value))) throw Error(`${label} must be an object.`);
+  if (Object.keys(value).some(key => UNSAFE_KEYS.has(key))) throw Error(`${label} contains an unsafe key.`);
+  return value;
+}
+
+function exact(value, keys, label) {
+  object(value, label);
+  if (Object.keys(value).length !== keys.length || Object.keys(value).some(key => !keys.includes(key))) throw Error(`${label} must contain exactly the known fields.`);
+}
+
+function text(value, label, max = 2000) {
+  if (typeof value !== 'string' || value.length > max || value.includes('\0')) throw Error(`${label} must be text of at most ${max} characters.`);
+  return value;
+}
+
+function number(value, label, signed = false) {
+  if (value === null) return null;
+  if (typeof value !== 'number' || !Number.isFinite(value) || Math.abs(value) > MAX_NUMBER || (!signed && value < 0)) throw Error(`${label} must be ${signed ? 'a finite signed' : 'a non-negative'} number or blank.`);
+  return Object.is(value, -0) ? 0 : value;
+}
+
+function array(value, label, max) {
+  if (!Array.isArray(value) || value.length > max) throw Error(`${label} must be a list of at most ${max} entries.`);
+  return value;
+}
+
+function requireUnit(unit) {
+  if (unit !== null && !['cm', 'in'].includes(unit)) throw Error('Choose CM or IN for garment measurements.');
+}
+
+function sourceCoordinate(value) {
+  const match = /^([A-Z]{1,3})([1-9]\d{0,6})$/.exec(value);
+  if (!match || Number(match[2]) > 1048576) return false;
+  const column = [...match[1]].reduce((result, letter) => result * 26 + letter.charCodeAt(0) - 64, 0);
+  return column <= 16384;
+}
+
+/** Validate raw local workbook notes without calculating or rewriting any cell. */
+function normalizeWorkbook(input) {
+  exact(input, ['fileName', 'sha256', 'sheets'], 'Workbook');
+  const fileName = text(input.fileName, 'Workbook filename', 255);
+  const sha256 = text(input.sha256, 'Workbook hash', 64);
+  if (!/^[a-f0-9]{64}$/i.test(sha256)) throw Error('Workbook hash must be SHA-256.');
+  const names = new Set();
+  let cellCount = 0, textLength = 0;
+  const sheets = array(input.sheets, 'Workbook sheets', 64).map(sheet => {
+    exact(sheet, ['name', 'cells', 'merges'], 'Source sheet');
+    const name = text(sheet.name, 'Source sheet name', 100);
+    if (!name || names.has(name)) throw Error('Workbook sheet names must be nonempty and unique.');
+    names.add(name);
+    object(sheet.cells, 'Source cells');
+    const cells = {};
+    for (const [coordinate, cell] of Object.entries(sheet.cells)) {
+      if (!sourceCoordinate(coordinate)) throw Error('Workbook contains an invalid cell coordinate.');
+      if (++cellCount > 100000) throw Error('Workbook has too many source cells.');
+      exact(cell, ['value', 'formula', 'type'], `Source cell ${coordinate}`);
+      if (cell.value !== null && !['string', 'number', 'boolean'].includes(typeof cell.value)) throw Error('Source cell values must be plain values.');
+      if (typeof cell.value === 'number' && !Number.isFinite(cell.value)) throw Error('Source cell number must be finite.');
+      if (typeof cell.value === 'string') textLength += text(cell.value, 'Source cell text', 100000).length;
+      const formula = cell.formula === null ? null : text(cell.formula, 'Source formula', 100000);
+      textLength += formula?.length ?? 0;
+      const type = text(cell.type, 'Source cell type', 32);
+      if (textLength > 10000000) throw Error('Workbook source text exceeds the local import limit.');
+      cells[coordinate] = { value: cell.value, formula, type };
+    }
+    const merges = array(sheet.merges, 'Source merges', 10000).map(range => {
+      text(range, 'Source merge', 40);
+      const parts = range.split(':');
+      if (parts.length !== 2 || !parts.every(sourceCoordinate)) throw Error('Workbook contains an invalid merge range.');
+      return range;
+    });
+    return { name, cells, merges };
+  });
+  return { fileName, sha256, sheets };
+}
+
+function componentId(name) { return `component:${encodeURIComponent(name)}`; }
+function rowId(component, code) { return `${component}:${code}`; }
+
+function blankObservations(samples) {
+  return Object.fromEntries(samples.map(sample => [sample.id, Object.fromEntries(SIDES.map(side => [side, null]))]));
+}
+
+function blankRow(component, code, description, method, sourceRow, sourceSha256, samples = []) {
+  return { id: rowId(component, code), code, description, method, retired: false, sourceRow, sourceSha256, definitionHistory: [],
+    targetCm: null, toleranceMinusCm: null, tolerancePlusCm: null, proposedDeltaCm: null,
+    notes: '', observations: blankObservations(samples) };
+}
+
+/** No unit, sample round, working target, tolerance, or approval is inferred. */
+function createDevelopment() {
+  return { schemaVersion: 1, source: null, components: [], samples: [] };
+}
+
+/** Strict portable JSON validation. Numeric values already represent canonical CM. */
+function normalizeDevelopment(input, unit = null) {
+  requireUnit(unit);
+  exact(input, ['schemaVersion', 'source', 'components', 'samples'], 'Garment development');
+  if (input.schemaVersion !== 1) throw Error('This garment-development version is not supported.');
+  const source = input.source === null ? null : normalizeWorkbook(input.source);
+  const sampleIds = new Set();
+  const samples = array(input.samples, 'Development samples', 64).map(sample => {
+    exact(sample, ['id', 'label', 'round', 'notes'], 'Development sample');
+    const id = text(sample.id, 'Sample ID', 128);
+    if (!/^[\w-]{1,128}$/.test(id) || sampleIds.has(id)) throw Error('Sample IDs must be unique safe identifiers.');
+    sampleIds.add(id);
+    return { id, label: text(sample.label, 'Sample label', 240), round: text(sample.round, 'Sample round', 240), notes: text(sample.notes, 'Sample notes', 10000) };
+  });
+  const componentIds = new Set(), rowIds = new Set();
+  let numericEntered = false, rowCount = 0;
+  const components = array(input.components, 'Development components', 32).map(component => {
+    exact(component, ['id', 'name', 'sourceSheet', 'rows'], 'Garment component');
+    const name = text(component.name, 'Component name', 100);
+    const sourceSheet = text(component.sourceSheet, 'Component source sheet', 100);
+    const id = text(component.id, 'Component ID', 1000);
+    if (!name || name !== sourceSheet || id !== componentId(sourceSheet) || componentIds.has(id)) throw Error('Component identity must match a unique source sheet.');
+    componentIds.add(id);
+    const rows = array(component.rows, 'Component POM rows', 2000).map(row => {
+      if (++rowCount > 10000) throw Error('Development contains too many POM rows.');
+      exact(row, ROW_KEYS, 'Component POM');
+      const code = text(row.code, 'POM code', 64);
+      if (!/^[A-Za-z]+\d+$/.test(code) || row.id !== rowId(id, code) || rowIds.has(row.id)) throw Error('POM identity must match a unique authored code and component.');
+      rowIds.add(row.id);
+      if (typeof row.retired !== 'boolean' || !Number.isInteger(row.sourceRow) || row.sourceRow < 1 || row.sourceRow > 1048576) throw Error('POM source position or retired state is invalid.');
+      if (typeof row.sourceSha256 !== 'string' || !/^[a-f0-9]{64}$/i.test(row.sourceSha256)) throw Error('POM definition source hash is invalid.');
+      const normalized = { id: row.id, code, description: text(row.description, 'POM description', 100000), method: text(row.method, 'Measuring method', 100000), retired: row.retired, sourceRow: row.sourceRow, sourceSha256: row.sourceSha256 };
+      normalized.definitionHistory = array(row.definitionHistory, 'POM definition history', 100).map(entry => {
+        exact(entry, ['description', 'method', 'sourceRow', 'sourceSha256'], 'Previous POM definition');
+        if (!Number.isInteger(entry.sourceRow) || entry.sourceRow < 1 || entry.sourceRow > 1048576 || typeof entry.sourceSha256 !== 'string' || !/^[a-f0-9]{64}$/i.test(entry.sourceSha256)) throw Error('Previous POM definition source is invalid.');
+        return { description: text(entry.description, 'Previous POM description', 100000), method: text(entry.method, 'Previous measuring method', 100000), sourceRow: entry.sourceRow, sourceSha256: entry.sourceSha256 };
+      });
+      for (const key of LOCAL_NUMBERS) {
+        normalized[key] = number(row[key], key, key === 'proposedDeltaCm');
+        if (normalized[key] !== null) numericEntered = true;
+      }
+      if (normalized.targetCm !== null && normalized.proposedDeltaCm !== null && normalized.targetCm + normalized.proposedDeltaCm < 0) throw Error('A proposed working target cannot be negative.');
+      normalized.notes = text(row.notes, 'POM notes', 10000);
+      object(row.observations, 'POM observations');
+      if (Object.keys(row.observations).length > sampleIds.size) throw Error('Observations must use known samples.');
+      normalized.observations = {};
+      for (const [sampleId, values] of Object.entries(row.observations)) {
+        if (!sampleIds.has(sampleId)) throw Error('Observations must use known samples.');
+        exact(values, SIDES, 'Sample-side observations');
+        normalized.observations[sampleId] = Object.fromEntries(SIDES.map(side => {
+          const value = number(values[side], `${code} ${side} observation`);
+          if (value !== null) numericEntered = true;
+          return [side, value];
+        }));
+      }
+      return normalized;
+    });
+    return { id, name, sourceSheet, rows };
+  });
+  if (numericEntered && unit === null) throw Error('Choose CM or IN before entering garment measurements.');
+  if (components.length && source === null) throw Error('Imported components require their local workbook source.');
+  return { schemaVersion: 1, source, components, samples };
+}
+
+function definitions(workbook, samples) {
+  const components = [], warnings = [SOURCE_WARNING];
+  for (const sheet of workbook.sheets) {
+    if (!/-SPEC$/i.test(sheet.name)) continue;
+    const id = componentId(sheet.name), codes = new Set(), rows = [];
+    const coordinates = Object.keys(sheet.cells).filter(coordinate => /^A\d+$/.test(coordinate)).sort((left, right) => Number(left.slice(1)) - Number(right.slice(1)));
+    for (const coordinate of coordinates) {
+      const cell = sheet.cells[coordinate];
+      if (typeof cell.value !== 'string' || !/^[A-Za-z]+\d+$/.test(cell.value)) continue;
+      if (cell.formula !== null) {
+        warnings.push(`${sheet.name} ${coordinate}: a formula-backed POM code was not imported as an authored definition.`);
+        continue;
+      }
+      const code = cell.value, sourceRow = Number(coordinate.slice(1));
+      if (codes.has(code)) throw Error(`${sheet.name} contains duplicate authored POM code ${code}; resolve it before importing.`);
+      codes.add(code);
+      const readText = column => {
+        const sourceCell = sheet.cells[`${column}${sourceRow}`];
+        if (!sourceCell || sourceCell.value === null) return '';
+        if (sourceCell.formula !== null) warnings.push(`${sheet.name} ${column}${sourceRow}: the cached source text is retained; its formula is not calculated.`);
+        return String(sourceCell.value);
+      };
+      rows.push(blankRow(id, code, readText('B'), readText('D'), sourceRow, workbook.sha256, samples));
+    }
+    if (rows.length) components.push({ id, name: sheet.name, sourceSheet: sheet.name, rows });
+  }
+  if (!components.length) throw Error('No authored component POMs were found in *-SPEC sheets.');
+  if (components.length > 32 || components.reduce((count, component) => count + component.rows.length, 0) > 10000 || components.some(component => component.rows.length > 2000)) throw Error('Workbook contains too many component definitions.');
+  return { components, warnings };
+}
+
+function stableString(value) {
+  if (Array.isArray(value)) return `[${value.map(stableString).join(',')}]`;
+  if (value !== null && typeof value === 'object') return `{${Object.keys(value).sort().map(key => `${JSON.stringify(key)}:${stableString(value[key])}`).join(',')}}`;
+  return JSON.stringify(value);
+}
+
+function fingerprint(value) {
+  const serialized = stableString(value);
+  let first = 2166136261, second = 5381;
+  for (let index = 0; index < serialized.length; index++) {
+    const code = serialized.charCodeAt(index);
+    first = Math.imul(first ^ code, 16777619) >>> 0;
+    second = (Math.imul(second, 33) ^ code) >>> 0;
+  }
+  return `${serialized.length}:${first.toString(16).padStart(8, '0')}:${second.toString(16).padStart(8, '0')}`;
+}
+
+/** Preview definitions only; source measurements never become working values. */
+function previewComponentWorkbook(workbook, existingDevelopment = null, { unit = null } = {}) {
+  const existing = normalizeDevelopment(existingDevelopment ?? createDevelopment(), unit);
+  const normalizedWorkbook = normalizeWorkbook(workbook);
+  const { components, warnings } = definitions(normalizedWorkbook, existing.samples);
+  const changes = [], changed = new Set();
+  let added = 0, retired = 0;
+  const existingComponents = new Map(existing.components.map(component => [component.id, component]));
+  const incomingIds = new Set();
+  for (const component of components) {
+    incomingIds.add(component.id);
+    const previous = existingComponents.get(component.id);
+    if (!previous) changes.push({ type: 'component-added', componentId: component.id, message: `Add component ${component.name}.` });
+    const previousRows = new Map((previous?.rows ?? []).map(row => [row.id, row]));
+    for (const row of component.rows) {
+      const old = previousRows.get(row.id);
+      if (!old) {
+        added++;
+        changes.push({ type: 'row-added', componentId: component.id, rowId: row.id, message: `${component.name} ${row.code}: add authored POM definition; working values remain blank.` });
+      } else {
+        for (const field of ['description', 'method']) if (old[field] !== row[field]) {
+          changed.add(row.id);
+          changes.push({ type: field === 'method' ? 'method-changed' : 'description-changed', componentId: component.id, rowId: row.id,
+            message: `${component.name} ${row.code}: source ${field} changed. Existing working values and observations will be retained for review.` });
+        }
+        if (old.retired) {
+          changed.add(row.id);
+          changes.push({ type: 'row-reactivated', componentId: component.id, rowId: row.id, message: `${component.name} ${row.code}: restore the authored definition; retained working values remain.` });
+        }
+      }
+      previousRows.delete(row.id);
+    }
+    for (const old of previousRows.values()) if (!old.retired) {
+      retired++;
+      changes.push({ type: 'row-retired', componentId: component.id, rowId: old.id, message: `${component.name} ${old.code}: absent from this workbook; retain as retired with all working values.` });
+    }
+  }
+  for (const oldComponent of existing.components) if (!incomingIds.has(oldComponent.id)) {
+    for (const old of oldComponent.rows) if (!old.retired) {
+      retired++;
+      changes.push({ type: 'row-retired', componentId: oldComponent.id, rowId: old.id, message: `${oldComponent.name} ${old.code}: component absent from this workbook; retain as retired with all working values.` });
+    }
+  }
+  return { schemaVersion: 1, baseFingerprint: fingerprint(existing), workbook: normalizedWorkbook, components, changes, warnings,
+    summary: { components: components.length, rows: components.reduce((count, component) => count + component.rows.length, 0), added, changed: changed.size, retired } };
+}
+
+/** Apply the reviewed source atomically while preserving every local working value. */
+function applyComponentWorkbook(existingDevelopment, preview, { unit = null } = {}) {
+  const existing = normalizeDevelopment(existingDevelopment ?? createDevelopment(), unit);
+  exact(preview, ['schemaVersion', 'baseFingerprint', 'workbook', 'components', 'changes', 'warnings', 'summary'], 'Workbook preview');
+  if (preview.schemaVersion !== 1 || preview.baseFingerprint !== fingerprint(existing)) throw Error('The workbook preview is stale; preview again before applying.');
+  const expected = previewComponentWorkbook(preview.workbook, existing, { unit });
+  if (stableString(preview) !== stableString(expected)) throw Error('The workbook preview changed; preview again before applying.');
+  const previousComponents = new Map(existing.components.map(component => [component.id, component]));
+  const components = expected.components.map(component => {
+    const previous = previousComponents.get(component.id);
+    const previousRows = new Map((previous?.rows ?? []).map(row => [row.id, row]));
+    const rows = component.rows.map(row => {
+      const old = previousRows.get(row.id);
+      previousRows.delete(row.id);
+      if (!old) return row;
+      const definitionHistory = [...old.definitionHistory];
+      if (old.description !== row.description || old.method !== row.method) definitionHistory.push({ description: old.description, method: old.method, sourceRow: old.sourceRow, sourceSha256: old.sourceSha256 });
+      return { ...old, description: row.description, method: row.method, sourceRow: row.sourceRow, sourceSha256: row.sourceSha256, definitionHistory, retired: false };
+    });
+    for (const old of previousRows.values()) rows.push({ ...old, retired: true });
+    previousComponents.delete(component.id);
+    return { ...component, rows };
+  });
+  for (const previous of previousComponents.values()) components.push({ ...previous, rows: previous.rows.map(row => ({ ...row, retired: true })) });
+  return normalizeDevelopment({ schemaVersion: 1, source: expected.workbook, components, samples: existing.samples }, unit);
+}
+
+function subtract(left, right) { return Number((left - right).toFixed(12)); }
+
+/** Actual minus target, with independent sample/side identity and explicit tolerances. */
+function compareObservation(row, sampleId, side = 'general') {
+  if (!SIDES.includes(side)) throw Error('Choose a supported observation side.');
+  object(row, 'Development POM');
+  const actualCm = number(row.observations?.[sampleId]?.[side] ?? null, 'Sample observation');
+  const targetCm = number(row.targetCm, 'Working target');
+  const toleranceMinusCm = number(row.toleranceMinusCm, 'Minus tolerance');
+  const tolerancePlusCm = number(row.tolerancePlusCm, 'Plus tolerance');
+  const proposedDeltaCm = number(row.proposedDeltaCm, 'Proposed change', true);
+  if (targetCm !== null && proposedDeltaCm !== null && targetCm + proposedDeltaCm < 0) throw Error('A proposed working target cannot be negative.');
+  const deltaCm = actualCm === null || targetCm === null ? null : subtract(actualCm, targetCm);
+  const hasTolerance = toleranceMinusCm !== null && tolerancePlusCm !== null;
+  const lowerCm = targetCm === null || !hasTolerance ? null : subtract(targetCm, toleranceMinusCm);
+  const upperCm = targetCm === null || !hasTolerance ? null : subtract(targetCm, -tolerancePlusCm);
+  const rawDelta = deltaCm === null ? null : actualCm - targetCm;
+  const epsilon = Number.EPSILON * Math.max(1, Math.abs(actualCm ?? 0), Math.abs(targetCm ?? 0), toleranceMinusCm ?? 0, tolerancePlusCm ?? 0) * 4;
+  const toleranceStatus = deltaCm === null ? 'missing' : !hasTolerance ? 'not-set'
+    : rawDelta >= -toleranceMinusCm - epsilon && rawDelta <= tolerancePlusCm + epsilon ? 'within' : 'outside';
+  return { actualCm, targetCm, deltaCm, toleranceStatus, lowerCm, upperCm,
+    proposedTargetCm: targetCm === null || proposedDeltaCm === null ? null : subtract(targetCm, -proposedDeltaCm) };
+}
+
+return {createDevelopment,normalizeDevelopment,previewComponentWorkbook,applyComponentWorkbook,compareObservation};
+})();
 const TECHPACK_CORE = (()=>{
 /** Local tech-pack draft data. Measurements are canonical centimetres. */
+const { normalizeDevelopment } = GARMENT_DEVELOPMENT;
 const MAX_NUMBER = 1e9;
 const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
 const UNSAFE_KEYS = new Set(['__proto__', 'prototype', 'constructor']);
@@ -758,7 +1180,7 @@ function validateImage(attachment, label) {
 /** Validate either known schema before migrating; no arbitrary fields survive. */
 function validateTechPack(input, template, version) {
   const keys = ['schemaVersion', 'templateId', 'id', 'title', 'unit', 'fields', 'tables', 'attachments', 'updatedAt'];
-  exactKeys(input, version === 2 ? [...keys, 'style'] : keys, 'Tech pack');
+  exactKeys(input, version === 3 ? [...keys, 'style', 'development'] : version === 2 ? [...keys, 'style'] : keys, 'Tech pack');
   if (input.schemaVersion !== version || input.templateId !== template.id) throw Error('This tech-pack template or version is not compatible.');
   if (input.unit !== null) requireUnit(input.unit);
   const id = text(input.id, 'Pack ID', 128);
@@ -776,6 +1198,7 @@ function validateTechPack(input, template, version) {
     for (const key of STYLE_KEYS) result.style[key] = text(input.style[key], `Style ${key}`, key === 'description' ? 4000 : 2000);
   }
   Object.assign(result, { id, title, unit: input.unit, updatedAt: input.updatedAt });
+  if (version === 3) result.development = normalizeDevelopment(input.development, input.unit);
   let attachmentCount = 0;
   for (const sheet of template.sheets) {
     const fields = (sheet.fields ?? []).filter(editable);
@@ -808,7 +1231,7 @@ function validateTechPack(input, template, version) {
     for (const slot of slots) {
       const attachment = input.attachments[sheet.id][slot.key];
       if (attachment === null) continue;
-      if (version === 2 && sheet.id === 'pattern' && slot.key === 'reference' && Object.hasOwn(attachment, 'images')) {
+      if (version >= 2 && sheet.id === 'pattern' && slot.key === 'reference' && Object.hasOwn(attachment, 'images')) {
         exactKeys(attachment, ['images', 'selectedIndex'], 'Pattern reference gallery');
         if (!Array.isArray(attachment.images) || !attachment.images.length || attachment.images.length > 12) throw Error('A Pattern Card gallery must contain between 1 and 12 reference images.');
         if (!Number.isInteger(attachment.selectedIndex) || attachment.selectedIndex < 0 || attachment.selectedIndex >= attachment.images.length) throw Error('The selected gallery image is unavailable.');
@@ -830,6 +1253,7 @@ function validateTechPack(input, template, version) {
 /** Migrate known v1 drafts without changing their existing fields or measurements. */
 function migrateTechPack(input, template) {
   object(input, 'Tech pack');
+  if (input.schemaVersion === 3) return validateTechPack(input, template, 3);
   if (input.schemaVersion === 2) return validateTechPack(input, template, 2);
   if (input.schemaVersion !== 1) throw Error('This tech-pack template or version is not compatible.');
   const legacy = validateTechPack(input, template, 1);
@@ -877,7 +1301,7 @@ function compareTechPacks(before, after) {
         for (const key of Object.keys(value).sort()) visit(value[key], `${path}.${key}`);
       } else values.set(path, value);
     };
-    for (const key of ['title', 'unit', 'style', 'fields', 'tables']) visit(pack[key] ?? null, key);
+    for (const key of ['title', 'unit', 'style', 'fields', 'tables', 'development']) visit(pack[key] ?? null, key);
     for (const [sheetId, slots] of Object.entries(pack.attachments ?? {})) {
       for (const [key, attachment] of Object.entries(slots)) values.set(`attachments.${sheetId}.${key}`, attachmentSummary(attachment));
     }
@@ -1565,9 +1989,982 @@ function createEditHistory(limit = 40) {
 
 return {parseGridClipboard,previewGridPaste,applyGridPaste,createEditHistory};
 })();
+const DEVELOPMENT_VIEW = (()=>{
+const { formatMeasure } = TECHPACK_CORE;
+const { compareObservation } = GARMENT_DEVELOPMENT;
+
+const SIDES = ['general', 'front', 'back', 'left', 'right'];
+const sideLabel = side => side === 'general' ? 'General / whole component' : side[0].toUpperCase() + side.slice(1);
+const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
+const present = value => typeof value === 'number' && Number.isFinite(value);
+const display = (value, unit, signed = false) => present(value) ? formatMeasure(value, unit || 'cm', signed) : '—';
+const ink = value => `<span class="matte-ink">${value}</span>`;
+const sampleTitle = sample => [sample.label, sample.round ? `Round: ${sample.round}` : ''].filter(Boolean).join(' · ');
+
+function sourceContext(development, esc) {
+  const source = development.source;
+  if (!source) return '<p class="development-source-context">No component workbook imported.</p>';
+  return `<div class="development-source-context"><p>Local workbook: ${esc(source.fileName || 'Imported XLSX')}${source.sha256 ? ` · SHA-256: ${esc(source.sha256)}` : ''}</p><p>Original POM codes, labels and methods stay with their source sheet and row. Workbook values, ± labels and Adj labels remain source context; they do not set working targets, tolerance limits or proposed adjustments. Workbook images are not imported.</p></div>`;
+}
+
+function rowSource(component, row, esc) {
+  return `<p class="development-source-context">${esc(component.sourceSheet || component.name)} · source row ${esc(row.sourceRow)}${row.retired ? ' · Retained from an earlier import; absent from the latest source.' : ''}</p>`;
+}
+
+function assessment(row, comparison) {
+  if (!present(row.targetCm)) return 'Working target not entered';
+  if (!present(comparison.actualCm)) return 'Sample actual not entered';
+  if (!present(row.toleranceMinusCm) || !present(row.tolerancePlusCm)) return 'Set both tolerance limits to assess';
+  return comparison.toleranceStatus === 'within' ? 'Within configured tolerance' : comparison.toleranceStatus === 'outside' ? 'Outside configured tolerance' : 'Tolerance assessment unavailable';
+}
+
+function resultAttributes(component, row, result, sampleId, side, esc) {
+  return `data-dev-result="${result}" data-dev-component="${esc(component.id)}" data-dev-row="${esc(row.id)}" data-dev-sample="${esc(sampleId || '')}" data-dev-side="${esc(side)}"`;
+}
+
+function numericInput(component, row, key, label, value, options) {
+  const { unit, sampleId, side, observation = false, esc } = options;
+  const disabled = !unit || (observation && !sampleId);
+  const reason = !unit ? 'Choose garment CM or IN before entering measurements.' : 'Add or select a sample before entering actual measurements.';
+  return `<input type="text" inputmode="${unit === 'in' ? 'text' : 'decimal'}" autocomplete="off" data-dev-field="${key}" data-dev-component="${esc(component.id)}" data-dev-row="${esc(row.id)}"${observation ? ` data-dev-observation="actualCm" data-dev-sample="${esc(sampleId || '')}" data-dev-side="${esc(side)}"` : ''} aria-label="${esc(`${component.name}, ${row.code}, ${label}${unit ? ', ' + unit.toUpperCase() : ', unit not selected'}`)}" value="${present(value) ? esc(formatMeasure(value, unit || 'cm', key === 'proposedDeltaCm')) : ''}"${disabled ? ` disabled title="${esc(reason)}"` : ''}>`;
+}
+
+function sourceCell(component, row, esc, complete = false) {
+  const history = row.definitionHistory || [];
+  const historyMarkup = history.length ? `<details class="source-note development-definition-history"${complete ? ' open' : ''}><summary>Earlier source definitions · ${history.length}</summary><p>Kept from earlier imports; review changes in measuring context before comparing observations.</p>${history.map((previous, index) => `<section><h4>Previous definition ${index + 1}</h4><p class="measure-label">${ink(esc(previous.description))}</p><p class="development-method">${ink(esc(previous.method || 'No measuring method was supplied in this earlier source row.'))}</p><p class="development-source-context">${esc(component.sourceSheet || component.name)} · source row ${esc(previous.sourceRow)} · SHA-256: ${esc(previous.sourceSha256)}</p></section>`).join('')}</details>` : '';
+  return `<p class="measure-label">${ink(esc(row.description))}</p><p class="development-method">${ink(esc(row.method || 'No measuring method was supplied in this source row.'))}</p>${rowSource(component, row, esc)}${historyMarkup}`;
+}
+
+function developmentRows(component, options) {
+  const { unit, sampleId, side, esc } = options;
+  return component.rows.map(row => {
+    const comparison = compareObservation(row, sampleId, side);
+    const attrs = (key) => resultAttributes(component, row, key, sampleId, side, esc);
+    const numeric = (key, label, value, extra = {}) => numericInput(component, row, key, label, value, { ...options, ...extra });
+    const context = `${component.name}, ${row.code}`;
+    return `<tr data-dev-row="${esc(row.id)}" data-dev-component="${esc(component.id)}" data-development-row="true"${row.retired ? ' data-dev-retired="true"' : ''}>
+      <th scope="row" class="sticky-code" data-dev-column="code">${ink(esc(row.code))}${row.retired ? '<span class="development-retired">Retained row</span>' : ''}</th>
+      <td data-dev-column="description">${sourceCell(component, row, esc)}</td>
+      <td data-dev-column="target">${numeric('targetCm', 'Working target', row.targetCm)}</td>
+      <td data-dev-column="toleranceMinus">${numeric('toleranceMinusCm', 'Tolerance below target, positive magnitude', row.toleranceMinusCm)}</td>
+      <td data-dev-column="tolerancePlus">${numeric('tolerancePlusCm', 'Tolerance above target, positive magnitude', row.tolerancePlusCm)}</td>
+      <td data-dev-column="actual">${numeric('actualCm', `${sampleId ? 'Selected sample' : 'No sample selected'}, ${sideLabel(side)}, actual measurement`, comparison.actualCm, { observation: true })}</td>
+      <td data-dev-column="delta"><output ${attrs('deltaCm')} aria-label="${esc(context + ', actual minus working target')}">${ink(esc(display(comparison.deltaCm, unit, true)))}</output></td>
+      <td data-dev-column="assessment"><output class="development-assessment" ${attrs('toleranceStatus')} aria-label="${esc(context + ', tolerance assessment')}">${ink(esc(assessment(row, comparison)))}</output></td>
+      <td data-dev-column="proposedAdjustment">${numeric('proposedDeltaCm', 'Proposed signed adjustment, unapproved', row.proposedDeltaCm)}</td>
+      <td data-dev-column="proposedTarget"><output ${attrs('proposedTargetCm')} aria-label="${esc(context + ', proposed target, unapproved')}">${ink(esc(display(comparison.proposedTargetCm, unit)))}</output></td>
+      <td data-dev-column="notes"><textarea rows="2" maxlength="4000" data-dev-field="notes" data-dev-component="${esc(component.id)}" data-dev-row="${esc(row.id)}" aria-label="${esc(context + ', local development notes')}">${esc(row.notes)}</textarea></td>
+    </tr>`;
+  }).join('');
+}
+
+function workingTable(component, options) {
+  const { unit, sampleId, side, esc } = options;
+  const uid = unit ? unit.toUpperCase() : 'UNIT NOT SELECTED';
+  const columns = [
+    ['code', 'POM'], ['description', 'Original label / how to measure'], ['target', `Working target (${uid})`],
+    ['toleranceMinus', `− tolerance (${uid})`], ['tolerancePlus', `+ tolerance (${uid})`],
+    ['actual', `Sample actual · ${sideLabel(side)} (${uid})`], ['delta', `Actual − target (${uid})`],
+    ['assessment', 'Tolerance assessment'], ['proposedAdjustment', `Proposed signed adjustment · unapproved (${uid})`],
+    ['proposedTarget', `Proposed target · unapproved (${uid})`], ['notes', 'Local notes'],
+  ];
+  return `<section class="table-section development-component" data-development-component="${esc(component.id)}"><h3>${esc(component.name)} · ${component.rows.length} POMs</h3><p class="table-note">Source sheet: ${esc(component.sourceSheet || component.name)}. ${sampleId ? `Showing ${esc(sideLabel(side).toLowerCase())} actuals for the selected sample.` : 'Select or add a sample to enter actual measurements.'} Unknown values stay blank; zero is a measurement.</p><div class="table-wrap development-table-wrap" tabindex="0" role="region" aria-label="${esc(component.name)} component measurements; scroll horizontally for all working columns"><table class="work-table development-table" aria-label="${esc(component.name)} development measurements"><colgroup>${columns.map(([key]) => `<col data-dev-column="${key}">`).join('')}</colgroup><thead><tr>${columns.map(([key, label]) => `<th scope="col" data-dev-column="${key}">${esc(label)}</th>`).join('')}</tr></thead><tbody>${developmentRows(component, options)}</tbody></table></div></section>`;
+}
+
+function printComponent(component, development, options) {
+  const { unit, esc } = options;
+  const uid = unit ? unit.toUpperCase() : 'UNIT NOT SELECTED';
+  const columns = [['code', 'POM'], ['description', 'Original label / how to measure'], ['target', `Working target (${uid})`], ['toleranceMinus', `− tolerance (${uid})`], ['tolerancePlus', `+ tolerance (${uid})`], ['proposedAdjustment', `Proposed adjustment · unapproved (${uid})`], ['proposedTarget', `Proposed target · unapproved (${uid})`], ['notes', 'Local notes']];
+  const rows = component.rows.map(row => {
+    const proposed = present(row.targetCm) && present(row.proposedDeltaCm) ? row.targetCm + row.proposedDeltaCm : null;
+    return `<tr data-development-row="true"><th scope="row" class="sticky-code" data-dev-column="code">${ink(esc(row.code))}${row.retired ? '<span class="development-retired">Retained row</span>' : ''}</th><td data-dev-column="description">${sourceCell(component, row, esc, true)}</td>${[['target', row.targetCm], ['toleranceMinus', row.toleranceMinusCm], ['tolerancePlus', row.tolerancePlusCm], ['proposedAdjustment', row.proposedDeltaCm], ['proposedTarget', proposed]].map(([key, value]) => `<td data-dev-column="${key}"><span class="print-value">${ink(esc(display(value, unit, key === 'proposedAdjustment')))}</span></td>`).join('')}<td data-dev-column="notes"><span class="print-value">${ink(esc(row.notes || '—'))}</span></td></tr>`;
+  }).join('');
+  const observations = [];
+  for (const sample of development.samples) {
+    for (const row of component.rows) {
+      for (const side of SIDES) {
+        const comparison = compareObservation(row, sample.id, side);
+        if (present(comparison.actualCm)) observations.push(`<tr><th scope="row" class="sticky-code">${ink(esc(row.code))}</th><td>${ink(esc(sampleTitle(sample)))}${sample.notes ? `<p class="development-observation-context">${ink(esc(sample.notes))}</p>` : ''}</td><td>${ink(esc(sideLabel(side)))}</td><td>${ink(esc(display(comparison.actualCm, unit)))}</td><td>${ink(esc(display(row.targetCm, unit)))}</td><td>${ink(esc(display(comparison.deltaCm, unit, true)))}</td><td>${ink(esc(assessment(row, comparison)))}</td></tr>`);
+      }
+    }
+  }
+  return `<section class="development-print-component"><section class="table-section"><h3>${esc(component.name)} · all ${component.rows.length} POMs</h3><p class="table-note">Source sheet: ${esc(component.sourceSheet || component.name)}. Targets and tolerance limits are local working values. Proposed adjustments are unapproved and have not changed the targets.</p><div class="table-wrap"><table class="work-table development-table" aria-label="${esc(component.name)}, complete working targets and original methods"><colgroup>${columns.map(([key]) => `<col data-dev-column="${key}">`).join('')}</colgroup><thead><tr>${columns.map(([key, label]) => `<th scope="col" data-dev-column="${key}">${esc(label)}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div></section><section class="table-section"><h3>${esc(component.name)} · all entered sample observations</h3>${observations.length ? `<div class="table-wrap"><table class="work-table development-observations" aria-label="${esc(component.name)}, all nonblank sample and side observations"><thead><tr><th scope="col">POM</th><th scope="col">Sample / round / notes</th><th scope="col">Side</th><th scope="col">Actual (${uid})</th><th scope="col">Working target (${uid})</th><th scope="col">Actual − target (${uid})</th><th scope="col">Tolerance assessment</th></tr></thead><tbody>${observations.join('')}</tbody></table></div>` : '<p class="table-note">No actual measurements entered for this component.</p>'}</section></section>`;
+}
+
+/** Render only local working component data; source cells never become targets. */
+function renderDevelopment(development, { unit = null, componentId, sampleId, side = 'general', complete = false, esc = escapeHtml } = {}) {
+  const components = development?.components || [];
+  if (!components.length) return `<section class="development-view empty-state"><h3>Component development</h3><p>Import a garment component XLSX to start this working measurement sheet.</p><p>The import preview lets you review original POM codes, labels and measuring methods before applying changes. Working targets, tolerance limits, sample actuals and proposed adjustments start blank. Select garment CM or IN before entering measurements.</p><p>Use Import component XLSX in the workroom controls. The original workbook stays unchanged; its images are not imported.</p></section>`;
+  const samples = development.samples || [];
+  const selectedComponent = components.find(component => component.id === componentId) || components[0];
+  const selectedSample = samples.find(sample => sample.id === sampleId);
+  const activeSide = SIDES.includes(side) ? side : 'general';
+  const options = { unit, componentId: selectedComponent.id, sampleId: selectedSample?.id || '', side: activeSide, esc };
+  const rowCount = components.reduce((total, component) => total + component.rows.length, 0);
+  if (complete) return `<section class="development-view development-print"><h2>Garment component development</h2><p class="development-summary">${components.length} component sheets · ${rowCount} POMs · active display unit ${unit ? esc(unit.toUpperCase()) : 'NOT SELECTED'} · all components and all entered sample observations.</p><p class="development-approval-note">Working draft. Delta = sample actual − working target. Tolerance assessment uses only both explicitly configured limits; it does not approve a garment. Proposed signed adjustments and proposed targets remain unapproved and do not change working targets.</p>${sourceContext(development, esc)}${components.map(component => printComponent(component, development, options)).join('')}</section>`;
+  return `<section class="development-view"><div class="development-toolbar"><label class="field" for="component-select"><span>Component sheet</span><select id="component-select">${components.map(component => `<option value="${esc(component.id)}"${component.id === selectedComponent.id ? ' selected' : ''}>${esc(component.name)} · ${component.rows.length} POMs</option>`).join('')}</select></label><label class="field" for="development-sample"><span>Working sample</span><select id="development-sample"><option value="">Select a sample…</option>${samples.map(sample => `<option value="${esc(sample.id)}"${sample.id === selectedSample?.id ? ' selected' : ''}>${esc(sampleTitle(sample))}</option>`).join('')}</select></label><label class="field" for="development-side"><span>Measurement side / context</span><select id="development-side">${SIDES.map(item => `<option value="${item}"${item === activeSide ? ' selected' : ''}>${esc(sideLabel(item))}</option>`).join('')}</select></label></div><div class="development-sample-add"><label class="field" for="development-sample-name"><span>New sample name</span><input id="development-sample-name" type="text" maxlength="240" autocomplete="off" placeholder="Enter a sample name"></label><label class="field" for="development-sample-round"><span>Round / version (optional)</span><input id="development-sample-round" type="text" maxlength="240" autocomplete="off" placeholder="Enter a round or version"></label><label class="field" for="development-sample-notes"><span>Sample notes (optional)</span><input id="development-sample-notes" type="text" maxlength="2000" autocomplete="off" placeholder="Sample context or measuring conditions"></label><button id="add-development-sample" type="button">Add working sample</button></div><p class="development-summary">${components.length} component sheets · ${rowCount} POMs · ${samples.length} working sample${samples.length === 1 ? '' : 's'}${selectedSample ? ` · Selected: ${esc(sampleTitle(selectedSample))}` : ''}</p>${selectedSample?.notes ? `<p class="development-observation-context">Selected sample notes: ${esc(selectedSample.notes)}</p>` : ''}${!unit ? '<p class="development-notice" role="note">Select garment CM / IN before entering targets, tolerance limits, actual measurements or proposed adjustments.</p>' : `<p class="development-notice">Entry and display unit: ${esc(unit.toUpperCase())}. ${unit === 'in' ? 'Decimal and fractional inches are accepted.' : 'Enter decimal centimetres.'} Tolerance − / + fields are non-negative distances below / above the working target.</p>`}<p class="development-approval-note">Delta = sample actual − working target. Tolerance is assessed only when both limits, target and actual are entered. A proposal is separate from the working target: proposed target = working target + proposed signed adjustment. Proposals and tolerance results do not approve a garment.</p>${workingTable(selectedComponent, options)}${sourceContext(development, esc)}</section>`;
+}
+
+/** Preview an XLSX replacement before the application applies it atomically. */
+function renderWorkbookPreview(preview) {
+  const esc = escapeHtml;
+  const components = preview?.components || [];
+  const summary = preview?.summary || {};
+  const workbook = preview?.workbook || {};
+  return `<section class="workbook-preview"><p class="workbook-preview-summary">${esc(workbook.fileName || 'Component workbook')} · ${esc(summary.components ?? components.length)} component sheets · ${esc(summary.rows ?? components.reduce((total, component) => total + component.rows.length, 0))} POMs</p><p>Review this import before applying it. Matching component/POM identities keep local targets, tolerance limits, observations and proposals; replaced source labels and methods remain visible in the change list. The original XLSX is unchanged.</p><p class="workbook-preview-summary">${esc(summary.added ?? 0)} rows added · ${esc(summary.changed ?? 0)} rows changed · ${esc(summary.retired ?? 0)} rows retained from an earlier import</p>${(preview?.warnings || []).length ? `<div class="workbook-preview-warning" role="note"><h3>Import notes</h3><ul>${preview.warnings.map(warning => `<li>${esc(warning)}</li>`).join('')}<li>Workbook images are not imported. Retain the original XLSX with its source references.</li></ul></div>` : '<p class="workbook-preview-warning">Workbook images are not imported. Retain the original XLSX with its source references.</p>'}<div class="workbook-preview-list">${components.map(component => `<section><h3>${esc(component.name)} · ${component.rows.length} POMs</h3><p>Original sheet: ${esc(component.sourceSheet || component.name)}</p><ol>${component.rows.map(row => `<li><strong>${esc(row.code)}</strong> · ${esc(row.description)}${row.retired ? ' · Retained row' : ''}<p class="development-method">${esc(row.method || 'No measuring method was supplied.')}</p><p class="development-source-context">Source row ${esc(row.sourceRow)}</p></li>`).join('')}</ol></section>`).join('')}</div><details class="source-note" open><summary>Changes to review · ${(preview?.changes || []).length}</summary>${(preview?.changes || []).length ? `<ul>${preview.changes.map(change => `<li>${esc(change.message)}</li>`).join('')}</ul>` : '<p>No POM labels or methods changed. Applying this import refreshes local source context.</p>'}</details></section>`;
+}
+
+return {renderDevelopment,renderWorkbookPreview};
+})();
+const XLSX_INFLATE = (()=>{
+/**
+ * Raw DEFLATE support extracted from fflate 0.8.2 (Arjun Barrett).
+ * Registry: https://registry.npmjs.org/fflate/0.8.2
+ * Tarball: https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz
+ * Verified archive integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==
+ *
+ * Adaptations: keep only raw-inflate helpers and the streaming Inflate class;
+ * remove the unused FlateErrorCode export; wrap those unchanged algorithms in
+ * an IIFE to avoid names leaking into the standalone application bundle.
+ * The bounded adapter below is application code, not an upstream API.
+ * No external imports, workers, network calls, or dynamic code evaluation.
+ *
+ * MIT License
+ *
+ * Copyright (c) 2023 Arjun Barrett
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+const inflateXlsxRaw = (() => {
+// aliases for shorter compressed code (most minifers don't do this)
+var u8 = Uint8Array, u16 = Uint16Array, i32 = Int32Array;
+// fixed length extra bits
+var fleb = new u8([0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 0, /* unused */ 0, 0, /* impossible */ 0]);
+// fixed distance extra bits
+var fdeb = new u8([0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, /* unused */ 0, 0]);
+// code length index map
+var clim = new u8([16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15]);
+// get base, reverse index map from extra bits
+var freb = function (eb, start) {
+    var b = new u16(31);
+    for (var i = 0; i < 31; ++i) {
+        b[i] = start += 1 << eb[i - 1];
+    }
+    // numbers here are at max 18 bits
+    var r = new i32(b[30]);
+    for (var i = 1; i < 30; ++i) {
+        for (var j = b[i]; j < b[i + 1]; ++j) {
+            r[j] = ((j - b[i]) << 5) | i;
+        }
+    }
+    return { b: b, r: r };
+};
+var _a = freb(fleb, 2), fl = _a.b, revfl = _a.r;
+// we can ignore the fact that the other numbers are wrong; they never happen anyway
+fl[28] = 258, revfl[258] = 28;
+var _b = freb(fdeb, 0), fd = _b.b, revfd = _b.r;
+// map of value to reverse (assuming 16 bits)
+var rev = new u16(32768);
+for (var i = 0; i < 32768; ++i) {
+    // reverse table algorithm from SO
+    var x = ((i & 0xAAAA) >> 1) | ((i & 0x5555) << 1);
+    x = ((x & 0xCCCC) >> 2) | ((x & 0x3333) << 2);
+    x = ((x & 0xF0F0) >> 4) | ((x & 0x0F0F) << 4);
+    rev[i] = (((x & 0xFF00) >> 8) | ((x & 0x00FF) << 8)) >> 1;
+}
+// create huffman tree from u8 "map": index -> code length for code index
+// mb (max bits) must be at most 15
+// TODO: optimize/split up?
+var hMap = (function (cd, mb, r) {
+    var s = cd.length;
+    // index
+    var i = 0;
+    // u16 "map": index -> # of codes with bit length = index
+    var l = new u16(mb);
+    // length of cd must be 288 (total # of codes)
+    for (; i < s; ++i) {
+        if (cd[i])
+            ++l[cd[i] - 1];
+    }
+    // u16 "map": index -> minimum code for bit length = index
+    var le = new u16(mb);
+    for (i = 1; i < mb; ++i) {
+        le[i] = (le[i - 1] + l[i - 1]) << 1;
+    }
+    var co;
+    if (r) {
+        // u16 "map": index -> number of actual bits, symbol for code
+        co = new u16(1 << mb);
+        // bits to remove for reverser
+        var rvb = 15 - mb;
+        for (i = 0; i < s; ++i) {
+            // ignore 0 lengths
+            if (cd[i]) {
+                // num encoding both symbol and bits read
+                var sv = (i << 4) | cd[i];
+                // free bits
+                var r_1 = mb - cd[i];
+                // start value
+                var v = le[cd[i] - 1]++ << r_1;
+                // m is end value
+                for (var m = v | ((1 << r_1) - 1); v <= m; ++v) {
+                    // every 16 bit value starting with the code yields the same result
+                    co[rev[v] >> rvb] = sv;
+                }
+            }
+        }
+    }
+    else {
+        co = new u16(s);
+        for (i = 0; i < s; ++i) {
+            if (cd[i]) {
+                co[i] = rev[le[cd[i] - 1]++] >> (15 - cd[i]);
+            }
+        }
+    }
+    return co;
+});
+// fixed length tree
+var flt = new u8(288);
+for (var i = 0; i < 144; ++i)
+    flt[i] = 8;
+for (var i = 144; i < 256; ++i)
+    flt[i] = 9;
+for (var i = 256; i < 280; ++i)
+    flt[i] = 7;
+for (var i = 280; i < 288; ++i)
+    flt[i] = 8;
+// fixed distance tree
+var fdt = new u8(32);
+for (var i = 0; i < 32; ++i)
+    fdt[i] = 5;
+// fixed length map
+var flm = /*#__PURE__*/ hMap(flt, 9, 0), flrm = /*#__PURE__*/ hMap(flt, 9, 1);
+// fixed distance map
+var fdm = /*#__PURE__*/ hMap(fdt, 5, 0), fdrm = /*#__PURE__*/ hMap(fdt, 5, 1);
+// find max of array
+var max = function (a) {
+    var m = a[0];
+    for (var i = 1; i < a.length; ++i) {
+        if (a[i] > m)
+            m = a[i];
+    }
+    return m;
+};
+// read d, starting at bit p and mask with m
+var bits = function (d, p, m) {
+    var o = (p / 8) | 0;
+    return ((d[o] | (d[o + 1] << 8)) >> (p & 7)) & m;
+};
+// read d, starting at bit p continuing for at least 16 bits
+var bits16 = function (d, p) {
+    var o = (p / 8) | 0;
+    return ((d[o] | (d[o + 1] << 8) | (d[o + 2] << 16)) >> (p & 7));
+};
+// get end of byte
+var shft = function (p) { return ((p + 7) / 8) | 0; };
+// typed array slice - allows garbage collector to free original reference,
+// while being more compatible than .slice
+var slc = function (v, s, e) {
+    if (s == null || s < 0)
+        s = 0;
+    if (e == null || e > v.length)
+        e = v.length;
+    // can't use .constructor in case user-supplied
+    return new u8(v.subarray(s, e));
+};
+/**
+ * Codes for errors generated within this library
+ */
+var FlateErrorCode = {
+    UnexpectedEOF: 0,
+    InvalidBlockType: 1,
+    InvalidLengthLiteral: 2,
+    InvalidDistance: 3,
+    StreamFinished: 4,
+    NoStreamHandler: 5,
+    InvalidHeader: 6,
+    NoCallback: 7,
+    InvalidUTF8: 8,
+    ExtraFieldTooLong: 9,
+    InvalidDate: 10,
+    FilenameTooLong: 11,
+    StreamFinishing: 12,
+    InvalidZipData: 13,
+    UnknownCompressionMethod: 14
+};
+// error codes
+var ec = [
+    'unexpected EOF',
+    'invalid block type',
+    'invalid length/literal',
+    'invalid distance',
+    'stream finished',
+    'no stream handler',
+    ,
+    'no callback',
+    'invalid UTF-8 data',
+    'extra field too long',
+    'date not in range 1980-2099',
+    'filename too long',
+    'stream finishing',
+    'invalid zip data'
+    // determined by unknown compression method
+];
+;
+var err = function (ind, msg, nt) {
+    var e = new Error(msg || ec[ind]);
+    e.code = ind;
+    if (Error.captureStackTrace)
+        Error.captureStackTrace(e, err);
+    if (!nt)
+        throw e;
+    return e;
+};
+// expands raw DEFLATE data
+var inflt = function (dat, st, buf, dict) {
+    // source length       dict length
+    var sl = dat.length, dl = dict ? dict.length : 0;
+    if (!sl || st.f && !st.l)
+        return buf || new u8(0);
+    var noBuf = !buf;
+    // have to estimate size
+    var resize = noBuf || st.i != 2;
+    // no state
+    var noSt = st.i;
+    // Assumes roughly 33% compression ratio average
+    if (noBuf)
+        buf = new u8(sl * 3);
+    // ensure buffer can fit at least l elements
+    var cbuf = function (l) {
+        var bl = buf.length;
+        // need to increase size to fit
+        if (l > bl) {
+            // Double or set to necessary, whichever is greater
+            var nbuf = new u8(Math.max(bl * 2, l));
+            nbuf.set(buf);
+            buf = nbuf;
+        }
+    };
+    //  last chunk         bitpos           bytes
+    var final = st.f || 0, pos = st.p || 0, bt = st.b || 0, lm = st.l, dm = st.d, lbt = st.m, dbt = st.n;
+    // total bits
+    var tbts = sl * 8;
+    do {
+        if (!lm) {
+            // BFINAL - this is only 1 when last chunk is next
+            final = bits(dat, pos, 1);
+            // type: 0 = no compression, 1 = fixed huffman, 2 = dynamic huffman
+            var type = bits(dat, pos + 1, 3);
+            pos += 3;
+            if (!type) {
+                // go to end of byte boundary
+                var s = shft(pos) + 4, l = dat[s - 4] | (dat[s - 3] << 8), t = s + l;
+                if (t > sl) {
+                    if (noSt)
+                        err(0);
+                    break;
+                }
+                // ensure size
+                if (resize)
+                    cbuf(bt + l);
+                // Copy over uncompressed data
+                buf.set(dat.subarray(s, t), bt);
+                // Get new bitpos, update byte count
+                st.b = bt += l, st.p = pos = t * 8, st.f = final;
+                continue;
+            }
+            else if (type == 1)
+                lm = flrm, dm = fdrm, lbt = 9, dbt = 5;
+            else if (type == 2) {
+                //  literal                            lengths
+                var hLit = bits(dat, pos, 31) + 257, hcLen = bits(dat, pos + 10, 15) + 4;
+                var tl = hLit + bits(dat, pos + 5, 31) + 1;
+                pos += 14;
+                // length+distance tree
+                var ldt = new u8(tl);
+                // code length tree
+                var clt = new u8(19);
+                for (var i = 0; i < hcLen; ++i) {
+                    // use index map to get real code
+                    clt[clim[i]] = bits(dat, pos + i * 3, 7);
+                }
+                pos += hcLen * 3;
+                // code lengths bits
+                var clb = max(clt), clbmsk = (1 << clb) - 1;
+                // code lengths map
+                var clm = hMap(clt, clb, 1);
+                for (var i = 0; i < tl;) {
+                    var r = clm[bits(dat, pos, clbmsk)];
+                    // bits read
+                    pos += r & 15;
+                    // symbol
+                    var s = r >> 4;
+                    // code length to copy
+                    if (s < 16) {
+                        ldt[i++] = s;
+                    }
+                    else {
+                        //  copy   count
+                        var c = 0, n = 0;
+                        if (s == 16)
+                            n = 3 + bits(dat, pos, 3), pos += 2, c = ldt[i - 1];
+                        else if (s == 17)
+                            n = 3 + bits(dat, pos, 7), pos += 3;
+                        else if (s == 18)
+                            n = 11 + bits(dat, pos, 127), pos += 7;
+                        while (n--)
+                            ldt[i++] = c;
+                    }
+                }
+                //    length tree                 distance tree
+                var lt = ldt.subarray(0, hLit), dt = ldt.subarray(hLit);
+                // max length bits
+                lbt = max(lt);
+                // max dist bits
+                dbt = max(dt);
+                lm = hMap(lt, lbt, 1);
+                dm = hMap(dt, dbt, 1);
+            }
+            else
+                err(1);
+            if (pos > tbts) {
+                if (noSt)
+                    err(0);
+                break;
+            }
+        }
+        // Make sure the buffer can hold this + the largest possible addition
+        // Maximum chunk size (practically, theoretically infinite) is 2^17
+        if (resize)
+            cbuf(bt + 131072);
+        var lms = (1 << lbt) - 1, dms = (1 << dbt) - 1;
+        var lpos = pos;
+        for (;; lpos = pos) {
+            // bits read, code
+            var c = lm[bits16(dat, pos) & lms], sym = c >> 4;
+            pos += c & 15;
+            if (pos > tbts) {
+                if (noSt)
+                    err(0);
+                break;
+            }
+            if (!c)
+                err(2);
+            if (sym < 256)
+                buf[bt++] = sym;
+            else if (sym == 256) {
+                lpos = pos, lm = null;
+                break;
+            }
+            else {
+                var add = sym - 254;
+                // no extra bits needed if less
+                if (sym > 264) {
+                    // index
+                    var i = sym - 257, b = fleb[i];
+                    add = bits(dat, pos, (1 << b) - 1) + fl[i];
+                    pos += b;
+                }
+                // dist
+                var d = dm[bits16(dat, pos) & dms], dsym = d >> 4;
+                if (!d)
+                    err(3);
+                pos += d & 15;
+                var dt = fd[dsym];
+                if (dsym > 3) {
+                    var b = fdeb[dsym];
+                    dt += bits16(dat, pos) & (1 << b) - 1, pos += b;
+                }
+                if (pos > tbts) {
+                    if (noSt)
+                        err(0);
+                    break;
+                }
+                if (resize)
+                    cbuf(bt + 131072);
+                var end = bt + add;
+                if (bt < dt) {
+                    var shift = dl - dt, dend = Math.min(dt, end);
+                    if (shift + bt < 0)
+                        err(3);
+                    for (; bt < dend; ++bt)
+                        buf[bt] = dict[shift + bt];
+                }
+                for (; bt < end; ++bt)
+                    buf[bt] = buf[bt - dt];
+            }
+        }
+        st.l = lm, st.p = lpos, st.b = bt, st.f = final;
+        if (lm)
+            final = 1, st.m = lbt, st.d = dm, st.n = dbt;
+    } while (!final);
+    // don't reallocate for streams or user buffers
+    return bt != buf.length && noBuf ? slc(buf, 0, bt) : buf.subarray(0, bt);
+};
+
+var Inflate = /*#__PURE__*/ (function () {
+    function Inflate(opts, cb) {
+        // no StrmOpt here to avoid adding to workerizer
+        if (typeof opts == 'function')
+            cb = opts, opts = {};
+        this.ondata = cb;
+        var dict = opts && opts.dictionary && opts.dictionary.subarray(-32768);
+        this.s = { i: 0, b: dict ? dict.length : 0 };
+        this.o = new u8(32768);
+        this.p = new u8(0);
+        if (dict)
+            this.o.set(dict);
+    }
+    Inflate.prototype.e = function (c) {
+        if (!this.ondata)
+            err(5);
+        if (this.d)
+            err(4);
+        if (!this.p.length)
+            this.p = c;
+        else if (c.length) {
+            var n = new u8(this.p.length + c.length);
+            n.set(this.p), n.set(c, this.p.length), this.p = n;
+        }
+    };
+    Inflate.prototype.c = function (final) {
+        this.s.i = +(this.d = final || false);
+        var bts = this.s.b;
+        var dt = inflt(this.p, this.s, this.o);
+        this.ondata(slc(dt, bts, this.s.b), this.d);
+        this.o = slc(dt, this.s.b - 32768), this.s.b = this.o.length;
+        this.p = slc(this.p, (this.s.p / 8) | 0), this.s.p &= 7;
+    };
+    /**
+     * Pushes a chunk to be inflated
+     * @param chunk The chunk to push
+     * @param final Whether this is the final chunk
+     */
+    Inflate.prototype.push = function (chunk, final) {
+        this.e(chunk), this.c(final);
+    };
+    return Inflate;
+}());
+
+  return function inflateXlsxRaw(bytes, maxOutputBytes, expectedOutputBytes) {
+    if (!(bytes instanceof Uint8Array) || bytes.length === 0) {
+      throw new Error('Invalid raw DEFLATE input.');
+    }
+    if (!Number.isSafeInteger(maxOutputBytes) || maxOutputBytes < 0 || maxOutputBytes > 64 * 1024 * 1024 ||
+        !Number.isSafeInteger(expectedOutputBytes) || expectedOutputBytes < 0 || expectedOutputBytes > maxOutputBytes) {
+      throw new Error('Raw DEFLATE output exceeds the workbook size limit.');
+    }
+    const output = new Uint8Array(expectedOutputBytes);
+    let written = 0;
+    let finished = false;
+    const inflater = new Inflate((chunk, final) => {
+      const next = written + chunk.length;
+      if (next > maxOutputBytes || next > expectedOutputBytes) {
+        throw new Error('Raw DEFLATE output exceeds its declared size.');
+      }
+      output.set(chunk, written);
+      written = next;
+      finished = final;
+    });
+    // Feed at most 1024 compressed bytes at once. A chunk can expand inside the
+    // upstream decoder before ondata runs; that temporary expansion is bounded
+    // to roughly 1 MiB per chunk instead of inflating an entire hostile entry.
+    // The retained result never exceeds the caller's declared output size.
+    for (let offset = 0; offset < bytes.length; offset += 1024) {
+      const end = Math.min(bytes.length, offset + 1024);
+      inflater.push(bytes.subarray(offset, end), end === bytes.length);
+    }
+    if (!finished || written !== expectedOutputBytes) {
+      throw new Error('Raw DEFLATE output does not match its declared size.');
+    }
+    return output;
+  };
+})();
+
+return {inflateXlsxRaw};
+})();
+const WORKBOOK_XLSX = (()=>{
+/** Offline XLSX cell reader. Formula text is retained, never evaluated.
+ * Read only XML cell/merge parts; images, macros, external links and styles do
+ * not execute or load. Styled date numbers remain their original raw numbers.
+ */
+const { inflateXlsxRaw } = XLSX_INFLATE;
+
+const XLSX_LIMITS = Object.freeze({ file: 24 * 1024 * 1024, entry: 16 * 1024 * 1024, total: 64 * 1024 * 1024, entries: 2048, sheets: 64, cells: 200000, text: 32767 });
+const XLSX_MAIN_NS = new Set(['http://schemas.openxmlformats.org/spreadsheetml/2006/main', 'http://purl.oclc.org/ooxml/spreadsheetml/main']);
+const XLSX_REL_NS = new Set(['http://schemas.openxmlformats.org/package/2006/relationships', 'http://purl.oclc.org/ooxml/package/relationships']);
+const XLSX_CRC_TABLE = (() => {
+  const table = new Uint32Array(256);
+  for (let i = 0; i < 256; i++) { let n = i; for (let bit = 0; bit < 8; bit++) n = n & 1 ? 0xedb88320 ^ (n >>> 1) : n >>> 1; table[i] = n >>> 0; }
+  return table;
+})();
+
+function xlsxCheck(condition, message) { if (!condition) throw Error(message); }
+function xlsxCrc(bytes) { let crc = 0xffffffff; for (const byte of bytes) crc = XLSX_CRC_TABLE[(crc ^ byte) & 255] ^ (crc >>> 8); return (crc ^ 0xffffffff) >>> 0; }
+function xlsxUtf8(bytes) { try { return new TextDecoder('utf-8', { fatal: true }).decode(bytes); } catch { throw Error('Workbook contains invalid UTF-8 text.'); } }
+
+function xlsxPath(name, { directory = false } = {}) {
+  xlsxCheck(typeof name === 'string' && name.length > 0 && name.length <= 1024 && !/[\\\u0000-\u001f:]/.test(name) && !name.startsWith('/'), 'Unsafe ZIP entry path.');
+  const parts = (directory && name.endsWith('/') ? name.slice(0, -1) : name).split('/');
+  xlsxCheck(parts.every(part => part && part !== '.' && part !== '..'), 'Unsafe ZIP entry path.');
+  return name;
+}
+
+function xlsxPart(base, target) {
+  xlsxCheck(typeof target === 'string' && !/^[a-z][a-z0-9+.-]*:/i.test(target) && !target.startsWith('//') && !/[\\\u0000-\u001f?#]/.test(target) && !/%(?:2f|5c)/i.test(target), 'External or unsafe workbook relationship.');
+  let decoded;
+  try { decoded = decodeURIComponent(target); } catch { throw Error('Invalid workbook relationship path.'); }
+  const parts = target.startsWith('/') ? [] : base.split('/').slice(0, -1);
+  for (const part of decoded.replace(/^\//, '').split('/')) {
+    if (!part || part === '.') continue;
+    if (part === '..') { xlsxCheck(parts.length > 0, 'Workbook relationship escapes the package.'); parts.pop(); }
+    else parts.push(part);
+  }
+  return xlsxPath(parts.join('/'));
+}
+
+function xlsxZip(bytes) {
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const u16 = offset => { xlsxCheck(offset >= 0 && offset + 2 <= bytes.length, 'Truncated ZIP structure.'); return view.getUint16(offset, true); };
+  const u32 = offset => { xlsxCheck(offset >= 0 && offset + 4 <= bytes.length, 'Truncated ZIP structure.'); return view.getUint32(offset, true); };
+  let end = -1;
+  for (let offset = bytes.length - 22; offset >= Math.max(0, bytes.length - 65557); offset--) {
+    if (u32(offset) === 0x06054b50 && offset + 22 + u16(offset + 20) === bytes.length) { end = offset; break; }
+  }
+  xlsxCheck(end >= 0, 'This file is not a supported XLSX ZIP archive.');
+  xlsxCheck(u16(end + 4) === 0 && u16(end + 6) === 0 && u16(end + 8) === u16(end + 10), 'Multi-disk ZIP workbooks are unsupported.');
+  const count = u16(end + 10), centralSize = u32(end + 12), central = u32(end + 16);
+  xlsxCheck(count > 0 && count !== 65535 && count <= XLSX_LIMITS.entries && centralSize !== 0xffffffff && central !== 0xffffffff, 'ZIP64 or excessive ZIP entries are unsupported.');
+  xlsxCheck(central + centralSize === end, 'Invalid ZIP central directory bounds.');
+  const entries = new Map(), ranges = [];
+  let cursor = central, expanded = 0;
+  for (let index = 0; index < count; index++) {
+    xlsxCheck(cursor + 46 <= end && u32(cursor) === 0x02014b50, 'Invalid ZIP directory entry.');
+    const flags = u16(cursor + 8), method = u16(cursor + 10), crc = u32(cursor + 16), packed = u32(cursor + 20), size = u32(cursor + 24);
+    const nameLength = u16(cursor + 28), extraLength = u16(cursor + 30), commentLength = u16(cursor + 32), local = u32(cursor + 42);
+    const next = cursor + 46 + nameLength + extraLength + commentLength;
+    xlsxCheck(next <= end && nameLength > 0 && local !== 0xffffffff && packed !== 0xffffffff && size !== 0xffffffff, 'Invalid or ZIP64 entry bounds.');
+    xlsxCheck(!(flags & 0x41) && (method === 0 || method === 8), 'Encrypted or unsupported ZIP compression.');
+    xlsxCheck(u16(cursor + 34) === 0 && ((u32(cursor + 38) >>> 16) & 0xf000) !== 0xa000, 'ZIP links and multi-disk entries are unsupported.');
+    const name = xlsxUtf8(bytes.subarray(cursor + 46, cursor + 46 + nameLength));
+    xlsxPath(name, { directory: name.endsWith('/') });
+    xlsxCheck(!entries.has(name), 'Duplicate ZIP entry path.');
+    expanded += size;
+    xlsxCheck(size <= XLSX_LIMITS.entry && expanded <= XLSX_LIMITS.total && (packed > 0 || size === 0), 'Workbook exceeds the supported expanded size.');
+    xlsxCheck(local + 30 <= central && u32(local) === 0x04034b50, 'Invalid ZIP local header.');
+    const localNameLength = u16(local + 26), localExtraLength = u16(local + 28), data = local + 30 + localNameLength + localExtraLength;
+    xlsxCheck(data + packed <= central && u16(local + 6) === flags && u16(local + 8) === method, 'Inconsistent ZIP local entry.');
+    xlsxCheck(xlsxUtf8(bytes.subarray(local + 30, local + 30 + localNameLength)) === name, 'ZIP local and central names disagree.');
+    if (!(flags & 8)) xlsxCheck(u32(local + 14) === crc && u32(local + 18) === packed && u32(local + 22) === size, 'ZIP local and central sizes disagree.');
+    ranges.push([local, data + packed]);
+    entries.set(name, { method, crc, packed, size, data });
+    cursor = next;
+  }
+  xlsxCheck(cursor === end, 'ZIP directory size does not match its entries.');
+  ranges.sort((a, b) => a[0] - b[0]);
+  for (let i = 1; i < ranges.length; i++) xlsxCheck(ranges[i][0] >= ranges[i - 1][1], 'Overlapping ZIP entries are unsupported.');
+  const cache = new Map();
+  return {
+    has: name => entries.has(name),
+    async read(name) {
+      xlsxCheck(entries.has(name), `Required workbook part is missing: ${name}.`);
+      if (cache.has(name)) return cache.get(name);
+      const entry = entries.get(name), packed = bytes.subarray(entry.data, entry.data + entry.packed);
+      let output;
+      if (entry.method === 0) output = packed.slice();
+      else {
+        let stream;
+        if (typeof DecompressionStream === 'function') { try { stream = new DecompressionStream('deflate-raw'); } catch { /* Older Safari uses the bundled inflater. */ } }
+        if (stream) {
+          const reader = new Blob([packed]).stream().pipeThrough(stream).getReader();
+          const chunks = []; let length = 0;
+          try {
+            while (true) {
+              const part = await reader.read(); if (part.done) break;
+              length += part.value.length;
+              xlsxCheck(length <= entry.size && length <= XLSX_LIMITS.entry, 'ZIP expansion exceeds the declared size.');
+              chunks.push(part.value);
+            }
+          } catch (error) { await reader.cancel().catch(() => {}); throw Error(`Invalid compressed workbook part: ${error.message}`); }
+          output = new Uint8Array(length); let offset = 0;
+          for (const chunk of chunks) { output.set(chunk, offset); offset += chunk.length; }
+        } else output = inflateXlsxRaw(packed, XLSX_LIMITS.entry, entry.size);
+      }
+      xlsxCheck(output.length === entry.size && xlsxCrc(output) === entry.crc, 'Workbook ZIP integrity check failed (size or CRC32).');
+      cache.set(name, output);
+      return output;
+    },
+  };
+}
+
+function xlsxEntities(text) {
+  let output = '', cursor = 0;
+  while (cursor < text.length) {
+    const start = text.indexOf('&', cursor);
+    if (start < 0) return output + text.slice(cursor);
+    output += text.slice(cursor, start);
+    const end = text.indexOf(';', start + 1);
+    xlsxCheck(end >= 0 && end - start <= 32, 'Invalid XML entity.');
+    const name = text.slice(start + 1, end), named = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" };
+    if (Object.hasOwn(named, name)) output += named[name];
+    else {
+      xlsxCheck(/^#(?:[0-9]+|x[0-9a-f]+)$/i.test(name), 'XML entities and DTD expansion are unsupported.');
+      const point = name[1]?.toLowerCase() === 'x' ? parseInt(name.slice(2), 16) : Number(name.slice(1));
+      xlsxCheck(point === 9 || point === 10 || point === 13 || (point >= 32 && point <= 0xd7ff) || (point >= 0xe000 && point <= 0xfffd) || (point >= 0x10000 && point <= 0x10ffff), 'Invalid XML character reference.');
+      output += String.fromCodePoint(point);
+    }
+    cursor = end + 1;
+  }
+  return output;
+}
+
+function xlsxXml(bytes, handlers) {
+  let source;
+  try {
+    const encoding = bytes[0] === 0xff && bytes[1] === 0xfe ? 'utf-16le' : bytes[0] === 0xfe && bytes[1] === 0xff ? 'utf-16be' : 'utf-8';
+    source = new TextDecoder(encoding, { fatal: true }).decode(bytes).replace(/\r\n?/g, '\n');
+  } catch { throw Error('Invalid workbook XML encoding.'); }
+  xlsxCheck(!/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(source), 'Invalid workbook XML control character.');
+  const stack = []; let cursor = 0, roots = 0, elements = 0;
+  const text = (value, literal = false) => {
+    const decoded = literal ? value : xlsxEntities(value);
+    if (!stack.length) xlsxCheck(!decoded.trim(), 'Text outside the workbook XML root.');
+    else handlers.text?.(decoded, stack);
+  };
+  while (cursor < source.length) {
+    const open = source.indexOf('<', cursor);
+    if (open < 0) { text(source.slice(cursor)); cursor = source.length; break; }
+    if (open > cursor) text(source.slice(cursor, open));
+    if (source.startsWith('<!--', open)) {
+      const end = source.indexOf('-->', open + 4); xlsxCheck(end >= 0, 'Unclosed XML comment.'); cursor = end + 3; continue;
+    }
+    if (source.startsWith('<![CDATA[', open)) {
+      const end = source.indexOf(']]>', open + 9); xlsxCheck(end >= 0, 'Unclosed XML CDATA.'); text(source.slice(open + 9, end), true); cursor = end + 3; continue;
+    }
+    if (source.startsWith('<?', open)) {
+      const end = source.indexOf('?>', open + 2); xlsxCheck(end >= 0 && /^xml\s/i.test(source.slice(open + 2, end)) && roots === 0 && stack.length === 0, 'XML processing instructions are unsupported.'); cursor = end + 2; continue;
+    }
+    xlsxCheck(!source.startsWith('<!', open), 'XML DTDs and external entities are unsupported.');
+    let end = open + 1, quote = null;
+    for (; end < source.length; end++) {
+      const character = source[end];
+      if (quote) { if (character === quote) quote = null; }
+      else if (character === '"' || character === "'") quote = character;
+      else if (character === '>') break;
+    }
+    xlsxCheck(end < source.length && !quote, 'Unclosed XML tag.');
+    const tag = source.slice(open + 1, end).trim();
+    if (tag.startsWith('/')) {
+      const name = tag.slice(1).trim();
+      xlsxCheck(stack.length > 0 && stack.at(-1).name === name, 'Mismatched workbook XML tags.');
+      handlers.end?.(stack.at(-1), stack); stack.pop(); cursor = end + 1; continue;
+    }
+    const selfClosing = tag.endsWith('/'), body = selfClosing ? tag.slice(0, -1).trimEnd() : tag;
+    const match = /^([A-Za-z_][A-Za-z0-9_.:-]*)/.exec(body);
+    xlsxCheck(match, 'Invalid XML element name.');
+    const name = match[1], attrs = Object.create(null); let position = name.length;
+    while (position < body.length) {
+      const rest = body.slice(position), attribute = /^\s+([A-Za-z_][A-Za-z0-9_.:-]*)\s*=\s*(["'])([\s\S]*?)\2/.exec(rest);
+      xlsxCheck(attribute && !Object.hasOwn(attrs, attribute[1]) && !attribute[3].includes('<'), 'Invalid or duplicate XML attribute.');
+      attrs[attribute[1]] = xlsxEntities(attribute[3]); position += attribute[0].length;
+      xlsxCheck(Object.keys(attrs).length <= 64, 'Too many XML attributes.');
+    }
+    const namespaces = Object.assign(Object.create(null), stack.at(-1)?.namespaces ?? { xml: 'http://www.w3.org/XML/1998/namespace' });
+    for (const [key, value] of Object.entries(attrs)) {
+      if (key === 'xmlns') namespaces[''] = value;
+      else if (key.startsWith('xmlns:')) {
+        const prefix = key.slice(6);
+        xlsxCheck(prefix !== 'xmlns' && (prefix !== 'xml' || value === 'http://www.w3.org/XML/1998/namespace'), 'Invalid reserved XML namespace.');
+        namespaces[prefix] = value;
+      }
+    }
+    const parts = name.split(':'); xlsxCheck(parts.length <= 2, 'Invalid XML qualified name.');
+    if (parts.length === 2) xlsxCheck(Boolean(namespaces[parts[0]]), 'Undeclared XML namespace prefix.');
+    for (const key of Object.keys(attrs)) {
+      if (key.includes(':') && !key.startsWith('xmlns:')) {
+        const attributeParts = key.split(':');
+        xlsxCheck(attributeParts.length === 2 && Boolean(namespaces[attributeParts[0]]), 'Undeclared XML attribute prefix.');
+      }
+    }
+    const entry = { name, local: parts.at(-1), ns: namespaces[parts.length === 2 ? parts[0] : ''] ?? '', attrs, namespaces };
+    if (!stack.length) { roots++; xlsxCheck(roots === 1, 'Multiple workbook XML roots.'); }
+    stack.push(entry); elements++;
+    xlsxCheck(stack.length <= 64 && elements <= 1000000, 'Workbook XML structure is too large.');
+    handlers.start?.(entry, stack);
+    if (selfClosing) { handlers.end?.(entry, stack); stack.pop(); }
+    cursor = end + 1;
+  }
+  xlsxCheck(stack.length === 0 && roots === 1, 'Incomplete workbook XML document.');
+}
+
+function xlsxAttr(entry, name) {
+  const matches = Object.entries(entry.attrs).filter(([key]) => key.split(':').at(-1) === name);
+  xlsxCheck(matches.length <= 1, 'Ambiguous workbook XML attribute.');
+  return matches[0]?.[1];
+}
+
+function xlsxRelationships(bytes) {
+  const relations = new Map();
+  xlsxXml(bytes, { start(entry, stack) {
+    if (stack.length === 1) xlsxCheck(entry.local === 'Relationships' && XLSX_REL_NS.has(entry.ns), 'Invalid workbook relationship document.');
+    if (entry.local !== 'Relationship' || !XLSX_REL_NS.has(entry.ns) || stack.length !== 2) return;
+    const id = xlsxAttr(entry, 'Id'), type = xlsxAttr(entry, 'Type'), target = xlsxAttr(entry, 'Target');
+    xlsxCheck(id && type && target && !relations.has(id), 'Invalid or duplicate workbook relationship.');
+    relations.set(id, { type: type.split('/').at(-1), target, external: xlsxAttr(entry, 'TargetMode')?.toLowerCase() === 'external' });
+  } });
+  return relations;
+}
+
+function xlsxExcelString(value) { return value.replace(/_x([0-9a-f]{4})_/gi, (_, hex) => String.fromCharCode(parseInt(hex, 16))); }
+
+function xlsxSharedStrings(bytes) {
+  const strings = []; let current = null;
+  xlsxXml(bytes, {
+    start(entry, stack) {
+      if (stack.length === 1) xlsxCheck(entry.local === 'sst' && XLSX_MAIN_NS.has(entry.ns), 'Invalid shared-string document.');
+      if (entry.local === 'si' && XLSX_MAIN_NS.has(entry.ns) && stack.length === 2) { xlsxCheck(current === null, 'Invalid nested shared strings.'); current = ''; }
+    },
+    text(value, stack) {
+      if (current !== null && stack.at(-1).local === 't' && XLSX_MAIN_NS.has(stack.at(-1).ns) && !stack.some(item => item.local === 'rPh')) {
+        current += value; xlsxCheck(current.length <= XLSX_LIMITS.text, 'Workbook string exceeds the cell text limit.');
+      }
+    },
+    end(entry, stack) {
+      if (entry.local === 'si' && XLSX_MAIN_NS.has(entry.ns) && stack.length === 2) {
+        strings.push(xlsxExcelString(current)); current = null;
+        xlsxCheck(strings.length <= XLSX_LIMITS.cells, 'Too many workbook shared strings.');
+      }
+    },
+  });
+  return strings;
+}
+
+function xlsxCoordinate(reference) {
+  const match = /^([A-Za-z]{1,3})([1-9][0-9]{0,6})$/.exec(reference ?? '');
+  xlsxCheck(match, 'Invalid worksheet cell reference.');
+  const letters = match[1].toUpperCase(); let column = 0;
+  for (const character of letters) column = column * 26 + character.charCodeAt(0) - 64;
+  const row = Number(match[2]);
+  xlsxCheck(column <= 16384 && row <= 1048576, 'Worksheet reference exceeds Excel limits.');
+  return { address: letters + row, column, row };
+}
+
+function xlsxColumn(column) { let output = ''; while (column > 0) { column--; output = String.fromCharCode(65 + column % 26) + output; column = Math.floor(column / 26); } return output; }
+
+function xlsxWorksheet(bytes, shared, counter) {
+  const cells = Object.create(null), merges = []; let current = null, currentRow = 0, lastColumn = 0;
+  xlsxXml(bytes, {
+    start(entry, stack) {
+      if (stack.length === 1) xlsxCheck(entry.local === 'worksheet' && XLSX_MAIN_NS.has(entry.ns), 'Invalid worksheet document.');
+      if (!XLSX_MAIN_NS.has(entry.ns)) return;
+      if (entry.local === 'row' && stack.at(-2)?.local === 'sheetData') {
+        const row = xlsxAttr(entry, 'r'); currentRow = row === undefined ? currentRow + 1 : Number(row);
+        xlsxCheck(Number.isInteger(currentRow) && currentRow > 0 && currentRow <= 1048576, 'Invalid worksheet row.'); lastColumn = 0;
+      }
+      if (entry.local === 'c' && stack.at(-2)?.local === 'row') {
+        xlsxCheck(current === null && currentRow > 0, 'Invalid nested worksheet cell.');
+        const coordinate = xlsxCoordinate(xlsxAttr(entry, 'r') ?? `${xlsxColumn(lastColumn + 1)}${currentRow}`);
+        xlsxCheck(coordinate.row === currentRow && !Object.hasOwn(cells, coordinate.address), 'Duplicate or inconsistent worksheet cell.');
+        lastColumn = coordinate.column;
+        current = { address: coordinate.address, type: xlsxAttr(entry, 't') ?? 'n', value: '', inline: '', formula: null, hasValue: false, hasInline: false };
+      }
+      if (current && entry.local === 'f' && stack.at(-2)?.local === 'c') { xlsxCheck(current.formula === null, 'Multiple worksheet formulas in one cell.'); current.formula = ''; }
+      if (current && entry.local === 'v' && stack.at(-2)?.local === 'c') { xlsxCheck(!current.hasValue, 'Multiple worksheet values in one cell.'); current.hasValue = true; }
+      if (current && entry.local === 'is' && stack.at(-2)?.local === 'c') current.hasInline = true;
+      if (entry.local === 'mergeCell' && stack.at(-2)?.local === 'mergeCells') {
+        const range = xlsxAttr(entry, 'ref'); xlsxCheck(typeof range === 'string', 'Missing worksheet merge range.');
+        const parts = range.split(':'); xlsxCheck(parts.length <= 2, 'Invalid worksheet merge range.');
+        const first = xlsxCoordinate(parts[0]), last = xlsxCoordinate(parts[1] ?? parts[0]);
+        xlsxCheck(first.column <= last.column && first.row <= last.row && merges.length < 10000, 'Invalid or excessive worksheet merges.'); merges.push(range);
+      }
+    },
+    text(value, stack) {
+      if (!current || !XLSX_MAIN_NS.has(stack.at(-1).ns)) return;
+      const name = stack.at(-1).local;
+      if (name === 'v' && stack.at(-2)?.local === 'c') current.value += value;
+      else if (name === 'f' && stack.at(-2)?.local === 'c') current.formula += value;
+      else if (name === 't' && current.hasInline && !stack.some(item => item.local === 'rPh')) current.inline += value;
+      xlsxCheck(current.value.length <= XLSX_LIMITS.text && current.inline.length <= XLSX_LIMITS.text && (current.formula?.length ?? 0) <= XLSX_LIMITS.text, 'Workbook cell text exceeds the supported limit.');
+    },
+    end(entry, stack) {
+      if (entry.local !== 'c' || !XLSX_MAIN_NS.has(entry.ns) || stack.at(-2)?.local !== 'row' || !current) return;
+      const { type, formula } = current; let value = null;
+      if (type === 'inlineStr') { xlsxCheck(!current.hasValue, 'Inline worksheet text has an incompatible value.'); value = xlsxExcelString(current.inline); }
+      else if (current.hasValue) {
+        if (type === 's' && current.value !== '') { const index = Number(current.value.trim()); xlsxCheck(/^\d+$/.test(current.value.trim()) && index < shared.length, 'Invalid workbook shared-string index.'); value = shared[index]; }
+        else if (type === 'b' && current.value !== '') { xlsxCheck(current.value === '0' || current.value === '1', 'Invalid worksheet boolean.'); value = current.value === '1'; }
+        else if (type === 'n' && current.value.trim() !== '') { xlsxCheck(/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/.test(current.value.trim()), 'Invalid worksheet number.'); value = Number(current.value); xlsxCheck(Number.isFinite(value), 'Non-finite worksheet number.'); }
+        else if (['str', 'e', 'd'].includes(type)) value = xlsxExcelString(current.value);
+        else xlsxCheck(['n', 's', 'b'].includes(type), 'Unsupported worksheet cell type.');
+      } else xlsxCheck(['n', 's', 'b', 'str', 'e', 'd'].includes(type), 'Unsupported worksheet cell type.');
+      cells[current.address] = { value, formula, type };
+      counter.total++; xlsxCheck(counter.total <= XLSX_LIMITS.cells, 'Workbook contains too many cells.'); current = null;
+    },
+  });
+  return { cells, merges };
+}
+
+async function readWorkbookXlsx(input, { fileName = 'workbook.xlsx' } = {}) {
+  const bytes = input instanceof ArrayBuffer ? new Uint8Array(input) : ArrayBuffer.isView(input) ? new Uint8Array(input.buffer, input.byteOffset, input.byteLength) : null;
+  xlsxCheck(bytes && bytes.length >= 22 && bytes.length <= XLSX_LIMITS.file, 'Choose an XLSX file no larger than 24 MB.');
+  xlsxCheck(typeof fileName === 'string' && fileName.trim() && fileName.length <= 255 && !/[\\/\u0000-\u001f]/.test(fileName), 'Invalid workbook filename.');
+  xlsxCheck(globalThis.crypto?.subtle, 'Workbook hashing requires a current browser in a secure context.');
+  const sha256 = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), byte => byte.toString(16).padStart(2, '0')).join('');
+  const zip = xlsxZip(bytes);
+  xlsxCheck(zip.has('[Content_Types].xml') && zip.has('_rels/.rels'), 'This ZIP is not an XLSX workbook.');
+  xlsxXml(await zip.read('[Content_Types].xml'), {});
+  const packageRelations = xlsxRelationships(await zip.read('_rels/.rels'));
+  const office = [...packageRelations.values()].filter(relation => relation.type === 'officeDocument');
+  xlsxCheck(office.length === 1 && !office[0].external, 'Workbook package relationship is missing or external.');
+  const workbookPath = xlsxPart('', office[0].target);
+  const workbookRelationsPath = workbookPath.replace(/([^/]+)$/, '_rels/$1.rels');
+  const relationships = xlsxRelationships(await zip.read(workbookRelationsPath));
+  const sheetDefinitions = [];
+  xlsxXml(await zip.read(workbookPath), { start(entry, stack) {
+    if (stack.length === 1) xlsxCheck(entry.local === 'workbook' && XLSX_MAIN_NS.has(entry.ns), 'Invalid workbook document.');
+    if (entry.local === 'sheet' && XLSX_MAIN_NS.has(entry.ns) && stack.at(-2)?.local === 'sheets') {
+      const name = xlsxExcelString(xlsxAttr(entry, 'name') ?? ''), relationship = relationships.get(xlsxAttr(entry, 'id'));
+      xlsxCheck(name && name.length <= 255 && !sheetDefinitions.some(sheet => sheet.name.toLowerCase() === name.toLowerCase()), 'Invalid or duplicate worksheet name.');
+      xlsxCheck(relationship?.type === 'worksheet' && !relationship.external, 'Worksheet relationship is missing or external.');
+      sheetDefinitions.push({ name, path: xlsxPart(workbookPath, relationship.target) });
+      xlsxCheck(sheetDefinitions.length <= XLSX_LIMITS.sheets, 'Workbook contains too many worksheets.');
+    }
+  } });
+  xlsxCheck(sheetDefinitions.length > 0, 'Workbook contains no worksheets.');
+  const sharedRelation = [...relationships.values()].find(relation => relation.type === 'sharedStrings');
+  xlsxCheck(!sharedRelation?.external, 'External shared-string relationships are unsupported.');
+  const shared = sharedRelation ? xlsxSharedStrings(await zip.read(xlsxPart(workbookPath, sharedRelation.target))) : [];
+  const sheets = [], counter = { total: 0 };
+  for (const sheet of sheetDefinitions) sheets.push({ name: sheet.name, ...xlsxWorksheet(await zip.read(sheet.path), shared, counter) });
+  return { fileName, sha256, sheets };
+}
+
+return {readWorkbookXlsx};
+})();
 const { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack, patternReferenceImages, selectedPatternReference } = TECHPACK_CORE;
 const { createPackStore } = TECHPACK_STORAGE;
 const { previewGridPaste, applyGridPaste, createEditHistory } = TECHPACK_EDITING;
+const { createDevelopment, previewComponentWorkbook, applyComponentWorkbook, compareObservation } = GARMENT_DEVELOPMENT;
+const { readWorkbookXlsx } = WORKBOOK_XLSX;
+const { renderDevelopment, renderWorkbookPreview } = DEVELOPMENT_VIEW;
 
 const { template, source, form, methods } = WORKBOOK_DATA;
 const $ = id => document.getElementById(id);
@@ -1579,6 +2976,12 @@ let pack = createTechPack(template), active = template.sheets[0].id, refUnit = '
 let saved = [], revisions = [], storageAvailable = false, conflicted = false, autosaveTimer;
 let generation = 0, saveQueue = Promise.resolve(), pendingPaste = null, pasteOrigin = null, restoreTarget = null;
 let pendingActions = 0, preparingUpdate = false, recordedRevisionDetails = '';
+let workbookReview = null;
+let workbookBackup = null;
+const developmentView = {componentId:'',sampleId:'',side:'general'};
+const newSampleEntry = {label:'',round:'',notes:''};
+const componentSheet = {id:'components',title:'Component specifications',shortTitle:'Components',note:'Imported garment POMs · working targets, sample observations and proposed changes are separate local records.'};
+const sheetList = () => pack.development?.components.length ? [...template.sheets,componentSheet] : template.sheets;
 const revisionDetails = () => JSON.stringify(['revision-name','revision-author','revision-reason'].map(id=>$(id).value.trim()));
 const activePackKey = 'serpentis-regina.workroom.active.v2';
 function rememberedPack() {
@@ -1589,13 +2992,13 @@ function rememberPack(id) {
  try { localStorage.setItem(activePackKey,id); } catch { /* Draft storage is separate. */ }
  try { sessionStorage.setItem(activePackKey,id);return sessionStorage.getItem(activePackKey)===id; } catch { return false; }
 }
-const openWorkroomReview = () => pendingPaste||restoreTarget||['export-dialog','paste-dialog','revision-dialog','image-dialog'].some(id=>$(id).open);
+const openWorkroomReview = () => pendingPaste||restoreTarget||workbookReview||['export-dialog','paste-dialog','revision-dialog','image-dialog','workbook-dialog'].some(id=>$(id).open);
 const columnViews = {master:'full',wash:'full'};
 const editHistory = createEditHistory(40);
 const store = createPackStore(template);
-const activeSheet = () => template.sheets.find(s => s.id === active);
+const activeSheet = () => sheetList().find(s => s.id === active) || template.sheets[0];
 const patternSheet = template.sheets.find(s=>s.id==='pattern');
-const sheetForElement = el => template.sheets.find(s=>s.id===el.closest('[data-editor-sheet]')?.dataset.editorSheet)||activeSheet();
+const sheetForElement = el => sheetList().find(s=>s.id===el.closest('[data-editor-sheet]')?.dataset.editorSheet)||activeSheet();
 const editorRoots = s => [...document.querySelectorAll(`.sheet-editor[data-editor-sheet="${s.id}"]`)].filter(el=>!el.closest('#print-view'));
 const panelPreferenceKey = 'serpentis-regina.workroom.style-panel-visible';
 let sidebarImages = [], sidebarGalleryState = '';
@@ -1820,13 +3223,32 @@ function renderSource(s) {
  const original=source.sheets.find(item=>item.title===s.title);
  return `<details class="source-note"><summary>Source notes, original cells & formulas</summary><p>Exact original tab: ${esc(s.title)}. Source values and formulas below are provenance; they are not editable draft values.</p>${s.id==='master'?`<p>${esc(template.sourceExamples.note)} Original pairs: 20 / 24.75, 25 / 37, 25 / 24.75. No source unit is supplied.</p>`:''}${s.reference?'<p>HOUSE TARGET / TARGET DELTA: source I31:I33 refers to blank column G. These unresolved formulas are preserved below and are not relabelled as target minus actual form.</p>':''}<pre>${esc(JSON.stringify(original,null,2))}</pre></details>`;
 }
-function sheetMarkup(s,complete=false){return `<div class="sheet-editor" data-editor-sheet="${s.id}">`+(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`+renderSource(s)+'</div>';}
+function sheetMarkup(s,complete=false){
+ const empty=`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`;
+ const content=s.id==='components'
+  ?renderDevelopment(pack.development||createDevelopment(),{unit:pack.unit,...developmentView,complete})+empty
+  :(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+empty+renderSource(s);
+ return `<div class="sheet-editor" data-editor-sheet="${s.id}">${content}</div>`;
+}
+function renderTabs(){
+ const sheets=sheetList();
+ if(!sheets.some(s=>s.id===active))active=sheets[0].id;
+ if([...$('sheet-tabs').children].map(b=>b.dataset.sheet).join('|')===sheets.map(s=>s.id).join('|'))return;
+ $('sheet-tabs').innerHTML=sheets.map((s,i)=>`<button id="tab-${s.id}" type="button" role="tab" aria-controls="working-panel" aria-selected="${s.id===active}" tabindex="${s.id===active?0:-1}" data-sheet="${s.id}"><span aria-hidden="true">${String(i+1).padStart(2,'0')} / </span>${esc(s.shortTitle)}</button>`).join('');
+}
 function renderSheet(preserve=false){
+ renderTabs();
  const s=activeSheet(), content=$('sheet-content'),scroll=content.scrollTop;
  const opened=new Map([...content.querySelectorAll('[data-details]')].map(el=>[el.dataset.details,el.open]));
  $('sheet-title').textContent=s.title;$('sheet-note').textContent=s.note;
  $('working-panel').setAttribute('aria-labelledby','tab-'+s.id);
  content.innerHTML=sheetMarkup(s);
+ if(s.id==='components'){
+  developmentView.componentId=$('component-select')?.value||'';
+  developmentView.sampleId=$('development-sample')?.value||'';
+  developmentView.side=$('development-side')?.value||'general';
+  for(const [id,key] of [['development-sample-name','label'],['development-sample-round','round'],['development-sample-notes','notes']])if($(id))$(id).value=newSampleEntry[key];
+ }
  if(preserve)for(const el of content.querySelectorAll('[data-details]'))if(opened.has(el.dataset.details))el.open=opened.get(el.dataset.details);
  content.scrollTop=preserve?scroll:0;
  $('pack-unit').value=unitFor(s)||'';
@@ -1851,8 +3273,28 @@ function updateResults(s,tableId,rowId){
  for(const root of editorRoots(s)){const tr=root.querySelector(`table[data-table="${t.id}"] tr[data-row="${r.id}"]`);if(!tr)continue;
  for(const c of columnsForRow(t,r).filter(c=>c.type==='calculated')){const out=tr.querySelector(`[data-result="${c.key}"] .matte-ink`);if(out)out.textContent=formatMeasure(valueFor(s,t,r,c),unitFor(s)||'cm',true);}}
 }
+function developmentRow(input){
+ const component=pack.development?.components.find(item=>item.id===input.dataset.devComponent);
+ const row=component?.rows.find(item=>item.id===input.dataset.devRow);
+ if(!row)throw Error('That component row is unavailable. Reopen its sheet.');
+ return row;
+}
+function updateDevelopmentResults(row){
+ const compared=compareObservation(row,developmentView.sampleId,developmentView.side);
+ const proposed=row.targetCm===null||row.proposedDeltaCm===null?null:row.targetCm+row.proposedDeltaCm;
+ const labels={'missing':'Missing target or actual','not-set':'Tolerance not set','within':'Within entered tolerance','outside':'Outside entered tolerance'};
+ for(const output of $('sheet-content').querySelectorAll('[data-dev-result]')){
+  if(output.dataset.devRow!==row.id)continue;
+  const key=output.dataset.devResult;
+  const value=key==='toleranceStatus'?labels[compared.toleranceStatus]||compared.toleranceStatus:key==='proposedTargetCm'?formatMeasure(proposed,pack.unit||'cm'):formatMeasure(compared[key]??null,pack.unit||'cm',key==='deltaCm');
+  (output.querySelector('.matte-ink')||output).textContent=value||'—';
+ }
+}
+function hasUnfinishedSample(){return Object.values(newSampleEntry).some(value=>value.trim());}
 async function loadPack(next,message,{savedDraft=false}={}){
  clearTimeout(autosaveTimer);pack=normalizeTechPack(next,template);generation++;dirty=!savedDraft;conflicted=false;editHistory.reset();updateHistory();
+ renderTabs();
+ Object.assign(newSampleEntry,{label:'',round:'',notes:''});
  rememberPack(pack.id);
  if(saved.some(p=>p.id===pack.id))$('saved-packs').value=pack.id;
  $('pack-title').value=pack.title;$('sheet-search').value='';renderStyle();renderSheet();updateIdentity();
@@ -1866,17 +3308,31 @@ function exportCsv(){
  const s=activeSheet(),unit=unitFor(s),numericCell=(v,u)=>v===null?'':Number(formatMeasure(v,u));
  const rows=[['SERPENTIS REGINA',pack.title],['Sheet',s.title],['Unit',unit?.toUpperCase()||'NOT SELECTED']];
  for(const [key,label] of Object.entries(styleLabels))rows.push(['Shared '+label,pack.style[key]]);
+ if(s.id==='components'){
+  rows.push([],['Component','POM','Description','Original measuring method','Source row','Retired','Working target','Tolerance minus','Tolerance plus','Proposed adjustment (unapproved)','Proposed target (unapproved)','Sample','Round','Sample notes','Side','Actual','Actual minus target','Tolerance check','POM notes','Earlier source definitions']);
+  for(const component of pack.development.components)for(const row of component.rows){
+   const observations=[];
+   for(const sample of pack.development.samples)for(const side of ['general','front','back','left','right'])if(row.observations[sample.id]?.[side]!==null&&row.observations[sample.id]?.[side]!==undefined)observations.push({sample,side});
+   if(!observations.length)observations.push({sample:null,side:''});
+   for(const {sample,side} of observations){
+    const compared=sample?compareObservation(row,sample.id,side):null;
+    const proposed=row.targetCm===null||row.proposedDeltaCm===null?null:row.targetCm+row.proposedDeltaCm;
+    rows.push([component.name,row.code,row.description,row.method,row.sourceRow,row.retired?'YES':'',numericCell(row.targetCm,unit||'cm'),numericCell(row.toleranceMinusCm,unit||'cm'),numericCell(row.tolerancePlusCm,unit||'cm'),numericCell(row.proposedDeltaCm,unit||'cm'),numericCell(proposed,unit||'cm'),sample?.label||'',sample?.round||'',sample?.notes||'',side,numericCell(compared?.actualCm??null,unit||'cm'),numericCell(compared?.deltaCm??null,unit||'cm'),compared?.toleranceStatus||'',row.notes,JSON.stringify(row.definitionHistory||[])]);
+   }
+  }
+  download(safeName()+'-components.csv',csvEncode(rows),'text/csv;charset=utf-8');status('Exported all component POMs and all entered sample/side observations, including retained rows.');return;
+ }
  for(const f of s.fields||[])rows.push([f.label,fieldValue(s,f)||'']);
  if(s.reference){rows.push([],['POM','BODY MEASUREMENT','HOW TO MEASURE',`MFR (${unit})`,`ACTUAL FORM (${unit})`,`Delta (${unit})`]);for(const r of form.measurements){const m=methods.methods.find(m=>m.pomCode===r.pomCode);rows.push([r.pomCode,m.sourceLabel,m.howToMeasure,numericCell(r.manufacturerReference===null?null:r.manufacturerReference*2.54,unit),numericCell(r.houseStandard*2.54,unit),numericCell(difference(r.houseStandard,r.manufacturerReference)===null?null:difference(r.houseStandard,r.manufacturerReference)*2.54,unit)]);}}
  for(const t of s.tables||[]){rows.push([],[t.title],t.columns.map(c=>heading(s,c)+(['measurement','calculated'].includes(c.type)?` (${(unit||'?').toUpperCase()})`:'')));for(const r of t.rows)rows.push(columnsForRow(t,r).map(c=>['measurement','calculated'].includes(c.type)?numericCell(valueFor(s,t,r,c),unit||'cm'):valueFor(s,t,r,c)));}
  download(safeName()+'-'+s.id+'.csv',csvEncode(rows),'text/csv;charset=utf-8');status('Exported every source row and column on this sheet, independent of search or view.');
 }
 function buildPrint(){
- const selected=$('print-scope').value==='all'?template.sheets:[activeSheet()];
+ const selected=$('print-scope').value==='all'?sheetList():[activeSheet()];
  const shared=Object.entries(styleLabels).filter(([key])=>pack.style[key]).map(([key,label])=>`<span>${esc(label)}: ${esc(pack.style[key])}</span>`).join(' · ');
  $('print-view').innerHTML=selected.map(s=>`<article class="print-sheet"><header class="print-masthead"><strong>SERPENTIS REGINA</strong><h1>${esc(s.title)}</h1><p>${esc(pack.style.number||pack.title)} · ${s.reference?refUnit.toUpperCase():pack.unit?.toUpperCase()||'UNIT NOT SELECTED'} · LOCAL DRAFT</p></header><p>${shared}</p><p>${esc(s.note)}</p>${sheetMarkup(s,true)}</article>`).join('');
  $('print-view').querySelectorAll('.sheet-details').forEach(el=>el.open=true);
- $('print-view').querySelectorAll('.source-note,.empty-state,input[type=file],button,.inherit-hint,.gallery-picker,.gallery-navigation').forEach(el=>{if(el.classList.contains('image-open'))el.replaceWith(...el.childNodes);else el.remove();});
+ $('print-view').querySelectorAll('.source-note:not(.development-definition-history),.empty-state,input[type=file],button,.inherit-hint,.gallery-picker,.gallery-navigation').forEach(el=>{if(el.classList.contains('image-open'))el.replaceWith(...el.childNodes);else el.remove();});
  $('print-view').querySelectorAll('input,textarea,select').forEach(el=>{const span=document.createElement('span');span.className='print-value';span.textContent=el.value||'—';el.replaceWith(span);});
  $('print-view').querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));$('print-view').setAttribute('aria-hidden','false');
 }
@@ -1912,7 +3368,14 @@ async function reviewRevision(restore=false){
  $('revision-diff').innerHTML=changes.length?`<table><thead><tr><th>Field / cell</th><th>Named revision</th><th>Current draft</th></tr></thead><tbody>${changes.map(c=>`<tr><td>${esc(changeLabel(c.path))}</td><td class="diff-value">${diffCell(c,c.before,snapshot)}</td><td class="diff-value">${diffCell(c,c.after,pack)}</td></tr>`).join('')}</tbody></table>`:'<p>The named revision and current draft contain the same values.</p>';
  $('confirm-restore').hidden=!restore;$('revision-dialog').showModal();
 }
-function changeGarmentUnit(unit){if(!validScreen()){$('style-unit').value=pack.unit||'';return false;}if(pack.unit===unit)return true;rememberEdit('unit');pack.unit=unit;markDirty();renderSheet(true);return true;}
+function changeGarmentUnit(unit){
+ if(!validScreen()){$('style-unit').value=pack.unit||'';$('pack-unit').value=unitFor(activeSheet())||'';return false;}
+ if(pack.unit===unit)return true;
+ try{
+  const next=normalizeTechPack({...pack,unit},template);
+  rememberEdit('unit');pack=next;markDirty();renderPinnedPattern();renderSheet(true);return true;
+ }catch(error){$('pack-unit').value=unitFor(activeSheet())||'';$('style-unit').value=pack.unit||'';status(error.message);return false;}
+}
 function previewPaste(event){
  const el=event.target,s=sheetForElement(el);if(!el.dataset.col)return;
  const text=event.clipboardData?.getData('text/plain')||'';
@@ -1934,6 +3397,7 @@ function previewPaste(event){
 async function prepareSwitch(){
  clearTimeout(autosaveTimer);
  if(!validScreen())return false;
+ if(hasUnfinishedSample()&&!confirm('The new sample details have not been added. Add the sample first to keep them. Discard these unfinished details?'))return false;
  const leavingId=pack.id,leavingGeneration=generation;
  if(dirty&&storageAvailable&&!conflicted){try{await saveNow();if(pack.id!==leavingId||generation!==leavingGeneration||dirty||invalidInputs().length){status('The draft changed while saving. Finish the edit, then open the other pack again.');return false;}return true;}catch{}}
  if(dirty)return confirm('This draft is not saved. Download JSON before leaving if you need to keep it. Continue and discard the on-screen draft?');
@@ -1945,7 +3409,7 @@ const run = handler => event => {
  pendingActions++;
  Promise.resolve().then(()=>handler(event)).catch(error=>status(error.message)).finally(()=>pendingActions--);
 };
-$('sheet-tabs').innerHTML=template.sheets.map((s,i)=>`<button id="tab-${s.id}" type="button" role="tab" aria-controls="working-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-sheet="${s.id}"><span aria-hidden="true">0${i+1} / </span>${esc(s.shortTitle)}</button>`).join('');
+renderTabs();
 $('sheet-tabs').addEventListener('click',event=>{const b=event.target.closest('[data-sheet]');if(!b||!validScreen())return;active=b.dataset.sheet;$('sheet-search').value='';renderSheet();b.scrollIntoView({block:'nearest',inline:'nearest'});});
 $('sheet-tabs').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const buttons=[...$('sheet-tabs').children],i=buttons.indexOf(document.activeElement);const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(i+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;if(validScreen()){buttons[next].click();buttons[next].focus();}});
 $('style-fields').addEventListener('input',event=>{
@@ -1960,6 +3424,30 @@ $('style-fields').addEventListener('input',event=>{
 for(const editor of [$('sheet-content'),$('pinned-pattern-content')]){
 editor.addEventListener('input',event=>{
  const el=event.target,s=sheetForElement(el);
+ const sampleKeys={'development-sample-name':'label','development-sample-round':'round','development-sample-notes':'notes'};
+ if(Object.hasOwn(sampleKeys,el.id)){newSampleEntry[sampleKeys[el.id]]=el.value;return;}
+ if(el.dataset.devField||el.dataset.devObservation){
+  try{
+   const row=developmentRow(el),key=el.dataset.devField;
+   const observation=!!el.dataset.devObservation;
+   const value=key==='notes'?el.value:parseMeasure(el.value,pack.unit,{allowNegative:key==='proposedDeltaCm'});
+   if(key==='notes'&&(value.length>4000||value.includes('\0')))throw Error('Use at most 4000 characters without control characters.');
+   if(!observation&&!['notes','targetCm','toleranceMinusCm','tolerancePlusCm','proposedDeltaCm'].includes(key))throw Error('Unknown component field.');
+   const target=key==='targetCm'?value:row.targetCm,proposal=key==='proposedDeltaCm'?value:row.proposedDeltaCm;
+   if(target!==null&&proposal!==null&&target+proposal<0)throw Error('The proposed adjustment would create a negative target. Review the target or adjustment.');
+   const sampleId=el.dataset.devSample,side=el.dataset.devSide;
+   if(observation&&(!pack.development.samples.some(sample=>sample.id===sampleId)||!['general','front','back','left','right'].includes(side)))throw Error('Select a sample and measurement side before entering an actual.');
+   el.id ||= 'dev-'+encodeURIComponent([row.id,key||'actual',sampleId,side].join('|'));
+   setInlineError(el,'');
+   const prior=observation?row.observations[sampleId]?.[side]:row[key];
+   if(prior!==value){
+    rememberEdit('component:'+row.id+':'+(key||sampleId+':'+side));
+    if(observation){row.observations[sampleId] ||= {general:null,front:null,back:null,left:null,right:null};row.observations[sampleId][side]=value;}else row[key]=value;
+    markDirty();
+   }
+   updateDevelopmentResults(row);status('Component entry updated locally. Actual minus target is a comparison; proposed adjustments do not approve or replace targets.');
+  }catch(error){setInlineError(el,error.message);}return;
+ }
  if(el.dataset.field){
   try{
    if(el.value.includes('\0'))throw Error('Remove the unsupported control character.');
@@ -1992,6 +3480,10 @@ editor.addEventListener('focusout',event=>{
  const el=event.target;editHistory.breakGroup();
  if(!el.matches('input,textarea')||!el.checkValidity())return;
  const s=sheetForElement(el);
+ if(el.dataset.devObservation||el.dataset.devField){
+  const row=developmentRow(el);if(el.dataset.devField!=='notes')el.value=formatMeasure(el.dataset.devObservation?row.observations[el.dataset.devSample]?.[el.dataset.devSide]??null:row[el.dataset.devField],pack.unit||'cm',el.dataset.devField==='proposedDeltaCm');
+  applySearch();return;
+ }
  if(el.dataset.field){const f=s.fields.find(f=>f.key===el.dataset.field);el.value=fieldValue(s,f)||'';}
  else if(el.dataset.numeric){const value=pack.tables[s.id][el.dataset.table][el.dataset.row][el.dataset.col];el.value=el.dataset.numeric==='measurement'?formatMeasure(value,unitFor(s)||'cm'):value??'';}
  applySearch();
@@ -2006,6 +3498,8 @@ editor.addEventListener('keydown',event=>{
 });
 editor.addEventListener('change',run(async event=>{
  const el=event.target,key=el.dataset.attachment,s=sheetForElement(el);
+ const viewKeys={'component-select':'componentId','development-sample':'sampleId','development-side':'side'};
+ if(Object.hasOwn(viewKeys,el.id)){if(!validScreen()){el.value=developmentView[viewKeys[el.id]];return;}developmentView[viewKeys[el.id]]=el.value;renderSheet(true);return;}
  if(el.dataset.gallerySelect){selectPatternReference(Number(el.value),el);return;}
  if(!key)return;
  const files=[...el.files],uploadPackId=pack.id,gallery=isPatternReference(s,key);if(!files.length)return;
@@ -2025,6 +3519,16 @@ editor.addEventListener('change',run(async event=>{
 }));
 editor.addEventListener('click',event=>{
  const button=event.target.closest('button');if(!button)return;const s=sheetForElement(button);
+ if(button.id==='add-development-sample'){
+  if(!validScreen())return;
+  const label=$('development-sample-name').value.trim(),round=$('development-sample-round')?.value.trim()||'',notes=$('development-sample-notes')?.value||'';
+  if(!label){status('Enter a sample name before adding it.');$('development-sample-name').focus();return;}
+  const next=structuredClone(pack),id='sample-'+createTechPack(template).id;
+  next.development.samples.push({id,label,round,notes});
+  for(const component of next.development.components)for(const row of component.rows)row.observations[id]={general:null,front:null,back:null,left:null,right:null};
+  try{const normalized=normalizeTechPack(next,template);rememberEdit('add-sample:'+id);pack=normalized;Object.assign(newSampleEntry,{label:'',round:'',notes:''});developmentView.sampleId=id;markDirty();renderSheet(true);status('Added a separate sample record. Front, back, left and right actuals remain independent.');}catch(error){status(error.message);}
+  return;
+ }
  if(button.dataset.useShared){rememberEdit('shared:'+s.id+':'+button.dataset.useShared);pack.fields[s.id][button.dataset.useShared]='';markDirty();syncFieldViews(s,s.fields.find(f=>f.key===button.dataset.useShared));syncDerivedFields();}
  if(button.dataset.galleryPrev||button.dataset.galleryNext){selectPatternReference(patternReferenceIndex()+(button.dataset.galleryNext?1:-1),button);return;}
  if(button.dataset.remove){
@@ -2044,7 +3548,7 @@ $('pack-title').addEventListener('input',()=>{rememberEdit('title');pack.title=$
 $('pack-title').addEventListener('focusout',()=>editHistory.breakGroup());
 $('pack-unit').addEventListener('change',()=>{
  if(!validScreen()){$('pack-unit').value=unitFor(activeSheet())||'';return;}
- if(activeSheet().reference){refUnit=$('pack-unit').value||'in';renderSheet(true);}else changeGarmentUnit($('pack-unit').value||null);
+ if(activeSheet().reference){refUnit=$('pack-unit').value||'in';renderSheet(true);}else if(!changeGarmentUnit($('pack-unit').value||null))return;
  status('Displayed measurements updated from canonical values. Measuring instructions are unchanged.');
 });
 $('style-unit').addEventListener('change',()=>changeGarmentUnit($('style-unit').value||null));
@@ -2104,6 +3608,70 @@ $('export-menu-toggle').addEventListener('click',()=>$('export-dialog').showModa
 $('export-json').addEventListener('click',()=>{if(!validScreen())return;download(safeName()+'.json',serializeTechPack(normalizeTechPack(pack,template)),'application/json');status('Downloaded the current pack and original images. Named revision history stays on this device.');});
 $('export-csv').addEventListener('click',exportCsv);
 $('import-json').addEventListener('click',()=>$('json-file').click());
+function workbookStyleDefaults(workbook){
+ const sheet=workbook.sheets.find(item=>/-SPEC$/i.test(item.name));
+ if(!sheet)return {};
+ const read=coordinate=>{const cell=sheet.cells[coordinate];return cell&&cell.formula===null&&cell.value!==null?String(cell.value).slice(0,2000):'';};
+ return {number:read('C3'),description:read('C5'),sampleSize:read('F5'),season:read('F6'),fabric:read('C6')};
+}
+$('import-workbook').addEventListener('click',()=>{if(validScreen())$('workbook-file').click();});
+$('workbook-file').addEventListener('change',run(async()=>{
+ const file=$('workbook-file').files[0];if(!file)return;
+ const readingId=pack.id,readingGeneration=generation;
+ try{
+  if(!validScreen())return;
+  if(file.size>20*1024*1024)throw Error('Choose an XLSX workbook up to 20 MB.');
+  status('Reading component workbook locally. No source file is uploaded.');
+  const workbook=await readWorkbookXlsx(new Uint8Array(await file.arrayBuffer()),{fileName:file.name});
+  if(pack.id!==readingId||generation!==readingGeneration||!validScreen())throw Error('The draft changed while reading the file. Import again into the intended pack.');
+  const preview=previewComponentWorkbook(workbook,pack.development||null,{unit:pack.unit});
+  workbookReview={preview,packId:pack.id,generation};
+  workbookBackup=null;
+  $('workbook-preview').innerHTML=renderWorkbookPreview(preview);
+  $('workbook-style-defaults').checked=false;
+  $('workbook-style-preview').textContent=Object.entries(workbookStyleDefaults(workbook)).filter(([,value])=>value).map(([key,value])=>styleLabels[key]+': '+value).join(' · ');
+  $('workbook-error').textContent='';$('export-dialog').close();$('workbook-dialog').showModal();
+  $('workbook-backup').hidden=!(pack.development?.source&&pack.development.source.sha256!==preview.workbook.sha256&&!storageAvailable);
+  $('confirm-workbook-backup').checked=false;$('workbook-backup-status').textContent='';
+  status(`Review ${preview.summary.rows} authored POMs before applying. The current draft has not changed.`);
+ }catch(error){status('Workbook import refused: '+error.message);}finally{$('workbook-file').value='';}
+}));
+$('cancel-workbook').addEventListener('click',()=>$('workbook-dialog').close());
+$('workbook-dialog').addEventListener('close',()=>{workbookReview=null;workbookBackup=null;});
+$('download-workbook-backup').addEventListener('click',()=>{
+ if(!validScreen())return;
+ try{
+  download(safeName()+'-before-workbook-reimport.json',serializeTechPack(normalizeTechPack(pack,template)),'application/json');
+  workbookBackup={packId:pack.id,generation};$('confirm-workbook-backup').checked=false;
+  $('workbook-backup-status').textContent='JSON backup download requested. Keep the file, then confirm below before applying.';
+ }catch(error){$('workbook-error').textContent=error.message;}
+});
+$('apply-workbook').addEventListener('click',run(async()=>{
+ const review=workbookReview;if(!review)return;
+ const unchanged=()=>workbookReview===review&&pack.id===review.packId&&generation===review.generation&&!invalidInputs().length;
+ $('apply-workbook').disabled=true;
+ try{
+  if(!unchanged())throw Error('The draft changed since this preview. Cancel and import again.');
+  const sourceChanged=pack.development?.source&&pack.development.source.sha256!==review.preview.workbook.sha256;
+  if(sourceChanged&&conflicted)throw Error('Resolve the storage conflict or export JSON and reopen a separate working copy before replacing the source workbook.');
+  if(sourceChanged&&!storageAvailable&&(!workbookBackup||workbookBackup.packId!==pack.id||workbookBackup.generation!==generation||!$('confirm-workbook-backup').checked))throw Error('Local recovery storage is unavailable. Download and keep the current pack backup, then confirm it before replacing the earlier source.');
+  if(sourceChanged&&storageAvailable&&!conflicted){
+   const before=normalizeTechPack(pack,template);await saveNow();
+   if(!unchanged())throw Error('The draft changed while saving. Cancel and review the workbook again.');
+   await store.createRevision(before,{name:'Before workbook reimport · '+new Date().toISOString().slice(0,19),author:'Local recovery',reason:'Preserved current source and working values before replacing imported workbook definitions. Not production approval.'});
+   if(!unchanged())throw Error('The draft changed while preserving its source. A recovery revision was kept; preview again.');
+  }
+  const next=structuredClone(pack);next.schemaVersion=3;
+  next.development=applyComponentWorkbook(pack.development||null,review.preview,{unit:pack.unit});
+  if($('workbook-style-defaults').checked)for(const [key,value] of Object.entries(workbookStyleDefaults(review.preview.workbook)))if(!next.style[key].trim())next.style[key]=value;
+  const normalized=normalizeTechPack(next,template);
+  rememberEdit('component-import:'+Date.now());pack=normalized;active='components';developmentView.componentId=pack.development.components[0]?.id||'';
+  $('workbook-dialog').close();$('sheet-search').value='';renderStyle();renderSheet();markDirty();
+  try{await refreshRevisions();}catch{status('The import is applied, but the revision list could not refresh. Keep a JSON backup.');return;}
+  status(`Imported ${review.preview.summary.rows} authored component POMs. Local working measurements remain independent; the workbook is unchanged.`);
+ }catch(error){$('workbook-error').textContent=error.message;status('Workbook import not applied: '+error.message);}
+ finally{$('apply-workbook').disabled=false;}
+}));
 $('json-file').addEventListener('change',run(async()=>{
  const file=$('json-file').files[0];if(!file)return;
  try{
@@ -2120,7 +3688,7 @@ $('print-pack').addEventListener('click',()=>{if(validScreen()){$('export-dialog
 window.addEventListener('beforeprint',buildPrint);window.addEventListener('afterprint',()=>{$('print-view').innerHTML='';$('print-view').setAttribute('aria-hidden','true');});
 $('recovery-list').addEventListener('click',run(async event=>{const button=event.target.closest('[data-recover]');if(!button)return;download('workroom-original-recovery.json',await store.exportRecovery(button.dataset.recover),'application/json');status('Downloaded the untouched original entry. Valid packs remain available.');}));
 $('close-image').addEventListener('click',()=>$('image-dialog').close());
-window.addEventListener('beforeunload',event=>{if(dirty||invalidInputs().length||pendingActions){event.preventDefault();event.returnValue='';}});
+window.addEventListener('beforeunload',event=>{if(dirty||invalidInputs().length||pendingActions||workbookReview||hasUnfinishedSample()){event.preventDefault();event.returnValue='';}});
 // iOS can suspend a hidden app before the typing debounce fires. Flush valid
 // work on backgrounding as well; the saved label still waits for the database.
 const flushBackgroundDraft = () => {
@@ -2164,6 +3732,7 @@ window.WORKROOM_UPDATES = {
   if(preparingUpdate)return {ready:false,message:'An update check is already in progress.'};
   if(pendingActions)return {ready:false,message:'Wait for the current file or draft operation to finish, then update again.'};
   if(openWorkroomReview())return {ready:false,message:'Finish or cancel the open review before updating the app.'};
+  if(hasUnfinishedSample())return {ready:false,message:'Add the new sample, or clear its unfinished details, before updating the app.'};
   if(['revision-name','revision-author','revision-reason'].some(id=>$(id).value.trim())&&revisionDetails()!==recordedRevisionDetails)return {ready:false,message:'Create the named revision, or clear its unfinished details, before updating the app.'};
   if(!validScreen())return {ready:false,message:'Correct the marked entry before updating. Your last valid draft is retained.'};
   preparingUpdate=true;
@@ -2172,7 +3741,7 @@ window.WORKROOM_UPDATES = {
    if(!storageAvailable)throw Error('Local storage is unavailable. Export a JSON backup before reopening the app.');
    if(conflicted)throw Error('Resolve the draft conflict or export a JSON backup before updating.');
    await saveNow();
-   if(pack.id!==selectedId||generation!==selectedGeneration||dirty||pendingActions||invalidInputs().length||openWorkroomReview()||revisionDetails()!==revisionEntry)throw Error('The draft or review changed while saving. Finish your edit, then update again.');
+   if(pack.id!==selectedId||generation!==selectedGeneration||dirty||pendingActions||invalidInputs().length||openWorkroomReview()||hasUnfinishedSample()||revisionDetails()!==revisionEntry)throw Error('The draft or review changed while saving. Finish your edit, then update again.');
    if(!rememberPack(selectedId))throw Error('This browser could not remember the active pack. Export a JSON backup before reopening the app.');
    document.querySelector('.app-shell').inert=true;
    return {ready:true,message:'The active pack is saved on this device. Ready to update.'};
