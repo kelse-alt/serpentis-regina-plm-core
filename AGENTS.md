@@ -145,6 +145,21 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 - Preserve schema 2, the existing workroom database identity, exact house color assignments, original art/fonts and measurement formulas. Saved drafts/revisions remain local; Safari and installed iOS apps may use separate stores. Current-pack JSON transfers images and values but does not transfer named revision history.
 - Updates require an explicit action and a valid saved working state. Never reload active edits automatically, claim a failed save succeeded, or discard a pending file operation. Keep browser/physical-device evidence distinct; automated WebKit/Chromium or iPhone viewport checks do not prove native Share menu or real-iPhone behavior.
 
+## Pinned style reference (v0.7.1)
+
+- On October 26, 2026 the founder requested a fixed, optionally hidden reference sidebar with actual garment images above the Shared Style Record, Pattern Card information and Named Revisions & Restore. Use original front/back mannequin photos for the example and label their identity clearly. Keep all existing color assignments.
+- The sidebar persists across six worksheet tabs, with independent image header and information scroll. Its Pattern Card fields/piece tables and the full-width Pattern Card tab are synchronized editors of the same existing pack data, never separate records. Resolve event destinations from their editor's sheet identity, including paste and image operations; the active worksheet can differ from the pinned Pattern Card.
+- Hide/Show style is a device-local view preference and never a pack edit. On phones the native-collapsed panel keeps a compact image strip; expanded information and full hiding are separate controls. Keep Save/Hide/Undo/Redo/Export reachable.
+- Show existing Master front/back references if provided, otherwise the Pattern Card reference, otherwise the clearly labelled house-example pair. Never mix a supplied single style image with a mannequin fallback or auto-fill garment specifications from the photos.
+- Preserve input validity, raw unfinished text and errors when refreshing images or shared metadata. Validate sidebar editors as well as the main worksheet and reveal every hidden/collapsed ancestor before focusing invalid input. Keep mirrored error IDs unique. Refresh linked Fit style immediately after Pattern Card style changes.
+- Keep schema 2 and database identity, previous drafts, original image bytes and named revisions. Complete print/CSV/JSON uses source data, without duplicate sidebar rows. PWA updates remain explicit and save-first. Deploy only sanitized static workroom files under the existing workroom subdirectory and preserve the portal.
+
+## Pattern reference gallery (v0.7.2)
+
+- Preserve multiple Pattern Card sketches/photos as a gallery while showing one selected image at a time. Previous/Next and Displayed photo must update the pinned preview across worksheets and on phones. A gallery takes priority; existing single-image packs keep their fallback behavior.
+- Retain every original image byte, order and selected position in local drafts, JSON, undo/redo and named revisions. Remove displayed photo affects only that image, and invalid upload batches must leave the gallery unchanged. Print the selected image; complete JSON retains all images.
+- Read `docs/reference-gallery.md` and retain its source/model/storage behavior. Do not collapse gallery arrays into a single-image field when adding component schema 3; preserve gallery representation and selected position in both ordinary schema-2 packs and component packs, using the same IndexedDB identity. Keep the pinned panel and existing house color assignments unchanged.
+
 ## Local component workbook workflow (v0.8.0)
 
 - Read `docs/component-workbook-workflow.md`. Import locally through Export → Import component workbook (.xlsx), review a preview, then Apply. `src/workbook-xlsx.mjs` reads the local source; `src/garment-development.mjs` validates definitions/working values; `workbook-web/development-view.mjs` renders component entry and complete printing. The Components tab exists only after import. Rebuild tracked `tech-pack.html` with `npm run techpack:build` after source changes.

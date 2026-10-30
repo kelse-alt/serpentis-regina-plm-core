@@ -1,0 +1,29 @@
+{
+  "checkedAtUtc": "2026-10-27T23:30:23.960862+00:00",
+  "sourceCommit": "18d18c272809dd42ab922462595e9e1e004cd10c",
+  "buildSha256": "9796e8d860162042697bfac8b37c0791a8129802823fa5bc8f3674e0b3190199",
+  "layouts": [],
+  "checks": {
+    "tabChangesPreserveLowerDomScrollFieldsAndUnfinishedRevision": true,
+    "pinnedPatternStyleImmediatelyRefreshesActiveFitLink": true,
+    "samePackMetadataAndTablesMirrorBothDirectionsAcrossActiveSheets": true,
+    "hiddenInvalidSidebarBlocksUpdateRevealsAncestorsAndRetainsInput": true,
+    "sidebarPasteUsesItsOwnSheetAndUndoRedoPreserveOtherSheets": true,
+    "hidePreferenceIsViewOnlyAndAutosavedPackReopens": true,
+    "sidebarImageUploadsStayLocalAndPendingFileBlocksUpdate": true,
+    "enlargingPinnedReferenceKeepsPanelState": true,
+    "imageUploadAndRemovalPreserveUnrelatedInvalidEditorsAndUpdateGuards": true,
+    "galleryPreviewStaysPinnedAcrossTabsAlongsideMasterFlats": true,
+    "namedRevisionRestoreRefreshesPinnedViewsAndPreservesBackup": true,
+    "compatibleJsonTransferRestoresPinnedValuesAndImages": true,
+    "completePrintHas190SourceRowsWithoutSidebarDuplication": true,
+    "noRuntimeErrorsOrExternalRequests": true
+  },
+  "issues": [],
+  "limits": [
+    "Automated Chromium viewports are not a physical iPhone/native keyboard test."
+  ],
+  "privacy": "Only pristine blank-template screenshots are saved. Synthetic projects, images, JSON and filled PDFs remain temporary.",
+  "passed": true,
+  "screenshots": []
+}

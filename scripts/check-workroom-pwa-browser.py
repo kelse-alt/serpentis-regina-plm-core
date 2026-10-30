@@ -188,7 +188,9 @@ def pristine(page):
     require(page.locator('[data-style-key]').evaluate_all('(els)=>els.every(el=>el.value==="")'), 'Refusing to capture filled style metadata.')
     require(page.locator('#sheet-content [data-field]').evaluate_all('(els)=>els.every(el=>el.value==="")'), 'Refusing to capture filled sheet metadata.')
     require(page.locator('#sheet-content input,#sheet-content textarea').evaluate_all('(els)=>els.every(el=>!el.value)'), 'Refusing to capture filled cells.')
-    require(page.locator('#sheet-content .attachment-card img').count() == 0, 'Refusing to capture project images.')
+    require(page.locator('#sheet-content .attachment-card img,#pinned-pattern-content .attachment-card img').count() == 0, 'Refusing to capture project images.')
+    require(page.locator('#pinned-pattern-content input,#pinned-pattern-content textarea').evaluate_all('(els)=>els.every(el=>!el.value)'), 'Refusing to capture filled pinned Pattern Card data.')
+    require(page.locator('#style-reference-caption').inner_text() == 'Example reference · SR-FORM-001', 'Refusing to capture a private style reference.')
 
 
 def check_metadata(page):

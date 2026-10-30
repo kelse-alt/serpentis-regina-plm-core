@@ -27,7 +27,7 @@ Read the [component workbook guide](docs/component-workbook-workflow.md).
 Validation and hosted-update verification are pending for this new workflow;
 earlier v0.7.0 evidence does not establish v0.8.0 deployment.
 
-## Use the iPhone app — v0.7.0
+## Use the iPhone app — v0.7.2
 
 Open the [Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/)
 in iPhone Safari, then choose **Share → Add to Home Screen → Add**. Keep
@@ -39,6 +39,16 @@ local autosave and named revisions. Updates wait for an explicit action after
 valid entries are saved. Safari, the Home Screen app and desktop browsers may
 have separate stores; transfer a current pack with Export/Import JSON.
 Read the [iPhone installation and usage guide](docs/iphone-workroom-app.md).
+
+The [pinned style reference panel](docs/pinned-style-reference.md) keeps front/back
+images, the Shared Style Record, Pattern Card details and Named Revisions & Restore
+available across every worksheet. Use **Hide style / Show style** in the action bar.
+On phones, a compact image strip expands into the complete reference panel.
+
+The [reference gallery](docs/reference-gallery.md) accepts multiple Pattern Card
+sketches and photos while displaying one at a time. Previous/Next or **Displayed
+photo** selects the image used in the pinned panel; every image stays in local
+drafts, named revisions and JSON backups.
 
 ## Desktop and standalone workroom
 

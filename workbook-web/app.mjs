@@ -1,4 +1,4 @@
-import { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack } from '../src/tech-pack.mjs';
+import { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack, patternReferenceImages, selectedPatternReference } from '../src/tech-pack.mjs';
 import { createPackStore } from '../src/tech-pack-storage.mjs';
 import { previewGridPaste, applyGridPaste, createEditHistory } from '../src/workroom-editing.mjs';
 import { createDevelopment, previewComponentWorkbook, applyComponentWorkbook, compareObservation } from '../src/garment-development.mjs';
@@ -35,11 +35,100 @@ const columnViews = {master:'full',wash:'full'};
 const editHistory = createEditHistory(40);
 const store = createPackStore(template);
 const activeSheet = () => sheetList().find(s => s.id === active) || template.sheets[0];
+const patternSheet = template.sheets.find(s=>s.id==='pattern');
+const sheetForElement = el => sheetList().find(s=>s.id===el.closest('[data-editor-sheet]')?.dataset.editorSheet)||activeSheet();
+const editorRoots = s => [...document.querySelectorAll(`.sheet-editor[data-editor-sheet="${s.id}"]`)].filter(el=>!el.closest('#print-view'));
+const panelPreferenceKey = 'serpentis-regina.workroom.style-panel-visible';
+let sidebarImages = [], sidebarGalleryState = '';
+const isPatternReference = (s,key) => s.id==='pattern'&&key==='reference';
+const patternReferenceIndex = () => pack.attachments.pattern.reference?.selectedIndex??0;
+function galleryNavigation(images,index,pinned=false) {
+ if(images.length<2)return '';
+ return `<span class="gallery-navigation${pinned?' pinned-gallery-navigation':''}" role="group" aria-label="${pinned?'Style reference':'Pattern reference'} gallery"><button type="button" data-gallery-prev="reference" aria-label="Previous ${pinned?'style':'pattern'} reference" ${index===0?'disabled':''}>Previous</button><output ${pinned?'data-style-gallery-count':'data-gallery-count="reference"'} aria-live="polite">${index+1} of ${images.length}</output><button type="button" data-gallery-next="reference" aria-label="Next ${pinned?'style':'pattern'} reference" ${index===images.length-1?'disabled':''}>Next</button></span>`;
+}
+function selectPatternReference(index,origin) {
+ const images=patternReferenceImages(pack);
+ if(!Number.isInteger(index)||index<0||index>=images.length||index===patternReferenceIndex())return;
+ const root=origin?.closest('#style-reference-images,.sheet-editor'),attribute=['data-gallery-prev','data-gallery-next','data-gallery-select'].find(key=>origin?.hasAttribute(key));
+ const editorId=root?.closest('#pinned-pattern-content')?'pinned-pattern-content':root?.id==='style-reference-images'?'style-reference-images':'sheet-content';
+ editHistory.breakGroup();rememberEdit('gallery-selection');
+ pack.attachments.pattern.reference={images,selectedIndex:index};markDirty();refreshAttachmentViews(patternSheet);editHistory.breakGroup();
+ if(attribute){
+  const root=$(editorId),target=root.querySelector(`[${attribute}="reference"]`);
+  (target&&!target.disabled?target:root.querySelector('[data-gallery-select],button[data-gallery-prev]:not(:disabled),button[data-gallery-next]:not(:disabled)'))?.focus();
+ }
+ status(`Showing reference ${index+1} of ${images.length}: ${images[index].name}. Selection saves with this pack.`);
+}
+function setStylePanelVisible(visible,remember=true) {
+ $('context-panel').hidden=!visible;
+ document.querySelector('.workspace').classList.toggle('style-panel-hidden',!visible);
+ $('toggle-style-panel').textContent=visible?'Hide style':'Show style';
+ $('toggle-style-panel').setAttribute('aria-expanded',String(visible));
+ $('toggle-style-panel').setAttribute('aria-label',(visible?'Hide':'Show')+' style reference panel');
+ if(remember)try{localStorage.setItem(panelPreferenceKey,String(visible));}catch{/* This view preference never blocks local drafts. */}
+}
+function renderReferenceImages() {
+ const flats=pack.attachments.master,pattern=selectedPatternReference(pack),gallery=patternReferenceImages(pack),index=patternReferenceIndex();
+ const provided=Array.isArray(pack.attachments.pattern.reference?.images)?[]:['front','back'].filter(view=>flats[view]).map(view=>({key:view,label:view==='front'?'Front':'Back',src:flats[view].dataUrl,name:flats[view].name}));
+ const images=provided.length?provided:pattern?[{key:'reference',label:'Style reference',src:pattern.dataUrl,name:pattern.name}]:['front','back'].map(view=>({key:view,label:view==='front'?'Front':'Back',src:housePhotos[view],name:'SR-FORM-001 · '+view}));
+ const caption=provided.length?'Current style · front/back references':pattern?'Current style · pattern reference':'Example reference · SR-FORM-001';
+ $('style-reference-caption').textContent=caption;
+ const galleryState=provided.length?'':`${gallery.length}:${index}`;
+ if(galleryState===sidebarGalleryState&&images.length===sidebarImages.length&&images.every((image,i)=>Object.keys(image).every(key=>image[key]===sidebarImages[i][key])))return;
+ sidebarGalleryState=galleryState;
+ sidebarImages=images;
+ $('style-reference-images').innerHTML=images.map(image=>`<span class="reference-photo"><button type="button" class="image-open" data-sidebar-image="${image.key}" aria-label="Enlarge ${esc(image.label)} reference"><img src="${image.src}" alt="${esc(image.name)}"></button><span class="reference-photo-caption${image.key==='reference'?' reference-caption-other':''}">${esc(image.label)}</span>${image.key==='reference'?galleryNavigation(gallery,index,true):''}</span>`).join('');
+}
+function renderPinnedPattern() {
+ const content=$('pinned-pattern-content'),scroll=$('context-panel').querySelector('.context-body').scrollTop;
+ const opened=new Map([...content.querySelectorAll('[data-details]')].map(el=>[el.dataset.details,el.open]));
+ content.innerHTML=`<div class="sheet-editor" data-editor-sheet="pattern">${renderFields(patternSheet)}${renderAttachments(patternSheet)}${patternSheet.tables.map(t=>renderTable(patternSheet,t)).join('')}</div>`;
+ for(const el of content.querySelectorAll('[data-details]'))if(opened.has(el.dataset.details))el.open=opened.get(el.dataset.details);
+ $('context-panel').querySelector('.context-body').scrollTop=scroll;
+}
+function refreshAttachmentViews(s) {
+ for(const root of editorRoots(s)){
+  const current=root.querySelector('.attachment-details');if(!current)continue;
+  const fragment=document.createElement('template');fragment.innerHTML=renderAttachments(s);
+  const next=fragment.content.firstElementChild;next.open=current.open;current.replaceWith(next);
+ }
+ renderReferenceImages();
+}
+function syncDerivedFields() {
+ for(const s of template.sheets)for(const f of s.fields||[])if(f.type==='calculated')syncFieldViews(s,f);
+}
+function updateFieldHint(input,s,f) {
+ const key=sharedStyleKey(s.id,f.key);if(!key)return;
+ const label=input.closest('.field'),hint=label.querySelector('.inherit-hint'),button=label.querySelector('[data-use-shared]');
+ if(hint)hint.textContent=(pack.fields[s.id][f.key]?'Sheet override':'Inherited from shared style')+' · '+styleLabels[key];
+ if(button)button.hidden=!pack.fields[s.id][f.key];
+}
+function syncFieldViews(s,f,origin=null,preserveInvalid=false) {
+ for(const root of editorRoots(s))for(const el of root.querySelectorAll(`[data-field="${f.key}"],[data-derived-field="${f.key}"]`)){
+  if(preserveInvalid&&el.tagName!=='OUTPUT'&&!el.checkValidity())continue;
+  if(el!==origin){if(el.tagName==='OUTPUT')el.textContent=fieldValue(s,f)||'—';else{el.value=fieldValue(s,f)||'';setInlineError(el,'');}}
+  updateFieldHint(el,s,f);
+ }
+}
+function syncInheritedFields() {
+ for(const s of template.sheets)for(const f of s.fields||[])if(sharedStyleKey(s.id,f.key)||f.type==='calculated')syncFieldViews(s,f,null,true);
+}
+function syncTableViews(s,t,r,c,origin) {
+ const value=valueFor(s,t,r,c);
+ for(const root of editorRoots(s))for(const el of root.querySelectorAll(`[data-table="${t.id}"][data-row="${r.id}"][data-col="${c.key}"]`))if(el!==origin){
+  el.value=c.type==='measurement'?formatMeasure(value,unitFor(s)||'cm'):value??'';setInlineError(el,'');
+ }
+}
+
 const unitFor = s => s.reference ? refUnit : pack.unit;
 const status = message => { $('status').textContent = message; };
-const invalidInputs = () => [...document.querySelectorAll('#sheet-content input,#sheet-content textarea,#style-fields input,#pack-title')].filter(el => !el.checkValidity());
+const invalidInputs = () => [...document.querySelectorAll('#sheet-content input,#sheet-content textarea,#pinned-pattern-content input,#pinned-pattern-content textarea,#style-fields input,#pack-title')].filter(el => !el.checkValidity());
 function saveState(message) { $('save-state').textContent = message; $('footer-save-state').textContent = message; }
-function updateIdentity() { $('pack-identity').textContent = `${pack.style.number || pack.title} · ${pack.style.patternRevision ? 'PATTERN '+pack.style.patternRevision+' · ' : ''}${dirty ? 'UNSAVED DRAFT' : 'LOCAL DRAFT'}`; }
+function updateIdentity() {
+ $('pack-identity').textContent = `${pack.style.number || pack.title} · ${pack.style.patternRevision ? 'PATTERN '+pack.style.patternRevision+' · ' : ''}${dirty ? 'UNSAVED DRAFT' : 'LOCAL DRAFT'}`;
+ $('style-reference-summary').textContent=[pack.style.number||pack.title,pack.style.description,pack.style.sampleSize?'Sample '+pack.style.sampleSize:'',pack.style.patternRevision?'Pattern '+pack.style.patternRevision:''].filter(Boolean).join(' · ');
+ $('style-reference-summary').title=$('style-reference-summary').textContent;
+}
 function updateHistory() { $('undo-edit').disabled = !editHistory.canUndo; $('redo-edit').disabled = !editHistory.canRedo; }
 function rememberEdit(key) { editHistory.push(pack,key); }
 function markDirty() {
@@ -55,7 +144,7 @@ function scheduleAutosave() {
 }
 function setInlineError(input,message) {
  const wasInvalid=input.getAttribute('aria-invalid')==='true';
- const id=input.id || ['cell',active,input.dataset.table,input.dataset.row,input.dataset.col || input.dataset.field || input.dataset.styleKey].filter(Boolean).join('-');
+ const id=input.id || ['cell',input.closest('#pinned-pattern-content')?'pinned':'sheet',sheetForElement(input).id,input.dataset.table,input.dataset.row,input.dataset.col || input.dataset.field || input.dataset.styleKey].filter(Boolean).join('-');
  if(!input.id)input.id=id;
  const errorId=id+'-error';let error=document.getElementById(errorId);
  input.setCustomValidity(message);
@@ -70,7 +159,7 @@ function setInlineError(input,message) {
 }
 function validScreen() {
  const invalid=invalidInputs()[0];
- if(invalid){const details=invalid.closest('details');if(details)details.open=true;if(invalid.closest('#context-panel'))$('context-panel').open=true;invalid.focus();invalid.reportValidity();status('Correct the marked entry before continuing. Your last valid draft is retained.');return false;}
+ if(invalid){if(invalid.closest('#context-panel'))setStylePanelVisible(true);for(let ancestor=invalid.parentElement;ancestor;ancestor=ancestor.parentElement)if(ancestor.tagName==='DETAILS')ancestor.open=true;invalid.focus();invalid.scrollIntoView({block:'nearest'});invalid.reportValidity();status('Correct the marked entry before continuing. Your last valid draft is retained.');return false;}
  return true;
 }
 async function refreshSaved() {
@@ -121,6 +210,7 @@ function fieldValue(s,f){return resolveFieldValue(pack,s,f);}
 function renderStyle() {
  $('style-fields').innerHTML=Object.entries(styleLabels).map(([key,label])=>`<label class="field"><span>${esc(label)}</span><input data-style-key="${key}" aria-label="${esc(label)}" maxlength="${key==='description'?4000:2000}" value="${esc(pack.style[key])}"></label>`).join('');
  $('style-unit').value=pack.unit||'';
+ renderPinnedPattern();renderReferenceImages();
 }
 function inheritanceHint(s,f) {
  const key=sharedStyleKey(s.id,f.key);
@@ -130,13 +220,13 @@ function inheritanceHint(s,f) {
 }
 function renderFields(s) {
  if(!s.fields?.length)return '';
- return `<details class="sheet-details" data-details="fields" ${s.tables?.length?'':'open'}><summary>Sheet details · ${s.fields.length} fields</summary><section class="form-section"><div class="field-grid">${s.fields.map(f=>`<label class="field${f.multiline?' wide':''}"><span>${esc(f.label)}</span>${isEditable(f)?f.multiline?`<textarea rows="3" maxlength="${f.multiline?10000:2000}" data-field="${f.key}" aria-label="${esc(f.label)}">${esc(fieldValue(s,f))}</textarea>`:`<input type="${f.inputType==='date'?'date':'text'}" maxlength="2000" data-field="${f.key}" value="${esc(fieldValue(s,f))}" aria-label="${esc(f.label)}">`:`<output>${esc(fieldValue(s,f)||'—')}</output>`}${inheritanceHint(s,f)}</label>`).join('')}</div></section></details>`;
+ return `<details class="sheet-details" data-details="fields" ${s.tables?.length?'':'open'}><summary>Sheet details · ${s.fields.length} fields</summary><section class="form-section"><div class="field-grid">${s.fields.map(f=>`<label class="field${f.multiline?' wide':''}"><span>${esc(f.label)}</span>${isEditable(f)?f.multiline?`<textarea rows="3" maxlength="${f.multiline?10000:2000}" data-field="${f.key}" aria-label="${esc(f.label)}">${esc(fieldValue(s,f))}</textarea>`:`<input type="${f.inputType==='date'?'date':'text'}" maxlength="2000" data-field="${f.key}" value="${esc(fieldValue(s,f))}" aria-label="${esc(f.label)}">`:`<output data-derived-field="${f.key}">${esc(fieldValue(s,f)||'—')}</output>`}${inheritanceHint(s,f)}</label>`).join('')}</div></section></details>`;
 }
 function renderAttachments(s) {
  if(!s.attachments?.length)return '';
  return `<details class="sheet-details attachment-details" data-details="attachments" ${s.tables?.length?'':'open'}><summary>Drawings & photographic references · ${s.attachments.length} slots</summary><section class="form-section"><div class="attachment-grid">${s.attachments.map(a=>{
- const image=pack.attachments[s.id][a.key];
- return `<article class="attachment-card"><h4>${esc(a.label)}</h4>${image?`<button class="image-open" data-image="${a.key}" type="button" aria-label="Enlarge ${esc(a.label)}"><img src="${image.dataUrl}" alt="${esc(a.label+' · '+image.name)}"></button><p>${esc(image.name)}</p><button type="button" data-remove="${a.key}">Remove image</button>`:'<p class="attachment-empty">No image attached</p>'}<label class="field"><span>${image?'Replace':'Attach'} PNG, JPEG or WebP · max 5 MB</span><input type="file" data-attachment="${a.key}" accept="image/png,image/jpeg,image/webp" aria-label="Attach ${esc(a.label)}"></label></article>`;
+ const gallery=isPatternReference(s,a.key),images=gallery?patternReferenceImages(pack):[],index=gallery?patternReferenceIndex():0,image=gallery?selectedPatternReference(pack):pack.attachments[s.id][a.key];
+ return `<article class="attachment-card"><h4>${esc(a.label)}</h4>${image?`<button class="image-open" data-image="${a.key}" type="button" aria-label="Enlarge ${esc(a.label)}"><img src="${image.dataUrl}" alt="${esc(a.label+' · '+image.name)}"></button><p class="attachment-name">${esc(image.name)}</p>${gallery?galleryNavigation(images,index):''}${gallery&&images.length>1?`<label class="field gallery-picker"><span>Displayed photo</span><select data-gallery-select="reference" aria-label="Displayed pattern reference">${images.map((photo,i)=>`<option value="${i}" ${i===index?'selected':''}>${i+1}. ${esc(photo.name)}</option>`).join('')}</select></label>`:''}<button type="button" data-remove="${a.key}">${gallery?'Remove displayed photo':'Remove image'}</button>`:'<p class="attachment-empty">No image attached</p>'}<label class="field"><span>${gallery?'Add photos · PNG, JPEG or WebP · max 5 MB each':`${image?'Replace':'Attach'} PNG, JPEG or WebP · max 5 MB`}</span><input type="file" data-attachment="${a.key}" ${gallery?'multiple':''} accept="image/png,image/jpeg,image/webp" aria-label="Attach ${esc(a.label)}"></label>${gallery?'<p class="hint">One photo is displayed at a time; all photos stay in your pack and JSON backup. Up to 12 photos per pack.</p>':''}</article>`;
  }).join('')}</div></section></details>`;
 }
 function heading(s,c) { return c.headerField ? pack.fields[s.id][c.headerField] || `${c.label} · ${c.headerField.slice(-1)}` : c.label; }
@@ -173,8 +263,10 @@ function renderSource(s) {
 }
 function sheetMarkup(s,complete=false){
  const empty=`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`;
- if(s.id==='components')return renderDevelopment(pack.development||createDevelopment(),{unit:pack.unit,...developmentView,complete})+empty;
- return(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+empty+renderSource(s);
+ const content=s.id==='components'
+  ?renderDevelopment(pack.development||createDevelopment(),{unit:pack.unit,...developmentView,complete})+empty
+  :(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+empty+renderSource(s);
+ return `<div class="sheet-editor" data-editor-sheet="${s.id}">${content}</div>`;
 }
 function renderTabs(){
  const sheets=sheetList();
@@ -214,10 +306,10 @@ function applySearch(){
  $('row-status').textContent=total?`${shown} of ${total} rows · ${activeSheet().reference?'approved reference & local notes':'local garment draft'}${columnViews[active]==='comparison'?' · comparison columns':''}`:'Sheet details & sample references';
  $('no-rows').hidden=shown>0||total===0;
 }
-function updateResults(tableId,rowId){
- const s=activeSheet(),t=s.tables.find(t=>t.id===tableId),r=t.rows.find(r=>r.id===rowId);
- const tr=$('sheet-content').querySelector(`table[data-table="${t.id}"] tr[data-row="${r.id}"]`);
- for(const c of columnsForRow(t,r).filter(c=>c.type==='calculated')){const out=tr.querySelector(`[data-result="${c.key}"] .matte-ink`);if(out)out.textContent=formatMeasure(valueFor(s,t,r,c),unitFor(s)||'cm',true);}
+function updateResults(s,tableId,rowId){
+ const t=s.tables.find(t=>t.id===tableId),r=t.rows.find(r=>r.id===rowId);
+ for(const root of editorRoots(s)){const tr=root.querySelector(`table[data-table="${t.id}"] tr[data-row="${r.id}"]`);if(!tr)continue;
+ for(const c of columnsForRow(t,r).filter(c=>c.type==='calculated')){const out=tr.querySelector(`[data-result="${c.key}"] .matte-ink`);if(out)out.textContent=formatMeasure(valueFor(s,t,r,c),unitFor(s)||'cm',true);}}
 }
 function developmentRow(input){
  const component=pack.development?.components.find(item=>item.id===input.dataset.devComponent);
@@ -278,7 +370,7 @@ function buildPrint(){
  const shared=Object.entries(styleLabels).filter(([key])=>pack.style[key]).map(([key,label])=>`<span>${esc(label)}: ${esc(pack.style[key])}</span>`).join(' · ');
  $('print-view').innerHTML=selected.map(s=>`<article class="print-sheet"><header class="print-masthead"><strong>SERPENTIS REGINA</strong><h1>${esc(s.title)}</h1><p>${esc(pack.style.number||pack.title)} · ${s.reference?refUnit.toUpperCase():pack.unit?.toUpperCase()||'UNIT NOT SELECTED'} · LOCAL DRAFT</p></header><p>${shared}</p><p>${esc(s.note)}</p>${sheetMarkup(s,true)}</article>`).join('');
  $('print-view').querySelectorAll('.sheet-details').forEach(el=>el.open=true);
- $('print-view').querySelectorAll('.source-note,.empty-state,input[type=file],button,.inherit-hint').forEach(el=>{if(el.classList.contains('image-open'))el.replaceWith(...el.childNodes);else el.remove();});
+ $('print-view').querySelectorAll('.source-note:not(.development-definition-history),.empty-state,input[type=file],button,.inherit-hint,.gallery-picker,.gallery-navigation').forEach(el=>{if(el.classList.contains('image-open'))el.replaceWith(...el.childNodes);else el.remove();});
  $('print-view').querySelectorAll('input,textarea,select').forEach(el=>{const span=document.createElement('span');span.className='print-value';span.textContent=el.value||'—';el.replaceWith(span);});
  $('print-view').querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));$('print-view').setAttribute('aria-hidden','false');
 }
@@ -300,8 +392,8 @@ function changeLabel(path){
 }
 function diffCell(change,value,snapshot){
  if(!change.path.startsWith('attachments.'))return esc(diffValue(value));
- const [,sheetId,key]=change.path.split('.'),image=snapshot.attachments[sheetId]?.[key];
- return image?`<p>${esc(image.name)}</p><img class="revision-image" src="${image.dataUrl}" alt="${esc(changeLabel(change.path))}">`:'—';
+ const [,sheetId,key]=change.path.split('.'),gallery=sheetId==='pattern'&&key==='reference',image=gallery?selectedPatternReference(snapshot):snapshot.attachments[sheetId]?.[key],images=gallery?patternReferenceImages(snapshot):[];
+ return image?`${gallery?`<p>${images.length} photo${images.length===1?'':'s'} · displayed ${(snapshot.attachments.pattern.reference.selectedIndex??0)+1} of ${images.length}</p><ul>${images.map(photo=>`<li>${esc(photo.name)}</li>`).join('')}</ul>`:''}<p>${esc(image.name)}</p><img class="revision-image" src="${image.dataUrl}" alt="${esc(changeLabel(change.path))}">`:'—';
 }
 async function reviewRevision(restore=false){
  if(!validScreen())return;
@@ -315,12 +407,15 @@ async function reviewRevision(restore=false){
  $('confirm-restore').hidden=!restore;$('revision-dialog').showModal();
 }
 function changeGarmentUnit(unit){
- if(!validScreen()){renderStyle();return false;}if(pack.unit===unit)return true;
- try{const next=normalizeTechPack({...pack,unit},template);rememberEdit('unit');pack=next;markDirty();renderSheet(true);return true;}
- catch(error){$('pack-unit').value=unitFor(activeSheet())||'';renderStyle();status(error.message);return false;}
+ if(!validScreen()){$('style-unit').value=pack.unit||'';$('pack-unit').value=unitFor(activeSheet())||'';return false;}
+ if(pack.unit===unit)return true;
+ try{
+  const next=normalizeTechPack({...pack,unit},template);
+  rememberEdit('unit');pack=next;markDirty();renderPinnedPattern();renderSheet(true);return true;
+ }catch(error){$('pack-unit').value=unitFor(activeSheet())||'';$('style-unit').value=pack.unit||'';status(error.message);return false;}
 }
 function previewPaste(event){
- const el=event.target;if(!el.dataset.col)return;
+ const el=event.target,s=sheetForElement(el);if(!el.dataset.col)return;
  const text=event.clipboardData?.getData('text/plain')||'';
  if(!/[\t\r\n]/.test(text))return;
  event.preventDefault();if(!validScreen())return;
@@ -329,8 +424,8 @@ function previewPaste(event){
  $('paste-errors').textContent='';$('paste-preview').innerHTML='';$('apply-paste').disabled=true;
  try{
   const table=el.closest('table'),rows=[...table.querySelectorAll('tbody tr:not([hidden])')].map(r=>r.dataset.row);
-  pendingPaste=previewGridPaste(pack,template,{sheetId:active,tableId:el.dataset.table,rowId:el.dataset.row,columnKey:el.dataset.col,text,columnKeys:[...table.querySelectorAll('thead th[data-column]')].map(c=>c.dataset.column),rowIds:rows,unit:unitFor(activeSheet())});
-  const targetTable=activeSheet().tables.find(t=>t.id===pendingPaste.tableId),columnNames=pendingPaste.columnKeys.map(key=>heading(activeSheet(),targetTable.columns.find(c=>c.key===key)));
+  pendingPaste=previewGridPaste(pack,template,{sheetId:s.id,tableId:el.dataset.table,rowId:el.dataset.row,columnKey:el.dataset.col,text,columnKeys:[...table.querySelectorAll('thead th[data-column]')].map(c=>c.dataset.column),rowIds:rows,unit:unitFor(s)});
+  const targetTable=s.tables.find(t=>t.id===pendingPaste.tableId),columnNames=pendingPaste.columnKeys.map(key=>heading(s,targetTable.columns.find(c=>c.key===key)));
   $('paste-summary').textContent=`${pendingPaste.rowCount} rows × ${pendingPaste.columnCount} editable columns. Locked and calculated columns are skipped. Columns: ${columnNames.join(', ')}. Blank numeric cells remain missing.`;
   $('paste-preview').innerHTML=`<table class="paste-table"><thead><tr><th>Destination</th><th>Before</th><th>After</th></tr></thead><tbody>${pendingPaste.changes.map(c=>`<tr><td>${esc(c.label)}</td><td>${esc(diffValue(c.before))}</td><td>${esc(diffValue(c.after))}</td></tr>`).join('')}</tbody></table><p>Numeric preview values are canonical CM for measurements; quantities are unchanged. Nothing is applied until you choose Apply paste.</p>`;
   $('apply-paste').disabled=false;
@@ -361,11 +456,12 @@ $('style-fields').addEventListener('input',event=>{
   if(el.value.includes('\0'))throw Error('Remove the unsupported control character.');
   if(!el.checkValidity()&&el.validity.tooLong)throw Error('This style detail is too long.');
   setInlineError(el,'');if(pack.style[key]===el.value)return;
-  rememberEdit('style:'+key);pack.style[key]=el.value;markDirty();renderSheet(true);
+  rememberEdit('style:'+key);pack.style[key]=el.value;markDirty();syncInheritedFields();
  }catch(error){setInlineError(el,error.message);}
 });
-$('sheet-content').addEventListener('input',event=>{
- const el=event.target,s=activeSheet();
+for(const editor of [$('sheet-content'),$('pinned-pattern-content')]){
+editor.addEventListener('input',event=>{
+ const el=event.target,s=sheetForElement(el);
  const sampleKeys={'development-sample-name':'label','development-sample-round':'round','development-sample-notes':'notes'};
  if(Object.hasOwn(sampleKeys,el.id)){newSampleEntry[sampleKeys[el.id]]=el.value;return;}
  if(el.dataset.devField||el.dataset.devObservation){
@@ -397,9 +493,9 @@ $('sheet-content').addEventListener('input',event=>{
    el.setCustomValidity('');if(!el.checkValidity())throw Error('Enter a valid '+f.label+'.');
    setInlineError(el,'');
    if(pack.fields[s.id][f.key]!==el.value){rememberEdit('field:'+s.id+':'+f.key);pack.fields[s.id][f.key]=el.value;markDirty();}
-   const label=el.closest('.field');if(sharedStyleKey(s.id,f.key)){const hint=label.querySelector('.inherit-hint');hint.textContent=(el.value?'Sheet override':'Inherited from shared style')+' · '+styleLabels[sharedStyleKey(s.id,f.key)];label.querySelector('[data-use-shared]').hidden=!el.value;}
+   syncFieldViews(s,f,el);syncDerivedFields();
    for(const t of s.tables||[])for(const c of t.columns.filter(c=>c.headerField===f.key)){
-    const table=$('sheet-content').querySelector(`table[data-table="${t.id}"]`),th=table.querySelector(`th[data-column="${c.key}"]`);
+    const table=el.closest('.sheet-editor').querySelector(`table[data-table="${t.id}"]`),th=table.querySelector(`th[data-column="${c.key}"]`);
     if(th)th.innerHTML=esc(heading(s,c))+` <span class="column-unit">(${(unitFor(s)||'?').toUpperCase()})</span>`;
     for(const input of table.querySelectorAll(`[data-col="${c.key}"]`))input.setAttribute('aria-label',`${t.title}, row ${input.dataset.row}, ${heading(s,c)}`);
    }
@@ -415,13 +511,13 @@ $('sheet-content').addEventListener('input',event=>{
   else if(value.length>(c.maxLength||4000))throw Error('Use at most '+(c.maxLength||4000)+' characters in this cell.');
   setInlineError(el,'');
   if(pack.tables[s.id][t.id][r.id][c.key]!==value){rememberEdit(['cell',s.id,t.id,r.id,c.key].join(':'));pack.tables[s.id][t.id][r.id][c.key]=value;markDirty();}
-  updateResults(t.id,el.dataset.row);status('Entry updated. Valid edits autosave on this device.');
+  syncTableViews(s,t,r,c,el);updateResults(s,t.id,el.dataset.row);status('Entry updated. Valid edits autosave on this device.');
  }catch(error){setInlineError(el,error.message);}
 });
-$('sheet-content').addEventListener('focusout',event=>{
+editor.addEventListener('focusout',event=>{
  const el=event.target;editHistory.breakGroup();
  if(!el.matches('input,textarea')||!el.checkValidity())return;
- const s=activeSheet();
+ const s=sheetForElement(el);
  if(el.dataset.devObservation||el.dataset.devField){
   const row=developmentRow(el);if(el.dataset.devField!=='notes')el.value=formatMeasure(el.dataset.devObservation?row.observations[el.dataset.devSample]?.[el.dataset.devSide]??null:row[el.dataset.devField],pack.unit||'cm',el.dataset.devField==='proposedDeltaCm');
   applySearch();return;
@@ -430,30 +526,37 @@ $('sheet-content').addEventListener('focusout',event=>{
  else if(el.dataset.numeric){const value=pack.tables[s.id][el.dataset.table][el.dataset.row][el.dataset.col];el.value=el.dataset.numeric==='measurement'?formatMeasure(value,unitFor(s)||'cm'):value??'';}
  applySearch();
 });
-$('style-fields').addEventListener('focusout',()=>editHistory.breakGroup());
-$('sheet-content').addEventListener('paste',previewPaste);
-$('sheet-content').addEventListener('keydown',event=>{
+editor.addEventListener('paste',previewPaste);
+editor.addEventListener('keydown',event=>{
  const el=event.target;
  if(event.key==='Enter'&&el.dataset.numeric&&el.checkValidity()){
   const rows=[...el.closest('tbody').querySelectorAll('tr:not([hidden])')],index=rows.indexOf(el.closest('tr'))+(event.shiftKey?-1:1);
   const next=rows[index]?.querySelector(`[data-col="${el.dataset.col}"]`);if(next){event.preventDefault();next.focus();next.select();}
  }
 });
-$('sheet-content').addEventListener('change',run(async event=>{
- const el=event.target,key=el.dataset.attachment,s=activeSheet();
+editor.addEventListener('change',run(async event=>{
+ const el=event.target,key=el.dataset.attachment,s=sheetForElement(el);
  const viewKeys={'component-select':'componentId','development-sample':'sampleId','development-side':'side'};
  if(Object.hasOwn(viewKeys,el.id)){if(!validScreen()){el.value=developmentView[viewKeys[el.id]];return;}developmentView[viewKeys[el.id]]=el.value;renderSheet(true);return;}
+ if(el.dataset.gallerySelect){selectPatternReference(Number(el.value),el);return;}
  if(!key)return;
- const file=el.files[0],uploadPackId=pack.id;if(!file)return;
+ const files=[...el.files],uploadPackId=pack.id,gallery=isPatternReference(s,key);if(!files.length)return;
  try{
-  if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>5*1024*1024)throw Error('Choose a PNG, JPEG or WebP up to 5 MB.');
-  const dataUrl=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('Could not read image.'));reader.readAsDataURL(file);});
-  const image=new Image();image.src=dataUrl;await image.decode();if(pack.id!==uploadPackId)throw Error('The active pack changed during upload. Attach the image in the intended pack.');
-  rememberEdit('image:'+s.id+':'+key);const next=structuredClone(pack);next.attachments[s.id][key]={name:file.name,type:file.type,dataUrl};pack=normalizeTechPack(next,template);markDirty();renderSheet(true);status('Original image attached locally; autosave includes its bytes.');
+  if(gallery&&files.length+patternReferenceImages(pack).length>12)throw Error('A reference gallery can hold up to 12 photos. No photos were added.');
+  if(files.some(file=>!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>5*1024*1024))throw Error('Choose PNG, JPEG or WebP images up to 5 MB each. No photos were added.');
+  const images=[];
+  for(const file of files){
+   const dataUrl=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('Could not read image. No photos were added.'));reader.readAsDataURL(file);});
+   const image=new Image();image.src=dataUrl;await image.decode();images.push({name:file.name,type:file.type,dataUrl});
+  }
+  if(pack.id!==uploadPackId)throw Error('The active pack changed during upload. Attach the images in the intended pack.');
+  const next=structuredClone(pack);next.attachments[s.id][key]=gallery?{images:[...patternReferenceImages(pack),...images],selectedIndex:patternReferenceIndex()}:images[0];
+  const normalized=normalizeTechPack(next,template);editHistory.breakGroup();rememberEdit('image:'+s.id+':'+key);pack=normalized;markDirty();refreshAttachmentViews(s);editHistory.breakGroup();
+  status(gallery?`Added ${images.length} photo${images.length===1?'':'s'} to the reference gallery. Use Previous / Next or Displayed photo to choose the preview.`:'Original image attached locally; autosave includes its bytes.');
  }catch(error){el.value='';status(error.message);}
 }));
-$('sheet-content').addEventListener('click',event=>{
- const button=event.target.closest('button');if(!button)return;const s=activeSheet();
+editor.addEventListener('click',event=>{
+ const button=event.target.closest('button');if(!button)return;const s=sheetForElement(button);
  if(button.id==='add-development-sample'){
   if(!validScreen())return;
   const label=$('development-sample-name').value.trim(),round=$('development-sample-round')?.value.trim()||'',notes=$('development-sample-notes')?.value||'';
@@ -464,16 +567,26 @@ $('sheet-content').addEventListener('click',event=>{
   try{const normalized=normalizeTechPack(next,template);rememberEdit('add-sample:'+id);pack=normalized;Object.assign(newSampleEntry,{label:'',round:'',notes:''});developmentView.sampleId=id;markDirty();renderSheet(true);status('Added a separate sample record. Front, back, left and right actuals remain independent.');}catch(error){status(error.message);}
   return;
  }
- if(button.dataset.useShared){rememberEdit('shared:'+s.id+':'+button.dataset.useShared);pack.fields[s.id][button.dataset.useShared]='';markDirty();renderSheet(true);}
- if(button.dataset.remove){rememberEdit('image:'+s.id+':'+button.dataset.remove);pack.attachments[s.id][button.dataset.remove]=null;markDirty();renderSheet(true);}
- if(button.dataset.image){const image=pack.attachments[s.id][button.dataset.image];showImage(image.dataUrl,image.name);}
+ if(button.dataset.useShared){rememberEdit('shared:'+s.id+':'+button.dataset.useShared);pack.fields[s.id][button.dataset.useShared]='';markDirty();syncFieldViews(s,s.fields.find(f=>f.key===button.dataset.useShared));syncDerivedFields();}
+ if(button.dataset.galleryPrev||button.dataset.galleryNext){selectPatternReference(patternReferenceIndex()+(button.dataset.galleryNext?1:-1),button);return;}
+ if(button.dataset.remove){
+  const key=button.dataset.remove;editHistory.breakGroup();rememberEdit('image:'+s.id+':'+key);
+  if(isPatternReference(s,key)){
+   const images=[...patternReferenceImages(pack)],index=patternReferenceIndex();images.splice(index,1);
+   pack.attachments.pattern.reference=images.length?{images,selectedIndex:Math.min(index,images.length-1)}:null;
+  }else pack.attachments[s.id][key]=null;
+  markDirty();refreshAttachmentViews(s);editHistory.breakGroup();status('Displayed photo removed. Other gallery photos are kept.');
+ }
+ if(button.dataset.image){const image=isPatternReference(s,button.dataset.image)?selectedPatternReference(pack):pack.attachments[s.id][button.dataset.image];if(image)showImage(image.dataUrl,image.name);}
  if(button.dataset.housePhoto)showImage(button.querySelector('img').src,'SR-FORM-001 · '+button.dataset.housePhoto);
 });
+}
+$('style-fields').addEventListener('focusout',()=>editHistory.breakGroup());
 $('pack-title').addEventListener('input',()=>{rememberEdit('title');pack.title=$('pack-title').value.trim()||'Untitled tech pack';markDirty();});
 $('pack-title').addEventListener('focusout',()=>editHistory.breakGroup());
 $('pack-unit').addEventListener('change',()=>{
  if(!validScreen()){$('pack-unit').value=unitFor(activeSheet())||'';return;}
- if(activeSheet().reference){refUnit=$('pack-unit').value||'in';renderSheet(true);}else changeGarmentUnit($('pack-unit').value||null);
+ if(activeSheet().reference){refUnit=$('pack-unit').value||'in';renderSheet(true);}else if(!changeGarmentUnit($('pack-unit').value||null))return;
  status('Displayed measurements updated from canonical values. Measuring instructions are unchanged.');
 });
 $('style-unit').addEventListener('change',()=>changeGarmentUnit($('style-unit').value||null));
@@ -488,7 +601,7 @@ document.addEventListener('keydown',event=>{
 });
 $('apply-paste').addEventListener('click',()=>{
  if(!pendingPaste)return;
- try{const next=applyGridPaste(pack,template,pendingPaste,{unit:unitFor(activeSheet())});rememberEdit('paste:'+Date.now());pack=next;markDirty();$('paste-dialog').close();renderSheet(true);status(`Applied ${pendingPaste.changes.length} cells as one undoable edit.`);pendingPaste=null;}
+ try{const next=applyGridPaste(pack,template,pendingPaste,{unit:unitFor(template.sheets.find(s=>s.id===pendingPaste.sheetId))});rememberEdit('paste:'+Date.now());pack=next;markDirty();$('paste-dialog').close();renderPinnedPattern();renderSheet(true);status(`Applied ${pendingPaste.changes.length} cells as one undoable edit.`);pendingPaste=null;}
  catch(error){$('paste-errors').textContent=error.message;$('apply-paste').disabled=true;}
 });
 $('cancel-paste').addEventListener('click',()=>{$('paste-dialog').close();pendingPaste=null;});
@@ -622,9 +735,18 @@ async function initialize(){
  finally{
   $('save-pack').disabled=false;$('working-panel').inert=false;$('context-panel').inert=false;
   if(matchMedia('(max-width: 740px)').matches)$('context-panel').open=false;
+  let visible=true;try{visible=localStorage.getItem(panelPreferenceKey)!=='false';}catch{}setStylePanelVisible(visible,false);
   updateIdentity();updateHistory();document.body.dataset.workroomReady='true';window.__workroomReady=true;
  }
 }
+$('toggle-style-panel').addEventListener('click',()=>setStylePanelVisible($('context-panel').hidden));
+$('context-panel').addEventListener('toggle',()=>{$('context-panel').querySelector('.context-summary-action').textContent=$('context-panel').open?'Collapse details':'Open details';});
+$('style-reference-images').addEventListener('click',event=>{
+ const navigation=event.target.closest('[data-gallery-prev],[data-gallery-next]');
+ if(navigation){event.preventDefault();event.stopPropagation();selectPatternReference(patternReferenceIndex()+(navigation.dataset.galleryNext?1:-1),navigation);return;}
+ const button=event.target.closest('[data-sidebar-image]');if(!button)return;event.preventDefault();event.stopPropagation();
+ const image=sidebarImages.find(image=>image.key===button.dataset.sidebarImage);if(image)showImage(image.src,image.name);
+});
 await initialize();
 
 // The hosted shell may request an update; it cannot read or export working data.
@@ -644,7 +766,7 @@ window.WORKROOM_UPDATES = {
    if(!storageAvailable)throw Error('Local storage is unavailable. Export a JSON backup before reopening the app.');
    if(conflicted)throw Error('Resolve the draft conflict or export a JSON backup before updating.');
    await saveNow();
-   if(pack.id!==selectedId||generation!==selectedGeneration||dirty||pendingActions||invalidInputs().length||openWorkroomReview()||revisionDetails()!==revisionEntry)throw Error('The draft or review changed while saving. Finish your edit, then update again.');
+   if(pack.id!==selectedId||generation!==selectedGeneration||dirty||pendingActions||invalidInputs().length||openWorkroomReview()||hasUnfinishedSample()||revisionDetails()!==revisionEntry)throw Error('The draft or review changed while saving. Finish your edit, then update again.');
    if(!rememberPack(selectedId))throw Error('This browser could not remember the active pack. Export a JSON backup before reopening the app.');
    document.querySelector('.app-shell').inert=true;
    return {ready:true,message:'The active pack is saved on this device. Ready to update.'};

@@ -10,6 +10,18 @@
 
 Validation and hosted-update verification for this milestone are pending; no v0.8.0 deployment is claimed by this entry.
 
+## v0.7.2 — Pattern reference gallery — 2026-10-27
+
+- Add multiple sketches or photos to the Pattern Card reference slot while displaying one at a time. Previous/Next and filename selection update the pinned preview across all worksheets.
+- Preserve every original photo and the selected position in local drafts, JSON backups, undo/redo and named revisions. Keep existing single-image packs and the same local database.
+- Remove only the displayed photo, validate upload batches atomically, and print the selected reference. Preserve original artwork proportions and existing house colors.
+
+## v0.7.1 — Pinned style reference panel — 2026-10-26
+
+- Keep original front/back mannequin example photographs above Shared Style Record, synchronized Pattern Card details/pieces and Named Revisions & Restore across all six tabs.
+- Add device-local Hide/Show style controls, a compact persistent phone image strip, and complete image enlargement. Reuse supplied working-pack references without changing schema or saved records.
+- Preserve invalid entries through image refreshes, update linked Fit style immediately, and reveal hidden invalid sidebar controls before saving. Complete printing stays at the original 190 source rows.
+
 ## v0.7.0 — Installable iPhone workroom — 2026-10-23
 
 - Package the workroom as a Home Screen web app with installation metadata, original-head icons, scoped offline caching and application information/update controls.

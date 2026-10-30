@@ -159,7 +159,8 @@ function gridHistorySnapshot(snapshot) {
   const { attachments, ...rest } = snapshot;
   const result = structuredClone(rest);
   if (attachments !== undefined) result.attachments = Object.fromEntries(Object.entries(attachments).map(([sheetId, slots]) =>
-    [sheetId, Object.fromEntries(Object.entries(slots).map(([key, image]) => [key, image === null ? null : { ...image }]))]));
+    [sheetId, Object.fromEntries(Object.entries(slots).map(([key, image]) => [key, image === null ? null : Array.isArray(image.images)
+      ? { ...image, images: image.images.map(item => ({ ...item })) } : { ...image }]))]));
   return result;
 }
 
