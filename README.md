@@ -15,8 +15,7 @@ source workbooks are excluded from public builds. Read the
 ## Component workbook development — v0.8.0
 
 Use **Export → Import component workbook (.xlsx)** to review a local workbook's
-authored `-SPEC` definitions before applying them. The **Components** tab appears
-after import. Original codes, labels, and measuring methods remain traceable;
+authored `-SPEC` definitions before applying them. The imported POMs appear in **5 · Measurements / Master**, grouped by garment section. Original codes, labels, and measuring methods remain traceable;
 working targets, tolerances, sample actuals, and proposed adjustments start blank.
 No garment unit is inferred: choose CM or IN before entering numbers.
 
@@ -310,3 +309,4 @@ See the [changelog](CHANGELOG.md) for the development and publication record.
 ## Prototype scope
 
 This is a local technical-design prototype with measurement registers, client intake and six-tab tech packs. Approved baseline data stays read-only. Pack images, recoverable drafts and named revision snapshots remain local; JSON backups provide manual transfer. Revision names/authors are not authenticated production approvals. A house terminology/POM library, structured fittings, BOM/construction modules, maker releases, remote submissions, multiuser editing, accounts/permissions, live spreadsheet synchronization and automatic grading remain future work. The existing approved revision is never silently overwritten.
+

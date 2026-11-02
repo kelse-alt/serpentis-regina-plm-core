@@ -137,6 +137,8 @@ try:
             require(component['name']==source['name'],'Component identity changed.')
             for row,original in zip(component['rows'],source['rows']):
                 require(all(row[k]==original[k] for k in ['code','description','method','sourceRow']),'Authored source definition changed.')
+        require(page.locator('#sheet-tabs [role=tab]').count()==6,'Imported POMs added a seventh worksheet.')
+        require(page.locator('#tab-master').get_attribute('aria-selected')=='true','Import did not open Master.')
         checked('Exact source definitions imported with blank working values and unassigned units')
         page.locator('#pack-unit').select_option('cm');add_sample(page,'Synthetic sample A')
         sample_a=page.locator('#development-sample').input_value()
@@ -159,7 +161,7 @@ try:
         require(page.locator('#pack-unit').input_value()=='cm','Unit could be cleared while measurements exist.')
         save(page);snapshot=json.loads(exported(page));row=snapshot['development']['components'][0]['rows'][0]
         require(row['targetCm']==20 and row['observations'][sample_a]=={'general':None,'front':20.5,'back':21,'left':0,'right':None},'Canonical JSON values changed.')
-        page.reload();page.wait_for_function("()=>document.body.dataset.workroomReady==='true'");page.locator('#tab-components').click()
+        page.reload();page.wait_for_function("()=>document.body.dataset.workroomReady==='true'");page.locator('#tab-master').click()
         require(json.loads(exported(page))['development']==snapshot['development'],'Saved component data did not reopen.')
         checked('Save, reload, JSON retention and lossless CM/IN switching')
         # Current gallery remains usable in a component/schema-3 pack.
@@ -185,11 +187,14 @@ try:
         page.locator('#export-menu-toggle').click()
         page.locator('#json-file').set_input_files({'name':'synthetic-backup.json','mimeType':'application/json','buffer':json.dumps(revised).encode()})
         page.wait_for_function("()=>document.querySelector('#status').textContent.includes('Imported')")
-        page.locator('#tab-components').click()
+        page.locator('#tab-master').click()
         restored=json.loads(exported(page));require(restored['development']==revised['development'],'JSON import changed component data.')
         page.locator('#sheet-search').fill('unlikely-search-no-match')
         csv_rows=list(csv.reader(BytesIO(exported(page,'#export-csv')).read().decode().splitlines()))
-        start=next(i for i,r in enumerate(csv_rows) if r and r[0]=='Component');head=csv_rows[start];body=csv_rows[start+1:]
+        start=next(i for i,r in enumerate(csv_rows) if r and r[0]=='Component');head=csv_rows[start];body=[]
+        for record in csv_rows[start+1:]:
+            if len(record)!=len(head): break
+            body.append(record)
         require(len({(r[0],r[1]) for r in body})==total,'CSV omitted filtered or retired POMs.')
         require(any(r[head.index('Side')]=='left' and r[head.index('Actual')]=='0' for r in body),'CSV lost explicit zero observation.')
         page.evaluate('window.print=()=>{}');page.locator('#export-menu-toggle').click();page.locator('#print-scope').select_option('current');page.locator('#print-pack').click()
@@ -211,8 +216,8 @@ try:
         bp.locator('#confirm-workbook-backup').check();apply(bp)
         checked('Unavailable storage reimport requires a complete downloaded backup and explicit acknowledgement')
         # A newer write from another window must not be replaced by this stale draft.
-        conflict=context.new_page();ready(conflict,url);conflict.locator('#tab-components').click()
-        page.set_viewport_size({'width':1440,'height':1000});page.locator('#tab-components').click()
+        conflict=context.new_page();ready(conflict,url);conflict.locator('#tab-master').click()
+        page.set_viewport_size({'width':1440,'height':1000});page.locator('#tab-master').click()
         fill(page,'targetCm',22);save(page)
         fill(conflict,'targetCm',23);conflict.locator('#save-pack').click()
         conflict.wait_for_function("()=>document.querySelector('#footer-save-state').textContent.startsWith('Conflict')")
@@ -228,3 +233,4 @@ try:
 finally:
     server.shutdown();(args.output/'component-workbook.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({'passed':report['passed'],'checks':len(checks),'POMs':total,'componentCounts':report['componentCounts']}))
+

@@ -23,8 +23,9 @@ let workbookReview = null;
 let workbookBackup = null;
 const developmentView = {componentId:'',sampleId:'',side:'general'};
 const newSampleEntry = {label:'',round:'',notes:''};
-const componentSheet = {id:'components',title:'Component specifications',shortTitle:'Components',note:'Imported garment POMs · working targets, sample observations and proposed changes are separate local records.'};
-const sheetList = () => pack.development?.components.length ? [...template.sheets,componentSheet] : template.sheets;
+const hasStylePoms = () => !!pack.development?.components.length;
+const isStyleMaster = s => s.id === 'master' && hasStylePoms();
+const sheetList = () => template.sheets;
 const revisionDetails = () => JSON.stringify(['revision-name','revision-author','revision-reason'].map(id=>$(id).value.trim()));
 const activePackKey = 'serpentis-regina.workroom.active.v2';
 function rememberedPack() {
@@ -269,8 +270,8 @@ function renderSource(s) {
 }
 function sheetMarkup(s,complete=false){
  const empty=`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`;
- const content=s.id==='components'
-  ?renderDevelopment(pack.development||createDevelopment(),{unit:pack.unit,...developmentView,complete})+empty
+ const content=isStyleMaster(s)
+  ?renderFields(s)+renderAttachments(s)+renderDevelopment(pack.development,{unit:pack.unit,...developmentView,complete})+`<details class="sheet-details" data-details="legacy-master"${complete?' open':''}><summary>Original Master worksheet · retained entries</summary><p>The style POMs above are your working measurement specifications. Existing entries in the original worksheet remain available here.</p>${(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')}${renderSource(s)}</details>`+empty
   :(s.reference?approvedReference(s):'')+renderFields(s)+renderAttachments(s)+(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')+empty+renderSource(s);
  return `<div class="sheet-editor" data-editor-sheet="${s.id}">${content}</div>`;
 }
@@ -284,10 +285,10 @@ function renderSheet(preserve=false){
  renderTabs();
  const s=activeSheet(), content=$('sheet-content'),scroll=content.scrollTop;
  const opened=new Map([...content.querySelectorAll('[data-details]')].map(el=>[el.dataset.details,el.open]));
- $('sheet-title').textContent=s.title;$('sheet-note').textContent=s.note;
+ $('sheet-title').textContent=s.title;$('sheet-note').textContent=isStyleMaster(s)?'Style-specific POMs · select a garment section to develop its measurements.':s.note;
  $('working-panel').setAttribute('aria-labelledby','tab-'+s.id);
  content.innerHTML=sheetMarkup(s);
- if(s.id==='components'){
+ if(isStyleMaster(s)){
   developmentView.componentId=$('component-select')?.value||'';
   developmentView.sampleId=$('development-sample')?.value||'';
   developmentView.side=$('development-side')?.value||'general';
@@ -299,9 +300,9 @@ function renderSheet(preserve=false){
  $('pack-unit').querySelector('option[value=""]').hidden=!!s.reference||!!pack.unit;
  $('style-unit').value=pack.unit||'';
  $('unit-label').textContent=s.reference?'Reference unit':'Garment unit';
- $('column-view-label').hidden=!Object.hasOwn(columnViews,s.id);
+ $('column-view-label').hidden=isStyleMaster(s)||!Object.hasOwn(columnViews,s.id);
  $('column-view').value=columnViews[s.id]||'full';
- $('context-column-view-label').hidden=!Object.hasOwn(columnViews,s.id);
+ $('context-column-view-label').hidden=isStyleMaster(s)||!Object.hasOwn(columnViews,s.id);
  $('context-column-view').value=columnViews[s.id]||'full';
  for(const b of $('sheet-tabs').children){b.setAttribute('aria-selected',String(b.dataset.sheet===active));b.tabIndex=b.dataset.sheet===active?0:-1;}
  applySearch();
@@ -352,7 +353,7 @@ function exportCsv(){
  const s=activeSheet(),unit=unitFor(s),numericCell=(v,u)=>v===null?'':Number(formatMeasure(v,u));
  const rows=[['SERPENTIS REGINA',pack.title],['Sheet',s.title],['Unit',unit?.toUpperCase()||'NOT SELECTED']];
  for(const [key,label] of Object.entries(styleLabels))rows.push(['Shared '+label,pack.style[key]]);
- if(s.id==='components'){
+ if(isStyleMaster(s)){
   rows.push([],['Component','POM','Description','Original measuring method','Source row','Retired','Working target','Tolerance minus','Tolerance plus','Proposed adjustment (unapproved)','Proposed target (unapproved)','Sample','Round','Sample notes','Side','Actual','Actual minus target','Tolerance check','POM notes','Earlier source definitions']);
   for(const component of pack.development.components)for(const row of component.rows){
    const observations=[];
@@ -364,7 +365,9 @@ function exportCsv(){
     rows.push([component.name,row.code,row.description,row.method,row.sourceRow,row.retired?'YES':'',numericCell(row.targetCm,unit||'cm'),numericCell(row.toleranceMinusCm,unit||'cm'),numericCell(row.tolerancePlusCm,unit||'cm'),numericCell(row.proposedDeltaCm,unit||'cm'),numericCell(proposed,unit||'cm'),sample?.label||'',sample?.round||'',sample?.notes||'',side,numericCell(compared?.actualCm??null,unit||'cm'),numericCell(compared?.deltaCm??null,unit||'cm'),compared?.toleranceStatus||'',row.notes,JSON.stringify(row.definitionHistory||[])]);
    }
   }
-  download(safeName()+'-components.csv',csvEncode(rows),'text/csv;charset=utf-8');status('Exported all component POMs and all entered sample/side observations, including retained rows.');return;
+  for(const f of s.fields||[])rows.push([f.label,fieldValue(s,f)||'']);
+  for(const t of s.tables||[]){rows.push([],[t.title+' · original Master worksheet'],t.columns.map(c=>heading(s,c)));for(const r of t.rows)rows.push(columnsForRow(t,r).map(c=>['measurement','calculated'].includes(c.type)?numericCell(valueFor(s,t,r,c),unit||'cm'):valueFor(s,t,r,c)));}
+  download(safeName()+'-master.csv',csvEncode(rows),'text/csv;charset=utf-8');status('Exported all component POMs and all entered sample/side observations, including retained rows.');return;
  }
  for(const f of s.fields||[])rows.push([f.label,fieldValue(s,f)||'']);
  if(s.reference){rows.push([],['POM','BODY MEASUREMENT','HOW TO MEASURE',`MFR (${unit})`,`ACTUAL FORM (${unit})`,`Delta (${unit})`]);for(const r of form.measurements){const m=methods.methods.find(m=>m.pomCode===r.pomCode);rows.push([r.pomCode,m.sourceLabel,m.howToMeasure,numericCell(r.manufacturerReference===null?null:r.manufacturerReference*2.54,unit),numericCell(r.houseStandard*2.54,unit),numericCell(difference(r.houseStandard,r.manufacturerReference)===null?null:difference(r.houseStandard,r.manufacturerReference)*2.54,unit)]);}}
@@ -746,7 +749,7 @@ $('apply-workbook').addEventListener('click',run(async()=>{
   next.development=applyComponentWorkbook(pack.development||null,review.preview,{unit:pack.unit});
   if($('workbook-style-defaults').checked)for(const [key,value] of Object.entries(workbookStyleDefaults(review.preview.workbook)))if(!next.style[key].trim())next.style[key]=value;
   const normalized=normalizeTechPack(next,template);
-  rememberEdit('component-import:'+Date.now());pack=normalized;active='components';developmentView.componentId=pack.development.components[0]?.id||'';
+  rememberEdit('component-import:'+Date.now());pack=normalized;active='master';developmentView.componentId=pack.development.components[0]?.id||'';
   $('workbook-dialog').close();$('sheet-search').value='';renderStyle();renderSheet();markDirty();
   try{await refreshRevisions();}catch{status('The import is applied, but the revision list could not refresh. Keep a JSON backup.');return;}
   status(`Imported ${review.preview.summary.rows} authored component POMs. Local working measurements remain independent; the workbook is unchanged.`);
@@ -847,3 +850,4 @@ window.WORKROOM_UPDATES = {
  },
  cancel() { preparingUpdate=false;document.querySelector('.app-shell').inert=false; }
 };
+

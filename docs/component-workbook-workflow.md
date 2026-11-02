@@ -1,4 +1,4 @@
-# Component workbook workflow — v0.8.0
+# Style measurement workbook workflow — v0.9.1
 
 Import a garment component workbook into the existing workroom without replacing
 its six base worksheets, approved BF form reference, or separate RC client intake.
@@ -32,7 +32,7 @@ Keep a current JSON backup before changing devices or updating an installed app.
 4. The optional shared-style checkbox starts **unchecked**. Enable it only to copy
    recognized source values into currently blank shared-style fields. Existing
    local values are never overwritten by this option.
-5. Choose **Apply**. The **Components** tab appears after a successful import.
+5. Choose **Apply**. Imported style POMs appear in **5 · Measurements / Master**, grouped by garment section.
 
 The importer recognizes worksheets ending in `-SPEC`. It reads authored POM codes
 from column **A**, original labels from **B**, and measuring methods from **D**.
@@ -144,3 +144,4 @@ Functional browser checks used the identical local hosted build. WebKit is not
 installed in this environment; physical iPhone installation and native file-picker
 behavior remain untested. Source records, measurements and project images are
 excluded from the published evidence.
+
