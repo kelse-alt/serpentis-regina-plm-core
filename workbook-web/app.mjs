@@ -1,11 +1,15 @@
 import { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack, patternReferenceImages, selectedPatternReference } from '../src/tech-pack.mjs';
 import { createPackStore } from '../src/tech-pack-storage.mjs';
+import { createCloudPackStore } from '../src/tech-pack-cloud.mjs';
 import { previewGridPaste, applyGridPaste, createEditHistory } from '../src/workroom-editing.mjs';
 import { createDevelopment, previewComponentWorkbook, applyComponentWorkbook, compareObservation } from '../src/garment-development.mjs';
 import { readWorkbookXlsx } from '../src/workbook-xlsx.mjs';
 import { renderDevelopment, renderWorkbookPreview } from './development-view.mjs';
 
 const { template, source, form, methods } = WORKBOOK_DATA;
+const cloudMode = globalThis.WORKROOM_CLOUD === true;
+const storagePlace = cloudMode ? 'your private cloud directory' : 'this device';
+const savedLabel = cloudMode ? 'Saved to cloud' : 'Saved locally';
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const isEditable = item => !item.readonly && !['readonly','calculated'].includes(item.type);
@@ -31,10 +35,10 @@ function rememberPack(id) {
  try { localStorage.setItem(activePackKey,id); } catch { /* Draft storage is separate. */ }
  try { sessionStorage.setItem(activePackKey,id);return sessionStorage.getItem(activePackKey)===id; } catch { return false; }
 }
-const openWorkroomReview = () => pendingPaste||restoreTarget||workbookReview||['export-dialog','paste-dialog','revision-dialog','image-dialog','workbook-dialog'].some(id=>$(id).open);
+const openWorkroomReview = () => pendingPaste||restoreTarget||workbookReview||['export-dialog','paste-dialog','revision-dialog','image-dialog','workbook-dialog','directory-dialog'].some(id=>$(id).open);
 const columnViews = {master:'full',wash:'full'};
 const editHistory = createEditHistory(40);
-const store = createPackStore(template);
+const store = cloudMode ? createCloudPackStore(template) : createPackStore(template);
 const activeSheet = () => sheetList().find(s => s.id === active) || template.sheets[0];
 const patternSheet = template.sheets.find(s=>s.id==='pattern');
 const sheetForElement = el => sheetList().find(s=>s.id===el.closest('[data-editor-sheet]')?.dataset.editorSheet)||activeSheet();
@@ -126,7 +130,7 @@ const status = message => { $('status').textContent = message; };
 const invalidInputs = () => [...document.querySelectorAll('#sheet-content input,#sheet-content textarea,#pinned-pattern-content input,#pinned-pattern-content textarea,#style-fields input,#pack-title')].filter(el => !el.checkValidity());
 function saveState(message) { $('save-state').textContent = message; $('footer-save-state').textContent = message; }
 function updateIdentity() {
- $('pack-identity').textContent = `${pack.style.number || pack.title} · ${pack.style.patternRevision ? 'PATTERN '+pack.style.patternRevision+' · ' : ''}${dirty ? 'UNSAVED DRAFT' : 'LOCAL DRAFT'}`;
+ $('pack-identity').textContent = `${pack.style.number || pack.title} · ${pack.style.patternRevision ? 'PATTERN '+pack.style.patternRevision+' · ' : ''}${dirty ? 'UNSAVED DRAFT' : cloudMode ? 'PRIVATE CLOUD DRAFT' : 'LOCAL DRAFT'}`;
  $('style-reference-summary').textContent=[pack.style.number||pack.title,pack.style.description,pack.style.sampleSize?'Sample '+pack.style.sampleSize:'',pack.style.patternRevision?'Pattern '+pack.style.patternRevision:''].filter(Boolean).join(' · ');
  $('style-reference-summary').title=$('style-reference-summary').textContent;
 }
@@ -168,11 +172,12 @@ async function refreshSaved() {
  saved=await store.listDrafts();
  $('saved-packs').innerHTML='<option value="">Select saved pack…</option>'+saved.map(p=>`<option value="${esc(p.id)}">${esc(p.title)} · ${esc(p.updatedAt.slice(0,10))}</option>`).join('');
  if(saved.some(p=>p.id===pack.id))$('saved-packs').value=pack.id;
+ renderDirectory();
 }
 async function refreshRevisions() {
  revisions=storageAvailable?await store.listRevisions(pack.id):[];
  $('revision-list').innerHTML='<option value="">Select revision…</option>'+revisions.map(r=>`<option value="${esc(r.id)}">${esc(r.name)} · ${esc(r.createdAt.slice(0,16).replace('T',' '))}</option>`).join('');
- $('revision-status').textContent=revisions.length?`${revisions.length} preserved local revision${revisions.length===1?'':'s'}. Restoring creates a new working draft and preserves a backup.`:'No named revisions yet.';
+ $('revision-status').textContent=revisions.length?`${revisions.length} preserved ${cloudMode?'cloud':'local'} revision${revisions.length===1?'':'s'}. Restoring creates a new working draft and preserves a backup.`:'No named revisions yet.';
 }
 async function refreshRecoveries() {
  if(!storageAvailable)return;
@@ -183,12 +188,12 @@ async function refreshRecoveries() {
 function saveNow() {
  clearTimeout(autosaveTimer);
  if(!validScreen())return Promise.reject(Error('Correct invalid entries before saving.'));
- if(!storageAvailable){const guidance='Local draft storage is unavailable. Export → Download pack JSON keeps your current work and original images.';saveState('Not saved · download JSON');status(guidance);return Promise.reject(Error(guidance));}
+ if(!storageAvailable){const guidance=(cloudMode?'Cloud storage is unavailable. Check your connection and refresh the directory. ':'Local draft storage is unavailable. ')+ ' Export → Download pack JSON keeps your current work and original images.';saveState('Not saved · download JSON');status(guidance);return Promise.reject(Error(guidance));}
  const snapshot=normalizeTechPack(pack,template), savedGeneration=generation;
- saveState('Saving on this device…');
+ saveState(cloudMode?'Saving to private cloud…':'Saving on this device…');
  const operation=saveQueue.catch(()=>{}).then(async()=>{
   await store.saveDraft(snapshot);
-  if(pack.id===snapshot.id&&generation===savedGeneration){dirty=false;rememberPack(snapshot.id);saveState('Saved locally · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}));updateIdentity();}
+  if(pack.id===snapshot.id&&generation===savedGeneration){dirty=false;rememberPack(snapshot.id);saveState(savedLabel+' · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}));updateIdentity();}
   await refreshSaved();
  });
  saveQueue=operation.catch(error=>{
@@ -337,7 +342,7 @@ async function loadPack(next,message,{savedDraft=false}={}){
  rememberPack(pack.id);
  if(saved.some(p=>p.id===pack.id))$('saved-packs').value=pack.id;
  $('pack-title').value=pack.title;$('sheet-search').value='';renderStyle();renderSheet();updateIdentity();
- saveState(savedDraft?'Saved locally · '+pack.updatedAt.slice(0,19).replace('T',' '):'Working draft · not saved yet');
+ saveState(savedDraft?savedLabel+' · '+pack.updatedAt.slice(0,19).replace('T',' '):'Working draft · not saved yet');
  try{await refreshRevisions();status(message);}catch(error){$('revision-status').textContent='Revision history could not be read. Your working draft remains on screen.';status(message+' Revision history unavailable: '+error.message);}
 }
 function download(name,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
@@ -594,7 +599,7 @@ $('style-unit').addEventListener('change',()=>changeGarmentUnit($('style-unit').
 $('column-view').addEventListener('change',()=>{if(!validScreen()){$('column-view').value=columnViews[active]||'full';return;}columnViews[active]=$('column-view').value;renderSheet(true);status('Column view changed. Hidden columns remain in the pack, CSV, and complete printout.');});
 $('context-column-view').addEventListener('change',()=>{if(!validScreen())return;columnViews[active]=$('context-column-view').value;renderSheet(true);status('Column view changed. Full worksheets remain in CSV and print.');});
 $('sheet-search').addEventListener('input',applySearch);$('clear-search').addEventListener('click',()=>{$('sheet-search').value='';applySearch();$('sheet-search').focus();});
-$('save-pack').addEventListener('click',run(async()=>{await saveNow();status('Saved the current working pack on this device. Create a named revision to preserve a separate snapshot.');}));
+$('save-pack').addEventListener('click',run(async()=>{await saveNow();status('Saved the current working pack in '+storagePlace+'. Create a named revision to preserve a separate snapshot.');}));
 $('undo-edit').addEventListener('click',()=>applyUndo('undo'));$('redo-edit').addEventListener('click',()=>applyUndo('redo'));
 document.addEventListener('keydown',event=>{
  if(!(event.ctrlKey||event.metaKey)||event.altKey||document.querySelector('dialog[open]'))return;
@@ -618,7 +623,7 @@ $('create-revision').addEventListener('click',run(async()=>{
  const name=$('revision-name').value.trim(),author=$('revision-author').value.trim(),reason=$('revision-reason').value.trim();
  if(!name||!author){const input=!name?$('revision-name'):$('revision-author');input.setCustomValidity('Enter '+(!name?'a revision name.':'the person recording this revision.'));input.reportValidity();input.focus();return;}
  const snapshot=normalizeTechPack(pack,template);await saveNow();
- const revision=await store.createRevision(snapshot,{name,author,reason});await refreshRevisions();$('revision-list').value=revision.id;status('Named revision preserved locally. It is a snapshot, not production approval.');
+ const revision=await store.createRevision(snapshot,{name,author,reason});await refreshRevisions();$('revision-list').value=revision.id;status('Named revision preserved in '+storagePlace+'. It is a snapshot, not production approval.');
  recordedRevisionDetails=JSON.stringify([name,author,reason]);
 }));
 for(const id of ['revision-name','revision-author'])$(id).addEventListener('input',()=>$(id).setCustomValidity(''));
@@ -630,21 +635,58 @@ $('confirm-restore').addEventListener('click',run(async()=>{
  const target=restoreTarget,before=normalizeTechPack(pack,template),restoreGeneration=generation;
  const unchanged=()=>pack.id===before.id&&generation===restoreGeneration&&restoreTarget===target&&!invalidInputs().length;
  await saveNow();if(!unchanged())throw Error('The draft changed or the restore was cancelled. Review the revision again.');
- await store.createRevision(before,{name:'Before restore · '+new Date().toISOString().slice(0,19),author:'Local recovery',reason:'Automatic recovery snapshot before restoring '+target.metadata.name+'. Recorded locally, not an approval.'});
+ await store.createRevision(before,{name:'Before restore · '+new Date().toISOString().slice(0,19),author:cloudMode?'Cloud recovery':'Local recovery',reason:'Automatic recovery snapshot before restoring '+target.metadata.name+'. Draft history, not an approval.'});
  if(!unchanged())throw Error('The draft changed or the restore was cancelled. A recovery snapshot was kept; review the revision again.');
  rememberEdit('restore:'+Date.now());pack=normalizeTechPack(target.snapshot,template);$('pack-title').value=pack.title;renderStyle();renderSheet(true);markDirty();await saveNow();await refreshRevisions();$('revision-dialog').close();restoreTarget=null;status('Restored the named revision into the working draft. The previous draft and all named revisions remain preserved.');
 }));
-$('open-pack').addEventListener('click',run(async()=>{
- const id=$('saved-packs').value;if(!id){status('Select a saved pack first.');return;}
+async function openSavedPack(id) {
+ if(!id){status('Select a saved pack first.');return;}
  if(!await prepareSwitch())return;
  const openingId=pack.id,openingGeneration=generation;
- const next=await store.getDraft(id);
+ const next=await store.getDraft(id,{acceptIf:()=>pack.id===openingId&&generation===openingGeneration&&!invalidInputs().length});
  if(pack.id!==openingId||generation!==openingGeneration||invalidInputs().length)throw Error('The draft changed while opening. Finish the edit, then open the saved pack again.');
- if(!next)throw Error('That saved pack is unavailable. Check Older pack recovery.');await loadPack(next,'Reopened the saved working draft.',{savedDraft:true});
+ if(!next)throw Error('That saved pack is unavailable. Check Older pack recovery.');
+ await loadPack(next,'Reopened the saved working draft.',{savedDraft:true});
+ $('directory-dialog').close();
+}
+$('open-pack').addEventListener('click',run(() => openSavedPack($('saved-packs').value)));
+function directoryDate(value) {
+ const date=new Date(value);
+ return Number.isFinite(date.getTime())?date.toLocaleString():value;
+}
+function renderDirectory() {
+ const query=$('directory-search').value.trim().toLowerCase();
+ const shown=saved.filter(item=>[item.title,item.styleNumber,item.description].some(value=>String(value||'').toLowerCase().includes(query)));
+ $('directory-list').innerHTML=shown.map(item=>`<article class="directory-card"><h3>${esc(item.styleNumber||item.title||'Untitled pack')}</h3>${item.styleNumber?`<p>${esc(item.title)}</p>`:''}${item.description?`<p>${esc(item.description)}</p>`:''}<p>Saved ${esc(directoryDate(item.updatedAt))}</p><button type="button" data-directory-open="${esc(item.id)}">${item.id===pack.id?'Reopen current pack':'Open tech pack'}</button></article>`).join('');
+ $('directory-count').textContent=`${shown.length} of ${saved.length} saved tech pack${saved.length===1?'':'s'}`;
+ $('directory-empty').hidden=shown.length>0;
+ $('directory-empty').textContent=query?'No saved packs match this search.':'Your directory is empty. Create a new pack or import an existing pack JSON.';
+}
+async function refreshDirectory() {
+ $('refresh-directory').disabled=true;$('directory-status').textContent=cloudMode?'Loading private cloud directory…':'Loading saved packs…';
+ try {
+  if(!storageAvailable){await store.init();storageAvailable=true;}
+  await refreshSaved();
+  $('directory-status').textContent=cloudMode?'Up to date. Open a pack to load its latest saved version.':'Up to date. These packs are saved on this device.';
+ } catch(error){$('directory-status').textContent='Directory unavailable: '+error.message;throw error;}
+ finally{$('refresh-directory').disabled=false;}
+}
+$('show-directory').addEventListener('click',run(async()=>{$('directory-dialog').showModal();renderDirectory();await refreshDirectory();}));
+$('close-directory').addEventListener('click',()=>$('directory-dialog').close());
+$('refresh-directory').addEventListener('click',run(refreshDirectory));
+$('directory-search').addEventListener('input',renderDirectory);
+$('directory-list').addEventListener('click',run(async event=>{
+ const button=event.target.closest('[data-directory-open]');if(!button)return;
+ $('directory-status').textContent='Opening saved tech pack…';
+ try{await openSavedPack(button.dataset.directoryOpen);}catch(error){$('directory-status').textContent=error.message;throw error;}
+}));
+$('directory-new-pack').addEventListener('click',run(async()=>{
+ if(!await prepareSwitch())return;
+ $('directory-dialog').close();await loadPack(createTechPack(template),'New blank garment pack. Approved house reference remains read-only.');markDirty();
 }));
 $('new-pack').addEventListener('click',run(async()=>{if(!await prepareSwitch())return;$('export-dialog').close();await loadPack(createTechPack(template),'New blank garment pack. Approved house reference remains read-only.');markDirty();}));
 $('export-menu-toggle').addEventListener('click',()=>$('export-dialog').showModal());$('close-export').addEventListener('click',()=>$('export-dialog').close());
-$('export-json').addEventListener('click',()=>{if(!validScreen())return;download(safeName()+'.json',serializeTechPack(normalizeTechPack(pack,template)),'application/json');status('Downloaded the current pack and original images. Named revision history stays on this device.');});
+$('export-json').addEventListener('click',()=>{if(!validScreen())return;download(safeName()+'.json',serializeTechPack(normalizeTechPack(pack,template)),'application/json');status('Downloaded the current pack and original images. Named revision history remains in '+storagePlace+'.');});
 $('export-csv').addEventListener('click',exportCsv);
 $('import-json').addEventListener('click',()=>$('json-file').click());
 function workbookStyleDefaults(workbook){
@@ -660,7 +702,7 @@ $('workbook-file').addEventListener('change',run(async()=>{
  try{
   if(!validScreen())return;
   if(file.size>20*1024*1024)throw Error('Choose an XLSX workbook up to 20 MB.');
-  status('Reading component workbook locally. No source file is uploaded.');
+  status(cloudMode?'Reading the workbook in this browser. Applying it will include its source in your private cloud pack.':'Reading component workbook locally. No source file is uploaded.');
   const workbook=await readWorkbookXlsx(new Uint8Array(await file.arrayBuffer()),{fileName:file.name});
   if(pack.id!==readingId||generation!==readingGeneration||!validScreen())throw Error('The draft changed while reading the file. Import again into the intended pack.');
   const preview=previewComponentWorkbook(workbook,pack.development||null,{unit:pack.unit});
@@ -718,7 +760,7 @@ $('json-file').addEventListener('change',run(async()=>{
   if(!await prepareSwitch())return;
   const importingId=pack.id,importingGeneration=generation;
   let copied=false;
-  if(storageAvailable){const known=await store.listDrafts();if(known.some(p=>p.id===next.id)){const existing=await store.getDraft(next.id);if(compareTechPacks(existing,next).length){next.id=createTechPack(template).id;copied=true;}}}
+  if(storageAvailable){const known=await store.listDrafts();if(known.some(p=>p.id===next.id)){const existing=await store.getDraft(next.id,{acceptIf:()=>pack.id===importingId&&generation===importingGeneration&&!invalidInputs().length});if(compareTechPacks(existing,next).length){next.id=createTechPack(template).id;copied=true;}}}
   if(pack.id!==importingId||generation!==importingGeneration||invalidInputs().length)throw Error('The draft changed while importing. Finish the edit, then import again.');
   $('export-dialog').close();await loadPack(next,copied?'Imported as a separate working copy. The existing saved draft is unchanged.':'Imported the compatible pack. Earlier schema versions migrate without changing measurements.');markDirty();
  }catch(error){status('Import refused: '+error.message);}finally{$('json-file').value='';}
@@ -740,12 +782,12 @@ async function initialize(){
  $('pack-title').value=pack.title;renderStyle();renderSheet();
  try{
   const report=await store.init();storageAvailable=true;await refreshSaved();
-  if(saved.length){const selectedId=rememberedPack(),selected=saved.find(p=>p.id===selectedId)||saved[0];const next=await store.getDraft(selected.id);if(next)await loadPack(next,'Recovered your selected local draft.',{savedDraft:true});}
-  else saveState('Blank local draft · edits autosave');
+  if(saved.length){const selectedId=rememberedPack(),selected=saved.find(p=>p.id===selectedId)||saved[0];const next=await store.getDraft(selected.id);if(next)await loadPack(next,cloudMode?'Opened your saved cloud draft.':'Recovered your selected local draft.',{savedDraft:true});}
+  else saveState(cloudMode?'Blank cloud draft · edits autosave when online':'Blank local draft · edits autosave');
   await refreshRecoveries();
   if(report.recoveryCount)status('Valid older packs are available. Open Older pack recovery for entries that need review.');
-  else if(!saved.length)status('Start with Shared style record. Valid edits autosave on this device; keep JSON backups.');
- }catch(error){storageAvailable=false;saveState('Not saved · download JSON');status('Local draft storage is unavailable. You can work here and use Export → Download pack JSON. '+error.message);}
+  else if(!saved.length)status(cloudMode?'Your private directory is ready. Start a style or import pack JSON from the earlier workroom. Valid edits save online across devices.':'Start with Shared style record. Valid edits autosave on this device; keep JSON backups.');
+ }catch(error){storageAvailable=false;saveState('Not saved · download JSON');status((cloudMode?'Cloud storage is unavailable. Refresh the directory to retry. ':'Local draft storage is unavailable. ')+'You can work here and use Export → Download pack JSON. '+error.message);}
  finally{
   $('save-pack').disabled=false;$('working-panel').inert=false;$('context-panel').inert=false;
   if(matchMedia('(max-width: 740px)').matches)$('context-panel').open=false;
@@ -761,6 +803,20 @@ $('style-reference-images').addEventListener('click',event=>{
  const button=event.target.closest('[data-sidebar-image]');if(!button)return;event.preventDefault();event.stopPropagation();
  const image=sidebarImages.find(image=>image.key===button.dataset.sidebarImage);if(image)showImage(image.src,image.name);
 });
+if(cloudMode){
+ document.body.dataset.storageMode='cloud';
+ $('cloud-workroom-link').textContent='Open POM library';$('cloud-workroom-link').href='/';
+ $('client-intake-link').textContent='Open client intake (device storage)';$('client-intake-link').href='https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/client-intake.html';
+ $('directory-search').placeholder='Style number, name or description…';
+ $('saved-packs-label').textContent='Saved packs in your private cloud';
+ $('storage-guidance').textContent='Valid edits and named revisions save to your private cloud account. Open this same link and sign in on another device, then use Directory to reopen the saved pack. A connection is required; wait for Saved to cloud before closing.';
+ $('storage-notes-title').textContent='Workbook & cloud storage';
+ $('revision-attribution').textContent='A named revision preserves this draft and its images in your private directory. Entered author names are attribution; revisions do not grant production approval.';
+ $('workbook-import-guidance').textContent='The workbook is unchanged. Applying an imported workbook saves its source cells with this private cloud pack. Garment targets and observations remain separate editable records.';
+ $('directory-storage-note').textContent='Private account storage · available on your phone and computer with this same sign-in. Refresh the list, then open a pack to load its latest saved version.';
+ $('save-state').textContent='Opening private cloud directory…';$('footer-save-state').textContent='Opening private cloud directory…';
+ $('status').textContent='Connecting to your private cloud workroom…';
+}
 await initialize();
 
 // The hosted shell may request an update; it cannot read or export working data.

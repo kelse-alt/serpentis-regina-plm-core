@@ -253,7 +253,7 @@ def check_layouts(browser):
                 if geometry['content']['height'] < 44:report['layoutFailure']={'layout':name,'sheet':sheet['id'],**geometry}
                 require(geometry['content']['height'] >= 44, f'{name}/{sheet["id"]}: working content below one usable control ({geometry["content"]["height"]:.2f}px).')
                 require(geometry['footer']['bottom'] <= height + 1, f'{name}/{sheet["id"]}: footer outside viewport.')
-                require({c['id'] for c in geometry['primary']} == {'save-pack','toggle-style-panel','undo-edit','redo-edit','export-menu-toggle'}, 'Footer must retain Save, style visibility, Undo, Redo and Export.')
+                require({c['id'] for c in geometry['primary']} == {'save-pack','show-directory','toggle-style-panel','undo-edit','redo-edit','export-menu-toggle'}, 'Footer must retain Save, Directory, style visibility, Undo, Redo and Export.')
                 for control in geometry['primary']:
                     require(control['x'] >= -1 and control['right'] <= width + 1 and control['y'] >= 0 and control['bottom'] <= height + 1, f'{name}/{sheet["id"]}: primary action offscreen: '+control['id'])
                     require(control['height'] >= 33.5, 'Primary action is too short to operate.')

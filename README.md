@@ -1,6 +1,16 @@
 # Serpentis Regina — PLM Core
 
-A fashion technical-design workroom for six-tab tech packs, locally imported garment components, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning. Working records remain local to the browser/app.
+A fashion technical-design workroom for six-tab tech packs, imported garment components, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning.
+
+## Tech-pack directory — v0.9.0
+
+**Directory** finds and reopens older tech packs. The public workroom links to the
+[private cloud edition](https://serpentis-regina-techpack-studio.amaya-hunt-2047.chatgpt.site/workroom/),
+where authenticated saves and named revisions are available across devices.
+The public PWA and standalone file retain their original local storage. Transfer
+an existing device-only pack through JSON export/import. Private records and
+source workbooks are excluded from public builds. Read the
+[cloud workroom guide](docs/cloud-workroom.md).
 
 ## Component workbook development — v0.8.0
 

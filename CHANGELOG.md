@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.9.0 — Private cloud directory — 2026-11-02
+
+- Add a searchable tech-pack directory with safe reopen and refresh controls on desktop and phones.
+- Add a separate authenticated cloud store for cross-device saves and named revisions, with optimistic version checks that reject stale-device overwrites and explicit failure states that retain current edits.
+- Link the existing public workroom to the owner-private cloud edition while preserving device-only drafts, JSON transfers, component development, artwork and the existing POM library.
+- Keep the supplied working pack and source artwork in the private Site only. Public builds contain the generic application and blank templates.
+
 ## v0.8.0 — Local component workbook workflow — 2026-10-30
 
 - Add reviewed local XLSX import of authored component POM codes, labels, and methods while retaining raw source cells/formulas separately. Source measurement values never become working targets, tolerance limits, actuals, or proposals automatically; garment units remain unassigned until chosen.
