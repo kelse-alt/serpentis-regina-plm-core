@@ -779,7 +779,40 @@ div.paste-table, .revision-diff-wrap { min-width:0; max-height:52dvh; overflow:a
  .reference-photo-caption { color:var(--obsidian); background:var(--salmon); }
  .reference-photo-caption.reference-caption-other { color:var(--ash-ink); background:var(--obsidian); }
 }
-</style><meta name="theme-color" content="#101820"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="SR Workroom"><meta name="workroom-app-version" content="0.9.3"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/apple-touch-icon.png"><style id="workroom-pwa-css">/* Hosted-app additions only. The standalone sheets retain their original CSS. */
+/* v0.9.4 — filled tabs, pink reading text, green selected/highlighted states. */
+@media screen {
+ :root { --ash-ink:var(--salmon); accent-color:var(--slytheren); }
+ ::selection { color:var(--obsidian); background:var(--slytheren); }
+ .matte-ink { background:none; -webkit-text-fill-color:currentColor; }
+ .tab-strip button, .tab-strip button:hover, .tab-strip button:focus-visible {
+  color:var(--obsidian); background:var(--salmon); border-color:var(--salmon);
+ }
+ .tab-strip button[aria-selected=true], .tab-strip button[aria-selected=true]:hover,
+ button[aria-pressed=true], button[aria-selected=true],
+ button:hover, button:active, button:focus-visible, .import-label:hover,
+ .import-label:focus-within {
+  color:var(--obsidian); background:var(--slytheren); border-color:var(--slytheren);
+ }
+ .tab-strip button:focus-visible { background:var(--slytheren); border-color:var(--slytheren); }
+ .context-panel[open] .context-panel-heading,
+ .context-body details[open] > summary,
+ .sheet-editor:not([data-editor-sheet=body]) details[open] > summary {
+  color:var(--obsidian); background:var(--slytheren); border-color:var(--slytheren);
+ }
+ .context-body details[open] > summary::marker,
+ .sheet-editor:not([data-editor-sheet=body]) details[open] > summary::marker { color:var(--obsidian); }
+ :focus-visible, .import-label:focus-within { outline-color:var(--slytheren); }
+ option:checked { color:var(--obsidian); background:var(--slytheren); }
+ input[type=checkbox] { accent-color:var(--slytheren); }
+}
+@media screen {
+ #pinned-pattern-card[open] > summary, #revision-panel[open] > summary,
+ #save-pack:hover, #save-pack:focus-visible {
+  color:var(--obsidian); background:var(--slytheren); border-color:var(--slytheren);
+ }
+ #pinned-pattern-card[open] > summary::marker { color:var(--obsidian); }
+}
+</style><meta name="theme-color" content="#101820"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="SR Workroom"><meta name="workroom-app-version" content="0.9.4"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/apple-touch-icon.png"><style id="workroom-pwa-css">/* Hosted-app additions only. The standalone sheets retain their original CSS. */
 #pwa-info-dialog { width:min(94vw,580px); max-height:90dvh; min-width:0; overflow:auto; overscroll-behavior:contain; padding:16px; border:1px solid var(--ash-line); background:var(--obsidian); color:var(--ash-ink); font:inherit; }
 #pwa-info-dialog::backdrop { background:var(--obsidian); opacity:.85; }
 #pwa-info-dialog h2 { margin:0; font-size:26px; }
