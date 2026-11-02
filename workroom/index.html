@@ -812,7 +812,27 @@ div.paste-table, .revision-diff-wrap { min-width:0; max-height:52dvh; overflow:a
  }
  #pinned-pattern-card[open] > summary::marker { color:var(--obsidian); }
 }
-</style><meta name="theme-color" content="#101820"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="SR Workroom"><meta name="workroom-app-version" content="0.9.4"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/apple-touch-icon.png"><style id="workroom-pwa-css">/* Hosted-app additions only. The standalone sheets retain their original CSS. */
+/* v0.9.5 — internal section headers use Electric blue with Salmon pink. */
+@media screen {
+ .sheet-editor[data-editor-sheet] .sheet-details:not([open]) > summary,
+ .sheet-editor[data-editor-sheet] .form-section > h3,
+ .sheet-editor[data-editor-sheet] .table-section > h3,
+ .sheet-editor[data-editor-sheet] .section-heading,
+ .context-body details:not([open]) > summary,
+ #pinned-pattern-card:not([open]) > summary,
+ #revision-panel:not([open]) > summary,
+ .workbook-preview-list h3, .workbook-preview-list h4 {
+  color:var(--salmon); background:var(--electric);
+  border-left-color:var(--electric); border-bottom-color:var(--electric);
+ }
+ .sheet-editor[data-editor-sheet] .sheet-details:not([open]) > summary::marker,
+ .context-body details:not([open]) > summary::marker,
+ #pinned-pattern-card:not([open]) > summary::marker,
+ #revision-panel:not([open]) > summary::marker { color:var(--salmon); }
+ .sheet-editor[data-editor-sheet=body] .work-table thead th,
+ .paste-table th, .revision-diff th { color:var(--salmon); }
+}
+</style><meta name="theme-color" content="#101820"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="SR Workroom"><meta name="workroom-app-version" content="0.9.5"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/apple-touch-icon.png"><style id="workroom-pwa-css">/* Hosted-app additions only. The standalone sheets retain their original CSS. */
 #pwa-info-dialog { width:min(94vw,580px); max-height:90dvh; min-width:0; overflow:auto; overscroll-behavior:contain; padding:16px; border:1px solid var(--ash-line); background:var(--obsidian); color:var(--ash-ink); font:inherit; }
 #pwa-info-dialog::backdrop { background:var(--obsidian); opacity:.85; }
 #pwa-info-dialog h2 { margin:0; font-size:26px; }
