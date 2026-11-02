@@ -108,6 +108,8 @@ def apply(page):
 def firstrow(page): return page.locator('#sheet-content tr[data-development-row]').first
 def fill(page,key,value): firstrow(page).locator(f'input[data-dev-field="{key}"]').fill(str(value))
 def add_sample(page,label):
+    panel=page.locator('.development-sample-panel')
+    if not panel.get_attribute('open') == '': panel.locator('summary').click()
     page.locator('#development-sample-name').fill(label)
     page.locator('#development-sample-round').fill('Synthetic round')
     page.locator('#development-sample-notes').fill('Synthetic independent measurement context')

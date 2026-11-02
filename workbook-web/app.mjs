@@ -306,6 +306,7 @@ function renderSheet(preserve=false){
  $('context-column-view').value=columnViews[s.id]||'full';
  for(const b of $('sheet-tabs').children){b.setAttribute('aria-selected',String(b.dataset.sheet===active));b.tabIndex=b.dataset.sheet===active?0:-1;}
  applySearch();
+ $('sheet-tabs').querySelector('[aria-selected=true]')?.scrollIntoView({block:'nearest',inline:'nearest'});
 }
 function applySearch(){
  const q=$('sheet-search').value.trim().toLowerCase();let shown=0,total=0;

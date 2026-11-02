@@ -176,3 +176,12 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 - Read `docs/cloud-workroom.md`. The existing public PWA links to the separate owner-private Sites workroom. Preserve both storage modes: normal builds remain device-local; `npm run techpack:cloud:build` creates the ignored cloud HTML with same-origin APIs. Never claim public PWA drafts sync automatically.
 - `src/tech-pack-cloud.mjs` implements the shared store interface, optimistic version checks and online revisions. Preserve explicit save failures, current edits, JSON export and stale-device conflict handling. Directory refresh must not replace an open draft.
 - Private Site `appgprj_6adbf4fc00fc819199849752974baabe` retains the existing POM library and authenticated user-scoped records. Its source is separate from this public repository. Keep the workbook starter, source cells, artwork and filled packs out of public source/builds/screenshots. Do not change the Site audience or reset prior data.
+
+
+
+## Workroom visual hierarchy (v0.9.2)
+
+- On November 2, 2026 the founder requested clearer, ADHD-friendly visual hierarchy using only the house palette, explicitly including green highlighted areas. This supersedes earlier restrictions on green garment-workroom controls/borders; preserve the approved mannequin chart and original source values.
+- Use Slytheren for active navigation, primary Save, field labels, focus and working section highlights; Ruby for section headings; Obsidian for the canvas; matte ash for supporting copy/values. Electric fills still pair with Ruby text. Salmon remains excluded. Active states retain checkmarks/borders and text cues.
+- Sample creation and measurement guidance are collapsible; keep original input IDs, draft preservation, validation reveal, all saved data, complete exports and print behavior.
+- Founder reviews deployed GitHub Pages workroom and installed phone PWA. Publish sanitized workroom updates to the existing portal-site branch. The update action is Save & update app; Export downloads a backup. Private Sites cloud storage is a separate app.

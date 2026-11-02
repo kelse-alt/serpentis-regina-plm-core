@@ -25,11 +25,15 @@
   },
   "houseRules": {
     "electricFillRequiresText": "ruby",
-    "excludedInterfaceColors": ["salmon"],
+    "excludedInterfaceColors": [
+      "salmon"
+    ],
     "source": "Founder correction: Electric Blue text-box fill ALWAYS pairs with Ruby text. Stop using light pink/Salmon in interfaces."
   },
   "houseMeasurementSheet": {
-    "excludedColors": ["salmon"],
+    "excludedColors": [
+      "salmon"
+    ],
     "titleFill": "ruby",
     "titleText": "obsidian",
     "titleMetadataFill": "transparent",
@@ -58,7 +62,10 @@
     "displayUnits": {
       "canonical": "in",
       "default": "in",
-      "options": ["in", "cm"],
+      "options": [
+        "in",
+        "cm"
+      ],
       "centimetersPerInch": 2.54,
       "maximumFractionDigits": 6,
       "trimTrailingZeros": true,
@@ -66,5 +73,18 @@
       "print": "Use the currently selected display unit."
     },
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
+  },
+  "workroomInterface": {
+    "revision": "2026-11-02",
+    "scope": "Garment workroom only; approved mannequin chart retains its existing treatment.",
+    "authorization": "Founder requested stronger color hierarchy and green highlighted areas on 2026-11-02. Supersedes earlier restrictions on green workroom controls and borders.",
+    "activeAndFocus": "slytheren",
+    "sectionHeadings": "ruby",
+    "supportingText": "matteInk",
+    "canvas": "obsidian",
+    "electricFillText": "ruby",
+    "excludedColors": [
+      "salmon"
+    ]
   }
 }
