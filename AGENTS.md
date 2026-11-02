@@ -197,3 +197,9 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 
 - Founder requested filled inactive major worksheet tabs, pink instead of grey screen text, and green instead of blue highlights. Inactive worksheet tabs use Salmon fill/Obsidian text; selected tabs and highlighted controls use Slytheren fill/Obsidian text. Checkmarks and outlines remain non-color cues.
 - On screen, workroom ash reading text maps to brand Salmon. Scope this token override to screen so print remains unchanged. Expanded section summaries and selected text are green; idle Electric controls may remain Electric with Ruby text.
+
+
+## Blue and pink internal headers (v0.9.5)
+
+- Founder found red headers within each worksheet visually harsh and requested the blue/pink colorway. Use Electric blue fill and brand Salmon pink text for internal section headers, closed section summaries and source preview headings. This supersedes the older Electric/Ruby text pairing for those headers.
+- Keep green selected/expanded highlights, filled pink inactive worksheet tabs, pink reading text, existing top house masthead and print styling.

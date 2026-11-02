@@ -75,11 +75,11 @@
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
   },
   "workroomInterface": {
-    "revision": "2026-11-02-filled-tabs",
+    "revision": "2026-11-02-blue-pink-headers",
     "scope": "Garment workroom only; approved mannequin chart retains its existing treatment.",
-    "authorization": "Founder requested filled major tab boxes even when inactive, pink instead of grey text, and green instead of blue highlighted features. Workroom screen overrides only; preserve print.",
+    "authorization": "Founder requested blue and pink instead of harsh red internal tab headers. Internal workroom headers now use Electric with Salmon; this explicitly supersedes the older Electric/Ruby pairing for these headers only. Selected/expanded highlights remain green.",
     "activeAndFocus": "slytheren",
-    "sectionHeadings": "ruby",
+    "sectionHeadings": "salmon text on electric fill",
     "supportingText": "salmon",
     "canvas": "obsidian",
     "electricFillText": "ruby",
