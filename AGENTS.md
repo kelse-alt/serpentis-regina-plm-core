@@ -191,3 +191,9 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 
 - Founder revised the visual direction: replace dominant green with pink and retain only small sprinkles of green. Use existing brand Salmon #F4A6A0 for active tabs, working-section highlights, labels, focus and primary Save. This explicitly supersedes the older salmon exclusion for the garment workroom.
 - Green remains on small status/summary border cues; keep Ruby section headings, Obsidian canvas, ash supporting text and the new collapsible setup/guidance. Approved mannequin chart retains its existing styling.
+
+
+## Filled tabs and green highlights (v0.9.4)
+
+- Founder requested filled inactive major worksheet tabs, pink instead of grey screen text, and green instead of blue highlights. Inactive worksheet tabs use Salmon fill/Obsidian text; selected tabs and highlighted controls use Slytheren fill/Obsidian text. Checkmarks and outlines remain non-color cues.
+- On screen, workroom ash reading text maps to brand Salmon. Scope this token override to screen so print remains unchanged. Expanded section summaries and selected text are green; idle Electric controls may remain Electric with Ruby text.

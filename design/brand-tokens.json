@@ -75,15 +75,16 @@
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
   },
   "workroomInterface": {
-    "revision": "2026-11-02-pink",
+    "revision": "2026-11-02-filled-tabs",
     "scope": "Garment workroom only; approved mannequin chart retains its existing treatment.",
-    "authorization": "Founder requested pink in place of the dominant green, retaining only sprinkles of green. Salmon is explicitly permitted in the garment workroom; older salmon exclusions remain historical rules for other surfaces.",
-    "activeAndFocus": "salmon",
+    "authorization": "Founder requested filled major tab boxes even when inactive, pink instead of grey text, and green instead of blue highlighted features. Workroom screen overrides only; preserve print.",
+    "activeAndFocus": "slytheren",
     "sectionHeadings": "ruby",
-    "supportingText": "matteInk",
+    "supportingText": "salmon",
     "canvas": "obsidian",
     "electricFillText": "ruby",
     "excludedColors": [],
-    "greenUsage": "Small status and summary border accents only."
+    "greenUsage": "Selected tabs, highlighted/pressed/focused controls, expanded section summaries and text selection.",
+    "inactiveTabFill": "salmon"
   }
 }
