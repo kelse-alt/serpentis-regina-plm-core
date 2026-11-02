@@ -208,3 +208,4 @@
   window.addEventListener('online', () => { refreshOfflineState(); checkForUpdate(); });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { refreshOfflineState(); checkForUpdate(); } });
 })();
+
