@@ -185,3 +185,9 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 - Use Slytheren for active navigation, primary Save, field labels, focus and working section highlights; Ruby for section headings; Obsidian for the canvas; matte ash for supporting copy/values. Electric fills still pair with Ruby text. Salmon remains excluded. Active states retain checkmarks/borders and text cues.
 - Sample creation and measurement guidance are collapsible; keep original input IDs, draft preservation, validation reveal, all saved data, complete exports and print behavior.
 - Founder reviews deployed GitHub Pages workroom and installed phone PWA. Publish sanitized workroom updates to the existing portal-site branch. The update action is Save & update app; Export downloads a backup. Private Sites cloud storage is a separate app.
+
+
+## Pink workroom accents (v0.9.3)
+
+- Founder revised the visual direction: replace dominant green with pink and retain only small sprinkles of green. Use existing brand Salmon #F4A6A0 for active tabs, working-section highlights, labels, focus and primary Save. This explicitly supersedes the older salmon exclusion for the garment workroom.
+- Green remains on small status/summary border cues; keep Ruby section headings, Obsidian canvas, ash supporting text and the new collapsible setup/guidance. Approved mannequin chart retains its existing styling.

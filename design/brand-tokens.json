@@ -75,16 +75,15 @@
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
   },
   "workroomInterface": {
-    "revision": "2026-11-02",
+    "revision": "2026-11-02-pink",
     "scope": "Garment workroom only; approved mannequin chart retains its existing treatment.",
-    "authorization": "Founder requested stronger color hierarchy and green highlighted areas on 2026-11-02. Supersedes earlier restrictions on green workroom controls and borders.",
-    "activeAndFocus": "slytheren",
+    "authorization": "Founder requested pink in place of the dominant green, retaining only sprinkles of green. Salmon is explicitly permitted in the garment workroom; older salmon exclusions remain historical rules for other surfaces.",
+    "activeAndFocus": "salmon",
     "sectionHeadings": "ruby",
     "supportingText": "matteInk",
     "canvas": "obsidian",
     "electricFillText": "ruby",
-    "excludedColors": [
-      "salmon"
-    ]
+    "excludedColors": [],
+    "greenUsage": "Small status and summary border accents only."
   }
 }
