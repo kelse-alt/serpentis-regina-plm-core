@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.10.0 — DWILLA fitting increment (unpublished)
+
+- Integrated the open PR #22 modules into the current v0.9.5 Workroom source on a separate local feature branch.
+- Added contextual repeated fitting measurements, sample/pattern revision trace, qualitative wearing configurations and attributed alteration/decision records.
+- Preserved original local photo bytes with POM/action-linked numbered annotations and immutable fitting snapshots.
+- Added complete private directory backup and atomic empty-store recovery, retaining named revisions and attachments.
+- Kept original six worksheets, existing store identity, schema2/3 compatibility and explicit PWA update behavior. Private dictionary import is required for real DWILLA work; public walkthroughs use synthetic text.
+
 ## v0.9.0 — Private cloud directory — 2026-11-02
 
 - Add a searchable tech-pack directory with safe reopen and refresh controls on desktop and phones.

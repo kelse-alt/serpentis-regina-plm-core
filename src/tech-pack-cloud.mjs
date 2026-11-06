@@ -118,6 +118,7 @@ export function createCloudPackStore(template, options = {}) {
   }
 
   async function saveDraft(input) {
+    if (input?.dwilla) throw Error('DWILLA fittings use the device-local Workroom. Keep a private JSON backup; cloud fitting synchronization is not available.');
     const captured = normalizeTechPack(input, template);
     return enqueueWrite(async () => {
       const result = cloudMetadata(await request('/api/packs/' + encodeURIComponent(captured.id), {
@@ -141,6 +142,7 @@ export function createCloudPackStore(template, options = {}) {
   }
 
   async function createRevision(input, details = {}) {
+    if (input?.dwilla) throw Error('DWILLA fittings use the device-local Workroom. Keep a private JSON backup; cloud fitting synchronization is not available.');
     const captured = normalizeTechPack(input, template);
     const name = cloudText(details.name, 'Revision name', 160, true);
     const author = cloudText(details.author ?? '', 'Recorded author', 160);

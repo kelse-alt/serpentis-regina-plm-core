@@ -1,5 +1,11 @@
 # Serpentis Regina — PLM Core
 
+## DWILLA fitting increment · v0.10.0 (local review)
+
+The existing Workroom now includes a **Fittings** tab for SR-001: contextual repeated readings, sample/pattern trace, two named wearing configurations, attributed fit actions, original-photo annotations and next-sample requests. Import the private dictionary locally or select the clearly marked synthetic demonstration. No proprietary dictionary or fitting data is embedded in the public build.
+
+**Export → Download complete private backup** preserves the saved directory, named revisions, fitting history and original images; recovery is tested in an empty store. Records remain browser-local with no automatic device synchronization. See the [fitting and recovery guide](docs/dwilla-workroom.md) and [implementation review](docs/dwilla-implementation-report.md). This feature branch is prepared for review; no push, merge or deployment has been authorized.
+
 A fashion technical-design workroom for six-tab tech packs, imported garment components, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning.
 
 ## Tech-pack directory — v0.9.0

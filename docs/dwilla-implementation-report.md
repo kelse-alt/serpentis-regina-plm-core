@@ -1,103 +1,65 @@
-# DWILLA SR-001 implementation review — 2026-11-06
+# DWILLA Workroom implementation review — November 6, 2026
 
-## Scope and result
+## Result and review boundary
 
-Implemented on `feature/dwilla-sr001-integration` from main commit
-`c0f0c8eda017e0c702d137a1ff02c31c920094f1`. No merge, production change or
-deployment is included. The source Drive workbook was read without any write
-operation. Its downloaded bytes retained the same SHA-256 after extraction.
+Implemented the next fitting increment inside the existing Serpentis Regina Workroom on local branch `feature/dwilla-workroom-fitting`, version 0.10.0. The existing navigation, shared style record, component sample list, IndexedDB identity, named revisions, original images, six worksheets and explicit PWA update workflow are retained.
 
-The source describes a two-way dress with a mesh bodice, cutouts, silk shell and
-skirt, sample size 8. Target market, fit intent, production size range and garment
-units remain confirmation items. This output is working software and a private
-source audit, not a production-approved tech pack.
+No GitHub push, public PR, merge, Site change or Workroom deployment was performed. The prepared [PR description](dwilla-workroom-pr.md) requests review against the editable Workroom source branch. The founder requires publication approval before public changes, and separate merge/deployment approval.
 
-| Source group | Definitions checked |
-| --- | ---: |
-| Main garment / mesh | 32 |
-| Cutout | 11 |
-| Silk shell | 11 |
-| Skirt | 6 |
-| **Garment total** | **60** |
-| Separate fit-form reference | 20 |
+## Established current state
 
-An independent read using openpyxl compared all 60 codes, descriptions and
-how-to-measure strings, including original spelling and whitespace, against the
-standard-library OOXML extraction. It also checked all E:O source fields for each
-garment row and E:L for all 20 fit-form rows. Shared formula translations were
-checked against the independent reader. All passed. There are 64 formula-bearing
-garment cells and no populated numeric garment values in the audited E:O fields.
-Blank formula caches are not literal `None` text or numeric zero.
+- The initial local `work` checkout was the older v0.4.0 implementation at `c0f0c8eda017e0c702d137a1ff02c31c920094f1`, with 48 passing tests when local loopback server permissions were available.
+- The editable deployed Workroom source was found on `codex/workroom-brand-hierarchy-v0.9.2` at `276053f53195987172373f7498d07a5f6c076499`. Despite the branch name, this is v0.9.5, including the final blue/pink section headers.
+- `portal-site` at `b8f03c3a2253071781ef763dfaf36da788b58745` contains the matching compiled public distribution, not editable source. Its Pages deployment had succeeded.
+- PR [#22](https://github.com/kelse-alt/serpentis-regina-plm-core/pull/22) was open and unmerged, head `976246a01e3528d162d1d011bcb22278029dfdb2`, with successful historical CI. Its importer, fitting module, filesystem snapshot store and CLI were cherry-picked locally into the current Workroom source. Documentation/package conflicts retained current Workroom functionality. The combined baseline passed 126 tests.
+- The shell Git proxy was unavailable. Read-only GitHub connector reads reconstructed and SHA-verified the exact source commits, trees, blobs and ancestry locally; Git connectivity checks passed. No remote ref was mutated.
 
-The unassigned master-sheet examples are retained privately, without treating
-them as garment targets. Source fit notes and attendees remain private and are
-not interpreted as proof of fitting completion. The workbook's pending fit-form
-status remains separate from the repository's approved house record.
+## Integrated behavior
 
-## Delivered architecture
+The seventh **Fittings** tab connects SR-001 to the selected Workroom style. New fitting samples appear in the existing working-sample list. Existing samples can also be selected by stable key; their producing pattern revision must be identified explicitly.
 
-- `scripts/import-dwilla.py`: read-only bounded OOXML import, complete code order
-  checks, exact source cells, formula metadata, exclusive private output writes.
-- `src/dwilla-fitting.mjs`: dictionary/session validation, contextual readings,
-  landmark references, explicit units, targets/tolerances and fitting progression.
-- `src/dwilla-store.mjs`: immutable content-addressed private snapshots with
-  fingerprint verification when reopened.
-- `scripts/dwilla.mjs`: local init, validate, save, show and advance commands.
-- [Operating guide](dwilla-integration.md): record schema, examples and minimal
-  Samsung/Termux checkout instructions.
+Pack schema 4 adds a private dictionary, sample/revision/pattern trace, editable fitting draft and append-only fitting snapshots. Older schema 1/2/3 packs retain existing normalization and storage behavior. The four source POM groups remain 32 main, 11 cutout, 11 silk shell and six skirt definitions. The 20 BF references remain separate.
 
-The existing 20-POM approved JSON, measurement generator, SQLite registry and
-34-POM client intake are unchanged. Garment data is kept in separate private JSON
-records, avoiding an unrequested migration of those established stores.
+Touch controls use explicit per-fitting IN/CM units, decimal entry, original measuring methods, observer, context and condition. Repeats and front/back or left/right contexts are independent records. Missing measurements, targets and tolerances remain missing; zero is a measurement. Actual minus target and inclusive asymmetric tolerance checks reuse PR #22. Neither completeness nor a tolerance result approves production.
 
-## Validation
+Each sample preserves its producing pattern revision. Fit actions record their author, POM and intended correction revision; resolution requires explicit author/evidence. Fitting progression records a decision author/reason, creates the next sample revision with an explicit next pattern, resets readings and carries unresolved actions. Earlier snapshots retain their original sample/pattern trace. Global Undo/Redo retains saved fitting history and sample links. Unrecorded old-sample entries block progression.
 
-The baseline had 48 passing tests. After implementation, all 56 tests passed
-(48 existing and 8 new). New tests exercise 60+20 definitions, literal source
-strings, whitespace, zero and missing cells, normal/shared formulas, exclusive
-outputs, invalid revisions, multiple readings, landmark references, units,
-nullable targets, asymmetric tolerance boundaries, explicit sample progression,
-immutable persistence and corruption detection.
+Two house-named wearing configurations record mobility, closure access, cutout stability and mesh/silk interaction as qualitative observations. They do not create POMs or specifications.
 
-The existing house report command, database import and repeated idempotent import,
-database-backed report, standalone generator build and client-intake build also
-passed. Rebuilding both tracked HTML artifacts produced no changes. Public CI
-can run the synthetic tests without access to the proprietary workbook. Python 3
-and Node 24+ are required; no new third-party runtime package is needed.
+Original PNG/JPEG/WebP bytes use the existing local Blob store. Separate photo notes and numbered markers link to the fitting, POM and alteration action. Markers do not rewrite the image. The complete print record includes current and saved fittings, every recorded reading and method, context/unit/observer, targets, actions, decisions, configurations, photos and markers, plus the separate body references.
 
-## Author review
+## Privacy and source verification
 
-Reviewed the changed code, private-data boundaries, failure paths and tests.
-Independent source verification caught shared formula followers that initially
-looked like blank cells; the importer now retains their shared origin and OOXML
-attributes, with a regression test. Code-count validation was also tightened to
-reject unexpected additional measurement codes. Dates cannot progress backwards.
-No private workbook, extracted descriptions/measurements, fit identities,
-credentials or generated fitting snapshots belong in the proposed commit.
+The provided Drive item is an XLSX. It was read without any write operation and downloaded outside the checkout. The read-only importer generated an ignored private dictionary. Independent `openpyxl` reads matched every garment code, description and measuring instruction exactly, including spelling/whitespace, and all 20 separate BF labels/methods. The dictionary was accepted unchanged by the browser-state validator. No unit, target, tolerance, grade rule or approval was inferred. The source file was not modified.
 
-This is an author self-review, not independent reviewer approval. GitHub review
-and CI status are reported on the pull request; no approval is fabricated.
+The private dictionary contains approximately 1.1 MiB of source context and is absent from tracked source, public fixtures, compiled HTML and screenshots. Public demonstrations use explicitly synthetic text and values. The approved existing house baseline remains unchanged. Real use still requires importing the private dictionary into the user's own Workroom browser; see the [operating guide](dwilla-workroom.md).
 
-## Limitations and next decisions
+The normal standalone build uses CSP `connect-src 'none'`; browser acceptance observed no external requests or photo uploads. IndexedDB data is private to its browser profile/origin, device-local and unencrypted. This is not an account or authentication layer; same-origin code, extensions and device access remain outside that boundary. The separate cloud app was not modified and fitting synchronization was not added. Safari and installed PWA stores may differ.
 
-1. Confirm garment units, fit intent, landmarks and the meaning of ambiguous source
-   headings before entering targets or tolerances. No missing values are invented.
-2. Record first-fitting measurements and fit actions privately. An explicit advance
-   decision requests the next sample; it does not approve production or resolve
-   open notes. The review state still requires a separate house approval process.
-3. The workflow currently uses local JSON/CLI editing. A touchscreen fitting UI,
-   authenticated API, SQL garment tables, grade rules and live Drive sync are not
-   included. Those should be separate reviewed features.
-4. All readings in one fitting use one explicitly confirmed unit. Cross-unit
-   conversion must be documented in a separate revision; automatic conversion is
-   not implemented. Contexts must distinguish front/back, left/right and wash
-   conditions when targets differ.
-5. Import version names are house-managed; exclusive output files prevent
-   overwriting, but there is no global dictionary revision registry. Fingerprints
-   detect accidental changes, not hostile filesystem access. Private backups are
-   necessary; ignored directories are not encrypted.
-6. The original XLSX remains the complete visual source. The extraction retains
-   cell content and style IDs, not embedded images, full formatting definitions or
-   a round-trip authoring representation. Formula calculation is not implemented.
+## Backup and recovery
 
-Do not merge, host or deploy this branch until the founder approves the result.
+**Export → Download complete private backup** includes saved packs, private dictionaries, sample/fitting history, original images and immutable named revisions. **Restore backup into empty store** validates the whole archive and fitting fingerprints, then writes one atomic IndexedDB transaction. A populated destination is refused. Existing records are not merged or overwritten.
+
+Limits are 12 MiB per dictionary, 5 MiB per photo, 12 photos per fitting, 64 samples, 100 fitting snapshots, and 100 MiB per portable backup with at most 100 drafts/1,000 named revisions. Backups contain sensitive unencrypted records; they must be kept privately. Current-pack JSON remains available separately. No browser-to-device or CLI-store synchronization is claimed.
+
+## Validation and evidence
+
+**149 local tests passed**, with no failures or skips. Sixteen grouped Chromium browser checks passed. It covers the full synthetic acceptance flow, empty-store recovery, original-image byte equality, malformed recovery refusal, named history/gallery compatibility, touchscreen dimensions and complete printing. Node tests cover source import, exact counts, null/zero, context/repeats, tolerance boundaries, sample/pattern links, unsafe data, escaping, partial specification editing and history preservation.
+
+The baseline report, idempotent SQLite import/report, generator and client-intake builds passed without changes to their tracked standalone artifacts. Standalone Workroom, PWA and optional cloud builds passed; these commands build files locally and do not deploy. No new third-party runtime dependency was introduced.
+
+Synthetic screenshots:
+
+- [iPad fitting workspace](dwilla-workroom-screenshots/01-ipad-fitting-workspace.png)
+- [Original photo and linked numbered annotation](dwilla-workroom-screenshots/02-ipad-private-photo-annotation.png)
+- [Landscape second fitting](dwilla-workroom-screenshots/03-ipad-landscape-second-fitting.png)
+- [Phone second fitting](dwilla-workroom-screenshots/04-phone-second-fitting.png)
+- [Empty-store backup recovery](dwilla-workroom-screenshots/05-empty-store-backup-recovery.png)
+
+The synthetic test scripts and full logs remain in the cloud workspace's `work/` directory. Sanitized browser evidence is included beside these screenshots. No real source dictionary, filled house fitting, client record or private photo is included in the proposed public changes.
+
+## Limits
+
+Browser automation used installed Chromium at 1024×1366 and 1366×1024 iPad-sized viewports and 390×844 phone size. This does not verify physical iPad Safari, touchscreen keyboard/photo picker, Termius/Termux behavior, Safari eviction/retention, Home Screen installation, or installed-PWA store separation. Those checks require the actual devices. The cloud environment did not attempt to access the Samsung's private Wi-Fi address.
+
+Author names and dates are user assertions, not authenticated signatures. This is a working development fitting flow, not manufacturing approval, grading or production release. The original PR remains open; current branch CI cannot run until publication is approved.

@@ -1,10 +1,12 @@
 import { createTechPack, columnsForRow, normalizeTechPack, resolveFieldValue, sharedStyleKey, compareTechPacks, formatMeasure, parseMeasure, difference, csvEncode, serializeTechPack, patternReferenceImages, selectedPatternReference } from '../src/tech-pack.mjs';
-import { createPackStore } from '../src/tech-pack-storage.mjs';
+import { createPackStore, MAX_WORKROOM_BACKUP_BYTES } from '../src/tech-pack-storage.mjs';
 import { createCloudPackStore } from '../src/tech-pack-cloud.mjs';
 import { previewGridPaste, applyGridPaste, createEditHistory } from '../src/workroom-editing.mjs';
 import { createDevelopment, previewComponentWorkbook, applyComponentWorkbook, compareObservation } from '../src/garment-development.mjs';
 import { readWorkbookXlsx } from '../src/workbook-xlsx.mjs';
 import { renderDevelopment, renderWorkbookPreview } from './development-view.mjs';
+import { renderDwilla, mountDwilla } from './dwilla-view.mjs';
+import { verifyDwillaHistory, retainDwillaHistory } from '../src/dwilla-workroom.mjs';
 
 const { template, source, form, methods } = WORKBOOK_DATA;
 const cloudMode = globalThis.WORKROOM_CLOUD === true;
@@ -23,9 +25,11 @@ let workbookReview = null;
 let workbookBackup = null;
 const developmentView = {componentId:'',sampleId:'',side:'general'};
 const newSampleEntry = {label:'',round:'',notes:''};
+const dwillaView = {};
+const dwillaSheet = {id:'dwilla',title:'DWILLA · Fittings',shortTitle:'Fittings',note:'SR-001 · sample and pattern trace · private device-local fitting records',fields:[],tables:[],attachments:[]};
 const hasStylePoms = () => !!pack.development?.components.length;
 const isStyleMaster = s => s.id === 'master' && hasStylePoms();
-const sheetList = () => template.sheets;
+const sheetList = () => cloudMode ? template.sheets : [...template.sheets,dwillaSheet];
 const revisionDetails = () => JSON.stringify(['revision-name','revision-author','revision-reason'].map(id=>$(id).value.trim()));
 const activePackKey = 'serpentis-regina.workroom.active.v2';
 function rememberedPack() {
@@ -128,7 +132,7 @@ function syncTableViews(s,t,r,c,origin) {
 
 const unitFor = s => s.reference ? refUnit : pack.unit;
 const status = message => { $('status').textContent = message; };
-const invalidInputs = () => [...document.querySelectorAll('#sheet-content input,#sheet-content textarea,#pinned-pattern-content input,#pinned-pattern-content textarea,#style-fields input,#pack-title')].filter(el => !el.checkValidity());
+const invalidInputs = () => [...document.querySelectorAll('#sheet-content input,#sheet-content textarea,#pinned-pattern-content input,#pinned-pattern-content textarea,#style-fields input,#pack-title')].filter(el => !el.closest('#dwilla-root') && !el.checkValidity());
 function saveState(message) { $('save-state').textContent = message; $('footer-save-state').textContent = message; }
 function updateIdentity() {
  $('pack-identity').textContent = `${pack.style.number || pack.title} · ${pack.style.patternRevision ? 'PATTERN '+pack.style.patternRevision+' · ' : ''}${dirty ? 'UNSAVED DRAFT' : cloudMode ? 'PRIVATE CLOUD DRAFT' : 'LOCAL DRAFT'}`;
@@ -269,6 +273,7 @@ function renderSource(s) {
  return `<details class="source-note"><summary>Source notes, original cells & formulas</summary><p>Exact original tab: ${esc(s.title)}. Source values and formulas below are provenance; they are not editable draft values.</p>${s.id==='master'?`<p>${esc(template.sourceExamples.note)} Original pairs: 20 / 24.75, 25 / 37, 25 / 24.75. No source unit is supplied.</p>`:''}${s.reference?'<p>HOUSE TARGET / TARGET DELTA: source I31:I33 refers to blank column G. These unresolved formulas are preserved below and are not relabelled as target minus actual form.</p>':''}<pre>${esc(JSON.stringify(original,null,2))}</pre></details>`;
 }
 function sheetMarkup(s,complete=false){
+ if(s.id==='dwilla'){dwillaView.sharedSamples=pack.development?.samples||[];return `<div id="dwilla-root">${renderDwilla(pack.dwilla||null,{...dwillaView,complete})}</div><div id="no-rows" hidden></div>`;}
  const empty=`<div id="no-rows" class="empty-state" hidden><p>No rows match. Clear search to show every source row.</p></div>`;
  const content=isStyleMaster(s)
   ?renderFields(s)+renderAttachments(s)+renderDevelopment(pack.development,{unit:pack.unit,...developmentView,complete})+`<details class="sheet-details" data-details="legacy-master"${complete?' open':''}><summary>Original Master worksheet · retained entries</summary><p>The style POMs above are your working measurement specifications. Existing entries in the original worksheet remain available here.</p>${(s.tables||[]).map(t=>renderTable(s,t,complete)).join('')}${renderSource(s)}</details>`+empty
@@ -288,6 +293,22 @@ function renderSheet(preserve=false){
  $('sheet-title').textContent=s.title;$('sheet-note').textContent=isStyleMaster(s)?'Style-specific POMs · select a garment section to develop its measurements.':s.note;
  $('working-panel').setAttribute('aria-labelledby','tab-'+s.id);
  content.innerHTML=sheetMarkup(s);
+ if(s.id==='dwilla')mountDwilla($('dwilla-root'),{
+  getPack:()=>pack,
+  change:nextDwilla=>{
+   if(cloudMode)throw Error('Open the device-local Workroom for DWILLA fittings.');
+   if(pack.style.number.trim()&&pack.style.number!=='SR-001')throw Error('Open or create the SR-001 style pack before importing DWILLA.');
+   const next=structuredClone(pack);next.schemaVersion=4;next.style.number='SR-001';
+   if(!next.style.description)next.style.description='DWILLA';
+   if(next.title==='Untitled tech pack')next.title='DWILLA · SR-001';
+   next.development ||= createDevelopment();next.dwilla=nextDwilla;
+   for(const sample of nextDwilla.samples)if(!next.development.samples.some(item=>item.id===sample.key))next.development.samples.push({id:sample.key,label:sample.id,round:sample.revision,notes:'Produced from pattern '+sample.patternRevision});
+   rememberEdit('dwilla:'+Date.now());pack=normalizeTechPack(next,template);markDirty();
+   $('pack-title').value=pack.title;renderStyle();
+  },
+  save:()=>saveNow(),render:()=>renderSheet(true),canAttach:()=>storageAvailable&&!cloudMode,
+  busy:delta=>{pendingActions+=delta;},
+ },dwillaView);
  if(isStyleMaster(s)){
   developmentView.componentId=$('component-select')?.value||'';
   developmentView.sampleId=$('development-sample')?.value||'';
@@ -297,9 +318,11 @@ function renderSheet(preserve=false){
  if(preserve)for(const el of content.querySelectorAll('[data-details]'))if(opened.has(el.dataset.details))el.open=opened.get(el.dataset.details);
  content.scrollTop=preserve?scroll:0;
  $('pack-unit').value=unitFor(s)||'';
+ $('pack-unit').disabled=s.id==='dwilla';
+ if(s.id==='dwilla')$('pack-unit').value=pack.dwilla?.draft?.fitting.unit.toLowerCase()||'';
  $('pack-unit').querySelector('option[value=""]').hidden=!!s.reference||!!pack.unit;
  $('style-unit').value=pack.unit||'';
- $('unit-label').textContent=s.reference?'Reference unit':'Garment unit';
+ $('unit-label').textContent=s.id==='dwilla'?'Fitting unit':s.reference?'Reference unit':'Garment unit';
  $('column-view-label').hidden=isStyleMaster(s)||!Object.hasOwn(columnViews,s.id);
  $('column-view').value=columnViews[s.id]||'full';
  $('context-column-view-label').hidden=isStyleMaster(s)||!Object.hasOwn(columnViews,s.id);
@@ -336,11 +359,13 @@ function updateDevelopmentResults(row){
   (output.querySelector('.matte-ink')||output).textContent=value||'—';
  }
 }
-function hasUnfinishedSample(){return Object.values(newSampleEntry).some(value=>value.trim());}
+function hasUnfinishedSample(){return Object.values(newSampleEntry).some(value=>value.trim())||!!dwillaView.pendingEntry;}
 async function loadPack(next,message,{savedDraft=false}={}){
+ if(cloudMode&&next?.dwilla)throw Error('Open DWILLA fitting packs in the device-local Workroom. This cloud app does not synchronize fittings or their photos.');
  clearTimeout(autosaveTimer);pack=normalizeTechPack(next,template);generation++;dirty=!savedDraft;conflicted=false;editHistory.reset();updateHistory();
  renderTabs();
  Object.assign(newSampleEntry,{label:'',round:'',notes:''});
+ for(const key of Object.keys(dwillaView))delete dwillaView[key];
  rememberPack(pack.id);
  if(saved.some(p=>p.id===pack.id))$('saved-packs').value=pack.id;
  $('pack-title').value=pack.title;$('sheet-search').value='';renderStyle();renderSheet();updateIdentity();
@@ -351,6 +376,7 @@ function download(name,content,type){const url=URL.createObjectURL(new Blob([con
 function safeName(){return pack.title.replace(/[^a-z0-9_-]+/gi,'-').slice(0,70)||'tech-pack';}
 function exportCsv(){
  if(!validScreen())return;
+ if(active==='dwilla'){status('Download pack JSON or a complete private backup to retain contextual readings, fitting history and original photos.');return;}
  const s=activeSheet(),unit=unitFor(s),numericCell=(v,u)=>v===null?'':Number(formatMeasure(v,u));
  const rows=[['SERPENTIS REGINA',pack.title],['Sheet',s.title],['Unit',unit?.toUpperCase()||'NOT SELECTED']];
  for(const [key,label] of Object.entries(styleLabels))rows.push(['Shared '+label,pack.style[key]]);
@@ -387,6 +413,10 @@ function buildPrint(){
 function showImage(src,title){$('image-title').textContent=title;$('large-image').src=src;$('large-image').alt=title;$('image-dialog').showModal();}
 function applyUndo(direction){
  clearTimeout(autosaveTimer);const next=editHistory[direction](pack);if(!next)return;
+ if(pack.dwilla?.snapshots.length){
+  next.dwilla=retainDwillaHistory(pack.dwilla,next.dwilla||null);next.schemaVersion=4;next.style.number='SR-001';next.development ||= createDevelopment();
+  for(const sample of next.dwilla.samples)if(!next.development.samples.some(item=>item.id===sample.key))next.development.samples.push({id:sample.key,label:sample.id,round:sample.revision,notes:'Produced from pattern '+sample.patternRevision});
+ }
  pack=normalizeTechPack(next,template);$('pack-title').value=pack.title;renderStyle();renderSheet(true);markDirty();status(direction==='undo'?'Undid the last edit.':'Redid the edit.');
 }
 function diffValue(value){if(value===null||value==='')return '—';return typeof value==='object'?JSON.stringify(value):String(value);}
@@ -603,7 +633,7 @@ $('style-unit').addEventListener('change',()=>changeGarmentUnit($('style-unit').
 $('column-view').addEventListener('change',()=>{if(!validScreen()){$('column-view').value=columnViews[active]||'full';return;}columnViews[active]=$('column-view').value;renderSheet(true);status('Column view changed. Hidden columns remain in the pack, CSV, and complete printout.');});
 $('context-column-view').addEventListener('change',()=>{if(!validScreen())return;columnViews[active]=$('context-column-view').value;renderSheet(true);status('Column view changed. Full worksheets remain in CSV and print.');});
 $('sheet-search').addEventListener('input',applySearch);$('clear-search').addEventListener('click',()=>{$('sheet-search').value='';applySearch();$('sheet-search').focus();});
-$('save-pack').addEventListener('click',run(async()=>{await saveNow();status('Saved the current working pack in '+storagePlace+'. Create a named revision to preserve a separate snapshot.');}));
+$('save-pack').addEventListener('click',run(async()=>{if(hasUnfinishedSample()){status('Record the unfinished fitting entry or sample before saving. Recorded draft data still autosaves.');return;}await saveNow();status('Saved the current working pack in '+storagePlace+'. Create a named revision to preserve a separate snapshot.');}));
 $('undo-edit').addEventListener('click',()=>applyUndo('undo'));$('redo-edit').addEventListener('click',()=>applyUndo('redo'));
 document.addEventListener('keydown',event=>{
  if(!(event.ctrlKey||event.metaKey)||event.altKey||document.querySelector('dialog[open]'))return;
@@ -693,6 +723,38 @@ $('export-menu-toggle').addEventListener('click',()=>$('export-dialog').showModa
 $('export-json').addEventListener('click',()=>{if(!validScreen())return;download(safeName()+'.json',serializeTechPack(normalizeTechPack(pack,template)),'application/json');status('Downloaded the current pack and original images. Named revision history remains in '+storagePlace+'.');});
 $('export-csv').addEventListener('click',exportCsv);
 $('import-json').addEventListener('click',()=>$('json-file').click());
+$('export-backup').hidden=cloudMode;$('restore-backup').hidden=cloudMode;
+$('export-backup').addEventListener('click',run(async()=>{
+ try{
+  if(!validScreen())return;
+  if(hasUnfinishedSample())throw Error('Record or discard unfinished fitting/sample entries before making a complete backup.');
+  const backupPackId=pack.id,backupGeneration=generation;
+  await saveNow();
+  if(pack.id!==backupPackId||generation!==backupGeneration||dirty)throw Error('The draft changed while saving. Finish the current edit and download the backup again.');
+  const backup=await store.exportBackup();
+  if(pack.id!==backupPackId||generation!==backupGeneration||dirty)throw Error('The draft changed while preparing the backup. Save the latest work and try again.');
+  download('serpentis-regina-private-backup-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(backup),'application/json');
+  $('backup-status').textContent=`Downloaded ${backup.drafts.length} saved packs and ${backup.revisions.length} named revisions, including fitting history and original photos. Keep this file privately; verify recovery in an empty browser profile.`;
+ }catch(error){$('backup-status').textContent='Backup failed: '+error.message;}
+}));
+$('restore-backup').addEventListener('click',()=>{$('backup-file').click();});
+$('backup-file').addEventListener('change',run(async()=>{
+ const file=$('backup-file').files[0];if(!file)return;
+ const restorePackId=pack.id,restoreGeneration=generation;
+ try{
+  if(cloudMode||!storageAvailable)throw Error('Device-local storage must be available for recovery.');
+  if(dirty||hasUnfinishedSample()||invalidInputs().length)throw Error('Keep your current edits before recovery. Use an empty browser profile for a recovery check.');
+  if(file.size>MAX_WORKROOM_BACKUP_BYTES)throw Error('Backup exceeds the 100 MB limit.');
+  const input=JSON.parse(await file.text());
+  if(pack.id!==restorePackId||generation!==restoreGeneration)throw Error('The working draft changed while reading the backup.');
+  await store.importBackup(input);
+  await refreshSaved();
+  if(pack.id!==restorePackId||generation!==restoreGeneration){$('backup-status').textContent='Backup restored to the directory. Your current on-screen edits were retained; open a restored pack from Directory when ready.';return;}
+  if(saved.length)await loadPack(await store.getDraft(saved[0].id),'Restored private backup, including fitting and named revision history.',{savedDraft:true});
+  $('backup-status').textContent='Recovery completed. Restored records and original photos are saved in this browser; no synchronization occurs.';
+ }catch(error){$('backup-status').textContent='Recovery refused: '+error.message;}
+ finally{$('backup-file').value='';}
+}));
 function workbookStyleDefaults(workbook){
  const sheet=workbook.sheets.find(item=>/-SPEC$/i.test(item.name));
  if(!sheet)return {};
@@ -746,7 +808,7 @@ $('apply-workbook').addEventListener('click',run(async()=>{
    await store.createRevision(before,{name:'Before workbook reimport · '+new Date().toISOString().slice(0,19),author:'Local recovery',reason:'Preserved current source and working values before replacing imported workbook definitions. Not production approval.'});
    if(!unchanged())throw Error('The draft changed while preserving its source. A recovery revision was kept; preview again.');
   }
-  const next=structuredClone(pack);next.schemaVersion=3;
+  const next=structuredClone(pack);next.schemaVersion=pack.schemaVersion===4?4:3;
   next.development=applyComponentWorkbook(pack.development||null,review.preview,{unit:pack.unit});
   if($('workbook-style-defaults').checked)for(const [key,value] of Object.entries(workbookStyleDefaults(review.preview.workbook)))if(!next.style[key].trim())next.style[key]=value;
   const normalized=normalizeTechPack(next,template);
@@ -760,7 +822,8 @@ $('apply-workbook').addEventListener('click',run(async()=>{
 $('json-file').addEventListener('change',run(async()=>{
  const file=$('json-file').files[0];if(!file)return;
  try{
-  if(file.size>85*1024*1024)throw Error('JSON file is too large.');let next=normalizeTechPack(JSON.parse(await file.text()),template);
+  if(file.size>MAX_WORKROOM_BACKUP_BYTES)throw Error('JSON file is too large.');let next=normalizeTechPack(JSON.parse(await file.text()),template);
+  if(next.dwilla)await verifyDwillaHistory(next.dwilla);
   if(!await prepareSwitch())return;
   const importingId=pack.id,importingGeneration=generation;
   let copied=false;

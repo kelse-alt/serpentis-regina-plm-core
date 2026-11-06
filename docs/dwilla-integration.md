@@ -1,5 +1,7 @@
 # DWILLA SR-001 — private garment development workflow
 
+This is the PR #22 CLI/module reference. The integrated browser fitting flow is documented in the [Workroom fitting guide](dwilla-workroom.md). Browser records and CLI filesystem snapshots remain separate stores.
+
 Category: two-way dress with mesh bodice, cutouts, silk outer shell and skirt.
 Source sample base: size 8. Market/fit intent and production size range require
 house confirmation; no grade rule, tolerance or missing spec is inferred.

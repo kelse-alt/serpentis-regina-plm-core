@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "Open Workroom → select synthetic DWILLA → select explicit sample/pattern → start first fitting"
+    },
+    {
+      "name": "Repeated contextual readings retain explicit IN, zero remains a reading, missing target is not a pass, inclusive tolerance evaluated"
+    },
+    {
+      "name": "Two named wearing configurations, fit issue and local original photo with numbered POM/action-linked annotation"
+    },
+    {
+      "name": "IndexedDB save/reload/reopen preserves measurement context, complete original photo bytes, markers, configurations and immutable snapshot"
+    },
+    {
+      "name": "Existing Pattern Card image gallery, worksheet navigation and immutable named revision creation remain usable beside schema4 fitting data"
+    },
+    {
+      "name": "Attributed next sample request creates second fitting with explicit new sample/pattern revision, clears readings and carries unresolved action without production approval"
+    },
+    {
+      "name": "iPad portrait / landscape and 390px touchscreen checks: no page overflow, fitting controls at least 44px"
+    },
+    {
+      "name": "Complete directory backup restores dictionary, sample/pattern trace, fitting/photo/marker history, gallery and named revisions into an empty browser store; existing-store overwrite refused"
+    },
+    {
+      "name": "Invalid body-form POM in garment backup rejected before atomic empty-store recovery; no draft or revision partly written"
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "externalRequests": [],
+  "viewports": [
+    {
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "smallControls": []
+    },
+    {
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "smallControls": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "smallControls": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "checks": [
+    "Reopen/reload prefills stored working spec values; changing only plus tolerance and authority preserves target and minus tolerance, while explicit clearing sets target null",
+    "Unadded reading blocks next-sample progression and leaves sample/readings unchanged; clearing that pending entry permits explicit new sample request without carrying the unfinished reading"
+  ],
+  "errors": []
+}
