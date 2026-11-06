@@ -2,24 +2,24 @@
 
 // Only the public shell is cached. Working records remain in the app's existing
 // IndexedDB/local storage; neither uploaded images nor API responses enter here.
-const APP_VERSION = "0.9.5";
-const BUILD_ID = "4e3cadea6d4b14c108b32a591edd70cab1e89043a00a909248bc5d1a686238f0";
+const APP_VERSION = "0.10.1";
+const BUILD_ID = "9a43e671af02076a9f8cfac997a5b446568792b1856566e9c27f0892062d96c4";
 const PRECACHE = [
   {
     "path": "index.html",
-    "sha256": "d6cc59ce39440f9d5d9647f5e425c34b00d0ac260085016e5847657f59f808da"
+    "sha256": "e61cf1ba9dee35e8bebb65222de627d421a4c4e131b77dd21ca9c67ed4a473ab"
   },
   {
     "path": "client-intake.html",
-    "sha256": "3ca96bb305a4be5a5bbb9be3994106cc294be0404eff46808c2b3a06ba7e1117"
+    "sha256": "49c7b21e3a19ac20c3a61d5673f8f317f8c465a9024cde899d967beaa0633133"
   },
   {
     "path": "pwa.js",
-    "sha256": "e270c1baac73e4c5262805eab03e6c00f531384907727568b77d0ee43e537b63"
+    "sha256": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf"
   },
   {
     "path": "manifest.webmanifest",
-    "sha256": "7091f1a5300a58c6d108eb98158166e22f450799769f964e5e2faf7ca02a3162"
+    "sha256": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c"
   },
   {
     "path": "icons/icon-192.png",
@@ -133,4 +133,3 @@ self.addEventListener('message', event => {
     if (event.data?.type === 'ACTIVATE_UPDATE') await self.skipWaiting();
   })());
 });
-
