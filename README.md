@@ -1,10 +1,14 @@
 # Serpentis Regina — PLM Core
 
-## DWILLA fitting increment · v0.10.0 (local review)
+## Install the Workroom · v0.10.1
+
+[Open the Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/) in Safari on iPad or iPhone, then **Share → Add to Home Screen → Add**. Open the icon once online and wait for **Offline ready on this device**. Existing installations update through **Export → Install & app info → Save & update app**. See the [installation guide](docs/iphone-workroom-app.md).
+
+The active interface uses only the six HEX colors in the founder's November 6 palette screenshot. Original photos/artwork keep their original pixels. Palette and iPad layout checks cover 38 rendered states; Node tests total 151.
 
 The existing Workroom now includes a **Fittings** tab for SR-001: contextual repeated readings, sample/pattern trace, two named wearing configurations, attributed fit actions, original-photo annotations and next-sample requests. Import the private dictionary locally or select the clearly marked synthetic demonstration. No proprietary dictionary or fitting data is embedded in the public build.
 
-**Export → Download complete private backup** preserves the saved directory, named revisions, fitting history and original images; recovery is tested in an empty store. Records remain browser-local with no automatic device synchronization. See the [fitting and recovery guide](docs/dwilla-workroom.md) and [implementation review](docs/dwilla-implementation-report.md). This feature branch is prepared for review; no push, merge or deployment has been authorized.
+**Export → Download complete private backup** preserves the saved directory, named revisions, fitting history and original images; recovery is tested in an empty store. Records remain browser-local with no automatic device synchronization. See the [fitting and recovery guide](docs/dwilla-workroom.md) and [implementation review](docs/dwilla-implementation-report.md). The founder authorized publication and the v0.10.1 palette-corrected PWA launch; source remains reviewable in PR #23 without a main merge.
 
 A fashion technical-design workroom for six-tab tech packs, imported garment components, separate client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects practical garment development with beginner JavaScript learning.
 

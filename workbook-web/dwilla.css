@@ -1,10 +1,10 @@
 /* Fitting tools inherit the existing Workroom font and house palette. */
 .dwilla-workspace {
-  --dwilla-ink: #f4a6a0;
-  --dwilla-canvas: #101820;
-  --dwilla-border: #293239;
-  --dwilla-electric: #1e22aa;
-  --dwilla-active: #1fa824;
+  --dwilla-ink: var(--slytheren);
+  --dwilla-canvas: var(--obsidian);
+  --dwilla-border: var(--ox);
+  --dwilla-electric: var(--electric);
+  --dwilla-active: var(--slytheren);
   display: grid;
   gap: 18px;
   min-width: 0;
@@ -20,6 +20,7 @@
 .dwilla-workspace h2 { font-size: 30px; line-height: 1.1; }
 .dwilla-workspace h3 { font-size: 23px; line-height: 1.2; }
 .dwilla-workspace h4 { margin-bottom: 10px; font-size: 20px; }
+.dwilla-workspace summary { min-height: 44px; padding: 10px 0; cursor: pointer; }
 .dwilla-hero, .dwilla-card, .dwilla-empty {
   min-width: 0;
   padding: 18px;
@@ -70,7 +71,7 @@
   min-height: 48px;
   margin: 0;
   padding: 10px 12px;
-  border: 1px solid var(--dwilla-border);
+  border: 1px solid var(--dwilla-active);
   border-radius: 3px;
   background: var(--dwilla-canvas);
   color: var(--dwilla-ink);
@@ -90,7 +91,7 @@
   font: inherit;
   cursor: pointer;
 }
-.dwilla-workspace input::placeholder, .dwilla-workspace textarea::placeholder { color: var(--dwilla-ink); opacity: .7; }
+.dwilla-workspace input::placeholder, .dwilla-workspace textarea::placeholder { color: var(--dwilla-ink); opacity: 1; }
 .dwilla-workspace textarea { min-height: 100px; resize: vertical; }
 .dwilla-workspace input[type="checkbox"] { width: 24px; height: 24px; accent-color: var(--dwilla-active); }
 .dwilla-workspace button {
@@ -116,12 +117,12 @@
   background: var(--dwilla-active);
   color: var(--dwilla-canvas);
 }
-.dwilla-workspace button:disabled { cursor: not-allowed; opacity: .55; }
+.dwilla-workspace button:disabled { cursor: not-allowed; opacity: 1; border-style: dashed; }
 .dwilla-workspace :is(button, input, textarea, select, summary):focus-visible {
   outline: 3px solid var(--dwilla-active);
   outline-offset: 3px;
 }
-.dwilla-workspace :is(input, textarea, select)[aria-invalid="true"] { border: 2px solid #e4002b; }
+.dwilla-workspace :is(input, textarea, select)[aria-invalid="true"] { border: 2px solid var(--ruby); }
 .dwilla-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; }
 .dwilla-actions > * { max-width: 100%; }
 .dwilla-badge {
@@ -143,7 +144,7 @@
 .dwilla-muted { color: var(--dwilla-ink); font-size: 16px; }
 .dwilla-required { font-weight: 700; }
 .dwilla-status { margin: 0; padding: 10px 14px; border-left: 4px solid var(--dwilla-active); color: var(--dwilla-ink); }
-.dwilla-error { margin: 0; padding: 12px 14px; border: 2px solid #e4002b; color: var(--dwilla-ink); }
+.dwilla-error { margin: 0; padding: 12px 14px; border: 2px solid var(--ruby); color: var(--dwilla-ink); }
 .dwilla-error:empty, .dwilla-status:empty { display: none; }
 .dwilla-tolerance { display: block; margin-top: 5px; font-size: 16px; }
 .dwilla-session-list, .dwilla-reading-list { display: grid; gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; }
@@ -193,17 +194,17 @@
   .dwilla-workspace h2 { font-size: 27px; }
 }
 @media print {
-  .dwilla-workspace { display: block; color: #101820; font-size: 11pt; line-height: 1.25; }
+  .dwilla-workspace { display: block; color: var(--slytheren); background: var(--obsidian); print-color-adjust: exact; -webkit-print-color-adjust: exact; font-size: 11pt; line-height: 1.25; }
   .dwilla-workspace > *, .dwilla-card, .dwilla-reading, .dwilla-photo-card { break-inside: avoid; }
-  .dwilla-card, .dwilla-hero, .dwilla-empty { margin: 0 0 12pt; padding: 10pt; border: 1px solid #293239; background: #fff; }
-  .dwilla-workspace .dwilla-section-heading { margin: -10pt -10pt 10pt; padding: 6pt 10pt; background: #fff; color: #101820; border-bottom: 1px solid #293239; }
-  .dwilla-workspace :is(input, select, textarea), .dwilla-muted, .dwilla-status, .dwilla-photo-card figcaption { color: #101820; background: #fff; }
+  .dwilla-card, .dwilla-hero, .dwilla-empty { margin: 0 0 12pt; padding: 10pt; border: 1px solid var(--ox); background: var(--obsidian); }
+  .dwilla-workspace .dwilla-section-heading { margin: -10pt -10pt 10pt; padding: 6pt 10pt; background: var(--obsidian); color: var(--slytheren); border-bottom: 1px solid var(--ox); }
+  .dwilla-workspace :is(input, select, textarea), .dwilla-muted, .dwilla-status, .dwilla-photo-card figcaption { color: var(--slytheren); background: var(--obsidian); }
   .dwilla-workspace :is(input, select, textarea) { min-height: 0; border: 0; padding: 2pt 0; font-size: 11pt; }
   .dwilla-actions, .dwilla-save-bar, .dwilla-workspace input[type="file"], .dwilla-workspace button { display: none; }
   .dwilla-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .dwilla-photo-stage { background: #fff; }
+  .dwilla-photo-stage { background: var(--obsidian); }
   .dwilla-workspace .dwilla-marker { display: grid; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-  .dwilla-method { padding: 6pt; color: #101820; background: #fff; }
+  .dwilla-method { padding: 6pt; color: var(--slytheren); background: var(--obsidian); }
 }
 
 .dwilla-workspace .dwilla-config-grid article { display: grid; gap: 12px; align-content: start; }

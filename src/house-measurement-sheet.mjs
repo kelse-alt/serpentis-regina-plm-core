@@ -32,11 +32,10 @@ const assets = Object.fromEntries(await Promise.all(Object.entries(assetTypes).m
   const bytes = await readFile(new URL(`../assets/house-sheet/${name}`, import.meta.url));
   return [name, `data:${type};base64,${bytes.toString('base64')}`];
 })));
-// Electric boxes use Ruby; matte ink is retained outside them. Salmon stays excluded.
+// Current UI tokens follow the founder's six-color palette; source records are unchanged.
 const excludedColors = new Set([...brand.houseRules.excludedInterfaceColors, ...brand.houseMeasurementSheet.excludedColors]);
-const grainSvg = await readFile(new URL('../sheet-web/matte-grain.svg', import.meta.url));
 const sheetColors = { ...brand.colors, 'ash-ink': brand.houseMeasurementSheet.matteInk.color, 'ash-line': brand.houseMeasurementSheet.matteInk.line };
-const brandCss = ':root{' + Object.entries(sheetColors).filter(([name]) => !excludedColors.has(name)).map(([name, value]) => `--${name}:${value}`).join(';') + `;--matte-grain:url("data:image/svg+xml;base64,${grainSvg.toString('base64')}")}`;
+const brandCss = ':root{' + Object.entries(sheetColors).filter(([name]) => !excludedColors.has(name)).map(([name, value]) => `--${name}:${value}`).join(';') + '}';
 const fontCss = [
   ['Barlow Condensed', 500, 'fonts/barlow-condensed-500.ttf'],
   ['Barlow Condensed', 700, 'fonts/barlow-condensed-700.ttf'],

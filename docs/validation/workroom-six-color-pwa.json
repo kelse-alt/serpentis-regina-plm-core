@@ -1,0 +1,108 @@
+{
+  "capturedAtUtc": "2026-11-06T23:28:07.605402+00:00",
+  "sourceCommit": "12fcf79b9c03a95001bcac5dec868e8ed91426a1",
+  "uncommittedChanges": true,
+  "scope": "/serpentis-regina-plm-core/workroom/",
+  "engines": {
+    "chromium": {
+      "available": true,
+      "browserVersion": "154.0.8037.57",
+      "device": "390\u00d7844 CSS px; touch emulation; not iPhone hardware",
+      "checks": {
+        "installAndVerifiedPrecache": true,
+        "portalOutsideWorkerScope": true,
+        "scopedStaticShellCacheOnly": true,
+        "onlineReadinessRepairsEvictedStaticAsset": true,
+        "selectedOlderPackRetainedOnOfflineReopen": true,
+        "offlineWorkroomReopenWithIndexedDbAutosave": true,
+        "offlineClientIntake34Poms": true,
+        "unknownPathsHaveNoAppFallback": true,
+        "newShellWaitsWithoutAutomaticReload": true,
+        "pendingFileOperationBlocksUpdate": true,
+        "explicitUpdateRejectsInvalidEntry": true,
+        "reviewChangedDuringSaveBlocksUpdate": true,
+        "failedIndexedDbWriteBlocksUpdateWithoutLosingEdits": true,
+        "otherOpenWindowIsNeverAutomaticallyReloaded": true,
+        "explicitUpdateSavesValidEditsBeforeReload": true,
+        "unrelatedPortalCachePreservedAfterUpdate": true,
+        "updatedShellReopensOffline": true,
+        "noRuntimeErrorsOrExternalFetches": true,
+        "unavailableStorageBlocksUpdateWithoutLosingEdits": true
+      },
+      "initialVersion": {
+        "version": "0.10.1",
+        "buildId": "165478d7d973a4d55de534379ec555da0f6d802d70049a412c621f9db9f67d2b",
+        "offlineReady": true
+      },
+      "metadata": {
+        "standalone": true,
+        "scope": "/serpentis-regina-plm-core/workroom/",
+        "iconDimensions": [
+          "192x192",
+          "512x512"
+        ],
+        "appleTouchIcon": "180x180"
+      },
+      "layouts": [
+        {
+          "viewport": "iphone",
+          "width": 390,
+          "height": 844,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        },
+        {
+          "viewport": "narrow-phone",
+          "width": 320,
+          "height": 568,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        },
+        {
+          "viewport": "landscape",
+          "width": 844,
+          "height": 390,
+          "pageOverflow": false,
+          "saveExportReachable": true
+        }
+      ],
+      "cachedShellPaths": [
+        "/serpentis-regina-plm-core/workroom/client-intake.html",
+        "/serpentis-regina-plm-core/workroom/icons/apple-touch-icon.png",
+        "/serpentis-regina-plm-core/workroom/icons/icon-192.png",
+        "/serpentis-regina-plm-core/workroom/icons/icon-512.png",
+        "/serpentis-regina-plm-core/workroom/index.html",
+        "/serpentis-regina-plm-core/workroom/manifest.webmanifest",
+        "/serpentis-regina-plm-core/workroom/pwa.js"
+      ],
+      "keyboardResponse": {
+        "simulatedVisualViewportHeight": 420,
+        "saveExportReachable": true,
+        "nativeKeyboardTested": false
+      },
+      "networkOutageMethod": "Playwright browser context offline",
+      "updatedVersion": {
+        "version": "0.10.1-audit-b",
+        "buildId": "1143f6fb09913e62cd7a232d6065b4a7e52d935f88057d2d2ac7c4eccec22924",
+        "offlineReady": true
+      }
+    }
+  },
+  "issues": [],
+  "publicationBoundary": "Only blank-template screenshots and non-identifying evidence are written. Synthetic records remain in temporary isolated browser profiles.",
+  "limits": [
+    "Browser touch/viewport emulation is not physical iPhone testing.",
+    "Native Safari Share, Add to Home Screen, iOS keyboard and Home Screen storage separation require device verification."
+  ],
+  "buildFiles": {
+    "client-intake.html": "49c7b21e3a19ac20c3a61d5673f8f317f8c465a9024cde899d967beaa0633133",
+    "icons/apple-touch-icon.png": "8998d2a0465dde807c8eef1d8247924e750862bbcee82d5e269746bd4526c010",
+    "icons/icon-192.png": "dfd0d95f0d7e9d4f10579828bc794f0438a566da1359c2a91ff35365e593de88",
+    "icons/icon-512.png": "6363ee20c1da487dbc591f6c7b76ddf37c04bd8fe4c964388d12d5fbb5c4fb41",
+    "index.html": "87889fc98f44e91c1fee4650058847d69f130b6d575b4ae3ce8fc4901edf7f10",
+    "manifest.webmanifest": "bb8a867993e386ed16710f22658241c284ac021c8305d048f270fc40a27c691c",
+    "pwa.js": "8a01ab5c1e0fa9df45d37f20ea9065f4abddb6f6cf3863ee7b3a9f0393d49fbf",
+    "sw.js": "c222d0edb7d5790d6a703e9fb4d7fea13e56369684c061ad69f71893a874cb04"
+  },
+  "passed": true
+}

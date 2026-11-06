@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.10.1 — six-color iPad launch
+
+- Matched the founder's current palette screenshot exactly: Salmon #EE2737, Slytheren #1FA824, Ruby #E4002B, Electric #1E22AA, OX #622128 and Obsidian #101820.
+- Replaced old pale pink, neutral gray grain/lines and white interface fills with solid palette colors; retained original image bytes and historical workbook provenance.
+- Kept the existing installable Workroom URL, local database, fitting records and explicit save-first app updates. PWA publication updates only the existing workroom directory; no main merge is included.
+
 ## v0.10.0 — DWILLA fitting increment (unpublished)
 
 - Integrated the open PR #22 modules into the current v0.9.5 Workroom source on a separate local feature branch.

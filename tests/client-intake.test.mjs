@@ -50,13 +50,15 @@ test('new intakes start with empty client values and never populate measurements
   assert.deepEqual(template, original);
 });
 
-test('the distributed intake embeds the blank source template and every original house asset for offline use', async () => {
+test('the distributed intake embeds the blank template, original seal and fonts without the former gray texture', async () => {
   const html = await readFile(new URL('../client-intake.html', import.meta.url), 'utf8');
   const embeddedTemplate = html.match(/window\.__CLIENT_INTAKE_TEMPLATE__ = (.*);\n/);
   assert.ok(embeddedTemplate, 'The standalone form must include its controlled blank template.');
   assert.deepEqual(JSON.parse(embeddedTemplate[1]), template);
   for (const [url, [path, type]] of CLIENT_INTAKE_ASSETS) {
-    assert.ok(html.includes(`data:${type};base64,${(await readFile(path)).toString('base64')}`), `Original asset missing: ${url}`);
+    const embedded = `data:${type};base64,${(await readFile(path)).toString('base64')}`;
+    if (url === '/intake-grain.svg') assert.ok(!html.includes(embedded), 'The generated gray texture must not paint colors outside the founder palette.');
+    else assert.ok(html.includes(embedded), `Original asset missing: ${url}`);
     assert.ok(!html.includes(url), `Runtime asset request remains: ${url}`);
   }
   assert.doesNotMatch(html, /(?:src|href)=["']\/(?:intake\.css|intake-app\.mjs)/);

@@ -1,12 +1,13 @@
 {
   "brand": "Serpentis Regina",
-  "revision": "2026-10-22",
+  "revision": "2026-11-06",
   "colors": {
     "obsidian": "#101820",
     "ruby": "#E4002B",
-    "salmon": "#F4A6A0",
+    "salmon": "#EE2737",
     "slytheren": "#1FA824",
-    "electric": "#1E22AA"
+    "electric": "#1E22AA",
+    "ox": "#622128"
   },
   "source": {
     "brandBible": "https://app.notion.com/p/BRAND-BIBLE-VISION-255bab06d9b4801d99def02a9914973b",
@@ -14,9 +15,11 @@
     "workbook": "https://docs.google.com/spreadsheets/d/1ALn9OogQy6x4YSEohhlew-NaIdeEdm2F/edit?gid=1422941812#gid=1422941812",
     "obsidian": "Founder-specified RGB 16, 24, 32; Pantone Black 6 CP.",
     "ruby": "Founder-specified RGB 228, 0, 43; Pantone 185 CP.",
-    "salmon": "Workbook PATTERN CARD!G5 fill and BW-AW-SPEC!B10:F10 fills.",
+    "salmon": "Founder screenshot: SALMON, Pantone 1788 CP, RGB 238 39 55, HEX #EE2737.",
     "slytheren": "Workbook BODY REF-MANNEQUIN-SIZE 8-V1!A9 and G9 fills.",
-    "electric": "Workbook BODY REF-MANNEQUIN-SIZE 8-V1!I1 fill and PATTERN CARD!B5 font."
+    "electric": "Workbook BODY REF-MANNEQUIN-SIZE 8-V1!I1 fill and PATTERN CARD!B5 font.",
+    "currentPalette": "Founder-supplied COLOR LIBRARY (Pantone) screenshot, November 6, 2026. Its six HEX values supersede older UI palette values; original artwork and source-workbook provenance remain unchanged.",
+    "ox": "Founder screenshot: OX, Pantone 4101 CP, RGB 98 33 40, HEX #622128."
   },
   "typography": {
     "display": "Barlow Condensed",
@@ -24,16 +27,21 @@
     "status": "Founder requested the title match the existing chart font on 2026-10-22; not a verified Notion font specification."
   },
   "houseRules": {
-    "electricFillRequiresText": "ruby",
-    "excludedInterfaceColors": [
-      "salmon"
+    "electricFillRequiresText": "slytheren",
+    "electricTextMinimum": "19px, weight 700; use Slytheren/Obsidian for normal-size text and controls.",
+    "excludedInterfaceColors": [],
+    "allowedInterfaceColors": [
+      "obsidian",
+      "ruby",
+      "salmon",
+      "slytheren",
+      "electric",
+      "ox"
     ],
-    "source": "Founder correction: Electric Blue text-box fill ALWAYS pairs with Ruby text. Stop using light pink/Salmon in interfaces."
+    "source": "Founder requested using only the six colors in the supplied palette before launching the app on November 6, 2026. This supersedes older pale-pink, gray/grain and color-assignment instructions."
   },
   "houseMeasurementSheet": {
-    "excludedColors": [
-      "salmon"
-    ],
+    "excludedColors": [],
     "titleFill": "ruby",
     "titleText": "obsidian",
     "titleMetadataFill": "transparent",
@@ -45,20 +53,20 @@
     "unitControlText": "matteInk",
     "formulaText": "slytheren",
     "headerFill": "electric",
-    "headerText": "ruby",
+    "headerText": "slytheren",
     "toolbarButtons": {
-      "fill": "electric",
-      "text": "ruby",
-      "scope": "All filter and Print buttons retain Electric fill and Ruby text in every state."
+      "fill": "slytheren",
+      "text": "obsidian",
+      "scope": "Palette-only controls retain text, border and focus cues."
     },
     "matteInk": {
-      "color": "#92989D",
-      "line": "#293239",
-      "finish": "Ashy matte charcoal with fine grain; a lifted black neutral to remain visible against Obsidian.",
-      "source": "Founder requested removal of red outlines and replacement of red lettering with ashy matte black.",
-      "scope": "Preserve matte ash chart values, methods, deltas, and supporting details. Apply only the explicit wordmark, CASE/identity metadata, and formula foreground overrides; text on Electric fills remains Ruby."
+      "color": "#1FA824",
+      "line": "#622128",
+      "finish": "Solid palette ink; generated neutral grain is no longer painted.",
+      "source": "Founder six-color correction, November 6, 2026. Legacy token names remain for code compatibility.",
+      "scope": "Normal text uses Slytheren on Obsidian; OX is a decorative separator."
     },
-    "slytherenUsage": "CASE and identity metadata foregrounds, delta formula foreground, and Front/Back caption backgrounds only; no green table values, buttons, borders, or outlines.",
+    "slytherenUsage": "Reading text, selected states, controls, focus, and large Electric-backed headings within the exact six-color interface.",
     "displayUnits": {
       "canonical": "in",
       "default": "in",
@@ -75,16 +83,16 @@
     "seal": "Standalone on Obsidian beside the title area; all metadata stays inside the title area."
   },
   "workroomInterface": {
-    "revision": "2026-11-02-blue-pink-headers",
-    "scope": "Garment workroom only; approved mannequin chart retains its existing treatment.",
-    "authorization": "Founder requested blue and pink instead of harsh red internal tab headers. Internal workroom headers now use Electric with Salmon; this explicitly supersedes the older Electric/Ruby pairing for these headers only. Selected/expanded highlights remain green.",
+    "revision": "2026-11-06-six-color-launch",
+    "scope": "Installed Workroom and its client intake; preserve original photographic/artwork pixels and source data.",
+    "authorization": "Founder requested palette correction and live launch, November 6, 2026.",
     "activeAndFocus": "slytheren",
-    "sectionHeadings": "salmon text on electric fill",
-    "supportingText": "salmon",
+    "sectionHeadings": "large slytheren text on electric fill",
+    "supportingText": "slytheren",
     "canvas": "obsidian",
-    "electricFillText": "ruby",
-    "excludedColors": [],
-    "greenUsage": "Selected tabs, highlighted/pressed/focused controls, expanded section summaries and text selection.",
-    "inactiveTabFill": "salmon"
+    "decorativeLines": "ox",
+    "inactiveTabFill": "salmon",
+    "inactiveTabText": "obsidian",
+    "excludedColors": []
   }
 }
