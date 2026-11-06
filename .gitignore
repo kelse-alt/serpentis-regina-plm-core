@@ -4,3 +4,10 @@ reports/*.html
 node_modules/
 # SQLite files and journal/WAL files are generated local outputs.
 /storage/*.sqlite*
+# Proprietary workbook imports and fitting records (never public fixtures).
+/private/
+/storage/dwilla/
+*.xlsx
+*.xlsm
+__pycache__/
+*.pyc

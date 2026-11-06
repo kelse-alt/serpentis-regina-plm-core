@@ -2,6 +2,16 @@
 
 These versions describe application milestones. They are separate from the approved measurement dataset revision and the JSON schema version.
 
+## Unreleased — DWILLA integration
+
+- Read-only Python standard-library workbook import with 60 exact POM definitions,
+  separate 20-POM form reference, source cell provenance and shared formulas.
+- Private versioned dictionaries, explicit units, multiple contextual readings,
+  landmarks, nullable targets and asymmetric tolerance validation.
+- First/second fitting and review progression, fit notes, explicit decisions,
+  and immutable local JSON snapshots separate from existing SQLite workflows.
+- Synthetic importer/workflow tests and Termux documentation; no deployment.
+
 ## v0.4.0 — 2026-10-20
 
 ### Added
