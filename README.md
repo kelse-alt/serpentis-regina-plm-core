@@ -2,6 +2,12 @@
 
 A fashion technology prototype for client measurement intake, reusable measurement sessions, and a controlled house fit-form register. It connects technical-design practice with beginner JavaScript learning: one measurement object becomes one displayed row and one saved record.
 
+DWILLA SR-001 garment development now has an isolated [private workbook importer
+and fitting workflow](docs/dwilla-integration.md). It validates 60 garment POMs,
+keeps the separate 20 fit-form references, and saves local fitting snapshots.
+The public repository contains reusable code and synthetic tests only; import
+the proprietary workbook locally. This workflow is CLI-based and is not deployed.
+
 ## Start with the client intake — v0.4.0
 
 **Without installing anything:** [download the v0.4.0 ZIP](https://github.com/kelse-alt/serpentis-regina-plm-core/archive/refs/tags/v0.4.0.zip), extract the folder, and open **client-intake.html** in your browser.
