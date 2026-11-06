@@ -1,6 +1,10 @@
-# iPhone workroom app — v0.8.0
+# Install the Workroom on iPad or iPhone
 
-Open the [Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/) in **Safari** on your iPhone. The workroom installs on your Home Screen from Safari and opens in its own app window. It is an installable web app; no App Store download or Apple developer account is needed.
+Open the [Serpentis Regina Workroom](https://kelse-alt.github.io/serpentis-regina-plm-core/workroom/) in **Safari** on your iPad or iPhone. The workroom installs on your Home Screen from Safari and opens in its own app window. It is an installable web app; no App Store download or Apple developer account is needed.
+
+Current launch: **v0.10.1**, including the integrated **Fittings** tab and the founder's exact six-color palette: Salmon `#EE2737`, Slytheren `#1FA824`, Ruby `#E4002B`, Electric `#1E22AA`, OX `#622128`, Obsidian `#101820`. Original photos/artwork keep their original pixels. The update preserves browser-local drafts, fitting snapshots, original attachments and named revisions; it does not synchronize between devices.
+
+On an existing installation, open **Export → Install & app info → Save & update app** once the new build is ready. Keep a complete private backup first. On a new iPad installation, use Safari **Share → Add to Home Screen → Add**, launch the new icon online, then wait for **Offline ready on this device** in app information.
 
 The app contains a [pinned style reference panel](pinned-style-reference.md) with front/back example images and Hide/Show style controls, the six workroom sheets, shared style record, local autosave and named revisions, measurement entry, original photographs and house styling. The separate client intake remains available from the workroom. The public site serves application code, blank templates and authorized house reference/provenance; filled packs and attached project images stay on the device.
 
@@ -10,7 +14,7 @@ Import component workbook (.xlsx)**. Review and apply the definitions, choose
 CM/IN, and add working samples. Importing does not upload the file or invent
 measurement targets. The existing photo gallery and pinned style panel remain.
 
-## Install on your iPhone
+## Install on your iPad or iPhone
 
 1. Open the workroom link in Safari. If the link opens inside another app, use that app’s option to open it in Safari.
 2. Tap **Share**, then **Add to Home Screen**. You may need to scroll through the Share menu.
@@ -33,7 +37,7 @@ To move an existing pack:
 3. In the Home Screen workroom, open **Export → Import JSON** and select the file.
 4. Check the style, units, measurements and images, then check that the local save completed.
 
-Pack JSON contains the current draft and its original images. Ordinary pack JSON does **not** include named revision history; that history remains in the original browser/app store. A conflicting imported pack identity becomes a separate working copy rather than replacing an existing saved draft. Keep JSON backups before removing the app or clearing website data.
+Pack JSON contains the current draft, its fitting snapshots and original images. Ordinary pack JSON does **not** include named pack revision history. **Export → Download complete private backup** includes the saved directory and named revisions; restore it into an empty store using **Export → Restore backup into empty store**. A conflicting imported pack identity becomes a separate working copy rather than replacing an existing saved draft. Keep JSON backups before removing the app or clearing website data.
 
 ## Receive a new version
 
@@ -67,7 +71,7 @@ the separation of BF house references, RC intake and garment specifications.
 No account, remote submission, background synchronization, hosted project database
 or App Store binary is introduced.
 
-Current v0.8.0 passes 112 Node tests, component import/recovery checks, existing
+Historical v0.8.0 passed 112 Node tests, component import/recovery checks, existing
 daily/pinned/gallery regressions, and 19 Chromium PWA checks. All eight hosted
 files match that tested build and all ten portal files remain unchanged. See
 the [current verification](component-workbook-workflow.md#verified-checks) and
@@ -84,3 +88,10 @@ Version 0.7.1 introduced the pinned style reference panel, with checks recorded
 in [pinned-style validation](validation/pinned-style-reference.json). Use the
 [pinned-panel guide](pinned-style-reference.md) for Show/Hide controls and the
 compact phone reference strip.
+
+
+## v0.10.1 launch verification
+
+The exact six-color interface passed [38 rendered palette/layout states](validation/workroom-six-color-palette.json), including every worksheet, synthetic fitting/photo annotations, dialogs, client intake, PWA information and print, at portrait and landscape iPad sizes. All audited interactive controls meet 44px touch targets. There were no off-palette painted CSS colors, gray textures, horizontal page overflow or runtime errors. Original raster artwork and photographs are intentionally preserved.
+
+[19 Chromium PWA guards](validation/workroom-six-color-pwa.json) passed for offline workroom/intake reopening, scoped precaching and explicit save-first updates. That harness tested the preceding build; the final build differs only in 44px fitting-summary padding, which passed the final palette/layout audit. Node verification passes 151 tests. Physical iPadOS Safari and its native Add to Home Screen menu still require the user's device; emulation is not a physical-device claim.

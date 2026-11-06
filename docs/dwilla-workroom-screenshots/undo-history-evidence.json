@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "name": "Undo/Redo preserve all8 saved fitting snapshots and3sample/pattern traces across editing and progression, export and saved reload",
+      "undoOperations": 6,
+      "redoOperations": 6
+    },
+    {
+      "name": "Undo before DWILLA initialization cannot erase saved first fitting or sample identity",
+      "undoOperations": 3
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,211 @@
+/* Fitting tools inherit the existing Workroom font and house palette. */
+.dwilla-workspace {
+  --dwilla-ink: var(--slytheren);
+  --dwilla-canvas: var(--obsidian);
+  --dwilla-border: var(--ox);
+  --dwilla-electric: var(--electric);
+  --dwilla-active: var(--slytheren);
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+  color: var(--dwilla-ink);
+  font-size: 18px;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+.dwilla-workspace *, .dwilla-workspace *::before, .dwilla-workspace *::after { box-sizing: border-box; }
+.dwilla-workspace h2, .dwilla-workspace h3, .dwilla-workspace h4,
+.dwilla-workspace p, .dwilla-workspace ul, .dwilla-workspace ol { margin-top: 0; }
+.dwilla-workspace p:last-child, .dwilla-workspace ul:last-child, .dwilla-workspace ol:last-child { margin-bottom: 0; }
+.dwilla-workspace h2 { font-size: 30px; line-height: 1.1; }
+.dwilla-workspace h3 { font-size: 23px; line-height: 1.2; }
+.dwilla-workspace h4 { margin-bottom: 10px; font-size: 20px; }
+.dwilla-workspace summary { min-height: 44px; padding: 10px 0; cursor: pointer; }
+.dwilla-hero, .dwilla-card, .dwilla-empty {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--dwilla-border);
+  background: var(--dwilla-canvas);
+}
+.dwilla-hero { border-left: 5px solid var(--dwilla-active); }
+.dwilla-hero h2 { margin-bottom: 10px; color: var(--dwilla-ink); }
+.dwilla-hero .dwilla-actions { margin-top: 14px; }
+.dwilla-card { padding-top: 0; }
+.dwilla-workspace .dwilla-section-heading {
+  margin: 0 -18px 16px;
+  padding: 11px 18px;
+  background: var(--dwilla-electric);
+  color: var(--dwilla-ink);
+  font-weight: 700;
+}
+.dwilla-workspace details.dwilla-card { padding-top: 0; }
+.dwilla-workspace details.dwilla-card > summary {
+  min-height: 48px;
+  margin: 0 -18px;
+  padding: 12px 18px;
+  background: var(--dwilla-electric);
+  color: var(--dwilla-ink);
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.dwilla-workspace details.dwilla-card[open] > summary {
+  margin-bottom: 16px;
+  background: var(--dwilla-active);
+  color: var(--dwilla-canvas);
+}
+.dwilla-grid, .dwilla-config-grid, .dwilla-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+  gap: 14px;
+  min-width: 0;
+}
+.dwilla-grid > *, .dwilla-config-grid > *, .dwilla-form-grid > * { min-width: 0; }
+.dwilla-form-grid .dwilla-wide, .dwilla-form-grid .dwilla-actions { grid-column: 1 / -1; }
+.dwilla-workspace .field, .dwilla-workspace label { min-width: 0; }
+.dwilla-workspace .field { display: grid; gap: 6px; align-content: start; margin: 0; }
+.dwilla-workspace .field > span, .dwilla-workspace label > span { color: var(--dwilla-ink); font-weight: 700; }
+.dwilla-workspace input:not([type="checkbox"]), .dwilla-workspace select, .dwilla-workspace textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--dwilla-active);
+  border-radius: 3px;
+  background: var(--dwilla-canvas);
+  color: var(--dwilla-ink);
+  font: inherit;
+  font-size: 18px;
+  line-height: 1.35;
+}
+.dwilla-workspace input[type="file"] { padding: 8px; font-size: 16px; }
+.dwilla-workspace input::file-selector-button {
+  min-height: 44px;
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--dwilla-ink);
+  border-radius: 3px;
+  background: var(--dwilla-ink);
+  color: var(--dwilla-canvas);
+  font: inherit;
+  cursor: pointer;
+}
+.dwilla-workspace input::placeholder, .dwilla-workspace textarea::placeholder { color: var(--dwilla-ink); opacity: 1; }
+.dwilla-workspace textarea { min-height: 100px; resize: vertical; }
+.dwilla-workspace input[type="checkbox"] { width: 24px; height: 24px; accent-color: var(--dwilla-active); }
+.dwilla-workspace button {
+  min-width: 44px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid var(--dwilla-ink);
+  border-radius: 3px;
+  background: var(--dwilla-ink);
+  color: var(--dwilla-canvas);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.dwilla-workspace button[data-primary], .dwilla-workspace .dwilla-primary,
+.dwilla-workspace button[aria-pressed="true"] {
+  border-color: var(--dwilla-active);
+  background: var(--dwilla-active);
+  color: var(--dwilla-canvas);
+}
+.dwilla-workspace button:disabled { cursor: not-allowed; opacity: 1; border-style: dashed; }
+.dwilla-workspace :is(button, input, textarea, select, summary):focus-visible {
+  outline: 3px solid var(--dwilla-active);
+  outline-offset: 3px;
+}
+.dwilla-workspace :is(input, textarea, select)[aria-invalid="true"] { border: 2px solid var(--ruby); }
+.dwilla-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; }
+.dwilla-actions > * { max-width: 100%; }
+.dwilla-badge {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 4px 9px;
+  border: 1px solid var(--dwilla-active);
+  color: var(--dwilla-ink);
+  font-size: 16px;
+  font-weight: 700;
+}
+.dwilla-identity { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 12px 0; font-weight: 700; }
+.dwilla-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 10px; margin: 16px 0; }
+.dwilla-stat { padding: 12px; border: 1px solid var(--dwilla-border); border-left: 3px solid var(--dwilla-active); }
+.dwilla-stat strong { display: block; font-size: 28px; line-height: 1.2; }
+.dwilla-stat span { display: block; font-size: 16px; }
+.dwilla-method { margin: 14px 0; padding: 14px; border-left: 3px solid var(--dwilla-active); background: var(--dwilla-canvas); white-space: pre-wrap; }
+.dwilla-method strong { display: block; margin-bottom: 6px; }
+.dwilla-muted { color: var(--dwilla-ink); font-size: 16px; }
+.dwilla-required { font-weight: 700; }
+.dwilla-status { margin: 0; padding: 10px 14px; border-left: 4px solid var(--dwilla-active); color: var(--dwilla-ink); }
+.dwilla-error { margin: 0; padding: 12px 14px; border: 2px solid var(--ruby); color: var(--dwilla-ink); }
+.dwilla-error:empty, .dwilla-status:empty { display: none; }
+.dwilla-tolerance { display: block; margin-top: 5px; font-size: 16px; }
+.dwilla-session-list, .dwilla-reading-list { display: grid; gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; }
+.dwilla-session-list > li, .dwilla-reading {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--dwilla-border);
+}
+.dwilla-session-list button { margin-top: 8px; }
+.dwilla-reading strong { display: block; }
+.dwilla-reading p { margin: 5px 0; }
+.dwilla-photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; margin-top: 16px; }
+.dwilla-photo-card { min-width: 0; margin: 0; padding: 12px; border: 1px solid var(--dwilla-border); }
+.dwilla-photo-card figcaption { margin: 10px 0; color: var(--dwilla-ink); font-size: 16px; }
+.dwilla-photo-stage { position: relative; width: 100%; max-width: 480px; margin: 0 auto; padding: 0; line-height: 0; background: var(--dwilla-canvas); }
+.dwilla-photo-stage img { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; object-fit: contain; }
+.dwilla-workspace .dwilla-marker {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  min-height: 32px;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--dwilla-canvas);
+  border-radius: 50%;
+  background: var(--dwilla-active);
+  color: var(--dwilla-canvas);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+.dwilla-save-bar { position: sticky; z-index: 3; bottom: 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 12px; border: 1px solid var(--dwilla-border); background: var(--dwilla-canvas); }
+.dwilla-save-bar .dwilla-status { flex: 1 1 220px; }
+@media (max-width: 600px) {
+  .dwilla-workspace { gap: 14px; font-size: 17px; }
+  .dwilla-hero, .dwilla-card, .dwilla-empty { padding-left: 14px; padding-right: 14px; }
+  .dwilla-workspace .dwilla-section-heading { margin-left: -14px; margin-right: -14px; padding-left: 14px; padding-right: 14px; }
+  .dwilla-workspace details.dwilla-card > summary { margin-left: -14px; margin-right: -14px; padding-left: 14px; padding-right: 14px; }
+  .dwilla-actions > button { flex: 1 1 180px; }
+  .dwilla-config-grid { grid-template-columns: 1fr; }
+  .dwilla-workspace h2 { font-size: 27px; }
+}
+@media print {
+  .dwilla-workspace { display: block; color: var(--slytheren); background: var(--obsidian); print-color-adjust: exact; -webkit-print-color-adjust: exact; font-size: 11pt; line-height: 1.25; }
+  .dwilla-workspace > *, .dwilla-card, .dwilla-reading, .dwilla-photo-card { break-inside: avoid; }
+  .dwilla-card, .dwilla-hero, .dwilla-empty { margin: 0 0 12pt; padding: 10pt; border: 1px solid var(--ox); background: var(--obsidian); }
+  .dwilla-workspace .dwilla-section-heading { margin: -10pt -10pt 10pt; padding: 6pt 10pt; background: var(--obsidian); color: var(--slytheren); border-bottom: 1px solid var(--ox); }
+  .dwilla-workspace :is(input, select, textarea), .dwilla-muted, .dwilla-status, .dwilla-photo-card figcaption { color: var(--slytheren); background: var(--obsidian); }
+  .dwilla-workspace :is(input, select, textarea) { min-height: 0; border: 0; padding: 2pt 0; font-size: 11pt; }
+  .dwilla-actions, .dwilla-save-bar, .dwilla-workspace input[type="file"], .dwilla-workspace button { display: none; }
+  .dwilla-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dwilla-photo-stage { background: var(--obsidian); }
+  .dwilla-workspace .dwilla-marker { display: grid; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .dwilla-method { padding: 6pt; color: var(--slytheren); background: var(--obsidian); }
+}
+
+.dwilla-workspace .dwilla-config-grid article { display: grid; gap: 12px; align-content: start; }
+.dwilla-print-session { break-inside: auto; }

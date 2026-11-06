@@ -1,12 +1,12 @@
 /* Hosted-app additions only. The standalone sheets retain their original CSS. */
 #pwa-info-dialog { width:min(94vw,580px); max-height:90dvh; min-width:0; overflow:auto; overscroll-behavior:contain; padding:16px; border:1px solid var(--ash-line); background:var(--obsidian); color:var(--ash-ink); font:inherit; }
-#pwa-info-dialog::backdrop { background:var(--obsidian); opacity:.85; }
+#pwa-info-dialog::backdrop { background:var(--obsidian); opacity:1; }
 #pwa-info-dialog h2 { margin:0; font-size:26px; }
 #pwa-info-dialog p, #pwa-info-dialog li { font-size:18px; line-height:1.4; overflow-wrap:anywhere; }
 #pwa-info-dialog .pwa-heading { display:flex; gap:12px; align-items:center; justify-content:space-between; }
 #pwa-info-dialog ol { padding-left:24px; }
 #pwa-info-dialog a { color:var(--ash-ink); }
-#pwa-info-dialog button, #pwa-info-open { min-height:44px; border:1px solid var(--ash-line); background:var(--electric); color:var(--ruby); font:inherit; font-weight:700; padding:9px 12px; }
+#pwa-info-dialog button, #pwa-info-open { min-height:44px; border:1px solid var(--slytheren); background:var(--slytheren); color:var(--obsidian); font:inherit; font-weight:700; padding:9px 12px; }
 #pwa-info-dialog #pwa-version { font-size:16px; }
 #pwa-info-dialog #pwa-apply-update { width:100%; }
 @media screen {

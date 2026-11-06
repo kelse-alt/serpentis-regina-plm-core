@@ -148,3 +148,11 @@ test('a failed cloud save never confirms success or advances the accepted versio
   assert.equal(api.requests.at(-1).body.expectedVersion, 1);
   assert.equal(api.state.pack.title, local.title);
 });
+
+test('private DWILLA fitting records cannot be sent through the separate cloud store',async()=>{
+ let requests=0;const store=createCloudPackStore(template,{fetch:async()=>{requests++;throw Error('No request expected');}});
+ const localOnly={dwilla:{dictionary:'SYNTHETIC private import'}};
+ await assert.rejects(store.saveDraft(localOnly),/device-local Workroom/);
+ await assert.rejects(store.createRevision(localOnly,{name:'SYNTHETIC revision'}),/device-local Workroom/);
+ assert.equal(requests,0);
+});

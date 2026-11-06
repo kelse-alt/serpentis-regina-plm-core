@@ -1,0 +1,6456 @@
+{
+  "startedAt": "2026-11-06T23:29:37.031Z",
+  "palette": [
+    "#EE2737",
+    "#1FA824",
+    "#E4002B",
+    "#1E22AA",
+    "#622128",
+    "#101820"
+  ],
+  "build": "/workspace/serpentis-regina-plm-core/reports/workroom-pwa",
+  "states": [
+    {
+      "label": "1024x1366 01 / Pattern card",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 02 / Wash specs",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1024x1366 03 / Fit & comments",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 04 / Graded specs",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1024x1366 05 / Measurement master",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 06 / Mannequin reference",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1024x1366 07 / Fittings",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 01 / Pattern card",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 02 / Wash specs",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1366x1024 03 / Fit & comments",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 04 / Graded specs",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1366x1024 05 / Measurement master",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 06 / Mannequin reference",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif",
+        "monospace"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1366x1024 07 / Fittings",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 DWILLA synthetic fitting",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 DWILLA synthetic annotation",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 DWILLA synthetic fitting",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 directory-dialog",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 export-dialog",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 workbook-dialog",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 paste-dialog",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 revision-dialog",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 image-dialog",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 PWA information",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 directory-dialog",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 export-dialog",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 workbook-dialog",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 paste-dialog",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 revision-dialog",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 image-dialog",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1366x1024 PWA information",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    },
+    {
+      "label": "1024x1366 client intake client",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1024x1366 client intake references",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1024x1366 client intake drafts",
+      "width": 1024,
+      "height": 1366,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1366x1024 client intake client",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1366x1024 client intake references",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "1366x1024 client intake drafts",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(238, 39, 55)",
+        "rgb(30, 34, 170)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": [
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        },
+        {
+          "color": "rgb(31, 168, 36)",
+          "fill": "rgb(31, 168, 36)",
+          "background": "none"
+        }
+      ]
+    },
+    {
+      "label": "DWILLA synthetic print media",
+      "width": 1366,
+      "height": 1024,
+      "documentWidth": 1366,
+      "bodyWidth": 1366,
+      "paintedColors": [
+        "rgb(16, 24, 32)",
+        "rgb(228, 0, 43)",
+        "rgb(31, 168, 36)",
+        "rgb(98, 33, 40)"
+      ],
+      "fontFamilies": [
+        "\"Barlow Condensed\", Arial, sans-serif"
+      ],
+      "issues": [],
+      "texture": [],
+      "smallControls": [],
+      "matteText": []
+    }
+  ],
+  "screenshots": [
+    "/workspace/work/browser-qa-palette/screenshots/01-ipad-portrait-palette-fitting.png",
+    "/workspace/work/browser-qa-palette/screenshots/02-ipad-portrait-palette-annotation.png",
+    "/workspace/work/browser-qa-palette/screenshots/03-ipad-landscape-palette-annotation.png",
+    "/workspace/work/browser-qa-palette/screenshots/04-ipad-install-offline-information.png",
+    "/workspace/work/browser-qa-palette/screenshots/05-ipad-palette-client-intake-blank.png"
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "externalRequests": [],
+  "issues": [],
+  "indexSha256": "e61cf1ba9dee35e8bebb65222de627d421a4c4e131b77dd21ca9c67ed4a473ab",
+  "version": "0.10.1",
+  "tabs": [
+    {
+      "id": "tab-pattern",
+      "label": "01 / Pattern card"
+    },
+    {
+      "id": "tab-wash",
+      "label": "02 / Wash specs"
+    },
+    {
+      "id": "tab-fit",
+      "label": "03 / Fit & comments"
+    },
+    {
+      "id": "tab-graded",
+      "label": "04 / Graded specs"
+    },
+    {
+      "id": "tab-master",
+      "label": "05 / Measurement master"
+    },
+    {
+      "id": "tab-body",
+      "label": "06 / Mannequin reference"
+    },
+    {
+      "id": "tab-dwilla",
+      "label": "07 / Fittings"
+    }
+  ],
+  "passed": true
+}

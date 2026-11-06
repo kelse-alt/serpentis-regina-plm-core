@@ -1,0 +1,8 @@
+{
+  "checks": [
+    "Photo annotation stage capped at480px; POM, action note, original image and marker remain together on portrait iPad",
+    "Complete print includes current plus every saved fitting, all recorded readings including zero, missing code list,20BF references, methods, photos/markers, decisions and actions; no form controls",
+    "Existing schema3 development sample reused by stable key, no duplicate sample; missing pattern blocked; explicit CM fitting succeeds"
+  ],
+  "errors": []
+}

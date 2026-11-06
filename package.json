@@ -1,7 +1,7 @@
 {
   "name": "serpentis-regina-plm-core",
   "private": true,
-  "version": "0.9.5",
+  "version": "0.10.1",
   "description": "Local fashion technical-design workroom with six-tab tech packs, client intake and an approved fit-form register",
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "techpack:build": "node scripts/build-tech-pack.mjs",
     "techpack": "node scripts/serve-tech-pack.mjs",
     "pwa:build": "npm run techpack:build && node scripts/build-workroom-pwa.mjs",
-    "techpack:cloud:build": "node scripts/build-tech-pack.mjs --cloud"
+    "techpack:cloud:build": "node scripts/build-tech-pack.mjs --cloud",
+    "dwilla": "node scripts/dwilla.mjs"
   }
 }

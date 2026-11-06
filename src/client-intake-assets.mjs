@@ -15,10 +15,7 @@ export async function loadClientIntakeStyles() {
   ]);
   const brand = JSON.parse(brandText);
   const colors = {
-    obsidian: brand.colors.obsidian,
-    ruby: brand.colors.ruby,
-    electric: brand.colors.electric,
-    slytheren: brand.colors.slytheren,
+    ...brand.colors,
     'ash-ink': brand.houseMeasurementSheet.matteInk.color,
     'ash-line': brand.houseMeasurementSheet.matteInk.line,
   };

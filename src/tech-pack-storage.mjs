@@ -1,8 +1,66 @@
 /** Device-local drafts and immutable named snapshots; original images use Blob storage. */
 import { normalizeTechPack } from './tech-pack.mjs';
+import { verifyDwillaHistory } from './dwilla-workroom.mjs';
 
 const PACK_LEGACY_KEY = 'serpentis-regina.tech-packs.v1';
 const PACK_DATABASE_NAME = 'serpentis-regina.workroom.v2';
+export const MAX_WORKROOM_BACKUP_BYTES = 100 * 1024 * 1024;
+
+function backupObject(value, keys, label) {
+  if (!value || typeof value !== 'object' || Array.isArray(value) ||
+      ![Object.prototype, null].includes(Object.getPrototypeOf(value)) ||
+      Object.keys(value).length !== keys.length || Object.keys(value).some(key => !keys.includes(key))) {
+    throw Error(`${label} must contain exactly the supported fields.`);
+  }
+}
+
+function backupDate(value, label) {
+  if (typeof value !== 'string' || !/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/.test(value) ||
+      !Number.isFinite(Date.parse(value)) || new Date(value).toISOString() !== value) throw Error(`${label} is invalid.`);
+  return value;
+}
+
+function backupId(value, label) {
+  if (typeof value !== 'string' || !/^[\w-]{1,128}$/.test(value)) throw Error(`${label} is invalid.`);
+  return value;
+}
+
+/** Validate the whole portable archive before touching IndexedDB. */
+export function validateWorkroomBackup(input, template) {
+  let serialized;
+  try { serialized = typeof input === 'string' ? input : JSON.stringify(input); }
+  catch { throw Error('The workroom backup must be portable JSON.'); }
+  if (typeof serialized !== 'string' || serialized.length > MAX_WORKROOM_BACKUP_BYTES ||
+      new TextEncoder().encode(serialized).byteLength > MAX_WORKROOM_BACKUP_BYTES) throw Error('The workroom backup exceeds 100 MiB.');
+  let value;
+  try { value = typeof input === 'string' ? JSON.parse(input) : input; }
+  catch { throw Error('The workroom backup is not valid JSON.'); }
+  backupObject(value, ['format', 'version', 'createdAt', 'drafts', 'revisions'], 'Workroom backup');
+  if (value.format !== 'serpentis-regina-workroom-backup' || value.version !== 1) throw Error('This workroom backup format is not supported.');
+  const createdAt = backupDate(value.createdAt, 'Backup creation time');
+  if (!Array.isArray(value.drafts) || value.drafts.length > 100 || !Array.isArray(value.revisions) || value.revisions.length > 1000) {
+    throw Error('A backup may contain at most 100 drafts and 1000 named revisions.');
+  }
+  const draftIds = new Set(), revisionIds = new Set();
+  const drafts = value.drafts.map(inputPack => {
+    const pack = normalizeTechPack(inputPack, template);
+    if (draftIds.has(pack.id)) throw Error('The backup contains duplicate draft IDs.');
+    draftIds.add(pack.id);
+    return pack;
+  });
+  const revisions = value.revisions.map(inputRevision => {
+    backupObject(inputRevision, ['id', 'packId', 'name', 'author', 'reason', 'createdAt', 'snapshot'], 'Backup revision');
+    const id = backupId(inputRevision.id, 'Revision ID'), packId = backupId(inputRevision.packId, 'Revision pack ID');
+    if (revisionIds.has(id)) throw Error('The backup contains duplicate revision IDs.');
+    revisionIds.add(id);
+    const snapshot = normalizeTechPack(inputRevision.snapshot, template);
+    if (snapshot.id !== packId) throw Error('A revision snapshot does not match its pack identity.');
+    return { id, packId, name: storageLabel(inputRevision.name, 'Revision name', 160, true),
+      author: storageLabel(inputRevision.author, 'Recorded author', 160), reason: storageLabel(inputRevision.reason, 'Change reason', 2000),
+      createdAt: backupDate(inputRevision.createdAt, 'Revision creation time'), snapshot };
+  });
+  return { format: value.format, version: 1, createdAt, drafts, revisions };
+}
 
 function storageId(prefix) {
   return prefix + '-' + (globalThis.crypto?.randomUUID?.() ?? `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`);
@@ -57,6 +115,10 @@ function snapshotImageEntries(snapshot) {
       } else if (attachment) entries.push({ container: attachments, key: slot, image: attachment });
     }
   }
+  const fittingSessions = [snapshot.dwilla?.draft, ...(snapshot.dwilla?.snapshots ?? []).map(record => record.session)];
+  for (const session of fittingSessions) {
+    session?.photos?.forEach((image, index) => entries.push({ container: session.photos, key: index, image }));
+  }
   return entries;
 }
 
@@ -109,6 +171,7 @@ export function createPackStore(template, options = {}) {
 
   async function encodeSnapshot(input) {
     const snapshot = normalizeTechPack(input, template);
+    if (snapshot.dwilla) await verifyDwillaHistory(snapshot.dwilla);
     const images = new Map();
     for (const { container, key, image } of snapshotImageEntries(snapshot)) {
       let cached = imageCache.get(image.dataUrl);
@@ -126,7 +189,9 @@ export function createPackStore(template, options = {}) {
         imageCache.set(image.dataUrl, cached);
       }
       images.set(cached.id, cached);
-      container[key] = { name: image.name, type: image.type, imageId: cached.id };
+      const encoded = { ...image, imageId: cached.id };
+      delete encoded.dataUrl;
+      container[key] = encoded;
     }
     return { snapshot, images: [...images.values()] };
   }
@@ -165,7 +230,9 @@ export function createPackStore(template, options = {}) {
     for (const { container, key, image } of entries) {
       if (image?.imageId) {
         if (!found.has(image.imageId)) throw Error('An original image is missing from local storage.');
-        container[key] = { name: image.name, type: image.type, dataUrl: found.get(image.imageId) };
+        const hydrated = { ...image, dataUrl: found.get(image.imageId) };
+        delete hydrated.imageId;
+        container[key] = hydrated;
       }
     }
     return snapshot;
@@ -188,7 +255,9 @@ export function createPackStore(template, options = {}) {
     let hydrated;
     try {
       hydrated = await hydrateSnapshot(record);
-      return normalizeTechPack(hydrated, template);
+      const snapshot = normalizeTechPack(hydrated, template);
+      if (snapshot.dwilla) await verifyDwillaHistory(snapshot.dwilla);
+      return snapshot;
     } catch (error) {
       const recoveryId = await preserveRecovery({ source, packId: record?.packId ?? record?.id ?? '',
         raw: JSON.stringify(hydrated ?? record), reason: error.message });
@@ -391,6 +460,75 @@ export function createPackStore(template, options = {}) {
     return validatedSnapshot(record, 'revision');
   }
 
+  /** One private archive includes all drafts, named history and original bytes. */
+  async function exportBackup() {
+    await init();
+    return enqueueWrite(async () => {
+      const transaction = database.transaction(['drafts', 'revisions'], 'readonly');
+      const done = storageTransaction(transaction);
+      let draftRecords, revisionRecords;
+      try {
+        [draftRecords, revisionRecords] = await Promise.all([
+          storageRequest(transaction.objectStore('drafts').getAll()),
+          storageRequest(transaction.objectStore('revisions').getAll()),
+        ]);
+        await done;
+      } catch (error) {
+        await done.catch(() => {});
+        throw error;
+      }
+      if (draftRecords.length > 100 || revisionRecords.length > 1000) throw Error('A backup may contain at most 100 drafts and 1000 named revisions.');
+      const drafts = [], revisions = [];
+      // Refuse a partial archive if even one saved record cannot be recovered.
+      for (const record of draftRecords) drafts.push(await validatedSnapshot(record, 'draft'));
+      for (const record of revisionRecords) revisions.push({ ...revisionMetadata(record), snapshot: await validatedSnapshot(record, 'revision') });
+      return validateWorkroomBackup({ format: 'serpentis-regina-workroom-backup', version: 1,
+        createdAt: new Date().toISOString(), drafts, revisions }, template);
+    });
+  }
+
+  /** Empty-store recovery is all-or-nothing and never replaces existing work. */
+  async function importBackup(input) {
+    const backup = validateWorkroomBackup(input, template);
+    for (const snapshot of [...backup.drafts, ...backup.revisions.map(record => record.snapshot)]) {
+      if (snapshot.dwilla) await verifyDwillaHistory(snapshot.dwilla);
+    }
+    await init();
+    return enqueueWrite(async () => {
+      const drafts = [], revisions = [], images = new Map();
+      for (const snapshot of backup.drafts) {
+        const prepared = await encodeSnapshot(snapshot);
+        prepared.images.forEach(image => images.set(image.id, image));
+        drafts.push({ id: prepared.snapshot.id, title: prepared.snapshot.title, updatedAt: prepared.snapshot.updatedAt,
+          writeId: storageId('write'), snapshot: prepared.snapshot });
+      }
+      for (const revision of backup.revisions) {
+        const prepared = await encodeSnapshot(revision.snapshot);
+        prepared.images.forEach(image => images.set(image.id, image));
+        revisions.push({ ...revisionMetadata(revision), snapshot: prepared.snapshot });
+      }
+      const transaction = database.transaction(['drafts', 'revisions', 'images'], 'readwrite');
+      const done = storageTransaction(transaction);
+      try {
+        const draftStore = transaction.objectStore('drafts'), revisionStore = transaction.objectStore('revisions');
+        const [existingDrafts, existingRevisions] = await Promise.all([
+          storageRequest(draftStore.getAll()), storageRequest(revisionStore.getAll()),
+        ]);
+        if (existingDrafts.length || existingRevisions.length) throw Error('Restore requires an empty workroom store. Export your existing records first; use a separate browser profile or origin for recovery.');
+        for (const image of images.values()) transaction.objectStore('images').put(image);
+        for (const record of drafts) draftStore.add(record);
+        for (const record of revisions) revisionStore.add(record);
+        await done;
+        drafts.forEach(record => expectedVersions.set(record.id, record.writeId));
+        return { drafts: drafts.length, revisions: revisions.length, images: images.size };
+      } catch (error) {
+        try { transaction.abort(); } catch {}
+        await done.catch(() => {});
+        throw error;
+      }
+    });
+  }
+
   async function recoveries() {
     await init();
     return (await readAll('recoveries')).map(recoveryMetadata).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
@@ -409,5 +547,5 @@ export function createPackStore(template, options = {}) {
     database?.close();
   }
 
-  return { init, listDrafts, getDraft, saveDraft, listRevisions, createRevision, getRevision, recoveries, exportRecovery, close };
+  return { init, listDrafts, getDraft, saveDraft, listRevisions, createRevision, getRevision, exportBackup, importBackup, recoveries, exportRecovery, close };
 }

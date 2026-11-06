@@ -203,3 +203,12 @@ Explain *why* code changes are needed. Do not jump ahead of the learner, and dis
 
 - Founder found red headers within each worksheet visually harsh and requested the blue/pink colorway. Use Electric blue fill and brand Salmon pink text for internal section headers, closed section summaries and source preview headings. This supersedes the older Electric/Ruby text pairing for those headers.
 - Keep green selected/expanded highlights, filled pink inactive worksheet tabs, pink reading text, existing top house masthead and print styling.
+
+
+## Exact six-color launch palette — founder instruction, November 6, 2026
+
+- The founder supplied a COLOR LIBRARY screenshot and explicitly requested **only its palette** before launching/deploying the updated Workroom for iPad Home Screen use. This supersedes earlier UI color values and assignments where they conflict.
+- Authoritative HEX colors: **SALMON #EE2737**, **SLYTHEREN #1FA824**, **RUBY #E4002B**, **ELECTRIC #1E22AA**, **OX #622128**, **OBSIDIAN #101820**. The older pale pink #F4A6A0 and gray ink/lines are not current palette colors.
+- Use solid palette paint; avoid generated gray grain, white CSS fills, unlisted colors and visible fractional-opacity tinting. Preserve original photographs, user image bytes, seal and icons. Historical workbook palette/provenance stays unchanged in source data.
+- Normal text/control pairs use Slytheren and Obsidian. Electric-backed text uses Slytheren at large/bold heading sizes; Salmon/Obsidian remains available for bold inactive tabs. OX is a decorative accent. Retain non-color state/focus cues.
+- The founder authorized palette fixes, public source publication and deployment of the updated PWA to the existing GitHub Pages Workroom. Keep its URL/scope/database identity, save-first explicit updates and private local records. Deploy only the generated workroom/ directory on portal-site; preserve all existing portal files. No main merge was requested.
