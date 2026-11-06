@@ -23,6 +23,7 @@
     "techpack:build": "node scripts/build-tech-pack.mjs",
     "techpack": "node scripts/serve-tech-pack.mjs",
     "pwa:build": "npm run techpack:build && node scripts/build-workroom-pwa.mjs",
-    "techpack:cloud:build": "node scripts/build-tech-pack.mjs --cloud"
+    "techpack:cloud:build": "node scripts/build-tech-pack.mjs --cloud",
+    "dwilla": "node scripts/dwilla.mjs"
   }
 }
